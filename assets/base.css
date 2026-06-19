@@ -3551,3 +3551,48 @@ h1, h2, h3, h4, h5,
   color: var(--tf-vanilla-dark);
   margin-bottom: 1.2rem;
 }
+
+/* =========================================================================
+   TrueFit header refinements
+   Restrained, premium. White header, navy chrome, editorial nav labels.
+   ========================================================================= */
+
+/* Clean white header with a hairline of definition; soft shadow once sticky. */
+.header-wrapper {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.06);
+}
+
+.shopify-section-header-sticky .header-wrapper {
+  box-shadow: 0 0.4rem 1.6rem rgba(10, 26, 79, 0.06);
+}
+
+/* Top-level nav: muted vanilla-blue labels, uppercase + tracked, resolve to
+   navy on hover. The same eyebrow language used on section headers. */
+@media screen and (min-width: 990px) {
+  .header__menu-item {
+    color: var(--tf-vanilla-dark);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .header__menu-item:hover,
+  .header__active-menu-item {
+    color: var(--tf-navy);
+  }
+}
+
+/* Submenu links stay sentence case and readable, just recolored to navy. */
+.header__submenu .header__menu-item {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 1.4rem;
+}
+
+/* Announcement bar: quieter, tracked caps on the navy band. */
+.announcement-bar__message {
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
