@@ -1,0 +1,144 @@
+<script src="{{ 'tabbed-content.js' | asset_url }}" defer="defer"></script>
+{{ 'component-tabbed-content.css' | asset_url | stylesheet_tag }}
+
+<tabbed-content>
+  <div class="tabs-list" role="tablist">
+    <button
+      aria-controls="DescriptionTabContent-{{ section.id }}"
+      aria-selected="true"
+      id="DescriptionTab-{{ section.id }}"
+      role="tab"
+      class="tab selected caption"
+    >
+      Description
+    </button>
+    <button
+      aria-controls="NutritionTabContent-{{ section.id }}"
+      aria-selected="false"
+      id="NutritionTab-{{ section.id }}"
+      role="tab"
+      tabindex="-1"
+      class="tab caption"
+    >
+      Nutrition
+    </button>
+    <button
+      aria-controls="InstructionsTabContent-{{ section.id }}"
+      aria-selected="false"
+      id="InstructionsTab-{{ section.id }}"
+      role="tab"
+      tabindex="-1"
+      class="tab caption"
+    >
+      Directions
+    </button>
+  </div>
+
+  <div
+    aria-labelledby="DescriptionTab-{{ section.id }}"
+    class="tab-panel"
+    id="DescriptionTabContent-{{ section.id }}"
+    role="tabpanel"
+  >
+    <h3>Description</h3>
+    <p>
+      Lorem ipsum dolor sit amet, urna class vestibulum tincidunt atque, habitasse sit wisi erat dapibus. Vitae curae
+      natoque a, donec nulla conubia in mollis. Sapien pede in tortor, lectus neque vitae in et, vitae aliquam eget orci
+      at, non turpis faucibus id morbi. Elit tempor turpis donec inceptos, fringilla arcu sollicitudin ligula magna, sed
+      justo viverra lacus erat, vestibulum id in justo nulla. Viverra dui leo donec, aptent deserunt nostra magnis
+      lobortis, id ultrices ac aenean, interdum vestibulum rhoncus phasellus libero.
+    </p>
+  </div>
+
+  <div
+    aria-labelledby="NutritionTab-{{ section.id }}"
+    class="tab-panel"
+    role="tabpanel"
+    id="NutritionTabContent-{{ section.id }}"
+    hidden
+  >
+    {%- style -%}
+      #NutritionTabContent-{{ section.id }} strong {
+        font-weight: 600;
+      }
+      #NutritionTabContent-{{ section.id }} table tr > :first-child {
+        text-align: left;
+      }
+      #NutritionTabContent-{{ section.id }} table td {
+        border: none;
+        border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
+        padding: 1.2rem 0;
+      }
+      #NutritionTabContent-{{ section.id }} table th {
+        border: none;
+        padding: 1.2rem 0;
+      }
+      #NutritionTabContent-{{ section.id }} p {
+        margin: 0 0 1rem 0;
+      }
+        #NutritionTabContent-{{ section.id }} {
+          font-size: 1.4rem;
+        }
+        #NutritionTabContent-{{ section.id }} table {
+          text-align: center;
+        }
+        #NutritionTabContent-{{ section.id }} h2 {
+          font-size: 1.8rem;
+        }
+        #NutritionTabContent-{{ section.id }} h3, h4 {
+          font-size: 1.6rem;
+          margin-top: 1em;
+          margin-bottom: 1em;
+        }
+        #NutritionTabContent-{{ section.id }} table *,
+        #NutritionTabContent-{{ section.id }} .other-ingredients *,
+        #NutritionTabContent-{{ section.id }} .warning * {
+          font-family: var(--font-body-family) !important;
+          line-height: 125% !important;
+        }
+        #NutritionTabContent-{{ section.id }} .other-ingredients {
+          margin-top: 1.2rem;
+        }
+    {%- endstyle -%}
+    <div class="product-information--content-text grid--flex">
+      <div class="nutritional-facts">
+        <h2>Supplement Facts</h2>
+        <div class="serving-information">
+          <p>Serving Size: {{ product.metafields.nutrition.servings }}</p>
+          <p>Servings Per Container: {{ product.metafields.nutrition.serving_per_container }}</p>
+        </div>
+        <div class="content">
+          {{ product.metafields.nutrition.nutritional_facts }}
+          {% if product.metafields.nutrition.other_ingredients != blank %}
+            <div class="other-ingredients">
+              {{- product.metafields.nutrition.other_ingredients -}}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% if product.metafields.warning.body != blank %}
+        <div class="warning">
+          <h4>WARNING</h4>
+          <p>{{- product.metafields.warning.body -}}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div
+    aria-labelledby="InstructionsTab-{{ section.id }}"
+    class="tab-panel"
+    id="InstructionsTabContent-{{ section.id }}"
+    role="tabpanel"
+    hidden
+  >
+    <h3>Instructions</h3>
+    <p>
+      Lorem ipsum dolor sit amet, urna class vestibulum tincidunt atque, habitasse sit wisi erat dapibus. Vitae curae
+      natoque a, donec nulla conubia in mollis. Sapien pede in tortor, lectus neque vitae in et, vitae aliquam eget orci
+      at, non turpis faucibus id morbi. Elit tempor turpis donec inceptos, fringilla arcu sollicitudin ligula magna, sed
+      justo viverra lacus erat, vestibulum id in justo nulla. Viverra dui leo donec, aptent deserunt nostra magnis
+      lobortis, id ultrices ac aenean, interdum vestibulum rhoncus phasellus libero.
+    </p>
+  </div>
+</tabbed-content>

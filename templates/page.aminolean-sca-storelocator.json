@@ -1,0 +1,170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "167916495740809308": {
+      "type": "apps",
+      "disabled": true,
+      "custom_css": [
+        "#scasl-tab-radius {box-sizing: border-box;}"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "amino_store_finder_QFMAGp-1": {
+      "type": "amino-store-finder",
+      "blocks": {
+        "logo_FRdqWn": {
+          "type": "logo",
+          "settings": {
+            "title": "Walmart",
+            "image": "shopify://shop_images/walmart2.svg",
+            "url": "https://www.walmart.com/store-finder",
+            "max_width": 100
+          }
+        },
+        "logo_YDW7pP": {
+          "type": "logo",
+          "settings": {
+            "title": "Target",
+            "image": "shopify://shop_images/target_8b349b0f-8e02-4e28-9794-92fc151dcdfc.svg",
+            "url": "https://www.target.com/store-locator/find-stores",
+            "max_width": 100
+          }
+        },
+        "logo_pNAyC9": {
+          "type": "logo",
+          "settings": {
+            "title": "Amazon",
+            "image": "shopify://shop_images/amazon-frame.svg",
+            "url": "https://www.amazon.com/stores/RSP+Nutrition/page/4AB6F2EE-6B55-40A6-A1BB-3AD9A720F48B?ref_=ast_bln",
+            "max_width": 80
+          }
+        },
+        "logo_WMLyTq": {
+          "type": "logo",
+          "settings": {
+            "title": "Whole Foods",
+            "image": "shopify://shop_images/wholefoods.svg",
+            "url": "https://www.wholefoodsmarket.com/stores",
+            "max_width": 100
+          }
+        },
+        "logo_CdRyF8": {
+          "type": "logo",
+          "settings": {
+            "title": "Sprouts Farmers Market",
+            "image": "shopify://shop_images/sprouts2.svg",
+            "url": "https://www.sprouts.com/stores/",
+            "max_width": 85
+          }
+        },
+        "logo_MBktfU": {
+          "type": "logo",
+          "settings": {
+            "title": "Meijer",
+            "image": "shopify://shop_images/meijer.svg",
+            "url": "https://www.meijer.com/shopping/store-finder.html",
+            "max_width": 73
+          }
+        },
+        "logo_BBLCyg": {
+          "type": "logo",
+          "settings": {
+            "title": "HEB",
+            "image": "shopify://shop_images/H-E-B_logo.svg",
+            "url": "https://www.heb.com/store-locations",
+            "max_width": 85
+          }
+        },
+        "logo_BEKXxw": {
+          "type": "logo",
+          "settings": {
+            "title": "Harris Teeter",
+            "image": "shopify://shop_images/harristeeterlogo.svg",
+            "url": "https://www.harristeeter.com/stores/search",
+            "max_width": 100
+          }
+        },
+        "logo_6XwpwX": {
+          "type": "logo",
+          "settings": {
+            "title": "Publix",
+            "image": "shopify://shop_images/publix-logo.svg",
+            "url": "https://www.publix.com/locations",
+            "max_width": 90
+          }
+        },
+        "logo_3aJhpM": {
+          "type": "logo",
+          "settings": {
+            "title": "Wegmans",
+            "image": "shopify://shop_images/wegmans.svg",
+            "url": "https://www.wegmans.com/stores/",
+            "max_width": 100
+          }
+        },
+        "logo_mBxkKF": {
+          "type": "logo",
+          "settings": {
+            "title": "Ralphs",
+            "image": "shopify://shop_images/ralphs-logo.svg",
+            "url": "https://www.ralphs.com/stores/search",
+            "max_width": 95
+          }
+        },
+        "logo_8YfmTK": {
+          "type": "logo",
+          "settings": {
+            "title": "Giant",
+            "image": "shopify://shop_images/giant.svg",
+            "url": "https://giantfood.com/store-locator",
+            "max_width": 87
+          }
+        }
+      },
+      "block_order": [
+        "logo_FRdqWn",
+        "logo_YDW7pP",
+        "logo_pNAyC9",
+        "logo_WMLyTq",
+        "logo_CdRyF8",
+        "logo_MBktfU",
+        "logo_BBLCyg",
+        "logo_BEKXxw",
+        "logo_6XwpwX",
+        "logo_3aJhpM",
+        "logo_mBxkKF",
+        "logo_8YfmTK"
+      ],
+      "settings": {
+        "section_color_scheme": "background-1",
+        "section_background": "",
+        "card_color_scheme": "",
+        "heading": "Found in over 10,000\nstores you love!",
+        "heading_font_size": 34,
+        "description": "<p>Click on a retailer below to find a store near you.</p>",
+        "button_label": "Find Near You",
+        "button_link": "",
+        "normalize_ratios": false,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "card_height_ratio": 40
+      }
+    }
+  },
+  "order": [
+    "167916495740809308",
+    "amino_store_finder_QFMAGp-1"
+  ]
+}

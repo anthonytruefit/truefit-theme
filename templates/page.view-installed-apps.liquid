@@ -1,0 +1,41 @@
+{%- if request.design_mode -%}
+  <div class="page-width">
+    <h1>Shopify App Filter</h1>
+
+    {%- if settings.shopify_apps_blocklist != blank -%}
+      <div>
+        <h2>Blocklist</h2>
+        {{ settings.shopify_apps_blocklist }}
+      </div>
+    {%- endif -%}
+
+    <div class="mb-8">
+      <h2>Allowed Apps</h2>
+      <ul id="ShopifyAppFilterAllowedApps"></ul>
+    </div>
+    <div>
+      <h2>Blocked Apps</h2>
+      <ul id="ShopifyAppFilterBlockedApps"></ul>
+    </div>
+  </div>
+
+  <script>
+    if (window.__SHOPIFY_APP_FILTER__) {
+      var installedAppsContainer = document.getElementById('ViewInstalledApps');
+      var allowedList = document.getElementById('ShopifyAppFilterAllowedApps');
+      var blockedList = document.getElementById('ShopifyAppFilterBlockedApps');
+      window.__SHOPIFY_APP_FILTER__.allowed.forEach(function (url) {
+        var li = document.createElement('li');
+        li.style.marginBottom = '8px';
+        li.innerText = url;
+        allowedList.appendChild(li);
+      });
+      window.__SHOPIFY_APP_FILTER__.blocked.forEach(function (url) {
+        var li = document.createElement('li');
+        li.style.marginBottom = '8px';
+        li.innerText = url;
+        blockedList.appendChild(li);
+      });
+    }
+  </script>
+{%- endif -%}

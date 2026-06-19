@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "efdd02e6-6aa2-4e03-8f1a-47c6f253143c": {
+      "type": "featured-collection-rsp",
+      "settings": {
+        "title": "Bestsellers",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "content_alignment": "tw-text-center",
+        "collection": "bestsellers",
+        "product_list": [],
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "card_cta_label": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "efdd02e6-6aa2-4e03-8f1a-47c6f253143c"
+  ]
+}

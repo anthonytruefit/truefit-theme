@@ -1,0 +1,83 @@
+{%- if tiers.count > 0 -%}
+  {%- liquid
+    assign discount_at_zero = false
+    assign cart_total = cart.original_total_price | divided_by: 100.00
+    assign active_tier_index = -1
+    assign current_tier = blank
+    assign active_tier = blank
+    assign next_tier = tiers | first
+  -%}
+  {%- for tier in tiers reversed -%}
+    {%- liquid
+      if tier.gwp_product.value != blank and tier.gwp_product.value.available != true
+        continue
+      endif
+      assign threshold_amount = tier.threshold.value | plus: 0.0
+      if threshold_amount == 0
+        assign discount_at_zero = true
+      endif
+      if active_tier_index == -1 and cart_total > threshold_amount
+        assign active_tier_index = forloop.rindex0
+        assign active_tier = tier
+        assign next_tier = current_tier
+      endif
+      assign current_tier = tier
+    -%}
+    {%- capture tiers_content -%}
+      {{- tiers_content -}}
+      <div data-tier="{{ forloop.rindex0 }}"
+        data-tier-threshold="{{ tier.threshold.value }}"
+        class="js-tier cart-sale__tier cart-sale__tier--{{ forloop.rindex }}{% unless threshold_amount == 0 %} ml-auto{% endunless %}{% if forloop.rindex0 == active_tier_index %} active{% endif %}">
+        <div class="cart-sale__tier__threshold">{{ threshold_amount | times: 100.0 | ceil | money_without_trailing_zeros }}</div>
+        <div class="cart-sale__tier__discount">{{ tier.discount_title.value }}</span></div>
+      </div>
+    {%- endcapture -%}
+  {%- endfor -%}
+  {%- assign amount_to_next_tier = next_tier.threshold.value | plus: 0.0
+    | minus: cart_total
+    | ceil
+    | times: 100
+    | money_without_trailing_zeros
+  -%}
+  {%- if active_tier == blank -%}
+    {%- if next_tier != blank -%}
+      {%- capture upsell_text -%}Add {{ amount_to_next_tier }} for {{ next_tier.discount_title }}!{%- endcapture -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- capture amount_to_next_tier_template_tag %}{% raw %}{{ amount_to_tier }}{% endraw %}{% endcapture -%}
+    {%- capture upsell_text -%}
+      {%- if active_tier.success_text.value != blank -%}
+        {{ active_tier.success_text.value }}
+      {%- elsif active_tier.discount_type.value == 'Free Shipping' -%}
+        Your order ships free!
+      {%- else -%}
+        You've earned {{ active_tier.discount_title.value }}.
+      {%- endif -%}
+      {%- if next_tier != blank %}
+        {%- if next_tier.upsell_text.value != blank %}
+          {{ next_tier.upsell_text.value | replace: amount_to_next_tier_template_tag, amount_to_next_tier }}
+        {%- else %}
+          Spend {{ amount_to_next_tier }} more for {{ next_tier.discount_title.value }}!
+        {%- endif -%}
+      {%- endif -%}
+    {%- endcapture -%}
+  {%- endif -%}
+
+  {%- if upsell_text != blank -%}
+    <cart-drawer-tiered-upsell
+      class="cart-upsell-container cart-sale js-cart-sale-container"
+      data-cart-total="{{ cart.original_total_price | divided_by: 100.0 }}"
+      data-component="cartDrawerSaleUpsell"
+    >
+      <div class="js-upsell-text cart-sale__upsell-text">{{ upsell_text }}</div>
+      <div class="relative cart-sale__progress-container">
+        <div class="cart-sale__bar-container">
+          <div class="js-progress-bar cart-sale__bar">&nbsp;</div>
+        </div>
+        <div class="cart-sale__tiers">
+          {{ tiers_content }}
+        </div>
+      </div>
+    </cart-drawer-tiered-upsell>
+  {%- endif -%}
+{%- endif -%}

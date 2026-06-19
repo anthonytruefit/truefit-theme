@@ -1,0 +1,172 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign highest_ratio = 0
+  for block in section.blocks
+    if block.settings.image.aspect_ratio > highest_ratio
+      assign highest_ratio = block.settings.image.aspect_ratio
+    endif
+  endfor
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    class="tw-max-w-lg tablet:tw-max-w-pageWidth tw-px-12 tablet:tw-px-50 tw-mx-auto section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    <ul
+      class="tw-flex tw-justify-center tw-flex-wrap tablet:tw-flex-nowrap -tw-mx-6"
+      id="ShopTileGrid-{{ section.id }}"
+      role="list"
+    >
+      {%- liquid
+        assign total_gutters = section.blocks.size | minus: 1 | times: 12 | plus: 100
+        assign max_width = 232 | times: section.blocks.size | plus: total_gutters
+      -%}
+      {% capture sizes -%}
+        (min-width: {{ max_width }}px) 23.2rem,
+        (min-width: 750px) calc((100vw - {{ section.blocks.size | minus: 1 | times: 1.2 | plus: 10 }}rem) / {{ section.blocks.size }}),
+        (min-width: 500px) 23.2rem,
+        calc(50vw - 1.8rem)
+      {%- endcapture -%}
+
+      {%- for block in section.blocks -%}
+        <li
+          id="ShopTile-{{ section.id }}-{{ forloop.index }}"
+          class="tw-w-1/2 tw-max-w-[24.4rem] tw-p-6 tw-flex-auto tablet:tw-w-full{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          <div class="tw-relative">
+            {%- if block.settings.image != blank -%}
+              <div
+                class="media media--transparent media--adapt global-media-settings tw-mb-10"
+                style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+              >
+                {{
+                  block.settings.image
+                  | image_url: width: 3200
+                  | image_tag:
+                    widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                    sizes: sizes
+                }}
+              </div>
+            {%- endif -%}
+            <h3 class="tw-text-lg tw-text-center">
+              <a
+                href="{{ block.settings.link }}"
+                class="before:tw-absolute before:tw-inset-0 xs:tw-whitespace-pre-line"
+              >
+                {{- block.settings.title -}}
+              </a>
+            </h3>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop Tiles",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "default": "Shop Title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Tiles",
+      "blocks": [
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

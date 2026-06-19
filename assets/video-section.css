@@ -1,0 +1,132 @@
+.video-section__media {
+  --ratio-percent: 56.25%;
+  position: relative;
+  padding-bottom: calc(var(--ratio-percent) - var(--media-border-width));
+}
+
+/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
+.scroll-trigger:where(.gradient.video-section__media) {
+  background: transparent;
+}
+
+.video-section__media.global-media-settings--full-width {
+  padding-bottom: var(--ratio-percent);
+}
+
+.video-section__media.deferred-media {
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.video-section__media.deferred-media:after {
+  content: none;
+}
+
+.video-section__poster.deferred-media__poster:focus {
+  outline-offset: 0.3rem;
+}
+
+.video-section__media iframe {
+  background-color: rgba(var(--color-foreground), 0.03);
+  border: 0;
+}
+
+.video-section__poster,
+.video-section__media iframe,
+.video-section__media video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.video-section__media video {
+  background: #000000;
+}
+
+.video-section__media.media-fit-cover video {
+  object-fit: cover;
+}
+
+.video-section--row .video-section__media-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-height: calc(100vh - 64px);
+}
+.video-section--row .video-section__media video {
+  background: transparent;
+}
+.video-section--row .video-section__media {
+  padding-bottom: 0;
+  display: flex;
+  align-self: stretch;
+}
+.video-section--row .video-section__media:before {
+  content: '';
+  display: block;
+  padding-bottom: var(--ratio-percent);
+  width: 0;
+}
+.video-section--row .video-section__media {
+  width: 100%;
+}
+.video-section__quote-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.video-section__quote-wrapper .title {
+  margin-bottom: 0;
+}
+.signature__wrapper {
+  max-width: 25rem;
+  align-self: flex-end;
+  margin-top: 2.4rem;
+}
+.signature__wrapper img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.video-section__quote-wrapper .title-wrapper:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 750px) {
+  .video-section--row {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row-reverse;
+  }
+  .video-section--row .video-section__media-wrapper {
+    flex: 0 1 50%;
+    max-width: 600px;
+  }
+  .video-section--row.video-section--video-only .video-section__media-wrapper {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .video-section--row .video-section__quote-wrapper {
+    flex: 1 1 50%;
+    max-width: 700px;
+  }
+  .video-section__quote-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .video-section__quote-wrapper .title-wrapper {
+    margin: auto;
+  }
+  .video-section__quote-wrapper .title-wrapper {
+    max-width: 58rem;
+  }
+}
+@media screen and (min-width: 750px) and (max-height: 600px) {
+  .video-section--row .video-section__media-wrapper {
+    max-height: 100%;
+  }
+}

@@ -1,0 +1,34 @@
+/* Angle divider */
+.angle-divider {
+  height: 2.4rem;
+  position: relative;
+}
+@media screen and (min-width: 750px) {
+  .angle-divider {
+    height: 3.6rem;
+  }
+}
+.angle-divider .angle-divider__foreground {
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: -0.1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* --angle-clip-path: polygon(100% 0, 0% 100%, 100% 100%); */
+  --angle-clip-path: polygon(0 96%, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: var(--angle-clip-path);
+  clip-path: var(--angle-clip-path);
+}
+.angle-divider__border {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+.angle-divider--down .angle-divider__foreground {
+  top: -0.1rem;
+  bottom: auto;
+  --angle-clip-path: polygon(0 0, 100% 0, 100% 4%, 0 100%);
+}

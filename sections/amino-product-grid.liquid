@@ -1,0 +1,309 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign section_collection = section.settings.collection | default: collection -%}
+{%- if collection == blank and section.settings.product_list.count > 0 -%}
+  {%- assign product_list = section.settings.product_list -%}
+{%- endif -%}
+
+{%- if section.settings.enable_text_styling -%}
+<style>
+  /* ---------- Product title ---------- */
+  #ProductGridContainer-{{ section.id }} .card__heading,
+  #ProductGridContainer-{{ section.id }} .card__heading a,
+  #ProductGridContainer-{{ section.id }} .card-information .card__heading {
+    {%- if section.settings.title_color != blank -%}
+    color: {{ section.settings.title_color }} !important;
+    {%- endif -%}
+    {%- if section.settings.title_size > 0 -%}
+    font-size: {{ section.settings.title_size }}rem !important;
+    {%- endif -%}
+  }
+
+  /* ---------- Price ---------- */
+  #ProductGridContainer-{{ section.id }} .price,
+  #ProductGridContainer-{{ section.id }} .price__regular .price-item,
+  #ProductGridContainer-{{ section.id }} .price__sale .price-item,
+  #ProductGridContainer-{{ section.id }} .price-item--regular,
+  #ProductGridContainer-{{ section.id }} .price-item--sale {
+    {%- if section.settings.price_color != blank -%}
+    color: {{ section.settings.price_color }} !important;
+    {%- endif -%}
+    {%- if section.settings.price_size > 0 -%}
+    font-size: {{ section.settings.price_size }}rem !important;
+    {%- endif -%}
+  }
+
+  /* ---------- Subtitle (rendered by the snippet, if present) ---------- */
+  #ProductGridContainer-{{ section.id }} .card__subtitle {
+    {%- if section.settings.subtitle_color != blank -%}
+    color: {{ section.settings.subtitle_color }} !important;
+    {%- endif -%}
+    font-size: {{ section.settings.subtitle_size }}rem !important;
+    margin-top: {{ section.settings.subtitle_margin_top }}px;
+    display: block;
+  }
+</style>
+{%- endif -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="product-grid-container" id="ProductGridContainer-{{ section.id }}">
+    {%- if product_list != blank -%}
+      {%- paginate product_list by section.settings.products_per_page -%}
+        {%- render 'amino-product-grid', product_list: product_list, paginate: paginate, section: section -%}
+      {%- endpaginate -%}
+    {%- elsif section_collection != blank -%}
+      {%- paginate section_collection.products by section.settings.products_per_page -%}
+        {%- render 'amino-product-grid',
+          product_list: section_collection.products,
+          paginate: paginate,
+          section: section,
+          collection: section_collection
+        -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AminoLean: Product Grid",
+  "presets": [
+    {
+      "name": "AminoLean: Product Grid"
+    }
+  ],
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Title, subtitle & price styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_text_styling",
+      "label": "Enable custom text styling",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Product title color",
+      "info": "Leave blank to keep the theme default."
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Product title size",
+      "info": "Set to 0 to keep the theme default.",
+      "min": 0,
+      "max": 3.0,
+      "step": 0.1,
+      "unit": "rem",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "info": "Subtitle text is set per product in the product grid snippet."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 0.6,
+      "max": 2.0,
+      "step": 0.1,
+      "unit": "rem",
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_top",
+      "label": "Space above subtitle",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "info": "Leave blank to keep the theme default."
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "label": "Price size",
+      "info": "Set to 0 to keep the theme default.",
+      "min": 0,
+      "max": 2.4,
+      "step": 0.1,
+      "unit": "rem",
+      "default": 0
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Choose a collection to pull the product list from instead."
+    },
+    {
+      "type": "checkbox",
+      "id": "product_title_use_flavor",
+      "label": "Use flavor for product titles?",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on tablets"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ]
+}
+{% endschema %}

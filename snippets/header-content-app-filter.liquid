@@ -1,0 +1,53 @@
+{% comment %}
+  Comma-separated list of keywords used to filter out apps. If an
+  app script URL contains one of these keywords, we remove it.
+  If the script is still necessary, it should be copied over to
+  Google Tag Manager to be installed from there.
+{% endcomment %}
+{%- assign app_blocklist = settings.shopify_apps_blocklist | split: ',' -%}
+{%- assign lines = content_for_header | newline_to_br | split: '<br />' -%}
+{%- for line in lines -%}
+  {%- if line contains 'var urls' -%}
+    {% assign url_string = line | remove: 'var urls = [' | remove: '];' | strip %}
+    {% assign url_array = url_string | split: ',' | uniq %}
+    {%- assign filtered_urls = '' -%}
+    {%- for url in url_array -%}
+      {%- assign allow_url = true -%}
+      {%- for filter_url in app_blocklist -%}
+        {%- if url contains filter_url -%}
+          {%- assign allow_url = false -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if allow_url == true %}
+        <!-- Shopify App Filter allowed: {{ url | replace: '\/', '/' }} -->
+        {%- if filtered_urls != blank -%}
+          {%- assign filtered_urls = filtered_urls | append: ',' -%}
+        {%- endif -%}
+        {%- assign filtered_urls = filtered_urls | append: url -%}
+      {%- else %}
+        <!-- Shopify App Filter removed: {{ url | replace: '\/', '/' }} -->
+        {%- if request.design_mode -%}
+          {%- if blocked_urls != blank -%}
+            {%- assign blocked_urls = blocked_urls | append: ',' -%}
+          {%- endif -%}
+          {%- assign blocked_urls = blocked_urls | append: url -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign updated_urls_line = 'var urls = [' | append: filtered_urls | append: '];' -%}
+    {%- assign content_for_header = content_for_header | replace: line, updated_urls_line -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if request.design_mode -%}
+  {% comment %} Expose app list for Theme Editor customization {% endcomment %}
+  <script>
+    window.__SHOPIFY_APP_FILTER__ = {
+      allowed: [{{ filtered_urls }}],
+      blocked: [{{ blocked_urls }}]
+    }
+  </script>
+{%- endif -%}
+
+{{ content_for_header }}

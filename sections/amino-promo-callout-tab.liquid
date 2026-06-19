@@ -1,0 +1,278 @@
+{%- liquid
+  assign enabled = section.settings.enabled
+  if enabled and section.settings.template_safelist != blank
+    assign template_safelist = section.settings.template_safelist | strip | split: ','
+    unless template_safelist contains template
+      assign enabled = false
+    endunless
+  endif
+-%}
+{%- if enabled -%}
+  {%- style -%}
+    .shopify-section.promo-callout-tab-section {
+      position: fixed;
+      left: 100%;
+      z-index: 50;
+      bottom: 20vh;
+    }
+    .section-header.menu-open ~ .shopify-section.promo-callout-tab-section {
+      z-index: 2;
+    }
+    .promo-callout-tab {
+      pointer-events: none;
+      font-size: 1.2rem;
+      letter-spacing: 0.01em;
+      transform: none;
+      transition: transform 300ms cubic-bezier(0.45, 0, 0.55, 1);
+      border-top-left-radius: 2.4rem;
+      border-bottom-left-radius: 2.4rem;
+      background-color: #561936;
+      color: #FFFFFF;
+    }
+    .promo-callout-tab__close {
+      border-top-left-radius: 2.4rem;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 0;
+      box-shadow: none;
+      width: 100%;
+      background-color: #2E0318;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 0.9rem 0.6rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      font-size: 1.2rem;
+    }
+    .promo-callout-tab__close > span {
+      flex: 1 1 auto;
+    }
+    .promo-callout-tab img {
+      max-width: 100%;
+      display: block;
+    }
+    .promo-callout-tab__cta-text {
+      letter-spacing: 0.01em;
+      line-height: 125%;
+    }
+    .promo-callout-tab svg.icon {
+      display: block;
+      width: 2rem;
+    }
+    .promo-callout-tab--visible {
+      transform: translateX(-100%);
+      transition: none;
+      pointer-events: auto;
+    }
+    .promo-callout-tab--visible.promo-callout-tab--animated {
+      transition: transform 500ms cubic-bezier(0.45, 0, 0.55, 1);
+    }
+    .promo-callout-tab a {
+      color: white;
+      text-decoration: none;
+    }
+    .promo-callout-tab__content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0.4rem;
+    }
+    .promo-callout-tab__image-wrapper {
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .promo-callout-tab__image-wrapper img {
+      object-fit: cover;
+    }
+    .promo-callout-tab__cta-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.8rem;
+      margin-top: 0.2rem;
+    }
+    .promo-callout-tab__cta-text > span {
+      margin-right: 0.5rem;
+    }
+    #PromoCallout-{{ section.id }} {
+      font-size: {{ section.settings.font_size }}px
+    }
+  {%- endstyle -%}
+  <div
+    class="promo-callout-tab{% if request.design_mode %} promo-callout-tab--visible{% endif %}"
+    id="PromoCallout-{{ section.id }}"
+  >
+    <button
+      role="button"
+      class="promo-callout-tab__close"
+    >
+      <span>Close</span>
+      {%- render 'amino-icon-close' -%}
+    </button>
+
+    <a
+      class="promo-callout-tab__content-wrapper"
+      href="{{ section.settings.url }}"
+    >
+      {%- assign default_width = section.settings.logo_width | times: 2 -%}
+      {%- assign sizes = section.settings.logo_width | append: 'px' -%}
+      {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.top_logo.aspect_ratio -%}
+      {{
+        section.settings.top_logo
+        | image_url: width: default_width
+        | image_tag:
+          width: section.settings.logo_width,
+          height: logo_height,
+          sizes: sizes,
+          widths: '80, 160, 200, 300, 400'
+      }}
+
+      <div class="promo-callout-tab__image-wrapper">
+        {%- assign default_width = section.settings.image_width | times: 2 -%}
+        {%- assign sizes = section.settings.image_width | append: 'px' -%}
+        {{
+          section.settings.image
+          | image_url: width: default_width
+          | image_tag:
+            width: section.settings.image_width,
+            height: section.settings.image_width,
+            sizes: sizes,
+            widths: '80, 160, 200, 300, 400'
+        }}
+      </div>
+      {%- if section.settings.cta_text != blank -%}
+        <div
+          class="promo-callout-tab__cta-text"
+        >
+          <span>{{ section.settings.cta_text }}</span>
+          <svg class="icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.84375 5.625H9.40625" stroke="currentColor" stroke-width="0.9375" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.125 2.34375L9.40625 5.625L6.125 8.90625" stroke="currentColor" stroke-width="0.9375" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+  <script>
+    (function () {
+      var promoTab = document.getElementById('PromoCallout-{{ section.id }}');
+      var promoLink = promoTab.querySelector('a[href]');
+      var tabKey = 'aminolean_promo_tab_{{ section.settings.url | handleize }}';
+      var hasSeenTabKey = tabKey + '_seen';
+      var hasDismissedTabKey = tabKey + '_dismissed';
+      var hasDismissedTab = localStorage.getItem(hasDismissedTabKey);
+      if (hasDismissedTab) {
+        return;
+      }
+      var hasSeenTab = localStorage.getItem(hasSeenTabKey);
+      if (!hasSeenTab) {
+        promoTab.classList.add('promo-callout-tab--animated');
+        window.addEventListener('load', function () {
+          requestAnimationFrame(function () {
+            promoTab.classList.add('promo-callout-tab--visible');
+          });
+        });
+      } else {
+        promoTab.classList.add('promo-callout-tab--visible');
+      }
+
+      localStorage.setItem(hasSeenTabKey, Date.now());
+      promoTab.addEventListener('click', function (e) {
+        localStorage.setItem(hasDismissedTabKey, Date.now());
+        if (promoLink.contains(e.target)) {
+          return;
+        }
+        promoTab.classList.remove('promo-callout-tab--visible');
+      });
+    })();
+  </script>
+{%- else -%}
+  {% comment %} Ensure that this section is hidden when disabled so it doesn't affect page layout {% endcomment %}
+  {%- style -%}
+    #shopify-section-{{ section.id }} {
+      display: none;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+{% schema %}
+{
+  "name": "Promo Callout Tab",
+  "class": "promo-callout-tab-section",
+  "enabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "id": "enabled",
+      "type": "checkbox",
+      "label": "Enabled",
+      "default": true
+    },
+    {
+      "id": "template_safelist",
+      "type": "textarea",
+      "label": "Show on specific templates only",
+      "info": "Comma-separated list of specific templates to show this callout on (e.g. 'product.aminolean,product.aminolean-max,product.aminolean-vegan,product.aminolean-energy'). Leave this blank to show the callout everywhere.",
+      "default": "product.aminolean,product.aminolean-max,product.aminolean-vegan,product.aminolean-energy"
+    },
+    {
+      "id": "top_logo",
+      "type": "image_picker",
+      "label": "Top logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "default": 80,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "default": 65,
+      "unit": "px",
+      "label": "Image width"
+    },
+    {
+      "id": "url",
+      "type": "url",
+      "label": "Link"
+    },
+    {
+      "id": "cta_text",
+      "type": "text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 12,
+      "unit": "px",
+      "label": "Font size"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AminoLean Promo Callout Tab"
+    }
+  ]
+}
+{% endschema %}

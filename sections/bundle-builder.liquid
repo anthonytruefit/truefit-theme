@@ -1,0 +1,523 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product-rsp.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    /* Bundle builder standalone styles */
+    /* Hide button until bundle-form is ready */
+    .bundle-builder-{{ section.id }} .product-form__buttons {
+      margin-top: -2.4rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .bundle-builder-{{ section.id }} form.bundle-form-ready .product-form__buttons {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media screen and (min-width: 750px) {
+  .bundle-builder-{{ section.id }} .product-form__buttons {
+    max-width: none;
+  }
+    }
+
+    @media screen and (min-width: 990px) {
+      .bundle-builder-{{ section.id }} .product-form__buttons {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: -1.2rem;
+      }
+    }
+{%- endstyle -%}
+
+{%- liquid
+  assign bundle_options = section.blocks | where: 'type', 'bundle_option'
+
+  assign accent_color = section.settings.accent_color
+  assign accent_rgb = accent_color | color_to_rgb | remove: 'rgb(' | remove: ')' | remove: ' '
+  assign bundle_form_id = 'bundle-form-' | append: section.id
+-%}
+
+<div
+  class="isolate{% unless section.settings.full_width %} page-width{% endunless %}"
+>
+  <div style="--color-heading: {{ accent_rgb }};--color-accent: {{ accent_rgb }};--color-accent-rgb: rgb(var(--color-accent));" class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
+      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h2
+                class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {%- when 'caption' -%}
+              <p
+                class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {{ block.settings.caption | escape }}
+              </p>
+            {%- when 'text' -%}
+              <div
+                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {{ block.settings.text }}
+              </div>
+            {%- when 'button' -%}
+              <div
+                class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {%- if block.settings.button_label != blank -%}
+                  <a
+                    {% if block.settings.button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a
+                    {% if block.settings.button_link_2 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_2 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- when 'bundle_builder' -%}
+              {%- if bundle_options.size > 0 -%}
+                {%- capture bundle_props -%}
+                [
+                  {%- for bundle_option in bundle_options -%}
+                    {%- liquid 
+                      assign bundle_option_title = bundle_option.settings.title
+                      assign bundle_option_image = bundle_option.settings.image
+                      assign bundle_option_badge = bundle_option.settings.badge
+                      assign bundle_option_bundler_app_code = bundle_option.settings.bundler_app_code
+                    -%}
+                    {
+                      "title": {{ bundle_option_title | json }},
+                      "image": {{ bundle_option_image | image_url: width: 200 | json }},
+                      "badge": {{ bundle_option_badge | json }},
+                      "bundler_app_code": {{ bundle_option_bundler_app_code | json }},
+                      "builder_heading": {{ bundle_option.settings.builder_heading | json }},
+                      "preselect_products": {{ bundle_option.settings.preselect_products | json }}
+                    }{%- if forloop.last == false -%},{%- endif -%}
+                  {%- endfor -%}
+                ]
+              {%- endcapture -%}
+                <div
+                  class="bundle-builder__wrapper bundle-builder-{{ section.id }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  <product-form class="product-form" data-section-id="{{ section.id }}">
+                    <form
+                      id="{{ bundle_form_id }}"
+                      action="{{ routes.cart_add_url }}"
+                      method="post"
+                      class="form"
+                      novalidate="novalidate"
+                      data-type="add-to-cart-form"
+                    >
+                      <bundle-form
+                        id="bundle-form-element-{{ section.id }}"
+                        class="tw-block"
+                        bundles="{{ bundle_props | escape }}"
+                        standalone="true"
+                        style="text-align:left;"
+                      ></bundle-form>
+
+                      <div class="product-form__buttons">
+                        <button
+                          id="ProductSubmitButton-{{ section.id }}"
+                          type="submit"
+                          name="add"
+                          class="product-form__submit button button--full-width button--primary"
+                          aria-disabled="true"
+                        >
+                          <span>{{ 'products.product.add_to_cart' | t }}</span>
+                          <div class="hidden loading-overlay__spinner">
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              class="spinner"
+                              viewBox="0 0 66 66"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </form>
+                    <div class="product-form__error-message-wrapper" role="alert" hidden>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-error" viewBox="0 0 13 13">
+                        <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                        <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                        <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                        <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7"/>
+                      </svg>
+                      <span class="product-form__error-message"></span>
+                    </div>
+                  </product-form>
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bundle Builder",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.rich-text.settings.desktop_content_position.label",
+      "info": "t:sections.rich-text.settings.desktop_content_position.info"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.rich-text.settings.content_alignment.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Brand/Accent Color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.rich-text.settings.full_width.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.rich-text.blocks.heading.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Build Your Bundle",
+          "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "t:sections.rich-text.blocks.caption.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "Add a tagline",
+          "label": "t:sections.rich-text.blocks.caption.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "t:sections.rich-text.blocks.caption.settings.text_style.options__1.label"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "t:sections.rich-text.blocks.caption.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "caption-with-letter-spacing",
+          "label": "t:sections.rich-text.blocks.caption.settings.text_style.label"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__1.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__2.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__3.label"
+            }
+          ],
+          "default": "medium",
+          "label": "t:sections.rich-text.blocks.caption.settings.caption_size.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.rich-text.blocks.text.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Mix and match your favorite products and save.</p>",
+          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.rich-text.blocks.buttons.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
+          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_1.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_2.label",
+          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_2.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_2.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "default": false,
+          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
+    },
+    {
+      "type": "bundle_builder",
+      "name": "Bundle Builder",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "bundle_option",
+      "name": "Bundle Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "bundler_app_code",
+          "label": "Bundler app code",
+          "info": "Enter the shortcode for this bundle from the Bundler app settings",
+          "default": "d5gu"
+        },
+        {
+          "type": "textarea",
+          "id": "builder_heading",
+          "label": "Bundle builder heading",
+          "default": "Complete Your Bundle"
+        },
+        {
+          "type": "checkbox",
+          "id": "preselect_products",
+          "label": "Preselect products",
+          "default": true,
+          "info": "If enabled, the bundle-builder will preselect the required product slots by either adding more of the current product, or taking the first product in that step's product list."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Builder",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "bundle_builder"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,581 @@
+{% doc %}
+  @prompt
+    A section similar to a blog post carousel where there can be up to 3 articles across - each with an image, headline, and teaser text and a read more button at the bottom. Instead of this linking to blog post, I want to be able to link to any page of my choosing., I want this to be able to side scroll on mobile
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-content-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-content-carousel__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: 32px;
+  }
+
+  .ai-content-carousel__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ai-content-carousel__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.cards_per_row }}, 1fr);
+    gap: {{ block.settings.card_gap }}px;
+  }
+
+  .ai-content-carousel__card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, {{ block.settings.card_shadow_opacity }});
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-content-carousel__card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, {{ block.settings.card_shadow_opacity | times: 1.5 }});
+  }
+
+  .ai-content-carousel__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.67%;
+    overflow: hidden;
+  }
+
+  .ai-content-carousel__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-content-carousel__image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-content-carousel__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .ai-content-carousel__content-{{ ai_gen_id }} {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .ai-content-carousel__card-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_heading_size }}px;
+    color: {{ block.settings.card_heading_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .ai-content-carousel__teaser-{{ ai_gen_id }} {
+    font-size: {{ block.settings.teaser_size }}px;
+    color: {{ block.settings.teaser_color }};
+    line-height: 1.5;
+    margin: 0 0 20px;
+    flex-grow: 1;
+  }
+
+  .ai-content-carousel__button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-content-carousel__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+  }
+
+  .ai-content-carousel__empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-content-carousel__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-content-carousel__grid-{{ ai_gen_id }} {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: {{ block.settings.card_gap }}px;
+      padding-bottom: 16px;
+    }
+
+    .ai-content-carousel__card-{{ ai_gen_id }} {
+      flex: 0 0 85%;
+      scroll-snap-align: start;
+    }
+
+    .ai-content-carousel__heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+
+    .ai-content-carousel__card-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_heading_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<content-carousel-{{ ai_gen_id }}
+  class="ai-content-carousel-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.section_heading != blank %}
+    <div class="ai-content-carousel__header-{{ ai_gen_id }}">
+      <h2 class="ai-content-carousel__heading-{{ ai_gen_id }}">{{ block.settings.section_heading }}</h2>
+    </div>
+  {% endif %}
+
+  {% liquid
+    assign has_content = false
+    for i in (1..3)
+      assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+      if block.settings[card_enabled_key]
+        assign has_content = true
+        break
+      endif
+    endfor
+  %}
+
+  {% if has_content %}
+    <div class="ai-content-carousel__grid-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+          assign card_image_key = 'card_' | append: i | append: '_image'
+          assign card_heading_key = 'card_' | append: i | append: '_heading'
+          assign card_teaser_key = 'card_' | append: i | append: '_teaser'
+          assign card_link_key = 'card_' | append: i | append: '_link'
+          assign card_button_text_key = 'card_' | append: i | append: '_button_text'
+
+          assign card_enabled = block.settings[card_enabled_key]
+          assign card_image = block.settings[card_image_key]
+          assign card_heading = block.settings[card_heading_key]
+          assign card_teaser = block.settings[card_teaser_key]
+          assign card_link = block.settings[card_link_key]
+          assign card_button_text = block.settings[card_button_text_key]
+        %}
+
+        {% if card_enabled %}
+          <div class="ai-content-carousel__card-{{ ai_gen_id }}">
+            <div class="ai-content-carousel__image-wrapper-{{ ai_gen_id }}">
+              {% if card_image %}
+                <img
+                  src="{{ card_image | image_url: width: 800 }}"
+                  alt="{{ card_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ card_image.width }}"
+                  height="{{ card_image.height }}"
+                  class="ai-content-carousel__image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-content-carousel__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-content-carousel__content-{{ ai_gen_id }}">
+              {% if card_heading != blank %}
+                <h3 class="ai-content-carousel__card-heading-{{ ai_gen_id }}">{{ card_heading }}</h3>
+              {% endif %}
+
+              {% if card_teaser != blank %}
+                <div class="ai-content-carousel__teaser-{{ ai_gen_id }}">{{ card_teaser }}</div>
+              {% endif %}
+
+              {% if card_link != blank %}
+                <a
+                  href="{{ card_link }}"
+                  class="ai-content-carousel__button-{{ ai_gen_id }}"
+                >
+                  {{ card_button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="ai-content-carousel__empty-state-{{ ai_gen_id }}">
+      Enable at least one card to display content
+    </div>
+  {% endif %}
+</content-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ContentCarousel{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('content-carousel-{{ ai_gen_id }}', ContentCarousel{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Content carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Featured content"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "cards_per_row",
+      "label": "Cards per row",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Gap between cards",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_opacity",
+      "label": "Shadow opacity",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "label": "Card heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "teaser_size",
+      "label": "Teaser text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "teaser_color",
+      "label": "Teaser text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#ffdd00"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#e6c700"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_1_heading",
+      "label": "Heading",
+      "default": "Card heading"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_teaser",
+      "label": "Teaser text",
+      "default": "Add a short description to give your visitors a preview of what they'll find on this page."
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "card_1_button_text",
+      "label": "Button text",
+      "default": "Read more"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_2_heading",
+      "label": "Heading",
+      "default": "Card heading"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_teaser",
+      "label": "Teaser text",
+      "default": "Add a short description to give your visitors a preview of what they'll find on this page."
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "card_2_button_text",
+      "label": "Button text",
+      "default": "Read more"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_3_heading",
+      "label": "Heading",
+      "default": "Card heading"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_teaser",
+      "label": "Teaser text",
+      "default": "Add a short description to give your visitors a preview of what they'll find on this page."
+    },
+    {
+      "type": "url",
+      "id": "card_3_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "card_3_button_text",
+      "label": "Button text",
+      "default": "Read more"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content carousel"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

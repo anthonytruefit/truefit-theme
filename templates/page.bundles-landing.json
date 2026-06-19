@@ -1,0 +1,407 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "b2d5698c-1a68-41b1-be47-d5d2db3e5564": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fuel Your Routine",
+            "heading_size": "h1",
+            "screen_reader_only": false
+          }
+        },
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-1": {
+          "type": "text",
+          "settings": {
+            "text": "Powerful pairings made to energize your day, enhance your workouts, and simplify your routine.",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-0",
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-1"
+      ],
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/amino-original-banner_1c041d55-a81d-4a48-861a-7fc3978b97a0.jpg",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "693c0aa6-535e-4381-a333-8dc3be86c2c4": {
+      "type": "amino-product-grid",
+      "disabled": true,
+      "settings": {
+        "product_list": [
+          "aminolean-x-hot-girl-pickles-pre-workout",
+          "aminolean-pink-lemonade",
+          "aminolean-pre-workout-berry-alixir",
+          "aminolean-fruit-punch",
+          "aminolean-blackberry-pomegranate",
+          "aminolean-blue-raspberry",
+          "aminolean-watermelon",
+          "aminolean-pre-workout-cherry-lime",
+          "vegan-aminolean-acai",
+          "vegan-aminolean-pineapple-coconut",
+          "vegan-aminolean-mango"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "multirow_8Eni4F": {
+      "type": "multirow",
+      "blocks": {
+        "row_xgeyX6": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_CreatineBundle_NF_PL_30Serv_60Serv_01_00_Front_HighRes_V1.png",
+            "caption": "Save 20%",
+            "heading": "Peak Performance Bundle",
+            "text": "<p>Bundle includes:<br/>1 AminoLean Pre Workout Powder<br/>1 AminoLean Creatine<br/></p>",
+            "button_label": "Build Your Bundle",
+            "button_link": "https://rspnutrition.com/a/bundles/peak-performance-bundle-d5gk"
+          }
+        },
+        "row_d3CPDL": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_TrueFitGrassFedBundle_PL_CH_30Serv_20Serv_01_04_Front_HighRes_V1_6a20bd6f-bf47-4639-b69d-bd987b20eeb0.png",
+            "caption": "Save 20%",
+            "heading": "Energize & Nourish Bundle",
+            "text": "<p>Bundle includes:<br/>1 AminoLean Pre Workout Powder<br/>1 TrueFit Protein Powder<br/></p>",
+            "button_label": "Build Your Bundle",
+            "button_link": "https://rspnutrition.com/a/bundles/energize-&-nourish-bundle-d5gu"
+          }
+        },
+        "row_NN4iiR": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRTD_EnergyBundle_PL_FP_12Pack-Tray_30Serv_10_01_Front_HighRes.png",
+            "caption": "Save 20%",
+            "heading": "Good Energy Only Bundle",
+            "text": "<p>Bundle includes:<br/>1 AminoLean Pre Workout Powder<br/>1 AminoLean Energy Drinks (12 Pack)</p>",
+            "button_label": "Build Your Bundle",
+            "button_link": "https://rspnutrition.com/a/bundles/good-energy-only-bundle-d5gz"
+          }
+        }
+      },
+      "block_order": [
+        "row_xgeyX6",
+        "row_d3CPDL",
+        "row_NN4iiR"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "amino-max-image-banner": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "template--15513815318573__amino-max-image-banner-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "AminoLean Energy Drink",
+            "heading_size": "h0",
+            "screen_reader_only": false
+          }
+        },
+        "template--15513815318573__amino-max-image-banner-1": {
+          "type": "text",
+          "settings": {
+            "text": "Anytime energy throughout the day to keep you going.",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815318573__amino-max-image-banner-0",
+        "template--15513815318573__amino-max-image-banner-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/energy-coll-bg_ffcf1c2a-02cf-4aa9-8086-58e9b19c6066.jpg",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "f87218f1-bd09-470d-af35-fb82cab4fa92": {
+      "type": "amino-product-grid",
+      "disabled": true,
+      "settings": {
+        "product_list": [
+          "aminolean-energy-drink-pink-lemonade",
+          "aminolean-energy-drink-berry-alixir",
+          "aminolean-energy-drink-cherry-lime",
+          "aminolean-energy-drink-peach-bellini",
+          "aminolean-energy-drink-strawberry-watermelon",
+          "aminolean-energy-drink-summer-variety-pack",
+          "aminolean-energy-drink-variety-pack"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "amino-energy-drink-image-banner": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "template--15513815318573__amino-energy-drink-image-banner-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "AminoLean Recovery",
+            "heading_size": "h0",
+            "screen_reader_only": false
+          }
+        },
+        "template--15513815318573__amino-energy-drink-image-banner-1": {
+          "type": "text",
+          "settings": {
+            "text": "Caffeine-free post workout recovery for muscle recovery, immune support, and electrolytes.",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815318573__amino-energy-drink-image-banner-0",
+        "template--15513815318573__amino-energy-drink-image-banner-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/RSP_Feb25_February_25_2022MROY1384.jpg",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "6d6abed8-0679-458c-8269-caf8dd732a14": {
+      "type": "amino-product-grid",
+      "disabled": true,
+      "settings": {
+        "product_list": [
+          "aminolean-recovery-tropical-island-punch",
+          "aminolean-recovery-blood-orange",
+          "aminolean-recovery-blue-raspberry",
+          "aminolean-recovery-hibiscus-lemonade"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "92fab6df-0fbc-4f51-9267-01b5588fdbc9": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "80055c9e-f3b5-462c-aea8-4548c01a63b3": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "AminoLean Merch & More",
+            "heading_size": "h0",
+            "screen_reader_only": false
+          }
+        },
+        "95eb5fec-aa39-4c59-916b-e795fefb3b5c": {
+          "type": "text",
+          "settings": {
+            "text": "Merch and accessories for good energy only, everywhere you go!",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "80055c9e-f3b5-462c-aea8-4548c01a63b3",
+        "95eb5fec-aa39-4c59-916b-e795fefb3b5c"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/23_AMINOLEAN_CHERRYLIME_ShopAllPage_V1.png",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "a6edd5ec-4082-4eff-b9c0-ba097fbf36e6": {
+      "type": "amino-product-grid",
+      "disabled": true,
+      "settings": {
+        "product_list": [
+          "aminolean-tote-bag",
+          "aminolean-frother",
+          "go-getter-sweater"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "b2d5698c-1a68-41b1-be47-d5d2db3e5564",
+    "693c0aa6-535e-4381-a333-8dc3be86c2c4",
+    "multirow_8Eni4F",
+    "amino-max-image-banner",
+    "f87218f1-bd09-470d-af35-fb82cab4fa92",
+    "amino-energy-drink-image-banner",
+    "6d6abed8-0679-458c-8269-caf8dd732a14",
+    "92fab6df-0fbc-4f51-9267-01b5588fdbc9",
+    "a6edd5ec-4082-4eff-b9c0-ba097fbf36e6"
+  ]
+}

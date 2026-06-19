@@ -1,0 +1,176 @@
+{% doc %}
+  @prompt
+    basic image block and the image links to a product.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-image-link-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-product-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-product-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-product-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: {{ block.settings.aspect_ratio }};
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.border_radius }}px;
+    position: relative;
+  }
+
+  .ai-product-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-image-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+{% if block.settings.product_link %}
+  <a
+    href="{{ block.settings.product_link }}"
+    class="ai-product-image-link-{{ ai_gen_id }}"
+    {{ block.shopify_attributes }}
+  >
+    <div class="ai-product-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 2000 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-product-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-product-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-product-image-empty-state-{{ ai_gen_id }}">
+            Next, add an image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </a>
+{% else %}
+  <div
+    class="ai-product-image-link-{{ ai_gen_id }}"
+    {{ block.shopify_attributes }}
+  >
+    <div class="ai-product-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 2000 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-product-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-product-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-product-image-empty-state-{{ ai_gen_id }}">
+            Next, add an image and product link
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product image link",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product link"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "1/1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "16/9",
+          "label": "Widescreen (16:9)"
+        },
+        {
+          "value": "3/4",
+          "label": "Portrait (3:4)"
+        }
+      ],
+      "default": "1/1"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product image link"
+    }
+  ]
+}
+{% endschema %}

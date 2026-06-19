@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "530b11bf-244d-4cd8-80e6-f8b58069a1f3": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "530b11bf-244d-4cd8-80e6-f8b58069a1f3"
+      ],
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 50,
+        "mobile_image": "{{ collection.image }}",
+        "mobile_image_overlay_background": "",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image": "{{ collection.image }}",
+        "desktop_image_overlay_background": "",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 450,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

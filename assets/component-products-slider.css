@@ -1,0 +1,85 @@
+@media screen and (min-width: 990px) {
+  .product-line-slider__title.title-wrapper--self-padded-tablet-down {
+    padding: 0 5rem;
+  }
+
+  .product-line-slider__wrapper slider-component:not(.page-width-desktop) {
+    padding: 0;
+  }
+
+  .product-line-slider__wrapper--full-width slider-component:not(.slider-component-desktop) {
+    padding: 0 2.4rem;
+    max-width: none;
+  }
+}
+
+.product-line-slide {
+  position: relative;
+}
+
+.product-line-slide a:after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  outline-offset: 0.3rem;
+}
+
+.product-line-slide .media {
+  background-color: #efefef;
+}
+
+.product-line-slide__heading {
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  letter-spacing: 0.01em;
+  line-height: 133%;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+}
+.product-line-slide__heading + .product-line-slide__text {
+  margin-top: 0.6rem;
+}
+
+.product-line-slider {
+  --grid-mobile-horizontal-spacing: 2.4rem;
+}
+
+@media screen and (max-width: 989px) {
+  .product-line-slider.slider.slider--tablet {
+    scroll-padding-left: auto;
+  }
+
+  .product-line-slider.slider--tablet:after {
+    content: '';
+    width: 0;
+    padding-left: 2.4rem;
+    margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
+  }
+
+  .product-line-slider.slider--tablet .product-line-slide:first-child {
+    margin-left: var(--grid-mobile-horizontal-spacing);
+    scroll-margin-left: var(--grid-mobile-horizontal-spacing);
+  }
+
+  .product-line-slider.slider--tablet .product-line-slide {
+    scroll-snap-align: center;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .product-line-slider.slider--tablet.grid--peek .product-line-slide.grid__item {
+    width: calc(60% - var(--grid-mobile-horizontal-spacing) * 6 / 5);
+    min-width: 20rem;
+    max-width: 34rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 989px) {
+  .product-line-slider.slider--tablet.grid--peek .product-line-slide.grid__item {
+    width: calc(40% - var(--grid-desktop-horizontal-spacing) * 1.2);
+  }
+}

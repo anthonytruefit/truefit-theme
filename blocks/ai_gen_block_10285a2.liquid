@@ -1,0 +1,311 @@
+{% doc %}
+  @prompt
+    I want to have a video embedded on the left side of the screen and a picture on the right side of the screen. Responsive to both desktop and mobile with dynamic background color.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-image-split-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-video-image-split__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-video-image-split__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.gap }}px;
+    align-items: center;
+  }
+
+  .ai-video-image-split__video-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: {{ block.settings.media_border_radius }}px;
+    background-color: #f4f4f4;
+  }
+
+  .ai-video-image-split__video-wrapper-{{ ai_gen_id }} iframe,
+  .ai-video-image-split__video-wrapper-{{ ai_gen_id }} video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .ai-video-image-split__video-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-video-image-split__video-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+  }
+
+  .ai-video-image-split__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    border-radius: {{ block.settings.media_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-video-image-split__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.media_border_radius }}px;
+  }
+
+  .ai-video-image-split__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.media_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-video-image-split__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-video-image-split__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.gap_mobile }}px;
+    }
+
+    {% if block.settings.mobile_layout == 'image_first' %}
+      .ai-video-image-split__video-column-{{ ai_gen_id }} {
+        order: 2;
+      }
+      .ai-video-image-split__image-column-{{ ai_gen_id }} {
+        order: 1;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<video-image-split-{{ ai_gen_id }}
+  class="ai-video-image-split-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-image-split__container-{{ ai_gen_id }}">
+    <div class="ai-video-image-split__grid-{{ ai_gen_id }}">
+      <div class="ai-video-image-split__video-column-{{ ai_gen_id }}">
+        <div class="ai-video-image-split__video-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.video_url != blank %}
+            {% if block.settings.video_url contains 'youtube.com' or block.settings.video_url contains 'youtu.be' %}
+              {% assign video_id = block.settings.video_url | split: 'v=' | last | split: '/' | last | split: '&' | first %}
+              <iframe
+                src="https://www.youtube.com/embed/{{ video_id }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            {% elsif block.settings.video_url contains 'vimeo.com' %}
+              {% assign video_id = block.settings.video_url | split: '/' | last %}
+              <iframe
+                src="https://player.vimeo.com/video/{{ video_id }}"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            {% else %}
+              <video controls>
+                <source src="{{ block.settings.video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {% endif %}
+          {% else %}
+            <div class="ai-video-image-split__video-placeholder-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-video-image-split__image-column-{{ ai_gen_id }}">
+        <div class="ai-video-image-split__image-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.image %}
+            <img
+              src="{{ block.settings.image | image_url: width: 1000 }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              class="ai-video-image-split__image-{{ ai_gen_id }}"
+            >
+          {% else %}
+            <div class="ai-video-image-split__image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</video-image-split-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoImageSplit{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.init();
+      }
+
+      init() {
+        const videoWrapper = this.querySelector('.ai-video-image-split__video-wrapper-{{ ai_gen_id }}');
+        if (videoWrapper) {
+          const iframe = videoWrapper.querySelector('iframe');
+          if (iframe) {
+            iframe.addEventListener('load', function() {
+              videoWrapper.classList.add('loaded');
+            });
+          }
+        }
+      }
+    }
+
+    customElements.define('video-image-split-{{ ai_gen_id }}', VideoImageSplit{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video and image split",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Supports YouTube, Vimeo, or direct video file URLs"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between items",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Gap on mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "video_first",
+          "label": "Video first"
+        },
+        {
+          "value": "image_first",
+          "label": "Image first"
+        }
+      ],
+      "default": "video_first"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "media_border_radius",
+      "label": "Media border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video and image split"
+    }
+  ]
+}
+{% endschema %}

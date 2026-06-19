@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "552a2db6-3f12-4f45-93e3-98c4a7ec7f36": {
+          "type": "image_title_card",
+          "settings": {
+            "image_height": "adapt",
+            "show_category": true,
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "disabled": true,
+          "settings": {
+            "image_height": "medium"
+          }
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "552a2db6-3f12-4f45-93e3-98c4a7ec7f36",
+        "featured_image",
+        "title",
+        "content"
+      ],
+      "settings": {}
+    },
+    "aa27e808-d884-464e-99c2-e05ca2f69f4c": {
+      "type": "featured-collection-rsp",
+      "settings": {
+        "title": "Recommended Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "content_alignment": "tw-text-center",
+        "collection": "",
+        "product_list": "{{ article.metafields.custom_theme.recommended_products.value }}",
+        "product_list_fallback": [
+          "aminolean-energy-drink-peach-bellini",
+          "aminolean-pre-workout-cherry-lime",
+          "aminolean-energy-drink-variety-pack",
+          "truefit-vanilla",
+          "aminolean-pink-lemonade",
+          "truefit-plant-salted-chocolate"
+        ],
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "card_cta_label": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "aa27e808-d884-464e-99c2-e05ca2f69f4c"
+  ]
+}

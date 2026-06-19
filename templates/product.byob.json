@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16788576269eec43eb": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "byob-empty-state-hint": {
+      "type": "byob-empty-state-hint",
+      "settings": {}
+    },
+    "1760982328f27872bf": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17609823703ea04a34": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1760982395570ef941": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17609824136308150d": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "16788576269eec43eb",
+    "byob-empty-state-hint",
+    "1760982328f27872bf",
+    "17609823703ea04a34",
+    "1760982395570ef941",
+    "17609824136308150d"
+  ]
+}

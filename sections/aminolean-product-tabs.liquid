@@ -1,0 +1,189 @@
+<script src="{{ 'tabbed-content.js' | asset_url }}" defer="defer"></script>
+{{ 'component-tabbed-content.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width product-tabs-grid section-{{ section.id }}-padding">
+  <tabbed-content class="tabbed-content">
+    <div class="tabs-list" role="tablist">
+      {%- for block in section.blocks -%}
+        <button
+          aria-controls="TabContent-{{ block.id }}"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          id="Tab-{{ block.id }}"
+          role="tab"
+          class="tab caption"
+          tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+        >
+          {{ block.settings.title }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      <div
+        aria-labelledby="Tab-{{ block.id }}"
+        class="tab-panel tab-panel--{{ block.type | escape }}"
+        id="TabContent-{{ block.id }}"
+        role="tabpanel"
+        {% unless forloop.first %}
+          hidden
+        {% endunless %}
+        {{ block.shopify_attributes }}
+      >
+        {%- case block.type -%}
+          {%- when 'description_tab' -%}
+            <div class="product__description rte {% if block.settings.first_paragraph_only %}rte--first-paragraph-only{% endif %}">
+              {%- if block.settings.use_product_description -%}
+                {{ product.description }}
+              {%- else -%}
+                {{ block.settings.text }}
+              {%- endif -%}
+            </div>
+          {%- when 'nutrition_tab' -%}
+            <div class="nutritional-facts">
+              <h2>Supplement Facts</h2>
+              <div class="serving-information">
+                <p>Serving Size: {{ product.metafields.nutrition.servings }}</p>
+                <p>Servings Per Container: {{ product.metafields.nutrition.serving_per_container }}</p>
+              </div>
+              <div class="content">
+                {{ product.metafields.nutrition.nutritional_facts }}
+                {% if product.metafields.nutrition.other_ingredients != blank %}
+                  <div class="other-ingredients">
+                    {{- product.metafields.nutrition.other_ingredients -}}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            {% if product.metafields.warning.body != blank %}
+              <div class="warning">
+                <h4>WARNING</h4>
+                <p>{{- product.metafields.warning.body -}}</p>
+              </div>
+            {% endif %}
+          {%- when 'directions_tab' -%}
+            <div class="rte">
+              {{- product.metafields.directions.body -}}
+            </div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </tabbed-content>
+</div>
+
+{% schema %}
+{
+  "name": "AminoLean: Product Tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "description_tab",
+      "name": "Description Tab",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text",
+          "default": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_description",
+          "label": "Use product description",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "id": "first_paragraph_only",
+          "type": "checkbox",
+          "label": "Show first paragraph only",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "nutrition_tab",
+      "name": "Nutrition Tab",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text",
+          "default": "Nutrition"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "directions_tab",
+      "name": "Directions Tab",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text",
+          "default": "Directions"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AminoLean: Product Tabs",
+      "category": "Product",
+      "blocks": [{ "type": "description_tab" }, { "type": "nutrition_tab" }, { "type": "directions_tab" }]
+    }
+  ]
+}
+{% endschema %}

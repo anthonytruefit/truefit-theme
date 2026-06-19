@@ -1,0 +1,249 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "b2d5698c-1a68-41b1-be47-d5d2db3e5564": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>TrueFit Gut Healthy Protein Powder</strong>",
+            "heading_size": "h1",
+            "screen_reader_only": false
+          }
+        },
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-1": {
+          "type": "text",
+          "settings": {
+            "text": "The ideal balance of all-natural protein, fruit and vegetables, fiber, healthy fats, and probiotics in one convenient protein shake.",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-0",
+        "template--15513815318573__b2d5698c-1a68-41b1-be47-d5d2db3e5564-1678222714aba18be6-1"
+      ],
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/25_TrueFitDubaiChoc_Description3.jpg",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "693c0aa6-535e-4381-a333-8dc3be86c2c4": {
+      "type": "amino-product-grid",
+      "settings": {
+        "product_list": [
+          "truefit-vanilla",
+          "truefit-chocolate",
+          "truefit-protein-powder-dubai-chocolate",
+          "truefit-flavor-bundle-1-chocolate-1-vanilla"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "e5954de9-97fd-4827-a60d-8abbdbbd79d3": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "374f72f4-035b-4e5f-b2dc-514b54622acb": {
+          "type": "heading",
+          "settings": {
+            "heading": "TrueFit Plant Protein Powder",
+            "heading_size": "h1",
+            "screen_reader_only": false
+          }
+        },
+        "66eb5ca1-c9e2-4dea-babc-12c4f845f7e9": {
+          "type": "text",
+          "settings": {
+            "text": "The ideal balance of vegan protein, fruit and vegetables, fiber, healthy fats, and probiotics in one convenient protein shake.",
+            "text_style": "body",
+            "screen_reader_only": false
+          }
+        }
+      },
+      "block_order": [
+        "374f72f4-035b-4e5f-b2dc-514b54622acb",
+        "66eb5ca1-c9e2-4dea-babc-12c4f845f7e9"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 100,
+        "mobile_image": "shopify://shop_images/RSP_Kitchen_May3_VSR_0130.jpg",
+        "mobile_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%)",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 1300,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "5472f330-3b91-4e82-a023-0828ccb79e23": {
+      "type": "amino-product-grid",
+      "disabled": true,
+      "settings": {
+        "product_list": [
+          "truefit-plant-creamy-vanilla",
+          "truefit-plant-salted-chocolate"
+        ],
+        "collection": "",
+        "product_title_use_flavor": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "amino_icon_grid_7cP4aW": {
+      "type": "amino-icon-grid",
+      "blocks": {
+        "feature_GHTVRM": {
+          "type": "feature",
+          "settings": {
+            "icon": "muscle",
+            "text": "<p>25g Grass-Fed Whey Protein</p>",
+            "icon_name": ""
+          }
+        },
+        "feature_PVTgVW": {
+          "type": "feature",
+          "settings": {
+            "icon": "gut_health",
+            "text": "<p>Prebiotic Fiber + Probiotics</p>",
+            "icon_name": ""
+          }
+        },
+        "feature_KEJqtj": {
+          "type": "feature",
+          "settings": {
+            "icon": "vegan",
+            "text": "<p>Non-GMO Superfoods</p>",
+            "icon_name": ""
+          }
+        },
+        "feature_Bxj8ka": {
+          "type": "feature",
+          "settings": {
+            "icon": "scale",
+            "text": "<p>Low Calorie Meal Replacement</p>",
+            "icon_name": ""
+          }
+        },
+        "feature_qhDyER": {
+          "type": "feature",
+          "settings": {
+            "icon": "no_artificial_flavors",
+            "text": "<p>No Artificial Ingredients</p>",
+            "icon_name": ""
+          }
+        },
+        "feature_8fJJw6": {
+          "type": "feature",
+          "settings": {
+            "icon": "gluten_free",
+            "text": "<p>Gluten Free</p>",
+            "icon_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_GHTVRM",
+        "feature_PVTgVW",
+        "feature_KEJqtj",
+        "feature_Bxj8ka",
+        "feature_qhDyER",
+        "feature_8fJJw6"
+      ],
+      "name": "AminoLean: Icon + Features Grid",
+      "settings": {
+        "section_color_scheme": "",
+        "heading": "",
+        "subheading": "",
+        "columns_mobile": 2,
+        "item_max_width_mobile": 140,
+        "container_max_width_mobile": 320,
+        "columns_desktop": 3,
+        "item_max_width_desktop": 140,
+        "container_max_width_desktop": 620,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "b2d5698c-1a68-41b1-be47-d5d2db3e5564",
+    "693c0aa6-535e-4381-a333-8dc3be86c2c4",
+    "e5954de9-97fd-4827-a60d-8abbdbbd79d3",
+    "5472f330-3b91-4e82-a023-0828ccb79e23",
+    "amino_icon_grid_7cP4aW"
+  ]
+}

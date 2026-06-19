@@ -1,0 +1,95 @@
+/* RSP Overrides */
+.footer--rsp .footer-block--brand_information {
+  order: -1;
+}
+.footer--rsp .footer-block__details-content {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 750px) {
+  .footer--rsp .footer-block__details-content.rte a:hover {
+    color: rgb(var(--color-foreground));
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+  }
+}
+.footer--rsp .footer-block__image-wrapper {
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+  margin-bottom: max(calc(2rem + var(--media-shadow-vertical-offset) * var(--media-shadow-visible)), 2rem);
+}
+.footer--rsp a.footer-block__image-wrapper {
+  display: block;
+}
+.footer--rsp .copyright__content {
+  display: block;
+}
+.footer--rsp .copyright__content a {
+  display: inline-block;
+  padding: 0.6rem 0;
+}
+.footer--rsp .policies li:first-child::before {
+  display: none;
+}
+.footer--rsp .footer .disclosure__link {
+  padding: 0.95rem 3.5rem 0.95rem 2rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.footer--rsp .disclosure__link:hover {
+  color: rgb(var(--color-foreground));
+}
+
+.footer--rsp .disclosure__link--active {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 749px) {
+  .footer--rsp .footer-block.grid__item {
+    margin: 2.4rem 0;
+  }
+
+  .footer.footer--rsp .grid {
+    display: flex;
+  }
+}
+
+.footer--rsp .footer-block__details-content .list-menu__item--link {
+  font-size: 1.8rem;
+  letter-spacing: 0.01em;
+}
+
+.footer--rsp .footer-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer--rsp .footer-block__brand-info.align-content--center .list-social {
+  justify-content: center;
+}
+
+@media screen and (max-width: 749px) {
+  .footer--rsp .footer-block--menu.align-content--center .list-menu__item {
+    display: block;
+  }
+}
+
+.footer--rsp .footer-block__details-content.rte a {
+  text-decoration: none;
+}
+
+.footer--rsp .list-social__item .icon {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.footer--rsp .list-social__link {
+  display: inline-flex;
+  padding: 0.4rem;
+}
+
+.footer--rsp .footer-block__details-content > li {
+  margin-right: 0;
+}

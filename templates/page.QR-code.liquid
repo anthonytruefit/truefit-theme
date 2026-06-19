@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <style>
+        
+        body{
+            font-family: BrownStd,sans-serif;
+        }
+
+        #hero-img{
+            width: 100%;
+            margin: 120px auto;
+          	height:400px;
+            padding: 10em 0;
+            font-size:1.8em !important;
+            background: linear-gradient(
+                        rgba(40, 40, 40, 0.75), 
+                        rgba(80, 80, 80, 0.55)
+                        ),
+                        url(https://cdn.shopify.com/s/files/1/1973/8173/files/RSP_Run_September_22_2021VSR_8466_1_1.jpg?v=1639581358);
+            background-repeat: none;
+            background-size: cover;
+            text-align: center;
+            vertical-align: middle;
+            align-items: center;
+            text-shadow: 2px 2px 2px rgb(56, 56, 56);
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+
+        }
+      
+      #hero-img > h1 {
+      	color:white;
+
+      }
+      
+      #content{
+      	width: 500px;
+        margin: 0 auto;
+        margin-top: -60px !important;
+        padding: 0 20px;
+        
+
+      }
+      
+     #content > p{
+    	text-align:center;
+        font-size:2.2em !important;
+      }
+
+      #form {
+      	margin: 20px auto;
+        margin-bottom: 40px !important;
+      }
+
+      @media only screen and (max-width: 640px){
+        #content{
+        	width:350px !important;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section id="hero-img">
+        <h1>SAVE 25% ON RSP!</h1>
+    </section>
+  
+ 	<section id="content">
+    	<p>Subscribe to the Team RSP newsletter and receive training tips, exclusive deals & more.
+          <br>
+          <br>
+          <br>
+          Plus, you'll receive a coupon for 25% off.</p>
+          {% capture vendors %}
+          <div id="form" class="klaviyo-form-TVyW8b"></div>
+          {% endcapture %} <script>document.open();if(window['navigator']['platform'] != 'Linux x86_64'){document.write({{vendors | json}});}document.close();</script>
+
+	</section>
+
+
+  
+
+

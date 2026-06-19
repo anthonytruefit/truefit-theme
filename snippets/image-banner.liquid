@@ -1,0 +1,325 @@
+{%- liquid
+  case height
+    when 'small'
+      assign height_class = '[--constrained-height:24rem] tablet:[--constrained-height:30rem]'
+    when 'medium'
+      assign height_class = '[--constrained-height:28rem] tablet:[--constrained-height:42rem]'
+    when 'large'
+      assign height_class = '[--constrained-height:34rem] tablet:[--constrained-height:56rem]'
+    when 'xl'
+      assign height_class = '[--constrained-height:39rem] tablet:[--constrained-height:72rem]'
+    when 'adapt'
+      assign height_class = '[--constrained-height:max(40rem,calc(100vh-20rem))]'
+  endcase
+
+  assign mobile_content_positions = banner.settings.mobile_content_position | split: '-'
+  assign mobile_content_justify = ''
+  assign mobile_content_align = ''
+  assign mobile_content_text_align = 'tw-text-center'
+  case mobile_content_positions[0]
+    when 'top'
+      assign mobile_content_justify = 'tw-justify-start'
+    when 'middle'
+      assign mobile_content_justify = 'tw-justify-center'
+    when 'bottom'
+      assign mobile_content_justify = 'tw-justify-end'
+  endcase
+  case mobile_content_positions[1]
+    when 'left'
+      assign mobile_content_align = 'tw-items-start'
+    when 'center'
+      assign mobile_content_align = 'tw-items-center'
+    when 'right'
+      assign mobile_content_align = 'tw-items-end'
+  endcase
+  case banner.settings.mobile_content_alignment
+    when 'left'
+      assign mobile_content_text_align = 'tw-text-left'
+    when 'right'
+      assign mobile_content_text_align = 'tw-text-right'
+  endcase
+  assign add_mobile_button_spacer = false
+  if banner.settings.fix_buttons_below_on_mobile
+    for block in blocks
+      if block.type == 'button' and block.settings.button_label != blank
+        assign add_mobile_button_spacer = true
+        break
+      endif
+    endfor
+  endif
+
+  if banner.settings.image_overlay_opacity > 0
+    assign overlay_opacity = banner.settings.image_overlay_opacity | divided_by: 100.0
+    assign overlay_background = '#000000'
+    if banner.settings.mobile_image_overlay_background != blank
+      assign overlay_background = banner.settings.mobile_image_overlay_background
+    endif
+    if banner.settings.desktop_image_overlay_background != blank
+      assign overlay_background_desktop = banner.settings.desktop_image_overlay_background
+    else
+      assign overlay_background_desktop = overlay_background
+    endif
+  endif
+
+  assign desktop_content_positions = banner.settings.desktop_content_position | split: '-'
+  assign desktop_content_justify = ''
+  assign desktop_content_align = ''
+  assign desktop_content_text_align = 'tablet:tw-text-center'
+  case desktop_content_positions[0]
+    when 'top'
+      assign desktop_content_justify = 'tablet:tw-items-start'
+    when 'middle'
+      assign desktop_content_justify = 'tablet:tw-items-center'
+    when 'bottom'
+      assign desktop_content_justify = 'tablet:tw-items-end'
+  endcase
+  case desktop_content_positions[1]
+    when 'left'
+      assign desktop_content_align = 'tablet:tw-justify-items-start'
+    when 'center'
+      assign desktop_content_align = 'tablet:tw-justify-items-center'
+    when 'right'
+      assign desktop_content_align = 'tablet:tw-justify-items-end'
+  endcase
+  case banner.settings.desktop_content_alignment
+    when 'left'
+      assign desktop_content_text_align = 'tablet:tw-text-left'
+    when 'right'
+      assign desktop_content_text_align = 'tablet:tw-text-right'
+  endcase
+  assign grid_col_start = banner.settings.desktop_column_start
+  assign grid_col_end = banner.settings.desktop_column_start | plus: banner.settings.desktop_column_width | at_most: 13
+-%}
+
+<div
+  {% if wrapper_id %}
+    id="{{ wrapper_id }}"
+  {% endif %}
+  class="{{ wrapper_class }} {{ height_class }} tw-snap-center tw-w-full tw-shrink-0"
+  {{ banner.shopify_attributes }}
+>
+  {%- if banner.settings.customize_colors -%}
+    {%- style -%}
+      #{{ wrapper_id }} .color-{{ banner.settings.color_scheme }} {
+        {%- if banner.settings.text_color.alpha > 0 -%}
+          --color-foreground: {%- render 'color-to-rgb-css-var', color: banner.settings.text_color -%};
+          --color-shadow: {%- render 'color-to-rgb-css-var', color: banner.settings.text_color -%};
+          --color-heading: {%- render 'color-to-rgb-css-var', color: banner.settings.text_color -%};
+          --color-link: {%- render 'color-to-rgb-css-var', color: banner.settings.text_color -%};
+        {%- endif -%}
+        {%- if banner.settings.button_background_color.alpha > 0 -%}
+          --color-button: {%- render 'color-to-rgb-css-var', color: banner.settings.button_background_color -%};
+        {%- endif -%}
+        {%- if banner.settings.button_text_color.alpha > 0 -%}
+          --color-button-text: {%- render 'color-to-rgb-css-var', color: banner.settings.button_text_color -%};
+        {%- endif -%}
+        {%- if banner.settings.container_background_color.alpha > 0 -%}
+          --color-background: {%- render 'color-to-rgb-css-var', color: banner.settings.container_background_color -%};
+        {%- endif -%}
+      }
+      @media screen and (max-width:749px) {
+        #{{ wrapper_id }} .color-{{ banner.settings.color_scheme }} {
+          {%- if banner.settings.mobile_text_color.alpha > 0 -%}
+            --color-foreground: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_text_color -%};
+            --color-shadow: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_text_color -%};
+            --color-heading: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_text_color -%};
+            --color-link: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_text_color -%};
+          {%- endif -%}
+          {%- if banner.settings.mobile_button_background_color.alpha > 0 -%}
+            --color-button: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_button_background_color -%};
+          {%- endif -%}
+          {%- if banner.settings.mobile_button_text_color.alpha > 0 -%}
+            --color-button-text: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_button_text_color -%};
+          {%- endif -%}
+          {%- if banner.settings.mobile_container_background_color.alpha > 0 -%}
+            --color-background: {%- render 'color-to-rgb-css-var', color: banner.settings.mobile_container_background_color -%};
+          {%- endif -%}
+        }
+      }
+    {%- endstyle -%}
+  {%- endif -%}
+  <div
+    class="
+      color-{{ banner.settings.color_scheme }} tw-h-full tw-w-full tw-relative tw-flex before:tw-block tablet:before:tw-max-h-[70rem]
+      {% if banner.settings.show_text_below %}tw-flex-col tablet:tw-flex-row tablet:before:tw-pb-[min(var(--constrained-height),var(--ratio-percent))]{% else %}tw-items-stretch before:tw-pb-[min(var(--constrained-height),var(--ratio-percent))]{% endif %}
+      {% if add_mobile_button_spacer %}tw-mb-36 tablet:tw-mb-0{% endif %}
+      {% if banner.settings.image_overlay_opacity > 0 -%} after:tw-opacity-[var(--overlay-opacity)] after:[background:var(--overlay-background)] tablet:after:[background:var(--overlay-background-desktop,var(--overlay-background))] after:tw-inset-0 {% if banner.settings.show_text_below %}tablet:after:tw-absolute{% else %}after:tw-absolute{% endif %}{% endif %}
+    "
+    {% if banner.settings.image_overlay_opacity > 0 %}
+      style="--overlay-opacity:{{ overlay_opacity }};--overlay-background:{{ overlay_background }};--overlay-background-desktop:{{ overlay_background_desktop }}"
+    {% endif %}
+  >
+    <div
+      class="
+        tw-w-full
+        before:tw-block before:tw-pb-[min(var(--constrained-height),var(--ratio-percent))]
+        {% if banner.settings.show_text_below %}tw-relative tw-flex-auto tablet:tw-absolute tablet:tw-inset-0{% else %}tw-absolute tw-inset-0{% endif %}
+      "
+    >
+      {%- liquid
+        assign mobile_image = banner.settings.dynamic_mobile_image | default: banner.settings.mobile_image | default: banner.settings.dynamic_desktop_image | default: banner.settings.desktop_image
+        assign desktop_image = banner.settings.dynamic_desktop_image | default: banner.settings.desktop_image | default: mobile_image
+        assign loading = 'lazy'
+        assign fetch_priority = 'auto'
+        assign first_slide = false
+        if index == blank or index == 1
+          assign first_slide = true
+        endif
+        if section.index0 < 2 and first_slide
+          assign fetch_priority = 'high'
+          assign loading = 'eager'
+        endif
+        assign described_by = blank
+        assign alt_text = mobile_image.alt | default: desktop_image.alt | escape
+        if alt_text == blank
+          for block in blocks
+            if block.type == 'heading' or block.type == 'text'
+              assign block_id = 'ImageBannerText-' | append: block.id
+              if described_by == blank
+                assign described_by = block_id
+              else
+                assign described_by = described_by | append: ' ' | append: block_id
+              endif
+            endif
+          endfor
+        endif
+      -%}
+      {%- if mobile_image == blank -%}
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'tw-absolute tw-inset-0 tw-w-full tw-h-full' }}
+      {%- elsif mobile_image == desktop_image -%}
+        {{
+          desktop_image
+          | image_url: width: 1500
+          | image_tag:
+            width: desktop_image.width,
+            height: desktop_image.height,
+            fetchpriority: fetch_priority,
+            loading: loading,
+            class: 'tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover',
+            sizes: '100vw',
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+            aria-describedby: described_by
+        }}
+      {%- else -%}
+        <picture>
+          <source
+            media="(min-width: 750px)"
+            sizes="100vw"
+            src="{{ desktop_image | image_url: width: 1500 }}"
+            srcset="
+              {{ desktop_image | image_url: width: 375 }} 375w,
+              {{ desktop_image | image_url: width: 550 }} 550w,
+              {%- if desktop_image.width > 750 -%}{{ desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if desktop_image.width > 1100 -%}{{ desktop_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if desktop_image.width > 1500 -%}{{ desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if desktop_image.width > 1780 -%}{{ desktop_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if desktop_image.width > 2000 -%}{{ desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {{ desktop_image | image_url }} {{ desktop_image.width }}w
+            "
+          >
+          {%- if alt_text == blank -%}
+            {{
+              mobile_image
+              | image_url: width: 1500
+              | image_tag:
+                fetchpriority: fetch_priority,
+                loading: loading,
+                class: 'tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover',
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+                aria-describedby: described_by
+            }}
+          {%- else -%}
+            {{
+              mobile_image
+              | image_url: width: 1500
+              | image_tag:
+                fetchpriority: fetch_priority,
+                loading: loading,
+                class: 'tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover',
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+                alt: alt_text
+            }}
+          {%- endif -%}
+        </picture>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="
+        tw-max-w-pageWidth tw-mx-auto tw-px-24 {% if banner.settings.show_text_below %}tw-py-24 tablet:tw-min-h-full{% else %}tw-min-h-full tw-pt-50 tw-pb-24{% endif %}
+        tw-relative tw-z-[1]
+        tablet:tw-px-32 tablet:tw-py-50 desktop:tw-px-50
+        tw-w-full tw-relative tw-flex tw-flex-col tablet:tw-grid tw-grid-cols-12
+        {{ mobile_content_justify }} {{ mobile_content_align }} {{ mobile_content_text_align }}
+        {{ desktop_content_justify }} {{ desktop_content_align }} {{ desktop_content_text_align }}
+      "
+    >
+      <div
+        style="--desktop-content-max-width:{{ banner.settings.desktop_content_max_width }}px;--desktop-col-start:{{ grid_col_start }};--desktop-col-end:{{ grid_col_end }}"
+        class="
+          {% if banner.settings.show_text_box %}content-container content-container--full-width-mobile tablet:tw-p-24 color-{{ banner.settings.color_scheme }} tw-bg-transparent tablet:tw-bg-background{% endif %}
+          {% if add_mobile_button_spacer %}tw-pb-36{% unless banner.settings.show_text_box %} tablet:tw-pb-0{% endunless %}{% endif %}
+          tw-w-full tw-max-w-md tablet:tw-max-w-[var(--desktop-content-max-width)] tw-col-start-[var(--desktop-col-start)] tw-col-end-[var(--desktop-col-end)]
+        "
+      >
+        {%- assign rendered_button = false -%}
+        {%- for block in blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h2
+                id="ImageBannerText-{{ block.id }}"
+                class="inline-richtext {{ block_class }} {{ block.settings.heading_size }}{% if block.settings.screen_reader_only %} tw-sr-only{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {%- when 'text' -%}
+              <div
+                id="ImageBannerText-{{ block.id }}"
+                class="banner__text {{ block_class }} rte {{ block.settings.text_style }}{% if block.settings.screen_reader_only %} tw-sr-only{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {%- when 'custom_liquid' -%}
+              <div {{ block.shopify_attributes }}>
+                {{ block.settings.custom_liquid }}
+              </div>
+            {%- when 'button' -%}
+              {%- liquid
+                if block.settings.button_label == blank or rendered_button
+                  continue
+                endif
+                assign rendered_button = true
+              -%}
+              <div
+                class="
+                  tw-mt-24 only:tw-mt-0 tw-inline-block tw-w-full tw-max-w-md
+                  {% if banner.settings.fix_buttons_below_on_mobile %}
+                    tw-absolute tw-bottom-0 tw-left-1/2 tablet:tw-relative tablet:tw-bottom-auto tablet:tw-left-auto
+                    -tw-translate-x-1/2 tw-translate-y-1/2 tablet:tw-transform-none
+                    tw-px-24 tablet:tw-px-0
+                  {% endif %}
+                "
+                {{ block.shopify_attributes }}
+              >
+                <a
+                  {% if block.settings.button_link == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="{{ block.settings.button_link }}"
+                  {% endif %}
+                  class="button tw-w-full{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              </div>
+          {%- endcase -%}
+          {%- assign block_class = 'tw-mt-12' -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>

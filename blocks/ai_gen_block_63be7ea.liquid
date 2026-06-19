@@ -1,0 +1,934 @@
+{% doc %}
+  @prompt
+    Build a product selection grid section for a Summer BOGO landing page on my Shopify store.
+    Layout
+    
+    Display product cards in a grid, 5 cards per row on desktop.
+    Make it responsive: 5 across on desktop, 4 across on tablet, 3 across on mobile.
+    The grid will hold approximately 15 product cards, so it should wrap cleanly across 5 rows on desktop.
+    Use consistent gutters between cards and equal card heights regardless of product name length.
+    
+    Each product card should contain
+    
+    Product image (centered, consistent aspect ratio across all cards)
+    A small badge in the top-left corner reading "BOGO 50%"
+    Product title
+    A short subtitle or category line
+    Price
+    An "Add to Order" button that spans the full width of the card
+    
+    Card states
+    
+    Default state: button reads "Add to Order"
+    Selected/added state: card gets a highlighted border and the button changes to a confirmed state reading "✓ Added"
+    
+    Product source
+    
+    Pull the products from a specific collection so I can control which items appear in the BOGO event by adding or removing them from that collection. Make the collection a setting I can select in the theme editor.
+    
+    Full creative customization — expose ALL of the following as settings in the theme editor so I can adjust them without touching code:
+    Colors
+    
+    Section background color
+    Card background color
+    Card border color (default state)
+    Card border color (selected state)
+    Badge background color
+    Badge text color
+    Product title color
+    Subtitle/category color
+    Price color
+    Button background color (default)
+    Button text color (default)
+    Button background color (selected/added)
+    Button text color (selected/added)
+    Section heading color
+    Section subheading color
+    
+    Typography / text size
+    
+    Section heading font size
+    Section subheading font size
+    Product title font size
+    Subtitle/category font size
+    Price font size
+    Badge font size
+    Button text font size
+    Font weight controls for heading, title, and button (e.g. light/regular/medium/semibold/bold) where possible
+    
+    Buttons
+    
+    Button background color (default and selected, as above)
+    Button text color (default and selected, as above)
+    Button height / vertical padding
+    Button horizontal padding
+    Button corner radius
+    Button full-width toggle (full-width vs. auto-width)
+    Button text content for both states (so I can change "Add to Order" and "✓ Added" myself)
+    
+    Cards
+    
+    Card corner radius
+    Card border width
+    Card border width (selected state)
+    Card internal padding
+    Card background color (as above)
+    
+    Badge
+    
+    Badge corner radius
+    Badge padding
+    Badge position toggle (top-left / top-right)
+    Badge on/off toggle
+    Badge text content (so I can change "BOGO 50%" myself)
+    
+    Layout / grid
+    
+    Number of columns on desktop (default 3)
+    Number of columns on tablet
+    Number of columns on mobile
+    Gutter/spacing between cards
+    Number of products to show
+    Which collection feeds the grid
+    Section heading text
+    Section subheading text
+    Image aspect ratio (e.g. square, portrait, original)
+    
+    Styling defaults (use these as the starting values for the settings above)
+    
+    Section heading and primary text / buttons: dark navy (#0A1F2E)
+    Selected/accent state and selected button: blue (#2E6FB5)
+    Card background: cream (#FAF6EE)
+    Badge background: gold (#C9A86A) with white text
+    Card corner radius: around 16px
+    Subtle card border by default
+    
+    Use my theme's existing fonts. Apply all the colors and sizes above as editable defaults so I can fine-tune everything from the theme customizer.
+{% enddoc %}
+{% comment %}
+  BOGO Product Selection Grid Section
+  Displays products from a collection in a customizable grid with selection states
+{% endcomment %}
+
+{{ 'section-bogo-product-grid.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .bogo-product-grid-{{ section.id }} {
+    --section-bg-color: {{ section.settings.section_bg_color }};
+    --card-bg-color: {{ section.settings.card_bg_color }};
+    --card-border-color: {{ section.settings.card_border_color }};
+    --card-border-selected-color: {{ section.settings.card_border_selected_color }};
+    --badge-bg-color: {{ section.settings.badge_bg_color }};
+    --badge-text-color: {{ section.settings.badge_text_color }};
+    --product-title-color: {{ section.settings.product_title_color }};
+    --subtitle-color: {{ section.settings.subtitle_color }};
+    --price-color: {{ section.settings.price_color }};
+    --button-bg-color: {{ section.settings.button_bg_color }};
+    --button-text-color: {{ section.settings.button_text_color }};
+    --button-bg-selected-color: {{ section.settings.button_bg_selected_color }};
+    --button-text-selected-color: {{ section.settings.button_text_selected_color }};
+    --heading-color: {{ section.settings.heading_color }};
+    --subheading-color: {{ section.settings.subheading_color }};
+    
+    --heading-font-size: {{ section.settings.heading_font_size }}px;
+    --subheading-font-size: {{ section.settings.subheading_font_size }}px;
+    --product-title-font-size: {{ section.settings.product_title_font_size }}px;
+    --subtitle-font-size: {{ section.settings.subtitle_font_size }}px;
+    --price-font-size: {{ section.settings.price_font_size }}px;
+    --badge-font-size: {{ section.settings.badge_font_size }}px;
+    --button-font-size: {{ section.settings.button_font_size }}px;
+    
+    --heading-font-weight: {{ section.settings.heading_font_weight }};
+    --title-font-weight: {{ section.settings.title_font_weight }};
+    --button-font-weight: {{ section.settings.button_font_weight }};
+    
+    --button-padding-vertical: {{ section.settings.button_padding_vertical }}px;
+    --button-padding-horizontal: {{ section.settings.button_padding_horizontal }}px;
+    --button-radius: {{ section.settings.button_radius }}px;
+    
+    --card-radius: {{ section.settings.card_radius }}px;
+    --card-border-width: {{ section.settings.card_border_width }}px;
+    --card-border-selected-width: {{ section.settings.card_border_selected_width }}px;
+    --card-padding: {{ section.settings.card_padding }}px;
+    
+    --badge-radius: {{ section.settings.badge_radius }}px;
+    --badge-padding: {{ section.settings.badge_padding }}px;
+    
+    --grid-columns-desktop: {{ section.settings.grid_columns_desktop }};
+    --grid-columns-tablet: {{ section.settings.grid_columns_tablet }};
+    --grid-columns-mobile: {{ section.settings.grid_columns_mobile }};
+    --grid-gap: {{ section.settings.grid_gap }}px;
+    
+    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
+    background-color: var(--section-bg-color);
+  }
+{%- endstyle -%}
+
+<div class="bogo-product-grid-{{ section.id }} page-width">
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="bogo-grid-header" style="text-align: {{ section.settings.text_alignment }}; margin-bottom: {{ section.settings.header_spacing }}px;">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="bogo-grid-heading" style="color: var(--heading-color); font-size: var(--heading-font-size); font-weight: var(--heading-font-weight); margin: 0 0 12px;">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="bogo-grid-subheading" style="color: var(--subheading-color); font-size: var(--subheading-font-size); margin: 0;">
+          {{ section.settings.subheading }}
+        </p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- liquid
+    assign collection = collections[section.settings.collection]
+    assign products_to_show = section.settings.products_to_show
+    assign image_ratio = section.settings.image_ratio
+  -%}
+
+  <div class="bogo-product-grid" 
+       style="display: grid; 
+              grid-template-columns: repeat(var(--grid-columns-desktop), 1fr); 
+              gap: var(--grid-gap); 
+              margin-top: {{ section.settings.grid_top_spacing }}px;">
+    
+    {%- if collection != blank and collection.products.size > 0 -%}
+      {%- for product in collection.products limit: products_to_show -%}
+        <div class="bogo-product-card" 
+             data-product-id="{{ product.id }}"
+             style="background-color: var(--card-bg-color); 
+                    border: var(--card-border-width) solid var(--card-border-color); 
+                    border-radius: var(--card-radius); 
+                    padding: var(--card-padding); 
+                    position: relative; 
+                    transition: all 0.3s ease;
+                    display: flex;
+                    flex-direction: column;">
+          
+          {%- if section.settings.show_badge -%}
+            <div class="bogo-badge bogo-badge-{{ section.settings.badge_position | replace: ' ', '-' }}" 
+                 style="position: absolute; 
+                        {% if section.settings.badge_position contains 'top' %}top: calc(var(--card-padding) + 8px);{% else %}bottom: calc(var(--card-padding) + 8px);{% endif %}
+                        {% if section.settings.badge_position contains 'left' %}left: calc(var(--card-padding) + 8px);{% else %}right: calc(var(--card-padding) + 8px);{% endif %}
+                        background-color: var(--badge-bg-color); 
+                        color: var(--badge-text-color); 
+                        padding: var(--badge-padding); 
+                        border-radius: var(--badge-radius); 
+                        font-size: var(--badge-font-size); 
+                        font-weight: 600;
+                        z-index: 2;
+                        line-height: 1;">
+              {{ section.settings.badge_text }}
+            </div>
+          {%- endif -%}
+
+          <div class="bogo-product-image" style="margin-bottom: 16px; position: relative; overflow: hidden; border-radius: calc(var(--card-radius) * 0.5);">
+            {%- if product.featured_image -%}
+              {%- liquid
+                assign image_height = product.featured_image.width
+                if image_ratio == 'portrait'
+                  assign image_height = product.featured_image.width | times: 1.33 | round
+                elsif image_ratio == 'landscape'
+                  assign image_height = product.featured_image.width | times: 0.75 | round
+                endif
+              -%}
+              <img 
+                srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if product.featured_image.width >= 533 -%}{{ product.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if product.featured_image.width >= 720 -%}{{ product.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {{ product.featured_image | image_url }} {{ product.featured_image.width }}w"
+                src="{{ product.featured_image | image_url: width: 533 }}"
+                sizes="(min-width: 1200px) calc((100vw - 10rem) / {{ section.settings.grid_columns_desktop }}), 
+                       (min-width: 750px) calc((100vw - 10rem) / {{ section.settings.grid_columns_tablet }}), 
+                       calc((100vw - 3rem) / {{ section.settings.grid_columns_mobile }})"
+                alt="{{ product.featured_image.alt | escape }}"
+                loading="lazy"
+                width="{{ product.featured_image.width }}"
+                height="{{ image_height }}"
+                style="width: 100%; 
+                       height: auto; 
+                       display: block;
+                       {% if image_ratio == 'square' %}aspect-ratio: 1/1; object-fit: cover;{% elsif image_ratio == 'portrait' %}aspect-ratio: 3/4; object-fit: cover;{% elsif image_ratio == 'landscape' %}aspect-ratio: 4/3; object-fit: cover;{% endif %}"
+              >
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+
+          <div class="bogo-product-info" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <h3 class="bogo-product-title" 
+                style="color: var(--product-title-color); 
+                       font-size: var(--product-title-font-size); 
+                       font-weight: var(--title-font-weight); 
+                       margin: 0 0 8px; 
+                       line-height: 1.3;">
+              {{ product.title }}
+            </h3>
+
+            {%- if product.metafields.custom.subtitle != blank or product.type != blank -%}
+              <p class="bogo-product-subtitle" 
+                 style="color: var(--subtitle-color); 
+                        font-size: var(--subtitle-font-size); 
+                        margin: 0 0 12px; 
+                        line-height: 1.4;">
+                {{ product.metafields.custom.subtitle | default: product.type }}
+              </p>
+            {%- endif -%}
+
+            <div class="bogo-product-price" 
+                 style="color: var(--price-color); 
+                        font-size: var(--price-font-size); 
+                        font-weight: 600; 
+                        margin: 0 0 16px;">
+              {%- if product.price_varies -%}
+                {{ product.price_min | money }} - {{ product.price_max | money }}
+              {%- else -%}
+                {{ product.price | money }}
+              {%- endif -%}
+            </div>
+
+            <button type="button" 
+                    class="bogo-add-button" 
+                    data-product-handle="{{ product.handle }}"
+                    data-product-title="{{ product.title | escape }}"
+                    data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    style="background-color: var(--button-bg-color); 
+                           color: var(--button-text-color); 
+                           border: none; 
+                           border-radius: var(--button-radius); 
+                           padding: var(--button-padding-vertical) var(--button-padding-horizontal); 
+                           font-size: var(--button-font-size); 
+                           font-weight: var(--button-font-weight); 
+                           cursor: pointer; 
+                           transition: all 0.3s ease;
+                           {% if section.settings.button_full_width %}width: 100%;{% else %}width: auto;{% endif %}
+                           margin-top: auto;
+                           text-align: center;">
+              <span class="button-text-default">{{ section.settings.button_text_default }}</span>
+              <span class="button-text-selected" style="display: none;">{{ section.settings.button_text_selected }}</span>
+            </button>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px;">
+        <p style="color: var(--subtitle-color); font-size: 16px;">
+          {%- if collection == blank -%}
+            Please select a collection in the theme editor to display products.
+          {%- else -%}
+            No products found in this collection.
+          {%- endif -%}
+        </p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  if (!customElements.get('bogo-product-grid')) {
+    class BogoProductGrid extends HTMLElement {
+      constructor() {
+        super();
+        this.cards = this.querySelectorAll('.bogo-product-card');
+        this.selectedProducts = new Set();
+        this.init();
+      }
+
+      init() {
+        this.cards.forEach(card => {
+          const button = card.querySelector('.bogo-add-button');
+          button.addEventListener('click', () => this.toggleProduct(card, button));
+        });
+      }
+
+      toggleProduct(card, button) {
+        const productId = card.dataset.productId;
+        const isSelected = this.selectedProducts.has(productId);
+
+        if (isSelected) {
+          this.deselectProduct(card, button, productId);
+        } else {
+          this.selectProduct(card, button, productId);
+        }
+      }
+
+      selectProduct(card, button, productId) {
+        this.selectedProducts.add(productId);
+        card.style.borderColor = 'var(--card-border-selected-color)';
+        card.style.borderWidth = 'var(--card-border-selected-width)';
+        button.style.backgroundColor = 'var(--button-bg-selected-color)';
+        button.style.color = 'var(--button-text-selected-color)';
+        button.querySelector('.button-text-default').style.display = 'none';
+        button.querySelector('.button-text-selected').style.display = 'inline';
+        card.classList.add('selected');
+      }
+
+      deselectProduct(card, button, productId) {
+        this.selectedProducts.delete(productId);
+        card.style.borderColor = 'var(--card-border-color)';
+        card.style.borderWidth = 'var(--card-border-width)';
+        button.style.backgroundColor = 'var(--button-bg-color)';
+        button.style.color = 'var(--button-text-color)';
+        button.querySelector('.button-text-default').style.display = 'inline';
+        button.querySelector('.button-text-selected').style.display = 'none';
+        card.classList.remove('selected');
+      }
+    }
+
+    customElements.define('bogo-product-grid', BogoProductGrid);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const gridContainer = document.querySelector('.bogo-product-grid');
+    if (gridContainer && !gridContainer.closest('bogo-product-grid')) {
+      const wrapper = document.createElement('bogo-product-grid');
+      gridContainer.parentNode.insertBefore(wrapper, gridContainer);
+      wrapper.appendChild(gridContainer.parentNode.querySelector('.bogo-grid-header'));
+      wrapper.appendChild(gridContainer);
+    }
+  });
+</script>
+
+<style>
+  @media screen and (max-width: 989px) {
+    .bogo-product-grid {
+      grid-template-columns: repeat(var(--grid-columns-tablet), 1fr) !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .bogo-product-grid {
+      grid-template-columns: repeat(var(--grid-columns-mobile), 1fr) !important;
+    }
+    
+    .bogo-product-grid-{{ section.id }} {
+      --heading-font-size: calc({{ section.settings.heading_font_size }}px * 0.8);
+      --subheading-font-size: calc({{ section.settings.subheading_font_size }}px * 0.9);
+    }
+  }
+
+  .bogo-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .bogo-add-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  .bogo-add-button:active {
+    transform: scale(0.98);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BOGO Product Grid",
+  "tag": "section",
+  "class": "section-bogo-product-grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Summer BOGO Event"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "Buy one, get one 50% off on selected products"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Product Source"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Products from this collection will appear in the grid"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 3,
+      "max": 50,
+      "step": 1,
+      "label": "Number of Products to Show",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Grid Layout"
+    },
+    {
+      "type": "range",
+      "id": "grid_columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Columns (Desktop)",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "grid_columns_tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (Tablet)",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "grid_columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns (Mobile)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "label": "Gap Between Cards",
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "original", "label": "Original" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "portrait", "label": "Portrait (3:4)" },
+        { "value": "landscape", "label": "Landscape (4:3)" }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Section Heading Color",
+      "default": "#0A1F2E"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Section Subheading Color",
+      "default": "#0A1F2E"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background",
+      "default": "#FAF6EE"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border (Default)",
+      "default": "#E5E5E5"
+    },
+    {
+      "type": "color",
+      "id": "card_border_selected_color",
+      "label": "Card Border (Selected)",
+      "default": "#2E6FB5"
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Product Title Color",
+      "default": "#0A1F2E"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle/Category Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price Color",
+      "default": "#0A1F2E"
+    },
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "BOGO 50%"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background",
+      "default": "#C9A86A"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "badge_position",
+      "label": "Badge Position",
+      "options": [
+        { "value": "top left", "label": "Top Left" },
+        { "value": "top right", "label": "Top Right" },
+        { "value": "bottom left", "label": "Bottom Left" },
+        { "value": "bottom right", "label": "Bottom Right" }
+      ],
+      "default": "top left"
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "label": "Badge Corner Radius",
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "badge_padding",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "label": "Badge Padding",
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text_default",
+      "label": "Button Text (Default)",
+      "default": "Add to Order"
+    },
+    {
+      "type": "text",
+      "id": "button_text_selected",
+      "label": "Button Text (Selected)",
+      "default": "✓ Added"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background (Default)",
+      "default": "#0A1F2E"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text (Default)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_selected_color",
+      "label": "Button Background (Selected)",
+      "default": "#2E6FB5"
+    },
+    {
+      "type": "color",
+      "id": "button_text_selected_color",
+      "label": "Button Text (Selected)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "label": "Button Vertical Padding",
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "label": "Button Horizontal Padding",
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "label": "Button Corner Radius",
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width",
+      "label": "Full Width Button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "label": "Card Corner Radius",
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "label": "Card Border Width (Default)",
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_selected_width",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "label": "Card Border Width (Selected)",
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "label": "Card Internal Padding",
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "label": "Section Heading Font Size",
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "label": "Section Subheading Font Size",
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "product_title_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "label": "Product Title Font Size",
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "label": "Subtitle Font Size",
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "label": "Price Font Size",
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "label": "Badge Font Size",
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "label": "Button Font Size",
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading Font Weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Product Title Font Weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button Font Weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "label": "Section Top Padding",
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "label": "Section Bottom Padding",
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "label": "Header Bottom Spacing",
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "label": "Grid Top Spacing",
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "BOGO Product Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

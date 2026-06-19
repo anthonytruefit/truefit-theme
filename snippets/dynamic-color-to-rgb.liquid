@@ -1,0 +1,22 @@
+{% comment %}
+  Renders a comma-separated string of red, green, and blue values for a color.
+  Accepts a dynamic accent color which will be swapped if the color matches.
+
+  Usage:
+  {% render 'dynamic-color-to-rgb', color: color, dynamic_color_match: dynamic_color_match, accent_color: accent_color %}
+
+  Accepts:
+  - color: {Color}
+  - dynamic_color_match: {Color}
+  - accent_color: {Color}
+{% endcomment %}
+{%- liquid
+  if dynamic_color_match != blank and accent_color != blank
+    assign dynamic_color_match = dynamic_color_match | color_to_rgb
+    assign color_match = color | color_to_rgb
+    if dynamic_color_match == color_match
+      assign color = accent_color
+    endif
+  endif
+-%}
+{%- render 'color-to-rgb-css-var', color: color -%}

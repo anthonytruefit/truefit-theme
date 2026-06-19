@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "0dcd0a24-f512-437e-9846-f18eee7e9e86": {
+      "type": "image-banner-rsp",
+      "blocks": {
+        "template--15701165735981__0dcd0a24-f512-437e-9846-f18eee7e9e86-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "template--15701165735981__0dcd0a24-f512-437e-9846-f18eee7e9e86-heading-1"
+      ],
+      "settings": {
+        "image_height": "small",
+        "image_overlay_opacity": 30,
+        "mobile_image": "shopify://shop_images/RSP_October_23_2020_R2OY1673_2600x_fe2709bd-f179-4faf-a540-19ae6a81b6a8.png",
+        "mobile_image_overlay_background": "",
+        "mobile_content_position": "bottom-left",
+        "mobile_content_alignment": "left",
+        "fix_buttons_below_on_mobile": false,
+        "show_text_below": false,
+        "desktop_image_overlay_background": "",
+        "page_width": true,
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_column_width": 12,
+        "desktop_column_start": 1,
+        "desktop_content_max_width": 450,
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "cee55811-4b98-4109-aa14-5e8ed26a9db4": {
+      "type": "multirow",
+      "blocks": {
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/OUR_HISTORY_IMAGE_2000x_2600x_2d3cbeb4-1ee3-4a3d-9685-394caf88b2d2.jpg",
+            "caption": "",
+            "heading": "Evolving Landscape",
+            "text": "<p>In 2008, former collegiate athlete, Victor Davanzo, recognized that the world of fitness and nutrition was evolving. Friends and family bought more organic, natural foods and performance training was no longer just for athletes. Busy professionals were pushing themselves to new heights with HIIT, CrossFit, and Metcon style training.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Supplement_Wall_ee6ca6c9-d2f0-4355-81e0-7424d4fafe70.jpg",
+            "caption": "",
+            "heading": "Out with the Old",
+            "text": "<p>Victor loved a lot of these changes. It was easy to find delicious real foods and workouts that would push him mentally and physically, similar to when he was an athlete. He sought convenient nutritional products that would support his fitness journey as a busy professional - whether at home, the office, or the gym. However, trips to the local supplement shops to find protein, vitamin, or energy supplements often left him unsatisfied. Many were difficult to understand and even contained ingredients that were unnatural, dangerous, or even illegal. These experiences begged the question, “why don’t sports nutrition companies make safe, healthy products for everyday fitness and wellness needs?”. With no answers on the market, Victor made the decision to leave his comfortable office job behind and pursue a solution.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-3": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/210511_RSP2949.jpg",
+            "caption": "",
+            "heading": "RSP Nutrition Is Born",
+            "text": "<p>Clean, innovative nutritional products for active people, busy professionals and fitness enthusiasts. The concept was novel at the time but it became our mission - our obsession. We sought to inspire active individuals to become their best selves without sacrificing the rest of their lives. We accomplish this by creating products that are convenient, effective, easy to understand, and use only clean, proven ingredients. At RSP Nutrition, our products put a premium on performance – without asking you to sacrifice the life you’ve worked so hard to earn. We live inspired by demanding the best of ourselves and our products, and by inspiring others to ask the same of themselves.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-1",
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-2",
+        "template--15701165735981__cee55811-4b98-4109-aa14-5e8ed26a9db4-row-3"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "0dcd0a24-f512-437e-9846-f18eee7e9e86",
+    "main",
+    "cee55811-4b98-4109-aa14-5e8ed26a9db4"
+  ]
+}

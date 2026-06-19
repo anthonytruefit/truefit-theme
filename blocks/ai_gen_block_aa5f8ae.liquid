@@ -1,0 +1,864 @@
+{% doc %}
+  @prompt
+    A featured product carousel with up to 8 product cards. It should be able to be swiped on mobile. Each product card should be customizable in the following ways: product selection, product title, product subtitle, price, add to cart button. I want the block to also have fully customizable header and subeader text., the product image needs to be added to the card when the product is selected. Right now there is no image, I would like to be able to customize the colors and size of all text including product title, subtitle, price, add to cart button, and headline. I should also have full customization of the button color, size, and shape.
+{% enddoc %}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .featured-carousel-{{ block.id }} {
+    padding: 40px 0;
+  }
+
+  .featured-carousel-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .featured-carousel-header h2 {
+    margin: 0 0 8px 0;
+    font-size: {{ block.settings.header_font_size }}px;
+    color: {{ block.settings.header_color }};
+    font-weight: {{ block.settings.header_font_weight }};
+  }
+
+  .featured-carousel-header p {
+    margin: 0;
+    font-size: {{ block.settings.subheader_font_size }}px;
+    color: {{ block.settings.subheader_color }};
+    opacity: 0.8;
+  }
+
+  .featured-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: var(--page-width);
+    padding: 0 1.5rem;
+  }
+
+  .featured-carousel-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .featured-carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .featured-product-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background: rgb(var(--color-background));
+    border-radius: {{ settings.card_corner_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .featured-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .featured-product-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: block;
+  }
+
+  .featured-product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .featured-product-image .placeholder-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .featured-product-content {
+    padding: 20px;
+  }
+
+  .featured-product-title {
+    margin: 0 0 4px 0;
+    font-size: {{ block.settings.product_title_font_size }}px;
+    font-weight: {{ block.settings.product_title_font_weight }};
+    color: {{ block.settings.product_title_color }};
+  }
+
+  .featured-product-subtitle {
+    margin: 0 0 12px 0;
+    font-size: {{ block.settings.product_subtitle_font_size }}px;
+    color: {{ block.settings.product_subtitle_color }};
+    opacity: 0.7;
+  }
+
+  .featured-product-price {
+    margin: 0 0 16px 0;
+    font-size: {{ block.settings.product_price_font_size }}px;
+    font-weight: {{ block.settings.product_price_font_weight }};
+    color: {{ block.settings.product_price_color }};
+  }
+
+  .featured-product-button {
+    width: 100%;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+  }
+
+  .featured-product-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .featured-product-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media screen and (min-width: 750px) {
+    .featured-carousel-container {
+      gap: 32px;
+    }
+
+    .featured-product-card {
+      flex: 0 0 320px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .featured-carousel-wrapper {
+      padding: 0 1rem;
+    }
+
+    .featured-product-card {
+      flex: 0 0 260px;
+    }
+  }
+</style>
+
+<div class="featured-carousel-{{ block.id }} color-{{ block.settings.color_scheme }} gradient">
+  {% if block.settings.header_text != blank or block.settings.subheader_text != blank %}
+    <div class="featured-carousel-header">
+      {% if block.settings.header_text != blank %}
+        <h2>{{ block.settings.header_text }}</h2>
+      {% endif %}
+      {% if block.settings.subheader_text != blank %}
+        <p>{{ block.settings.subheader_text }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="featured-carousel-wrapper">
+    <div class="featured-carousel-container">
+      {% for i in (1..8) %}
+        {% assign product_key = 'product_' | append: i %}
+        {% assign title_key = 'product_' | append: i | append: '_title' %}
+        {% assign subtitle_key = 'product_' | append: i | append: '_subtitle' %}
+        {% assign price_key = 'product_' | append: i | append: '_price' %}
+        {% assign button_key = 'product_' | append: i | append: '_button_text' %}
+        
+        {% assign product = block.settings[product_key] %}
+        
+        {% if product != blank %}
+          <div class="featured-product-card">
+            <a href="{{ product.url }}" class="featured-product-image">
+              {% if product.featured_media %}
+                {{
+                  product.featured_media | image_url: width: 640 | image_tag:
+                    loading: 'lazy',
+                    width: product.featured_media.width,
+                    height: product.featured_media.height,
+                    alt: product.featured_media.alt | escape
+                }}
+              {% elsif product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 640 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="640"
+                  height="640"
+                >
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+            </a>
+            
+            <div class="featured-product-content">
+              <h3 class="featured-product-title">
+                {% if block.settings[title_key] != blank %}
+                  {{ block.settings[title_key] }}
+                {% else %}
+                  {{ product.title }}
+                {% endif %}
+              </h3>
+              
+              {% if block.settings[subtitle_key] != blank %}
+                <p class="featured-product-subtitle">{{ block.settings[subtitle_key] }}</p>
+              {% endif %}
+              
+              <div class="featured-product-price">
+                {% if block.settings[price_key] != blank %}
+                  {{ block.settings[price_key] }}
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+              </div>
+              
+              <product-form>
+                <form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data">
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <button
+                    type="submit"
+                    name="add"
+                    class="featured-product-button"
+                    {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                  >
+                    {% if product.selected_or_first_available_variant.available %}
+                      {% if block.settings[button_key] != blank %}
+                        {{ block.settings[button_key] }}
+                      {% else %}
+                        Add to Cart
+                      {% endif %}
+                    {% else %}
+                      Sold Out
+                    {% endif %}
+                  </button>
+                </form>
+              </product-form>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  if (!customElements.get('product-form')) {
+    customElements.define('product-form', class ProductForm extends HTMLElement {
+      constructor() {
+        super();
+        this.form = this.querySelector('form');
+        this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
+      }
+
+      onSubmitHandler(evt) {
+        evt.preventDefault();
+        const submitButton = this.querySelector('[type="submit"]');
+        submitButton.setAttribute('disabled', true);
+        submitButton.classList.add('loading');
+
+        const formData = new FormData(this.form);
+        formData.append('sections', 'cart-drawer,cart-icon-bubble');
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          submitButton.removeAttribute('disabled');
+          submitButton.classList.remove('loading');
+          
+          if (document.querySelector('cart-drawer')) {
+            document.querySelector('cart-drawer').open();
+          }
+          
+          fetch('/cart.js')
+            .then(response => response.json())
+            .then(cart => {
+              document.querySelectorAll('.cart-count-bubble').forEach(bubble => {
+                bubble.textContent = cart.item_count;
+              });
+            });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          submitButton.removeAttribute('disabled');
+          submitButton.classList.remove('loading');
+        });
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Featured Product Carousel",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "Featured Products"
+    },
+    {
+      "type": "text",
+      "id": "subheader_text",
+      "label": "Subheader Text",
+      "default": "Discover our top picks"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Header Styling"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Header Font Size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "select",
+      "id": "header_font_weight",
+      "label": "Header Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "subheader_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheader Font Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheader_color",
+      "label": "Subheader Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "header",
+      "content": "Product Title Styling"
+    },
+    {
+      "type": "range",
+      "id": "product_title_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Product Title Font Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Product Title Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "select",
+      "id": "product_title_font_weight",
+      "label": "Product Title Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Product Subtitle Styling"
+    },
+    {
+      "type": "range",
+      "id": "product_subtitle_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Product Subtitle Font Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "product_subtitle_color",
+      "label": "Product Subtitle Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "header",
+      "content": "Product Price Styling"
+    },
+    {
+      "type": "range",
+      "id": "product_price_font_size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Product Price Font Size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "product_price_color",
+      "label": "Product Price Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "select",
+      "id": "product_price_font_weight",
+      "label": "Product Price Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Button Styling"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#F6EED7"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Border Width",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 4,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Vertical Padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Horizontal Padding",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_1_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_1_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_1_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_1_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_2_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_2_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_2_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_2_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_3_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_3_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_3_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_3_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 4"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_4_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_4_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_4_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_4_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 5"
+    },
+    {
+      "type": "product",
+      "id": "product_5",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_5_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_5_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_5_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_5_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 6"
+    },
+    {
+      "type": "product",
+      "id": "product_6",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_6_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_6_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_6_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_6_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 7"
+    },
+    {
+      "type": "product",
+      "id": "product_7",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_7_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_7_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_7_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_7_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Product 8"
+    },
+    {
+      "type": "product",
+      "id": "product_8",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "product_8_title",
+      "label": "Custom Title",
+      "info": "Leave blank to use product title"
+    },
+    {
+      "type": "text",
+      "id": "product_8_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "product_8_price",
+      "label": "Custom Price",
+      "info": "Leave blank to use product price"
+    },
+    {
+      "type": "text",
+      "id": "product_8_button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    }
+  ]
+}
+{% endschema %}

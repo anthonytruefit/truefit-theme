@@ -1,0 +1,274 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- if section.settings.background_color.alpha > 0 -%}
+    .section-{{ section.id }}-container {
+      background-color: {{ section.settings.background_color }};
+    }
+  {%- endif -%}
+
+  .logo-card-wrapper .card {
+    --border-radius: 1.2rem;
+    --border-width: 0.1rem;
+    --border-opacity: 0.2;
+    --shadow-horizontal-offset: var(--product-card-shadow-horizontal-offset);
+    --shadow-vertical-offset: var(--product-card-shadow-vertical-offset);
+    --shadow-blur-radius: var(--product-card-shadow-blur-radius);
+    --shadow-opacity: var(--product-card-shadow-opacity);
+    --shadow-visible: var(--product-card-shadow-visible);
+  }
+  @media (min-width: 750px) {
+    .logo-card-wrapper .card {
+      --border-radius: 1.6rem;
+    }
+  }
+  @media (min-width: 990px) {
+    .logo-card-wrapper .card {
+      --border-radius: 2.4rem;
+    }
+  }
+  #StoreLogos-{{ section.id }} .logo-image-wrapper {
+    padding-bottom: {{ section.settings.card_height_ratio }}%;
+  }
+  #StoreLogos-{{ section.id }} .store-finder-title {
+    font-size: {{ section.settings.heading_font_size }}px;
+  }
+  {%- if section.settings.section_background -%}
+    #StoreLogos-{{ section.id }} {
+      background: {{ section.settings.section_background }};
+    }
+  {%- endif -%}
+{%- endstyle -%}
+{%- liquid
+  if section.settings.button_label != blank and section.settings.button_link != blank
+    assign has_button = true
+  endif
+
+  if section.settings.normalize_ratios
+    assign max_ratio = blank
+    assign min_ratio = blank
+    for block in section.blocks
+      if block.settings.image != blank
+        if max_ratio == blank or block.settings.image.aspect_ratio > max_ratio
+          assign max_ratio = block.settings.image.aspect_ratio
+        endif
+        if min_ratio == blank or block.settings.image.aspect_ratio < min_ratio
+          assign min_ratio = block.settings.image.aspect_ratio
+        endif
+      endif
+    endfor
+    assign ratio_diff = max_ratio | minus: min_ratio
+  endif
+-%}
+
+<div
+  id="StoreLogos-{{ section.id }}"
+  class="section-{{ section.id }}-padding color-{{ section.settings.section_color_scheme }} tw-bg-aminoleanz"
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+      <div class="tw-flex tw-flex-col tw-items-center tw-mb-24 tw-max-w-lg tw-mx-auto tw-text-center">
+        {%- if section.settings.heading != blank -%}
+          <h1 class="inline-richtext store-finder-title tw-text-center tablet:tw-whitespace-pre-line">
+            {{- section.settings.heading -}}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div class="rte [text-wrap:balance]{% if section.settings.heading != blank %} tw-mt-[1em]{% endif %}">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="tw-mx-auto tw-w-full tw-max-w-lg tablet:tw-max-w-full animate--hover-3d-lift tw-grid tw-grid-cols-2 tablet:tw-grid-cols-3 desktop:tw-grid-cols-4 tw-gap-15 xl:tw-gap-24">
+      {% comment %} .animate--hover-3d-lift .card-wrapper .card--card {% endcomment %}
+      {%- for block in section.blocks -%}
+        {%- liquid
+          if block.settings.image == blank
+            continue
+          endif
+          assign image_style = blank
+          if section.settings.normalize_ratios
+            assign ratio = block.settings.image.aspect_ratio
+            if ratio_diff > 0
+              assign normalized_ratio = ratio | minus: min_ratio | divided_by: ratio_diff
+            else
+              assign normalized_ratio = ratio
+            endif
+            assign image_style = 40 | times: normalized_ratio | plus: 60 | append: '%' | prepend: 'width:'
+          elsif block.settings.max_width > 0
+            assign image_style = 'max-width:' | append: block.settings.max_width | append: '%'
+          endif
+          assign alt_text = block.settings.image.alt | default: block.settings.title
+        -%}
+        <div class="card-wrapper logo-card-wrapper" {{ block.shopify_attributes }}>
+          <div class="card card--card tw-overflow-hidden color-{{ section.settings.card_color_scheme }}">
+            <a
+              href="{{ block.settings.url }}"
+              target="_blank"
+              class="tw-block tw-px-15 tw-py-12 tablet:tw-px-20 tablet:tw-py-15 xl:tw-px-24"
+            >
+              <div class="tw-relative tw-w-full logo-image-wrapper">
+                <div class="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center">
+                  {{
+                    block.settings.image
+                    | image_url: width: section.settings.logo_max_width
+                    | image_tag:
+                      alt: alt_text,
+                      loading: 'lazy',
+                      class: 'tw-w-full tw-h-full tw-object-contain',
+                      style: image_style
+                  }}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Store Finder Logos",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background",
+      "label": "Custom background color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "card_color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "background-1"
+    },
+    {
+      "id": "heading",
+      "type": "textarea",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "label": "Heading font size",
+      "id": "heading_font_size",
+      "min": 12,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "id": "description",
+      "type": "richtext",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Find Near You"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "normalize_ratios",
+      "label": "Normalize aspect ratio across images"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "card_height_ratio",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Card height ratio",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Maximum width",
+          "info": "Use this to constrain the logo width to normalize the sizes in the list. Useful if the logos have very different aspect ratios",
+          "default": 100
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Finder Logos"
+    }
+  ]
+}
+{% endschema %}

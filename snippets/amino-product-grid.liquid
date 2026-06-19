@@ -1,0 +1,59 @@
+{%- if product_list.size == 0 -%}
+  <div class="collection collection--empty page-width" id="product-grid-{{ section.id }}" data-id="{{ section.id }}">
+    <div class="loading-overlay gradient"></div>
+    <div class="title-wrapper center">
+      <h2 class="title title--primary">
+        {{ 'sections.collection_template.empty' | t -}}
+      </h2>
+    </div>
+  </div>
+{%- else -%}
+  <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width page-width--grid-padding{% endif %}">
+    <div class="loading-overlay gradient"></div>
+    <ul
+      id="product-grid-{{ section.id }}"
+      data-id="{{ section.id }}"
+      class="
+        grid product-grid
+        {% if section.settings.columns_tablet != blank %}
+          grid--{{ section.settings.columns_mobile }}-col grid--{{ section.settings.columns_tablet }}-col-tablet
+        {% else %}
+           grid--{{ section.settings.columns_mobile }}-col-tablet-down
+        {% endif %}
+        grid--{{ section.settings.columns_desktop }}-col-desktop
+      "
+    >
+      {%- for product in product_list -%}
+        {% assign lazy_load = false %}
+        {%- if forloop.index > 2 -%}
+          {%- assign lazy_load = true -%}
+        {%- endif -%}
+        {%- liquid
+          assign product_title = product.title
+          if section.settings.product_title_use_flavor
+            assign product_title = product.options_by_name.Flavor.values.first | default: flavor_product.metafields.flavor_picker.flavor_short.value | default: product.title
+          endif
+        -%}
+        <li class="grid__item">
+          {% render 'card-product',
+            card_product_title: product_title,
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            lazy_load: lazy_load,
+            show_quick_add: section.settings.enable_quick_add,
+            section_id: section.id,
+            horizontal_quick_add: true,
+            use_variant_for_price: true
+          %}
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.pages > 1 -%}
+      {% render 'dawn-pagination', paginate: paginate, anchor: '' %}
+    {%- endif -%}
+  </div>
+{%- endif -%}

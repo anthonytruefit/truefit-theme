@@ -1,0 +1,21 @@
+{%- if template == 'article' -%}
+  {{ 'breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+  <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ blog.url }}">{{ blog.title | escape }}</a>
+      </li>
+      {%- if category_tag != blank -%}
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ blog.url }}/tagged/{{ category_tag | handleize }}">
+            {{- category_meta | escape -}}
+          </a>
+        </li>
+      {%- endif -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+      </li>
+    </ol>
+  </nav>
+{%- endif -%}

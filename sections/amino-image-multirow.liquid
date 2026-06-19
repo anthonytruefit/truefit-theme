@@ -1,0 +1,121 @@
+{%- if section.blocks.size == 0 -%}
+{%- else -%}
+  {{ 'section-image-multirow-rsp.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'feature-image-row.js' | asset_url }}" defer="defer"></script>
+
+  {%- style -%}
+    {%- for block in section.blocks -%}
+      #ImageRow-{{ block.id }} {
+        --aspect-ratio: {{ block.settings.image.aspect_ratio | times: 0.6 }};
+      }
+      @media screen and (min-width: 750px) {
+        #ImageRow-{{ block.id }} {
+          --aspect-ratio: {{ block.settings.image.aspect_ratio }};
+        }
+      }
+    {%- endfor -%}
+
+    #ImageMultiRow-{{ section.id }} {
+      padding-top: 4.8rem;
+      padding-bottom: 9.8rem;
+    }
+  {%- endstyle -%}
+
+  <div class="page-width image-multirow" id="ImageMultiRow-{{ section.id }}">
+    {%- for block in section.blocks -%}
+      <feature-image-row
+        id="ImageRow-{{ block.id }}"
+        class="image-row"
+        {{ block.shopify_attributes }}
+      >
+        <div class="image-row__image-container">
+          <div
+            class="image-row__image-wrapper"
+          >
+            {%- assign img = block.settings.image -%}
+            {%- assign mobile_width = img.width | times: 0.6 -%}
+            {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | times: 0.25 }}, 50vw {%- endcapture -%}
+            {{
+              block.settings.image
+              | image_url: width: 1500
+              | image_tag:
+                loading: 'lazy',
+                sizes: sizes,
+                widths: '165, 360, 535, 750, 1070, 1500',
+                class: 'image-row__image'
+            }}
+          </div>
+        </div>
+
+        <div class="content-container image-row__content-container">
+          {%- if block.settings.caption != blank -%}
+            <p class="image-row__text image-row__text--caption caption-with-letter-spacing caption-with-letter-spacing--medium">
+              {{ block.settings.caption | escape }}
+            </p>
+          {%- endif -%}
+          {%- if block.settings.heading -%}
+            <div class="image-row__heading-wrapper">
+              <h2 class="js-heading color-foreground-accent-1 image-row__heading rte">
+                <span class="js-heading-inner image-row__heading-span">{{ block.settings.heading }}</span>
+              </h2>
+            </div>
+          {%- endif -%}
+          {%- if block.settings.text -%}
+            <div class="image-row__text rte {{ section.settings.text_style }}">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      </feature-image-row>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "AminoLean Image Multirow",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "t:sections.multirow.blocks.row.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.multirow.blocks.row.settings.image.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Row",
+          "label": "t:sections.multirow.blocks.row.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.multirow.blocks.row.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AminoLean: Image Multirow",
+      "blocks": [
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        },
+        {
+          "type": "row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

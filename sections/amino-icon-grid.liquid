@@ -1,0 +1,424 @@
+{%- if section.blocks.size > 0 -%}
+  {%- liquid
+    assign features = section.blocks
+    assign size = 72
+    assign heading = section.settings.heading
+    assign subheading = section.settings.subheading
+    assign wrapper_id = 'Icon-Features-' | append: section.id
+  -%}
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    {%- if section.settings.background_color.alpha > 0 -%}
+      .section-{{ section.id }}-container {
+        background-color: {{ section.settings.background_color }};
+      }
+    {%- endif -%}
+  {%- endstyle -%}
+
+  {%- assign aspect_ratio = section.settings.aspect_ratio | plus: 0.0 -%}
+  {%- assign icon_sizes = '72px' -%}
+  {%- style -%}
+    {%- if background_color.alpha > 0 -%}
+      /* #{{ wrapper_id }} {
+        background-color: {{ background_color }};
+      } */
+    {%- endif -%}
+    .icon-feature__icon {
+      display: block;
+      color: rgb(var(--color-heading, var(--color-foreground)));
+    }
+    .icon-feature__icon-mask {
+      display: block !important;
+      width: 7.2rem;
+      height: 7.2rem;
+      mask: var(--icon-mask);
+      -webkit-mask: var(--icon-mask);
+      background-color: rgb(var(--color-base-accent-1));
+    }
+    .icon-feature__icon-wrapper {
+      margin-bottom: 1.2rem;
+    }
+    .icon-features__grid {
+      display: grid;
+      text-align: center;
+      justify-items: center;
+      margin: 0 auto;
+      grid-gap: 2.4rem;
+      width: 100%;
+    }
+    .icon-features__grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .icon-feature__text.rte > * {
+      margin-bottom: 0;
+    }
+
+    /* .icon-features__grid-item svg path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawIcon 5s 1s linear forwards;
+    }
+    @keyframes drawIcon {
+      from {
+        stroke-dashoffset: 1000;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    } */
+
+    {%- liquid
+      assign icon_blocks = section.blocks | where: 'type', 'feature'
+      assign columns_mobile = section.settings.columns_mobile | at_most: icon_blocks.size
+      assign columns_desktop = section.settings.columns_desktop | at_most: icon_blocks.size
+    -%}
+    #{{ wrapper_id }} .icon-features__grid {
+      display: grid;
+      grid-template-columns: repeat({{ columns_mobile }}, minmax(0, 1fr));
+      max-width: {{ section.settings.container_max_width_mobile }}px;
+    }
+    #{{ wrapper_id }} .icon-features__grid-item {
+      max-width: {{ section.settings.item_max_width_mobile }}px;
+    }
+    @media screen and (min-width: 750px) {
+      .icon-features__grid {
+        row-gap: 3.6rem;
+      }
+      #{{ wrapper_id }} .icon-features__grid {
+        display: grid;
+        grid-template-columns: repeat({{ columns_desktop }}, minmax(0, 1fr));
+        max-width: {{ section.settings.container_max_width_desktop }}px;
+      }
+      #{{ wrapper_id }} .icon-features__grid-item {
+        max-width: {{ section.settings.item_max_width_desktop }}px;
+      }
+    }
+
+    .icon-features__heading-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 42rem;
+      margin: 0 auto 2.4rem auto;
+    }
+    .icon-features__heading {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .icon-features__subheading {
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .icon-features__text {
+      line-height: 136%;
+      letter-spacing: 0.01em;
+    }
+
+    .icon-features__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  {%- endstyle -%}
+
+  <div
+    class="icon-features section-{{ section.id }}-padding color-{{ section.settings.section_color_scheme }}"
+    id="{{ wrapper_id }}"
+  >
+    <div class="page-width icon-features__wrapper">
+      {%- unless heading == blank and subheading == blank -%}
+        <div class="icon-features__heading-wrapper">
+          {%- if heading != blank -%}
+            <h2 class="icon-features__heading color-foreground-accent-1 rte inline-richtext">
+              {{ heading | replace: 'p>', 'span>' }}
+            </h2>
+          {%- endif -%}
+          {%- if subheading != blank -%}
+            <div class="icon-features__subheading rte">
+              {{ subheading }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endunless -%}
+
+      <div class="icon-features__grid">
+        {%- for feature in features -%}
+          {%- if feature.settings.svg_url != blank -%}
+            {%- assign img_url = feature.settings.svg_url -%}
+          {%- else -%}
+            {%- assign img_url = feature.settings.icon | image_url: width: 150 -%}
+          {%- endif -%}
+          <div class="icon-features__grid-item">
+            <div class="icon-feature__icon-wrapper" data-icon="{{ feature.settings.icon_name }}">
+              {%- if feature.settings.icon_name != blank and feature.settings.icon_name != 'custom_image' -%}
+                {%- render 'aminolean-icon-feature', icon: feature.settings.icon_name -%}
+              {%- elsif feature.settings.icon != 'custom_image' -%}
+                {%- render 'aminolean-icon-feature', icon: feature.settings.icon -%}
+              {%- elsif feature.settings.icon_image != blank -%}
+                {%- if feature.settings.icon_image.src contains '.svg' -%}
+                  <div
+                    class="icon-feature__icon-mask"
+                    style="--icon-mask:url({{ feature.settings.icon_image | image_url: width: 200 }})"
+                  ></div>
+                {%- else -%}
+                  {%- assign icon_height = 72.0 | divided_by: feature.settings.icon_image.aspect_ratio -%}
+                  {{
+                    feature.settings.icon_image
+                    | image_url: width: 216
+                    | image_tag:
+                      width: 72,
+                      height: icon_height,
+                      loading: 'lazy',
+                      sizes: '72px',
+                      widths: '72, 144, 216',
+                      class: 'icon-feature__icon-image'
+                  }}
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+            <div class="icon-feature__text rte tw-text-sm tw-space-y-6">
+              {{- feature.settings.text -}}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "AminoLean Feature Icons",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-3"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns on mobile",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "item_max_width_mobile",
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "default": 140,
+      "unit": "px",
+      "label": "Maximum item width on mobile"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width_mobile",
+      "min": 200,
+      "max": 700,
+      "step": 5,
+      "default": 320,
+      "unit": "px",
+      "label": "Maximum container width on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "range",
+      "id": "item_max_width_desktop",
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "default": 140,
+      "unit": "px",
+      "label": "Maximum item width on desktop"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width_desktop",
+      "min": 200,
+      "max": 1200,
+      "step": 10,
+      "default": 620,
+      "unit": "px",
+      "label": "Maximum container width on desktop"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Icon + feature",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "custom_image",
+              "label": "Custom Image"
+            },
+            {
+              "value": "lab_test",
+              "label": "Lab Tested"
+            },
+            {
+              "value": "itch_free",
+              "label": "Itch Free"
+            },
+            {
+              "value": "muscle",
+              "label": "Muscle"
+            },
+            {
+              "value": "no_artificial_flavors",
+              "label": "No Artificial Flavors"
+            },
+            {
+              "value": "sugar_free",
+              "label": "Sugar Free"
+            },
+            {
+              "value": "scale",
+              "label": "Scale"
+            },
+            {
+              "value": "speedometer",
+              "label": "Speedometer"
+            },
+            {
+              "value": "weights",
+              "label": "Weights"
+            },
+            {
+              "value": "vegan",
+              "label": "Vegan"
+            },
+            {
+              "value": "green_tea",
+              "label": "Green Tea"
+            },
+            {
+              "value": "gluten_free",
+              "label": "Gluten Free"
+            },
+            {
+              "value": "brain",
+              "label": "Brain"
+            },
+            {
+              "value": "biotin",
+              "label": "Biotin"
+            },
+            {
+              "value": "gut_health",
+              "label": "Gut Health"
+            },
+            {
+              "value": "droplet",
+              "label": "Droplet"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            }
+          ],
+          "default": "lab_test",
+          "label": "Icon",
+          "info": "Select 'Custom Image' to upload an image below instead."
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "icon_name",
+          "label": "Icon from metafields",
+          "info": "Leave this blank if you're not connecting this section to product metafields"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AminoLean: Icon + Features Grid",
+      "category": "Features"
+    }
+  ]
+}
+{% endschema %}

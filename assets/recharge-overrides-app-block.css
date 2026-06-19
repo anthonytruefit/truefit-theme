@@ -1,0 +1,166 @@
+.rc-template__radio {
+  position: relative;
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+  max-width: calc(100% + 2.4rem);
+}
+
+.rc-template__radio::before {
+  content: 'Frequency';
+  display: block;
+  padding-left: 1.2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  line-height: 120%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.rc-radio {
+  background-color: rgb(var(--color-background));
+  --rc-text-color: rgb(var(--color-foreground));
+  --rc-active-text-color: rgb(var(--color-background));
+  --rc-active-background-color: rgb(var(--color-accent, var(--color-foreground)));
+  transition: height 500ms ease-in-out;
+  height: 7.6rem;
+  align-items: flex-start !important;
+  padding: 2.4rem !important;
+}
+
+.rc-radio__label {
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.rc-radio__label .price-label {
+  font-weight: 500 !important;
+  margin-right: 0 !important;
+}
+
+.rc-radio--active.subscription-radio {
+  height: 140px;
+}
+
+.rc-radio {
+  border-radius: 3.6rem;
+  border: 0.1rem solid rgba(var(--color-foreground), var(--variant-pills-border-opacity));
+}
+.rc-radio + .rc-radio {
+  margin-top: 0.6rem !important;
+}
+
+.rc-radio.rc-radio--active {
+  border-color: var(--rc-active-background-color);
+}
+
+.rc-radio-group__options {
+  border: none !important;
+}
+
+.rc-radio__label {
+  position: relative;
+  padding-left: 3.2rem;
+  margin-left: 0 !important;
+}
+.rc-radio__label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 100%;
+  border: 0.1rem solid rgb(var(--color-foreground));
+  transition: border-color var(--duration-short) ease;
+}
+.rc-radio__label::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  transition: border-color var(--duration-short) ease;
+  background: rgb(var(--color-background));
+  position: absolute;
+  top: 0.8rem;
+  left: 0.5rem;
+  border-radius: 100%;
+  opacity: 0;
+  transform: scale(0);
+  -webkit-transition: all 0.2s ease;
+  transition: opacity var(--duration-short) ease, transform var(--duration-short) ease;
+}
+.rc-radio__input {
+  position: absolute;
+  left: -9999px;
+}
+.rc-radio__input:checked + .rc-radio__label::before {
+  border-color: rgb(var(--color-background));
+}
+.rc-radio__input:checked + .rc-radio__label::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.rc-selling-plans-dropdown__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.rc-template__radio-group .rc-radio-group__options + .rc-selling-plans {
+  margin-top: 0 !important;
+  padding: 0 24px;
+  /* transform: translateY(-72px); */
+  animation: rcSellingPlanAppear 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes rcSellingPlanAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-72px);
+  }
+}
+
+.rc-selling-plans-dropdown__select {
+  vertical-align: middle;
+  max-width: 100%;
+  font-size: 100%;
+  display: initial;
+  margin: 0;
+  flex: 1 1 auto;
+  height: 4.8rem;
+  border: 1px solid rgb(var(--color-background));
+  padding: 1.2rem 4rem 1.2rem 1.6rem;
+  line-height: 1.2;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: rgb(var(--color-accent, var(--color-foreground)));
+  color: rgb(var(--color-background));
+  border-radius: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-position: center right 1rem;
+  background-repeat: no-repeat;
+  background-size: 2.4rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.rc-selling-plans-dropdown__select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+}

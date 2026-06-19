@@ -1,0 +1,30 @@
+<div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+  {%- for article_item in articles -%}
+    {%- liquid
+      if article_item.settings.article
+        assign article = article_item.settings.article
+      else
+        assign article = article_item
+      endif
+    -%}
+    <div
+      class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      {% if settings.animations_reveal_on_scroll %}
+        data-cascade
+        style="--animation-order: {{ forloop.index }};"
+      {% endif %}
+    >
+      {%- render 'article-card',
+        blog: blog,
+        article: article,
+        media_height: section.settings.image_height,
+        show_image: section.settings.show_image,
+        show_date: section.settings.show_date,
+        show_author: section.settings.show_author,
+        show_excerpt: true,
+        show_read_more: true,
+        show_category: true
+      -%}
+    </div>
+  {%- endfor -%}
+</div>

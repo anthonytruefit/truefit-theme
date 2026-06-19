@@ -1,0 +1,566 @@
+{% doc %}
+  @prompt
+    I want a responsive image block with two clickable hotspot areas and those areas do not need to be visible. The image should follow the responsive image guidelines, I would like to add a basic image section. On mobile the size should be 600 x 770 and on desktop it should be 1639 x 2135. It should offer desktop/mobile width options as well as fully customizable color options for the background., The background color should match exactly the background color of the image but it is not., I want a responsive image block with two clickable hotspot areas and those areas do not need to be visible. The image should follow the responsive image guidelines, I would like to add a basic image section. On mobile the size should be 600 x 770 and on desktop it should be 1639 x 2135. It should offer desktop/mobile width options as well as fully customizable color options for the background, It only needs to show the desktop image on desktop and mobile on mobile., Remove the double images. Only one image is needed., Make the hotspot visible, The hotspot is still not visible over the image, The hotspots are not visible over the image and they should be visible to click on, Let's fix the hotspot visibility. Please rewrite the Liquid and CSS code for this section ensuring the following:
+    
+    Hotspot Visibility: The two hotspots must be visible, absolute-positioned elements that sit on top of the image. Give them a higher z-index (e.g., z-index: 10;) so they are not hidden behind the image.
+    
+    Hotspot Styling: Give the hotspots a visible style so the user can see them—such as a small colored circle (e.g., a white dot with a subtle pulse effect or a semi-transparent background) with a cursor: pointer; on hover.
+    
+    Image Constraints: Keep it as a single responsive image (using the desktop/mobile dimensions and schema settings previously requested).
+    
+    Container Layout: Ensure the main wrapper has position: relative; so the absolute positioning of the hotspots is calculated relative to the image container, not the entire page. When the hotspot is clicked just open a popup with a video from the content media and then let the user click to return back to this PDP. , Still put the image in the center of the screen when the desktop width is less than 100 and the background color around it., add options for the video to not autoplay and for it to start on mute
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hotspot-image-container-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: 20px 0;
+  }
+
+  .ai-hotspot-image-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-hotspot-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .ai-hotspot-image-wrapper-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-hotspot-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    aspect-ratio: 1639 / 2135;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-hotspot-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hotspot-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-hotspot-area-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    background-color: {{ block.settings.hotspot_color }};
+    border: {{ block.settings.hotspot_border_width }}px solid {{ block.settings.hotspot_border_color }};
+    border-radius: {{ block.settings.hotspot_border_radius }}%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hotspot-area-{{ ai_gen_id }}:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-hotspot-area-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.hotspot_border_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-hotspot-icon-{{ ai_gen_id }} {
+    width: 50%;
+    height: 50%;
+    color: {{ block.settings.hotspot_icon_color }};
+  }
+
+  .ai-hotspot-modal-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .ai-hotspot-modal-{{ ai_gen_id }}.active {
+    display: flex;
+  }
+
+  .ai-hotspot-modal-content-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+  }
+
+  .ai-hotspot-modal-video-{{ ai_gen_id }} {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+  }
+
+  .ai-hotspot-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+    line-height: 1;
+    z-index: 10000;
+  }
+
+  .ai-hotspot-modal-close-{{ ai_gen_id }}:hover {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hotspot-image-{{ ai_gen_id }} {
+      width: {{ block.settings.mobile_width_percent }}%;
+    }
+
+    .ai-hotspot-placeholder-{{ ai_gen_id }} {
+      aspect-ratio: 600 / 770;
+    }
+
+    .ai-hotspot-modal-close-{{ ai_gen_id }} {
+      top: -35px;
+      font-size: 28px;
+    }
+  }
+
+  @keyframes ai-hotspot-pulse-{{ ai_gen_id }} {
+    0% {
+      box-shadow: 0 0 0 0 {{ block.settings.hotspot_color }}80;
+    }
+    70% {
+      box-shadow: 0 0 0 10px {{ block.settings.hotspot_color }}00;
+    }
+    100% {
+      box-shadow: 0 0 0 0 {{ block.settings.hotspot_color }}00;
+    }
+  }
+
+  {% if block.settings.hotspot_pulse %}
+    .ai-hotspot-area-{{ ai_gen_id }} {
+      animation: ai-hotspot-pulse-{{ ai_gen_id }} 2s infinite;
+    }
+  {% endif %}
+{% endstyle %}
+
+<hotspot-image-{{ ai_gen_id }} class="ai-hotspot-image-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hotspot-image-{{ ai_gen_id }}">
+    <div class="ai-hotspot-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.desktop_image %}
+        <picture>
+          {% if block.settings.mobile_image %}
+            <source
+              media="(max-width: 749px)"
+              srcset="{{ block.settings.mobile_image | image_url: width: 600 }} 600w, {{ block.settings.mobile_image | image_url: width: 1200 }} 1200w"
+            >
+          {% endif %}
+          <img
+            src="{{ block.settings.desktop_image | image_url: width: 1639 }}"
+            srcset="{{ block.settings.desktop_image | image_url: width: 1639 }} 1639w, {{ block.settings.desktop_image | image_url: width: 3278 }} 3278w"
+            alt="{{ block.settings.desktop_image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.desktop_image.width }}"
+            height="{{ block.settings.desktop_image.height }}"
+          >
+        </picture>
+      {% else %}
+        <div class="ai-hotspot-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-hotspot-empty-state-{{ ai_gen_id }}">
+            Next, add an image
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.hotspot_1_enabled %}
+        <button
+          class="ai-hotspot-area-{{ ai_gen_id }} ai-hotspot-area-1-{{ ai_gen_id }}"
+          style="
+            top: {{ block.settings.hotspot_1_y }}%;
+            left: {{ block.settings.hotspot_1_x }}%;
+            width: {{ block.settings.hotspot_size }}px;
+            height: {{ block.settings.hotspot_size }}px;
+          "
+          data-hotspot="1"
+          aria-label="View video 1"
+        >
+          <svg class="ai-hotspot-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+      {% endif %}
+
+      {% if block.settings.hotspot_2_enabled %}
+        <button
+          class="ai-hotspot-area-{{ ai_gen_id }} ai-hotspot-area-2-{{ ai_gen_id }}"
+          style="
+            top: {{ block.settings.hotspot_2_y }}%;
+            left: {{ block.settings.hotspot_2_x }}%;
+            width: {{ block.settings.hotspot_size }}px;
+            height: {{ block.settings.hotspot_size }}px;
+          "
+          data-hotspot="2"
+          aria-label="View video 2"
+        >
+          <svg class="ai-hotspot-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ai-hotspot-modal-{{ ai_gen_id }} ai-hotspot-modal-1-{{ ai_gen_id }}">
+    <div class="ai-hotspot-modal-content-{{ ai_gen_id }}">
+      <button class="ai-hotspot-modal-close-{{ ai_gen_id }}" aria-label="Close video">&times;</button>
+      {% if block.settings.hotspot_1_video %}
+        {{
+          block.settings.hotspot_1_video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: false,
+            loop: false,
+            controls: true,
+            muted: false,
+            class: 'ai-hotspot-modal-video-' | append: ai_gen_id
+        }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ai-hotspot-modal-{{ ai_gen_id }} ai-hotspot-modal-2-{{ ai_gen_id }}">
+    <div class="ai-hotspot-modal-content-{{ ai_gen_id }}">
+      <button class="ai-hotspot-modal-close-{{ ai_gen_id }}" aria-label="Close video">&times;</button>
+      {% if block.settings.hotspot_2_video %}
+        {{
+          block.settings.hotspot_2_video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: false,
+            loop: false,
+            controls: true,
+            muted: false,
+            class: 'ai-hotspot-modal-video-' | append: ai_gen_id
+        }}
+      {% endif %}
+    </div>
+  </div>
+</hotspot-image-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HotspotImage{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.autoplay = {{ block.settings.video_autoplay }};
+        this.startMuted = {{ block.settings.video_start_muted }};
+      }
+
+      connectedCallback() {
+        this.hotspots = this.querySelectorAll('.ai-hotspot-area-{{ ai_gen_id }}');
+        this.modals = this.querySelectorAll('.ai-hotspot-modal-{{ ai_gen_id }}');
+        this.closeButtons = this.querySelectorAll('.ai-hotspot-modal-close-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.hotspots.forEach((hotspot) => {
+          hotspot.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hotspotId = hotspot.getAttribute('data-hotspot');
+            const modal = this.querySelector('.ai-hotspot-modal-' + hotspotId + '-{{ ai_gen_id }}');
+            if (modal) {
+              modal.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              const video = modal.querySelector('video');
+              if (video) {
+                if (this.startMuted) {
+                  video.muted = true;
+                }
+                if (this.autoplay) {
+                  video.play();
+                }
+              }
+            }
+          });
+        });
+
+        this.closeButtons.forEach((closeBtn) => {
+          closeBtn.addEventListener('click', () => {
+            this.closeAllModals();
+          });
+        });
+
+        this.modals.forEach((modal) => {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              this.closeAllModals();
+            }
+          });
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.closeAllModals();
+          }
+        });
+      }
+
+      closeAllModals() {
+        this.modals.forEach((modal) => {
+          modal.classList.remove('active');
+          const video = modal.querySelector('video');
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+        document.body.style.overflow = '';
+      }
+    }
+
+    customElements.define('hotspot-image-{{ ai_gen_id }}', HotspotImage{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image with video hotspots",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "paragraph",
+      "content": "Recommended desktop size: 1639 x 2135px. Recommended mobile size: 600 x 770px."
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "mobile_width_percent",
+      "label": "Mobile width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Hotspot style"
+    },
+    {
+      "type": "range",
+      "id": "hotspot_size",
+      "label": "Hotspot size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "hotspot_color",
+      "label": "Hotspot color",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "color",
+      "id": "hotspot_icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hotspot_border_color",
+      "label": "Border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "hotspot_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "hotspot_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "hotspot_pulse",
+      "label": "Enable pulse animation",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Video settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_start_muted",
+      "label": "Start video muted",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Hotspot 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "hotspot_1_enabled",
+      "label": "Enable hotspot 1",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "hotspot_1_x",
+      "label": "Horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "hotspot_1_y",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "video",
+      "id": "hotspot_1_video",
+      "label": "Video"
+    },
+    {
+      "type": "header",
+      "content": "Hotspot 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "hotspot_2_enabled",
+      "label": "Enable hotspot 2",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "hotspot_2_x",
+      "label": "Horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "hotspot_2_y",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "video",
+      "id": "hotspot_2_video",
+      "label": "Video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with video hotspots"
+    }
+  ]
+}
+{% endschema %}

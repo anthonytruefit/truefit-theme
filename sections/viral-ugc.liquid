@@ -1,0 +1,647 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign wrapper_id = 'VirualUGC-' | append: section.id
+  assign background_mobile = section.settings.mobile_background | default: section.settings.desktop_background
+  assign background_desktop = section.settings.desktop_background | default: section.settings.mobile_background
+-%}
+
+{%- if section.settings.customize_colors -%}
+  {%- style -%}
+    #{{ wrapper_id }} {
+      {%- if section.settings.text_color.alpha > 0 -%}
+        --color-foreground: {%- render 'color-to-rgb-css-var', color: section.settings.text_color -%};
+        --color-shadow: {%- render 'color-to-rgb-css-var', color: section.settings.text_color -%};
+        --color-heading: {%- render 'color-to-rgb-css-var', color: section.settings.text_color -%};
+        --color-link: {%- render 'color-to-rgb-css-var', color: section.settings.text_color -%};
+      {%- endif -%}
+      {%- if section.settings.button_background_color.alpha > 0 -%}
+        --color-button: {%- render 'color-to-rgb-css-var', color: section.settings.button_background_color -%};
+      {%- endif -%}
+      {%- if section.settings.button_text_color.alpha > 0 -%}
+        --color-button-text: {%- render 'color-to-rgb-css-var', color: section.settings.button_text_color -%};
+      {%- endif -%}
+      {%- if section.settings.container_background_color.alpha > 0 -%}
+        --color-background: {%- render 'color-to-rgb-css-var', color: section.settings.container_background_color -%};
+      {%- endif -%}
+    }
+    @media screen and (max-width:749px) {
+      #{{ wrapper_id }} {
+        {%- if section.settings.mobile_text_color.alpha > 0 -%}
+          --color-foreground: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_text_color -%};
+          --color-shadow: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_text_color -%};
+          --color-heading: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_text_color -%};
+          --color-link: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_text_color -%};
+        {%- endif -%}
+        {%- if section.settings.mobile_button_background_color.alpha > 0 -%}
+          --color-button: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_button_background_color -%};
+        {%- endif -%}
+        {%- if section.settings.mobile_button_text_color.alpha > 0 -%}
+          --color-button-text: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_button_text_color -%};
+        {%- endif -%}
+        {%- if section.settings.mobile_container_background_color.alpha > 0 -%}
+          --color-background: {%- render 'color-to-rgb-css-var', color: section.settings.mobile_container_background_color -%};
+        {%- endif -%}
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- style -%}
+  {%- for block in section.blocks -%}
+    {%- liquid
+      assign row_end = block.settings.row_start | plus: block.settings.row_height | at_most: 11
+      assign column_end = block.settings.column_start | plus: block.settings.column_width | at_most: 11
+    -%}
+    #UgcGridItem-{{ block.id }} {
+      grid-column: {{ block.settings.column_start }} / {{ column_end }};
+      grid-row: {{ block.settings.row_start }} / {{ row_end }};
+      {%- if block.type == 'review' -%}
+        justify-self:{% if block.settings.column_start > 1 and column_end == 11 %}end{% elsif block.settings.column_start == 1 and column_end < 11 %}start{% else %}center{% endif %};
+        font-size: {{ block.settings.font_scale | divided_by: 100.0 }}rem;
+        min-width: 24em;
+      {%- endif -%}
+    }
+  {%- endfor -%}
+{%- endstyle -%}
+<svg style="display: none">
+  <symbol id="{{ section.id }}-tiktok" viewBox="0 0 111 28">
+    <path d="M9.28799 11.0644V10.0133C8.92244 9.9592 8.55689 9.93517 8.18535 9.93517C3.68491 9.92917 0.0234375 13.5992 0.0234375 18.1163C0.0234375 20.7892 1.32383 23.288 3.51113 24.8197C2.10287 23.306 1.31784 21.3178 1.31784 19.2455C1.31784 14.7946 4.87744 11.1665 9.28799 11.0644Z" fill="#25F4EE"/>
+    <path d="M9.48575 22.9817C11.4873 22.9757 13.1292 21.3899 13.2071 19.3837L13.2131 1.56187H16.4611C16.3892 1.18946 16.3593 0.811038 16.3593 0.432617H11.9247L11.9127 18.2544C11.8408 20.3147 10.115 21.9245 8.05951 21.8524C7.5022 21.8344 6.95088 21.6842 6.45949 21.4259C7.15463 22.399 8.28123 22.9817 9.48575 22.9817Z" fill="#25F4EE"/>
+    <path d="M22.5316 7.61059V6.61949C21.3391 6.61949 20.1705 6.2711 19.1698 5.61638C20.0447 6.63151 21.2252 7.32828 22.5316 7.61059Z" fill="#25F4EE"/>
+    <path d="M19.1698 5.61638C18.193 4.49313 17.6537 3.05153 17.6537 1.56187H16.4671C16.7727 3.22572 17.7495 4.69135 19.1698 5.61638Z" fill="#FE2C55"/>
+    <path d="M8.19135 14.3741C6.12989 14.3741 4.46395 16.044 4.46395 18.1103C4.46395 19.5038 5.231 20.7772 6.46548 21.4199C5.25497 19.7561 5.62052 17.4315 7.27448 16.2182C8.2273 15.5214 9.46178 15.3172 10.5884 15.6776V11.1365C10.2228 11.0824 9.85729 11.0584 9.48575 11.0584C9.41983 11.0584 9.3599 11.0644 9.29398 11.0644V14.5483C8.93443 14.4342 8.56289 14.3741 8.19135 14.3741Z" fill="#FE2C55"/>
+    <path d="M22.5316 7.61059V11.0644C20.3144 11.0644 18.157 10.3737 16.3593 9.07622V18.1163C16.3593 22.6333 12.6978 26.3034 8.19135 26.3034C6.51342 26.3034 4.88343 25.7868 3.51113 24.8197C5.05123 26.4836 7.21455 27.4326 9.48575 27.4326C13.9862 27.4326 17.6537 23.7625 17.6537 19.2455V10.2055C19.4514 11.5029 21.6088 12.1997 23.826 12.1937V7.74875C23.3886 7.74875 22.9571 7.70069 22.5316 7.61059Z" fill="#FE2C55"/>
+    <path d="M16.3593 18.1163V9.07622C18.157 10.3737 20.3144 11.0704 22.5316 11.0644V7.61059C21.2252 7.32828 20.0447 6.63151 19.1698 5.61638C17.7495 4.69135 16.7727 3.22572 16.4611 1.56187H13.2131L13.2071 19.3837C13.1352 21.444 11.4094 23.0537 9.35391 22.9817C8.20333 22.9396 7.13066 22.369 6.45949 21.4259C4.63774 20.4709 3.93061 18.2124 4.88343 16.3803C5.52464 15.149 6.80106 14.3741 8.18535 14.3741C8.55689 14.3741 8.92843 14.4342 9.28799 14.5483L9.28799 11.0644C4.87744 11.1726 1.31784 14.8006 1.31784 19.2515C1.31784 21.3238 2.10287 23.312 3.51113 24.8257C4.88343 25.7928 6.51342 26.3094 8.19135 26.3094C12.6918 26.3034 16.3593 22.6273 16.3593 18.1163Z" fill="currentColor"/>
+    <path d="M28.2126 7.62261H42.0795L40.809 11.599H37.2135V26.2974H32.731V11.599L28.2246 11.605L28.2126 7.62261Z" fill="currentColor"/>
+    <path d="M64.7854 7.62261H78.9699L77.6995 11.599H73.7923V26.2974H69.2979V11.599L64.7914 11.605L64.7854 7.62261Z" fill="currentColor"/>
+    <path d="M42.9244 13.5632H47.3649V26.2974H42.9484L42.9244 13.5632Z" fill="currentColor"/>
+    <path d="M49.1328 7.57455H53.5733V16.2722L57.9718 11.9474H63.2693L57.7022 17.3534L63.9345 26.2974H59.0445L54.8857 20.0985L53.5673 21.3779V26.2974H49.1268L49.1328 7.57455Z" fill="currentColor"/>
+    <path d="M96.1746 7.57455H100.615V16.2722L105.014 11.9474H110.311L104.744 17.3534L110.976 26.2974H106.086L101.928 20.0985L100.609 21.3779V26.2974H96.1686L96.1746 7.57455Z" fill="currentColor"/>
+    <path d="M47.2111 10.726C47.6835 9.58273 47.1419 8.27208 46.0014 7.79853C44.8608 7.32498 43.5533 7.86786 43.0808 9.01108C42.6084 10.1543 43.15 11.465 44.2905 11.9385C45.4311 12.4121 46.7387 11.8692 47.2111 10.726Z" fill="currentColor"/>
+    <path d="M78.4006 18.6749C78.4006 14.6985 81.4568 11.3888 85.4119 11.0764C85.2142 11.0644 84.9445 11.0524 84.7468 11.0524C80.546 11.0524 77.1422 14.4702 77.1422 18.6749C77.1422 22.8856 80.546 26.2913 84.7468 26.2974C84.9445 26.2974 85.2142 26.2853 85.4119 26.2733C81.4568 25.961 78.4066 22.6513 78.4006 18.6749Z" fill="#25F4EE"/>
+    <path d="M87.1378 11.0524C86.934 11.0524 86.6644 11.0644 86.4666 11.0764C90.6495 11.4068 93.7776 15.0769 93.448 19.2695C93.1544 23.0057 90.194 25.973 86.4666 26.2673C86.6644 26.2853 86.934 26.2913 87.1378 26.2913C91.3386 26.2913 94.7424 22.8736 94.7424 18.6689C94.7424 14.4642 91.3386 11.0524 87.1378 11.0524Z" fill="#FE2C55"/>
+    <path d="M85.9393 22.381C83.8958 22.381 82.2419 20.7232 82.2419 18.6749C82.2419 16.6266 83.8958 14.9688 85.9393 14.9688C87.9828 14.9688 89.6367 16.6266 89.6367 18.6749C89.6367 20.7232 87.9828 22.381 85.9393 22.381ZM85.9393 11.0524C81.7385 11.0524 78.3347 14.4642 78.3347 18.6749C78.3347 22.8856 81.7385 26.2974 85.9393 26.2974C90.1401 26.2974 93.5439 22.8856 93.5439 18.6749C93.5439 14.4642 90.1341 11.0524 85.9393 11.0524Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="{{ section.id }}-amazon" viewBox="0 0 91 28">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M56.2981 21.5475C51.0855 25.3851 43.53 27.4326 37.0249 27.4326C27.9037 27.4326 19.6923 24.063 13.48 18.4586C12.9919 18.0179 13.4293 17.4173 14.0149 17.7605C20.7192 21.6567 29.0087 24.0006 37.5716 24.0006C43.3465 24.0006 49.6993 22.8072 55.5406 20.3306C56.4231 19.9562 57.1611 20.9078 56.2981 21.5475Z" fill="#FF9900"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M58.4652 19.0709C57.8014 18.2207 54.0608 18.6692 52.3818 18.8681C51.8703 18.9305 51.7922 18.4859 52.2529 18.1661C55.2322 16.0718 60.1208 16.6763 60.6908 17.3783C61.2609 18.0842 60.5425 22.9788 57.7428 25.3149C57.3133 25.6737 56.9034 25.4826 57.0947 25.0068C57.7233 23.439 59.1329 19.925 58.4652 19.0709Z" fill="#FF9900"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M52.4989 3.38107V1.34525C52.4989 1.03714 52.7332 0.830441 53.0144 0.830441H62.1395C62.4323 0.830441 62.6666 1.04104 62.6666 1.34525V3.08856C62.6627 3.38107 62.4167 3.76327 61.9794 4.36778L57.2509 11.1109C59.0079 11.068 60.8626 11.3293 62.4557 12.2264C62.815 12.4292 62.9126 12.7256 62.9399 13.0181V15.1904C62.9399 15.4868 62.6119 15.8339 62.2683 15.6545C59.4609 14.1842 55.732 14.0243 52.6278 15.6701C52.3115 15.8417 51.9796 15.4985 51.9796 15.2021V13.139C51.9796 12.8075 51.9835 12.242 52.3154 11.7389L57.7936 3.89197H53.0261C52.7332 3.89197 52.4989 3.68527 52.4989 3.38107Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.212 16.0835H16.4358C16.1703 16.064 15.9595 15.8651 15.9399 15.6116V1.38035C15.9399 1.09565 16.1781 0.869442 16.4749 0.869442H19.0636C19.333 0.881134 19.5478 1.08784 19.5673 1.34525V3.20557H19.6181C20.2936 1.40765 21.5626 0.569138 23.2728 0.569138C25.0104 0.569138 26.0959 1.40765 26.8768 3.20557C27.5484 1.40765 29.0751 0.569138 30.7111 0.569138C31.8747 0.569138 33.1476 1.04884 33.9246 2.12525C34.8032 3.32257 34.6236 5.06198 34.6236 6.5869L34.6197 15.5687C34.6197 15.8534 34.3815 16.0835 34.0847 16.0835H31.3124C31.0352 16.064 30.8127 15.8417 30.8127 15.5687V8.02602C30.8127 7.42541 30.8673 5.92779 30.7346 5.35839C30.5276 4.40288 29.9068 4.13377 29.1024 4.13377C28.4308 4.13377 27.728 4.58228 27.443 5.29989C27.1579 6.0175 27.1852 7.21871 27.1852 8.02602V15.5687C27.1852 15.8534 26.9471 16.0835 26.6503 16.0835H23.878C23.5969 16.064 23.3782 15.8417 23.3782 15.5687L23.3743 8.02602C23.3743 6.4387 23.6359 4.10257 21.6641 4.10257C19.6688 4.10257 19.7469 6.3802 19.7469 8.02602V15.5687C19.7469 15.8534 19.5088 16.0835 19.212 16.0835Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M70.5227 0.569138C74.6421 0.569138 76.8716 4.10257 76.8716 8.59542C76.8716 12.9362 74.4078 16.3799 70.5227 16.3799C66.4775 16.3799 64.2753 12.8465 64.2753 8.44332C64.2753 4.01287 66.5048 0.569138 70.5227 0.569138ZM70.5461 3.47467C68.5001 3.47467 68.3712 6.2593 68.3712 7.99482C68.3712 9.73423 68.3439 13.4471 70.5227 13.4471C72.6741 13.4471 72.7757 10.4518 72.7757 8.62662C72.7757 7.42541 72.7249 5.9902 72.3618 4.85138C72.0494 3.86077 71.4286 3.47467 70.5461 3.47467Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M82.2131 16.0835H79.4487C79.1714 16.064 78.9489 15.8417 78.9489 15.5687L78.945 1.33355C78.9684 1.07224 79.1988 0.869442 79.4799 0.869442H82.053C82.2951 0.881134 82.4943 1.04494 82.5489 1.26725V3.44347H82.5997C83.3767 1.49735 84.4661 0.569138 86.3833 0.569138C87.6289 0.569138 88.8432 1.01764 89.6241 2.24616C90.3504 3.38497 90.3504 5.29989 90.3504 6.6766V15.635C90.3191 15.8846 90.0888 16.0835 89.8154 16.0835H87.0314C86.7776 16.064 86.5668 15.8768 86.5395 15.635V7.90511C86.5395 6.349 86.7191 4.07137 84.8019 4.07137C84.1264 4.07137 83.5056 4.52378 83.1971 5.21019C82.8066 6.0799 82.7559 6.94571 82.7559 7.90511V15.5687C82.752 15.8534 82.5099 16.0835 82.2131 16.0835Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M45.2246 9.28573C45.2246 10.366 45.252 11.2669 44.7053 12.2264C44.2641 13.0064 43.5612 13.4861 42.7842 13.4861C41.7183 13.4861 41.0935 12.6749 41.0935 11.4776C41.0935 9.11413 43.2137 8.68512 45.2246 8.68512V9.28573ZM48.0242 16.0445C47.8407 16.2083 47.5752 16.22 47.3683 16.1108C46.4468 15.3464 46.2789 14.9915 45.7752 14.2622C44.2524 15.8144 43.1708 16.2785 41.1989 16.2785C38.8601 16.2785 37.0444 14.8394 37.0444 11.9573C37.0444 9.70693 38.2627 8.17422 40.0041 7.42541C41.5113 6.7624 43.6159 6.6454 45.2246 6.4621V6.1033C45.2246 5.44419 45.2754 4.66418 44.8849 4.09478C44.5491 3.58387 43.9009 3.37327 43.327 3.37327C42.2688 3.37327 41.3278 3.91537 41.0974 5.03858C41.0506 5.28819 40.8671 5.53389 40.6133 5.54559L37.923 5.25699C37.6965 5.20629 37.4427 5.02298 37.5091 4.67588C38.126 1.41545 41.0779 0.432637 43.7174 0.432637C45.0684 0.432637 46.8333 0.791441 47.8993 1.81325C49.2503 3.07296 49.1214 4.75388 49.1214 6.583V10.9042C49.1214 12.203 49.6603 12.7724 50.1679 13.4744C50.3436 13.724 50.3826 14.0243 50.1562 14.2115C49.59 14.6834 48.5826 15.5609 48.0281 16.0523L48.0242 16.0445Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.82961 9.28571C8.82961 10.366 8.85693 11.2669 8.31029 12.2263C7.86906 13.0063 7.17014 13.4861 6.38921 13.4861C5.32325 13.4861 4.70241 12.6748 4.70241 11.4775C4.70241 9.11411 6.82263 8.6851 8.82961 8.6851V9.28571ZM11.6292 16.0445C11.4457 16.2083 11.1802 16.22 10.9732 16.1108C10.0518 15.3464 9.88776 14.9915 9.38015 14.2622C7.85735 15.8144 6.77968 16.2785 4.80393 16.2785C2.46897 16.2785 0.649414 14.8394 0.649414 11.9572C0.649414 9.70691 1.87156 8.1742 3.60912 7.42539C5.1163 6.76238 7.2209 6.64538 8.82961 6.46208V6.10328C8.82961 5.44417 8.88036 4.66416 8.49381 4.09476C8.1541 3.58385 7.50594 3.37325 6.93586 3.37325C5.87771 3.37325 4.93279 3.91535 4.70241 5.03856C4.65556 5.28817 4.47204 5.53387 4.22215 5.54557L1.52795 5.25697C1.30149 5.20627 1.05159 5.02296 1.11406 4.67586C1.7349 1.41543 4.68289 0.432617 7.32242 0.432617C8.67342 0.432617 10.4383 0.791422 11.5043 1.81323C12.8553 3.07294 12.7264 4.75386 12.7264 6.58298V10.9042C12.7264 12.2029 13.2653 12.7723 13.7729 13.4744C13.9525 13.724 13.9915 14.0243 13.765 14.2115C13.1989 14.6834 12.1915 15.5609 11.637 16.0523L11.6292 16.0445Z" fill="currentColor"/>
+  </symbol>
+
+
+  <symbol id="{{ section.id }}-5stars" viewBox="0 0 64 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.66198 0.765137L7.37533 4.23614L11.2068 4.79616L8.43439 7.49644L9.08867 11.3112L5.66199 9.50918L2.23531 11.3112L2.88959 7.49644L0.11719 4.79616L3.94864 4.23614L5.66198 0.765137Z" fill="#F2A942"/>
+    <path d="M18.8309 0.765137L20.5443 4.23614L24.3757 4.79616L21.6033 7.49644L22.2576 11.3112L18.8309 9.50918L15.4043 11.3112L16.0585 7.49644L13.2861 4.79616L17.1176 4.23614L18.8309 0.765137Z" fill="#F2A942"/>
+    <path d="M31.9999 0.765137L33.7132 4.23614L37.5447 4.79616L34.7723 7.49644L35.4266 11.3112L31.9999 9.50918L28.5732 11.3112L29.2275 7.49644L26.4551 4.79616L30.2865 4.23614L31.9999 0.765137Z" fill="#F2A942"/>
+    <path d="M45.1688 0.765137L46.8822 4.23614L50.7136 4.79616L47.9412 7.49644L48.5955 11.3112L45.1688 9.50918L41.7421 11.3112L42.3964 7.49644L39.624 4.79616L43.4555 4.23614L45.1688 0.765137Z" fill="#F2A942"/>
+    <path d="M58.3378 0.765137L60.0511 4.23614L63.8826 4.79616L61.1102 7.49644L61.7645 11.3112L58.3378 9.50918L54.9111 11.3112L55.5654 7.49644L52.793 4.79616L56.6244 4.23614L58.3378 0.765137Z" fill="#F2A942"/>
+  </symbol>
+</svg>
+
+{%- if section.settings.show_social_links
+  and settings.social_instagram_link != blank
+  or settings.social_tiktok_link != blank
+-%}
+  {%- capture social_links -%}
+    <div class="tw-border tw-border-foreground/20 tw-shadow-lg tw-rounded-full tw-pr-18 tw-pl-32 tw-py-18 tw-flex tw-justify-center tw-items-center color-{{ section.settings.social_container_color_scheme }}">
+      {% if section.settings.follow_text != blank %}<span class="tw-mr-12 caption-large tw-whitespace-nowrap">{{ section.settings.follow_text }}</span>{% endif %}
+      <ul class="tw-flex" role="list">
+        {%- if settings.social_instagram_link != blank -%}
+          <li class="list-social__item">
+            <a href="{{ settings.social_instagram_link }}" class="list-social__link link" target="_blank">
+              {%- render 'icon-instagram' -%}
+              <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if settings.social_tiktok_link != blank -%}
+          <li class="list-social__item">
+            <a href="{{ settings.social_tiktok_link }}" class="list-social__link link" target="_blank">
+              {%- render 'icon-tiktok' -%}
+              <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </div>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- style -%}
+  {%- for block in section.blocks -%}
+    #ViralItem-{{ block.id }} {
+      transform:rotate({{ block.settings.rotation }}deg);
+      {%- if block.settings.image != blank -%}
+        padding-bottom:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;
+      {%- endif -%}
+    }
+  {%- endfor -%}
+{%- endstyle -%}
+
+<div
+  id="{{ wrapper_id }}"
+  class="
+    color-{{ section.settings.color_scheme }} tw-relative section-{{ section.id }}-padding tw-overflow-hidden
+    tw-px-20 tw-flex tw-flex-col tw-items-center tablet:tw-flex-row tablet:tw-justify-center
+    {%- if background_mobile != blank %}
+      [--background-gradient:var(--mobile-gradient)] tablet:[--background-gradient:var(--desktop-gradient)]
+      [background:var(--background-gradient)]
+    {%- endif -%}
+  "
+  style="
+    {%- if background_mobile != blank -%}
+      --mobile-gradient:{{ background_mobile }};
+      --desktop-gradient:{{ background_desktop }};
+    {%- endif -%}
+  "
+>
+  {%- if section.settings.heading != blank -%}
+    <div
+      class="tw-text-center tw-mb-36 tablet:tw-mr-24 desktop:tw-mr-48 tablet:shrink-0"
+      style="max-width:{{ section.settings.max_width }}px;"
+    >
+      {%- assign heading = section.settings.heading | newline_to_br -%}
+      {%- if heading contains 'AMAZON' -%}
+        {%- capture amazon_inline_logo -%}
+        <svg class="tw-inline" viewBox="0 0 91 28" style="height:1em;margin-bottom:-.39em">
+          <use href="#{{ section.id }}-amazon" />
+        </svg>
+      {%- endcapture -%}
+        {%- assign heading = heading | replace: 'AMAZON', amazon_inline_logo -%}
+      {%- endif -%}
+      {%- if heading contains 'TIKTOK' -%}
+        {%- capture tiktok_inline_logo -%}
+        <svg class="tw-inline" viewBox="0 0 111 28" style="height:1em;margin-top:-.3em">
+          <use href="#{{ section.id }}-tiktok" />
+        </svg>
+      {%- endcapture -%}
+        {%- assign heading = heading | replace: 'TIKTOK', tiktok_inline_logo -%}
+      {%- endif -%}
+      <h2
+        class="tw-text-3xl desktop:tw-text-4xl{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order:1;"
+        {% endif %}
+      >
+        {{ heading }}
+      </h2>
+      {%- if social_links != blank -%}
+        <div
+          class="tw-hidden tablet:tw-block tw-mt-36{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order:2;"
+          {% endif %}
+        >
+          {{ social_links }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div>
+    {%- liquid
+      assign fetch_priority = 'auto'
+      assign loading = 'lazy'
+      if section.index == 1
+        assign fetch_priority = 'high'
+        assign loading = 'eager'
+      endif
+    -%}
+    <div
+      class=" tw-grid tw-grid-cols-10 tw-grid-rows-10 tw-w-full tw-mx-auto"
+      style="max-width:{{ section.settings.max_width }}px;"
+    >
+      {%- for block in section.blocks -%}
+        <div
+          id="UgcGridItem-{{ block.id }}"
+          class="{{ block.settings.content_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {%- case block.type -%}
+            {%- when 'screenshot' -%}
+              <div
+                id="ViralItem-{{ block.id }}"
+                class="tw-relative"
+              >
+                {%- assign column_width = block.settings.column_start
+                  | plus: block.settings.column_width
+                  | at_most: 11
+                  | minus: block.settings.column_start
+                -%}
+                {%- assign total_page_width = section.settings.max_width | plus: 40 -%}
+                {%- capture sizes -%}
+                    (min-width:{{  section.settings.max_width | plus: 40 }}px){{ column_width | divided_by: 10.0 | times: section.settings.max_width | ceil }}px,
+                    calc({{ column_width | times: 10 }}vw - {{ column_width | divided_by: 10.0 | times: 40 | round }}px) 
+                  {%- endcapture -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1500
+                  | image_tag:
+                    width: block.settings.image.width,
+                    height: block.settings.image.height,
+                    fetchpriority: fetch_priority,
+                    loading: loading,
+                    class: 'tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-contain',
+                    sizes: sizes,
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                }}
+              </div>
+            {%- when 'review' -%}
+              <div
+                id="ViralItem-{{ block.id }}"
+                class="tw-rounded-[.4em] tw-space-y-[.2em] tw-p-[1em] color-background-1 tw-text-[1em] xs:tw-text-[1.25em] tw-shadow-lg"
+              >
+                <div class="tw-flex tw-justify-between tw-leading-tight">
+                  <div class="tw-text-[1.1em] tw-text-foreground/50">{{ block.settings.name }}</div>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="{{ block.settings.font_scale | divided_by: 100.0 | times: 64 | at_most: 64 }}"
+                    viewBox="0 0 64 12"
+                  >
+                    <use href="#{{ section.id }}-5stars" />
+                  </svg>
+                </div>
+                <div class="inline-richtext">{{ block.settings.title }}</div>
+                <div class="rte">{{ block.settings.review }}</div>
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if social_links != blank -%}
+    <div class="tablet:tw-hidden tw-mt-24{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ social_links }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "UGC Highlights",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "The words 'TIKTOK' and 'AMAZON' will be replaced by logos"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_links",
+      "label": "Show social links",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "follow_text",
+      "label": "Follow CTA text",
+      "default": "Follow us"
+    },
+    {
+      "type": "header",
+      "content": "layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 300,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum content width",
+      "default": 450
+    },
+    {
+      "type": "header",
+      "content": "Backgrounds"
+    },
+    {
+      "type": "color_background",
+      "id": "mobile_background",
+      "label": "Mobile background gradient"
+    },
+    {
+      "type": "color_background",
+      "id": "desktop_background",
+      "label": "Desktop background gradient"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "inverse"
+    },
+    {
+      "type": "color_scheme",
+      "id": "social_container_color_scheme",
+      "label": "Color scheme for follow container",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "customize_colors",
+      "label": "Customize colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "container_background_color",
+      "label": "Container background color",
+      "info": "This sets the background color when 'show container' is checked."
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Mobile text color"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_background_color",
+      "label": "Mobile button background color"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_text_color",
+      "label": "Mobile button text color"
+    },
+    {
+      "type": "color",
+      "id": "mobile_container_background_color",
+      "label": "Mobile container background color",
+      "info": "This sets the background color when 'show container' is checked."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "screenshot",
+      "name": "Screenshot",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "number",
+          "id": "rotation",
+          "label": "Rotation (degrees)",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "column_start",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 1,
+          "label": "Column start",
+          "info": "Set where the content should begin, from left to right. Setting it to 1 starts the content on the left. Setting it to 7 starts it at the center of the screen."
+        },
+        {
+          "type": "range",
+          "id": "column_width",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 6,
+          "label": "Column width",
+          "info": "Set how wide the content should be, out of 10 columns. E.g. 5 columns = half-width."
+        },
+        {
+          "type": "range",
+          "id": "row_start",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 1,
+          "label": "Row start",
+          "info": "Set where the content should begin, from top to bottom. Setting it to 1 starts the content at the top of the section."
+        },
+        {
+          "type": "range",
+          "id": "row_height",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 10,
+          "label": "Row height",
+          "info": "Set how tall the content should be, out of 10 rows."
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "options": [
+            {
+              "value": "tw-self-start",
+              "label": "Top"
+            },
+            {
+              "value": "tw-self-center",
+              "label": "Middle"
+            },
+            {
+              "value": "tw-self-end",
+              "label": "Bottom"
+            }
+          ],
+          "default": "tw-self-center",
+          "label": "Align content"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "default": "Dean",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "review",
+          "label": "Review"
+        },
+        {
+          "type": "range",
+          "min": 75,
+          "max": 150,
+          "step": 1,
+          "default": 100,
+          "unit": "%",
+          "id": "font_scale",
+          "label": "Font size scale"
+        },
+        {
+          "type": "number",
+          "id": "rotation",
+          "label": "Rotation (degrees)",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "column_start",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 1,
+          "label": "Column start",
+          "info": "Set where the content should begin, from left to right. Setting it to 1 starts the content on the left. Setting it to 7 starts it at the center of the screen."
+        },
+        {
+          "type": "range",
+          "id": "column_width",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 6,
+          "label": "Column width",
+          "info": "Set how wide the content should be, out of 10 columns. E.g. 5 columns = half-width."
+        },
+        {
+          "type": "range",
+          "id": "row_start",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 1,
+          "label": "Row start",
+          "info": "Set where the content should begin, from top to bottom. Setting it to 1 starts the content at the top of the section."
+        },
+        {
+          "type": "range",
+          "id": "row_height",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "default": 4,
+          "label": "Row height",
+          "info": "Set how tall the content should be, out of 10 rows."
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "options": [
+            {
+              "value": "tw-self-start",
+              "label": "Top"
+            },
+            {
+              "value": "tw-self-center",
+              "label": "Middle"
+            },
+            {
+              "value": "tw-self-end",
+              "label": "Bottom"
+            }
+          ],
+          "default": "tw-self-center",
+          "label": "Align content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "UGC Highlights",
+      "blocks": [
+        {
+          "type": "screenshot"
+        },
+        {
+          "type": "screenshot"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

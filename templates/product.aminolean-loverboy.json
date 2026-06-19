@@ -1,0 +1,703 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-rsp",
+      "blocks": {
+        "3336d16b-3128-4d75-8dc7-2bc2c467bb6d": {
+          "type": "collab_title",
+          "settings": {
+            "title": "AminoLean",
+            "image": "shopify://shop_images/xLoverboy_Purple_1.svg",
+            "image_top_margin": -12,
+            "hidden_name": "x Loverboy"
+          }
+        },
+        "546173b7-c9d2-4fb9-ac10-cfb658474496": {
+          "type": "alix_collab_title",
+          "disabled": true,
+          "settings": {
+            "title": "AminoLean"
+          }
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "Peach Bellini Mocktail",
+            "text_style": "subtitle"
+          }
+        },
+        "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8": {
+          "type": "reviews_badge_price",
+          "settings": {}
+        },
+        "3c59f6d2-da96-4eb5-b654-9491cbd885fe": {
+          "type": "product_picker_product",
+          "settings": {
+            "product": "aminolean-energy-drink-peach-bellini",
+            "title": "Energy Drink",
+            "icon": "shopify://shop_images/icon-energy.svg",
+            "badge": ""
+          }
+        },
+        "8401f64e-80cb-4fd7-96ef-365c9d8ecc80": {
+          "type": "product_picker_product",
+          "settings": {
+            "product": "aminolean-peach-bellini-bundle",
+            "title": "Energy Drink + Crewneck",
+            "icon": "shopify://shop_images/drink_and_sweater.svg",
+            "badge": "Save $33"
+          }
+        },
+        "f672c4bb-9798-42a2-b32f-1ea666881bc7": {
+          "type": "product_picker_product",
+          "settings": {
+            "product": "peachy-crewneck-sweater",
+            "title": "Peachy Crewneck",
+            "icon": "shopify://shop_images/sweater-01.svg",
+            "badge": ""
+          }
+        },
+        "ab559b18-8d7c-4442-8809-6efac41d0b05": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "icons_metaobject_handle": "aminolean-variant-icons",
+            "product_override_picker_type": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "3336d16b-3128-4d75-8dc7-2bc2c467bb6d",
+        "546173b7-c9d2-4fb9-ac10-cfb658474496",
+        "caption",
+        "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
+        "3c59f6d2-da96-4eb5-b654-9491cbd885fe",
+        "8401f64e-80cb-4fd7-96ef-365c9d8ecc80",
+        "f672c4bb-9798-42a2-b32f-1ea666881bc7",
+        "ab559b18-8d7c-4442-8809-6efac41d0b05",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    },
+    "0125028e-5c09-4193-951d-8bcfa32f6a05": {
+      "type": "aminolean-product-tabs",
+      "blocks": {
+        "9d4045cb-3ac1-40bb-935c-6aee04da2245": {
+          "type": "description_tab",
+          "settings": {
+            "title": "Description",
+            "use_product_description": true,
+            "text": "",
+            "first_paragraph_only": false
+          }
+        },
+        "5300a200-ff29-4c4e-9272-0aba7173f31a": {
+          "type": "nutrition_tab",
+          "settings": {
+            "title": "Nutrition",
+            "text": ""
+          }
+        },
+        "94cf83bb-0203-4410-ac53-4bebe1efc9f4": {
+          "type": "directions_tab",
+          "settings": {
+            "title": "Directions",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "9d4045cb-3ac1-40bb-935c-6aee04da2245",
+        "5300a200-ff29-4c4e-9272-0aba7173f31a",
+        "94cf83bb-0203-4410-ac53-4bebe1efc9f4"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "92ed50e5-c9f9-4546-8bcf-935ad7db7174": {
+      "type": "aminolean-video-quote",
+      "settings": {
+        "heading": "Enjoy the party and the morning after! Introducing Peach Bellini in partnership with our friends Loverboy. With a juicy and refreshing peach flavor, this energizing mocktail is our preferred kind of bubbly!",
+        "heading_size": "h1",
+        "signature_image": "shopify://shop_images/AminoLeanLoverboyLockup_Purple.svg",
+        "mute_video": true,
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/BRUNCH_v2.mp4",
+        "description": "Behind the scenes of our photoshoot with our friends at Loverboy to celebrate our Peach Bellini Mocktail!",
+        "color_scheme": "accent-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "16501ff2-51f3-47f5-9107-cb4433714c25": {
+      "type": "amino-icon-grid",
+      "blocks": {
+        "3a2c1b00-4073-4b1a-ba1d-6408440ee711": {
+          "type": "feature",
+          "repeater": "{{ product.metafields.product_features.icon_features.value }}",
+          "settings": {
+            "icon": "lab_test",
+            "icon_image": "{{ block.repeater.icon_image.value }}",
+            "text": "<p>{{ block.repeater.text | metafield_tag }}</p>",
+            "icon_name": "{{ block.repeater.icon_name.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "3a2c1b00-4073-4b1a-ba1d-6408440ee711"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "heading": "<p>Energy without compromise</p>",
+        "subheading": "",
+        "columns_mobile": 2,
+        "item_max_width_mobile": 140,
+        "container_max_width_mobile": 320,
+        "columns_desktop": 3,
+        "item_max_width_desktop": 140,
+        "container_max_width_desktop": 620,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "b7ee2111-b197-42ae-82f6-68117e2b511c": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-1",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "custom",
+        "customize_background": true,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5": {
+      "type": "amino-press-logos",
+      "blocks": {
+        "036abe6d-7f32-4a73-8798-fb775bb27375": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/inc-logo.svg",
+            "width_1": 25,
+            "image_2": "shopify://shop_images/gq-logo.svg",
+            "width_2": 22,
+            "image_3": "shopify://shop_images/byrdie-logo.svg",
+            "width_3": 36,
+            "width_4": 25
+          }
+        },
+        "80e97f03-9734-4e91-b564-21a6abbda9e6": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/mens-health-logo.svg",
+            "width_1": 36,
+            "image_2": "shopify://shop_images/womens-health-logo.svg",
+            "width_2": 36,
+            "width_3": 25,
+            "width_4": 25
+          }
+        },
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/today-logo.svg",
+            "width_1": 18,
+            "image_2": "shopify://shop_images/insider-logo.svg",
+            "width_2": 32,
+            "image_3": "shopify://shop_images/shape-logo.svg",
+            "width_3": 32,
+            "width_4": 25
+          }
+        }
+      },
+      "block_order": [
+        "036abe6d-7f32-4a73-8798-fb775bb27375",
+        "80e97f03-9734-4e91-b564-21a6abbda9e6",
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06"
+      ],
+      "custom_css": [
+        "#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"
+      ],
+      "settings": {
+        "heading": "Featured In",
+        "heading_style": "small_uppercase",
+        "color_scheme": "",
+        "vertical_spacing": 12,
+        "horizontal_spacing": 24,
+        "max_width": 414,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "3817fd1e-70dc-4ffb-ac2a-c6d55eb4d880": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-1",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "894e738c-d102-4245-8b24-f42264ccfba5": {
+      "type": "amino-image-multirow",
+      "blocks": {
+        "4b9d8e29-f671-4645-b493-61c94bc95f15": {
+          "type": "row",
+          "repeater": "{{ product.metafields.product_features.image_rows.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "text": "<p>{{ block.repeater.text | metafield_tag }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "4b9d8e29-f671-4645-b493-61c94bc95f15"
+      ],
+      "settings": {}
+    },
+    "b59ff753-29ed-4f7b-952c-393889c3bc34": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-1",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "2cfffd88-7ee7-45de-bef9-f6239565c3fe": {
+      "type": "aminolean-review-chat-bubbles",
+      "blocks": {
+        "template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 55,
+            "width_desktop": 33,
+            "title": "Rachel",
+            "content": "<p>\"The flavors are amazing... and the feeling you get from the product is even better!\"</p>",
+            "quote_points_right": true,
+            "content_position": "center",
+            "content_alignment": "start",
+            "desktop_content_position": "start",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "47ff8fb3-e9f2-491c-893f-88aa453810b5": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 40,
+            "width_desktop": 33,
+            "title": "Laure P.",
+            "content": "<p>\"Gives me the energy I need without the jittery feel\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "10999926-07ea-43e6-acc3-bad5d48fa838": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 33,
+            "width_desktop": 25,
+            "title": "Hailey A.",
+            "content": "<p>\"The BEST boost of energy.\"</p>",
+            "quote_points_right": false,
+            "content_position": "end",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "end"
+          }
+        },
+        "282f49bc-3444-44e0-acdc-f6d9f4dbafac": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 67,
+            "width_desktop": 40,
+            "title": "Justine R.",
+            "content": "<p>\"It has given me power, motivation, and kept me positive throughout my journey getting back into fitness\"</p>",
+            "quote_points_right": true,
+            "content_position": "center",
+            "content_alignment": "end",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "end"
+          }
+        },
+        "3eba1a46-e30b-4ddb-94f6-54a77f271ac5": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 50,
+            "width_desktop": 33,
+            "title": "Devin U.",
+            "content": "<p>\"The taste and energy are amazing and it doesn't make you feel jittery\"</p>",
+            "quote_points_right": true,
+            "content_position": "start",
+            "content_alignment": "start",
+            "desktop_content_position": "start",
+            "desktop_content_alignment": "start"
+          }
+        },
+        "d308e3ca-b213-4e98-98a3-903164301220": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 40,
+            "width_desktop": 25,
+            "title": "Carol",
+            "content": "<p>\"No jitters, tastes great, clean energy!\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "start",
+            "desktop_content_position": "end",
+            "desktop_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0",
+        "47ff8fb3-e9f2-491c-893f-88aa453810b5",
+        "10999926-07ea-43e6-acc3-bad5d48fa838",
+        "282f49bc-3444-44e0-acdc-f6d9f4dbafac",
+        "3eba1a46-e30b-4ddb-94f6-54a77f271ac5",
+        "d308e3ca-b213-4e98-98a3-903164301220"
+      ],
+      "settings": {
+        "heading": "<p>What They're Saying</p>",
+        "color_scheme": "accent-1",
+        "quote_color_scheme": "background-1",
+        "stars_color": "#ff9900",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "43cdd749-08e4-4f78-a646-cc21ece1f524": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-1",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "16800399257fe81b25": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "adcd68da-a633-4162-8167-cc00e784febe": {
+      "type": "amino-collapsible-content",
+      "blocks": {
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I drink AminoLean Energy Drinks?",
+            "icon": "none",
+            "row_content": "<p>You can drink AminoLean 20-30 minutes before your workout for a pre workout boost, or anytime during the day when you need an energy pick-me-up.</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much caffeine is in one can?",
+            "icon": "none",
+            "row_content": "<p>There is 200mg of caffeine in one can!</p>",
+            "page": ""
+          }
+        },
+        "b5b58fc0-f7fc-46a4-ad96-022599ef391b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does Peach Bellini Mocktail have alcohol?",
+            "icon": "none",
+            "row_content": "<p>Nope! It's 100% zero alcohol but if you added some, we won't tell anyone (if you're over 21 of course.)</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many cans can I drink per day?",
+            "icon": "none",
+            "row_content": "<p>We would recommend limiting your intake to one can per day.</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will it make me feel tingly or \"itchy\"?",
+            "icon": "none",
+            "row_content": "<p>No, AminoLean Energy Drink should not make you feel jittery or itchy. </p>",
+            "page": ""
+          }
+        },
+        "b721a8f7-acbe-4257-9d72-66b005bf2e29": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will this flavor be available for long?",
+            "icon": "none",
+            "row_content": "<p>Just like the summer, this flavor won't last long!</p>",
+            "page": ""
+          }
+        },
+        "5ff4455d-a7ef-4d2e-bc6e-a84b8a226a8b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does the sweater run true to size?",
+            "icon": "none",
+            "row_content": "<p>The sweater tends to shrink after the first wash, so we recommend sizing up!</p>",
+            "page": ""
+          }
+        },
+        "cbcdd948-05b7-49e1-af73-d52ce25a21b1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does the Feelin' Peachy Bundle include Free Shipping?",
+            "icon": "none",
+            "row_content": "<p>Yes! What a steal!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1",
+        "b5b58fc0-f7fc-46a4-ad96-022599ef391b",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3",
+        "b721a8f7-acbe-4257-9d72-66b005bf2e29",
+        "5ff4455d-a7ef-4d2e-bc6e-a84b8a226a8b",
+        "cbcdd948-05b7-49e1-af73-d52ce25a21b1"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d": {
+      "type": "aminolean-products-slider",
+      "blocks": {
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_PinkLemonade_30Serv_021523-01_Front_HighRes_a9867215-6c6c-4dc6-8226-4e01b48182cc.png",
+            "heading": "AminoLean Pre Workout",
+            "heading_size": "h4",
+            "subheading": "Our original pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pink-lemonade"
+          }
+        },
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRTD_StrawberryWatermelon_SingleServ_041023-10_Front_HighRes.png",
+            "heading": "AminoLean Energy Drink",
+            "heading_size": "h4",
+            "subheading": "Our ready to drink, lightly carbonated energy drink for boosts of clean energy on the go.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-energy-drink-strawberry-watermelon"
+          }
+        },
+        "8f7cfacc-df86-4568-ba55-f175a36c3425": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_Acai_25Serv_122222-01_Front_HighRes.png",
+            "heading": "AminoLean Naturally Sweetened",
+            "heading_size": "h4",
+            "subheading": "Our naturally sweetened pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/vegan-aminolean-acai"
+          }
+        },
+        "01aefae9-030c-48ee-a482-010f668052af": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRECOVERY_TropicalIslandPunch_30Serv_102423-02_Front_HighRes.png",
+            "heading": "AminoLean Recovery",
+            "heading_size": "h4",
+            "subheading": "Our post-workout recovery blend with rapid hydration and immune system boosting ingredients.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-recovery-tropical-island-punch"
+          }
+        },
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/max-tile.jpg",
+            "heading": "AminoLean MAX",
+            "heading_size": "h4",
+            "subheading": "Our high-intensity pre workout with added ingredients for pump and focus.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-max-preworkout-passion-fruit-punch"
+          }
+        },
+        "324c9793-b418-44ea-bd7c-b46a40054f50": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "AminoLean x Alix Earle",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pre-workout-cherry-on-top"
+          }
+        },
+        "64299f91-619e-4699-976a-64c0c5ee491e": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "New Product Tile",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": ""
+          }
+        },
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "Alix Earle Again",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0",
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21",
+        "8f7cfacc-df86-4568-ba55-f175a36c3425",
+        "01aefae9-030c-48ee-a482-010f668052af",
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1",
+        "324c9793-b418-44ea-bd7c-b46a40054f50",
+        "64299f91-619e-4699-976a-64c0c5ee491e",
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848"
+      ],
+      "settings": {
+        "title": "The Full AminoLean Line",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "columns_desktop": 4,
+        "full_width": false,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "related-products": {
+      "type": "related-products-rsp",
+      "disabled": true,
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h2",
+        "heading_content_alignment": "tw-text-center",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "16793366966ef06eca": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0125028e-5c09-4193-951d-8bcfa32f6a05",
+    "92ed50e5-c9f9-4546-8bcf-935ad7db7174",
+    "16501ff2-51f3-47f5-9107-cb4433714c25",
+    "b7ee2111-b197-42ae-82f6-68117e2b511c",
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5",
+    "3817fd1e-70dc-4ffb-ac2a-c6d55eb4d880",
+    "894e738c-d102-4245-8b24-f42264ccfba5",
+    "b59ff753-29ed-4f7b-952c-393889c3bc34",
+    "2cfffd88-7ee7-45de-bef9-f6239565c3fe",
+    "43cdd749-08e4-4f78-a646-cc21ece1f524",
+    "16800399257fe81b25",
+    "adcd68da-a633-4162-8167-cc00e784febe",
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d",
+    "related-products",
+    "16793366966ef06eca"
+  ]
+}

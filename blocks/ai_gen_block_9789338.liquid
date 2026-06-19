@@ -1,0 +1,278 @@
+{% doc %}
+  @prompt
+    I want to have a video embedded on the left side of the screen and a picture on the right side of the screen. Responsive to both desktop and mobile with dynamic background color. Make the video vertical (like a instagram reel size)  Put them side by side since they are vertical
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-image-split-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-video-image-split__container-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.gap }}px;
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-video-image-split__video-wrapper-{{ ai_gen_id }},
+  .ai-video-image-split__image-wrapper-{{ ai_gen_id }} {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .ai-video-image-split__video-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: {{ block.settings.border_radius }}px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-video-image-split__image-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: {{ block.settings.border_radius }}px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-video-image-split__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-video-image-split__placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-video-image-split__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-video-image-split__container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-video-image-split__video-wrapper-{{ ai_gen_id }},
+    .ai-video-image-split__image-wrapper-{{ ai_gen_id }} {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<video-image-split-{{ ai_gen_id }}
+  class="ai-video-image-split-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-image-split__container-{{ ai_gen_id }}">
+    <div class="ai-video-image-split__video-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.video %}
+        <video
+          class="ai-video-image-split__video-{{ ai_gen_id }}"
+          {% if block.settings.autoplay %}autoplay{% endif %}
+          {% if block.settings.loop %}loop{% endif %}
+          {% if block.settings.muted %}muted{% endif %}
+          {% if block.settings.controls %}controls{% endif %}
+          playsinline
+        >
+          <source src="{{ block.settings.video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% else %}
+        <div class="ai-video-image-split__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-video-image-split__empty-state-{{ ai_gen_id }}">
+            Add a video
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-video-image-split__image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1000 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          class="ai-video-image-split__image-{{ ai_gen_id }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% else %}
+        <div class="ai-video-image-split__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-video-image-split__empty-state-{{ ai_gen_id }}">
+            Add an image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</video-image-split-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoImageSplit{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const video = this.querySelector('.ai-video-image-split__video-{{ ai_gen_id }}');
+        if (video && video.hasAttribute('autoplay')) {
+          video.play().catch(function(error) {
+            console.log('Autoplay prevented:', error);
+          });
+        }
+      }
+    }
+
+    customElements.define('video-image-split-{{ ai_gen_id }}', VideoImageSplit{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video image split",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Muted",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "controls",
+      "label": "Show controls",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between items",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video image split"
+    }
+  ]
+}
+{% endschema %}

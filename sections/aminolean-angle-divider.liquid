@@ -1,0 +1,86 @@
+{{ 'section-angle-divider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  {%- if section.settings.customize_background and section.settings.background_custom_color != blank %}
+    #AngleDivider-{{ section.id }} {
+      background-color: {{ section.settings.background_custom_color }};
+    }
+  {%- endif -%}
+  {%- if section.settings.customize_foreground and section.settings.foreground_custom_color != blank %}
+    #AngleDivider-{{ section.id }} .angle-divider__foreground {
+      background-color: {{ section.settings.foreground_custom_color }};
+    }
+  {%- endif -%}
+{%- endstyle -%}
+<div
+  id="AngleDivider-{{ section.id }}"
+  class="angle-divider{% if section.settings.foreground_on_top %} angle-divider--down{% endif %}{% unless section.settings.customize_background %} color-{{ section.settings.background_color_scheme }}{% endunless %}"
+  aria-hidden="true"
+>
+  <div
+    class="angle-divider__foreground{% unless section.settings.customize_foreground %} color-{{ section.settings.foreground_color_scheme }}{% endunless %}"
+  ></div>
+</div>
+
+{% comment %}
+  {
+    "type": "checkbox",
+    "id": "overlap_adjacent_section",
+    "label": "Overlap adjacent section",
+    "info": "This is useful when the connecting section is full-"
+  },
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Angled Divider",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "foreground_on_top",
+      "label": "Foreground color above"
+    },
+    {
+      "type": "color_scheme",
+      "id": "foreground_color_scheme",
+      "default": "accent-inverse",
+      "label": "Foreground color scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "customize_foreground",
+      "label": "Customize foreground"
+    },
+    {
+      "type": "color",
+      "id": "foreground_custom_color",
+      "label": "Custom foreground color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "background_color_scheme",
+      "default": "background-1",
+      "label": "Background color scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "customize_background",
+      "label": "Customize background"
+    },
+    {
+      "type": "color",
+      "id": "background_custom_color",
+      "label": "Custom background color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Angled Divider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1117 @@
+{% doc %}
+  @prompt
+    I would like a collapsible menu with the option of 3-5 headings across horizontally. Each heading should open up into a box that allows for either text or image content. The text, fonts, images should be fully cuztomizable., This is a good start but the headings should present horizontally across the page and have arrows or some indicator that there is content to show when clicked., You still have the headings listed vertically. i would like "tab 1" "tab 2" and "tab 3" horizontally from left to right., I should be able to collapse all 3 tabs and the default should be for all 3 tabs to be collapsed., Ok finally, I'd like to be able to upload multiple images in a tab if I would like. The images should all show as thumbnails with the ability to click to see full size. I should also be able to give them each a small caption.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-collapsible-tabs-{{ ai_gen_id }} {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: {{ block.settings.container_padding }}px;
+  background-color: {{ block.settings.background_color }};
+  border-radius: {{ block.settings.border_radius }}px;
+}
+
+@media screen and (min-width: 750px) {
+  .ai-collapsible-tabs-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+  }
+}
+
+  .ai-collapsible-tabs__headers-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.tab_gap }}px;
+    border-bottom: {{ block.settings.border_thickness }}px solid {{ block.settings.border_color }};
+    flex-wrap: wrap;
+  }
+
+  .ai-collapsible-tabs__header-{{ ai_gen_id }} {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    padding: {{ block.settings.tab_padding }}px;
+    cursor: pointer;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    border-bottom: {{ block.settings.active_border_thickness }}px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ai-collapsible-tabs__header-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.heading_hover_color }};
+  }
+
+  .ai-collapsible-tabs__header-{{ ai_gen_id }}.active {
+    color: {{ block.settings.heading_active_color }};
+    border-bottom-color: {{ block.settings.active_border_color }};
+  }
+
+  .ai-collapsible-tabs__icon-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .ai-collapsible-tabs__header-{{ ai_gen_id }}.active .ai-collapsible-tabs__icon-{{ ai_gen_id }} {
+    transform: rotate(180deg);
+  }
+
+  .ai-collapsible-tabs__content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+    display: none;
+  }
+
+  .ai-collapsible-tabs__content-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  .ai-collapsible-tabs__text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-collapsible-tabs__gallery-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .ai-collapsible-tabs__gallery-item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-collapsible-tabs__thumbnail-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-collapsible-tabs__thumbnail-{{ ai_gen_id }}:hover {
+    transform: scale(1.05);
+  }
+
+  .ai-collapsible-tabs__caption-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.caption_size }}px;
+    color: {{ block.settings.caption_color }};
+    text-align: center;
+  }
+
+  .ai-collapsible-tabs__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-collapsible-tabs__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .ai-collapsible-tabs__lightbox-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .ai-collapsible-tabs__lightbox-{{ ai_gen_id }}.active {
+    display: flex;
+  }
+
+  .ai-collapsible-tabs__lightbox-content-{{ ai_gen_id }} {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+  }
+
+  .ai-collapsible-tabs__lightbox-image-{{ ai_gen_id }} {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-collapsible-tabs__lightbox-caption-{{ ai_gen_id }} {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 16px;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.body_size }}px;
+  }
+
+  .ai-collapsible-tabs__lightbox-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-collapsible-tabs__header-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.875 }}px;
+      padding: {{ block.settings.tab_padding | times: 0.75 }}px;
+    }
+
+    .ai-collapsible-tabs__gallery-{{ ai_gen_id }} {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 12px;
+    }
+  }
+{% endstyle %}
+
+<collapsible-tabs-{{ ai_gen_id }}
+  class="ai-collapsible-tabs-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-collapsible-tabs__headers-{{ ai_gen_id }}">
+    {% for i in (1..5) %}
+      {% liquid
+        assign tab_enabled_key = 'tab_' | append: i | append: '_enabled'
+        assign tab_heading_key = 'tab_' | append: i | append: '_heading'
+        assign tab_enabled = block.settings[tab_enabled_key]
+        assign tab_heading = block.settings[tab_heading_key]
+      %}
+
+      {% if tab_enabled %}
+        <button
+          class="ai-collapsible-tabs__header-{{ ai_gen_id }}"
+          data-tab="{{ i }}"
+          aria-expanded="false"
+          aria-controls="ai-collapsible-tabs-content-{{ ai_gen_id }}-{{ i }}"
+        >
+          <span>{{ tab_heading }}</span>
+          <svg
+            class="ai-collapsible-tabs__icon-{{ ai_gen_id }}"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% for i in (1..5) %}
+    {% liquid
+      assign tab_enabled_key = 'tab_' | append: i | append: '_enabled'
+      assign tab_content_type_key = 'tab_' | append: i | append: '_content_type'
+      assign tab_text_key = 'tab_' | append: i | append: '_text'
+
+      assign tab_enabled = block.settings[tab_enabled_key]
+      assign tab_content_type = block.settings[tab_content_type_key]
+      assign tab_text = block.settings[tab_text_key]
+    %}
+
+    {% if tab_enabled %}
+      <div
+        id="ai-collapsible-tabs-content-{{ ai_gen_id }}-{{ i }}"
+        class="ai-collapsible-tabs__content-{{ ai_gen_id }}"
+        data-content="{{ i }}"
+      >
+        {% if tab_content_type == 'text' %}
+          <div class="ai-collapsible-tabs__text-{{ ai_gen_id }}">
+            {{ tab_text }}
+          </div>
+        {% elsif tab_content_type == 'gallery' %}
+          <div class="ai-collapsible-tabs__gallery-{{ ai_gen_id }}">
+            {% for j in (1..6) %}
+              {% liquid
+                assign image_key = 'tab_' | append: i | append: '_image_' | append: j
+                assign caption_key = 'tab_' | append: i | append: '_caption_' | append: j
+                assign image = block.settings[image_key]
+                assign caption = block.settings[caption_key]
+              %}
+
+              {% if image %}
+                <div class="ai-collapsible-tabs__gallery-item-{{ ai_gen_id }}">
+                  <img
+                    src="{{ image | image_url: width: 300 }}"
+                    alt="{{ image.alt | escape }}"
+                    loading="lazy"
+                    class="ai-collapsible-tabs__thumbnail-{{ ai_gen_id }}"
+                    data-full-src="{{ image | image_url: width: 1200 }}"
+                    data-caption="{{ caption | escape }}"
+                    data-lightbox-trigger
+                  >
+                  {% if caption != blank %}
+                    <div class="ai-collapsible-tabs__caption-{{ ai_gen_id }}">{{ caption }}</div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <div class="ai-collapsible-tabs__lightbox-{{ ai_gen_id }}" data-lightbox>
+    <div class="ai-collapsible-tabs__lightbox-content-{{ ai_gen_id }}">
+      <button class="ai-collapsible-tabs__lightbox-close-{{ ai_gen_id }}" data-lightbox-close aria-label="Close">
+        &times;
+      </button>
+      <img
+        src=""
+        alt=""
+        class="ai-collapsible-tabs__lightbox-image-{{ ai_gen_id }}"
+        data-lightbox-image
+      >
+      <div class="ai-collapsible-tabs__lightbox-caption-{{ ai_gen_id }}" data-lightbox-caption></div>
+    </div>
+  </div>
+</collapsible-tabs-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CollapsibleTabs{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.headers = this.querySelectorAll('.ai-collapsible-tabs__header-{{ ai_gen_id }}');
+        this.contents = this.querySelectorAll('.ai-collapsible-tabs__content-{{ ai_gen_id }}');
+        this.lightbox = this.querySelector('[data-lightbox]');
+        this.lightboxImage = this.querySelector('[data-lightbox-image]');
+        this.lightboxCaption = this.querySelector('[data-lightbox-caption]');
+        this.lightboxClose = this.querySelector('[data-lightbox-close]');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.headers.forEach((header) => {
+          header.addEventListener('click', () => {
+            const tabId = header.getAttribute('data-tab');
+            const isCurrentlyActive = header.classList.contains('active');
+            
+            if (isCurrentlyActive) {
+              this.closeTab(tabId);
+            } else {
+              this.openTab(tabId);
+            }
+          });
+        });
+
+        this.querySelectorAll('[data-lightbox-trigger]').forEach((trigger) => {
+          trigger.addEventListener('click', () => {
+            const fullSrc = trigger.getAttribute('data-full-src');
+            const caption = trigger.getAttribute('data-caption');
+            const alt = trigger.getAttribute('alt');
+            this.openLightbox(fullSrc, caption, alt);
+          });
+        });
+
+        this.lightboxClose.addEventListener('click', () => {
+          this.closeLightbox();
+        });
+
+        this.lightbox.addEventListener('click', (e) => {
+          if (e.target === this.lightbox) {
+            this.closeLightbox();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.lightbox.classList.contains('active')) {
+            this.closeLightbox();
+          }
+        });
+      }
+
+      openTab(tabId) {
+        this.headers.forEach((header) => {
+          if (header.getAttribute('data-tab') === tabId) {
+            header.classList.add('active');
+            header.setAttribute('aria-expanded', 'true');
+          } else {
+            header.classList.remove('active');
+            header.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        this.contents.forEach((content) => {
+          if (content.getAttribute('data-content') === tabId) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      }
+
+      closeTab(tabId) {
+        this.headers.forEach((header) => {
+          if (header.getAttribute('data-tab') === tabId) {
+            header.classList.remove('active');
+            header.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        this.contents.forEach((content) => {
+          if (content.getAttribute('data-content') === tabId) {
+            content.classList.remove('active');
+          }
+        });
+      }
+
+      openLightbox(src, caption, alt) {
+        this.lightboxImage.src = src;
+        this.lightboxImage.alt = alt;
+        this.lightboxCaption.textContent = caption;
+        this.lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      closeLightbox() {
+        this.lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    customElements.define('collapsible-tabs-{{ ai_gen_id }}', CollapsibleTabs{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Collapsible tabs",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Container padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "tab_padding",
+      "label": "Tab padding",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tab_gap",
+      "label": "Tab gap",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Tab heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "heading_hover_color",
+      "label": "Tab heading hover",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "color",
+      "id": "heading_active_color",
+      "label": "Tab heading active",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Content text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "Caption text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "active_border_color",
+      "label": "Active border",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Tab heading font",
+      "default": "poppins_n6"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tab heading size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Content font",
+      "default": "poppins_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Content size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "caption_size",
+      "label": "Caption size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "border_thickness",
+      "label": "Border thickness",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "active_border_thickness",
+      "label": "Active border thickness",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Tab 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_1_enabled",
+      "label": "Enable tab 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tab_1_heading",
+      "label": "Heading",
+      "default": "Tab 1"
+    },
+    {
+      "type": "select",
+      "id": "tab_1_content_type",
+      "label": "Content type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "gallery",
+          "label": "Image gallery"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_1_text",
+      "label": "Text content",
+      "default": "<p>Add your content here. You can use rich text formatting.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_1",
+      "label": "Caption 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_2",
+      "label": "Caption 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_3",
+      "label": "Caption 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_4",
+      "label": "Caption 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_5",
+      "label": "Image 5"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_5",
+      "label": "Caption 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image_6",
+      "label": "Image 6"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_caption_6",
+      "label": "Caption 6"
+    },
+    {
+      "type": "header",
+      "content": "Tab 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_2_enabled",
+      "label": "Enable tab 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tab_2_heading",
+      "label": "Heading",
+      "default": "Tab 2"
+    },
+    {
+      "type": "select",
+      "id": "tab_2_content_type",
+      "label": "Content type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "gallery",
+          "label": "Image gallery"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_2_text",
+      "label": "Text content",
+      "default": "<p>Add your content here. You can use rich text formatting.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_1",
+      "label": "Caption 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_2",
+      "label": "Caption 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_3",
+      "label": "Caption 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_4",
+      "label": "Caption 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_5",
+      "label": "Image 5"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_5",
+      "label": "Caption 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image_6",
+      "label": "Image 6"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_caption_6",
+      "label": "Caption 6"
+    },
+    {
+      "type": "header",
+      "content": "Tab 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_3_enabled",
+      "label": "Enable tab 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tab_3_heading",
+      "label": "Heading",
+      "default": "Tab 3"
+    },
+    {
+      "type": "select",
+      "id": "tab_3_content_type",
+      "label": "Content type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "gallery",
+          "label": "Image gallery"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_3_text",
+      "label": "Text content",
+      "default": "<p>Add your content here. You can use rich text formatting.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_1",
+      "label": "Caption 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_2",
+      "label": "Caption 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_3",
+      "label": "Caption 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_4",
+      "label": "Caption 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_5",
+      "label": "Image 5"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_5",
+      "label": "Caption 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_3_image_6",
+      "label": "Image 6"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_caption_6",
+      "label": "Caption 6"
+    },
+    {
+      "type": "header",
+      "content": "Tab 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_4_enabled",
+      "label": "Enable tab 4",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "tab_4_heading",
+      "label": "Heading",
+      "default": "Tab 4"
+    },
+    {
+      "type": "select",
+      "id": "tab_4_content_type",
+      "label": "Content type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "gallery",
+          "label": "Image gallery"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_4_text",
+      "label": "Text content",
+      "default": "<p>Add your content here. You can use rich text formatting.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_1",
+      "label": "Caption 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_2",
+      "label": "Caption 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_3",
+      "label": "Caption 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_4",
+      "label": "Caption 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_5",
+      "label": "Image 5"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_5",
+      "label": "Caption 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_4_image_6",
+      "label": "Image 6"
+    },
+    {
+      "type": "text",
+      "id": "tab_4_caption_6",
+      "label": "Caption 6"
+    },
+    {
+      "type": "header",
+      "content": "Tab 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_5_enabled",
+      "label": "Enable tab 5",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "tab_5_heading",
+      "label": "Heading",
+      "default": "Tab 5"
+    },
+    {
+      "type": "select",
+      "id": "tab_5_content_type",
+      "label": "Content type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "gallery",
+          "label": "Image gallery"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_5_text",
+      "label": "Text content",
+      "default": "<p>Add your content here. You can use rich text formatting.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_1",
+      "label": "Caption 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_2",
+      "label": "Caption 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_3",
+      "label": "Caption 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_4",
+      "label": "Caption 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_5",
+      "label": "Image 5"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_5",
+      "label": "Caption 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_5_image_6",
+      "label": "Image 6"
+    },
+    {
+      "type": "text",
+      "id": "tab_5_caption_6",
+      "label": "Caption 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collapsible tabs"
+    }
+  ]
+}
+{% endschema %}

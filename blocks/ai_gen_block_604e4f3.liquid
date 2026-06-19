@@ -1,0 +1,565 @@
+{% doc %}
+  @prompt
+    I would like to build a section that has an image on the left hand side and a text section for a brief description to the right of it. Underneath the description should be a dropdown menu where users can select a flavor. I should be able to fully customize which flavors show up in the dropdown. Once a flavor from the dropdown is selected, it should bring the user to that item's product page.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-flavor-selector-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-flavor-selector-container-{{ ai_gen_id }} {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-flavor-selector-image-wrapper-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.image_width }}%;
+    max-width: {{ block.settings.image_width }}%;
+  }
+
+  .ai-flavor-selector-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-flavor-selector-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    position: relative;
+  }
+
+  .ai-flavor-selector-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-flavor-selector-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-flavor-selector-content-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-flavor-selector-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .ai-flavor-selector-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.6;
+  }
+
+  .ai-flavor-selector-dropdown-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-flavor-selector-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.label_color }};
+    font-weight: 500;
+  }
+
+  .ai-flavor-selector-dropdown-{{ ai_gen_id }} {
+    padding: 12px 16px;
+    font-size: {{ block.settings.dropdown_text_size }}px;
+    border: {{ block.settings.dropdown_border_thickness }}px solid {{ block.settings.dropdown_border_color }};
+    border-radius: {{ block.settings.dropdown_border_radius }}px;
+    background-color: {{ block.settings.dropdown_background }};
+    color: {{ block.settings.dropdown_text_color }};
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23000000' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  .ai-flavor-selector-dropdown-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.dropdown_border_color }};
+    outline-offset: 2px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-flavor-selector-container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .ai-flavor-selector-image-wrapper-{{ ai_gen_id }} {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .ai-flavor-selector-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.85);
+    }
+
+    .ai-flavor-selector-description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.description_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<flavor-selector-{{ ai_gen_id }}
+  class="ai-flavor-selector-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-flavor-selector-container-{{ ai_gen_id }}">
+    <div class="ai-flavor-selector-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 800 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-flavor-selector-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-flavor-selector-image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+          <div class="ai-flavor-selector-empty-state-{{ ai_gen_id }}">
+            Add an image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-flavor-selector-content-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-flavor-selector-heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="ai-flavor-selector-description-{{ ai_gen_id }}">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+
+      <div class="ai-flavor-selector-dropdown-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.dropdown_label != blank %}
+          <label
+            for="flavor-select-{{ ai_gen_id }}"
+            class="ai-flavor-selector-label-{{ ai_gen_id }}"
+          >
+            {{ block.settings.dropdown_label }}
+          </label>
+        {% endif %}
+
+        <select
+          id="flavor-select-{{ ai_gen_id }}"
+          class="ai-flavor-selector-dropdown-{{ ai_gen_id }}"
+          aria-label="Select a flavor"
+        >
+          <option value="">{{ block.settings.placeholder_text }}</option>
+          {% for i in (1..10) %}
+            {% liquid
+              assign flavor_name_key = 'flavor_' | append: i | append: '_name'
+              assign flavor_product_key = 'flavor_' | append: i | append: '_product'
+              assign flavor_name = block.settings[flavor_name_key]
+              assign flavor_product = block.settings[flavor_product_key]
+            %}
+            {% if flavor_name != blank and flavor_product != blank %}
+              <option value="{{ flavor_product.url }}">{{ flavor_name }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+</flavor-selector-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FlavorSelector{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.dropdown = this.querySelector('.ai-flavor-selector-dropdown-{{ ai_gen_id }}');
+        if (this.dropdown) {
+          this.dropdown.addEventListener('change', this.handleFlavorChange.bind(this));
+        }
+      }
+
+      handleFlavorChange(event) {
+        const selectedUrl = event.target.value;
+        if (selectedUrl) {
+          window.location.href = selectedUrl;
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.dropdown) {
+          this.dropdown.removeEventListener('change', this.handleFlavorChange.bind(this));
+        }
+      }
+    }
+
+    customElements.define('flavor-selector-{{ ai_gen_id }}', FlavorSelector{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Flavor selector",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 30,
+      "max": 60,
+      "step": 5,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose your flavor"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Select from our delicious range of flavors. Each flavor is crafted with premium ingredients to deliver the perfect taste experience.</p>"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "dropdown_label",
+      "label": "Dropdown label",
+      "default": "Select flavor"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "placeholder_text",
+      "label": "Dropdown placeholder",
+      "default": "Choose a flavor..."
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Flavor 1"
+    },
+    {
+      "type": "text",
+      "id": "flavor_1_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_1_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 2"
+    },
+    {
+      "type": "text",
+      "id": "flavor_2_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_2_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 3"
+    },
+    {
+      "type": "text",
+      "id": "flavor_3_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_3_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 4"
+    },
+    {
+      "type": "text",
+      "id": "flavor_4_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_4_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 5"
+    },
+    {
+      "type": "text",
+      "id": "flavor_5_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_5_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 6"
+    },
+    {
+      "type": "text",
+      "id": "flavor_6_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_6_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 7"
+    },
+    {
+      "type": "text",
+      "id": "flavor_7_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_7_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 8"
+    },
+    {
+      "type": "text",
+      "id": "flavor_8_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_8_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 9"
+    },
+    {
+      "type": "text",
+      "id": "flavor_9_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_9_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Flavor 10"
+    },
+    {
+      "type": "text",
+      "id": "flavor_10_name",
+      "label": "Flavor name"
+    },
+    {
+      "type": "product",
+      "id": "flavor_10_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "dropdown_text_size",
+      "label": "Dropdown text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_background",
+      "label": "Dropdown background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_text_color",
+      "label": "Dropdown text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_border_color",
+      "label": "Dropdown border",
+      "default": "#cccccc"
+    },
+    {
+      "type": "header",
+      "content": "Dropdown style"
+    },
+    {
+      "type": "range",
+      "id": "dropdown_border_thickness",
+      "label": "Border thickness",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "dropdown_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flavor selector"
+    }
+  ]
+}
+{% endschema %}

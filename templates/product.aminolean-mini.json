@@ -1,0 +1,631 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-rsp",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "",
+            "remove_flavor_name": true
+          }
+        },
+        "2bb09ec5-c804-477e-a299-706a0912c2e6": {
+          "type": "reviews_badge_price",
+          "settings": {}
+        },
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35": {
+          "type": "flavor_picker",
+          "settings": {
+            "product_list": [
+              "aminolean-energy-drink-minis-berry-alixir",
+              "aminolean-energy-drink-minis-blood-orange",
+              "aminolean-energy-drink-minis-cherry-lime",
+              "aminolean-energy-drink-minis-strawberry-watermelon"
+            ]
+          }
+        },
+        "product_option_icon_yHFzJc": {
+          "type": "product_option_icon",
+          "settings": {
+            "option_name": "Servings",
+            "option_value": "12 Pack",
+            "icon": "shopify://shop_images/icon-8oz.svg"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "product_override_picker_type": "",
+            "icons_metaobject_handle": "aminolean-variant-icons"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "2bb09ec5-c804-477e-a299-706a0912c2e6",
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35",
+        "product_option_icon_yHFzJc",
+        "variant_picker",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    },
+    "0125028e-5c09-4193-951d-8bcfa32f6a05": {
+      "type": "aminolean-product-tabs",
+      "blocks": {
+        "cd382c70-f10d-4406-b1dc-382f41f7b960": {
+          "type": "description_tab",
+          "settings": {
+            "title": "Description",
+            "use_product_description": true,
+            "text": "",
+            "first_paragraph_only": true
+          }
+        },
+        "384f521b-87dd-49ac-a5a3-6494ff401ace": {
+          "type": "nutrition_tab",
+          "settings": {
+            "title": "Nutrition",
+            "text": ""
+          }
+        },
+        "11602194-a41b-49cd-b8ff-1d140c5fec48": {
+          "type": "directions_tab",
+          "settings": {
+            "title": "Directions",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "cd382c70-f10d-4406-b1dc-382f41f7b960",
+        "384f521b-87dd-49ac-a5a3-6494ff401ace",
+        "11602194-a41b-49cd-b8ff-1d140c5fec48"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "5d10ed15-91f9-46c5-9e4d-a4e8bdbe469b": {
+      "type": "aminolean-video-quote",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "mute_video": true,
+        "enable_video_looping": false,
+        "video": "{{ product.metafields.custom.product_page_video_section.value }}",
+        "description": "",
+        "color_scheme": "background-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "16501ff2-51f3-47f5-9107-cb4433714c25": {
+      "type": "amino-icon-grid",
+      "blocks": {
+        "5870a838-d73c-4fe3-aa31-1499c6981cb6": {
+          "type": "feature",
+          "settings": {
+            "icon": "green_tea",
+            "text": "<p>140mg Natural Caffeine</p>",
+            "icon_name": ""
+          }
+        },
+        "51eea9a5-df93-4240-ae6a-c0daf6da67f6": {
+          "type": "feature",
+          "settings": {
+            "icon": "muscle",
+            "text": "<p>Amino Acids</p>",
+            "icon_name": ""
+          }
+        },
+        "207319a6-a8c3-43f6-b4b4-0b09a16175bd": {
+          "type": "feature",
+          "settings": {
+            "icon": "scale",
+            "text": "<p>Green tea & carnitine</p>",
+            "icon_name": ""
+          }
+        },
+        "68602fcc-3008-4375-98e9-40580bb7262b": {
+          "type": "feature",
+          "settings": {
+            "icon": "sugar_free",
+            "text": "<p>Sugar\nFree</p>",
+            "icon_name": ""
+          }
+        },
+        "98b201c9-11fe-47e7-a78f-9a52494c8f05": {
+          "type": "feature",
+          "settings": {
+            "icon": "vegan",
+            "text": "<p>Vegan</p>",
+            "icon_name": ""
+          }
+        },
+        "b62d1a49-1d65-46d0-9cd9-34a64a8e52b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "no_artificial_flavors",
+            "text": "<p>No Artificial Colors</p>",
+            "icon_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "5870a838-d73c-4fe3-aa31-1499c6981cb6",
+        "51eea9a5-df93-4240-ae6a-c0daf6da67f6",
+        "207319a6-a8c3-43f6-b4b4-0b09a16175bd",
+        "68602fcc-3008-4375-98e9-40580bb7262b",
+        "98b201c9-11fe-47e7-a78f-9a52494c8f05",
+        "b62d1a49-1d65-46d0-9cd9-34a64a8e52b2"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "heading": "<p>Energy without compromise</p>",
+        "subheading": "",
+        "columns_mobile": 3,
+        "item_max_width_mobile": 140,
+        "container_max_width_mobile": 320,
+        "columns_desktop": 3,
+        "item_max_width_desktop": 140,
+        "container_max_width_desktop": 620,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "17eb5428-8745-4893-ad26-283bc15b5fb9": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": true,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5": {
+      "type": "amino-press-logos",
+      "blocks": {
+        "036abe6d-7f32-4a73-8798-fb775bb27375": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/inc-logo.svg",
+            "width_1": 25,
+            "image_2": "shopify://shop_images/gq-logo.svg",
+            "width_2": 22,
+            "image_3": "shopify://shop_images/byrdie-logo.svg",
+            "width_3": 36,
+            "width_4": 25
+          }
+        },
+        "80e97f03-9734-4e91-b564-21a6abbda9e6": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/mens-health-logo.svg",
+            "width_1": 36,
+            "image_2": "shopify://shop_images/womens-health-logo.svg",
+            "width_2": 36,
+            "width_3": 25,
+            "width_4": 25
+          }
+        },
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/today-logo.svg",
+            "width_1": 18,
+            "image_2": "shopify://shop_images/insider-logo.svg",
+            "width_2": 32,
+            "image_3": "shopify://shop_images/shape-logo.svg",
+            "width_3": 32,
+            "width_4": 25
+          }
+        }
+      },
+      "block_order": [
+        "036abe6d-7f32-4a73-8798-fb775bb27375",
+        "80e97f03-9734-4e91-b564-21a6abbda9e6",
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06"
+      ],
+      "custom_css": [
+        "#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"
+      ],
+      "settings": {
+        "heading": "Featured In",
+        "heading_style": "small_uppercase",
+        "color_scheme": "",
+        "vertical_spacing": 12,
+        "horizontal_spacing": 24,
+        "max_width": 414,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a024439b-5bf0-4163-94dc-a59986fd302d": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "894e738c-d102-4245-8b24-f42264ccfba5": {
+      "type": "amino-image-multirow",
+      "blocks": {
+        "f6388717-65a7-40e4-acdf-c982b078caa5": {
+          "type": "row",
+          "repeater": "{{ product.metafields.product_features.image_rows.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "text": "{{ block.repeater.text | metafield_tag }}"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0": {
+          "type": "row",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/rtd-1.jpg",
+            "heading": "Natural Energy",
+            "text": "<p>200mg of natural caffeine from green tea. This energy drink is formulated to take as a pre-workout or anytime you need the perfect energy boost without a crash or jitters.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
+          "type": "row",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/rtd-2.jpg",
+            "heading": "Performance Boost",
+            "text": "<p>With an optimal blend of amino acids, AminoLean boosts performance and fuels recovery.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
+          "type": "row",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/rtd-3.jpg",
+            "heading": "Weight Management",
+            "text": "<p>An ideal blend of carnitine and green tea extract promotes natural weight management to help you maintain a healthy, lean physique year-round.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f6388717-65a7-40e4-acdf-c982b078caa5",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2"
+      ],
+      "settings": {}
+    },
+    "31b969a1-5c70-402c-813b-eef801cc45d3": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "a04d84cd-7f0d-4a44-98b5-c3a1196009ec": {
+      "type": "aminolean-review-chat-bubbles",
+      "blocks": {
+        "f4a64016-c2a3-4ef8-932d-2f5efc19e16a": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 75,
+            "width_desktop": 50,
+            "title": "David",
+            "content": "<p>\"Delicious and give you plenty of energy. My new energy drink of choice!\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "end",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "2771e7b4-fdf6-44fa-8447-2a87a65b1412": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 60,
+            "width_desktop": 50,
+            "title": "Paul R.",
+            "content": "<p>\"Definitely gives me a huge boost of energy and most importantly it tastes good!!\".</p>",
+            "quote_points_right": true,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "1a0a0e42-2e18-431a-8bf8-cdd8e4d70df3": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 40,
+            "width_desktop": 25,
+            "title": "Hailey A.",
+            "content": "<p>\"The BEST boost of energy.\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "template--15516436660269__a04d84cd-7f0d-4a44-98b5-c3a1196009ec-1678764866e4685f33-0": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 50,
+            "width_desktop": 35,
+            "title": "Laure P.",
+            "content": "<p>\"Gives me the energy I need without the jittery feel\".</p>",
+            "quote_points_right": false,
+            "content_position": "end",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "d60964c5-76bb-4158-8212-042859ca7abb": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 50,
+            "width_desktop": 33,
+            "title": "Andrew L.",
+            "content": "<p>\"I finally found my new go to energy drink!\"</p>",
+            "quote_points_right": true,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "f4a64016-c2a3-4ef8-932d-2f5efc19e16a",
+        "2771e7b4-fdf6-44fa-8447-2a87a65b1412",
+        "1a0a0e42-2e18-431a-8bf8-cdd8e4d70df3",
+        "template--15516436660269__a04d84cd-7f0d-4a44-98b5-c3a1196009ec-1678764866e4685f33-0",
+        "d60964c5-76bb-4158-8212-042859ca7abb"
+      ],
+      "settings": {
+        "heading": "<p>What They're Saying</p>",
+        "color_scheme": "accent-1",
+        "quote_color_scheme": "background-1",
+        "stars_color": "#ff9900",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "5926489f-e77e-4b1d-98af-5e6148b7cead": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "adcd68da-a633-4162-8167-cc00e784febe": {
+      "type": "amino-collapsible-content",
+      "blocks": {
+        "collapsible_row_JREbfm": {
+          "type": "collapsible_row",
+          "repeater": "{{ product.metafields.faq.list.value }}",
+          "settings": {
+            "heading": "{{ block.repeater.heading.value }}",
+            "icon": "none",
+            "row_content": "{{ block.repeater.row_content | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_JREbfm"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "1677813107367e834b": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d": {
+      "type": "aminolean-products-slider",
+      "blocks": {
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_PinkLemonade_30Serv_021523-01_Front_HighRes_a9867215-6c6c-4dc6-8226-4e01b48182cc.png",
+            "heading": "AminoLean Pre Workout",
+            "heading_size": "h4",
+            "subheading": "Our original pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pink-lemonade"
+          }
+        },
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRTD_StrawberryWatermelon_SingleServ_041023-10_Front_HighRes.png",
+            "heading": "AminoLean Energy Drink",
+            "heading_size": "h4",
+            "subheading": "Our ready to drink, lightly carbonated energy drink for boosts of clean energy on the go.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-energy-drink-strawberry-watermelon"
+          }
+        },
+        "8f7cfacc-df86-4568-ba55-f175a36c3425": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_Acai_25Serv_122222-01_Front_HighRes.png",
+            "heading": "AminoLean Naturally Sweetened",
+            "heading_size": "h4",
+            "subheading": "Our naturally sweetened pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/vegan-aminolean-acai"
+          }
+        },
+        "01aefae9-030c-48ee-a482-010f668052af": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRECOVERY_TropicalIslandPunch_30Serv_102423-02_Front_HighRes.png",
+            "heading": "AminoLean Recovery",
+            "heading_size": "h4",
+            "subheading": "Our post-workout recovery blend with rapid hydration and immune system boosting ingredients.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-recovery-tropical-island-punch"
+          }
+        },
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/max-tile.jpg",
+            "heading": "AminoLean MAX",
+            "heading_size": "h4",
+            "subheading": "Our high-intensity pre workout with added ingredients for pump and focus.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-max-preworkout-passion-fruit-punch"
+          }
+        },
+        "324c9793-b418-44ea-bd7c-b46a40054f50": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "AminoLean x Alix Earle",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pre-workout-cherry-on-top"
+          }
+        },
+        "64299f91-619e-4699-976a-64c0c5ee491e": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "New Product Tile",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": ""
+          }
+        },
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "Alix Earle Again",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0",
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21",
+        "8f7cfacc-df86-4568-ba55-f175a36c3425",
+        "01aefae9-030c-48ee-a482-010f668052af",
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1",
+        "324c9793-b418-44ea-bd7c-b46a40054f50",
+        "64299f91-619e-4699-976a-64c0c5ee491e",
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848"
+      ],
+      "settings": {
+        "title": "The Full AminoLean Line",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "columns_desktop": 4,
+        "full_width": false,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0125028e-5c09-4193-951d-8bcfa32f6a05",
+    "5d10ed15-91f9-46c5-9e4d-a4e8bdbe469b",
+    "16501ff2-51f3-47f5-9107-cb4433714c25",
+    "17eb5428-8745-4893-ad26-283bc15b5fb9",
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5",
+    "a024439b-5bf0-4163-94dc-a59986fd302d",
+    "894e738c-d102-4245-8b24-f42264ccfba5",
+    "31b969a1-5c70-402c-813b-eef801cc45d3",
+    "a04d84cd-7f0d-4a44-98b5-c3a1196009ec",
+    "5926489f-e77e-4b1d-98af-5e6148b7cead",
+    "adcd68da-a633-4162-8167-cc00e784febe",
+    "1677813107367e834b",
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d"
+  ]
+}

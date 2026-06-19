@@ -1,0 +1,276 @@
+{{ 'section-review-chat-bubbles.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #ReviewChatBubbles-{{ section.id }} {
+    --stars-color: {{ section.settings.stars_color }};
+  }
+  {%- for block in section.blocks -%}
+    #ReviewBubble-{{ block.id }} {
+      width: {{ block.settings.width_mobile }}%;
+    }
+    @media screen and (min-width: 750px) {
+      #ReviewBubble-{{ block.id }} {
+        width: {{ block.settings.width_desktop }}%;
+      }
+    }
+  {%- endfor -%}
+{%- endstyle -%}
+
+<svg style="display:none;" width="63" height="14" viewBox="0 0 63 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="ReviewStars-{{ section.id }}">
+      <path d="M6.20277 1.68994L7.80002 4.92579L11.3719 5.44786L8.78731 7.96521L9.39727 11.5215L6.20277 9.84158L3.00828 11.5215L3.61823 7.96521L1.03369 5.44786L4.60553 4.92579L6.20277 1.68994Z" fill="currentColor"/>
+      <path d="M18.6085 1.68994L20.2058 4.92579L23.7776 5.44786L21.1931 7.96521L21.803 11.5215L18.6085 9.84158L15.414 11.5215L16.024 7.96521L13.4395 5.44786L17.0113 4.92579L18.6085 1.68994Z" fill="currentColor"/>
+      <path d="M31.0143 1.68994L32.6115 4.92579L36.1834 5.44786L33.5988 7.96521L34.2088 11.5215L31.0143 9.84158L27.8198 11.5215L28.4298 7.96521L25.8452 5.44786L29.4171 4.92579L31.0143 1.68994Z" fill="currentColor"/>
+      <path d="M43.4201 1.68994L45.0173 4.92579L48.5891 5.44786L46.0046 7.96521L46.6146 11.5215L43.4201 9.84158L40.2256 11.5215L40.8355 7.96521L38.251 5.44786L41.8228 4.92579L43.4201 1.68994Z" fill="currentColor"/>
+      <path d="M55.8258 1.68994L57.4231 4.92579L60.9949 5.44786L58.4104 7.96521L59.0203 11.5215L55.8258 9.84158L52.6313 11.5215L53.2413 7.96521L50.6567 5.44786L54.2286 4.92579L55.8258 1.68994Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div
+  id="ReviewChatBubbles-{{ section.id }}"
+  class="section-{{ section.id }} color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding"
+>
+  <div class="page-width isolate review-chat-bubbles__wrapper">
+    {%- if section.settings.heading -%}
+      <h2 class="review-chat-bubbles__heading rte inline-richtext">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="review-chat-bubbles">
+      {%- for block in section.blocks -%}
+        <div
+          id="ReviewBubble-{{ block.id }}"
+          class="
+            review-bubble__wrapper
+            content--justify-{{ block.settings.content_position }}
+            content--tablet-justify-{{ block.settings.desktop_content_position }}
+            content--items-{{ block.settings.content_alignment }}
+            content--tablet-items-{{ block.settings.desktop_content_alignment }}
+            {% if settings.animations_reveal_on_scroll %}
+              scroll-trigger animate--scale-in{% if block.settings.quote_points_right %} tw-origin-bottom-right {%- else %} tw-origin-bottom-left {%- endif -%}
+            {%- endif -%}
+          "
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          <div class="review-bubble color-{{ section.settings.quote_color_scheme }} review-bubble--points-{% if block.settings.quote_points_right %}right{% else %}left{% endif %}">
+            <div class="caption">{{ block.settings.title }}</div>
+            <svg class="review-bubble__stars" width="63" height="14" viewBox="0 0 63 14">
+              <use href="#ReviewStars-{{ section.id }}" />
+            </svg>
+            <div class="rte">{{ block.settings.content }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AminoLean: Review Bubbles",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>What They're Saying</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-inverse"
+    },
+    {
+      "type": "color_scheme",
+      "id": "quote_color_scheme",
+      "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
+      "info": "t:sections.collapsible_content.settings.container_color_scheme.info",
+      "default": "background-1"
+    },
+    {
+      "type": "color",
+      "id": "stars_color",
+      "label": "Stars color",
+      "default": "#FF9900"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Width on mobile",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "width_desktop",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Width on desktop",
+          "default": 33
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "checkbox",
+          "id": "quote_points_right",
+          "label": "Quote points right?"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+            {
+              "label": "Left",
+              "value": "start"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Right",
+              "value": "end"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content alignment",
+          "options": [
+            {
+              "label": "Top",
+              "value": "start"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Bottom",
+              "value": "end"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "desktop_content_position",
+          "label": "Desktop content position",
+          "options": [
+            {
+              "label": "Left",
+              "value": "start"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Right",
+              "value": "end"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "desktop_content_alignment",
+          "label": "Desktop content alignment",
+          "options": [
+            {
+              "label": "Top",
+              "value": "start"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Bottom",
+              "value": "end"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AminoLean: Review Bubbles",
+      "blocks": [
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

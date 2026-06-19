@@ -1,0 +1,358 @@
+{% doc %}
+  @prompt
+    I want a responsive image block with two clickable hotspot areas and those areas do not need to be visible. The image should follow the responsive image guidelines, I would like to add a basic image section. On mobile the size should be 600 x 770 and on desktop it should be 1639 x 2135. It should offer desktop/mobile width options as well as fully customizable color options for the background., The background color should match exactly the background color of the image but it is not., I want a responsive image block with two clickable hotspot areas and those areas do not need to be visible. The image should follow the responsive image guidelines, I would like to add a basic image section. On mobile the size should be 600 x 770 and on desktop it should be 1639 x 2135. It should offer desktop/mobile width options as well as fully customizable color options for the background, It only needs to show the desktop image on desktop and mobile on mobile., Remove the double images. Only one image is needed., Make the hotspot visible, The hotspot is still not visible over the image, The hotspots are not visible over the image and they should be visible to click on, Let's fix the hotspot visibility. Please rewrite the Liquid and CSS code for this section ensuring the following:
+    
+    Hotspot Visibility: The two hotspots must be visible, absolute-positioned elements that sit on top of the image. Give them a higher z-index (e.g., z-index: 10;) so they are not hidden behind the image.
+    
+    Hotspot Styling: Give the hotspots a visible style so the user can see them—such as a small colored circle (e.g., a white dot with a subtle pulse effect or a semi-transparent background) with a cursor: pointer; on hover.
+    
+    Image Constraints: Keep it as a single responsive image (using the desktop/mobile dimensions and schema settings previously requested).
+    
+    Container Layout: Ensure the main wrapper has position: relative; so the absolute positioning of the hotspots is calculated relative to the image container, not the entire page.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-responsive-hotspot-image-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-responsive-hotspot-image__container-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-responsive-hotspot-image__wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    display: block;
+  }
+
+  .ai-responsive-hotspot-image__img-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-responsive-hotspot-image__placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    aspect-ratio: 1639 / 2135;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-responsive-hotspot-image__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-responsive-hotspot-image__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-responsive-hotspot-image__hotspot-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .ai-responsive-hotspot-image__hotspot-dot-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    background-color: {{ block.settings.hotspot_color }};
+    border: 3px solid {{ block.settings.hotspot_border_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: ai-hotspot-pulse-{{ ai_gen_id }} 2s infinite;
+  }
+
+  .ai-responsive-hotspot-image__hotspot-{{ ai_gen_id }}:hover .ai-responsive-hotspot-image__hotspot-dot-{{ ai_gen_id }} {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: none;
+  }
+
+  .ai-responsive-hotspot-image__hotspot-inner-{{ ai_gen_id }} {
+    width: 12px;
+    height: 12px;
+    background-color: {{ block.settings.hotspot_border_color }};
+    border-radius: 50%;
+  }
+
+  @keyframes ai-hotspot-pulse-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-responsive-hotspot-image__container-{{ ai_gen_id }} {
+      width: {{ block.settings.mobile_width_percent }}%;
+    }
+
+    .ai-responsive-hotspot-image__placeholder-{{ ai_gen_id }} {
+      aspect-ratio: 600 / 770;
+    }
+
+    .ai-responsive-hotspot-image__hotspot-dot-{{ ai_gen_id }} {
+      width: 32px;
+      height: 32px;
+    }
+
+    .ai-responsive-hotspot-image__hotspot-inner-{{ ai_gen_id }} {
+      width: 10px;
+      height: 10px;
+    }
+  }
+{% endstyle %}
+
+<responsive-hotspot-image-{{ ai_gen_id }}
+  class="ai-responsive-hotspot-image-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-responsive-hotspot-image__container-{{ ai_gen_id }}">
+    <div class="ai-responsive-hotspot-image__wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1639 }}"
+          srcset="{{ block.settings.image | image_url: width: 1639 }} 1639w,
+                  {{ block.settings.image | image_url: width: 1200 }} 1200w,
+                  {{ block.settings.image | image_url: width: 800 }} 800w,
+                  {{ block.settings.image | image_url: width: 600 }} 600w,
+                  {{ block.settings.image | image_url: width: 400 }} 400w"
+          sizes="(min-width: 750px) {{ block.settings.desktop_width_percent }}vw, {{ block.settings.mobile_width_percent }}vw"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-responsive-hotspot-image__img-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-responsive-hotspot-image__placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-responsive-hotspot-image__empty-state-{{ ai_gen_id }}">
+            Add an image
+          </div>
+        </div>
+      {% endif %}
+
+      {% for i in (1..2) %}
+        {% liquid
+          assign hotspot_enabled_key = 'hotspot_' | append: i | append: '_enabled'
+          assign hotspot_x_key = 'hotspot_' | append: i | append: '_x'
+          assign hotspot_y_key = 'hotspot_' | append: i | append: '_y'
+          assign hotspot_url_key = 'hotspot_' | append: i | append: '_url'
+
+          assign hotspot_enabled = block.settings[hotspot_enabled_key]
+          assign hotspot_x = block.settings[hotspot_x_key]
+          assign hotspot_y = block.settings[hotspot_y_key]
+          assign hotspot_url = block.settings[hotspot_url_key]
+        %}
+
+        {% if hotspot_enabled %}
+          <div
+            class="ai-responsive-hotspot-image__hotspot-{{ ai_gen_id }}"
+            style="
+              top: {{ hotspot_y }}%;
+              left: {{ hotspot_x }}%;
+              transform: translate(-50%, -50%);
+            "
+          >
+            {% if hotspot_url != blank %}
+              <a href="{{ hotspot_url }}" aria-label="Hotspot {{ i }}">
+                <div class="ai-responsive-hotspot-image__hotspot-dot-{{ ai_gen_id }}">
+                  <div class="ai-responsive-hotspot-image__hotspot-inner-{{ ai_gen_id }}"></div>
+                </div>
+              </a>
+            {% else %}
+              <div class="ai-responsive-hotspot-image__hotspot-dot-{{ ai_gen_id }}">
+                <div class="ai-responsive-hotspot-image__hotspot-inner-{{ ai_gen_id }}"></div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</responsive-hotspot-image-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ResponsiveHotspotImage{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('responsive-hotspot-image-{{ ai_gen_id }}', ResponsiveHotspotImage{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Responsive hotspot image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Desktop: 1639 x 2135 px, Mobile: 600 x 770 px"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "mobile_width_percent",
+      "label": "Mobile width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Hotspot style"
+    },
+    {
+      "type": "color",
+      "id": "hotspot_color",
+      "label": "Hotspot color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hotspot_border_color",
+      "label": "Border color",
+      "default": "#ff3b98"
+    },
+    {
+      "type": "header",
+      "content": "Hotspot 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "hotspot_1_enabled",
+      "label": "Enable hotspot 1",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "hotspot_1_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "range",
+      "id": "hotspot_1_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "hotspot_1_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Hotspot 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "hotspot_2_enabled",
+      "label": "Enable hotspot 2",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "hotspot_2_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "range",
+      "id": "hotspot_2_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "hotspot_2_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 70
+    }
+  ],
+  "presets": [
+    {
+      "name": "Responsive hotspot image"
+    }
+  ]
+}
+{% endschema %}

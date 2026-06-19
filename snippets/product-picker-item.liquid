@@ -1,0 +1,97 @@
+{% comment %}
+  Renders product picker item
+
+  Accepts:
+  - current_product: {Object} Product liquid object for current page
+  - picker_product: {Object} Product liquid object for this picker item
+  - index0: {Integer} Zero-based index of this picker_product inside the picker list
+  - accent_color: {Object} Accent color liquid object
+  - icon: {Object} Icon media object
+  - label: {String} Label for this picker item
+  - block: {Object} Section block object (optional)
+
+  Usage:
+  {% render 'product-picker-item',
+    current_product: product,
+    picker_product: block_product,
+    index0: forloop.index0,
+    label: block_label,
+    icon: block_icon,
+    accent_color: accent_color,
+    block: block
+  %}
+{% endcomment %}
+
+{%- liquid
+  if picker_product.id != current_product.id
+    capture selection_target
+      for option in picker_product.options_with_values
+        if option.name == 'Flavor'
+          # Can't match flavor option across products in this picker. Products essentially
+          # always have a single flavor option so we just need to preselect this option to
+          # be able to match the rest of the product options (e.g. Size/Servings)
+          echo option.values.first
+        else
+          # assign option_index0 = current_product.options_by_name[option.name].position | minus: 1
+          echo current_product.options_by_name[option.name].selected_value
+        endif
+        unless forloop.last
+          echo '/'
+        endunless
+      endfor
+    endcapture
+    assign matched_variant = blank
+    for variant in picker_product.variants
+      assign variant_options = variant.options | join: '/'
+      if variant_options == selection_target
+        assign matched_variant = variant
+        break
+      endif
+    endfor
+  endif
+-%}
+{%- if accent_color.alpha > 0 -%}
+  {%- capture accent_color_rgb_var -%}{{ accent_color.red }}, {{ accent_color.green }}, {{ accent_color.blue }}{%- endcapture -%}
+{%- endif -%}
+
+<li
+  class="product-picker-link-wrapper{% if picker_product.id == current_product.id %} product-picker-link-wrapper--active{% endif %}"
+  {% if block != blank %}
+    {{- block.shopify_attributes -}}
+  {% endif %}
+>
+  <a
+    class="product-picker-link"
+    href="{{ picker_product.url }}{% if matched_variant != blank %}?variant={{ matched_variant.id }}{% endif %}"
+    tabindex="0"
+    aria-label="Go to {{ picker_product.title }} page"
+    id="Flavor-{{ index0 }}"
+    data-instant
+    {% if picker_product.id == current_product.id %}
+      aria-current="page"
+    {% endif %}
+    {% if accent_color_rgb_var != blank %}
+      data-accent-color="{{ accent_color_rgb_var }}"
+    {% endif %}
+    style="--icon-mask:url({{ icon | image_url: width: 96 }});{% if accent_color_rgb_var != blank %}--color-accent:{{ accent_color_rgb_var }}{% endif %}"
+  >
+    {% comment %}
+      {{
+        icon
+        | image_url: width: 96
+        | image_tag:
+          width: 48,
+          height: 48,
+          sizes: '48px',
+          widths: '48, 96, 144',
+          loading: 'lazy',
+          class: 'product-picker-link__icon'
+      }}
+    {% endcomment %}
+    <span class="product-picker-link__icon"></span>
+    <span class="product-picker-link__label">{{ label }}</span>
+    {%- if block.settings.badge != blank -%}
+      <span class="product-picker-link__badge">{{ block.settings.badge }}</span>
+    {%- endif -%}
+  </a>
+</li>

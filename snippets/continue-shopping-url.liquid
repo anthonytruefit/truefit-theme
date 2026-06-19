@@ -1,0 +1,9 @@
+{%- capture store -%}{%- render 'template-store' -%}{%- endcapture -%}
+{%- liquid
+  if store == 'aminolean'
+    assign continue_shopping_link = settings.continue_shopping_url_aminolean
+  else
+    assign continue_shopping_link = settings.continue_shopping_url_rsp
+  endif
+-%}
+{{ continue_shopping_link | default: routes.all_products_collection_url }}

@@ -1,0 +1,206 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  {%- liquid
+    assign picker_type = block.settings.picker_type
+    if block.settings.product_override_picker_type != blank
+      assign product_override_picker_type = block.settings.product_override_picker_type | downcase
+      assign supported_picker_types = 'dropdown,button' | split: ','
+      if supported_picker_types contains product_override_picker_type
+        assign picker_type = product_override_picker_type
+      endif
+    endif
+  -%}
+  {%- if picker_type == 'button' -%}
+    <variant-radios
+      id="variant-radios-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- liquid
+        if icons_metaobject_handle != blank
+          assign icon_dictionary = blank
+          assign icon_dictionary = shop.metaobjects.amino_lean_variant_icons[icons_metaobject_handle]
+          assign icon_option_names = icon_dictionary.supported_option_names.value
+        endif
+      -%}
+      {%- for option in product.options_with_values -%}
+        {%- liquid
+          assign option_name = option.name | downcase
+
+          assign fieldset_classes = 'product-form__input'
+          if block.settings.hide_flavor_option and option_name == 'flavor' and option.values.size == 1
+            assign fieldset_classes = fieldset_classes | append: ' tw-hidden'
+          endif
+          assign use_icon_dictionary = blank
+          assign use_icon_blocks = blank
+          assign option_has_icons = false
+          if icon_option_names != blank and icon_option_names contains option.name
+            assign option_has_icons = true
+          else
+            for icon_block in icon_blocks
+              assign icon_option_name = icon_block.settings.option_name | downcase
+              if icon_option_name == option_name
+                assign option_has_icons = true
+                break
+              endif
+            endfor
+          endif
+
+          if option_has_icons
+            assign render_with_icons = true
+            for value in option.values
+              assign option_value = value | downcase
+              assign has_block_icon = false
+              for icon_block in icon_blocks
+                assign icon_option_name = icon_block.settings.option_name | downcase
+                assign icon_option_value = icon_block.settings.option_value | downcase
+                assign option_value = value | downcase
+                if icon_option_name == option_name and icon_option_value == option_value and icon_block.settings.icon != blank
+                  assign has_block_icon = true
+                  break
+                endif
+              endfor
+
+              if has_block_icon
+                continue
+              endif
+
+              assign option_icon_handle = option_name | append: '-' | append: option_value | handleize | replace: '-', '_'
+              unless icon_dictionary[option_icon_handle]
+                assign render_with_icons = false
+                break
+              endunless
+            endfor
+            if render_with_icons
+              assign fieldset_classes = fieldset_classes | append: ' product-form__input--icons'
+              assign use_icon_dictionary = icon_dictionary
+              assign use_icon_blocks = icon_blocks
+            endif
+          endif
+        -%}
+        <fieldset class="js {{ fieldset_classes }}" data-option="{{ option.name | escape }}">
+          <legend class="form__label">{{ option.name }}</legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type,
+            icon_dictionary: use_icon_dictionary,
+            icon_blocks: use_icon_blocks
+          %}
+        </fieldset>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+  {%- else -%}
+    <variant-selects
+      id="variant-selects-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </select>
+            {% render 'icon-caret' %}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {%- endif -%}
+{%- endunless -%}
+
+<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+    <label class="form__label" for="Variants-{{ section.id }}">
+      {{- 'products.product.product_variants' | t -}}
+    </label>
+    <div class="select">
+      <select
+        name="id"
+        data-productid="{{ product.id }}"
+        id="Variants-{{ section.id }}"
+        class="select__select"
+        form="{{ product_form_id }}"
+      >
+        {%- for variant in product.variants -%}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+            {% endif %}
+            {% if variant.available == false %}
+              disabled
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {%- liquid
+              echo variant.title
+              echo variant.price | money | strip_html | prepend: ' - '
+              if variant.available == false
+                echo 'products.product.sold_out' | t | prepend: ' - '
+              endif
+              if variant.quantity_rule.increment > 1
+                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+              endif
+              if variant.quantity_rule.min > 1
+                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+              endif
+              if variant.quantity_rule.max != null
+                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+              endif
+              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+              # theme-check-disable
+              assign cart_quantity = cart | item_count_for_variant: variant.id
+              # theme-check-enable
+              if cart_quantity > 0
+                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+              endif
+            -%}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+  </div>
+</noscript>
