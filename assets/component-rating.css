@@ -14,7 +14,8 @@
 }
 
 .rating-star {
-  --color-rating-star: rgb(var(--color-foreground));
+  /* TrueFit: premium gold star ratings (#C9A86A) */
+  --color-rating-star: #c9a86a;
   --percent: calc(
     (
         var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) /

@@ -3512,3 +3512,42 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+/* =========================================================================
+   TrueFit brand refinements
+   Premium, science-backed, clean. Navy/cream/vanilla/chocolate + gold accent.
+   Brand font is Poppins (already configured via theme settings).
+   ========================================================================= */
+
+:root {
+  /* Brand palette as reusable tokens */
+  --tf-navy: #0a1a4f;
+  --tf-cream: #fcfcea;
+  --tf-vanilla-dark: #40738d;
+  --tf-vanilla-light: #86bce8;
+  --tf-choc-dark: #402020;
+  --tf-choc-light: #e0c5ac;
+  --tf-gold: #c9a86a;
+}
+
+/* Headlines: large, tight tracking, medium weight, sentence case.
+   Confident not heavy. Overrides Dawn's default positive tracking / 600 weight. */
+h1, h2, h3, h4, h5,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Eyebrow label: the signature eyebrow-over-headline move.
+   Small, uppercase, letter-spaced, vanilla-dark-blue. Place directly above a headline. */
+.tf-eyebrow {
+  display: block;
+  font-family: var(--font-body-family);
+  font-weight: 500;
+  font-size: 1.1rem; /* ~11px */
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tf-vanilla-dark);
+  margin-bottom: 1.2rem;
+}
