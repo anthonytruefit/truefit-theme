@@ -1,0 +1,297 @@
+{% comment %}
+  TrueFit Standard
+  ----------------
+  Centered editorial trust section: eyebrow, large statement headline, supporting
+  paragraph, then a row of trust points (icon + label) as repeatable blocks.
+
+  Mobile-first: trust points use a centered flex-wrap grid (2 cols on phone,
+  3 on tablet, N on desktop). Centered justification means an orphan final item
+  centers instead of hanging left, so odd counts stay balanced.
+
+  Colors are loose brand placeholders for now (icons follow the section's
+  foreground); a dedicated homepage color pass comes later.
+{% endcomment %}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tfstd-pt: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
+    --tfstd-pb: {{ section.settings.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --tfstd-pt: {{ section.settings.padding_top }}px;
+      --tfstd-pb: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .tfstd { padding-top: var(--tfstd-pt); padding-bottom: var(--tfstd-pb); }
+
+  .tfstd__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tfstd__eyebrow { margin-bottom: 1.6rem; }
+
+  .tfstd__heading {
+    margin: 0;
+    max-width: 16ch;
+  }
+
+  .tfstd__text {
+    margin: 1.6rem 0 0;
+    max-width: 56ch;
+    color: var(--tf-vanilla-dark, #40738d);
+    line-height: 1.65;
+  }
+
+  /* Trust points: centered flex-wrap grid */
+  .tfstd__points {
+    --gap: 1.6rem;
+    list-style: none;
+    margin: 4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+    width: 100%;
+  }
+  .tfstd__point {
+    flex: 0 0 calc((100% - (var(--cols-m, 2) - 1) * var(--gap)) / var(--cols-m, 2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  @media screen and (min-width: 750px) {
+    .tfstd__points { --gap: 2rem; }
+    .tfstd__point {
+      flex-basis: calc((100% - (3 - 1) * var(--gap)) / 3);
+    }
+  }
+  @media screen and (min-width: 990px) {
+    .tfstd__point {
+      flex-basis: calc((100% - (var(--cols-d, 5) - 1) * var(--gap)) / var(--cols-d, 5));
+    }
+  }
+
+  .tfstd__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.8rem;
+    color: rgb(var(--color-foreground));
+  }
+  .tfstd__icon svg {
+    width: 4.4rem;
+    height: 4.4rem;
+    color: inherit;
+  }
+  .tfstd__icon-mask {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    background-color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  .tfstd__label {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--tf-vanilla-dark, #40738d);
+    max-width: 16ch;
+  }
+</style>
+
+<div class="tfstd color-{{ section.settings.color_scheme }} gradient">
+  <div class="tfstd__inner page-width">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="tf-eyebrow tfstd__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="tfstd__heading h1">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <div class="tfstd__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul
+        class="tfstd__points"
+        style="--cols-m: {{ section.settings.columns_mobile }}; --cols-d: {{ section.settings.columns_desktop }};"
+      >
+        {%- for block in section.blocks -%}
+          {%- assign icon = block.settings.icon -%}
+          <li class="tfstd__point" {{ block.shopify_attributes }}>
+            <div class="tfstd__icon">
+              {%- if icon == 'custom_image' -%}
+                {%- if block.settings.icon_image != blank -%}
+                  {%- assign icon_url = block.settings.icon_image | image_url: width: 200 -%}
+                  <span class="tfstd__icon-mask" aria-hidden="true" style="-webkit-mask-image:url('{{ icon_url }}');mask-image:url('{{ icon_url }}');"></span>
+                {%- endif -%}
+              {%- elsif icon != blank and icon != 'none' -%}
+                {%- render 'aminolean-icon-feature', icon: icon -%}
+              {%- endif -%}
+            </div>
+            {%- if block.settings.label != blank -%}
+              <div class="tfstd__label">{{ block.settings.label }}</div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TrueFit Standard",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "THE TRUEFIT STANDARD"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "default": "Nothing fake. Every ingredient is earned."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Supporting text",
+      "default": "<p>Every ingredient in every TrueFit product had to earn its place. Clean, science-backed nutrition to help you stay true to your goals.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Trust points per row (mobile)",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Trust points per row (desktop)",
+      "default": 5
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme (placeholder)",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Trust point",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Pick a built-in icon, or choose 'Custom image' to upload your own.",
+          "options": [
+            { "value": "custom_image", "label": "Custom image (upload below)" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "lab_test", "label": "Lab tested" },
+            { "value": "no_artificial_flavors", "label": "No artificial flavors" },
+            { "value": "sugar_free", "label": "Sugar free" },
+            { "value": "gluten_free", "label": "Gluten free" },
+            { "value": "vegan", "label": "Vegan" },
+            { "value": "muscle", "label": "Muscle" },
+            { "value": "droplet", "label": "Droplet" },
+            { "value": "gut_health", "label": "Gut health" },
+            { "value": "biotin", "label": "Biotin" },
+            { "value": "brain", "label": "Brain" },
+            { "value": "green_tea", "label": "Green tea" },
+            { "value": "weights", "label": "Weights" },
+            { "value": "speedometer", "label": "Speedometer" },
+            { "value": "scale", "label": "Scale" },
+            { "value": "itch_free", "label": "Itch free" }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Custom icon image",
+          "info": "Used when Icon = Custom image. Transparent PNG or SVG works best."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Trust point"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "TrueFit Standard",
+      "blocks": [
+        { "type": "point", "settings": { "icon": "lab_test", "label": "Third-party tested" } },
+        { "type": "point", "settings": { "icon": "no_artificial_flavors", "label": "No artificial flavors" } },
+        { "type": "point", "settings": { "icon": "sugar_free", "label": "No added sugar" } },
+        { "type": "point", "settings": { "icon": "gluten_free", "label": "Gluten free" } },
+        { "type": "point", "settings": { "icon": "shield", "label": "Backed by science" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
