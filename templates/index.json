@@ -1,1 +1,899 @@
-{"sections":{"70a4820a-871c-4379-bba8-cccc8e424e7a":{"type":"image-banner-slideshow","blocks":{"slide_GzYBnt":{"type":"slide","disabled":true,"settings":{"image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/26_Amino_Banner_AprilWitesideSale_MOB.jpg","mobile_image_overlay_background":"","mobile_content_position":"bottom-center","mobile_content_alignment":"center","fix_buttons_below_on_mobile":true,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/26_Amino_Banner_AprilWitesideSale_WEB.jpg","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"bottom-left","desktop_column_width":4,"desktop_column_start":5,"desktop_content_max_width":480,"desktop_content_alignment":"right","color_scheme":"background-1","customize_colors":true,"text_color":"#000000","button_background_color":"#1c9dd6","button_text_color":"#ffffff","container_background_color":"rgba(0,0,0,0)","mobile_text_color":"#000000","mobile_button_background_color":"#1c9dd6","mobile_button_text_color":"#ffffff","mobile_container_background_color":"rgba(0,0,0,0)"}},"heading_7UckbD":{"type":"heading","disabled":true,"settings":{"heading":"Subscribe and Save 30% off for Summer","heading_size":"h1","screen_reader_only":true}},"button_nXnN4t":{"type":"button","disabled":true,"settings":{"button_label":"Save Now","button_link":"shopify:\/\/products\/truefit-vanilla"}},"slide_KkNn39":{"type":"slide","disabled":true,"settings":{"image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/26_Amino_Banner_PickYourOwnGift_MOB.jpg","mobile_image_overlay_background":"","mobile_content_position":"bottom-center","mobile_content_alignment":"center","fix_buttons_below_on_mobile":true,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/26_Amino_Banner_PickYourOwnGift_WEB2.jpg","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"bottom-left","desktop_column_width":8,"desktop_column_start":1,"desktop_content_max_width":480,"desktop_content_alignment":"right","color_scheme":"background-1","customize_colors":true,"text_color":"#000000","button_background_color":"#603286","button_text_color":"#ffffff","container_background_color":"rgba(0,0,0,0)","mobile_text_color":"#000000","mobile_button_background_color":"#603286","mobile_button_text_color":"#ffffff","mobile_container_background_color":"rgba(0,0,0,0)"}},"heading_nPcjEJ":{"type":"heading","disabled":true,"settings":{"heading":"Pick Your Free Gift on Orders $110+","heading_size":"h1","screen_reader_only":true}},"button_ALmxBU":{"type":"button","disabled":true,"settings":{"button_label":"Claim Your Gift","button_link":"shopify:\/\/collections\/all"}},"slide_8TNrcm":{"type":"slide","settings":{"image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/ChatGPT_Image_Jun_2_2026_06_39_59_PM.png","mobile_image_overlay_background":"","mobile_content_position":"bottom-center","mobile_content_alignment":"center","fix_buttons_below_on_mobile":true,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/ChatGPT_Image_Jun_2_2026_06_32_37_PM.png","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"bottom-left","desktop_column_width":6,"desktop_column_start":7,"desktop_content_max_width":480,"desktop_content_alignment":"right","color_scheme":"background-1","customize_colors":true,"text_color":"#000000","button_background_color":"#0A1A4F","button_text_color":"#fdf8f2","container_background_color":"rgba(0,0,0,0)","mobile_text_color":"#fdf8f2","mobile_button_background_color":"#0A1A4F","mobile_button_text_color":"#fdf8f2","mobile_container_background_color":"rgba(0,0,0,0)"}},"heading_8QDkct":{"type":"heading","settings":{"heading":"Complete Nutrition, Better You","heading_size":"h1","screen_reader_only":true}},"button_KyF4ap":{"type":"button","settings":{"button_label":"EXPLORE TRUEFIT PROTEIN","button_link":"shopify:\/\/products\/truefit-vanilla"}},"slide_4y3tVp":{"type":"slide","disabled":true,"settings":{"image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/25_RSP_Banner_TrueFit_MOB.jpg","mobile_image_overlay_background":"","mobile_content_position":"bottom-center","mobile_content_alignment":"center","fix_buttons_below_on_mobile":true,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/25_RSP_Banner_TrueFit_WEB.jpg","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"bottom-left","desktop_column_width":4,"desktop_column_start":8,"desktop_content_max_width":480,"desktop_content_alignment":"right","color_scheme":"background-1","customize_colors":true,"text_color":"#000000","button_background_color":"#ffffff","button_text_color":"#000000","container_background_color":"rgba(0,0,0,0)","mobile_text_color":"#000000","mobile_button_background_color":"#ffea77","mobile_button_text_color":"#000000","mobile_container_background_color":"rgba(0,0,0,0)"}},"heading_htGUfL":{"type":"heading","disabled":true,"settings":{"heading":"TrueFit Protein Powder","heading_size":"h1","screen_reader_only":true}},"button_ewxEM4":{"type":"button","disabled":true,"settings":{"button_label":"TRY TRUEFIT PROTEIN","button_link":"shopify:\/\/products\/truefit-vanilla"}}},"block_order":["slide_GzYBnt","heading_7UckbD","button_nXnN4t","slide_KkNn39","heading_nPcjEJ","button_ALmxBU","slide_8TNrcm","heading_8QDkct","button_KyF4ap","slide_4y3tVp","heading_htGUfL","button_ewxEM4"],"settings":{"image_height":"adapt","slider_visual":"dots","auto_rotate":false,"change_slides_speed":7}},"b53bfdf0-4497-49b8-a03e-4d5de5af7526":{"type":"shop-tile-grid","blocks":{"template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-1":{"type":"tile","settings":{"image":"shopify:\/\/shop_images\/cherry_square.png","title":"Shop AminoLean\nEnergy","link":"https:\/\/rspnutrition.com\/pages\/aminoleanenergy"}},"template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-3":{"type":"tile","settings":{"image":"shopify:\/\/shop_images\/true.png","title":"Shop TrueFit\nProtein","link":"shopify:\/\/pages\/shop-truefit"}},"template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-4":{"type":"tile","settings":{"image":"shopify:\/\/shop_images\/allproducts.png","title":"Shop\nAll Products","link":"shopify:\/\/collections\/shop-all-products"}},"template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-2":{"type":"tile","settings":{"image":"shopify:\/\/shop_images\/GroupShotAI_copy.jpg","title":"Bundle & Save","link":"shopify:\/\/pages\/bundle-builder"}}},"block_order":["template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-1","template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-3","template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-4","template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-2"],"disabled":true,"settings":{"color_scheme":"","padding_top":36,"padding_bottom":36}},"featured-collection-rsp-homepage":{"type":"featured-collection-rsp","settings":{"title":"BEST SELLERS","heading_size":"h2","description":"","show_description":false,"description_style":"body","content_alignment":"tw-text-center","collection":"","product_list":["truefit-vanilla","truefit-chocolate","creatine-mono","aminolean-recovery-blood-orange","vegan-aminolean-acai","aminolean-pre-workout-berry-alixir","vegan-aminolean-mango","aminolean-energy-drink-berry-alixir"],"product_list_fallback":[],"products_to_show":14,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"link","enable_desktop_slider":true,"color_scheme":"background-1","image_ratio":"square","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":true,"enable_quick_add":true,"columns_mobile":"1","swipe_on_mobile":true,"card_cta_label":"","padding_top":48,"padding_bottom":20}},"a4695da9-3d23-4397-a161-ba373aee2a60":{"type":"featured-product-visual","blocks":{"d18362f3-6305-4b0f-9b8e-97b0786b4fc2":{"type":"text","settings":{"text":"SHOP THE FLASH SALE ON","text_style":"caption-with-letter-spacing","text_color":"rgba(0,0,0,0)"}},"06b4b383-94e1-4d2c-b756-e8c6aa161421":{"type":"heading","settings":{"heading":"SUMMER ROCKET POP","heading_size":"h0","text_color":"#ffffff"}},"685a1a8a-2a1e-4019-8a2c-64b27a88c207":{"type":"text","settings":{"text":"TODAY ONLY - Shop Summer Rocket Pop at 35% OFF! Inspired by the ice cream truck classic, this explosive flavor packs a punch - and brings back the taste of summer this winter. Hurry, this offer ends at MIDNIGHT.","text_style":"body","text_color":""}}},"block_order":["d18362f3-6305-4b0f-9b8e-97b0786b4fc2","06b4b383-94e1-4d2c-b756-e8c6aa161421","685a1a8a-2a1e-4019-8a2c-64b27a88c207"],"disabled":true,"settings":{"height":"medium","layout":"text_first","main_image":"shopify:\/\/shop_images\/AminoLean_5_15_0050-1_EDITED_1.jpg","main_image_width":450,"main_image_desktop":"shopify:\/\/shop_images\/AminoLean_5_15_0060_EDITED.jpg","main_image_width_desktop":320,"use_theme_media_settings":true,"content_max_width":420,"content_max_width_desktop":360,"button_label":"Shop Now","button_link":"shopify:\/\/products\/aminolean-rocket-pop","mobile_background":"","tablet_background":"","desktop_background":"","color_scheme":"inverse","customize_colors":true,"text_color":"","button_background_color":"#ffffff","button_text_color":"#0018fd","container_background_color":"#0018fd","mobile_text_color":"","mobile_button_background_color":"","mobile_button_text_color":"","mobile_container_background_color":"","padding_top":48,"padding_bottom":48}},"1b51a7c0-2816-4d4d-9893-2d8d0e777d3e":{"type":"featured-product-visual","blocks":{"eb41755d-01a1-4423-901b-a719007ff2b3":{"type":"content_image","settings":{"image":"shopify:\/\/shop_images\/AminoLeanAlixLockup.svg","image_width":250}},"ce44ab64-d143-4767-adad-670500466c1a":{"type":"text","disabled":true,"settings":{"text":"The Berry Alixir Bundle","text_style":"caption-with-letter-spacing","text_color":"rgba(0,0,0,0)"}},"057b75bf-122e-4a0a-b0a2-c9d64cad9247":{"type":"heading","settings":{"heading":"THE BERRY ALIXIR BUNDLE IS BACK!","heading_size":"h0","text_color":"#ffdd00"}},"58ebe6a4-1480-4dff-890d-41c828478316":{"type":"text","settings":{"text":"Just for Black Friday, we brought back our iconic AminoLean x Alix Earle Berry Alixir bundle - at it's lowest price ever! Quantities are <strong>extremely<\/strong> limited, so get yours before they're gone.","text_style":"body","text_color":""}}},"block_order":["eb41755d-01a1-4423-901b-a719007ff2b3","ce44ab64-d143-4767-adad-670500466c1a","057b75bf-122e-4a0a-b0a2-c9d64cad9247","58ebe6a4-1480-4dff-890d-41c828478316"],"disabled":true,"settings":{"height":"medium","layout":"text_first","main_image":"shopify:\/\/shop_images\/F75A8108.jpg","main_image_width":450,"main_image_desktop":"shopify:\/\/shop_images\/F75A8108.jpg","main_image_width_desktop":320,"use_theme_media_settings":true,"content_max_width":420,"content_max_width_desktop":360,"button_label":"Shop Now","button_link":"shopify:\/\/products\/berry-alixir-bundle","mobile_background":"","tablet_background":"","desktop_background":"","color_scheme":"inverse","customize_colors":true,"text_color":"","button_background_color":"#ffdd00","button_text_color":"#000000","container_background_color":"#ec008c","mobile_text_color":"","mobile_button_background_color":"","mobile_button_text_color":"","mobile_container_background_color":"","padding_top":48,"padding_bottom":48}},"ef6ad4f1-846a-4acc-b609-35463e042d60":{"type":"featured-product-visual","blocks":{"e635571f-c406-498f-8aac-859b9641386f":{"type":"content_image","settings":{"image_width":250}},"9477bfa7-1fad-4313-ba5e-20fc1be70a4b":{"type":"heading","settings":{"heading":"More Chocolate. More Value.","heading_size":"h1","text_color":""}},"e873729f-a92d-46ef-94e1-c764b5f40ec4":{"type":"text","settings":{"text":"If you love our Chocolate, this is the upgrade you\u2019ve been waiting for. Rich, smooth, and actually satisfying, not overly sweet or artificial. Now with <strong>40 servings<\/strong> so you can enjoy it every day without constantly restocking. Only available here.","text_style":"body","text_color":""}}},"block_order":["e635571f-c406-498f-8aac-859b9641386f","9477bfa7-1fad-4313-ba5e-20fc1be70a4b","e873729f-a92d-46ef-94e1-c764b5f40ec4"],"settings":{"height":"medium","layout":"image_first","main_image":"shopify:\/\/shop_images\/eb94ddbb-dc1a-478b-8b63-09f1b159bd48.png","main_image_width":420,"main_image_desktop":"shopify:\/\/shop_images\/eb94ddbb-dc1a-478b-8b63-09f1b159bd48.png","main_image_width_desktop":360,"use_theme_media_settings":true,"content_max_width":420,"content_max_width_desktop":360,"button_label":"SHOP HERE","button_link":"shopify:\/\/products\/truefit-protein-powder-chocolate-40servings","mobile_background":"linear-gradient(228deg, rgba(207, 205, 190, 1) 99%, rgba(228, 226, 207, 1) 100%)","tablet_background":"","desktop_background":"","color_scheme":"inverse","customize_colors":true,"text_color":"#22171d","button_background_color":"#22171d","button_text_color":"#ffffff","container_background_color":"","mobile_text_color":"#000000","mobile_button_background_color":"#000000","mobile_button_text_color":"#ffffff","mobile_container_background_color":"","padding_top":48,"padding_bottom":48}},"store-logos-homepage":{"type":"amino-store-logos","blocks":{"a0e4235b-3287-40cf-9c6e-5b4e9917711c":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/logo-walmart.svg"}},"f6eb905c-735c-4845-b187-933501a1ef8f":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/logo-whole-foods.svg"}},"4d3ad8b7-1eea-4d8c-9834-d425171811ac":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/TARGET.svg"}},"fabf4a65-2c75-4e9d-ba89-a1e8791baebb":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/sprouts-grayscale.svg"}}},"block_order":["a0e4235b-3287-40cf-9c6e-5b4e9917711c","f6eb905c-735c-4845-b187-933501a1ef8f","4d3ad8b7-1eea-4d8c-9834-d425171811ac","fabf4a65-2c75-4e9d-ba89-a1e8791baebb"],"settings":{"color_scheme":"background-2","heading":"<p>Found in over 10,000 stores that you love!<\/p>","button_label":"Find Near You","button_link":"shopify:\/\/pages\/store-locator","logo_max_width":200,"padding_top":48,"padding_bottom":48}},"62649426-2e29-4d67-9779-70505fde6386":{"type":"viral-ugc","blocks":{"template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-1":{"type":"screenshot","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2026-04-03_at_12.54.23_PM-portrait.png","rotation":-2.5,"column_start":1,"column_width":6,"row_start":1,"row_height":9,"content_alignment":"tw-self-start"}},"template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-2":{"type":"screenshot","settings":{"image":"shopify:\/\/shop_images\/tiktok-right.png","rotation":5.8,"column_start":5,"column_width":6,"row_start":2,"row_height":9,"content_alignment":"tw-self-end"}},"template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-1":{"type":"review","settings":{"name":"Dean","title":"<strong>Excellent taste, and felt super energized afterwards!<\/strong>","review":"<p>First, the taste was excellent and flavorful. I felt energized after taking it without experiencing the negative side effects I often feel from taking a pre-workout powder (e.g., the shakiness\/jitteriness).<\/p>","font_scale":100,"rotation":-1.4,"column_start":2,"column_width":6,"row_start":7,"row_height":4,"content_alignment":"tw-self-end"}},"template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-2":{"type":"review","settings":{"name":"Alexa","title":"<strong>Tasty and Effective<\/strong>","review":"<p>After taking it for a while, I\u2019ve found that it really works! Every time I\u2019ve taken it, I definitely feel more energized and am able to workout, or get through my day in a way that feels easier.<\/p>","font_scale":80,"rotation":1.4,"column_start":6,"column_width":5,"row_start":1,"row_height":4,"content_alignment":"tw-self-start"}}},"block_order":["template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-1","template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-2","template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-1","template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-2"],"settings":{"heading":"Viral on TIKTOK\nand over 30,000\nAMAZON reviews","show_social_links":true,"follow_text":"Follow us","max_width":450,"mobile_background":"linear-gradient(180deg, rgba(207, 205, 190, 1) 53%, rgba(255, 255, 255, 1) 92%)","desktop_background":"linear-gradient(180deg, rgba(207, 205, 190, 1) 53%, rgba(255, 255, 255, 1) 93%)","color_scheme":"","social_container_color_scheme":"","customize_colors":false,"text_color":"","button_background_color":"","button_text_color":"","container_background_color":"","mobile_text_color":"","mobile_button_background_color":"","mobile_button_text_color":"","mobile_container_background_color":"","padding_top":36,"padding_bottom":36}},"45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9":{"type":"amino-press-logos","blocks":{"8923f312-8ffe-425b-bcb0-291089e60319":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/bustle.svg","width_1":50,"image_2":"shopify:\/\/shop_images\/wellgood_2.svg","width_2":50,"width_3":25,"width_4":25}},"db1a2656-b394-4117-a943-44d0dc901964":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/popsugar.svg","width_1":50,"image_2":"shopify:\/\/shop_images\/menshealth.svg","width_2":50,"width_3":25,"width_4":25}},"ce13abf3-28d0-4d69-85d4-68473cf9a586":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/buzzfeed.svg","width_1":50,"width_2":25,"width_3":25,"width_4":25}}},"block_order":["8923f312-8ffe-425b-bcb0-291089e60319","db1a2656-b394-4117-a943-44d0dc901964","ce13abf3-28d0-4d69-85d4-68473cf9a586"],"settings":{"heading":"As Seen In","heading_style":"large","color_scheme":"scheme-bb757efb-c3e9-403a-942d-776276cfdd97","vertical_spacing":36,"horizontal_spacing":36,"max_width":414,"padding_top":36,"padding_bottom":36}},"1780502619b33d2581":{"type":"_blocks","blocks":{"ai_gen_block_6e7c139_bhFVcb":{"type":"ai_gen_block_6e7c139","settings":{"section_heading":"Featured content","heading_alignment":"center","heading_size":32,"heading_color":"#0A1A4F","section_padding":40,"desktop_width_percent":100,"cards_per_row":3,"card_gap":24,"card_background":"#ffffff","card_border_radius":24,"card_shadow_opacity":0.1,"card_heading_size":20,"card_heading_color":"#0A1A4F","teaser_size":14,"teaser_color":"#666666","button_background":"#0A1A4F","button_hover_background":"#40738D","button_text_color":"#fdf8f2","button_text_size":14,"button_border_radius":40,"card_1_enabled":true,"card_1_image":"shopify:\/\/shop_images\/TrueFit_004.jpg","card_1_heading":"PROTEINMAXXING, DONE RIGHT","card_1_teaser":"Proteinmaxxing is everywhere \u2014 but most shakes are doing the math wrong. Here's why TrueFit's 25g\/150cal ratio matters, and the one ingredient that decides whether your protein actually counts.","card_1_link":"https:\/\/rspnutrition.com\/pages\/truefit-proteinmaxxing","card_1_button_text":"Read more","card_2_enabled":true,"card_2_image":"shopify:\/\/shop_images\/ChatGPT_Image_Jun_3_2026_03_01_11_PM.png","card_2_heading":"PROTEIN IS ONLY HALF THE STORY","card_2_teaser":"Protein builds the muscle. Fiber decides whether your body can actually use it. Here's the science behind the half of the story most shakes leave out.","card_2_link":"https:\/\/rspnutrition.com\/pages\/truefit-protein-is-only-half-the-story","card_2_button_text":"Read more","card_3_enabled":true,"card_3_image":"shopify:\/\/shop_images\/ChatGPT_Image_Jun_10_2026_01_48_11_PM.png","card_3_heading":"THE WORLD'S MOST DELICIOUS HIGH PROTEIN BANANA BREAD","card_3_teaser":"One of the biggest reasons people struggle to hit their body composition goals is because they are constantly fighting hunger or cravings. Here's a viral recipe that can help!","card_3_link":"shopify:\/\/pages\/high-protein-banana-bread","card_3_button_text":"Read more"},"blocks":{}}},"block_order":["ai_gen_block_6e7c139_bhFVcb"],"settings":{}},"eba58f30-4501-4689-980e-6f0b86699042":{"type":"featured-blog","blocks":{"04343661-543e-4a5c-8ebc-8e79b9c1bfc9":{"type":"article","settings":{"article":"nutrition\/beyond-ozempic-4-surprising-truths-about-nutrition-youve-overlooked"}},"0f0da5d1-ff19-4a05-a5d8-7a786c29f55f":{"type":"article","settings":{"article":"rsp-blog\/protein-fiber-the-ultimate-power-duo-for-all-day-fullness"}},"30b34667-bc57-44fb-87d0-ac986588747d":{"type":"article","settings":{"article":"rsp-blog\/aminos-101"}},"b331993f-f907-4c8a-b801-87341096d998":{"type":"article","settings":{"article":"rsp-blog\/the-7-best-post-workout-snacks-and-supplements"}}},"block_order":["04343661-543e-4a5c-8ebc-8e79b9c1bfc9","0f0da5d1-ff19-4a05-a5d8-7a786c29f55f","30b34667-bc57-44fb-87d0-ac986588747d","b331993f-f907-4c8a-b801-87341096d998"],"disabled":true,"settings":{"heading":"From Our Blog","heading_size":"h2","blog":"","post_limit":4,"columns_desktop":2,"color_scheme":"","show_image":true,"show_date":false,"show_author":false,"show_view_all":true,"view_all_link":"shopify:\/\/pages\/blog","padding_top":36,"padding_bottom":36}},"1779400510f90dc326":{"type":"_blocks","settings":{}}},"order":["70a4820a-871c-4379-bba8-cccc8e424e7a","store-logos-homepage","b53bfdf0-4497-49b8-a03e-4d5de5af7526","featured-collection-rsp-homepage","a4695da9-3d23-4397-a161-ba373aee2a60","1b51a7c0-2816-4d4d-9893-2d8d0e777d3e","ef6ad4f1-846a-4acc-b609-35463e042d60","62649426-2e29-4d67-9779-70505fde6386","45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9","1780502619b33d2581","eba58f30-4501-4689-980e-6f0b86699042","1779400510f90dc326"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "70a4820a-871c-4379-bba8-cccc8e424e7a": {
+      "type": "image-banner-slideshow",
+      "blocks": {
+        "slide_GzYBnt": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_overlay_opacity": 0,
+            "mobile_image": "shopify://shop_images/26_Amino_Banner_AprilWitesideSale_MOB.jpg",
+            "mobile_image_overlay_background": "",
+            "mobile_content_position": "bottom-center",
+            "mobile_content_alignment": "center",
+            "fix_buttons_below_on_mobile": true,
+            "show_text_below": false,
+            "desktop_image": "shopify://shop_images/26_Amino_Banner_AprilWitesideSale_WEB.jpg",
+            "desktop_image_overlay_background": "",
+            "page_width": true,
+            "show_text_box": false,
+            "desktop_content_position": "bottom-left",
+            "desktop_column_width": 4,
+            "desktop_column_start": 5,
+            "desktop_content_max_width": 480,
+            "desktop_content_alignment": "right",
+            "color_scheme": "background-1",
+            "customize_colors": true,
+            "text_color": "#000000",
+            "button_background_color": "#1c9dd6",
+            "button_text_color": "#ffffff",
+            "container_background_color": "rgba(0,0,0,0)",
+            "mobile_text_color": "#000000",
+            "mobile_button_background_color": "#1c9dd6",
+            "mobile_button_text_color": "#ffffff",
+            "mobile_container_background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_7UckbD": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Subscribe and Save 30% off for Summer",
+            "heading_size": "h1",
+            "screen_reader_only": true
+          }
+        },
+        "button_nXnN4t": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Save Now",
+            "button_link": "shopify://products/truefit-vanilla"
+          }
+        },
+        "slide_KkNn39": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_overlay_opacity": 0,
+            "mobile_image": "shopify://shop_images/26_Amino_Banner_PickYourOwnGift_MOB.jpg",
+            "mobile_image_overlay_background": "",
+            "mobile_content_position": "bottom-center",
+            "mobile_content_alignment": "center",
+            "fix_buttons_below_on_mobile": true,
+            "show_text_below": false,
+            "desktop_image": "shopify://shop_images/26_Amino_Banner_PickYourOwnGift_WEB2.jpg",
+            "desktop_image_overlay_background": "",
+            "page_width": true,
+            "show_text_box": false,
+            "desktop_content_position": "bottom-left",
+            "desktop_column_width": 8,
+            "desktop_column_start": 1,
+            "desktop_content_max_width": 480,
+            "desktop_content_alignment": "right",
+            "color_scheme": "background-1",
+            "customize_colors": true,
+            "text_color": "#000000",
+            "button_background_color": "#603286",
+            "button_text_color": "#ffffff",
+            "container_background_color": "rgba(0,0,0,0)",
+            "mobile_text_color": "#000000",
+            "mobile_button_background_color": "#603286",
+            "mobile_button_text_color": "#ffffff",
+            "mobile_container_background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_nPcjEJ": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Pick Your Free Gift on Orders $110+",
+            "heading_size": "h1",
+            "screen_reader_only": true
+          }
+        },
+        "button_ALmxBU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Claim Your Gift",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "slide_8TNrcm": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_2_2026_06_39_59_PM.png",
+            "mobile_image_overlay_background": "",
+            "mobile_content_position": "bottom-center",
+            "mobile_content_alignment": "center",
+            "fix_buttons_below_on_mobile": true,
+            "show_text_below": false,
+            "desktop_image": "shopify://shop_images/ChatGPT_Image_Jun_2_2026_06_32_37_PM.png",
+            "desktop_image_overlay_background": "",
+            "page_width": true,
+            "show_text_box": false,
+            "desktop_content_position": "bottom-left",
+            "desktop_column_width": 6,
+            "desktop_column_start": 7,
+            "desktop_content_max_width": 480,
+            "desktop_content_alignment": "right",
+            "color_scheme": "background-1",
+            "customize_colors": true,
+            "text_color": "#000000",
+            "button_background_color": "#0a1a4f",
+            "button_text_color": "#fdf8f2",
+            "container_background_color": "rgba(0,0,0,0)",
+            "mobile_text_color": "#fdf8f2",
+            "mobile_button_background_color": "#0a1a4f",
+            "mobile_button_text_color": "#fdf8f2",
+            "mobile_container_background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_8QDkct": {
+          "type": "heading",
+          "settings": {
+            "heading": "Complete Nutrition, Better You",
+            "heading_size": "h1",
+            "screen_reader_only": true
+          }
+        },
+        "button_KyF4ap": {
+          "type": "button",
+          "settings": {
+            "button_label": "EXPLORE TRUEFIT PROTEIN",
+            "button_link": "shopify://products/truefit-vanilla"
+          }
+        },
+        "slide_4y3tVp": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image_overlay_opacity": 0,
+            "mobile_image": "shopify://shop_images/25_RSP_Banner_TrueFit_MOB.jpg",
+            "mobile_image_overlay_background": "",
+            "mobile_content_position": "bottom-center",
+            "mobile_content_alignment": "center",
+            "fix_buttons_below_on_mobile": true,
+            "show_text_below": false,
+            "desktop_image": "shopify://shop_images/25_RSP_Banner_TrueFit_WEB.jpg",
+            "desktop_image_overlay_background": "",
+            "page_width": true,
+            "show_text_box": false,
+            "desktop_content_position": "bottom-left",
+            "desktop_column_width": 4,
+            "desktop_column_start": 8,
+            "desktop_content_max_width": 480,
+            "desktop_content_alignment": "right",
+            "color_scheme": "background-1",
+            "customize_colors": true,
+            "text_color": "#000000",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "container_background_color": "rgba(0,0,0,0)",
+            "mobile_text_color": "#000000",
+            "mobile_button_background_color": "#ffea77",
+            "mobile_button_text_color": "#000000",
+            "mobile_container_background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_htGUfL": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "TrueFit Protein Powder",
+            "heading_size": "h1",
+            "screen_reader_only": true
+          }
+        },
+        "button_ewxEM4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "TRY TRUEFIT PROTEIN",
+            "button_link": "shopify://products/truefit-vanilla"
+          }
+        }
+      },
+      "block_order": [
+        "slide_GzYBnt",
+        "heading_7UckbD",
+        "button_nXnN4t",
+        "slide_KkNn39",
+        "heading_nPcjEJ",
+        "button_ALmxBU",
+        "slide_8TNrcm",
+        "heading_8QDkct",
+        "button_KyF4ap",
+        "slide_4y3tVp",
+        "heading_htGUfL",
+        "button_ewxEM4"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 7
+      }
+    },
+    "tf_best_sellers_ypL9Xq": {
+      "type": "tf-best-sellers",
+      "blocks": {
+        "card_fCjV4k": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "subscribe_price": "38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0A1A4F",
+            "badge_text_color": "#FFFFFF",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods"
+          }
+        },
+        "card_cNqYVE": {
+          "type": "card",
+          "settings": {
+            "product": "",
+            "subscribe_price": "",
+            "badge_text": "",
+            "badge_background": "#0A1A4F",
+            "badge_text_color": "#FFFFFF",
+            "badge_size": "medium",
+            "bullet_1": "",
+            "bullet_2": "",
+            "bullet_3": ""
+          }
+        },
+        "card_kXFAdn": {
+          "type": "card",
+          "settings": {
+            "product": "",
+            "subscribe_price": "",
+            "badge_text": "",
+            "badge_background": "#0A1A4F",
+            "badge_text_color": "#FFFFFF",
+            "badge_size": "medium",
+            "bullet_1": "",
+            "bullet_2": "",
+            "bullet_3": ""
+          }
+        },
+        "card_cHrX93": {
+          "type": "card",
+          "settings": {
+            "product": "",
+            "subscribe_price": "",
+            "badge_text": "",
+            "badge_background": "#0A1A4F",
+            "badge_text_color": "#FFFFFF",
+            "badge_size": "medium",
+            "bullet_1": "",
+            "bullet_2": "",
+            "bullet_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_fCjV4k",
+        "card_cNqYVE",
+        "card_kXFAdn",
+        "card_cHrX93"
+      ],
+      "name": "TrueFit Best Sellers",
+      "settings": {
+        "eyebrow": "Stay True",
+        "heading": "Best Sellers",
+        "view_all_label": "View All",
+        "view_all_link": "",
+        "add_label": "Add to Cart",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "store-logos-homepage": {
+      "type": "amino-store-logos",
+      "blocks": {
+        "a0e4235b-3287-40cf-9c6e-5b4e9917711c": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo-walmart.svg"
+          }
+        },
+        "f6eb905c-735c-4845-b187-933501a1ef8f": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo-whole-foods.svg"
+          }
+        },
+        "4d3ad8b7-1eea-4d8c-9834-d425171811ac": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/TARGET.svg"
+          }
+        },
+        "fabf4a65-2c75-4e9d-ba89-a1e8791baebb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/sprouts-grayscale.svg"
+          }
+        }
+      },
+      "block_order": [
+        "a0e4235b-3287-40cf-9c6e-5b4e9917711c",
+        "f6eb905c-735c-4845-b187-933501a1ef8f",
+        "4d3ad8b7-1eea-4d8c-9834-d425171811ac",
+        "fabf4a65-2c75-4e9d-ba89-a1e8791baebb"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "heading": "<p>Found in over 10,000 stores that you love!</p>",
+        "button_label": "Find Near You",
+        "button_link": "shopify://pages/store-locator",
+        "logo_max_width": 200,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "b53bfdf0-4497-49b8-a03e-4d5de5af7526": {
+      "type": "shop-tile-grid",
+      "blocks": {
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-1": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/cherry_square.png",
+            "title": "Shop AminoLean\nEnergy",
+            "link": "https://rspnutrition.com/pages/aminoleanenergy"
+          }
+        },
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-3": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/true.png",
+            "title": "Shop TrueFit\nProtein",
+            "link": "shopify://pages/shop-truefit"
+          }
+        },
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-4": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/allproducts.png",
+            "title": "Shop\nAll Products",
+            "link": "shopify://collections/shop-all-products"
+          }
+        },
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-2": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/GroupShotAI_copy.jpg",
+            "title": "Bundle & Save",
+            "link": "shopify://pages/bundle-builder"
+          }
+        }
+      },
+      "block_order": [
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-1",
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-3",
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-4",
+        "template--15630870577197__b53bfdf0-4497-49b8-a03e-4d5de5af7526-tile-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured-collection-rsp-homepage": {
+      "type": "featured-collection-rsp",
+      "settings": {
+        "title": "BEST SELLERS",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "content_alignment": "tw-text-center",
+        "collection": "",
+        "product_list": [
+          "truefit-vanilla",
+          "truefit-chocolate",
+          "creatine-mono",
+          "aminolean-recovery-blood-orange",
+          "vegan-aminolean-acai",
+          "aminolean-pre-workout-berry-alixir",
+          "vegan-aminolean-mango",
+          "aminolean-energy-drink-berry-alixir"
+        ],
+        "product_list_fallback": [],
+        "products_to_show": 14,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "card_cta_label": "",
+        "padding_top": 48,
+        "padding_bottom": 20
+      }
+    },
+    "a4695da9-3d23-4397-a161-ba373aee2a60": {
+      "type": "featured-product-visual",
+      "blocks": {
+        "d18362f3-6305-4b0f-9b8e-97b0786b4fc2": {
+          "type": "text",
+          "settings": {
+            "text": "SHOP THE FLASH SALE ON",
+            "text_style": "caption-with-letter-spacing",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "06b4b383-94e1-4d2c-b756-e8c6aa161421": {
+          "type": "heading",
+          "settings": {
+            "heading": "SUMMER ROCKET POP",
+            "heading_size": "h0",
+            "text_color": "#ffffff"
+          }
+        },
+        "685a1a8a-2a1e-4019-8a2c-64b27a88c207": {
+          "type": "text",
+          "settings": {
+            "text": "TODAY ONLY - Shop Summer Rocket Pop at 35% OFF! Inspired by the ice cream truck classic, this explosive flavor packs a punch - and brings back the taste of summer this winter. Hurry, this offer ends at MIDNIGHT.",
+            "text_style": "body",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "d18362f3-6305-4b0f-9b8e-97b0786b4fc2",
+        "06b4b383-94e1-4d2c-b756-e8c6aa161421",
+        "685a1a8a-2a1e-4019-8a2c-64b27a88c207"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "medium",
+        "layout": "text_first",
+        "main_image": "shopify://shop_images/AminoLean_5_15_0050-1_EDITED_1.jpg",
+        "main_image_width": 450,
+        "main_image_desktop": "shopify://shop_images/AminoLean_5_15_0060_EDITED.jpg",
+        "main_image_width_desktop": 320,
+        "use_theme_media_settings": true,
+        "content_max_width": 420,
+        "content_max_width_desktop": 360,
+        "button_label": "Shop Now",
+        "button_link": "shopify://products/aminolean-rocket-pop",
+        "mobile_background": "",
+        "tablet_background": "",
+        "desktop_background": "",
+        "color_scheme": "inverse",
+        "customize_colors": true,
+        "text_color": "",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#0018fd",
+        "container_background_color": "#0018fd",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "1b51a7c0-2816-4d4d-9893-2d8d0e777d3e": {
+      "type": "featured-product-visual",
+      "blocks": {
+        "eb41755d-01a1-4423-901b-a719007ff2b3": {
+          "type": "content_image",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanAlixLockup.svg",
+            "image_width": 250
+          }
+        },
+        "ce44ab64-d143-4767-adad-670500466c1a": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The Berry Alixir Bundle",
+            "text_style": "caption-with-letter-spacing",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "057b75bf-122e-4a0a-b0a2-c9d64cad9247": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE BERRY ALIXIR BUNDLE IS BACK!",
+            "heading_size": "h0",
+            "text_color": "#ffdd00"
+          }
+        },
+        "58ebe6a4-1480-4dff-890d-41c828478316": {
+          "type": "text",
+          "settings": {
+            "text": "Just for Black Friday, we brought back our iconic AminoLean x Alix Earle Berry Alixir bundle - at it's lowest price ever! Quantities are <strong>extremely</strong> limited, so get yours before they're gone.",
+            "text_style": "body",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eb41755d-01a1-4423-901b-a719007ff2b3",
+        "ce44ab64-d143-4767-adad-670500466c1a",
+        "057b75bf-122e-4a0a-b0a2-c9d64cad9247",
+        "58ebe6a4-1480-4dff-890d-41c828478316"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "medium",
+        "layout": "text_first",
+        "main_image": "shopify://shop_images/F75A8108.jpg",
+        "main_image_width": 450,
+        "main_image_desktop": "shopify://shop_images/F75A8108.jpg",
+        "main_image_width_desktop": 320,
+        "use_theme_media_settings": true,
+        "content_max_width": 420,
+        "content_max_width_desktop": 360,
+        "button_label": "Shop Now",
+        "button_link": "shopify://products/berry-alixir-bundle",
+        "mobile_background": "",
+        "tablet_background": "",
+        "desktop_background": "",
+        "color_scheme": "inverse",
+        "customize_colors": true,
+        "text_color": "",
+        "button_background_color": "#ffdd00",
+        "button_text_color": "#000000",
+        "container_background_color": "#ec008c",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "ef6ad4f1-846a-4acc-b609-35463e042d60": {
+      "type": "featured-product-visual",
+      "blocks": {
+        "e635571f-c406-498f-8aac-859b9641386f": {
+          "type": "content_image",
+          "settings": {
+            "image_width": 250
+          }
+        },
+        "9477bfa7-1fad-4313-ba5e-20fc1be70a4b": {
+          "type": "heading",
+          "settings": {
+            "heading": "More Chocolate. More Value.",
+            "heading_size": "h1",
+            "text_color": ""
+          }
+        },
+        "e873729f-a92d-46ef-94e1-c764b5f40ec4": {
+          "type": "text",
+          "settings": {
+            "text": "If you love our Chocolate, this is the upgrade you’ve been waiting for. Rich, smooth, and actually satisfying, not overly sweet or artificial. Now with <strong>40 servings</strong> so you can enjoy it every day without constantly restocking. Only available here.",
+            "text_style": "body",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e635571f-c406-498f-8aac-859b9641386f",
+        "9477bfa7-1fad-4313-ba5e-20fc1be70a4b",
+        "e873729f-a92d-46ef-94e1-c764b5f40ec4"
+      ],
+      "settings": {
+        "height": "medium",
+        "layout": "image_first",
+        "main_image": "shopify://shop_images/eb94ddbb-dc1a-478b-8b63-09f1b159bd48.png",
+        "main_image_width": 420,
+        "main_image_desktop": "shopify://shop_images/eb94ddbb-dc1a-478b-8b63-09f1b159bd48.png",
+        "main_image_width_desktop": 360,
+        "use_theme_media_settings": true,
+        "content_max_width": 420,
+        "content_max_width_desktop": 360,
+        "button_label": "SHOP HERE",
+        "button_link": "shopify://products/truefit-protein-powder-chocolate-40servings",
+        "mobile_background": "linear-gradient(228deg, rgba(207, 205, 190, 1) 99%, rgba(228, 226, 207, 1) 100%)",
+        "tablet_background": "",
+        "desktop_background": "",
+        "color_scheme": "inverse",
+        "customize_colors": true,
+        "text_color": "#22171d",
+        "button_background_color": "#22171d",
+        "button_text_color": "#ffffff",
+        "container_background_color": "",
+        "mobile_text_color": "#000000",
+        "mobile_button_background_color": "#000000",
+        "mobile_button_text_color": "#ffffff",
+        "mobile_container_background_color": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "62649426-2e29-4d67-9779-70505fde6386": {
+      "type": "viral-ugc",
+      "blocks": {
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-1": {
+          "type": "screenshot",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM-portrait.png",
+            "rotation": -2.5,
+            "column_start": 1,
+            "column_width": 6,
+            "row_start": 1,
+            "row_height": 9,
+            "content_alignment": "tw-self-start"
+          }
+        },
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-2": {
+          "type": "screenshot",
+          "settings": {
+            "image": "shopify://shop_images/tiktok-right.png",
+            "rotation": 5.8,
+            "column_start": 5,
+            "column_width": 6,
+            "row_start": 2,
+            "row_height": 9,
+            "content_alignment": "tw-self-end"
+          }
+        },
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-1": {
+          "type": "review",
+          "settings": {
+            "name": "Dean",
+            "title": "<strong>Excellent taste, and felt super energized afterwards!</strong>",
+            "review": "<p>First, the taste was excellent and flavorful. I felt energized after taking it without experiencing the negative side effects I often feel from taking a pre-workout powder (e.g., the shakiness/jitteriness).</p>",
+            "font_scale": 100,
+            "rotation": -1.4,
+            "column_start": 2,
+            "column_width": 6,
+            "row_start": 7,
+            "row_height": 4,
+            "content_alignment": "tw-self-end"
+          }
+        },
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-2": {
+          "type": "review",
+          "settings": {
+            "name": "Alexa",
+            "title": "<strong>Tasty and Effective</strong>",
+            "review": "<p>After taking it for a while, I’ve found that it really works! Every time I’ve taken it, I definitely feel more energized and am able to workout, or get through my day in a way that feels easier.</p>",
+            "font_scale": 80,
+            "rotation": 1.4,
+            "column_start": 6,
+            "column_width": 5,
+            "row_start": 1,
+            "row_height": 4,
+            "content_alignment": "tw-self-start"
+          }
+        }
+      },
+      "block_order": [
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-1",
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-screenshot-2",
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-1",
+        "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-2"
+      ],
+      "settings": {
+        "heading": "Viral on TIKTOK\nand over 30,000\nAMAZON reviews",
+        "show_social_links": true,
+        "follow_text": "Follow us",
+        "max_width": 450,
+        "mobile_background": "linear-gradient(180deg, rgba(207, 205, 190, 1) 53%, rgba(255, 255, 255, 1) 92%)",
+        "desktop_background": "linear-gradient(180deg, rgba(207, 205, 190, 1) 53%, rgba(255, 255, 255, 1) 93%)",
+        "color_scheme": "",
+        "social_container_color_scheme": "",
+        "customize_colors": false,
+        "text_color": "",
+        "button_background_color": "",
+        "button_text_color": "",
+        "container_background_color": "",
+        "mobile_text_color": "",
+        "mobile_button_background_color": "",
+        "mobile_button_text_color": "",
+        "mobile_container_background_color": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9": {
+      "type": "amino-press-logos",
+      "blocks": {
+        "8923f312-8ffe-425b-bcb0-291089e60319": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/bustle.svg",
+            "width_1": 50,
+            "image_2": "shopify://shop_images/wellgood_2.svg",
+            "width_2": 50,
+            "width_3": 25,
+            "width_4": 25
+          }
+        },
+        "db1a2656-b394-4117-a943-44d0dc901964": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/popsugar.svg",
+            "width_1": 50,
+            "image_2": "shopify://shop_images/menshealth.svg",
+            "width_2": 50,
+            "width_3": 25,
+            "width_4": 25
+          }
+        },
+        "ce13abf3-28d0-4d69-85d4-68473cf9a586": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/buzzfeed.svg",
+            "width_1": 50,
+            "width_2": 25,
+            "width_3": 25,
+            "width_4": 25
+          }
+        }
+      },
+      "block_order": [
+        "8923f312-8ffe-425b-bcb0-291089e60319",
+        "db1a2656-b394-4117-a943-44d0dc901964",
+        "ce13abf3-28d0-4d69-85d4-68473cf9a586"
+      ],
+      "settings": {
+        "heading": "As Seen In",
+        "heading_style": "large",
+        "color_scheme": "scheme-bb757efb-c3e9-403a-942d-776276cfdd97",
+        "vertical_spacing": 36,
+        "horizontal_spacing": 36,
+        "max_width": 414,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1780502619b33d2581": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6e7c139_bhFVcb": {
+          "type": "ai_gen_block_6e7c139",
+          "settings": {
+            "section_heading": "Featured content",
+            "heading_alignment": "center",
+            "heading_size": 32,
+            "heading_color": "#0a1a4f",
+            "section_padding": 40,
+            "desktop_width_percent": 100,
+            "cards_per_row": 3,
+            "card_gap": 24,
+            "card_background": "#ffffff",
+            "card_border_radius": 24,
+            "card_shadow_opacity": 0.1,
+            "card_heading_size": 20,
+            "card_heading_color": "#0a1a4f",
+            "teaser_size": 14,
+            "teaser_color": "#666666",
+            "button_background": "#0a1a4f",
+            "button_hover_background": "#40738d",
+            "button_text_color": "#fdf8f2",
+            "button_text_size": 14,
+            "button_border_radius": 40,
+            "card_1_enabled": true,
+            "card_1_image": "shopify://shop_images/TrueFit_004.jpg",
+            "card_1_heading": "PROTEINMAXXING, DONE RIGHT",
+            "card_1_teaser": "Proteinmaxxing is everywhere — but most shakes are doing the math wrong. Here's why TrueFit's 25g/150cal ratio matters, and the one ingredient that decides whether your protein actually counts.",
+            "card_1_link": "https://rspnutrition.com/pages/truefit-proteinmaxxing",
+            "card_1_button_text": "Read more",
+            "card_2_enabled": true,
+            "card_2_image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_03_01_11_PM.png",
+            "card_2_heading": "PROTEIN IS ONLY HALF THE STORY",
+            "card_2_teaser": "Protein builds the muscle. Fiber decides whether your body can actually use it. Here's the science behind the half of the story most shakes leave out.",
+            "card_2_link": "https://rspnutrition.com/pages/truefit-protein-is-only-half-the-story",
+            "card_2_button_text": "Read more",
+            "card_3_enabled": true,
+            "card_3_image": "shopify://shop_images/ChatGPT_Image_Jun_10_2026_01_48_11_PM.png",
+            "card_3_heading": "THE WORLD'S MOST DELICIOUS HIGH PROTEIN BANANA BREAD",
+            "card_3_teaser": "One of the biggest reasons people struggle to hit their body composition goals is because they are constantly fighting hunger or cravings. Here's a viral recipe that can help!",
+            "card_3_link": "shopify://pages/high-protein-banana-bread",
+            "card_3_button_text": "Read more"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6e7c139_bhFVcb"
+      ],
+      "settings": {}
+    },
+    "eba58f30-4501-4689-980e-6f0b86699042": {
+      "type": "featured-blog",
+      "blocks": {
+        "04343661-543e-4a5c-8ebc-8e79b9c1bfc9": {
+          "type": "article",
+          "settings": {
+            "article": "nutrition/beyond-ozempic-4-surprising-truths-about-nutrition-youve-overlooked"
+          }
+        },
+        "0f0da5d1-ff19-4a05-a5d8-7a786c29f55f": {
+          "type": "article",
+          "settings": {
+            "article": "rsp-blog/protein-fiber-the-ultimate-power-duo-for-all-day-fullness"
+          }
+        },
+        "30b34667-bc57-44fb-87d0-ac986588747d": {
+          "type": "article",
+          "settings": {
+            "article": "rsp-blog/aminos-101"
+          }
+        },
+        "b331993f-f907-4c8a-b801-87341096d998": {
+          "type": "article",
+          "settings": {
+            "article": "rsp-blog/the-7-best-post-workout-snacks-and-supplements"
+          }
+        }
+      },
+      "block_order": [
+        "04343661-543e-4a5c-8ebc-8e79b9c1bfc9",
+        "0f0da5d1-ff19-4a05-a5d8-7a786c29f55f",
+        "30b34667-bc57-44fb-87d0-ac986588747d",
+        "b331993f-f907-4c8a-b801-87341096d998"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "From Our Blog",
+        "heading_size": "h2",
+        "blog": "",
+        "post_limit": 4,
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
+        "view_all_link": "shopify://pages/blog",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1779400510f90dc326": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "70a4820a-871c-4379-bba8-cccc8e424e7a",
+    "tf_best_sellers_ypL9Xq",
+    "store-logos-homepage",
+    "b53bfdf0-4497-49b8-a03e-4d5de5af7526",
+    "featured-collection-rsp-homepage",
+    "a4695da9-3d23-4397-a161-ba373aee2a60",
+    "1b51a7c0-2816-4d4d-9893-2d8d0e777d3e",
+    "ef6ad4f1-846a-4acc-b609-35463e042d60",
+    "62649426-2e29-4d67-9779-70505fde6386",
+    "45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9",
+    "1780502619b33d2581",
+    "eba58f30-4501-4689-980e-6f0b86699042",
+    "1779400510f90dc326"
+  ]
+}
