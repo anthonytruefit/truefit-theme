@@ -1,0 +1,532 @@
+{% comment %}
+  TrueFit Best Sellers
+  ---------------------
+  A horizontal product carousel that mirrors the Momentous best-sellers row:
+  heading + eyebrow on the left, "View All" on the right, cards that scroll
+  horizontally with a peek of the next card. Brand colors only (navy / cream /
+  gold), no orange.
+
+  Each card is a repeatable block with a product picker, per-card subscribe
+  price (free text), an editable badge, and three benefit bullets. Regular
+  price and image pull natively from the chosen product. Star rating + review
+  count come from Judge.me's preview badge (the judgeme_core app embed, active
+  site-wide, hydrates these). Add to Cart uses the theme's native <product-form>
+  so it AJAX-adds and opens the cart drawer like every other card on the site.
+{% endcomment %}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tfbs-pt: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
+    --tfbs-pb: {{ section.settings.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --tfbs-pt: {{ section.settings.padding_top }}px;
+      --tfbs-pb: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .tf-best-sellers {
+    padding-top: var(--tfbs-pt);
+    padding-bottom: var(--tfbs-pb);
+  }
+
+  .tfbs__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .tfbs__heading-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tfbs__heading-group .tf-eyebrow {
+    margin-bottom: 0.8rem;
+  }
+
+  .tfbs__title-main {
+    margin: 0;
+  }
+
+  .tfbs__viewall {
+    flex: 0 0 auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tf-vanilla-dark, #40738d);
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.1rem;
+    white-space: nowrap;
+  }
+  .tfbs__viewall:hover {
+    color: var(--tf-navy, #0a1a4f);
+  }
+
+  /* Horizontal track with scroll-snap; a partial next card peeks. */
+  .tfbs__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1rem;
+    display: flex;
+    gap: 2.4rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tfbs__grid::-webkit-scrollbar { display: none; }
+
+  .tfbs__slide {
+    scroll-snap-align: start;
+    flex: 0 0 78%;
+  }
+  @media screen and (min-width: 750px) {
+    .tfbs__slide { flex-basis: calc((100% - 2 * 2.4rem) / 2.4); } /* ~2.4 cards: peek */
+  }
+  @media screen and (min-width: 990px) {
+    .tfbs__slide { flex-basis: calc((100% - 3 * 2.4rem) / 3.4); } /* ~3.4 cards: peek */
+  }
+
+  .tfbs__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 0.1rem solid rgba(10, 26, 79, 0.08);
+    border-radius: 1.6rem;
+    overflow: hidden;
+  }
+
+  .tfbs__media {
+    position: relative;
+    background: var(--tf-cream, #fcfcea);
+  }
+  .tfbs__image-link {
+    display: block;
+    aspect-ratio: 1 / 1;
+  }
+  .tfbs__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.6rem;
+  }
+
+  .tfbs__badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    z-index: 1;
+    display: inline-block;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .tfbs__badge--small  { font-size: 1.0rem; padding: 0.5rem 0.9rem; }
+  .tfbs__badge--medium { font-size: 1.2rem; padding: 0.6rem 1.1rem; }
+  .tfbs__badge--large  { font-size: 1.4rem; padding: 0.8rem 1.4rem; }
+
+  .tfbs__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.8rem 1.8rem 2rem;
+    flex: 1 1 auto;
+  }
+
+  .tfbs__rating { min-height: 1.8rem; }
+  /* Judge.me preview badge -> brand gold stars + muted count */
+  .tf-best-sellers .jdgm-star.jdgm--on,
+  .tf-best-sellers .jdgm-star.jdgm--half { color: var(--tf-gold, #c9a86a) !important; }
+  .tf-best-sellers .jdgm-prev-badge__text { color: var(--tf-vanilla-dark, #40738d); }
+
+  .tfbs__title {
+    font-family: var(--font-heading-family);
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--tf-navy, #0a1a4f);
+    text-decoration: none;
+  }
+
+  .tfbs__price {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--tf-navy, #0a1a4f);
+  }
+  .tfbs__subscribe {
+    font-size: 1.3rem;
+    color: var(--tf-vanilla-dark, #40738d);
+  }
+
+  .tfbs__bullets {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .tfbs__bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--tf-vanilla-dark, #40738d);
+  }
+  .tfbs__check {
+    flex: 0 0 auto;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.1rem;
+    color: var(--tf-gold, #c9a86a);
+  }
+
+  .tfbs__form { margin-top: auto; padding-top: 1.2rem; }
+  .tfbs__add { width: 100%; }
+
+  .tfbs__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+  .tfbs__buttons .slider-button { background: transparent; }
+</style>
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="tf-best-sellers page-width">
+    <div class="tfbs__header">
+      <div class="tfbs__heading-group">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="tf-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tfbs__title-main h1">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.view_all_link != blank and section.settings.view_all_label != blank -%}
+        <a href="{{ section.settings.view_all_link }}" class="tfbs__viewall link">
+          {{ section.settings.view_all_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <slider-component class="slider-mobile-gutter">
+      <ul class="tfbs__grid" id="Slider-{{ section.id }}" role="list">
+        {%- for block in section.blocks -%}
+          {%- assign product = block.settings.product -%}
+          <li
+            class="tfbs__slide"
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="tfbs__card">
+              <div class="tfbs__media">
+                {%- if block.settings.badge_text != blank -%}
+                  <span
+                    class="tfbs__badge tfbs__badge--{{ block.settings.badge_size }}"
+                    style="background: {{ block.settings.badge_background }}; color: {{ block.settings.badge_text_color }};"
+                  >{{ block.settings.badge_text }}</span>
+                {%- endif -%}
+
+                <a href="{{ product.url | default: '#' }}" class="tfbs__image-link">
+                  {%- if product.featured_image != blank -%}
+                    <img
+                      class="tfbs__image"
+                      src="{{ product.featured_image | image_url: width: 700 }}"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      width="{{ product.featured_image.width }}"
+                      height="{{ product.featured_image.height }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'tfbs__image placeholder-svg' }}
+                  {%- endif -%}
+                </a>
+              </div>
+
+              <div class="tfbs__body">
+                {%- if product != blank -%}
+                  <div class="tfbs__rating">
+                    {%- if product.metafields.judgeme.badge != blank -%}
+                      {{ product.metafields.judgeme.badge }}
+                    {%- else -%}
+                      <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}" data-template="index"></div>
+                    {%- endif -%}
+                  </div>
+
+                  <a href="{{ product.url }}" class="tfbs__title">{{ product.title }}</a>
+
+                  <div class="tfbs__price">{{ product.price | money }}</div>
+                {%- else -%}
+                  <a href="#" class="tfbs__title">Select a product</a>
+                {%- endif -%}
+
+                {%- if block.settings.subscribe_price != blank -%}
+                  <div class="tfbs__subscribe">{{ block.settings.subscribe_price }} when you subscribe</div>
+                {%- endif -%}
+
+                {%- liquid
+                  assign b1 = block.settings.bullet_1
+                  assign b2 = block.settings.bullet_2
+                  assign b3 = block.settings.bullet_3
+                -%}
+                {%- if b1 != blank or b2 != blank or b3 != blank -%}
+                  <ul class="tfbs__bullets">
+                    {%- if b1 != blank -%}
+                      <li class="tfbs__bullet">
+                        <svg class="tfbs__check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                          <path d="M16.7 5.3a1 1 0 0 1 0 1.41l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 0 1 1.4-1.42l2.8 2.8 6.8-6.79a1 1 0 0 1 1.4 0z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ b1 }}</span>
+                      </li>
+                    {%- endif -%}
+                    {%- if b2 != blank -%}
+                      <li class="tfbs__bullet">
+                        <svg class="tfbs__check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                          <path d="M16.7 5.3a1 1 0 0 1 0 1.41l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 0 1 1.4-1.42l2.8 2.8 6.8-6.79a1 1 0 0 1 1.4 0z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ b2 }}</span>
+                      </li>
+                    {%- endif -%}
+                    {%- if b3 != blank -%}
+                      <li class="tfbs__bullet">
+                        <svg class="tfbs__check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                          <path d="M16.7 5.3a1 1 0 0 1 0 1.41l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 0 1 1.4-1.42l2.8 2.8 6.8-6.79a1 1 0 0 1 1.4 0z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ b3 }}</span>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                {%- endif -%}
+
+                {%- if product != blank -%}
+                  {%- assign variant = product.selected_or_first_available_variant -%}
+                  {%- assign tfbs_form_id = 'tfbs-' | append: section.id | append: '-' | append: block.id -%}
+                  <product-form class="tfbs__form" data-section-id="{{ section.id }}">
+                    {%- form 'product',
+                      product,
+                      id: tfbs_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ variant.id }}"
+                        class="product-variant-id"
+                        {% unless variant.available %}disabled{% endunless %}
+                      >
+                      <button
+                        type="submit"
+                        name="add"
+                        class="tfbs__add button button--full-width"
+                        {% unless variant.available %}disabled{% endunless %}
+                      >
+                        <span>
+                          {%- if variant.available -%}
+                            {{ section.settings.add_label | default: 'Add to Cart' }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <div class="hidden loading-overlay__spinner">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="tfbs__buttons slider-buttons no-js-hidden">
+        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">
+          {% render 'icon-caret' %}
+        </button>
+        <span class="slider-counter caption visually-hidden">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        </span>
+        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    </slider-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TrueFit Best Sellers",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "Stay True"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View all link"
+    },
+    {
+      "type": "text",
+      "id": "add_label",
+      "label": "Add to cart button label",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "subscribe_price",
+          "label": "Subscribe price",
+          "info": "Free text shown beneath the regular price as \"… when you subscribe\". Example: $41.99"
+        },
+        {
+          "type": "header",
+          "content": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "info": "Leave blank to hide the badge."
+        },
+        {
+          "type": "color",
+          "id": "badge_background",
+          "label": "Badge background",
+          "default": "#0A1A4F"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "select",
+          "id": "badge_size",
+          "label": "Badge size",
+          "options": [
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "header",
+          "content": "Benefit bullets",
+          "info": "Up to 3. Blank bullets are hidden."
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Bullet 1"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Bullet 2"
+        },
+        {
+          "type": "text",
+          "id": "bullet_3",
+          "label": "Bullet 3"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "TrueFit Best Sellers",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
