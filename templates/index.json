@@ -234,34 +234,37 @@
           "type": "card",
           "settings": {
             "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
             "subscribe_price": "$38.33",
             "badge_text": "Best Seller",
             "badge_background": "#0a1a4f",
-            "badge_text_color": "#F6EED7",
+            "badge_text_color": "#f6eed7",
             "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
             "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods"
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
           }
         },
         "card_cNqYVE": {
           "type": "card",
           "settings": {
             "product": "truefit-chocolate",
+            "custom_title": "TrueFit Protein - Chocolate",
             "subscribe_price": "$38.33",
             "badge_text": "Top Reviewed",
-            "badge_background": "#86BCE8",
+            "badge_background": "#86bce8",
             "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
             "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods"
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
           }
         },
         "card_kXFAdn": {
           "type": "card",
           "settings": {
             "product": "creatine-mono",
+            "custom_title": "Creatine Monohydrate",
             "subscribe_price": "$18.79",
             "badge_text": "",
             "badge_background": "#0a1a4f",
@@ -276,14 +279,30 @@
           "type": "card",
           "settings": {
             "product": "vegan-aminolean-acai",
-            "subscribe_price": "",
+            "custom_title": "AminoLean Pre Workout - Acai",
+            "subscribe_price": "$20.20",
             "badge_text": "",
             "badge_background": "#0a1a4f",
             "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "",
-            "bullet_2": "",
-            "bullet_3": ""
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
+        "card_aFYUxU": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
+            "subscribe_price": "$17.42",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Hydrating electrolytes from sea minerals",
+            "bullet_2": "Vegan amino acids for muscle recovery",
+            "bullet_3": "Nootropic mushrooms for mental focus"
           }
         }
       },
@@ -291,7 +310,8 @@
         "card_fCjV4k",
         "card_cNqYVE",
         "card_kXFAdn",
-        "card_cHrX93"
+        "card_cHrX93",
+        "card_aFYUxU"
       ],
       "name": "TrueFit Best Sellers",
       "settings": {
