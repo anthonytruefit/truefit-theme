@@ -291,7 +291,7 @@
                     {%- endif -%}
                   </div>
 
-                  <a href="{{ product.url }}" class="tfbs__title">{{ product.title }}</a>
+                  <a href="{{ product.url }}" class="tfbs__title">{{ block.settings.custom_title | default: product.title }}</a>
 
                   <div class="tfbs__price">{{ product.price | money }}</div>
                 {%- else -%}
@@ -474,6 +474,12 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom title",
+          "info": "Overrides the product's title on this card. Leave blank to use the product name."
         },
         {
           "type": "text",
