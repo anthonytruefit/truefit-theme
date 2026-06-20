@@ -999,6 +999,78 @@
     "1779400510f90dc326": {
       "type": "_blocks",
       "settings": {}
+    },
+    "tf_standard_AiTciF": {
+      "type": "tf-standard",
+      "blocks": {
+        "point_BcVPzr": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/tabler--microscope_1.png",
+            "label": "Lab Tested"
+          }
+        },
+        "point_VXPXET": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
+            "label": "Science Backed"
+          }
+        },
+        "point_CUD7Cw": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Grass-Fed"
+          }
+        },
+        "point_M66kPp": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
+            "label": "Nothing Fake"
+          }
+        },
+        "point_eCGw8R": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/pepicons-pop--syringe-off.png",
+            "label": "Antibiotic Free"
+          }
+        },
+        "point_Th6KFW": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
+            "label": "Gluten Free"
+          }
+        }
+      },
+      "block_order": [
+        "point_BcVPzr",
+        "point_VXPXET",
+        "point_CUD7Cw",
+        "point_M66kPp",
+        "point_eCGw8R",
+        "point_Th6KFW"
+      ],
+      "name": "TrueFit Standard",
+      "settings": {
+        "eyebrow": "THE TRUEFIT STANDARD",
+        "heading": "Nothing fake. Every ingredient is earned.",
+        "text": "<p>Every ingredient in every TrueFit product had to earn its place. Clean, science-backed nutrition to help you stay true to your goals.</p>",
+        "columns_mobile": "2",
+        "columns_desktop": 5,
+        "color_scheme": "",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
   "order": [
@@ -1015,6 +1087,7 @@
     "45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9",
     "1780502619b33d2581",
     "eba58f30-4501-4689-980e-6f0b86699042",
-    "1779400510f90dc326"
+    "1779400510f90dc326",
+    "tf_standard_AiTciF"
   ]
 }
