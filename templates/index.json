@@ -230,6 +230,13 @@
     "tf_featured_in_hPBaPk": {
       "type": "tf-featured-in",
       "blocks": {
+        "logo_B7TQ7k": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/insider-logo.svg",
+            "link": ""
+          }
+        },
         "logo_V8TrkY": {
           "type": "logo",
           "settings": {
@@ -288,6 +295,7 @@
         }
       },
       "block_order": [
+        "logo_B7TQ7k",
         "logo_V8TrkY",
         "logo_A7Ucet",
         "logo_jnRPh7",
