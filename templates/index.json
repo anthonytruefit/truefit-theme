@@ -265,6 +265,13 @@
             "link": ""
           }
         },
+        "logo_9Jmzcr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-logo.svg",
+            "link": ""
+          }
+        },
         "logo_KNVRq9": {
           "type": "logo",
           "settings": {
@@ -286,6 +293,7 @@
         "logo_jnRPh7",
         "logo_c7zkBY",
         "logo_7ryymL",
+        "logo_9Jmzcr",
         "logo_KNVRq9",
         "logo_9kVmqQ"
       ],
