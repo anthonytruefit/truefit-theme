@@ -1,0 +1,353 @@
+{% comment %}
+  As Featured In
+  --------------
+  Centered "AS FEATURED IN" eyebrow with short divider lines, above an endless
+  horizontal marquee of press/media logos. Built mobile-first: the scroll is a
+  pure CSS transform animation (GPU-accelerated, no JS) so it stays smooth and
+  cheap on phones, where ~85% of our traffic is.
+
+  Cohesive-set treatment: every logo is recolored to a single brand color via a
+  CSS mask (works on transparent PNG/SVG), constrained to one optical height with
+  a max-width cap, centered on a shared centerline, with an opacity control for
+  the muted premium look.
+
+  The logo set is duplicated enough times to overflow the widest screen; the
+  track animates by exactly one copy-width and loops, so the scroll is seamless.
+  Per-logo right margin (not flex gap) keeps the seam spacing identical to every
+  other gap. Respects prefers-reduced-motion (falls back to a static wrapped row).
+{% endcomment %}
+
+{%- liquid
+  assign copies = 2
+  if section.blocks.size > 0
+    assign copies = 14 | divided_by: section.blocks.size | plus: 1
+  endif
+  if copies < 2
+    assign copies = 2
+  endif
+  assign logo_opacity = section.settings.logo_opacity | divided_by: 100.0
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tffi-logo-h: {{ section.settings.logo_height }}px;
+    --tffi-logo-maxw: {{ section.settings.logo_max_width }}px;
+    --tffi-gap: {{ section.settings.logo_spacing }}px;
+    --tffi-color: {{ section.settings.logo_color }};
+    --tffi-opacity: {{ logo_opacity }};
+    --tffi-pt: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
+    --tffi-pb: {{ section.settings.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --tffi-pt: {{ section.settings.padding_top }}px;
+      --tffi-pb: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .tffi {
+    background-color: {{ section.settings.background_color }};
+    padding-top: var(--tffi-pt);
+    padding-bottom: var(--tffi-pb);
+  }
+
+  /* Eyebrow with short flanking divider lines */
+  .tffi__eyebrow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 2.4rem;
+    padding: 0 1.5rem;
+  }
+  .tffi__eyebrow { margin-bottom: 0; }
+  .tffi__rule {
+    display: block;
+    width: 3.6rem;
+    height: 0.1rem;
+    background: rgba(64, 115, 141, 0.45);
+  }
+
+  /* Marquee viewport */
+  .tffi__marquee {
+    overflow: hidden;
+    width: 100%;
+  }
+  .tffi__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: tffi-marquee var(--tffi-duration, 40s) linear infinite;
+  }
+  .tffi__copy {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+  }
+  @keyframes tffi-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-100% / var(--tffi-copies, 2))); }
+  }
+  .tffi--pause-hover .tffi__marquee:hover .tffi__track {
+    animation-play-state: paused;
+  }
+
+  /* Each logo cell: equal optical height, centered, right margin = spacing */
+  .tffi__item {
+    flex: 0 0 auto;
+    margin-right: var(--tffi-gap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--tffi-logo-h);
+  }
+
+  /* Recolored logo: hidden <img> sizes the box, masked fill paints brand color */
+  .tffi__logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: var(--tffi-logo-h);
+  }
+  .tffi__sizer {
+    display: block;
+    height: var(--tffi-logo-h);
+    width: auto;
+    max-width: var(--tffi-logo-maxw);
+  }
+  .tffi__logo--recolor .tffi__sizer { visibility: hidden; }
+  .tffi__logo--recolor .tffi__fill {
+    position: absolute;
+    inset: 0;
+    background-color: var(--tffi-color);
+    opacity: var(--tffi-opacity);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+  .tffi__logo--plain .tffi__sizer { opacity: var(--tffi-opacity); }
+
+  /* Accessibility: no animation -> static, centered, wrapped single set */
+  @media (prefers-reduced-motion: reduce) {
+    .tffi__track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      row-gap: 2.4rem;
+    }
+    .tffi__copy--dup { display: none; }
+    .tffi__copy { flex-wrap: wrap; justify-content: center; width: 100%; }
+  }
+</style>
+
+<div class="tffi color-background-1{% if section.settings.pause_on_hover %} tffi--pause-hover{% endif %}">
+  {%- if section.settings.eyebrow != blank -%}
+    <div class="tffi__eyebrow-row">
+      <span class="tffi__rule" aria-hidden="true"></span>
+      <span class="tf-eyebrow tffi__eyebrow">{{ section.settings.eyebrow }}</span>
+      <span class="tffi__rule" aria-hidden="true"></span>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="tffi__marquee">
+      <div class="tffi__track" style="--tffi-copies: {{ copies }}; --tffi-duration: {{ section.settings.scroll_duration }}s;">
+        {%- for copy in (1..copies) -%}
+          {%- assign is_dup = false -%}
+          {%- unless forloop.first -%}{%- assign is_dup = true -%}{%- endunless -%}
+          <div
+            class="tffi__copy{% if is_dup %} tffi__copy--dup{% endif %}"
+            {% if is_dup %}aria-hidden="true"{% endif %}
+          >
+            {%- for block in section.blocks -%}
+              {%- assign logo = block.settings.image -%}
+              {%- if logo == blank -%}{%- continue -%}{%- endif -%}
+              {%- assign logo_url = logo | image_url: width: 600 -%}
+              {%- assign alt = logo.alt | default: shop.name | escape -%}
+
+              <div class="tffi__item" {{ block.shopify_attributes }}>
+                {%- capture logo_markup -%}
+                  <span class="tffi__logo {% if section.settings.recolor %}tffi__logo--recolor{% else %}tffi__logo--plain{% endif %}">
+                    <img class="tffi__sizer" src="{{ logo_url }}" alt="{{ alt }}" loading="lazy" decoding="async">
+                    {%- if section.settings.recolor -%}
+                      <span class="tffi__fill" aria-hidden="true" style="-webkit-mask-image:url('{{ logo_url }}');mask-image:url('{{ logo_url }}');"></span>
+                    {%- endif -%}
+                  </span>
+                {%- endcapture -%}
+
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="tffi__link"{% if is_dup %} tabindex="-1"{% endif %}>{{ logo_markup }}</a>
+                {%- else -%}
+                  {{ logo_markup }}
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "As Featured In",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "AS FEATURED IN"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FCFCEA"
+    },
+    {
+      "type": "header",
+      "content": "Logo treatment"
+    },
+    {
+      "type": "checkbox",
+      "id": "recolor",
+      "label": "Recolor logos to a single color",
+      "info": "On = every logo is filled with one color for a cohesive set (needs transparent PNG/SVG). Off = original logo colors.",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "logo_color",
+      "label": "Logo color",
+      "default": "#0A1A4F"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Logo height",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 60,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo max width",
+      "info": "Caps wide wordmarks so they carry the same visual weight as compact logos.",
+      "default": 160
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Logo opacity",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Scrolling"
+    },
+    {
+      "type": "range",
+      "id": "logo_spacing",
+      "min": 16,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Space between logos",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "scroll_duration",
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll speed (seconds per loop)",
+      "info": "Lower = faster.",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo image",
+          "info": "Transparent-background PNG or SVG works best for the single-color treatment."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "As Featured In",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
