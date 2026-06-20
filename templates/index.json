@@ -416,7 +416,7 @@
         "add_label": "Add to Cart",
         "color_scheme": "",
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 16
       }
     },
     "store-logos-homepage": {
@@ -1066,9 +1066,9 @@
         "heading": "Nothing fake. Every ingredient is earned.",
         "text": "<p>Every ingredient in every TrueFit product had to earn its place. Clean, science-backed nutrition to help you stay true to your goals.</p>",
         "columns_mobile": "2",
-        "columns_desktop": 5,
+        "columns_desktop": 6,
         "color_scheme": "",
-        "padding_top": 56,
+        "padding_top": 28,
         "padding_bottom": 56
       }
     }
