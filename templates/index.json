@@ -318,7 +318,7 @@
         "eyebrow": "Stay True",
         "heading": "Best Sellers",
         "view_all_label": "View All",
-        "view_all_link": "",
+        "view_all_link": "shopify://collections/shop-all-products",
         "add_label": "Add to Cart",
         "color_scheme": "",
         "padding_top": 52,
