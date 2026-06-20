@@ -237,7 +237,7 @@
             "subscribe_price": "$38.33",
             "badge_text": "Best Seller",
             "badge_background": "#0a1a4f",
-            "badge_text_color": "#ffffff",
+            "badge_text_color": "#F6EED7",
             "badge_size": "medium",
             "bullet_1": "25g grass-fed protein",
             "bullet_2": "Fiber + probiotics for digestion & gut health",
@@ -247,35 +247,35 @@
         "card_cNqYVE": {
           "type": "card",
           "settings": {
-            "product": "",
-            "subscribe_price": "",
-            "badge_text": "",
-            "badge_background": "#0a1a4f",
+            "product": "truefit-chocolate",
+            "subscribe_price": "$38.33",
+            "badge_text": "Top Reviewed",
+            "badge_background": "#86BCE8",
             "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "",
-            "bullet_2": "",
-            "bullet_3": ""
+            "bullet_1": "25g grass-fed protein",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods"
           }
         },
         "card_kXFAdn": {
           "type": "card",
           "settings": {
-            "product": "",
-            "subscribe_price": "",
+            "product": "creatine-mono",
+            "subscribe_price": "$18.79",
             "badge_text": "",
             "badge_background": "#0a1a4f",
             "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "",
-            "bullet_2": "",
-            "bullet_3": ""
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
           }
         },
         "card_cHrX93": {
           "type": "card",
           "settings": {
-            "product": "",
+            "product": "vegan-aminolean-acai",
             "subscribe_price": "",
             "badge_text": "",
             "badge_background": "#0a1a4f",
@@ -339,6 +339,7 @@
         "4d3ad8b7-1eea-4d8c-9834-d425171811ac",
         "fabf4a65-2c75-4e9d-ba89-a1e8791baebb"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-2",
         "heading": "<p>Found in over 10,000 stores that you love!</p>",
@@ -400,6 +401,7 @@
     },
     "featured-collection-rsp-homepage": {
       "type": "featured-collection-rsp",
+      "disabled": true,
       "settings": {
         "title": "BEST SELLERS",
         "heading_size": "h2",
@@ -605,6 +607,7 @@
         "9477bfa7-1fad-4313-ba5e-20fc1be70a4b",
         "e873729f-a92d-46ef-94e1-c764b5f40ec4"
       ],
+      "disabled": true,
       "settings": {
         "height": "medium",
         "layout": "image_first",
@@ -698,6 +701,7 @@
         "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-1",
         "template--15630870577197__62649426-2e29-4d67-9779-70505fde6386-review-2"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Viral on TIKTOK\nand over 30,000\nAMAZON reviews",
         "show_social_links": true,
@@ -761,6 +765,7 @@
         "db1a2656-b394-4117-a943-44d0dc901964",
         "ce13abf3-28d0-4d69-85d4-68473cf9a586"
       ],
+      "disabled": true,
       "settings": {
         "heading": "As Seen In",
         "heading_style": "large",
@@ -823,6 +828,7 @@
       "block_order": [
         "ai_gen_block_6e7c139_bhFVcb"
       ],
+      "disabled": true,
       "settings": {}
     },
     "eba58f30-4501-4689-980e-6f0b86699042": {
