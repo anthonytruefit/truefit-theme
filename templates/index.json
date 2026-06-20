@@ -1071,6 +1071,59 @@
         "padding_top": 28,
         "padding_bottom": 56
       }
+    },
+    "tf_shop_category_TG7pyM": {
+      "type": "tf-shop-category",
+      "blocks": {
+        "card_fXrK6a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
+            "eyebrow": "All-in-One",
+            "name": "Protein",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_background": "#0A1A4F",
+            "footer_text": "#FFFFFF"
+          }
+        },
+        "card_3JfLha": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_09_59_32_PM.png",
+            "eyebrow": "Science-backed",
+            "name": "Recovery",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_background": "#0A1A4F",
+            "footer_text": "#FFFFFF"
+          }
+        },
+        "card_cNUxfQ": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_04_37_55_PM.png",
+            "eyebrow": "Natural",
+            "name": "Energy",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_background": "#0A1A4F",
+            "footer_text": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": [
+        "card_fXrK6a",
+        "card_3JfLha",
+        "card_cNUxfQ"
+      ],
+      "name": "Shop by Category",
+      "settings": {
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -1088,6 +1141,7 @@
     "1780502619b33d2581",
     "eba58f30-4501-4689-980e-6f0b86699042",
     "1779400510f90dc326",
-    "tf_standard_AiTciF"
+    "tf_standard_AiTciF",
+    "tf_shop_category_TG7pyM"
   ]
 }
