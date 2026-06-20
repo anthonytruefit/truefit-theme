@@ -4,6 +4,10 @@
 
 Redesigning the TrueFit Nutrition Shopify theme toward a premium, science-backed, clean aesthetic — inspired by Momentous (livemomentous.com), IM8 Health (im8health.com), and The Absorption Company (absorbmore.com). The throughline: lots of white space, restrained color, confident typography, trust signals placed early. Premium but approachable. Never gym-bro.
 
+## Mobile-first
+
+Roughly 85% of our traffic is mobile, so mobile is the primary design target, not an afterthought. Every section must be designed and tested at mobile width first, then scaled up to desktop. When they conflict, mobile layout, tap target sizes, font legibility, and load performance take priority over desktop polish.
+
 ## Color system
 
 - **Navy `#0A1A4F`** — primary anchor. Used for dark bands, primary buttons, key headlines. Carries the "serious/premium" weight.
