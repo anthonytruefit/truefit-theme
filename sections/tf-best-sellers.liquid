@@ -147,10 +147,21 @@
   }
 
   .tfbs__rating { min-height: 1.8rem; }
-  /* Judge.me preview badge -> brand gold stars + muted count */
+  /* Judge.me preview badge -> brand gold stars + visible review count */
+  .tf-best-sellers .jdgm-prev-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
   .tf-best-sellers .jdgm-star.jdgm--on,
   .tf-best-sellers .jdgm-star.jdgm--half { color: var(--tf-gold, #c9a86a) !important; }
-  .tf-best-sellers .jdgm-prev-badge__text { color: var(--tf-vanilla-dark, #40738d); }
+  /* Force the review count to show (Judge.me hides it in "stars only" mode). */
+  .tf-best-sellers .jdgm-prev-badge__text {
+    display: inline-block !important;
+    visibility: visible !important;
+    color: var(--tf-vanilla-dark, #40738d);
+    font-size: 1.2rem;
+  }
 
   .tfbs__title {
     font-family: var(--font-heading-family);
@@ -170,6 +181,16 @@
   .tfbs__subscribe {
     font-size: 1.3rem;
     color: var(--tf-vanilla-dark, #40738d);
+  }
+  .tfbs__subscribe-link {
+    color: var(--tf-navy, #0a1a4f);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+  }
+  .tfbs__subscribe-link:hover {
+    text-decoration-thickness: 0.2rem;
   }
 
   .tfbs__bullets {
@@ -278,7 +299,7 @@
                 {%- endif -%}
 
                 {%- if block.settings.subscribe_price != blank -%}
-                  <div class="tfbs__subscribe">{{ block.settings.subscribe_price }} when you subscribe</div>
+                  <div class="tfbs__subscribe">{{ block.settings.subscribe_price }} when you <a href="{{ product.url | default: '#' }}" class="tfbs__subscribe-link">subscribe</a></div>
                 {%- endif -%}
 
                 {%- liquid
