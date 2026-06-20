@@ -1,0 +1,282 @@
+{% comment %}
+  Shop by Category
+  ----------------
+  A row of category cards: lifestyle image on top, colored footer panel below
+  (eyebrow over category name over an outlined "Shop Now" button). Cards are
+  repeatable blocks; each has its own image, copy, flexible link, and footer
+  background/text colors.
+
+  Mobile-first: cards stack into a single full-width column on phones (big
+  photography, large name, tappable button), 2 across on tablet, N on desktop.
+
+  The eyebrow, name and outlined button inherit each card's footer text color,
+  so any footer color stays readable. Colors are merchant-controlled per card;
+  broader color polish is deferred to the homepage-wide pass.
+{% endcomment %}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tfcat-pt: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
+    --tfcat-pb: {{ section.settings.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --tfcat-pt: {{ section.settings.padding_top }}px;
+      --tfcat-pb: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .tfcat { padding-top: var(--tfcat-pt); padding-bottom: var(--tfcat-pb); }
+
+  .tfcat__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;        /* mobile: single full-width column */
+    gap: 2rem;
+  }
+  @media screen and (min-width: 750px) {
+    .tfcat__grid { grid-template-columns: repeat(2, 1fr); gap: 2.4rem; }
+  }
+  @media screen and (min-width: 990px) {
+    .tfcat__grid { grid-template-columns: repeat(var(--cols-d, 3), 1fr); }
+  }
+
+  .tfcat__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1.4rem;
+  }
+
+  /* Lifestyle image, uniform 4:5 crop */
+  .tfcat__media {
+    display: block;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+  .tfcat__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Colored footer panel */
+  .tfcat__footer {
+    background: var(--card-bg, #0a1a4f);
+    color: var(--card-fg, #ffffff);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    flex: 1 1 auto;
+  }
+
+  .tfcat__eyebrow {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .tfcat__name {
+    margin: 0;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: inherit;
+  }
+  @media screen and (min-width: 990px) {
+    .tfcat__name { font-size: 2.4rem; }
+  }
+
+  /* Outlined button, inherits footer text color; flips on hover for contrast */
+  .tfcat__btn {
+    margin-top: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 0 2.4rem;
+    border: 0.15rem solid var(--card-fg, #ffffff);
+    color: var(--card-fg, #ffffff);
+    background: transparent;
+    border-radius: var(--buttons-radius, 0.4rem);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .tfcat__btn:hover {
+    background: var(--card-fg, #ffffff);
+    color: var(--card-bg, #0a1a4f);
+  }
+</style>
+
+<div class="tfcat color-{{ section.settings.color_scheme }} gradient">
+  <div class="tfcat__inner page-width">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="tfcat__grid" style="--cols-d: {{ section.settings.columns_desktop }};">
+        {%- for block in section.blocks -%}
+          {%- assign link = block.settings.link -%}
+          <li
+            class="tfcat__card"
+            style="--card-bg: {{ block.settings.footer_background }}; --card-fg: {{ block.settings.footer_text }};"
+            {{ block.shopify_attributes }}
+          >
+            <a class="tfcat__media" href="{{ link | default: '#' }}"{% if link == blank %} tabindex="-1" aria-hidden="true"{% endif %}>
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1200
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '(min-width: 990px) 30vw, (min-width: 750px) 45vw, 100vw',
+                    widths: '400, 600, 800, 1200',
+                    class: 'tfcat__image',
+                    alt: block.settings.name
+                }}
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'tfcat__image placeholder-svg' }}
+              {%- endif -%}
+            </a>
+
+            <div class="tfcat__footer">
+              {%- if block.settings.eyebrow != blank -%}
+                <span class="tfcat__eyebrow">{{ block.settings.eyebrow }}</span>
+              {%- endif -%}
+              {%- if block.settings.name != blank -%}
+                <h3 class="tfcat__name">{{ block.settings.name }}</h3>
+              {%- endif -%}
+              {%- if block.settings.button_label != blank -%}
+                <a class="tfcat__btn" href="{{ link | default: '#' }}">{{ block.settings.button_label }}</a>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop by Category",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Cards per row (desktop)",
+      "default": 3
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Section color scheme (placeholder)",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Category card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow label",
+          "default": "Category"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Category name",
+          "default": "Category name"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Pick a product, collection, or page, or paste any URL."
+        },
+        {
+          "type": "header",
+          "content": "Footer colors"
+        },
+        {
+          "type": "color",
+          "id": "footer_background",
+          "label": "Footer background",
+          "default": "#0A1A4F"
+        },
+        {
+          "type": "color",
+          "id": "footer_text",
+          "label": "Footer text",
+          "default": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Shop by Category",
+      "blocks": [
+        { "type": "card", "settings": { "eyebrow": "Protein", "name": "TrueFit Protein" } },
+        { "type": "card", "settings": { "eyebrow": "Daily", "name": "Creatine" } },
+        { "type": "card", "settings": { "eyebrow": "Save more", "name": "Bundles" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
