@@ -227,6 +227,84 @@
         "change_slides_speed": 7
       }
     },
+    "tf_featured_in_hPBaPk": {
+      "type": "tf-featured-in",
+      "blocks": {
+        "logo_V8TrkY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/gq-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_A7Ucet": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/inc-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_jnRPh7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/today-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_c7zkBY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/mens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_7ryymL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shape-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_KNVRq9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/womens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_9kVmqQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wellgood_2.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_V8TrkY",
+        "logo_A7Ucet",
+        "logo_jnRPh7",
+        "logo_c7zkBY",
+        "logo_7ryymL",
+        "logo_KNVRq9",
+        "logo_9kVmqQ"
+      ],
+      "name": "As Featured In",
+      "settings": {
+        "eyebrow": "AS FEATURED IN",
+        "background_color": "#FCFCEA",
+        "recolor": true,
+        "logo_color": "#0A1A4F",
+        "logo_height": 28,
+        "logo_max_width": 160,
+        "logo_opacity": 100,
+        "logo_spacing": 64,
+        "scroll_duration": 25,
+        "pause_on_hover": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "tf_best_sellers_ypL9Xq": {
       "type": "tf-best-sellers",
       "blocks": {
@@ -909,6 +987,7 @@
   },
   "order": [
     "70a4820a-871c-4379-bba8-cccc8e424e7a",
+    "tf_featured_in_hPBaPk",
     "tf_best_sellers_ypL9Xq",
     "store-logos-homepage",
     "b53bfdf0-4497-49b8-a03e-4d5de5af7526",
