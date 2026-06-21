@@ -1083,8 +1083,8 @@
             "name": "Protein",
             "button_label": "Shop Now",
             "link": "",
-            "footer_background": "#0A1A4F",
-            "footer_text": "#FFFFFF"
+            "footer_background": "#0a1a4f",
+            "footer_text": "#ffffff"
           }
         },
         "card_3JfLha": {
@@ -1095,8 +1095,8 @@
             "name": "Recovery",
             "button_label": "Shop Now",
             "link": "",
-            "footer_background": "#0A1A4F",
-            "footer_text": "#FFFFFF"
+            "footer_background": "#0a1a4f",
+            "footer_text": "#ffffff"
           }
         },
         "card_cNUxfQ": {
@@ -1107,8 +1107,8 @@
             "name": "Energy",
             "button_label": "Shop Now",
             "link": "",
-            "footer_background": "#0A1A4F",
-            "footer_text": "#FFFFFF"
+            "footer_background": "#0a1a4f",
+            "footer_text": "#ffffff"
           }
         }
       },
@@ -1123,6 +1123,109 @@
         "color_scheme": "",
         "padding_top": 48,
         "padding_bottom": 48
+      }
+    },
+    "tf_social_proof_87ChYQ": {
+      "type": "tf-social-proof",
+      "blocks": {
+        "card_yqc9ag": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/1782007420619.publer.com.mp4",
+            "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
+            "quote": "Gut friendly, no brain fog, no tummy aches... it doesn't get much better than that.",
+            "quote_color": "#0A1A4F",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#C9A86A",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0A1A4F",
+            "name_color": "#FFFFFF"
+          }
+        },
+        "card_dRmQip": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/965e6218-3922-4235-ac97-4090df4bdd9a.webp",
+            "quote": "The ingredient list is simple, high quality, and genuinely feels thoughtfully made.",
+            "quote_color": "#0A1A4F",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#C9A86A",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0A1A4F",
+            "name_color": "#FFFFFF"
+          }
+        },
+        "card_qQPw8R": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
+            "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
+            "quote": "Each scoop has protein, fiber & probiotics in one...it's a truly unique take on protein powder.",
+            "quote_color": "#0A1A4F",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#C9A86A",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0A1A4F",
+            "name_color": "#FFFFFF"
+          }
+        },
+        "card_G8xFWb": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/271af3b3-e419-4fd3-84b4-ed15835125f7_1.webp",
+            "quote": "Tastes good, mixes smoothly, and doesn't leave you feeling heavy or bloated.",
+            "quote_color": "#0A1A4F",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#C9A86A",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0A1A4F",
+            "name_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": [
+        "card_yqc9ag",
+        "card_dRmQip",
+        "card_qQPw8R",
+        "card_G8xFWb"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "eyebrow": "REAL PEOPLE, REAL RESULTS",
+        "eyebrow_color": "#40738D",
+        "eyebrow_size": 11,
+        "eyebrow_spacing": 2,
+        "headline": "Join 1,000,000+ who stay true to their goals.",
+        "headline_color": "#0A1A4F",
+        "headline_size": 38,
+        "credibility": "4.7 · 3,000+ reviews · 1M+ servings delivered.",
+        "credibility_color": "#40738D",
+        "credibility_size": 15,
+        "card_radius": 16,
+        "media_ratio": "4 / 5",
+        "cards_desktop": 4,
+        "play_color": "#FFFFFF",
+        "play_bg": "#0A1A4F",
+        "play_style": "filled",
+        "background": "#FFFFFF",
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     }
   },
@@ -1142,6 +1245,7 @@
     "eba58f30-4501-4689-980e-6f0b86699042",
     "1779400510f90dc326",
     "tf_standard_AiTciF",
-    "tf_shop_category_TG7pyM"
+    "tf_shop_category_TG7pyM",
+    "tf_social_proof_87ChYQ"
   ]
 }
