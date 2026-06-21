@@ -9,6 +9,85 @@
  */
 {
   "sections": {
+    "tf_hero_slideshow_nwh7di": {
+      "type": "tf-hero-slideshow",
+      "blocks": {
+        "slide_3wVE4H": {
+          "type": "slide",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Protein_Elevated_Banner_Web_1_copy.png",
+            "eyebrow": "",
+            "eyebrow_color": "#FCFCEA",
+            "eyebrow_size": 12,
+            "headline": "",
+            "headline_color": "#FFFFFF",
+            "headline_size": 64,
+            "subline": "",
+            "subline_color": "#FCFCEA",
+            "subline_size": 18,
+            "button1_text": "Shop Now",
+            "button1_link": "",
+            "button1_style": "filled",
+            "button1_bg": "#FFFFFF",
+            "button1_text_color": "#0A1A4F",
+            "button1_border": "#FFFFFF",
+            "button2_text": "",
+            "button2_link": "",
+            "button2_style": "outline",
+            "button2_bg": "#0A1A4F",
+            "button2_text_color": "#FFFFFF",
+            "button2_border": "#FFFFFF",
+            "content_position": "bottom-center",
+            "scrim_color": "#0A1A4F",
+            "scrim_opacity": 30
+          }
+        },
+        "slide_R9RGzd": {
+          "type": "slide",
+          "settings": {
+            "media_type": "image",
+            "eyebrow": "",
+            "eyebrow_color": "#FCFCEA",
+            "eyebrow_size": 12,
+            "headline": "Stay True.",
+            "headline_color": "#FFFFFF",
+            "headline_size": 64,
+            "subline": "",
+            "subline_color": "#FCFCEA",
+            "subline_size": 18,
+            "button1_text": "Shop Now",
+            "button1_link": "",
+            "button1_style": "filled",
+            "button1_bg": "#FFFFFF",
+            "button1_text_color": "#0A1A4F",
+            "button1_border": "#FFFFFF",
+            "button2_text": "",
+            "button2_link": "",
+            "button2_style": "outline",
+            "button2_bg": "#0A1A4F",
+            "button2_text_color": "#FFFFFF",
+            "button2_border": "#FFFFFF",
+            "content_position": "middle-center",
+            "scrim_color": "#0A1A4F",
+            "scrim_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "slide_3wVE4H",
+        "slide_R9RGzd"
+      ],
+      "name": "TrueFit Hero Slideshow",
+      "settings": {
+        "autorotate": false,
+        "rotation_speed": 6,
+        "show_arrows": true,
+        "show_dots": false,
+        "desktop_height": 78,
+        "mobile_height": 78
+      }
+    },
     "70a4820a-871c-4379-bba8-cccc8e424e7a": {
       "type": "image-banner-slideshow",
       "blocks": {
@@ -220,6 +299,7 @@
         "heading_htGUfL",
         "button_ewxEM4"
       ],
+      "disabled": true,
       "settings": {
         "image_height": "adapt",
         "slider_visual": "dots",
@@ -317,7 +397,7 @@
         "logo_spacing": 64,
         "scroll_duration": 25,
         "pause_on_hover": true,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
@@ -1316,12 +1396,12 @@
             "s_image": "shopify://shop_images/Screenshot_2026-06-04_at_2.45.50_PM.png",
             "s_category": "Nutrition",
             "s_readtime": "4 min read",
-            "s_meta_color": "#40738D",
+            "s_meta_color": "#40738d",
             "s_headline": "Proteinmaxxing, done right",
-            "s_headline_color": "#0A1A4F",
+            "s_headline_color": "#0a1a4f",
             "s_headline_size": 17,
             "s_excerpt": "",
-            "s_excerpt_color": "#40738D",
+            "s_excerpt_color": "#40738d",
             "s_link": "shopify://pages/truefit-proteinmaxxing"
           }
         },
@@ -1331,12 +1411,12 @@
             "s_image": "shopify://shop_images/ChatGPT_Image_Jun_10_2026_01_48_11_PM.png",
             "s_category": "Recipes",
             "s_readtime": "3 min read",
-            "s_meta_color": "#40738D",
+            "s_meta_color": "#40738d",
             "s_headline": "The world's most delicious high-protein banana bread",
-            "s_headline_color": "#0A1A4F",
+            "s_headline_color": "#0a1a4f",
             "s_headline_size": 17,
             "s_excerpt": "",
-            "s_excerpt_color": "#40738D",
+            "s_excerpt_color": "#40738d",
             "s_link": "shopify://pages/high-protein-banana-bread"
           }
         }
@@ -1348,41 +1428,42 @@
       "name": "Featured Content",
       "settings": {
         "eyebrow": "FROM THE TRUEFIT JOURNAL",
-        "eyebrow_color": "#40738D",
+        "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "eyebrow_spacing": 2,
         "headline": "The science of staying true.",
-        "headline_color": "#0A1A4F",
+        "headline_color": "#0a1a4f",
         "headline_size": 34,
         "viewall_text": "View all articles",
-        "viewall_color": "#40738D",
+        "viewall_color": "#40738d",
         "viewall_link": "",
         "f_image": "shopify://shop_images/TrueFit_004.jpg",
         "f_show_badge": true,
         "f_badge_text": "Nutrition",
-        "f_badge_bg": "#C9A86A",
-        "f_badge_text_color": "#0A1A4F",
+        "f_badge_bg": "#c9a86a",
+        "f_badge_text_color": "#0a1a4f",
         "f_category": "Nutrition",
         "f_readtime": "5 min read",
-        "f_meta_color": "#40738D",
+        "f_meta_color": "#40738d",
         "f_headline": "Protein is only half the story.",
-        "f_headline_color": "#0A1A4F",
+        "f_headline_color": "#0a1a4f",
         "f_headline_size": 28,
         "f_excerpt": "Protein builds the muscle. Fiber decides whether your body can actually use it. Here is the science behind the half most shakes leave out.",
-        "f_excerpt_color": "#40738D",
+        "f_excerpt_color": "#40738d",
         "f_excerpt_size": 16,
         "f_readmore_text": "Read more",
-        "f_readmore_color": "#0A1A4F",
+        "f_readmore_color": "#0a1a4f",
         "f_link": "shopify://pages/truefit-protein-is-only-half-the-story",
         "hover_style": "zoom",
         "card_radius": 16,
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "padding_top": 48,
         "padding_bottom": 48
       }
     }
   },
   "order": [
+    "tf_hero_slideshow_nwh7di",
     "70a4820a-871c-4379-bba8-cccc8e424e7a",
     "tf_featured_in_hPBaPk",
     "tf_best_sellers_ypL9Xq",
