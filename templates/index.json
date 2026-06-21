@@ -1523,7 +1523,7 @@
         "eyebrow_spacing": 2,
         "headline": "Join 1,000,000+ who stay true to their goals.",
         "headline_color": "#0a1a4f",
-        "headline_size": 38,
+        "headline_size": 34,
         "credibility": "4.7 · 3,000+ reviews · 1M+ servings delivered.",
         "credibility_color": "#40738d",
         "credibility_size": 15,
@@ -1533,9 +1533,9 @@
         "play_color": "#ffffff",
         "play_bg": "#0a1a4f",
         "play_style": "filled",
-        "background": "#ffffff",
-        "padding_top": 56,
-        "padding_bottom": 56
+        "background": "#FCFCEA",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "tf_featured_content_k3VbAk": {
