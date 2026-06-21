@@ -63,11 +63,13 @@
   .cmp__table { max-width: 90rem; margin: 0 auto; }
   .cmp__row {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;   /* mobile: label, ours, one competitor */
+    /* minmax(0,...) so wide header labels can't widen a track and break
+       header/data column alignment; long names wrap inside their column. */
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);   /* mobile: label, ours, one competitor */
     align-items: stretch;
   }
   @media screen and (min-width: 750px) {
-    .cmp__row { grid-template-columns: 1.4fr 1fr 1fr 1fr; }  /* desktop: + second competitor */
+    .cmp__row { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); }  /* desktop: + second competitor */
   }
 
   .cmp__rowlabel, .cmp__cell, .cmp__colhead {
@@ -115,6 +117,11 @@
     .cmp__radio--2:checked ~ .cmp__table .cmp__colhead--c1,
     .cmp__radio--2:checked ~ .cmp__table .cmp__c1foot { display: none; }
     .cmp__rowlabel { font-size: 1.3rem; }
+
+    /* Keep the TrueFit panel within its column and below the toggle (no breakout
+       over the tabs on phones). */
+    .cmp__colhead--our { margin-top: 0; padding-top: 1.6rem; }
+    .cmp__foot { margin-bottom: 0; }
   }
 </style>
 
