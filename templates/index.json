@@ -88,6 +88,100 @@
         "mobile_height": 78
       }
     },
+    "tf_featured_in_hPBaPk": {
+      "type": "tf-featured-in",
+      "blocks": {
+        "logo_B7TQ7k": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/insider-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_V8TrkY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/gq-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_A7Ucet": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/inc-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_jnRPh7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/today-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_c7zkBY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/mens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_7ryymL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shape-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_9Jmzcr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_KNVRq9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/womens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_9kVmqQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wellgood_2.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_B7TQ7k",
+        "logo_V8TrkY",
+        "logo_A7Ucet",
+        "logo_jnRPh7",
+        "logo_c7zkBY",
+        "logo_7ryymL",
+        "logo_9Jmzcr",
+        "logo_KNVRq9",
+        "logo_9kVmqQ"
+      ],
+      "name": "As Featured In",
+      "settings": {
+        "eyebrow": "AS FEATURED IN",
+        "background_color": "#fcfcea",
+        "recolor": true,
+        "logo_color": "#0a1a4f",
+        "logo_height": 28,
+        "logo_max_width": 160,
+        "logo_opacity": 100,
+        "logo_spacing": 64,
+        "scroll_duration": 25,
+        "pause_on_hover": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "70a4820a-871c-4379-bba8-cccc8e424e7a": {
       "type": "image-banner-slideshow",
       "blocks": {
@@ -403,100 +497,6 @@
         "color_scheme": "",
         "padding_top": 52,
         "padding_bottom": 16
-      }
-    },
-    "tf_featured_in_hPBaPk": {
-      "type": "tf-featured-in",
-      "blocks": {
-        "logo_B7TQ7k": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/insider-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_V8TrkY": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/gq-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_A7Ucet": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/inc-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_jnRPh7": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/today-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_c7zkBY": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/mens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_7ryymL": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/shape-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_9Jmzcr": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/byrdie-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_KNVRq9": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/womens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_9kVmqQ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/wellgood_2.svg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_B7TQ7k",
-        "logo_V8TrkY",
-        "logo_A7Ucet",
-        "logo_jnRPh7",
-        "logo_c7zkBY",
-        "logo_7ryymL",
-        "logo_9Jmzcr",
-        "logo_KNVRq9",
-        "logo_9kVmqQ"
-      ],
-      "name": "As Featured In",
-      "settings": {
-        "eyebrow": "AS FEATURED IN",
-        "background_color": "#fcfcea",
-        "recolor": true,
-        "logo_color": "#0a1a4f",
-        "logo_height": 28,
-        "logo_max_width": 160,
-        "logo_opacity": 100,
-        "logo_spacing": 64,
-        "scroll_duration": 25,
-        "pause_on_hover": true,
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     },
     "store-logos-homepage": {
@@ -1468,7 +1468,7 @@
           "type": "row",
           "settings": {
             "row_label": "25g Grass-Fed Whey Protein",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
@@ -1484,7 +1484,7 @@
           "type": "row",
           "settings": {
             "row_label": "Prebiotic Fiber and Probiotics",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "Some",
             "our_color": "",
@@ -1500,7 +1500,7 @@
           "type": "row",
           "settings": {
             "row_label": "Fruits and Veggies",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
@@ -1516,7 +1516,7 @@
           "type": "row",
           "settings": {
             "row_label": "Cost Per Serving",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "text",
             "our_text": "$1.92*",
             "our_color": "",
@@ -1532,7 +1532,7 @@
           "type": "row",
           "settings": {
             "row_label": "Zero Artificial Ingredients",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
@@ -1548,7 +1548,7 @@
           "type": "row",
           "settings": {
             "row_label": "100% Money Back Guarantee",
-            "row_label_color": "#0A1A4F",
+            "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
@@ -1571,44 +1571,44 @@
       ],
       "name": "Us vs. Them Comparison",
       "settings": {
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "padding_top": 56,
         "padding_bottom": 56,
         "eyebrow": "THE TRUEFIT DIFFERENCE",
-        "eyebrow_color": "#40738D",
+        "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "headline": "See the difference.",
-        "headline_color": "#0A1A4F",
+        "headline_color": "#0a1a4f",
         "headline_size": 34,
         "subline": "",
-        "subline_color": "#40738D",
+        "subline_color": "#40738d",
         "subline_size": 16,
         "our_label": "TrueFit",
-        "our_header_text_color": "#FFFFFF",
-        "our_bg": "#0A1A4F",
-        "our_cell_color": "#FFFFFF",
+        "our_header_text_color": "#ffffff",
+        "our_bg": "#0a1a4f",
+        "our_cell_color": "#ffffff",
         "our_check_color": "",
         "our_x_color": "",
         "c1_label": "Synthetic Protein Powder",
-        "c1_bg": "#F4F4EC",
-        "c1_cell_color": "#40738D",
+        "c1_bg": "#f4f4ec",
+        "c1_cell_color": "#40738d",
         "c1_check_color": "",
         "c1_x_color": "",
         "c2_label": "Overpriced Greens Powder",
-        "c2_bg": "#F4F4EC",
-        "c2_cell_color": "#40738D",
+        "c2_bg": "#f4f4ec",
+        "c2_cell_color": "#40738d",
         "c2_check_color": "",
         "c2_x_color": "",
-        "check_color": "#3F9D6B",
-        "x_color": "#C2C7D0"
+        "check_color": "#3f9d6b",
+        "x_color": "#c2c7d0"
       }
     }
   },
   "order": [
     "tf_hero_slideshow_nwh7di",
+    "tf_featured_in_hPBaPk",
     "70a4820a-871c-4379-bba8-cccc8e424e7a",
     "tf_best_sellers_ypL9Xq",
-    "tf_featured_in_hPBaPk",
     "store-logos-homepage",
     "b53bfdf0-4497-49b8-a03e-4d5de5af7526",
     "featured-collection-rsp-homepage",
@@ -1621,10 +1621,10 @@
     "eba58f30-4501-4689-980e-6f0b86699042",
     "1779400510f90dc326",
     "tf_standard_AiTciF",
-    "tf_shop_category_TG7pyM",
+    "tf_comparison_TLTdkb",
     "tf_featured_item_nKpD8J",
+    "tf_shop_category_TG7pyM",
     "tf_social_proof_87ChYQ",
-    "tf_featured_content_k3VbAk",
-    "tf_comparison_TLTdkb"
+    "tf_featured_content_k3VbAk"
   ]
 }
