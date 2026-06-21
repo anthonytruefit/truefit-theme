@@ -404,21 +404,6 @@
     "tf_best_sellers_ypL9Xq": {
       "type": "tf-best-sellers",
       "blocks": {
-        "card_fCjV4k": {
-          "type": "card",
-          "settings": {
-            "product": "truefit-vanilla",
-            "custom_title": "TrueFit Protein - Vanilla",
-            "subscribe_price": "$38.33",
-            "badge_text": "Best Seller",
-            "badge_background": "#0a1a4f",
-            "badge_text_color": "#f6eed7",
-            "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein to build & retain muscle",
-            "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods for complete nutrition"
-          }
-        },
         "card_cNqYVE": {
           "type": "card",
           "settings": {
@@ -428,6 +413,21 @@
             "badge_text": "Top Reviewed",
             "badge_background": "#86bce8",
             "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
+        "card_fCjV4k": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
             "badge_size": "medium",
             "bullet_1": "25g grass-fed protein to build & retain muscle",
             "bullet_2": "Fiber + probiotics for digestion & gut health",
@@ -481,8 +481,8 @@
         }
       },
       "block_order": [
-        "card_fCjV4k",
         "card_cNqYVE",
+        "card_fCjV4k",
         "card_kXFAdn",
         "card_cHrX93",
         "card_aFYUxU"
@@ -1187,7 +1187,6 @@
         "eyebrow": "FEATURED ITEM",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
-        "eyebrow_spacing": 2,
         "headline": "Meet TrueFit Protein",
         "headline_color": "#0a1a4f",
         "headline_size": 34,
@@ -1215,9 +1214,9 @@
         "badge_text_color": "#0a1a4f",
         "button_text": "Shop Now",
         "button_link": "shopify://products/truefit-vanilla",
-        "button_text_color": "#FFFFFF",
-        "button_border_color": "#0A1A4F",
-        "button_bg_color": "#0A1A4F",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#0a1a4f",
+        "button_bg_color": "#0a1a4f",
         "background": "#ffffff",
         "padding_top": 64,
         "padding_bottom": 64
@@ -1333,7 +1332,7 @@
       ],
       "name": "Us vs. Them Comparison",
       "settings": {
-        "background": "#FCFCEA",
+        "background": "#fcfcea",
         "padding_top": 64,
         "padding_bottom": 64,
         "eyebrow": "THE TRUEFIT DIFFERENCE",
@@ -1349,19 +1348,19 @@
         "our_header_text_color": "#ffffff",
         "our_bg": "#0a1a4f",
         "our_cell_color": "#ffffff",
-        "our_check_color": "",
+        "our_check_color": "#C9A86A",
         "our_x_color": "",
         "c1_label": "Synthetic Protein Powder",
-        "c1_bg": "#f4f4ec",
-        "c1_cell_color": "#40738d",
-        "c1_check_color": "",
-        "c1_x_color": "",
+        "c1_bg": "#EEF2F4",
+        "c1_cell_color": "#40738D",
+        "c1_check_color": "#40738D",
+        "c1_x_color": "#40738D",
         "c2_label": "Overpriced Greens Powder",
-        "c2_bg": "#f4f4ec",
+        "c2_bg": "#EEF2F4",
         "c2_cell_color": "#40738d",
-        "c2_check_color": "",
-        "c2_x_color": "",
-        "check_color": "#0A1A4F",
+        "c2_check_color": "#40738D",
+        "c2_x_color": "#40738D",
+        "check_color": "#0a1a4f",
         "x_color": "#c2c7d0"
       }
     },
@@ -1516,7 +1515,6 @@
         "eyebrow": "REAL PEOPLE, REAL RESULTS",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
-        "eyebrow_spacing": 2,
         "headline": "Join 1,000,000+ who stay true to their goals.",
         "headline_color": "#0a1a4f",
         "headline_size": 34,
@@ -1529,7 +1527,7 @@
         "play_color": "#ffffff",
         "play_bg": "#0a1a4f",
         "play_style": "filled",
-        "background": "#FCFCEA",
+        "background": "#fcfcea",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -1577,7 +1575,6 @@
         "eyebrow": "FROM THE TRUEFIT JOURNAL",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
-        "eyebrow_spacing": 2,
         "headline": "The science of staying true.",
         "headline_color": "#0a1a4f",
         "headline_size": 34,
