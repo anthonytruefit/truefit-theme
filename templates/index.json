@@ -1147,9 +1147,9 @@
         "text": "<p>Every ingredient in every TrueFit product had to earn its place. Clean, science-backed nutrition to help you stay true to your goals.</p>",
         "columns_mobile": "2",
         "columns_desktop": 6,
-        "color_scheme": "",
-        "padding_top": 28,
-        "padding_bottom": 56
+        "color_scheme": "background-2",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "tf_featured_item_nKpD8J": {
