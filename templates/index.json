@@ -16,7 +16,8 @@
           "type": "slide",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/Protein_Elevated_Banner_Web_1_copy.png",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_21_2026_06_34_51_PM.png",
+            "image_mobile": "shopify://shop_images/ChatGPT_Image_Jun_21_2026_06_34_44_PM.png",
             "eyebrow": "",
             "eyebrow_color": "#fcfcea",
             "eyebrow_size": 12,
@@ -85,7 +86,7 @@
         "show_arrows": true,
         "show_dots": false,
         "desktop_height": 78,
-        "mobile_height": 78
+        "mobile_height": 56
       }
     },
     "tf_featured_in_hPBaPk": {
