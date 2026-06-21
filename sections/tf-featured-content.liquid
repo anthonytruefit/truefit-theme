@@ -1,0 +1,276 @@
+{% comment %}
+  Featured Content
+  ----------------
+  Magazine-style editorial section: header row (eyebrow + headline left, View all
+  right), then a large featured story card (left) beside a hairline-divided stack
+  of supporting story rows (right). All content entered manually; each card has
+  its own flexible link. Optional category / read-time / excerpts hide when blank.
+
+  Whole card is one <a> (Read more is a styled span, not a nested link). Hover
+  affordance (zoom/lift) applies on hover-capable desktop only.
+
+  Mobile-first: single column - header, then featured full-width, then supporting
+  thumbnail+text rows. Every color/size/text editable; brand defaults only.
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tffc-radius: {{ s.card_radius }}px;
+    --tffc-pt: {{ s.padding_top | times: 0.7 | round: 0 }}px;
+    --tffc-pb: {{ s.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --tffc-pt: {{ s.padding_top }}px;
+      --tffc-pb: {{ s.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .tffc { background: {{ s.background }}; padding-top: var(--tffc-pt); padding-bottom: var(--tffc-pb); }
+
+  /* Header row */
+  .tffc__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3.2rem;
+  }
+  .tffc__head-left { display: flex; flex-direction: column; gap: 1rem; }
+  .tffc__eyebrow { font-family: var(--font-body-family); font-weight: 500; text-transform: uppercase; line-height: 1.3; }
+  .tffc__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+  .tffc__viewall {
+    flex: 0 0 auto;
+    font-size: 1.3rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: underline; text-underline-offset: 0.4rem; white-space: nowrap;
+  }
+  @media screen and (max-width: 749px) {
+    .tffc__header { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+  }
+
+  /* Two-column grid */
+  .tffc__grid { display: grid; grid-template-columns: 1fr; gap: 3.2rem; }
+  @media screen and (min-width: 990px) {
+    .tffc__grid { grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+  }
+
+  /* Shared bits */
+  .tffc__meta { font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0; }
+  .tffc__media { position: relative; border-radius: var(--tffc-radius, 16px); overflow: hidden; background: rgba(10,26,79,0.05); }
+  .tffc__media img, .tffc__media .placeholder-svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tffc__badge {
+    position: absolute; top: 1.4rem; left: 1.4rem; z-index: 1;
+    padding: 0.5rem 1.1rem; border-radius: 999px;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1;
+  }
+
+  /* Featured card */
+  .tffc__featured { display: flex; flex-direction: column; gap: 1.4rem; text-decoration: none; }
+  .tffc__featured .tffc__media { aspect-ratio: 16 / 10; }
+  .tffc__f-headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+  .tffc__excerpt { margin: 0; line-height: 1.6; }
+  .tffc__readmore { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 500; font-size: 1.4rem; }
+  .tffc__readmore svg { width: 1.4rem; height: 1.4rem; fill: currentColor; }
+
+  /* Supporting stack */
+  .tffc__stack { display: flex; flex-direction: column; }
+  .tffc__story {
+    display: grid; grid-template-columns: 9rem 1fr; gap: 1.6rem; align-items: start;
+    padding: 1.8rem 0; border-top: 0.1rem solid rgba(10,26,79,0.12); text-decoration: none;
+  }
+  .tffc__story:first-child { border-top: 0; padding-top: 0; }
+  .tffc__story .tffc__media { aspect-ratio: 1 / 1; }
+  .tffc__s-headline { margin: 0.4rem 0; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; }
+  .tffc__s-excerpt { margin: 0; font-size: 1.3rem; line-height: 1.45; }
+
+  /* Hover affordances (desktop, hover-capable only) */
+  @media (hover: hover) and (min-width: 990px) {
+    .tffc--hover-zoom .tffc__media img { transition: transform 0.45s ease; }
+    .tffc--hover-zoom .tffc__featured:hover .tffc__media img,
+    .tffc--hover-zoom .tffc__story:hover .tffc__media img { transform: scale(1.05); }
+
+    .tffc--hover-lift .tffc__featured,
+    .tffc--hover-lift .tffc__story { transition: transform 0.25s ease; }
+    .tffc--hover-lift .tffc__featured:hover,
+    .tffc--hover-lift .tffc__story:hover { transform: translateY(-0.4rem); }
+  }
+</style>
+
+<div class="tffc tffc--hover-{{ s.hover_style }}">
+  <div class="tffc__inner page-width">
+    <div class="tffc__header">
+      <div class="tffc__head-left">
+        {%- if s.eyebrow != blank -%}
+          <span class="tffc__eyebrow" style="color: {{ s.eyebrow_color }}; font-size: {{ s.eyebrow_size }}px; letter-spacing: {{ s.eyebrow_spacing }}px;">{{ s.eyebrow }}</span>
+        {%- endif -%}
+        {%- if s.headline != blank -%}
+          <h2 class="tffc__headline" style="color: {{ s.headline_color }}; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px);">{{ s.headline }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if s.viewall_text != blank -%}
+        <a class="tffc__viewall" href="{{ s.viewall_link | default: '#' }}" style="color: {{ s.viewall_color }};">{{ s.viewall_text }}</a>
+      {%- endif -%}
+    </div>
+
+    <div class="tffc__grid">
+      {%- comment -%} Featured story (single, section-level) {%- endcomment -%}
+      <a class="tffc__featured" href="{{ s.f_link | default: '#' }}">
+        <div class="tffc__media">
+          {%- if s.f_show_badge and s.f_badge_text != blank -%}
+            <span class="tffc__badge" style="background: {{ s.f_badge_bg }}; color: {{ s.f_badge_text_color }};">{{ s.f_badge_text }}</span>
+          {%- endif -%}
+          {%- if s.f_image != blank -%}
+            {{ s.f_image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 55vw, 100vw', widths: '500, 750, 1000, 1400, 1600', alt: s.f_headline }}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+
+        {%- if s.f_category != blank or s.f_readtime != blank -%}
+          <p class="tffc__meta" style="color: {{ s.f_meta_color }};">
+            {{- s.f_category -}}
+            {%- if s.f_category != blank and s.f_readtime != blank %} &middot; {% endif -%}
+            {{- s.f_readtime -}}
+          </p>
+        {%- endif -%}
+
+        {%- if s.f_headline != blank -%}
+          <h3 class="tffc__f-headline" style="color: {{ s.f_headline_color }}; font-size: clamp(2.2rem, 4vw, {{ s.f_headline_size }}px);">{{ s.f_headline }}</h3>
+        {%- endif -%}
+        {%- if s.f_excerpt != blank -%}
+          <p class="tffc__excerpt" style="color: {{ s.f_excerpt_color }}; font-size: {{ s.f_excerpt_size }}px;">{{ s.f_excerpt }}</p>
+        {%- endif -%}
+        {%- if s.f_readmore_text != blank -%}
+          <span class="tffc__readmore" style="color: {{ s.f_readmore_color }};">
+            {{ s.f_readmore_text }}
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10.6 4.3l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 1 1-1.4-1.4l3.3-3.3H4a1 1 0 1 1 0-2h8.5L9.2 5.7a1 1 0 1 1 1.4-1.4z"/></svg>
+          </span>
+        {%- endif -%}
+      </a>
+
+      {%- comment -%} Supporting stories (repeatable blocks) {%- endcomment -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="tffc__stack">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            <a class="tffc__story" href="{{ b.s_link | default: '#' }}" {{ block.shopify_attributes }}>
+              <div class="tffc__media">
+                {%- if b.s_image != blank -%}
+                  {{ b.s_image | image_url: width: 360 | image_tag: loading: 'lazy', sizes: '9rem', widths: '120, 180, 240, 360', alt: b.s_headline }}
+                {%- else -%}
+                  {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+              <div class="tffc__story-text">
+                {%- if b.s_category != blank or b.s_readtime != blank -%}
+                  <p class="tffc__meta" style="color: {{ b.s_meta_color }};">
+                    {{- b.s_category -}}
+                    {%- if b.s_category != blank and b.s_readtime != blank %} &middot; {% endif -%}
+                    {{- b.s_readtime -}}
+                  </p>
+                {%- endif -%}
+                {%- if b.s_headline != blank -%}
+                  <h4 class="tffc__s-headline" style="color: {{ b.s_headline_color }}; font-size: {{ b.s_headline_size }}px;">{{ b.s_headline }}</h4>
+                {%- endif -%}
+                {%- if b.s_excerpt != blank -%}
+                  <p class="tffc__s-excerpt" style="color: {{ b.s_excerpt_color }};">{{ b.s_excerpt }}</p>
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Content",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "header", "content": "Header" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "FROM THE TRUEFIT JOURNAL" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
+    { "type": "range", "id": "eyebrow_size", "min": 9, "max": 18, "step": 1, "unit": "px", "label": "Eyebrow size", "default": 11 },
+    { "type": "range", "id": "eyebrow_spacing", "min": 0, "max": 6, "step": 1, "unit": "px", "label": "Eyebrow letter-spacing", "default": 2 },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "The science of staying true." },
+    { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "range", "id": "headline_size", "min": 22, "max": 56, "step": 1, "unit": "px", "label": "Headline size (desktop)", "default": 34 },
+    { "type": "text", "id": "viewall_text", "label": "View all text", "default": "View all articles" },
+    { "type": "color", "id": "viewall_color", "label": "View all color", "default": "#40738D" },
+    { "type": "url", "id": "viewall_link", "label": "View all link" },
+
+    { "type": "header", "content": "Featured story" },
+    { "type": "image_picker", "id": "f_image", "label": "Image" },
+    { "type": "checkbox", "id": "f_show_badge", "label": "Show category badge", "default": true },
+    { "type": "text", "id": "f_badge_text", "label": "Badge text", "default": "Nutrition" },
+    { "type": "color", "id": "f_badge_bg", "label": "Badge background", "default": "#C9A86A" },
+    { "type": "color", "id": "f_badge_text_color", "label": "Badge text color", "default": "#0A1A4F" },
+    { "type": "text", "id": "f_category", "label": "Meta: category (optional)", "default": "Nutrition" },
+    { "type": "text", "id": "f_readtime", "label": "Meta: read time (optional)", "default": "5 min read" },
+    { "type": "color", "id": "f_meta_color", "label": "Meta color", "default": "#40738D" },
+    { "type": "text", "id": "f_headline", "label": "Headline", "default": "Protein is only half the story." },
+    { "type": "color", "id": "f_headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "range", "id": "f_headline_size", "min": 18, "max": 44, "step": 1, "unit": "px", "label": "Headline size (desktop)", "default": 28 },
+    { "type": "text", "id": "f_excerpt", "label": "Excerpt (optional)", "default": "Protein builds the muscle. Fiber decides whether your body can actually use it. Here is the science behind the half most shakes leave out." },
+    { "type": "color", "id": "f_excerpt_color", "label": "Excerpt color", "default": "#40738D" },
+    { "type": "range", "id": "f_excerpt_size", "min": 12, "max": 22, "step": 1, "unit": "px", "label": "Excerpt size", "default": 16 },
+    { "type": "text", "id": "f_readmore_text", "label": "Read more text", "default": "Read more" },
+    { "type": "color", "id": "f_readmore_color", "label": "Read more color", "default": "#0A1A4F" },
+    { "type": "url", "id": "f_link", "label": "Featured card link" },
+
+    { "type": "header", "content": "Layout & hover" },
+    {
+      "type": "select", "id": "hover_style", "label": "Hover affordance (desktop)", "default": "zoom",
+      "options": [
+        { "value": "zoom", "label": "Image zoom" },
+        { "value": "lift", "label": "Card lift" },
+        { "value": "none", "label": "None" }
+      ]
+    },
+    { "type": "range", "id": "card_radius", "min": 0, "max": 40, "step": 2, "unit": "px", "label": "Image corner radius", "default": 16 },
+
+    { "type": "header", "content": "Section" },
+    { "type": "color", "id": "background", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Supporting story",
+      "settings": [
+        { "type": "image_picker", "id": "s_image", "label": "Thumbnail" },
+        { "type": "text", "id": "s_category", "label": "Category (optional)" },
+        { "type": "text", "id": "s_readtime", "label": "Read time (optional)" },
+        { "type": "color", "id": "s_meta_color", "label": "Meta color", "default": "#40738D" },
+        { "type": "text", "id": "s_headline", "label": "Headline", "default": "Supporting story headline" },
+        { "type": "color", "id": "s_headline_color", "label": "Headline color", "default": "#0A1A4F" },
+        { "type": "range", "id": "s_headline_size", "min": 13, "max": 24, "step": 1, "unit": "px", "label": "Headline size", "default": 17 },
+        { "type": "text", "id": "s_excerpt", "label": "Excerpt (optional)" },
+        { "type": "color", "id": "s_excerpt_color", "label": "Excerpt color", "default": "#40738D" },
+        { "type": "url", "id": "s_link", "label": "Card link" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Featured Content",
+      "blocks": [
+        { "type": "story", "settings": { "s_category": "Nutrition", "s_readtime": "4 min read", "s_headline": "Proteinmaxxing, done right" } },
+        { "type": "story", "settings": { "s_category": "Recipes", "s_readtime": "3 min read", "s_headline": "The world's most delicious high-protein banana bread" } },
+        { "type": "story", "settings": { "s_category": "Training", "s_readtime": "6 min read", "s_headline": "The 7 best post-workout snacks" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
