@@ -1223,7 +1223,7 @@
         "button_border_color": "#0a1a4f",
         "button_bg_color": "rgba(0,0,0,0)",
         "background": "#ffffff",
-        "padding_top": 56,
+        "padding_top": 28,
         "padding_bottom": 56
       }
     },
