@@ -127,13 +127,25 @@
     display: flex; align-items: center; justify-content: center; gap: 1.6rem;
     padding: 0 2rem;
   }
-  .tfhero__controls--no-arrows .slider-button { display: none; }
-  .tfhero__controls .slider-button {
-    width: 4rem; height: 4rem; border-radius: 50%;
-    background: rgba(255,255,255,0.85); color: #0a1a4f; border: 0;
-    display: flex; align-items: center; justify-content: center; cursor: pointer;
+  /* Subtle overlay arrows, vertically centered on the image (no circle) */
+  .tfhero__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.85;
+    filter: drop-shadow(0 0.1rem 0.3rem rgba(0, 0, 0, 0.45));
+    transition: opacity 0.2s ease;
   }
-  .tfhero__controls .slider-button .icon-caret { width: 1.4rem; }
+  .tfhero__arrow:hover { opacity: 1; }
+  .tfhero__arrow--prev { left: 1.2rem; }
+  .tfhero__arrow--next { right: 1.2rem; }
+  .tfhero__arrow .icon { height: 1.4rem; }
+  .tfhero__arrow--hidden { display: none; }
   .tfhero__dots { display: flex; gap: 0.8rem; }
   .tfhero__dots .slider-counter__link {
     width: 1rem; height: 1rem; border-radius: 50%; padding: 0; border: 0; cursor: pointer;
@@ -274,8 +286,9 @@
   </div>
 
   {%- if section.blocks.size > 1 -%}
-    <div class="tfhero__controls slider-buttons{% unless s.show_arrows %} tfhero__controls--no-arrows{% endunless %}">
-      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+    <button type="button" class="tfhero__arrow tfhero__arrow--prev slider-button slider-button--prev{% unless s.show_arrows %} tfhero__arrow--hidden{% endunless %}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+    <button type="button" class="tfhero__arrow tfhero__arrow--next slider-button slider-button--next{% unless s.show_arrows %} tfhero__arrow--hidden{% endunless %}" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+    <div class="tfhero__controls slider-buttons">
       {%- if s.show_dots -%}
         <div class="tfhero__dots slider-counter" role="tablist">
           {%- for block in section.blocks -%}
@@ -283,7 +296,6 @@
           {%- endfor -%}
         </div>
       {%- endif -%}
-      <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
       {%- if do_autoplay -%}
         <button type="button" class="slideshow__autoplay" aria-label="{{ 'sections.slideshow.pause_slideshow' | t | default: 'Pause slideshow' }}">{% render 'icon-pause' %}{% render 'icon-play' %}</button>
       {%- endif -%}
