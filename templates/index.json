@@ -1133,17 +1133,18 @@
           "settings": {
             "media_type": "video",
             "video": "shopify://files/videos/1782007420619.publer.com.mp4",
+            "video_url": "",
             "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
             "quote": "Gut friendly, no brain fog, no tummy aches... it doesn't get much better than that.",
-            "quote_color": "#0A1A4F",
+            "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
             "star_count": 5,
-            "star_color": "#C9A86A",
+            "star_color": "#c9a86a",
             "name_text": "",
             "name_position": "bl",
-            "name_bg": "#0A1A4F",
-            "name_color": "#FFFFFF"
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
           }
         },
         "card_dRmQip": {
@@ -1151,16 +1152,17 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/965e6218-3922-4235-ac97-4090df4bdd9a.webp",
+            "video_url": "",
             "quote": "The ingredient list is simple, high quality, and genuinely feels thoughtfully made.",
-            "quote_color": "#0A1A4F",
+            "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
             "star_count": 5,
-            "star_color": "#C9A86A",
+            "star_color": "#c9a86a",
             "name_text": "",
             "name_position": "bl",
-            "name_bg": "#0A1A4F",
-            "name_color": "#FFFFFF"
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
           }
         },
         "card_qQPw8R": {
@@ -1168,17 +1170,18 @@
           "settings": {
             "media_type": "video",
             "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
+            "video_url": "",
             "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
             "quote": "Each scoop has protein, fiber & probiotics in one...it's a truly unique take on protein powder.",
-            "quote_color": "#0A1A4F",
+            "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
             "star_count": 5,
-            "star_color": "#C9A86A",
+            "star_color": "#c9a86a",
             "name_text": "",
             "name_position": "bl",
-            "name_bg": "#0A1A4F",
-            "name_color": "#FFFFFF"
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
           }
         },
         "card_G8xFWb": {
@@ -1186,16 +1189,17 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/271af3b3-e419-4fd3-84b4-ed15835125f7_1.webp",
+            "video_url": "",
             "quote": "Tastes good, mixes smoothly, and doesn't leave you feeling heavy or bloated.",
-            "quote_color": "#0A1A4F",
+            "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
             "star_count": 5,
-            "star_color": "#C9A86A",
+            "star_color": "#c9a86a",
             "name_text": "",
             "name_position": "bl",
-            "name_bg": "#0A1A4F",
-            "name_color": "#FFFFFF"
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
           }
         }
       },
@@ -1208,21 +1212,96 @@
       "name": "Social Proof",
       "settings": {
         "eyebrow": "REAL PEOPLE, REAL RESULTS",
-        "eyebrow_color": "#40738D",
+        "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "eyebrow_spacing": 2,
         "headline": "Join 1,000,000+ who stay true to their goals.",
-        "headline_color": "#0A1A4F",
+        "headline_color": "#0a1a4f",
         "headline_size": 38,
         "credibility": "4.7 · 3,000+ reviews · 1M+ servings delivered.",
-        "credibility_color": "#40738D",
+        "credibility_color": "#40738d",
         "credibility_size": 15,
         "card_radius": 16,
         "media_ratio": "4 / 5",
         "cards_desktop": 4,
-        "play_color": "#FFFFFF",
-        "play_bg": "#0A1A4F",
+        "play_color": "#ffffff",
+        "play_bg": "#0a1a4f",
         "play_style": "filled",
+        "background": "#ffffff",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "tf_featured_item_nKpD8J": {
+      "type": "tf-featured-item",
+      "blocks": {
+        "bullet_3n36aH": {
+          "type": "bullet",
+          "settings": {
+            "text": "25g Grass-Fed Protein"
+          }
+        },
+        "bullet_m9fxQV": {
+          "type": "bullet",
+          "settings": {
+            "text": "Prebiotic Fiber + 1 Billion CFU Probiotics"
+          }
+        },
+        "bullet_XdiFWj": {
+          "type": "bullet",
+          "settings": {
+            "text": "REAL Non-GMO Superfoods"
+          }
+        },
+        "bullet_jz944w": {
+          "type": "bullet",
+          "settings": {
+            "text": "Nothing fake. Every ingredient earned its place."
+          }
+        }
+      },
+      "block_order": [
+        "bullet_3n36aH",
+        "bullet_m9fxQV",
+        "bullet_XdiFWj",
+        "bullet_jz944w"
+      ],
+      "name": "Featured Item",
+      "settings": {
+        "eyebrow": "FEATUED ITEM",
+        "eyebrow_color": "#40738D",
+        "eyebrow_size": 11,
+        "eyebrow_spacing": 2,
+        "headline": "Meet TrueFit Protein",
+        "headline_color": "#0A1A4F",
+        "headline_size": 40,
+        "subhead": "This is protein, elevated - with fiber, probiotics, & superfoods built in.",
+        "subhead_color": "#40738D",
+        "subhead_size": 17,
+        "panel_bg_type": "gradient",
+        "panel_color_1": "#0A1A4F",
+        "panel_color_2": "#40738D",
+        "panel_angle": 135,
+        "panel_radius": 20,
+        "support": "Gut-Friendly Protein Has Arrived.",
+        "support_color": "#86BCE8",
+        "support_size": 14,
+        "product_name": "TrueFit Protein",
+        "name_color": "#FFFFFF",
+        "name_size": 34,
+        "bullet_color": "#FFFFFF",
+        "bullet_size": 15,
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_20_2026_10_39_55_PM.png",
+        "image_side": "right",
+        "show_badge": true,
+        "badge_text": "VIRAL GUT HEALTHY PROTEIN",
+        "badge_bg": "#C9A86A",
+        "badge_text_color": "#0A1A4F",
+        "button_text": "Shop Now",
+        "button_link": "shopify://products/truefit-vanilla",
+        "button_text_color": "#0A1A4F",
+        "button_border_color": "#0A1A4F",
+        "button_bg_color": "rgba(0,0,0,0)",
         "background": "#FFFFFF",
         "padding_top": 56,
         "padding_bottom": 56
@@ -1246,6 +1325,7 @@
     "1779400510f90dc326",
     "tf_standard_AiTciF",
     "tf_shop_category_TG7pyM",
-    "tf_social_proof_87ChYQ"
+    "tf_social_proof_87ChYQ",
+    "tf_featured_item_nKpD8J"
   ]
 }
