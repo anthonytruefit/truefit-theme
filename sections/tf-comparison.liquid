@@ -72,6 +72,17 @@
     .cmp__row { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); }  /* desktop: + second competitor */
   }
 
+  /* Pin each cell to an explicit column so headers and data always map the same
+     way regardless of auto-flow: label = col 1, TrueFit = col 2, competitor = col 3.
+     On mobile both competitors target col 3 (only one shows at a time). */
+  .cmp__rowlabel { grid-column: 1; }
+  .cmp__colhead--our, .cmp__cell--our, .cmp__foot { grid-column: 2; }
+  .cmp__colhead--c1, .cmp__cell--c1, .cmp__c1foot,
+  .cmp__colhead--c2, .cmp__cell--c2, .cmp__c2foot { grid-column: 3; }
+  @media screen and (min-width: 750px) {
+    .cmp__colhead--c2, .cmp__cell--c2, .cmp__c2foot { grid-column: 4; }
+  }
+
   .cmp__rowlabel, .cmp__cell, .cmp__colhead {
     display: flex; align-items: center; justify-content: center;
     padding: 1.6rem 1.2rem; text-align: center; min-height: 5.6rem;
