@@ -220,7 +220,7 @@
         {%- else -%}
           <picture class="tfhero__media">
             {%- if b.image_mobile != blank -%}
-              <source media="(max-width: 749px)" srcset="{{ b.image_mobile | image_url: width: 1000 }} 1000w, {{ b.image_mobile | image_url: width: 750 }} 750w, {{ b.image_mobile | image_url: width: 500 }} 500w" sizes="100vw">
+              <source media="(max-width: 749px)" srcset="{{ b.image_mobile | image_url: width: 500 }} 500w, {{ b.image_mobile | image_url: width: 750 }} 750w, {{ b.image_mobile | image_url: width: 1000 }} 1000w, {{ b.image_mobile | image_url: width: 1200 }} 1200w, {{ b.image_mobile | image_url: width: 1500 }} 1500w" sizes="100vw">
             {%- endif -%}
             {%- if b.image != blank -%}
               <img
