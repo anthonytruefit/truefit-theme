@@ -1152,57 +1152,146 @@
         "padding_bottom": 56
       }
     },
-    "tf_shop_category_TG7pyM": {
-      "type": "tf-shop-category",
+    "tf_comparison_TLTdkb": {
+      "type": "tf-comparison",
       "blocks": {
-        "card_fXrK6a": {
-          "type": "card",
+        "row_bHWcRW": {
+          "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
-            "eyebrow": "All-in-One",
-            "name": "Protein",
-            "button_label": "Shop Now",
-            "link": "",
-            "footer_background": "#0a1a4f",
-            "footer_text": "#ffffff"
+            "row_label": "25g Grass-Fed Whey Protein",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
           }
         },
-        "card_3JfLha": {
-          "type": "card",
+        "row_9dGmFD": {
+          "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_09_59_32_PM.png",
-            "eyebrow": "Science-backed",
-            "name": "Recovery",
-            "button_label": "Shop Now",
-            "link": "",
-            "footer_background": "#0a1a4f",
-            "footer_text": "#ffffff"
+            "row_label": "Prebiotic Fiber and Probiotics",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "Some",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "check",
+            "c2_text": "",
+            "c2_color": ""
           }
         },
-        "card_cNUxfQ": {
-          "type": "card",
+        "row_TcYwBT": {
+          "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_04_37_55_PM.png",
-            "eyebrow": "Natural",
-            "name": "Energy",
-            "button_label": "Shop Now",
-            "link": "",
-            "footer_background": "#0a1a4f",
-            "footer_text": "#ffffff"
+            "row_label": "Fruits and Veggies",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "check",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_Fi6UkJ": {
+          "type": "row",
+          "settings": {
+            "row_label": "Cost Per Serving",
+            "row_label_color": "#0a1a4f",
+            "our_type": "text",
+            "our_text": "$1.92*",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "~$2.75",
+            "c1_color": "",
+            "c2_type": "text",
+            "c2_text": "~$3.60",
+            "c2_color": ""
+          }
+        },
+        "row_qXA7UK": {
+          "type": "row",
+          "settings": {
+            "row_label": "Zero Artificial Ingredients",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_T4Jrpj": {
+          "type": "row",
+          "settings": {
+            "row_label": "100% Money Back Guarantee",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
           }
         }
       },
       "block_order": [
-        "card_fXrK6a",
-        "card_3JfLha",
-        "card_cNUxfQ"
+        "row_bHWcRW",
+        "row_9dGmFD",
+        "row_TcYwBT",
+        "row_Fi6UkJ",
+        "row_qXA7UK",
+        "row_T4Jrpj"
       ],
-      "name": "Shop by Category",
+      "name": "Us vs. Them Comparison",
       "settings": {
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "background": "#ffffff",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "eyebrow": "THE TRUEFIT DIFFERENCE",
+        "eyebrow_color": "#40738d",
+        "eyebrow_size": 11,
+        "headline": "See the difference.",
+        "headline_color": "#0a1a4f",
+        "headline_size": 34,
+        "subline": "",
+        "subline_color": "#40738d",
+        "subline_size": 16,
+        "our_label": "TrueFit",
+        "our_header_text_color": "#ffffff",
+        "our_bg": "#0a1a4f",
+        "our_cell_color": "#ffffff",
+        "our_check_color": "",
+        "our_x_color": "",
+        "c1_label": "Synthetic Protein Powder",
+        "c1_bg": "#f4f4ec",
+        "c1_cell_color": "#40738d",
+        "c1_check_color": "",
+        "c1_x_color": "",
+        "c2_label": "Overpriced Greens Powder",
+        "c2_bg": "#f4f4ec",
+        "c2_cell_color": "#40738d",
+        "c2_check_color": "",
+        "c2_x_color": "",
+        "check_color": "#3f9d6b",
+        "x_color": "#c2c7d0"
       }
     },
     "tf_featured_item_nKpD8J": {
@@ -1278,6 +1367,68 @@
         "background": "#ffffff",
         "padding_top": 56,
         "padding_bottom": 56
+      }
+    },
+    "tf_shop_category_TG7pyM": {
+      "type": "tf-shop-category",
+      "blocks": {
+        "card_fXrK6a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
+            "eyebrow": "All-in-One",
+            "name": "Protein",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_bg_type": "gradient",
+            "footer_background": "#0a1a4f",
+            "footer_background_2": "#40738d",
+            "footer_gradient_angle": 135,
+            "footer_text": "#ffffff"
+          }
+        },
+        "card_3JfLha": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_09_59_32_PM.png",
+            "eyebrow": "Science-backed",
+            "name": "Recovery",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_bg_type": "gradient",
+            "footer_background": "#0a1a4f",
+            "footer_background_2": "#40738d",
+            "footer_gradient_angle": 135,
+            "footer_text": "#ffffff"
+          }
+        },
+        "card_cNUxfQ": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_04_37_55_PM.png",
+            "eyebrow": "Natural",
+            "name": "Energy",
+            "button_label": "Shop Now",
+            "link": "",
+            "footer_bg_type": "gradient",
+            "footer_background": "#0a1a4f",
+            "footer_background_2": "#40738d",
+            "footer_gradient_angle": 135,
+            "footer_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_fXrK6a",
+        "card_3JfLha",
+        "card_cNUxfQ"
+      ],
+      "name": "Shop by Category",
+      "settings": {
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "tf_social_proof_87ChYQ": {
@@ -1459,148 +1610,6 @@
         "background": "#ffffff",
         "padding_top": 48,
         "padding_bottom": 48
-      }
-    },
-    "tf_comparison_TLTdkb": {
-      "type": "tf-comparison",
-      "blocks": {
-        "row_bHWcRW": {
-          "type": "row",
-          "settings": {
-            "row_label": "25g Grass-Fed Whey Protein",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_9dGmFD": {
-          "type": "row",
-          "settings": {
-            "row_label": "Prebiotic Fiber and Probiotics",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "Some",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_TcYwBT": {
-          "type": "row",
-          "settings": {
-            "row_label": "Fruits and Veggies",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_Fi6UkJ": {
-          "type": "row",
-          "settings": {
-            "row_label": "Cost Per Serving",
-            "row_label_color": "#0a1a4f",
-            "our_type": "text",
-            "our_text": "$1.92*",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "~$2.75",
-            "c1_color": "",
-            "c2_type": "text",
-            "c2_text": "~$3.60",
-            "c2_color": ""
-          }
-        },
-        "row_qXA7UK": {
-          "type": "row",
-          "settings": {
-            "row_label": "Zero Artificial Ingredients",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_T4Jrpj": {
-          "type": "row",
-          "settings": {
-            "row_label": "100% Money Back Guarantee",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_bHWcRW",
-        "row_9dGmFD",
-        "row_TcYwBT",
-        "row_Fi6UkJ",
-        "row_qXA7UK",
-        "row_T4Jrpj"
-      ],
-      "name": "Us vs. Them Comparison",
-      "settings": {
-        "background": "#ffffff",
-        "padding_top": 56,
-        "padding_bottom": 56,
-        "eyebrow": "THE TRUEFIT DIFFERENCE",
-        "eyebrow_color": "#40738d",
-        "eyebrow_size": 11,
-        "headline": "See the difference.",
-        "headline_color": "#0a1a4f",
-        "headline_size": 34,
-        "subline": "",
-        "subline_color": "#40738d",
-        "subline_size": 16,
-        "our_label": "TrueFit",
-        "our_header_text_color": "#ffffff",
-        "our_bg": "#0a1a4f",
-        "our_cell_color": "#ffffff",
-        "our_check_color": "",
-        "our_x_color": "",
-        "c1_label": "Synthetic Protein Powder",
-        "c1_bg": "#f4f4ec",
-        "c1_cell_color": "#40738d",
-        "c1_check_color": "",
-        "c1_x_color": "",
-        "c2_label": "Overpriced Greens Powder",
-        "c2_bg": "#f4f4ec",
-        "c2_cell_color": "#40738d",
-        "c2_check_color": "",
-        "c2_x_color": "",
-        "check_color": "#3f9d6b",
-        "x_color": "#c2c7d0"
       }
     }
   },
