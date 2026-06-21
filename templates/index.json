@@ -18,28 +18,28 @@
             "media_type": "image",
             "image": "shopify://shop_images/Protein_Elevated_Banner_Web_1_copy.png",
             "eyebrow": "",
-            "eyebrow_color": "#FCFCEA",
+            "eyebrow_color": "#fcfcea",
             "eyebrow_size": 12,
             "headline": "",
-            "headline_color": "#FFFFFF",
+            "headline_color": "#ffffff",
             "headline_size": 64,
             "subline": "",
-            "subline_color": "#FCFCEA",
+            "subline_color": "#fcfcea",
             "subline_size": 18,
             "button1_text": "Shop Now",
             "button1_link": "",
             "button1_style": "filled",
-            "button1_bg": "#FFFFFF",
-            "button1_text_color": "#0A1A4F",
-            "button1_border": "#FFFFFF",
+            "button1_bg": "#ffffff",
+            "button1_text_color": "#0a1a4f",
+            "button1_border": "#ffffff",
             "button2_text": "",
             "button2_link": "",
             "button2_style": "outline",
-            "button2_bg": "#0A1A4F",
-            "button2_text_color": "#FFFFFF",
-            "button2_border": "#FFFFFF",
+            "button2_bg": "#0a1a4f",
+            "button2_text_color": "#ffffff",
+            "button2_border": "#ffffff",
             "content_position": "bottom-center",
-            "scrim_color": "#0A1A4F",
+            "scrim_color": "#0a1a4f",
             "scrim_opacity": 30
           }
         },
@@ -48,28 +48,28 @@
           "settings": {
             "media_type": "image",
             "eyebrow": "",
-            "eyebrow_color": "#FCFCEA",
+            "eyebrow_color": "#fcfcea",
             "eyebrow_size": 12,
             "headline": "Stay True.",
-            "headline_color": "#FFFFFF",
+            "headline_color": "#ffffff",
             "headline_size": 64,
             "subline": "",
-            "subline_color": "#FCFCEA",
+            "subline_color": "#fcfcea",
             "subline_size": 18,
             "button1_text": "Shop Now",
             "button1_link": "",
             "button1_style": "filled",
-            "button1_bg": "#FFFFFF",
-            "button1_text_color": "#0A1A4F",
-            "button1_border": "#FFFFFF",
+            "button1_bg": "#ffffff",
+            "button1_text_color": "#0a1a4f",
+            "button1_border": "#ffffff",
             "button2_text": "",
             "button2_link": "",
             "button2_style": "outline",
-            "button2_bg": "#0A1A4F",
-            "button2_text_color": "#FFFFFF",
-            "button2_border": "#FFFFFF",
+            "button2_bg": "#0a1a4f",
+            "button2_text_color": "#ffffff",
+            "button2_border": "#ffffff",
             "content_position": "middle-center",
-            "scrim_color": "#0A1A4F",
+            "scrim_color": "#0a1a4f",
             "scrim_opacity": 30
           }
         }
@@ -307,100 +307,6 @@
         "change_slides_speed": 7
       }
     },
-    "tf_featured_in_hPBaPk": {
-      "type": "tf-featured-in",
-      "blocks": {
-        "logo_B7TQ7k": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/insider-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_V8TrkY": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/gq-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_A7Ucet": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/inc-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_jnRPh7": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/today-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_c7zkBY": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/mens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_7ryymL": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/shape-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_9Jmzcr": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/byrdie-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_KNVRq9": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/womens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_9kVmqQ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/wellgood_2.svg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_B7TQ7k",
-        "logo_V8TrkY",
-        "logo_A7Ucet",
-        "logo_jnRPh7",
-        "logo_c7zkBY",
-        "logo_7ryymL",
-        "logo_9Jmzcr",
-        "logo_KNVRq9",
-        "logo_9kVmqQ"
-      ],
-      "name": "As Featured In",
-      "settings": {
-        "eyebrow": "AS FEATURED IN",
-        "background_color": "#fcfcea",
-        "recolor": true,
-        "logo_color": "#0a1a4f",
-        "logo_height": 28,
-        "logo_max_width": 160,
-        "logo_opacity": 100,
-        "logo_spacing": 64,
-        "scroll_duration": 25,
-        "pause_on_hover": true,
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
     "tf_best_sellers_ypL9Xq": {
       "type": "tf-best-sellers",
       "blocks": {
@@ -497,6 +403,100 @@
         "color_scheme": "",
         "padding_top": 52,
         "padding_bottom": 16
+      }
+    },
+    "tf_featured_in_hPBaPk": {
+      "type": "tf-featured-in",
+      "blocks": {
+        "logo_B7TQ7k": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/insider-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_V8TrkY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/gq-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_A7Ucet": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/inc-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_jnRPh7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/today-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_c7zkBY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/mens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_7ryymL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shape-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_9Jmzcr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_KNVRq9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/womens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_9kVmqQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wellgood_2.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_B7TQ7k",
+        "logo_V8TrkY",
+        "logo_A7Ucet",
+        "logo_jnRPh7",
+        "logo_c7zkBY",
+        "logo_7ryymL",
+        "logo_9Jmzcr",
+        "logo_KNVRq9",
+        "logo_9kVmqQ"
+      ],
+      "name": "As Featured In",
+      "settings": {
+        "eyebrow": "AS FEATURED IN",
+        "background_color": "#fcfcea",
+        "recolor": true,
+        "logo_color": "#0a1a4f",
+        "logo_height": 28,
+        "logo_max_width": 160,
+        "logo_opacity": 100,
+        "logo_spacing": 64,
+        "scroll_duration": 25,
+        "pause_on_hover": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "store-logos-homepage": {
@@ -1465,8 +1465,8 @@
   "order": [
     "tf_hero_slideshow_nwh7di",
     "70a4820a-871c-4379-bba8-cccc8e424e7a",
-    "tf_featured_in_hPBaPk",
     "tf_best_sellers_ypL9Xq",
+    "tf_featured_in_hPBaPk",
     "store-logos-homepage",
     "b53bfdf0-4497-49b8-a03e-4d5de5af7526",
     "featured-collection-rsp-homepage",
