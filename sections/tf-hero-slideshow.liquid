@@ -42,6 +42,7 @@
 
   .tfhero__track {
     display: flex;
+    align-items: flex-start; /* keep each slide at its own aspect height (no stretch-crop) */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -56,10 +57,12 @@
     width: 100%;
     scroll-snap-align: start;
     overflow: hidden;
-    min-height: var(--tfhero-h-mobile, 88vh);
+    /* Adapt to the (mobile) image's natural shape so it's never cropped */
+    aspect-ratio: var(--ar-m, 3 / 4);
   }
   @media screen and (min-width: 750px) {
-    .tfhero__slide { min-height: var(--tfhero-h, 78vh); }
+    /* Adapt to the desktop image's natural shape */
+    .tfhero__slide { aspect-ratio: var(--ar-d, 16 / 9); }
   }
 
   /* Media fills the slide */
@@ -206,10 +209,26 @@
             assign mv_h = src.height
           endif
         endfor
+        comment
+          Per-device aspect ratio so each image shows in full (no cropping).
+        endcomment
+        assign ar_d = b.image.aspect_ratio
+        assign ar_m = b.image_mobile.aspect_ratio
+        if b.media_type == 'video'
+          assign ar_d = poster.aspect_ratio | default: b.desktop_video.aspect_ratio
+          assign ar_m = b.mobile_video.aspect_ratio
+        endif
+        if ar_d == blank
+          assign ar_d = 1.78
+        endif
+        if ar_m == blank
+          assign ar_m = ar_d
+        endif
       -%}
       <div
         class="tfhero__slide slideshow__slide"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
+        style="--ar-d: {{ ar_d }}; --ar-m: {{ ar_m }};"
         {{ block.shopify_attributes }}
       >
         {%- comment -%} Media {%- endcomment -%}
