@@ -174,11 +174,11 @@
         "logo_color": "#0a1a4f",
         "logo_height": 28,
         "logo_max_width": 160,
-        "logo_opacity": 100,
+        "logo_opacity": 80,
         "logo_spacing": 64,
         "scroll_duration": 25,
         "pause_on_hover": true,
-        "padding_top": 20,
+        "padding_top": 28,
         "padding_bottom": 28
       }
     },
