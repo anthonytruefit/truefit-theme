@@ -1,0 +1,310 @@
+{% comment %}
+  Us vs. Them Comparison
+  ----------------------
+  Row labels down the left; three columns: ours (highlighted, logo header,
+  breakout panel) + two competitors. Each cell is check / X / free text.
+
+  No <table>, no JavaScript. Built as per-row CSS grids that share one
+  grid-template-columns so columns align without horizontal scroll.
+
+  Mobile (Option A): collapse to OUR column vs ONE competitor, with CSS-only
+  radio tabs above the table to switch competitor. Hidden radios + ":checked ~"
+  toggle which competitor's cells show; the per-row grid drops to 3 tracks so
+  there is never a 3-column squeeze, overflow, or pinch-zoom.
+
+  Color resolution per cell: per-cell color -> column override -> global default.
+  Optional color settings have no default (blank) so the fallback chain works.
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --cmp-pt: {{ s.padding_top | times: 0.7 | round: 0 }}px;
+    --cmp-pb: {{ s.padding_bottom | times: 0.7 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --cmp-pt: {{ s.padding_top }}px;
+      --cmp-pb: {{ s.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .cmp { padding-top: var(--cmp-pt); padding-bottom: var(--cmp-pb); }
+
+  /* Header */
+  .cmp__head { text-align: center; max-width: 70rem; margin: 0 auto 3.2rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+  .cmp__eyebrow { font-family: var(--font-body-family); font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; line-height: 1.3; margin: 0; }
+  .cmp__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+  .cmp__subline { margin: 0; line-height: 1.5; }
+
+  /* Tabs (mobile only) */
+  .cmp__radio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .cmp__tabs { display: none; }
+  @media screen and (max-width: 749px) {
+    .cmp__tabs { display: flex; gap: 0.8rem; margin-bottom: 1.6rem; }
+    .cmp__tab {
+      flex: 1 1 0; min-height: 4.4rem; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 0.8rem 1rem; border-radius: 1rem; cursor: pointer;
+      font-size: 1.3rem; font-weight: 500; line-height: 1.2;
+      border: 0.1rem solid rgba(10,26,79,0.18); color: var(--tf-vanilla-dark, #40738d);
+    }
+    .cmp__radio--1:checked ~ .cmp__tabs .cmp__tab--1,
+    .cmp__radio--2:checked ~ .cmp__tabs .cmp__tab--2 {
+      background: var(--tf-navy, #0a1a4f); color: #fff; border-color: var(--tf-navy, #0a1a4f);
+    }
+  }
+
+  /* Table built from per-row grids */
+  .cmp__table { max-width: 90rem; margin: 0 auto; }
+  .cmp__row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;   /* mobile: label, ours, one competitor */
+    align-items: stretch;
+  }
+  @media screen and (min-width: 750px) {
+    .cmp__row { grid-template-columns: 1.4fr 1fr 1fr 1fr; }  /* desktop: + second competitor */
+  }
+
+  .cmp__rowlabel, .cmp__cell, .cmp__colhead {
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.6rem 1.2rem; text-align: center; min-height: 5.6rem;
+    border-bottom: 0.1rem solid rgba(10,26,79,0.10);
+  }
+  .cmp__rowlabel { justify-content: flex-start; text-align: left; font-weight: 500; font-size: 1.4rem; }
+
+  /* Column backgrounds */
+  .cmp__colhead--our, .cmp__cell--our, .cmp__foot { background: var(--cmp-our-bg, #0a1a4f); }
+  .cmp__colhead--c1, .cmp__cell--c1 { background: var(--cmp-c1-bg, transparent); }
+  .cmp__colhead--c2, .cmp__cell--c2 { background: var(--cmp-c2-bg, transparent); }
+  .cmp__cell--our { border-bottom-color: rgba(255,255,255,0.14); }
+
+  /* Header row + our-column breakout */
+  .cmp__colhead { font-weight: 600; font-size: 1.4rem; border-bottom: 0; }
+  .cmp__colhead--our {
+    flex-direction: column; gap: 0.6rem;
+    margin-top: -2.4rem; padding-top: 3.2rem;
+    border-radius: 1.6rem 1.6rem 0 0;
+    box-shadow: 0 -0.4rem 2rem rgba(10,26,79,0.12);
+  }
+  .cmp__logo { max-height: 3.2rem; max-width: 100%; width: auto; display: block; }
+  .cmp__our-name { font-size: 1.8rem; font-weight: 600; letter-spacing: -0.01em; }
+
+  .cmp__row--foot .cmp__rowlabel, .cmp__foot-empty { border-bottom: 0; min-height: 0; padding: 0; }
+  .cmp__foot {
+    min-height: 2rem; padding: 0; border-bottom: 0;
+    margin-bottom: -2.4rem; border-radius: 0 0 1.6rem 1.6rem;
+    box-shadow: 0 0.4rem 2rem rgba(10,26,79,0.12);
+  }
+
+  /* Cell content */
+  .cmp__icon { display: inline-flex; }
+  .cmp__svg { width: 2.2rem; height: 2.2rem; }
+  .cmp__text { font-weight: 600; font-size: 1.5rem; }
+
+  /* Mobile: show our + ONE competitor, switch via radios */
+  @media screen and (max-width: 749px) {
+    .cmp__radio--1:checked ~ .cmp__table .cmp__cell--c2,
+    .cmp__radio--1:checked ~ .cmp__table .cmp__colhead--c2,
+    .cmp__radio--1:checked ~ .cmp__table .cmp__c2foot { display: none; }
+    .cmp__radio--2:checked ~ .cmp__table .cmp__cell--c1,
+    .cmp__radio--2:checked ~ .cmp__table .cmp__colhead--c1,
+    .cmp__radio--2:checked ~ .cmp__table .cmp__c1foot { display: none; }
+    .cmp__rowlabel { font-size: 1.3rem; }
+  }
+</style>
+
+{%- capture icon_check -%}<svg class="cmp__svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{%- endcapture -%}
+{%- capture icon_x -%}<svg class="cmp__svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>{%- endcapture -%}
+
+<div
+  class="cmp"
+  style="background: {{ s.background }}; --cmp-our-bg: {{ s.our_bg }}; --cmp-c1-bg: {{ s.c1_bg }}; --cmp-c2-bg: {{ s.c2_bg }};"
+>
+  <div class="cmp__inner page-width">
+  {%- if s.eyebrow != blank or s.headline != blank or s.subline != blank -%}
+    <div class="cmp__head">
+      {%- if s.eyebrow != blank -%}<p class="cmp__eyebrow" style="color: {{ s.eyebrow_color }}; font-size: {{ s.eyebrow_size }}px;">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="cmp__headline" style="color: {{ s.headline_color }}; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px);">{{ s.headline }}</h2>{%- endif -%}
+      {%- if s.subline != blank -%}<p class="cmp__subline" style="color: {{ s.subline_color }}; font-size: {{ s.subline_size }}px;">{{ s.subline }}</p>{%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <input type="radio" name="cmp-{{ section.id }}" id="cmp-{{ section.id }}-1" class="cmp__radio cmp__radio--1" checked>
+  <input type="radio" name="cmp-{{ section.id }}" id="cmp-{{ section.id }}-2" class="cmp__radio cmp__radio--2">
+
+  <div class="cmp__tabs" role="tablist" aria-label="Choose a competitor to compare">
+    <label class="cmp__tab cmp__tab--1" for="cmp-{{ section.id }}-1">{{ s.c1_label }}</label>
+    <label class="cmp__tab cmp__tab--2" for="cmp-{{ section.id }}-2">{{ s.c2_label }}</label>
+  </div>
+
+  <div class="cmp__table">
+    {%- comment -%} Header row {%- endcomment -%}
+    <div class="cmp__row cmp__row--head">
+      <div class="cmp__rowlabel cmp__rowlabel--head"></div>
+      <div class="cmp__colhead cmp__colhead--our" style="color: {{ s.our_header_text_color }};">
+        {%- if s.our_logo != blank -%}
+          <img class="cmp__logo" src="{{ s.our_logo | image_url: width: 320 }}" alt="{{ s.our_label | escape }}" loading="lazy">
+        {%- else -%}
+          <span class="cmp__our-name">{{ s.our_label }}</span>
+        {%- endif -%}
+      </div>
+      <div class="cmp__colhead cmp__colhead--c1" style="color: {{ s.c1_cell_color }};">{{ s.c1_label }}</div>
+      <div class="cmp__colhead cmp__colhead--c2" style="color: {{ s.c2_cell_color }};">{{ s.c2_label }}</div>
+    </div>
+
+    {%- comment -%} Data rows {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      <div class="cmp__row" {{ block.shopify_attributes }}>
+        <div class="cmp__rowlabel" style="color: {{ b.row_label_color }};">{{ b.row_label }}</div>
+
+        {%- comment -%} Our cell {%- endcomment -%}
+        <div class="cmp__cell cmp__cell--our">
+          {%- if b.our_type == 'check' -%}
+            <span class="cmp__icon" style="color: {{ b.our_color | default: s.our_check_color | default: s.our_cell_color }};">{{ icon_check }}<span class="visually-hidden">Yes</span></span>
+          {%- elsif b.our_type == 'x' -%}
+            <span class="cmp__icon" style="color: {{ b.our_color | default: s.our_x_color | default: s.our_cell_color }};">{{ icon_x }}<span class="visually-hidden">No</span></span>
+          {%- else -%}
+            <span class="cmp__text" style="color: {{ b.our_color | default: s.our_cell_color }};">{{ b.our_text }}</span>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Competitor 1 cell {%- endcomment -%}
+        <div class="cmp__cell cmp__cell--c1">
+          {%- if b.c1_type == 'check' -%}
+            <span class="cmp__icon" style="color: {{ b.c1_color | default: s.c1_check_color | default: s.check_color }};">{{ icon_check }}<span class="visually-hidden">Yes</span></span>
+          {%- elsif b.c1_type == 'x' -%}
+            <span class="cmp__icon" style="color: {{ b.c1_color | default: s.c1_x_color | default: s.x_color }};">{{ icon_x }}<span class="visually-hidden">No</span></span>
+          {%- else -%}
+            <span class="cmp__text" style="color: {{ b.c1_color | default: s.c1_cell_color }};">{{ b.c1_text }}</span>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Competitor 2 cell {%- endcomment -%}
+        <div class="cmp__cell cmp__cell--c2">
+          {%- if b.c2_type == 'check' -%}
+            <span class="cmp__icon" style="color: {{ b.c2_color | default: s.c2_check_color | default: s.check_color }};">{{ icon_check }}<span class="visually-hidden">Yes</span></span>
+          {%- elsif b.c2_type == 'x' -%}
+            <span class="cmp__icon" style="color: {{ b.c2_color | default: s.c2_x_color | default: s.x_color }};">{{ icon_x }}<span class="visually-hidden">No</span></span>
+          {%- else -%}
+            <span class="cmp__text" style="color: {{ b.c2_color | default: s.c2_cell_color }};">{{ b.c2_text }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+
+    {%- comment -%} Our-column footer cap (breakout below) {%- endcomment -%}
+    <div class="cmp__row cmp__row--foot">
+      <div class="cmp__rowlabel"></div>
+      <div class="cmp__foot cmp__cell--our"></div>
+      <div class="cmp__foot-empty cmp__c1foot"></div>
+      <div class="cmp__foot-empty cmp__c2foot"></div>
+    </div>
+  </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Us vs. Them Comparison",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "header", "content": "Section" },
+    { "type": "color", "id": "background", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 56 },
+
+    { "type": "header", "content": "Section header (optional)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "THE TRUEFIT DIFFERENCE" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
+    { "type": "range", "id": "eyebrow_size", "min": 9, "max": 18, "step": 1, "unit": "px", "label": "Eyebrow size", "default": 11 },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "See the difference." },
+    { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "range", "id": "headline_size", "min": 22, "max": 56, "step": 1, "unit": "px", "label": "Headline size", "default": 34 },
+    { "type": "text", "id": "subline", "label": "Sub-line" },
+    { "type": "color", "id": "subline_color", "label": "Sub-line color", "default": "#40738D" },
+    { "type": "range", "id": "subline_size", "min": 12, "max": 24, "step": 1, "unit": "px", "label": "Sub-line size", "default": 16 },
+
+    { "type": "header", "content": "Our column" },
+    { "type": "image_picker", "id": "our_logo", "label": "Logo (optional)" },
+    { "type": "text", "id": "our_label", "label": "Name (used if no logo)", "default": "TrueFit" },
+    { "type": "color", "id": "our_header_text_color", "label": "Header text color", "default": "#FFFFFF" },
+    { "type": "color", "id": "our_bg", "label": "Highlight panel background", "default": "#0A1A4F" },
+    { "type": "color", "id": "our_cell_color", "label": "Cell text + icon color", "default": "#FFFFFF" },
+    { "type": "color", "id": "our_check_color", "label": "Check color override (optional)" },
+    { "type": "color", "id": "our_x_color", "label": "X color override (optional)" },
+
+    { "type": "header", "content": "Competitor 1" },
+    { "type": "text", "id": "c1_label", "label": "Header label", "default": "Synthetic Protein Powder" },
+    { "type": "color", "id": "c1_bg", "label": "Column background", "default": "#F4F4EC" },
+    { "type": "color", "id": "c1_cell_color", "label": "Cell text color", "default": "#40738D" },
+    { "type": "color", "id": "c1_check_color", "label": "Check color override (optional)" },
+    { "type": "color", "id": "c1_x_color", "label": "X color override (optional)" },
+
+    { "type": "header", "content": "Competitor 2" },
+    { "type": "text", "id": "c2_label", "label": "Header label", "default": "Overpriced Greens Powder" },
+    { "type": "color", "id": "c2_bg", "label": "Column background", "default": "#F4F4EC" },
+    { "type": "color", "id": "c2_cell_color", "label": "Cell text color", "default": "#40738D" },
+    { "type": "color", "id": "c2_check_color", "label": "Check color override (optional)" },
+    { "type": "color", "id": "c2_x_color", "label": "X color override (optional)" },
+
+    { "type": "header", "content": "Icons (global defaults)" },
+    { "type": "color", "id": "check_color", "label": "Check color", "default": "#3F9D6B" },
+    { "type": "color", "id": "x_color", "label": "X color", "default": "#C2C7D0" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "row_label", "label": "Row label", "default": "Feature" },
+        { "type": "color", "id": "row_label_color", "label": "Row label color", "default": "#0A1A4F" },
+
+        { "type": "header", "content": "Our cell" },
+        {
+          "type": "select", "id": "our_type", "label": "Type", "default": "check",
+          "options": [ { "value": "check", "label": "Check" }, { "value": "x", "label": "X" }, { "value": "text", "label": "Text" } ]
+        },
+        { "type": "text", "id": "our_text", "label": "Text value" },
+        { "type": "color", "id": "our_color", "label": "Color override (optional)" },
+
+        { "type": "header", "content": "Competitor 1 cell" },
+        {
+          "type": "select", "id": "c1_type", "label": "Type", "default": "x",
+          "options": [ { "value": "check", "label": "Check" }, { "value": "x", "label": "X" }, { "value": "text", "label": "Text" } ]
+        },
+        { "type": "text", "id": "c1_text", "label": "Text value" },
+        { "type": "color", "id": "c1_color", "label": "Color override (optional)" },
+
+        { "type": "header", "content": "Competitor 2 cell" },
+        {
+          "type": "select", "id": "c2_type", "label": "Type", "default": "x",
+          "options": [ { "value": "check", "label": "Check" }, { "value": "x", "label": "X" }, { "value": "text", "label": "Text" } ]
+        },
+        { "type": "text", "id": "c2_text", "label": "Text value" },
+        { "type": "color", "id": "c2_color", "label": "Color override (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Us vs. Them Comparison",
+      "blocks": [
+        { "type": "row", "settings": { "row_label": "25g Grass-Fed Whey Protein", "our_type": "check", "c1_type": "x", "c2_type": "x" } },
+        { "type": "row", "settings": { "row_label": "Prebiotic Fiber and Probiotics", "our_type": "check", "c1_type": "x", "c2_type": "x" } },
+        { "type": "row", "settings": { "row_label": "Fruits and Veggies", "our_type": "check", "c1_type": "x", "c2_type": "x" } },
+        { "type": "row", "settings": { "row_label": "Cost Per Serving", "our_type": "text", "our_text": "$1.92*", "c1_type": "text", "c1_text": "~$2.75", "c2_type": "text", "c2_text": "~$3.60" } },
+        { "type": "row", "settings": { "row_label": "Zero Artificial Ingredients", "our_type": "check", "c1_type": "x", "c2_type": "x" } },
+        { "type": "row", "settings": { "row_label": "100% Money Back Guarantee", "our_type": "check", "c1_type": "x", "c2_type": "x" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
