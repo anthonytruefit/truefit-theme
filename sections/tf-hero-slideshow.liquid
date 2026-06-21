@@ -1,0 +1,420 @@
+{% comment %}
+  TrueFit Hero Slideshow
+  ----------------------
+  Full-width rotating slideshow; each slide is an image OR autoplay video, with
+  9-grid content placement, a per-slide scrim, and up to two buttons.
+
+  Reuses the theme's <slideshow-component> (global.js) for arrows / dots /
+  auto-rotate + speed. When auto-rotate is on, a .slideshow__autoplay button is
+  rendered (required so the component never dereferences an undefined
+  reducedMotion). Prev/next stay in the DOM (hidden when arrows are off) so the
+  slider JS always binds.
+
+  Performance (top-of-page, mobile-first):
+  - Image slides use <picture> so phones download only the mobile source.
+  - Slide 1's image/poster loads eagerly (LCP); the rest lazy-load.
+  - Video slides paint the poster instantly; the <video> is NOT in initial
+    render. A tiny tf-hero-video element loads it only when the slide is on
+    screen, picks mobile/desktop source via matchMedia, plays muted+loop+
+    playsinline, falls back to the poster on error, and stays static under
+    prefers-reduced-motion. Video never blocks first paint.
+{% endcomment %}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign s = section.settings
+  assign do_autoplay = false
+  if s.autorotate and section.blocks.size > 1
+    assign do_autoplay = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --tfhero-h: {{ s.desktop_height }}vh;
+    --tfhero-h-mobile: {{ s.mobile_height }}vh;
+  }
+{%- endstyle -%}
+
+<style>
+  .tfhero { position: relative; }
+
+  .tfhero__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tfhero__track::-webkit-scrollbar { display: none; }
+
+  .tfhero__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    overflow: hidden;
+    min-height: var(--tfhero-h-mobile, 88vh);
+  }
+  @media screen and (min-width: 750px) {
+    .tfhero__slide { min-height: var(--tfhero-h, 78vh); }
+  }
+
+  /* Media fills the slide */
+  .tfhero__media, .tfhero__media img, .tfhero__poster, .tfhero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tfhero__video { opacity: 0; transition: opacity 0.5s ease; }
+  tf-hero-video.is-playing .tfhero__video { opacity: 1; }
+
+  .tfhero__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+  /* Content overlay + 9-grid placement */
+  .tfhero__cw {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    padding: clamp(2rem, 5vw, 6rem);
+  }
+  .tfhero__cw--top { align-items: flex-start; }
+  .tfhero__cw--middle { align-items: center; }
+  .tfhero__cw--bottom { align-items: flex-end; }
+  .tfhero__cw--left { justify-content: flex-start; }
+  .tfhero__cw--center { justify-content: center; }
+  .tfhero__cw--right { justify-content: flex-end; }
+
+  .tfhero__content { display: flex; flex-direction: column; gap: 1.4rem; max-width: 60rem; }
+  .tfhero__cw--left .tfhero__content { align-items: flex-start; text-align: left; }
+  .tfhero__cw--center .tfhero__content { align-items: center; text-align: center; }
+  .tfhero__cw--right .tfhero__content { align-items: flex-end; text-align: right; }
+  @media screen and (max-width: 749px) {
+    .tfhero__content { max-width: 100%; }
+  }
+
+  .tfhero__eyebrow { font-family: var(--font-body-family); font-weight: 500; text-transform: uppercase; line-height: 1.3; margin: 0; }
+  .tfhero__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+  .tfhero__subline { margin: 0; line-height: 1.5; }
+
+  .tfhero__buttons { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.8rem; }
+  .tfhero__cw--center .tfhero__buttons { justify-content: center; }
+  .tfhero__cw--right .tfhero__buttons { justify-content: flex-end; }
+  .tfhero__btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 4.8rem; padding: 0 2.8rem;
+    border-radius: var(--buttons-radius, 0.4rem);
+    border: 0.15rem solid transparent;
+    font-size: 1.3rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: opacity 0.2s ease;
+  }
+  .tfhero__btn:hover { opacity: 0.88; }
+  @media screen and (max-width: 749px) {
+    .tfhero__btn { flex: 1 1 100%; }   /* stack full-width on phones */
+  }
+
+  /* Controls */
+  .tfhero__controls {
+    position: absolute;
+    left: 0; right: 0; bottom: 2rem;
+    z-index: 3;
+    display: flex; align-items: center; justify-content: center; gap: 1.6rem;
+    padding: 0 2rem;
+  }
+  .tfhero__controls--no-arrows .slider-button { display: none; }
+  .tfhero__controls .slider-button {
+    width: 4rem; height: 4rem; border-radius: 50%;
+    background: rgba(255,255,255,0.85); color: #0a1a4f; border: 0;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .tfhero__controls .slider-button .icon-caret { width: 1.4rem; }
+  .tfhero__dots { display: flex; gap: 0.8rem; }
+  .tfhero__dots .slider-counter__link {
+    width: 1rem; height: 1rem; border-radius: 50%; padding: 0; border: 0; cursor: pointer;
+    background: rgba(255,255,255,0.5);
+  }
+  .tfhero__dots .slider-counter__link .dot { display: block; width: 100%; height: 100%; }
+  .tfhero__dots .slider-counter__link--active { background: #fff; }
+  .slideshow__autoplay {
+    width: 4rem; height: 4rem; border-radius: 50%; border: 0; cursor: pointer;
+    background: rgba(255,255,255,0.85); color: #0a1a4f;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .slideshow__autoplay svg { width: 1.6rem; height: 1.6rem; }
+  .slideshow__autoplay .icon-play { display: none; }
+  .slideshow__autoplay--paused .icon-play { display: block; }
+  .slideshow__autoplay--paused .icon-pause { display: none; }
+</style>
+
+<slideshow-component
+  class="tfhero"
+  role="region"
+  aria-roledescription="{{ 'sections.slideshow.carousel' | t | default: 'carousel' }}"
+  aria-label="{{ section.settings.eyebrow | default: 'Hero slideshow' | escape }}"
+>
+  <div
+    id="Slider-{{ section.id }}"
+    class="tfhero__track"
+    data-autoplay="{% if do_autoplay %}true{% else %}false{% endif %}"
+    data-speed="{{ s.rotation_speed }}"
+    aria-live="polite"
+  >
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign b = block.settings
+        assign parts = b.content_position | split: '-'
+        assign vpos = parts[0]
+        assign hpos = parts[1]
+        assign load_attr = 'lazy'
+        assign fetch_attr = 'auto'
+        if forloop.first
+          assign load_attr = 'eager'
+          assign fetch_attr = 'high'
+        endif
+        assign poster = b.video_poster | default: b.desktop_video.preview_image
+        assign dv_src = ''
+        assign dv_h = 0
+        for src in b.desktop_video.sources
+          if src.format == 'mp4' and src.height > dv_h
+            assign dv_src = src.url
+            assign dv_h = src.height
+          endif
+        endfor
+        assign mv_src = ''
+        assign mv_h = 0
+        for src in b.mobile_video.sources
+          if src.format == 'mp4' and src.height > mv_h
+            assign mv_src = src.url
+            assign mv_h = src.height
+          endif
+        endfor
+      -%}
+      <div
+        class="tfhero__slide slideshow__slide"
+        id="Slide-{{ section.id }}-{{ forloop.index }}"
+        {{ block.shopify_attributes }}
+      >
+        {%- comment -%} Media {%- endcomment -%}
+        {%- if b.media_type == 'video' and dv_src != blank -%}
+          <tf-hero-video class="tfhero__media tfhero__media--video" data-desktop="{{ dv_src }}" data-mobile="{{ mv_src }}">
+            {%- if poster != blank -%}
+              <img
+                class="tfhero__poster"
+                src="{{ poster | image_url: width: 2000 }}"
+                srcset="{{ poster | image_url: width: 750 }} 750w, {{ poster | image_url: width: 1000 }} 1000w, {{ poster | image_url: width: 1500 }} 1500w, {{ poster | image_url: width: 2000 }} 2000w"
+                sizes="100vw"
+                alt="{{ b.headline | escape }}"
+                loading="{{ load_attr }}"
+                fetchpriority="{{ fetch_attr }}"
+              >
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'tfhero__poster placeholder-svg' }}
+            {%- endif -%}
+          </tf-hero-video>
+        {%- else -%}
+          <picture class="tfhero__media">
+            {%- if b.image_mobile != blank -%}
+              <source media="(max-width: 749px)" srcset="{{ b.image_mobile | image_url: width: 1000 }} 1000w, {{ b.image_mobile | image_url: width: 750 }} 750w, {{ b.image_mobile | image_url: width: 500 }} 500w" sizes="100vw">
+            {%- endif -%}
+            {%- if b.image != blank -%}
+              <img
+                src="{{ b.image | image_url: width: 2000 }}"
+                srcset="{{ b.image | image_url: width: 1000 }} 1000w, {{ b.image | image_url: width: 1500 }} 1500w, {{ b.image | image_url: width: 2000 }} 2000w, {{ b.image | image_url: width: 3000 }} 3000w"
+                sizes="100vw"
+                alt="{{ b.headline | escape }}"
+                width="{{ b.image.width }}" height="{{ b.image.height }}"
+                loading="{{ load_attr }}" fetchpriority="{{ fetch_attr }}"
+              >
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </picture>
+        {%- endif -%}
+
+        {%- comment -%} Scrim {%- endcomment -%}
+        {%- if b.scrim_opacity > 0 -%}
+          <div class="tfhero__scrim" style="background: {{ b.scrim_color }}; opacity: {{ b.scrim_opacity | divided_by: 100.0 }};"></div>
+        {%- endif -%}
+
+        {%- comment -%} Content {%- endcomment -%}
+        <div class="tfhero__cw tfhero__cw--{{ vpos }} tfhero__cw--{{ hpos }}">
+          <div class="tfhero__content">
+            {%- if b.eyebrow != blank -%}
+              <p class="tfhero__eyebrow" style="color: {{ b.eyebrow_color }}; font-size: {{ b.eyebrow_size }}px; letter-spacing: 0.12em;">{{ b.eyebrow }}</p>
+            {%- endif -%}
+            {%- if b.headline != blank -%}
+              <h2 class="tfhero__headline" style="color: {{ b.headline_color }}; font-size: clamp(3.2rem, 7vw, {{ b.headline_size }}px);">{{ b.headline }}</h2>
+            {%- endif -%}
+            {%- if b.subline != blank -%}
+              <p class="tfhero__subline" style="color: {{ b.subline_color }}; font-size: clamp(1.5rem, 3.5vw, {{ b.subline_size }}px);">{{ b.subline }}</p>
+            {%- endif -%}
+
+            {%- if b.button1_text != blank or b.button2_text != blank -%}
+              <div class="tfhero__buttons">
+                {%- if b.button1_text != blank -%}
+                  <a class="tfhero__btn" href="{{ b.button1_link | default: '#' }}"
+                    style="color: {{ b.button1_text_color }}; border-color: {{ b.button1_border }}; background: {% if b.button1_style == 'filled' %}{{ b.button1_bg }}{% else %}transparent{% endif %};">{{ b.button1_text }}</a>
+                {%- endif -%}
+                {%- if b.button2_text != blank -%}
+                  <a class="tfhero__btn" href="{{ b.button2_link | default: '#' }}"
+                    style="color: {{ b.button2_text_color }}; border-color: {{ b.button2_border }}; background: {% if b.button2_style == 'filled' %}{{ b.button2_bg }}{% else %}transparent{% endif %};">{{ b.button2_text }}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    <div class="tfhero__controls slider-buttons{% unless s.show_arrows %} tfhero__controls--no-arrows{% endunless %}">
+      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+      {%- if s.show_dots -%}
+        <div class="tfhero__dots slider-counter" role="tablist">
+          {%- for block in section.blocks -%}
+            <button type="button" class="slider-counter__link link" aria-label="{{ 'sections.slideshow.load_slide' | t | default: 'Slide' }} {{ forloop.index }}"><span class="dot"></span></button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+      {%- if do_autoplay -%}
+        <button type="button" class="slideshow__autoplay" aria-label="{{ 'sections.slideshow.pause_slideshow' | t | default: 'Pause slideshow' }}">{% render 'icon-pause' %}{% render 'icon-play' %}</button>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</slideshow-component>
+
+<script>
+  (function () {
+    if (window.customElements && customElements.get('tf-hero-video')) return;
+    class TFHeroVideo extends HTMLElement {
+      connectedCallback() {
+        if (this._init) return;
+        this._init = true;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep poster
+        this._io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) { this.loadVideo(); this._io.disconnect(); } });
+        }, { rootMargin: '200px' });
+        this._io.observe(this);
+      }
+      loadVideo() {
+        if (this._loaded) return;
+        this._loaded = true;
+        var isMobile = window.matchMedia('(max-width: 749px)').matches;
+        var src = (isMobile && this.dataset.mobile) ? this.dataset.mobile : this.dataset.desktop;
+        if (!src) return;
+        var v = document.createElement('video');
+        v.className = 'tfhero__video';
+        v.muted = true; v.loop = true; v.defaultMuted = true; v.playsInline = true;
+        v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('loop', '');
+        v.preload = 'auto';
+        var self = this;
+        v.addEventListener('canplay', function () { self.classList.add('is-playing'); });
+        v.addEventListener('error', function () { self.classList.remove('is-playing'); v.remove(); });
+        v.src = src;
+        this.appendChild(v);
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+    }
+    customElements.define('tf-hero-video', TFHeroVideo);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "TrueFit Hero Slideshow",
+  "tag": "section",
+  "class": "section tf-hero-slideshow",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "header", "content": "Slideshow settings" },
+    { "type": "checkbox", "id": "autorotate", "label": "Auto-rotate slides", "default": false },
+    { "type": "range", "id": "rotation_speed", "min": 3, "max": 12, "step": 1, "unit": "s", "label": "Rotation speed", "default": 6 },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_dots", "label": "Show dots", "default": true },
+    { "type": "range", "id": "desktop_height", "min": 40, "max": 100, "step": 2, "unit": "vh", "label": "Slide height (desktop)", "default": 78 },
+    { "type": "range", "id": "mobile_height", "min": 50, "max": 100, "step": 2, "unit": "vh", "label": "Slide height (mobile)", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "header", "content": "Media" },
+        {
+          "type": "select", "id": "media_type", "label": "Media type", "default": "image",
+          "options": [ { "value": "image", "label": "Image" }, { "value": "video", "label": "Video" } ]
+        },
+        { "type": "image_picker", "id": "image", "label": "Image (desktop)" },
+        { "type": "image_picker", "id": "image_mobile", "label": "Image (mobile, optional)", "info": "Portrait-friendly crop so landscape heroes don't crop badly on phones." },
+        { "type": "video", "id": "desktop_video", "label": "Video (desktop)" },
+        { "type": "video", "id": "mobile_video", "label": "Video (mobile, optional)", "info": "Lighter / portrait video for phones." },
+        { "type": "image_picker", "id": "video_poster", "label": "Video poster", "info": "Shows instantly while the video loads, and is the fallback if video can't play." },
+
+        { "type": "header", "content": "Text" },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow / rating line" },
+        { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#FCFCEA" },
+        { "type": "range", "id": "eyebrow_size", "min": 9, "max": 20, "step": 1, "unit": "px", "label": "Eyebrow size", "default": 12 },
+        { "type": "text", "id": "headline", "label": "Headline", "default": "Stay True." },
+        { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#FFFFFF" },
+        { "type": "range", "id": "headline_size", "min": 28, "max": 96, "step": 2, "unit": "px", "label": "Headline size (desktop)", "default": 64 },
+        { "type": "text", "id": "subline", "label": "Sub-line" },
+        { "type": "color", "id": "subline_color", "label": "Sub-line color", "default": "#FCFCEA" },
+        { "type": "range", "id": "subline_size", "min": 13, "max": 32, "step": 1, "unit": "px", "label": "Sub-line size", "default": 18 },
+
+        { "type": "header", "content": "Buttons" },
+        { "type": "text", "id": "button1_text", "label": "Button 1 text", "default": "Shop Now" },
+        { "type": "url", "id": "button1_link", "label": "Button 1 link" },
+        {
+          "type": "select", "id": "button1_style", "label": "Button 1 style", "default": "filled",
+          "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
+        },
+        { "type": "color", "id": "button1_bg", "label": "Button 1 background", "default": "#FFFFFF" },
+        { "type": "color", "id": "button1_text_color", "label": "Button 1 text color", "default": "#0A1A4F" },
+        { "type": "color", "id": "button1_border", "label": "Button 1 border", "default": "#FFFFFF" },
+        { "type": "text", "id": "button2_text", "label": "Button 2 text" },
+        { "type": "url", "id": "button2_link", "label": "Button 2 link" },
+        {
+          "type": "select", "id": "button2_style", "label": "Button 2 style", "default": "outline",
+          "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
+        },
+        { "type": "color", "id": "button2_bg", "label": "Button 2 background", "default": "#0A1A4F" },
+        { "type": "color", "id": "button2_text_color", "label": "Button 2 text color", "default": "#FFFFFF" },
+        { "type": "color", "id": "button2_border", "label": "Button 2 border", "default": "#FFFFFF" },
+
+        { "type": "header", "content": "Placement & overlay" },
+        {
+          "type": "select", "id": "content_position", "label": "Content position", "default": "middle-center",
+          "options": [
+            { "value": "top-left", "label": "Top left" },
+            { "value": "top-center", "label": "Top center" },
+            { "value": "top-right", "label": "Top right" },
+            { "value": "middle-left", "label": "Middle left" },
+            { "value": "middle-center", "label": "Middle center" },
+            { "value": "middle-right", "label": "Middle right" },
+            { "value": "bottom-left", "label": "Bottom left" },
+            { "value": "bottom-center", "label": "Bottom center" },
+            { "value": "bottom-right", "label": "Bottom right" }
+          ]
+        },
+        { "type": "color", "id": "scrim_color", "label": "Overlay color", "default": "#0A1A4F" },
+        { "type": "range", "id": "scrim_opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "label": "Overlay opacity", "default": 30 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TrueFit Hero Slideshow",
+      "blocks": [ { "type": "slide" }, { "type": "slide" } ]
+    }
+  ]
+}
+{% endschema %}
