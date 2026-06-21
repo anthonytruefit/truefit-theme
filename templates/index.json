@@ -1076,10 +1076,6 @@
         "padding_bottom": 36
       }
     },
-    "1779400510f90dc326": {
-      "type": "_blocks",
-      "settings": {}
-    },
     "tf_standard_AiTciF": {
       "type": "tf-standard",
       "blocks": {
@@ -1628,7 +1624,6 @@
     "45c67a54-69e7-4dc3-a9d2-e4ccc245d2e9",
     "1780502619b33d2581",
     "eba58f30-4501-4689-980e-6f0b86699042",
-    "1779400510f90dc326",
     "tf_standard_AiTciF",
     "tf_featured_item_nKpD8J",
     "tf_comparison_TLTdkb",
