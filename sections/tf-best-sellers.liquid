@@ -220,13 +220,33 @@
   .tfbs__form { margin-top: auto; padding-top: 1.2rem; }
   .tfbs__add { width: 100%; }
 
-  .tfbs__buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-    margin-top: 2rem;
+  /* Nav arrows overlay the card row, vertically centered, hugging the edges */
+  .tfbs__slider { position: relative; }
+  .tfbs__buttons { display: contents; }
+  .tfbs__buttons .slider-counter { position: absolute; }
+  .tfbs__slider .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: var(--tf-navy, #0a1a4f);
+    color: #fff;
+    box-shadow: 0 0.4rem 1.2rem rgba(10, 26, 79, 0.18);
+    transition: transform 0.15s ease, opacity 0.15s ease;
   }
-  .tfbs__buttons .slider-button { background: transparent; }
+  .tfbs__slider .slider-button .icon { height: 0.9rem; }
+  .tfbs__slider .slider-button--prev { left: -1.2rem; }
+  .tfbs__slider .slider-button--next { right: -1.2rem; }
+  .tfbs__slider .slider-button:not([disabled]):hover { color: #fff; transform: translateY(-50%) scale(1.06); }
+  .tfbs__slider .slider-button[disabled] { opacity: 0.35; }
+
+  /* Touch: swipe + peek instead of arrows */
+  @media screen and (max-width: 749px) {
+    .tfbs__slider .slider-button { display: none; }
+  }
 </style>
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -247,7 +267,7 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter">
+    <slider-component class="slider-mobile-gutter tfbs__slider">
       <ul class="tfbs__grid" id="Slider-{{ section.id }}" role="list">
         {%- for block in section.blocks -%}
           {%- assign product = block.settings.product -%}
