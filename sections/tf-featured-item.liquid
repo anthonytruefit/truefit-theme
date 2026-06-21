@@ -149,7 +149,7 @@
     {%- if s.eyebrow != blank or s.headline != blank or s.subhead != blank -%}
       <div class="tffit__header">
         {%- if s.eyebrow != blank -%}
-          <span class="tffit__eyebrow" style="color: {{ s.eyebrow_color }}; font-size: {{ s.eyebrow_size }}px; letter-spacing: {{ s.eyebrow_spacing }}px;">{{ s.eyebrow }}</span>
+          <span class="tffit__eyebrow" style="color: {{ s.eyebrow_color }}; font-size: {{ s.eyebrow_size }}px; letter-spacing: 0.14em;">{{ s.eyebrow }}</span>
         {%- endif -%}
         {%- if s.headline != blank -%}
           <h2 class="tffit__headline" style="color: {{ s.headline_color }}; font-size: clamp(2.8rem, 5.5vw, {{ s.headline_size }}px);">{{ s.headline }}</h2>
@@ -219,10 +219,9 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "NEW ITEM" },
     { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
     { "type": "range", "id": "eyebrow_size", "min": 9, "max": 18, "step": 1, "unit": "px", "label": "Eyebrow size", "default": 11 },
-    { "type": "range", "id": "eyebrow_spacing", "min": 0, "max": 6, "step": 1, "unit": "px", "label": "Eyebrow letter-spacing", "default": 2 },
     { "type": "text", "id": "headline", "label": "Headline", "default": "Meet [Product]." },
     { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
-    { "type": "range", "id": "headline_size", "min": 22, "max": 64, "step": 1, "unit": "px", "label": "Headline size (desktop)", "default": 40 },
+    { "type": "range", "id": "headline_size", "min": 22, "max": 64, "step": 1, "unit": "px", "label": "Headline size (desktop)", "default": 34 },
     { "type": "text", "id": "subhead", "label": "Sub-headline", "default": "A short benefit-driven tagline." },
     { "type": "color", "id": "subhead_color", "label": "Sub-headline color", "default": "#40738D" },
     { "type": "range", "id": "subhead_size", "min": 12, "max": 28, "step": 1, "unit": "px", "label": "Sub-headline size", "default": 17 },
@@ -270,14 +269,14 @@
     { "type": "header", "content": "Button" },
     { "type": "text", "id": "button_text", "label": "Button text", "default": "Shop Now" },
     { "type": "url", "id": "button_link", "label": "Button link", "info": "Pick a product, collection, or page, or paste any URL." },
-    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#0A1A4F" },
+    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#FFFFFF" },
     { "type": "color", "id": "button_border_color", "label": "Button border color", "default": "#0A1A4F" },
-    { "type": "color", "id": "button_bg_color", "label": "Button background color", "default": "rgba(0,0,0,0)" },
+    { "type": "color", "id": "button_bg_color", "label": "Button background color", "default": "#0A1A4F" },
 
     { "type": "header", "content": "Section" },
     { "type": "color", "id": "background", "label": "Section background", "default": "#FFFFFF" },
-    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 56 },
-    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 56 }
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
   ],
   "blocks": [
     {

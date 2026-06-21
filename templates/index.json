@@ -1188,13 +1188,13 @@
       ],
       "name": "Featured Item",
       "settings": {
-        "eyebrow": "FEATUED ITEM",
+        "eyebrow": "FEATURED ITEM",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "eyebrow_spacing": 2,
         "headline": "Meet TrueFit Protein",
         "headline_color": "#0a1a4f",
-        "headline_size": 40,
+        "headline_size": 34,
         "subhead": "This is protein, elevated - with fiber, probiotics, & superfoods built in.",
         "subhead_color": "#40738d",
         "subhead_size": 17,
@@ -1219,12 +1219,12 @@
         "badge_text_color": "#0a1a4f",
         "button_text": "Shop Now",
         "button_link": "shopify://products/truefit-vanilla",
-        "button_text_color": "#0a1a4f",
-        "button_border_color": "#0a1a4f",
-        "button_bg_color": "rgba(0,0,0,0)",
+        "button_text_color": "#FFFFFF",
+        "button_border_color": "#0A1A4F",
+        "button_bg_color": "#0A1A4F",
         "background": "#ffffff",
-        "padding_top": 28,
-        "padding_bottom": 56
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "tf_comparison_TLTdkb": {
