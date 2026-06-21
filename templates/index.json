@@ -1608,8 +1608,8 @@
         "hover_style": "zoom",
         "card_radius": 16,
         "background": "#ffffff",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
