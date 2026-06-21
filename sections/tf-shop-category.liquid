@@ -118,7 +118,7 @@
   }
   .tfcat__btn:hover {
     background: var(--card-fg, #ffffff);
-    color: var(--card-bg, #0a1a4f);
+    color: var(--card-bg-solid, #0a1a4f);  /* solid color (gradient is invalid for text) */
   }
 </style>
 
@@ -127,10 +127,17 @@
     {%- if section.blocks.size > 0 -%}
       <ul class="tfcat__grid" style="--cols-d: {{ section.settings.columns_desktop }};">
         {%- for block in section.blocks -%}
-          {%- assign link = block.settings.link -%}
+          {%- liquid
+            assign link = block.settings.link
+            if block.settings.footer_bg_type == 'gradient'
+              assign card_bg = 'linear-gradient(' | append: block.settings.footer_gradient_angle | append: 'deg, ' | append: block.settings.footer_background | append: ', ' | append: block.settings.footer_background_2 | append: ')'
+            else
+              assign card_bg = block.settings.footer_background
+            endif
+          -%}
           <li
             class="tfcat__card"
-            style="--card-bg: {{ block.settings.footer_background }}; --card-fg: {{ block.settings.footer_text }};"
+            style="--card-bg: {{ card_bg }}; --card-bg-solid: {{ block.settings.footer_background }}; --card-fg: {{ block.settings.footer_text }};"
             {{ block.shopify_attributes }}
           >
             <a class="tfcat__media" href="{{ link | default: '#' }}"{% if link == blank %} tabindex="-1" aria-hidden="true"{% endif %}>
@@ -253,10 +260,36 @@
           "content": "Footer colors"
         },
         {
+          "type": "select",
+          "id": "footer_bg_type",
+          "label": "Footer background type",
+          "options": [
+            { "value": "solid", "label": "Solid" },
+            { "value": "gradient", "label": "Gradient" }
+          ],
+          "default": "solid"
+        },
+        {
           "type": "color",
           "id": "footer_background",
-          "label": "Footer background",
+          "label": "Footer background (color 1)",
           "default": "#0A1A4F"
+        },
+        {
+          "type": "color",
+          "id": "footer_background_2",
+          "label": "Footer background color 2 (gradient only)",
+          "default": "#40738D"
+        },
+        {
+          "type": "range",
+          "id": "footer_gradient_angle",
+          "min": 0,
+          "max": 360,
+          "step": 5,
+          "unit": "deg",
+          "label": "Gradient angle",
+          "default": 135
         },
         {
           "type": "color",
