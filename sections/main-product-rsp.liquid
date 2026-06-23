@@ -120,6 +120,16 @@
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
         {%- assign purchase_row_open = false -%}
+        {%- comment -%} Pre-pass: is a tf_quantity block placed immediately before buy_buttons?
+          (Robust look-ahead without indexing section.blocks by a variable.) {%- endcomment -%}
+        {%- assign tfq_grouped = false -%}
+        {%- assign prev_block_type = '' -%}
+        {%- for b in section.blocks -%}
+          {%- if b.type == 'buy_buttons' and prev_block_type == 'tf_quantity' -%}
+            {%- assign tfq_grouped = true -%}
+          {%- endif -%}
+          {%- assign prev_block_type = b.type -%}
+        {%- endfor -%}
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -650,11 +660,7 @@
                 Dawn's <quantity-input>; the input is form-associated so quantity
                 travels with the variant id + ReCharge selling_plan on add-to-cart. {%- endcomment -%}
               {%- liquid
-                assign tfq_next = section.blocks[forloop.index]
-                assign purchase_row_open = false
-                if tfq_next.type == 'buy_buttons'
-                  assign purchase_row_open = true
-                endif
+                assign purchase_row_open = tfq_grouped
                 assign tfq_variant = product.selected_or_first_available_variant
               -%}
               {%- if purchase_row_open -%}<div class="tf-purchase-row">{%- endif -%}
