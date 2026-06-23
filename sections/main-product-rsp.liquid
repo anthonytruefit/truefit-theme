@@ -119,16 +119,11 @@
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
-        {%- assign purchase_row_open = false -%}
-        {%- comment -%} Pre-pass: is a tf_quantity block placed immediately before buy_buttons?
-          (Robust look-ahead without indexing section.blocks by a variable.) {%- endcomment -%}
-        {%- assign tfq_grouped = false -%}
-        {%- assign prev_block_type = '' -%}
+        {%- comment -%} If a tf_quantity block is present, render the stepper inline beside the
+          Add to Cart button (in buy-buttons) so it merges with the button. {%- endcomment -%}
+        {%- assign has_tf_quantity = false -%}
         {%- for b in section.blocks -%}
-          {%- if b.type == 'buy_buttons' and prev_block_type == 'tf_quantity' -%}
-            {%- assign tfq_grouped = true -%}
-          {%- endif -%}
-          {%- assign prev_block_type = b.type -%}
+          {%- if b.type == 'tf_quantity' -%}{%- assign has_tf_quantity = true -%}{%- endif -%}
         {%- endfor -%}
 
         {%- for block in section.blocks -%}
@@ -655,43 +650,10 @@
                 {%- endif -%}
               </div>
             {%- when 'tf_quantity' -%}
-              {%- comment -%} Clean quantity stepper. When placed directly before
-                the Buy Buttons block, it groups into one Magic-Spoon row. Reuses
-                Dawn's <quantity-input>; the input is form-associated so quantity
-                travels with the variant id + ReCharge selling_plan on add-to-cart. {%- endcomment -%}
-              {%- liquid
-                assign purchase_row_open = tfq_grouped
-                assign tfq_variant = product.selected_or_first_available_variant
-              -%}
-              {%- if purchase_row_open -%}<div class="tf-purchase-row">{%- endif -%}
-              <div class="tf-qty product-form__input" {{ block.shopify_attributes }}>
-                <quantity-input class="quantity tf-qty__control" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                  <button class="quantity__button tf-qty__btn no-js-hidden" name="minus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-                    {% render 'icon-minus' %}
-                  </button>
-                  <input
-                    class="quantity__input tf-qty__input"
-                    type="number"
-                    name="quantity"
-                    id="Quantity-tf-{{ section.id }}"
-                    data-min="{{ tfq_variant.quantity_rule.min }}"
-                    min="{{ tfq_variant.quantity_rule.min }}"
-                    {% if tfq_variant.quantity_rule.max != null %}
-                      data-max="{{ tfq_variant.quantity_rule.max }}"
-                      max="{{ tfq_variant.quantity_rule.max }}"
-                    {% endif %}
-                    step="{{ tfq_variant.quantity_rule.increment }}"
-                    value="{{ tfq_variant.quantity_rule.min }}"
-                    form="{{ product_form_id }}"
-                    aria-label="{{ 'products.product.quantity.label' | t }}"
-                  >
-                  <button class="quantity__button tf-qty__btn no-js-hidden" name="plus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-                    {% render 'icon-plus' %}
-                  </button>
-                </quantity-input>
-              </div>
+              {%- comment -%} Enable flag only; the stepper renders inline beside the Add to
+                Cart button via buy-buttons (inline_quantity), so it sits next to the button
+                regardless of placement, bundle builder, or dynamic checkout. {%- endcomment -%}
+              <span class="tf-quantity-flag" {{ block.shopify_attributes }} hidden></span>
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -923,16 +885,15 @@
                 ></bundle-form>
               {%- endcapture -%}
               {%- endif -%}
-              {%- if purchase_row_open -%}<div class="tf-purchase-row__cart">{%- endif -%}
               {%- render 'buy-buttons',
                 block: block,
                 product: product,
                 product_form_id: product_form_id,
                 section_id: section.id,
                 show_pickup_availability: true,
-                bundle_builder: bundle_builder
+                bundle_builder: bundle_builder,
+                inline_quantity: has_tf_quantity
               -%}
-              {%- if purchase_row_open -%}</div></div>{%- assign purchase_row_open = false -%}{%- endif -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -1425,15 +1386,21 @@
   }
   {%- endif -%}
 
-  /* ---------- Quantity stepper + Magic-Spoon purchase row ---------- */
-  #shopify-section-{{ section.id }} .tf-purchase-row {
+  /* ---------- Quantity stepper merged with Add to Cart (Magic-Spoon row) ---------- */
+  #shopify-section-{{ section.id }} .tf-atc-row {
     display: flex;
     align-items: stretch;
     gap: {{ ps.qty_gap }}px;
-    flex-wrap: wrap;
+    width: 100%;
   }
-  #shopify-section-{{ section.id }} .tf-purchase-row > .tf-qty { flex: 0 0 auto; margin: 0; }
-  #shopify-section-{{ section.id }} .tf-purchase-row__cart { flex: 1 1 16rem; min-width: 0; margin: 0; }
+  #shopify-section-{{ section.id }} .tf-atc-row > .tf-qty { flex: 0 0 auto; margin: 0; }
+  /* Add to Cart fills the rest of the row; Shop Pay / dynamic checkout stays below */
+  #shopify-section-{{ section.id }} .tf-atc-row > .product-form__submit,
+  #shopify-section-{{ section.id }} .tf-atc-row > button[name="add"] {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
   #shopify-section-{{ section.id }} .tf-qty__control {
     display: inline-flex;
     align-items: center;
@@ -1471,12 +1438,6 @@
   }
   #shopify-section-{{ section.id }} .tf-qty__input::-webkit-outer-spin-button,
   #shopify-section-{{ section.id }} .tf-qty__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-  /* Add-to-cart fills the row and stays a large tap target on mobile */
-  #shopify-section-{{ section.id }} .tf-purchase-row__cart .button[name="add"],
-  #shopify-section-{{ section.id }} .tf-purchase-row__cart button[name="add"] { width: 100%; }
-  @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} .tf-purchase-row__cart { flex-basis: 14rem; }
-  }
 
   /* ---------- 3. Add to cart button ---------- */
   {%- if ps.enable_button_styling -%}

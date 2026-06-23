@@ -65,6 +65,39 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          {%- comment -%} TrueFit: quantity stepper merged inline with Add to Cart.
+            Sits inside the product form, so quantity submits together with the variant id
+            and ReCharge's injected selling_plan. {%- endcomment -%}
+          {%- if inline_quantity -%}
+            <div class="tf-atc-row">
+              <div class="tf-qty product-form__input">
+                <quantity-input class="quantity tf-qty__control" data-url="{{ product.url }}" data-section="{{ section_id }}">
+                  <button class="quantity__button tf-qty__btn no-js-hidden" name="minus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input
+                    class="quantity__input tf-qty__input"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-tf-{{ section_id }}"
+                    data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                      data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                      max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                    {% endif %}
+                    step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                    value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    aria-label="{{ 'products.product.quantity.label' | t }}"
+                  >
+                  <button class="quantity__button tf-qty__btn no-js-hidden" name="plus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                    {% render 'icon-plus' %}
+                  </button>
+                </quantity-input>
+              </div>
+          {%- endif -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -95,6 +128,7 @@
               </svg>
             </div>
           </button>
+          {%- if inline_quantity -%}</div>{%- endif -%}
 
           {%- assign sold_out = false -%}
           {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
