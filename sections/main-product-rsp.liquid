@@ -118,6 +118,7 @@
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        {%- assign purchase_row_open = false -%}
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -642,6 +643,48 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
+            {%- when 'tf_quantity' -%}
+              {%- comment -%} Clean quantity stepper. When placed directly before
+                the Buy Buttons block, it groups into one Magic-Spoon row. Reuses
+                Dawn's <quantity-input>; the input is form-associated so quantity
+                travels with the variant id + ReCharge selling_plan on add-to-cart. {%- endcomment -%}
+              {%- liquid
+                assign tfq_next = section.blocks[forloop.index]
+                assign purchase_row_open = false
+                if tfq_next.type == 'buy_buttons'
+                  assign purchase_row_open = true
+                endif
+                assign tfq_variant = product.selected_or_first_available_variant
+              -%}
+              {%- if purchase_row_open -%}<div class="tf-purchase-row">{%- endif -%}
+              <div class="tf-qty product-form__input" {{ block.shopify_attributes }}>
+                <quantity-input class="quantity tf-qty__control" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                  <button class="quantity__button tf-qty__btn no-js-hidden" name="minus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input
+                    class="quantity__input tf-qty__input"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-tf-{{ section.id }}"
+                    data-min="{{ tfq_variant.quantity_rule.min }}"
+                    min="{{ tfq_variant.quantity_rule.min }}"
+                    {% if tfq_variant.quantity_rule.max != null %}
+                      data-max="{{ tfq_variant.quantity_rule.max }}"
+                      max="{{ tfq_variant.quantity_rule.max }}"
+                    {% endif %}
+                    step="{{ tfq_variant.quantity_rule.increment }}"
+                    value="{{ tfq_variant.quantity_rule.min }}"
+                    form="{{ product_form_id }}"
+                    aria-label="{{ 'products.product.quantity.label' | t }}"
+                  >
+                  <button class="quantity__button tf-qty__btn no-js-hidden" name="plus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                    {% render 'icon-plus' %}
+                  </button>
+                </quantity-input>
+              </div>
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -873,6 +916,7 @@
                 ></bundle-form>
               {%- endcapture -%}
               {%- endif -%}
+              {%- if purchase_row_open -%}<div class="tf-purchase-row__cart">{%- endif -%}
               {%- render 'buy-buttons',
                 block: block,
                 product: product,
@@ -881,6 +925,7 @@
                 show_pickup_availability: true,
                 bundle_builder: bundle_builder
               -%}
+              {%- if purchase_row_open -%}</div></div>{%- assign purchase_row_open = false -%}{%- endif -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -1373,6 +1418,59 @@
   }
   {%- endif -%}
 
+  /* ---------- Quantity stepper + Magic-Spoon purchase row ---------- */
+  #shopify-section-{{ section.id }} .tf-purchase-row {
+    display: flex;
+    align-items: stretch;
+    gap: {{ ps.qty_gap }}px;
+    flex-wrap: wrap;
+  }
+  #shopify-section-{{ section.id }} .tf-purchase-row > .tf-qty { flex: 0 0 auto; margin: 0; }
+  #shopify-section-{{ section.id }} .tf-purchase-row__cart { flex: 1 1 16rem; min-width: 0; margin: 0; }
+  #shopify-section-{{ section.id }} .tf-qty__control {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    min-height: {{ ps.qty_min_height }}px;
+    background: {{ ps.qty_bg }};
+    border: {{ ps.qty_border_width }}px solid {{ ps.qty_border_color }};
+    border-radius: {{ ps.qty_radius }}px;
+    overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} .tf-qty__btn {
+    width: {{ ps.qty_button_size }}px;
+    min-height: {{ ps.qty_min_height }}px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: {{ ps.qty_text_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #shopify-section-{{ section.id }} .tf-qty__btn:hover { opacity: 0.65; }
+  #shopify-section-{{ section.id }} .tf-qty__btn svg { width: 1.4rem; height: 1.4rem; }
+  #shopify-section-{{ section.id }} .tf-qty__input {
+    width: {{ ps.qty_input_width }}px;
+    min-height: {{ ps.qty_min_height }}px;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    color: {{ ps.qty_text_color }};
+    font-size: 1.5rem;
+    font-weight: 500;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  #shopify-section-{{ section.id }} .tf-qty__input::-webkit-outer-spin-button,
+  #shopify-section-{{ section.id }} .tf-qty__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  /* Add-to-cart fills the row and stays a large tap target on mobile */
+  #shopify-section-{{ section.id }} .tf-purchase-row__cart .button[name="add"],
+  #shopify-section-{{ section.id }} .tf-purchase-row__cart button[name="add"] { width: 100%; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .tf-purchase-row__cart { flex-basis: 14rem; }
+  }
+
   /* ---------- 3. Add to cart button ---------- */
   {%- if ps.enable_button_styling -%}
   #shopify-section-{{ section.id }} .product-form__submit,
@@ -1662,6 +1760,11 @@
     {
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
+      "limit": 1
+    },
+    {
+      "type": "tf_quantity",
+      "name": "Quantity stepper (TrueFit)",
       "limit": 1
     },
     {
@@ -3321,6 +3424,19 @@
       "unit": "px",
       "default": 6
     },
+    {
+      "type": "header",
+      "content": "Quantity selector"
+    },
+    { "type": "range", "id": "qty_min_height", "label": "Stepper height", "min": 40, "max": 72, "step": 2, "unit": "px", "default": 52 },
+    { "type": "range", "id": "qty_button_size", "label": "Stepper button width", "min": 32, "max": 64, "step": 2, "unit": "px", "default": 44 },
+    { "type": "range", "id": "qty_input_width", "label": "Number width", "min": 32, "max": 80, "step": 2, "unit": "px", "default": 48 },
+    { "type": "range", "id": "qty_gap", "label": "Gap to Add to Cart", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 12 },
+    { "type": "range", "id": "qty_radius", "label": "Stepper corner radius", "min": 0, "max": 24, "step": 1, "unit": "px", "default": 8 },
+    { "type": "range", "id": "qty_border_width", "label": "Stepper border width", "min": 0, "max": 4, "step": 1, "unit": "px", "default": 1 },
+    { "type": "color", "id": "qty_bg", "label": "Stepper background", "default": "#FFFFFF" },
+    { "type": "color", "id": "qty_border_color", "label": "Stepper border color", "default": "#0A1A4F" },
+    { "type": "color", "id": "qty_text_color", "label": "Stepper text + icon color", "default": "#0A1A4F" },
     {
       "type": "header",
       "content": "Add to cart button"
