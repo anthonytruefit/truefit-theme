@@ -50,23 +50,41 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
-        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35": {
-          "type": "flavor_picker",
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
           "settings": {
-            "product_list": [
-              "truefit-vanilla",
-              "truefit-chocolate",
-              "truefit-protein-powder-chocolate-40servings"
-            ],
-            "horizontal_layout": true
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
+            "caption": "Vanilla",
+            "size_text": "20 servings",
+            "tag_text": "",
+            "link_product": "truefit-vanilla",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_zikHKM": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
+            "caption": "Chocolate",
+            "size_text": "20 servings",
+            "tag_text": "",
+            "link_product": "truefit-chocolate",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_pHe4Xf": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
+            "caption": "Chocolate",
+            "size_text": "40 servings",
+            "tag_text": "",
+            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "link": ""
           }
         },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {}
-        },
-        "tf_quantity_JnNB6y": {
-          "type": "tf_quantity",
           "settings": {}
         },
         "buy_buttons_aYXg8M": {
@@ -75,6 +93,10 @@
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
+        },
+        "tf_quantity_JnNB6y": {
+          "type": "tf_quantity",
+          "settings": {}
         }
       },
       "block_order": [
@@ -83,17 +105,19 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
-        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35",
+        "custom_flavor_swatch_AyML78",
+        "custom_flavor_swatch_zikHKM",
+        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
-        "tf_quantity_JnNB6y",
-        "buy_buttons_aYXg8M"
+        "buy_buttons_aYXg8M",
+        "tf_quantity_JnNB6y"
       ],
       "settings": {
-        "enable_custom_styling": false,
+        "enable_custom_styling": true,
         "section_bg": "#ffffff",
         "section_gradient": "",
-        "enable_flavor_styling": false,
-        "flavor_swatch_size": 72,
+        "enable_flavor_styling": true,
+        "flavor_swatch_size": 92,
         "flavor_image_radius": 8,
         "flavor_gap": 12,
         "flavor_swatch_bg": "#ffffff",
@@ -102,11 +126,11 @@
         "flavor_selected_border": "#0a1a4f",
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0a1a4f",
-        "flavor_caption_size": 1.2,
+        "flavor_caption_size": 1.5,
         "flavor_caption_weight": "600",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738d",
-        "flavor_size_text_size": 0.9,
+        "flavor_size_text_size": 1.2,
         "flavor_tag_bg": "#c9a86a",
         "flavor_tag_text_color": "#0a1a4f",
         "flavor_tag_text_size": 1.1,
@@ -118,13 +142,13 @@
         "qty_min_height": 52,
         "qty_button_size": 44,
         "qty_input_width": 48,
-        "qty_gap": 12,
-        "qty_radius": 8,
+        "qty_gap": 0,
+        "qty_radius": 6,
         "qty_border_width": 1,
         "qty_bg": "#ffffff",
         "qty_border_color": "#0a1a4f",
         "qty_text_color": "#0a1a4f",
-        "enable_button_styling": false,
+        "enable_button_styling": true,
         "button_label": "",
         "button_bg": "#2e6fb5",
         "button_gradient": "",
