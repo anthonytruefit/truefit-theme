@@ -120,7 +120,7 @@
         "flavor_swatch_size": 92,
         "flavor_image_radius": 8,
         "flavor_gap": 12,
-        "flavor_swatch_bg": "#ffffff",
+        "flavor_swatch_bg": "#FFFFFF",
         "flavor_border_color": "#e2e5ec",
         "flavor_border_width": 1,
         "flavor_selected_border": "#0a1a4f",
