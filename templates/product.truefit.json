@@ -50,36 +50,6 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
-        "product_picker_product_dFeBmN": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-chocolate",
-            "title": "Chocolate",
-            "icon": "shopify://shop_images/chocolate.svg",
-            "badge": ""
-          }
-        },
-        "product_picker_product_eJfriX": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-vanilla",
-            "title": "Vanilla",
-            "icon": "shopify://shop_images/vanilla.svg",
-            "badge": ""
-          }
-        },
-        "product_picker_product_aTHbTX": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-protein-powder-dubai-chocolate",
-            "title": "DUBAI CHOCOLATE",
-            "icon": "shopify://shop_images/25_TrueFit_DubaiChoc_Icon_857fd19a-92bf-4dc0-8ac5-1671a96ac762.svg",
-            "badge": "LIMITED"
-          }
-        },
         "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35": {
           "type": "flavor_picker",
           "settings": {
@@ -91,175 +61,15 @@
             "horizontal_layout": true
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "hide_flavor_option": true,
-            "icons_metaobject_handle": "aminolean-variant-icons",
-            "product_override_picker_type": ""
-          }
-        },
-        "product_picker_product_GHnxPX": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-chocolate-bundle-2-bottles",
-            "title": "Chocolate Bundle",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Chocolate_Bundle_-_DTC_Icon_a46a0e3c-aee0-444c-9da1-0a2c1f6d81b4.svg",
-            "badge": "Save $20"
-          }
-        },
-        "product_picker_product_bLznjp": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-vanilla-bundle-2-bottles",
-            "title": "Vanilla Bundle",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Vanilla_Bundle_-_DTC_Icon_99c355fe-6b9e-4be0-9ea6-18ed3b1acec0.svg",
-            "badge": "Save $20"
-          }
-        },
-        "product_picker_product_YzhkWa": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-flavor-bundle-1-chocolate-1-vanilla",
-            "title": "Chocolate & Vanilla Bundle",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Chocolate_Vanilla_Bundle_-_DTC_Icon_89f4a7d4-7414-4399-9913-a254f6cf64df.svg",
-            "badge": "Save $20"
-          }
-        },
-        "product_picker_product_B9qLcm": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-chocolate-creatine",
-            "title": "Chocolate & Creatine",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Chocolate_Creatine_Bundle_-_DTC_Icon_d4d6f389-43fb-47d1-8e3d-cbf5a0f173be.svg",
-            "badge": "Save 20%"
-          }
-        },
-        "product_picker_product_CTHrpJ": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-vanilla-creatine",
-            "title": "Vanilla & Creatine",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Vanilla_Creatine_Bundle_-_DTC_Icon_946898fa-43a8-4fe0-a540-e012e2166e21.svg",
-            "badge": "Save 20%"
-          }
-        },
-        "product_picker_product_xiMLnz": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-chocolate-pink-lemonade-bundle",
-            "title": "Chocolate & Pre-Workout",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Chocolate_Creatine_Bundle_-_DTC_Icon_d4d6f389-43fb-47d1-8e3d-cbf5a0f173be.svg",
-            "badge": "Save 20%"
-          }
-        },
-        "product_picker_product_AjYgyE": {
-          "type": "product_picker_product",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-vanilla-pink-lemonade-bundle",
-            "title": "Vanilla & Pre-Workout",
-            "icon": "shopify://shop_images/TrueFit_GrassFed_Vanilla_Creatine_Bundle_-_DTC_Icon_946898fa-43a8-4fe0-a540-e012e2166e21.svg",
-            "badge": "Save 20%"
-          }
-        },
-        "bundle_picker_KrjLxG": {
-          "type": "bundle_picker",
-          "disabled": true,
-          "settings": {
-            "title": "Choose Your Pack",
-            "single_option_name": "Single Pack"
-          }
-        },
-        "bundle_option_k7HzzU": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Power Pack",
-            "image": "shopify://shop_images/26_Amino_BundleIcons2_tf_crea_free_Q.png",
-            "badge": "+ Free GIft",
-            "bundler_app_code": "h4i1",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
-        "bundle_option_9JJfQg": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Multipack",
-            "image": "shopify://shop_images/truefit_10e58b8e-0af3-4027-a047-d4d876a83ab1.png",
-            "badge": "",
-            "bundler_app_code": "fw2z",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
-        "bundle_option_TBQKMe": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Add Energy",
-            "image": "shopify://shop_images/truefit-aminolean_copy.png",
-            "badge": "",
-            "bundler_app_code": "d5gu",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
-        "bundle_option_NxAkLC": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Add Hydration",
-            "image": "shopify://shop_images/truefit-hydration.png",
-            "badge": "",
-            "bundler_app_code": "g7ay",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
-        "bundle_option_fcjQTd": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Add Creatine",
-            "image": "shopify://shop_images/truefit-creatine.png",
-            "badge": "",
-            "bundler_app_code": "fwpa",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
-        "bundle_option_TyQAEL": {
-          "type": "bundle_option",
-          "disabled": true,
-          "settings": {
-            "title": "Add Energy Drinks",
-            "image": "shopify://shop_images/26_Amino_BundleIcons_tf_rtd.png",
-            "badge": "",
-            "bundler_app_code": "h1x2",
-            "builder_heading": "Complete Your Bundle",
-            "preselect_products": true
-          }
-        },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
         },
-        "tf_quantity_HcyfDF": {
+        "tf_quantity_xDmVhj": {
           "type": "tf_quantity",
           "settings": {}
         },
-        "buy_buttons": {
+        "buy_buttons_GRHcgH": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
@@ -273,28 +83,10 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
-        "product_picker_product_dFeBmN",
-        "product_picker_product_eJfriX",
-        "product_picker_product_aTHbTX",
         "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35",
-        "variant_picker",
-        "product_picker_product_GHnxPX",
-        "product_picker_product_bLznjp",
-        "product_picker_product_YzhkWa",
-        "product_picker_product_B9qLcm",
-        "product_picker_product_CTHrpJ",
-        "product_picker_product_xiMLnz",
-        "product_picker_product_AjYgyE",
-        "bundle_picker_KrjLxG",
-        "bundle_option_k7HzzU",
-        "bundle_option_9JJfQg",
-        "bundle_option_TBQKMe",
-        "bundle_option_NxAkLC",
-        "bundle_option_fcjQTd",
-        "bundle_option_TyQAEL",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
-        "tf_quantity_HcyfDF",
-        "buy_buttons"
+        "tf_quantity_xDmVhj",
+        "buy_buttons_GRHcgH"
       ],
       "settings": {
         "enable_custom_styling": false,
