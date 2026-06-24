@@ -232,3 +232,101 @@ selling-plan-price {
 .selling-plan-price__subscription .price-item--sale {
   color: rgb(var(--color-foreground));
 }
+
+/* ============================================================
+   TrueFit premium restyle (CSS-only; overrides the rules above)
+   Navy #0A1A4F, muted #40738D, gold #C9A86A, white. Poppins.
+   Geometry/positioning (option heights, dropdown animation) is left
+   intact so the selling-plan dropdown placement isn't disturbed.
+   ============================================================ */
+
+/* Options: subtle radius + white + thin border (was a pill with accent fill) */
+.rc-radio.rc-option {
+  --rc-text-color: #0a1a4f;
+  --rc-active-color: #0a1a4f;             /* selected text stays navy, not white */
+  --rc-active-bg: rgba(10, 26, 79, 0.04); /* light navy tint (erring lighter) */
+  background-color: #ffffff;
+  color: #0a1a4f;
+  border-radius: 0.8rem;
+  border-color: rgba(10, 26, 79, 0.14);
+}
+
+/* Selected (subscribe): light tint + navy border, not a loud fill */
+.rc-option.rc-option--active {
+  border-color: #0a1a4f !important;
+}
+
+/* Focus ring radius matches the new subtle corners */
+.rc-radio__input:focus-visible + .rc-radio__label::before {
+  border-radius: 0.8rem;
+}
+
+/* Main option labels: clean sentence-case, refined (was loud uppercase) */
+.rc-radio__label {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+  color: #0a1a4f;
+}
+
+/* Small section label ("Frequency"): keep the brand eyebrow treatment */
+.rc-template__radio-group::before {
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  color: #40738d;
+}
+
+/* Price */
+.rc-option__price {
+  color: #0a1a4f;
+  font-size: 1.4rem;
+}
+
+/* Savings / "Best Value" -> small clean gold text tag (used sparingly) */
+.rc-option__discount {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #c9a86a;
+  background: rgba(201, 168, 106, 0.12);
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.4rem;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+/* Benefit checkmark bullets: smaller, lighter, muted body color */
+.rc-template__radio-group [class*='benefit'],
+.rc-container [class*='benefit'] {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #40738d;
+}
+
+/* Frequency dropdown: white, thin navy border, navy text + chevron, subtle radius */
+.rc-selling-plans__dropdown {
+  background-color: #ffffff;
+  color: #0a1a4f;
+  border: 0.1rem solid rgba(10, 26, 79, 0.2);
+  border-radius: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 1.3rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%230a1a4f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+/* Radio indicators: muted ring -> navy ring + navy dot when selected */
+.rc-option::before { border-color: rgba(10, 26, 79, 0.35); }
+.rc-option::after { background: #0a1a4f; }
+.rc-option--active::before { border-color: #0a1a4f; }
+
+/* Mobile: keep options/dropdown tappable + legible at phone width */
+@media screen and (max-width: 749px) {
+  .rc-radio__label { font-size: 1.3rem; }
+  .rc-selling-plans__dropdown { font-size: 1.3rem; }
+  .rc-option__discount { font-size: 1.1rem; }
+}
