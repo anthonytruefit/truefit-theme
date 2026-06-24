@@ -98,40 +98,6 @@
           "type": "tf_quantity",
           "settings": {}
         },
-        "gift_tracker_yX3FfH": {
-          "type": "gift_tracker",
-          "settings": {
-            "title": "",
-            "message_away": "You're [amount] away from [reward]!",
-            "message_unlocked": "You've unlocked [reward]!",
-            "message_all_unlocked": "You've unlocked everything!",
-            "fill_color": "#0a1a4f",
-            "track_color": "#e2e5ec",
-            "bar_height": 8,
-            "marker_color": "#0a1a4f",
-            "message_color": "#0a1a4f"
-          }
-        },
-        "milestone_kYBjPc": {
-          "type": "milestone",
-          "settings": {
-            "amount": 30,
-            "badge_text": "FREE SIHPPING",
-            "reward_name": "free shipping",
-            "badge_bg": "#C9A86A",
-            "badge_text_color": "#0A1A4F"
-          }
-        },
-        "milestone_hWEtKd": {
-          "type": "milestone",
-          "settings": {
-            "amount": 110,
-            "badge_text": "FREE GIFT",
-            "reward_name": "free shipping",
-            "badge_bg": "#C9A86A",
-            "badge_text_color": "#0A1A4F"
-          }
-        },
         "fbt_A6RCtM": {
           "type": "fbt",
           "settings": {
@@ -162,9 +128,6 @@
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "tf_quantity_JnNB6y",
-        "gift_tracker_yX3FfH",
-        "milestone_kYBjPc",
-        "milestone_hWEtKd",
         "fbt_A6RCtM"
       ],
       "settings": {
