@@ -914,7 +914,7 @@
                   assign fbt_checked = 0
                 -%}
                 {%- style -%}
-                  #shopify-section-{{ section.id }} .fbt { margin-top: 2.4rem; }
+                  #shopify-section-{{ section.id }} .fbt { display: block; width: 100%; margin-top: 2.4rem; }
                   #shopify-section-{{ section.id }} .fbt__heading { font-size: 1.6rem; font-weight: 600; color: var(--tf-navy,#0a1a4f); margin: 0 0 1.6rem; }
                   #shopify-section-{{ section.id }} .fbt__row { display: flex; align-items: center; gap: 1rem; }
                   #shopify-section-{{ section.id }} .fbt__card { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; padding: 1.2rem 0.8rem; background: {{ block.settings.fbt_card_bg }}; border: 0.1rem solid {{ block.settings.fbt_card_border }}; border-radius: {{ block.settings.fbt_card_radius }}px; cursor: pointer; position: relative; }
