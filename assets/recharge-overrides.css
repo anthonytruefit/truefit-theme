@@ -277,3 +277,29 @@ recharge-subscription-widget::part(rc-purchase-option__badge) {
   letter-spacing: 0.04em !important;
   text-transform: none !important;
 }
+
+/* Direct ::part() color overrides (stronger than the variables above; the
+   live widget's selected-blue + badge colors appear dashboard-baked and ignore
+   the --rc-widget-* vars). Page ::part !important beats shadow-internal styles. */
+recharge-subscription-widget::part(rc-purchase-option),
+recharge-subscription-widget::part(rc-purchase-option__onetime) {
+  background: #ffffff !important;
+  border: 0.1rem solid rgba(10, 26, 79, 0.14) !important;
+  color: #0a1a4f !important;
+}
+recharge-subscription-widget::part(rc-purchase-option__subscription),
+recharge-subscription-widget::part(rc-selected) {
+  background: #f5f7fb !important;
+  border: 0.1rem solid #0a1a4f !important;
+  color: #0a1a4f !important;
+}
+recharge-subscription-widget::part(rc-purchase-option__label),
+recharge-subscription-widget::part(rc-purchase-option__prices),
+recharge-subscription-widget::part(rc-purchase-option__sub-container),
+recharge-subscription-widget::part(rc-purchase-option__selector) {
+  color: #0a1a4f !important;
+}
+recharge-subscription-widget::part(rc-purchase-option__badge) {
+  background: #c9a86a !important;
+  color: #0a1a4f !important;
+}
