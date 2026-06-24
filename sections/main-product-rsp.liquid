@@ -915,7 +915,7 @@
                 -%}
                 {%- style -%}
                   #shopify-section-{{ section.id }} .fbt { display: block; width: 100%; margin-top: 2.4rem; }
-                  #shopify-section-{{ section.id }} .fbt__heading { font-size: 1.6rem; font-weight: 600; color: var(--tf-navy,#0a1a4f); margin: 0 0 1.6rem; }
+                  #shopify-section-{{ section.id }} .fbt__heading { font-size: 1.6rem; font-weight: 500; letter-spacing: -0.02em; color: var(--tf-navy,#0a1a4f); margin: 0 0 1.6rem; }
                   #shopify-section-{{ section.id }} .fbt__row { display: flex; align-items: center; gap: 1rem; }
                   #shopify-section-{{ section.id }} .fbt__card { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; padding: 1.2rem 0.8rem; background: {{ block.settings.fbt_card_bg }}; border: 0.1rem solid {{ block.settings.fbt_card_border }}; border-radius: {{ block.settings.fbt_card_radius }}px; cursor: pointer; position: relative; }
                   #shopify-section-{{ section.id }} .fbt__check { position: absolute; top: 0.8rem; left: 0.8rem; width: 2rem; height: 2rem; accent-color: {{ block.settings.fbt_check_color }}; cursor: pointer; margin: 0; }
@@ -1084,7 +1084,7 @@
                   endif
                 -%}
                 {%- style -%}
-                  #shopify-section-{{ section.id }} .gt { display: block; margin-top: 1.6rem; }
+                  #shopify-section-{{ section.id }} .gt { display: block; margin-top: 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__title { margin: 0 0 0.4rem; font-weight: 600; color: {{ block.settings.message_color }}; font-size: 1.4rem; }
                   #shopify-section-{{ section.id }} .gt__message { margin: 0 0 1.2rem; color: {{ block.settings.message_color }}; font-size: 1.3rem; line-height: 1.4; min-height: 1.4em; }
                   #shopify-section-{{ section.id }} .gt__bar { position: relative; padding-top: 3.4rem; }
@@ -2063,7 +2063,7 @@
       "name": "Frequently bought",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Bought Together" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently bought together" },
         { "type": "product", "id": "companion_1", "label": "Companion product 1" },
         { "type": "product", "id": "companion_2", "label": "Companion product 2" },
         { "type": "header", "content": "Styling" },
@@ -2093,7 +2093,7 @@
         { "type": "color", "id": "track_color", "label": "Track color", "default": "#E2E5EC" },
         { "type": "range", "id": "bar_height", "min": 4, "max": 20, "step": 1, "unit": "px", "label": "Bar height", "default": 8 },
         { "type": "color", "id": "marker_color", "label": "Marker color", "default": "#0A1A4F" },
-        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#0A1A4F" }
+        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#40738D" }
       ]
     },
     {
@@ -3662,7 +3662,7 @@
         { "value": "600", "label": "Semibold" },
         { "value": "700", "label": "Bold" }
       ],
-      "default": "600"
+      "default": "500"
     },
     {
       "type": "range",
@@ -3797,7 +3797,7 @@
       "type": "color",
       "id": "button_bg",
       "label": "Button background color",
-      "default": "#2e6fb5"
+      "default": "#0A1A4F"
     },
     {
       "type": "color_background",
@@ -3835,7 +3835,7 @@
       "type": "color",
       "id": "button_border_color",
       "label": "Button border color",
-      "default": "#2e6fb5"
+      "default": "#0A1A4F"
     },
     {
       "type": "range",

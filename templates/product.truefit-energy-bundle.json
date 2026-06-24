@@ -307,7 +307,7 @@
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0A1A4F",
         "flavor_caption_size": 1.2,
-        "flavor_caption_weight": "600",
+        "flavor_caption_weight": "500",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738D",
         "flavor_size_text_size": 0.9,

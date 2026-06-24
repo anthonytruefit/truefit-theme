@@ -258,6 +258,29 @@ recharge-subscription-widget::part(rc-widget-root) {
   --rc-widget-button-radius: 6px !important;
   --rc-widget-badge-radius: 4px !important;
   --rc-widget-field-radius: 6px !important;
+  /* Force the theme font (Poppins). font-family is inherited, so setting it on
+     the root part cascades to every shadow descendant that doesn't set its own. */
+  font-family: var(--font-body-family), 'Poppins', sans-serif !important;
+}
+
+/* Belt-and-suspenders: also pin Poppins on each exposed text part directly, so
+   that if ReCharge sets a font-family on these elements inside the shadow tree,
+   our page-level ::part !important still wins. Deep internal nodes that have no
+   part= AND set their own font cannot be reached from outside the shadow DOM. */
+recharge-subscription-widget::part(rc-widget-root),
+recharge-subscription-widget::part(rc-purchase-option),
+recharge-subscription-widget::part(rc-purchase-option__onetime),
+recharge-subscription-widget::part(rc-purchase-option__subscription),
+recharge-subscription-widget::part(rc-purchase-option__label),
+recharge-subscription-widget::part(rc-purchase-option__prices),
+recharge-subscription-widget::part(rc-purchase-option__badge),
+recharge-subscription-widget::part(rc-purchase-option__sub-container),
+recharge-subscription-widget::part(rc-purchase-option__selector),
+recharge-subscription-widget::part(rc-selling-plan-dropdown),
+recharge-subscription-widget::part(rc-purchase-option__dropdown),
+recharge-subscription-widget::part(rc-purchase-option__selling-plan),
+recharge-subscription-widget::part(rc-purchase-option__select) {
+  font-family: var(--font-body-family), 'Poppins', sans-serif !important;
 }
 
 /* Refined, smaller Poppins type via exposed parts */
