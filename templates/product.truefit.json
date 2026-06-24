@@ -97,6 +97,23 @@
         "tf_quantity_JnNB6y": {
           "type": "tf_quantity",
           "settings": {}
+        },
+        "fbt_A6RCtM": {
+          "type": "fbt",
+          "settings": {
+            "heading": "Frequently Bought Together",
+            "companion_1": "creatine-mono",
+            "companion_2": "vegan-aminolean-acai",
+            "fbt_card_bg": "#ffffff",
+            "fbt_card_border": "#e2e5ec",
+            "fbt_card_radius": 12,
+            "fbt_check_color": "#0a1a4f",
+            "fbt_total_color": "#0a1a4f",
+            "fbt_total_size": 18,
+            "fbt_button_bg": "#0a1a4f",
+            "fbt_button_text": "#ffffff",
+            "fbt_button_radius": 8
+          }
         }
       },
       "block_order": [
@@ -110,7 +127,8 @@
         "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
-        "tf_quantity_JnNB6y"
+        "tf_quantity_JnNB6y",
+        "fbt_A6RCtM"
       ],
       "settings": {
         "enable_custom_styling": true,
@@ -120,7 +138,7 @@
         "flavor_swatch_size": 92,
         "flavor_image_radius": 8,
         "flavor_gap": 12,
-        "flavor_swatch_bg": "#FFFFFF",
+        "flavor_swatch_bg": "#ffffff",
         "flavor_border_color": "#e2e5ec",
         "flavor_border_width": 1,
         "flavor_selected_border": "#0a1a4f",
@@ -145,9 +163,9 @@
         "qty_gap": 8,
         "qty_radius": 6,
         "qty_border_width": 1,
-        "qty_bg": "#366DAA",
-        "qty_border_color": "#FFFFFF",
-        "qty_text_color": "#FFFFFF",
+        "qty_bg": "#366daa",
+        "qty_border_color": "#ffffff",
+        "qty_text_color": "#ffffff",
         "enable_button_styling": true,
         "button_label": "",
         "button_bg": "#2e6fb5",
