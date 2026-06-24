@@ -107,7 +107,7 @@
             "message_all_unlocked": "You've unlocked everything!",
             "fill_color": "#0a1a4f",
             "track_color": "#e2e5ec",
-            "bar_height": 8,
+            "bar_height": 15,
             "marker_color": "#0a1a4f",
             "message_color": "#40738d"
           }
