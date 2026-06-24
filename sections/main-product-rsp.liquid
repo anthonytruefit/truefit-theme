@@ -1085,20 +1085,31 @@
                 -%}
                 {%- style -%}
                   #shopify-section-{{ section.id }} .gt { display: block; margin-top: 2.4rem; }
-                  #shopify-section-{{ section.id }} .gt__title { margin: 0 0 0.4rem; font-weight: 600; color: {{ block.settings.message_color }}; font-size: 1.4rem; }
-                  #shopify-section-{{ section.id }} .gt__message { margin: 0 0 1.2rem; color: {{ block.settings.message_color }}; font-size: 1.3rem; line-height: 1.4; min-height: 1.4em; }
-                  #shopify-section-{{ section.id }} .gt__bar { position: relative; padding-top: 3.4rem; }
+                  #shopify-section-{{ section.id }} .gt__card { background: {{ block.settings.background_color }}; border-radius: 16px; padding: 2.4rem 2rem 2rem; }
+                  #shopify-section-{{ section.id }} .gt__title { margin: 0 0 0.4rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
+                  #shopify-section-{{ section.id }} .gt__message { margin: 0; color: {{ block.settings.message_color }}; font-size: 1.3rem; line-height: 1.4; min-height: 1.4em; }
+                  #shopify-section-{{ section.id }} .gt__bar { position: relative; padding: 6.6rem 0 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height }}px; background: {{ block.settings.track_color }}; border-radius: 999px; overflow: hidden; }
-                  #shopify-section-{{ section.id }} .gt__fill { height: 100%; background: {{ block.settings.fill_color }}; border-radius: 999px; transition: width 0.4s ease; }
-                  #shopify-section-{{ section.id }} .gt__point { position: absolute; bottom: 0; height: {{ block.settings.bar_height }}px; }
-                  #shopify-section-{{ section.id }} .gt__tick { position: absolute; bottom: 0; left: 0; transform: translateX(-50%); width: 0.2rem; height: 100%; background: {{ block.settings.track_color }}; }
-                  #shopify-section-{{ section.id }} .gt__point.is-active .gt__tick { background: {{ block.settings.marker_color }}; }
-                  #shopify-section-{{ section.id }} .gt__badge { position: absolute; bottom: calc(100% + 0.8rem); left: 0; transform: translateX(-50%); white-space: nowrap; font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 0.4rem; background: #e2e5ec; color: #8590ab; transition: background 0.2s ease, color 0.2s ease; }
-                  #shopify-section-{{ section.id }} .gt__point.is-active .gt__badge { background: var(--badge-bg); color: var(--badge-text); }
-                  #shopify-section-{{ section.id }} .gt__point--start .gt__badge { left: 0; transform: translateX(0); }
-                  #shopify-section-{{ section.id }} .gt__point--end .gt__badge { left: auto; right: 0; transform: translateX(0); }
+                  #shopify-section-{{ section.id }} .gt__fill { position: absolute; top: 0; left: 0; height: 100%; background: {{ block.settings.fill_color }}; border-radius: 999px; transition: width 0.45s ease; }
+                  #shopify-section-{{ section.id }} .gt__node { position: absolute; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
+                  #shopify-section-{{ section.id }} .gt__node--start { transform: translate(0, -50%); }
+                  #shopify-section-{{ section.id }} .gt__node--end { transform: translate(-100%, -50%); }
+                  #shopify-section-{{ section.id }} .gt__circle { width: 4rem; height: 4rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; line-height: 1; background: {{ block.settings.circle_bg }}; border: 0.2rem solid {{ block.settings.circle_border }}; box-shadow: 0 0.1rem 0.3rem rgba(10, 26, 79, 0.08); transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+                  #shopify-section-{{ section.id }} .gt__node.is-active .gt__circle { background: {{ block.settings.fill_color }}; border-color: {{ block.settings.fill_color }}; transform: scale(1.06); }
+                  #shopify-section-{{ section.id }} .gt__emoji { filter: grayscale(0.6); opacity: 0.5; transition: filter 0.25s ease, opacity 0.25s ease; }
+                  #shopify-section-{{ section.id }} .gt__node.is-active .gt__emoji { filter: none; opacity: 1; }
+                  #shopify-section-{{ section.id }} .gt__label { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(100% + 0.7rem); white-space: nowrap; font-size: 1.1rem; font-weight: 600; color: #0A1A4F; }
+                  #shopify-section-{{ section.id }} .gt__node--start .gt__label { left: 0; transform: none; }
+                  #shopify-section-{{ section.id }} .gt__node--end .gt__label { left: auto; right: 0; transform: none; }
+                  #shopify-section-{{ section.id }} .gt__badge { position: absolute; left: 50%; bottom: calc(100% + 2.8rem); transform: translateX(-50%) rotate(-6deg); white-space: nowrap; font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 0.6rem; background: var(--badge-bg); color: var(--badge-text); box-shadow: 0 0.2rem 0.5rem rgba(10, 26, 79, 0.16); }
+                  #shopify-section-{{ section.id }} .gt__node--start .gt__badge { left: 0; transform: rotate(-6deg); transform-origin: left center; }
+                  #shopify-section-{{ section.id }} .gt__node--end .gt__badge { left: auto; right: 0; transform: rotate(-6deg); transform-origin: right center; }
                   @media screen and (max-width: 749px) {
-                    #shopify-section-{{ section.id }} .gt__badge { font-size: 0.9rem; padding: 0.2rem 0.5rem; }
+                    #shopify-section-{{ section.id }} .gt__card { padding: 2rem 1.6rem 1.6rem; }
+                    #shopify-section-{{ section.id }} .gt__bar { padding-top: 5.8rem; }
+                    #shopify-section-{{ section.id }} .gt__circle { width: 3.4rem; height: 3.4rem; font-size: 1.6rem; }
+                    #shopify-section-{{ section.id }} .gt__label { font-size: 1rem; }
+                    #shopify-section-{{ section.id }} .gt__badge { font-size: 0.85rem; padding: 0.3rem 0.6rem; }
                   }
                 {%- endstyle -%}
                 <gift-tracker
@@ -1111,26 +1122,33 @@
                   data-msg-unlocked="{{ block.settings.message_unlocked | escape }}"
                   data-msg-all="{{ block.settings.message_all_unlocked | escape }}"
                 >
-                  {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
-                  <p class="gt__message" data-gt-message></p>
-                  <div class="gt__bar">
-                    <div class="gt__track"><div class="gt__fill" data-gt-fill style="width: {{ gt_fill }}%;"></div></div>
-                    {%- for m in gt_milestones -%}
-                      {%- liquid
-                        assign m_cents = m.settings.amount | times: 100
-                        assign m_pct = m_cents | times: 100 | divided_by: gt_max_cents
-                        assign m_anchor = 'mid'
-                        if m_pct <= 12
-                          assign m_anchor = 'start'
-                        elsif m_pct >= 88
-                          assign m_anchor = 'end'
-                        endif
-                      -%}
-                      <div class="gt__point gt__point--{{ m_anchor }}" data-gt-milestone data-amount="{{ m_cents }}" data-reward="{{ m.settings.reward_name | escape }}" style="left: {{ m_pct }}%;">
-                        <span class="gt__badge" style="--badge-bg: {{ m.settings.badge_bg }}; --badge-text: {{ m.settings.badge_text_color }};">{{ m.settings.badge_text }}</span>
-                        <span class="gt__tick"></span>
-                      </div>
-                    {%- endfor -%}
+                  <div class="gt__card">
+                    {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
+                    <p class="gt__message" data-gt-message></p>
+                    <div class="gt__bar">
+                      <div class="gt__track"><div class="gt__fill" data-gt-fill style="width: {{ gt_fill }}%;"></div></div>
+                      {%- for m in gt_milestones -%}
+                        {%- liquid
+                          assign m_cents = m.settings.amount | times: 100
+                          assign m_pct = m_cents | times: 100 | divided_by: gt_max_cents
+                          assign m_anchor = 'mid'
+                          if m_pct <= 8
+                            assign m_anchor = 'start'
+                          elsif m_pct >= 92
+                            assign m_anchor = 'end'
+                          endif
+                          assign m_label = m.settings.label
+                          if m_label == blank
+                            assign m_label = m.settings.amount | prepend: '$'
+                          endif
+                        -%}
+                        <div class="gt__node gt__node--{{ m_anchor }}{% if cart.total_price >= m_cents %} is-active{% endif %}" data-gt-milestone data-amount="{{ m_cents }}" data-reward="{{ m.settings.reward_name | escape }}" style="left: {{ m_pct }}%;">
+                          {%- if m.settings.badge_text != blank -%}<span class="gt__badge" style="--badge-bg: {{ m.settings.badge_bg }}; --badge-text: {{ m.settings.badge_text_color }};">{{ m.settings.badge_text }}</span>{%- endif -%}
+                          {%- if m_label != blank -%}<span class="gt__label">{{ m_label }}</span>{%- endif -%}
+                          <span class="gt__circle"><span class="gt__emoji">{{ m.settings.emoji }}</span></span>
+                        </div>
+                      {%- endfor -%}
+                    </div>
                   </div>
                 </gift-tracker>
                 <script>
@@ -2118,16 +2136,20 @@
       "limit": 1,
       "settings": [
         { "type": "paragraph", "content": "Display-only progress bar. Enter thresholds manually and keep them in sync with your Monk promotion settings - it shows progress, it does not grant rewards or integrate with Monk." },
-        { "type": "text", "id": "title", "label": "Title (optional)" },
+        { "type": "text", "id": "title", "label": "Title (optional)", "default": "Buy more, save more" },
         { "type": "text", "id": "message_away", "label": "Message - away", "info": "Use [amount] for the remaining total and [reward] for the reward name.", "default": "You're [amount] away from [reward]!" },
         { "type": "text", "id": "message_unlocked", "label": "Message - unlocked", "info": "Use [reward].", "default": "You've unlocked [reward]!" },
-        { "type": "text", "id": "message_all_unlocked", "label": "Message - all unlocked", "default": "You've unlocked everything!" },
-        { "type": "header", "content": "Bar styling" },
-        { "type": "color", "id": "fill_color", "label": "Fill color", "default": "#0A1A4F" },
+        { "type": "text", "id": "message_all_unlocked", "label": "Message - all unlocked", "default": "You've unlocked every reward!" },
+        { "type": "header", "content": "Card" },
+        { "type": "color", "id": "background_color", "label": "Card background", "default": "#FCFCEA" },
+        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#40738D" },
+        { "type": "header", "content": "Progress bar" },
+        { "type": "color", "id": "fill_color", "label": "Fill / reached color", "default": "#0A1A4F" },
         { "type": "color", "id": "track_color", "label": "Track color", "default": "#E2E5EC" },
         { "type": "range", "id": "bar_height", "min": 4, "max": 20, "step": 1, "unit": "px", "label": "Bar height", "default": 8 },
-        { "type": "color", "id": "marker_color", "label": "Marker color", "default": "#0A1A4F" },
-        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#40738D" }
+        { "type": "header", "content": "Milestone circles" },
+        { "type": "color", "id": "circle_bg", "label": "Circle background (unreached)", "default": "#FFFFFF" },
+        { "type": "color", "id": "circle_border", "label": "Circle border (unreached)", "default": "#E2E5EC" }
       ]
     },
     {
@@ -2135,10 +2157,12 @@
       "name": "Gift milestone",
       "settings": [
         { "type": "number", "id": "amount", "label": "Dollar amount", "default": 30 },
-        { "type": "text", "id": "badge_text", "label": "Badge text", "default": "SHIPS FREE" },
+        { "type": "text", "id": "emoji", "label": "Emoji", "info": "Shown inside the circle, e.g. 🚚 🎁 ⭐ 👑", "default": "🎁" },
+        { "type": "text", "id": "label", "label": "Threshold label (optional)", "info": "Shown above the circle. Defaults to the dollar amount." },
+        { "type": "text", "id": "badge_text", "label": "Reward badge (optional)", "info": "Tilted badge above the circle, e.g. SHIPS FREE.", "default": "SHIPS FREE" },
         { "type": "text", "id": "reward_name", "label": "Reward name (for message)", "default": "free shipping" },
-        { "type": "color", "id": "badge_bg", "label": "Badge background", "default": "#0A1A4F" },
-        { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#FFFFFF" }
+        { "type": "color", "id": "badge_bg", "label": "Reward badge background", "default": "#C9A86A" },
+        { "type": "color", "id": "badge_text_color", "label": "Reward badge text", "default": "#0A1A4F" }
       ]
     },
     {
