@@ -105,17 +105,21 @@
             "message_away": "You're [amount] away from [reward]!",
             "message_unlocked": "You've unlocked [reward]!",
             "message_all_unlocked": "You've unlocked everything!",
+            "background_color": "#fcfcea",
+            "message_color": "#40738d",
             "fill_color": "#0a1a4f",
             "track_color": "#e2e5ec",
             "bar_height": 15,
-            "marker_color": "#0a1a4f",
-            "message_color": "#40738d"
+            "circle_bg": "#ffffff",
+            "circle_border": "#e2e5ec"
           }
         },
         "milestone_Q9VkBq": {
           "type": "milestone",
           "settings": {
             "amount": 30,
+            "emoji": "🚚",
+            "label": "",
             "badge_text": "FREE SHIPPING",
             "reward_name": "free shipping",
             "badge_bg": "#0a1a4f",
@@ -126,6 +130,8 @@
           "type": "milestone",
           "settings": {
             "amount": 110,
+            "emoji": "🎁",
+            "label": "",
             "badge_text": "FREE GIFT",
             "reward_name": "free shipping",
             "badge_bg": "#0a1a4f",
