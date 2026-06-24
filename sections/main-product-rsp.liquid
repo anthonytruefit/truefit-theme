@@ -1728,11 +1728,20 @@
     display: inline-flex;
     align-items: center;
     height: 100%;
+    width: auto;
     min-height: {{ ps.qty_min_height }}px;
     background: {{ ps.qty_bg }};
     border: {{ ps.qty_border_width }}px solid {{ ps.qty_border_color }};
     border-radius: {{ ps.qty_radius }}px;
     overflow: hidden;
+  }
+  /* Neutralize Dawn's default .quantity pseudo-frames (inner outline + bg box)
+     so only our single tf-qty border shows — no more box-within-a-box. */
+  #shopify-section-{{ section.id }} .tf-qty__control::before,
+  #shopify-section-{{ section.id }} .tf-qty__control::after {
+    display: none !important;
+    content: none !important;
+    box-shadow: none !important;
   }
   #shopify-section-{{ section.id }} .tf-qty__btn {
     width: {{ ps.qty_button_size }}px;
