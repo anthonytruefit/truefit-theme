@@ -1086,8 +1086,7 @@
                 {%- style -%}
                   #shopify-section-{{ section.id }} .gt { display: block; margin-top: 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__card { background: {{ block.settings.background_color }}; border-radius: 16px; padding: 2.4rem 2rem 2rem; }
-                  #shopify-section-{{ section.id }} .gt__title { margin: 0 0 0.4rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
-                  #shopify-section-{{ section.id }} .gt__message { margin: 0; color: {{ block.settings.message_color }}; font-size: 1.3rem; line-height: 1.4; min-height: 1.4em; }
+                  #shopify-section-{{ section.id }} .gt__title { margin: 0 0 1.2rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
                   #shopify-section-{{ section.id }} .gt__bar { position: relative; padding: 6.6rem 0 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height }}px; background: {{ block.settings.track_color }}; border-radius: 999px; overflow: hidden; }
                   #shopify-section-{{ section.id }} .gt__fill { position: absolute; top: 0; left: 0; height: 100%; background: {{ block.settings.fill_color }}; border-radius: 999px; transition: width 0.45s ease; }
@@ -1115,16 +1114,11 @@
                 <gift-tracker
                   class="gt"
                   {{ block.shopify_attributes }}
-                  data-money-format="{{ shop.money_format | escape }}"
                   data-cart-total="{{ cart.total_price }}"
                   data-max="{{ gt_max_cents }}"
-                  data-msg-away="{{ block.settings.message_away | escape }}"
-                  data-msg-unlocked="{{ block.settings.message_unlocked | escape }}"
-                  data-msg-all="{{ block.settings.message_all_unlocked | escape }}"
                 >
                   <div class="gt__card">
                     {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
-                    <p class="gt__message" data-gt-message></p>
                     <div class="gt__bar">
                       <div class="gt__track"><div class="gt__fill" data-gt-fill style="width: {{ gt_fill }}%;"></div></div>
                       {%- for m in gt_milestones -%}
@@ -1159,69 +1153,60 @@
                         if (this._init) return;
                         this._init = true;
                         this.fillEl = this.querySelector('[data-gt-fill]');
-                        this.msgEl = this.querySelector('[data-gt-message]');
                         this.points = Array.from(this.querySelectorAll('[data-gt-milestone]'));
-                        this.max = parseInt(this.dataset.max, 10) || 0;
-                        this.moneyFormat = this.dataset.moneyFormat || '';
-                        this.tplAway = this.dataset.msgAway || '';
-                        this.tplUnlocked = this.dataset.msgUnlocked || '';
-                        this.tplAll = this.dataset.msgAll || '';
+                        // Max = the largest milestone threshold (robust even if data-max is missing).
+                        var amounts = this.points.map(function (p) { return parseInt(p.dataset.amount, 10) || 0; });
+                        this.max = Math.max.apply(null, amounts.concat([parseInt(this.dataset.max, 10) || 0]));
+                        // Paint immediately from the server-rendered total, then correct from a live
+                        // cart fetch (covers stale carts and the deferred-pubsub load order).
                         this.update(parseInt(this.dataset.cartTotal, 10) || 0);
-                        var self = this;
-                        if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-                          this._unsub = subscribe(PUB_SUB_EVENTS.cartUpdate, function (e) { self.onCartUpdate(e); });
-                        }
+                        this.refresh();
+                        this.wire();
                       }
                       disconnectedCallback() { if (this._unsub) this._unsub(); }
+                      // pubsub.js / constants.js load with `defer`, so `subscribe` and
+                      // PUB_SUB_EVENTS may not exist yet when this inline script runs. Wait for
+                      // DOMContentLoaded (fires after deferred scripts) before subscribing.
+                      wire() {
+                        var self = this;
+                        var attach = function () {
+                          if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+                            self._unsub = subscribe(PUB_SUB_EVENTS.cartUpdate, function (e) { self.onCartUpdate(e); });
+                          } else {
+                            // Fallback: re-check shortly in case scripts are still loading.
+                            setTimeout(attach, 300);
+                          }
+                        };
+                        if (document.readyState === 'loading') {
+                          document.addEventListener('DOMContentLoaded', attach, { once: true });
+                        } else {
+                          attach();
+                        }
+                      }
                       onCartUpdate(e) {
                         if (e && e.cartData && typeof e.cartData.total_price === 'number') {
                           this.update(e.cartData.total_price);
                           return;
                         }
+                        this.refresh();
+                      }
+                      refresh() {
                         var self = this;
                         var url = (window.routes && window.routes.cart_url ? window.routes.cart_url : '/cart') + '.js';
-                        fetch(url).then(function (r) { return r.json(); }).then(function (cart) {
-                          if (cart && typeof cart.total_price === 'number') self.update(cart.total_price);
-                        }).catch(function () {});
+                        fetch(url, { headers: { Accept: 'application/json' } })
+                          .then(function (r) { return r.json(); })
+                          .then(function (cart) { if (cart && typeof cart.total_price === 'number') self.update(cart.total_price); })
+                          .catch(function () {});
                       }
                       update(total) {
-                        var max = this.max || 1;
-                        var pct = Math.max(0, Math.min(100, (total / max) * 100));
+                        var max = this.max > 0 ? this.max : 0;
+                        var pct = max > 0 ? Math.max(0, Math.min(100, (total / max) * 100)) : 0;
                         if (this.fillEl) this.fillEl.style.width = pct + '%';
-                        var ms = this.points.map(function (p) {
-                          return { el: p, amount: parseInt(p.dataset.amount, 10) || 0, reward: p.dataset.reward || '' };
-                        }).sort(function (a, b) { return a.amount - b.amount; });
-                        var next = null;
-                        ms.forEach(function (m) {
-                          if (total >= m.amount) { m.el.classList.add('is-active'); }
-                          else { m.el.classList.remove('is-active'); if (!next) next = m; }
+                        this.points.forEach(function (p) {
+                          var amount = parseInt(p.dataset.amount, 10) || 0;
+                          if (total >= amount && amount > 0) { p.classList.add('is-active'); }
+                          else { p.classList.remove('is-active'); }
                         });
-                        var text = '';
-                        if (next) {
-                          text = this.tplAway.split('[amount]').join(this.formatMoney(next.amount - total)).split('[reward]').join(next.reward);
-                        } else if (ms.length) {
-                          text = this.tplAll || this.tplUnlocked.split('[reward]').join(ms[ms.length - 1].reward);
-                        }
-                        if (this.msgEl) this.msgEl.textContent = text;
-                      }
-                      formatMoney(cents) {
-                        var format = this.moneyFormat;
-                        if (!format) { return '$' + (cents / 100).toFixed(2); }
-                        function fwd(number, precision, thousands, decimal) {
-                          precision = precision == null ? 2 : precision; thousands = thousands == null ? ',' : thousands; decimal = decimal == null ? '.' : decimal;
-                          if (isNaN(number) || number == null) return '0';
-                          number = (number / 100).toFixed(precision);
-                          var parts = number.split('.'); var dollars = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + thousands); var c = parts[1] ? decimal + parts[1] : '';
-                          return dollars + c;
-                        }
-                        var re = /\{\{\s*(\w+)\s*\}\}/; var m = format.match(re); var t = m ? m[1] : 'amount'; var val;
-                        switch (t) {
-                          case 'amount_no_decimals': val = fwd(cents, 0); break;
-                          case 'amount_with_comma_separator': val = fwd(cents, 2, '.', ','); break;
-                          case 'amount_no_decimals_with_comma_separator': val = fwd(cents, 0, '.', ','); break;
-                          default: val = fwd(cents, 2);
-                        }
-                        return format.replace(re, val);
                       }
                     }
                     customElements.define('gift-tracker', GiftTracker);
@@ -2137,12 +2122,8 @@
       "settings": [
         { "type": "paragraph", "content": "Display-only progress bar. Enter thresholds manually and keep them in sync with your Monk promotion settings - it shows progress, it does not grant rewards or integrate with Monk." },
         { "type": "text", "id": "title", "label": "Title (optional)", "default": "Buy more, save more" },
-        { "type": "text", "id": "message_away", "label": "Message - away", "info": "Use [amount] for the remaining total and [reward] for the reward name.", "default": "You're [amount] away from [reward]!" },
-        { "type": "text", "id": "message_unlocked", "label": "Message - unlocked", "info": "Use [reward].", "default": "You've unlocked [reward]!" },
-        { "type": "text", "id": "message_all_unlocked", "label": "Message - all unlocked", "default": "You've unlocked every reward!" },
         { "type": "header", "content": "Card" },
         { "type": "color", "id": "background_color", "label": "Card background", "default": "#FCFCEA" },
-        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#40738D" },
         { "type": "header", "content": "Progress bar" },
         { "type": "color", "id": "fill_color", "label": "Fill / reached color", "default": "#0A1A4F" },
         { "type": "color", "id": "track_color", "label": "Track color", "default": "#E2E5EC" },
