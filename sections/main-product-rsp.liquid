@@ -1060,6 +1060,163 @@
               {%- elsif request.design_mode -%}
                 <p class="fbt__notice">Frequently Bought Together: set companion product 1 and/or 2 in this block's settings.</p>
               {%- endif -%}
+
+            {%- when 'gift_tracker' -%}
+              {%- comment -%} DISPLAY-ONLY progress bar. Thresholds are entered manually in the
+                editor and MUST be kept in sync with the real Monk promotion settings. This bar
+                does NOT grant rewards, verify anything, or integrate with Monk - it only reads
+                the live cart total (cart.total_price + the cartUpdate event) and shows progress. {%- endcomment -%}
+              {%- liquid
+                assign gt_milestones = section.blocks | where: 'type', 'milestone'
+                assign gt_max = 0
+                for m in gt_milestones
+                  if m.settings.amount > gt_max
+                    assign gt_max = m.settings.amount
+                  endif
+                endfor
+                assign gt_max_cents = gt_max | times: 100
+              -%}
+              {%- if gt_milestones.size > 0 and gt_max_cents > 0 -%}
+                {%- liquid
+                  assign gt_fill = cart.total_price | times: 100 | divided_by: gt_max_cents
+                  if gt_fill > 100
+                    assign gt_fill = 100
+                  endif
+                -%}
+                {%- style -%}
+                  #shopify-section-{{ section.id }} .gt { display: block; margin-top: 1.6rem; }
+                  #shopify-section-{{ section.id }} .gt__title { margin: 0 0 0.4rem; font-weight: 600; color: {{ block.settings.message_color }}; font-size: 1.4rem; }
+                  #shopify-section-{{ section.id }} .gt__message { margin: 0 0 1.2rem; color: {{ block.settings.message_color }}; font-size: 1.3rem; line-height: 1.4; min-height: 1.4em; }
+                  #shopify-section-{{ section.id }} .gt__bar { position: relative; padding-top: 3.4rem; }
+                  #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height }}px; background: {{ block.settings.track_color }}; border-radius: 999px; overflow: hidden; }
+                  #shopify-section-{{ section.id }} .gt__fill { height: 100%; background: {{ block.settings.fill_color }}; border-radius: 999px; transition: width 0.4s ease; }
+                  #shopify-section-{{ section.id }} .gt__point { position: absolute; bottom: 0; height: {{ block.settings.bar_height }}px; }
+                  #shopify-section-{{ section.id }} .gt__tick { position: absolute; bottom: 0; left: 0; transform: translateX(-50%); width: 0.2rem; height: 100%; background: {{ block.settings.track_color }}; }
+                  #shopify-section-{{ section.id }} .gt__point.is-active .gt__tick { background: {{ block.settings.marker_color }}; }
+                  #shopify-section-{{ section.id }} .gt__badge { position: absolute; bottom: calc(100% + 0.8rem); left: 0; transform: translateX(-50%); white-space: nowrap; font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 0.4rem; background: #e2e5ec; color: #8590ab; transition: background 0.2s ease, color 0.2s ease; }
+                  #shopify-section-{{ section.id }} .gt__point.is-active .gt__badge { background: var(--badge-bg); color: var(--badge-text); }
+                  #shopify-section-{{ section.id }} .gt__point--start .gt__badge { left: 0; transform: translateX(0); }
+                  #shopify-section-{{ section.id }} .gt__point--end .gt__badge { left: auto; right: 0; transform: translateX(0); }
+                  @media screen and (max-width: 749px) {
+                    #shopify-section-{{ section.id }} .gt__badge { font-size: 0.9rem; padding: 0.2rem 0.5rem; }
+                  }
+                {%- endstyle -%}
+                <gift-tracker
+                  class="gt"
+                  {{ block.shopify_attributes }}
+                  data-money-format="{{ shop.money_format | escape }}"
+                  data-cart-total="{{ cart.total_price }}"
+                  data-max="{{ gt_max_cents }}"
+                  data-msg-away="{{ block.settings.message_away | escape }}"
+                  data-msg-unlocked="{{ block.settings.message_unlocked | escape }}"
+                  data-msg-all="{{ block.settings.message_all_unlocked | escape }}"
+                >
+                  {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
+                  <p class="gt__message" data-gt-message></p>
+                  <div class="gt__bar">
+                    <div class="gt__track"><div class="gt__fill" data-gt-fill style="width: {{ gt_fill }}%;"></div></div>
+                    {%- for m in gt_milestones -%}
+                      {%- liquid
+                        assign m_cents = m.settings.amount | times: 100
+                        assign m_pct = m_cents | times: 100 | divided_by: gt_max_cents
+                        assign m_anchor = 'mid'
+                        if m_pct <= 12
+                          assign m_anchor = 'start'
+                        elsif m_pct >= 88
+                          assign m_anchor = 'end'
+                        endif
+                      -%}
+                      <div class="gt__point gt__point--{{ m_anchor }}" data-gt-milestone data-amount="{{ m_cents }}" data-reward="{{ m.settings.reward_name | escape }}" style="left: {{ m_pct }}%;">
+                        <span class="gt__badge" style="--badge-bg: {{ m.settings.badge_bg }}; --badge-text: {{ m.settings.badge_text_color }};">{{ m.settings.badge_text }}</span>
+                        <span class="gt__tick"></span>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </gift-tracker>
+                <script>
+                  (function () {
+                    if (window.customElements && customElements.get('gift-tracker')) return;
+                    class GiftTracker extends HTMLElement {
+                      connectedCallback() {
+                        if (this._init) return;
+                        this._init = true;
+                        this.fillEl = this.querySelector('[data-gt-fill]');
+                        this.msgEl = this.querySelector('[data-gt-message]');
+                        this.points = Array.from(this.querySelectorAll('[data-gt-milestone]'));
+                        this.max = parseInt(this.dataset.max, 10) || 0;
+                        this.moneyFormat = this.dataset.moneyFormat || '';
+                        this.tplAway = this.dataset.msgAway || '';
+                        this.tplUnlocked = this.dataset.msgUnlocked || '';
+                        this.tplAll = this.dataset.msgAll || '';
+                        this.update(parseInt(this.dataset.cartTotal, 10) || 0);
+                        var self = this;
+                        if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+                          this._unsub = subscribe(PUB_SUB_EVENTS.cartUpdate, function (e) { self.onCartUpdate(e); });
+                        }
+                      }
+                      disconnectedCallback() { if (this._unsub) this._unsub(); }
+                      onCartUpdate(e) {
+                        if (e && e.cartData && typeof e.cartData.total_price === 'number') {
+                          this.update(e.cartData.total_price);
+                          return;
+                        }
+                        var self = this;
+                        var url = (window.routes && window.routes.cart_url ? window.routes.cart_url : '/cart') + '.js';
+                        fetch(url).then(function (r) { return r.json(); }).then(function (cart) {
+                          if (cart && typeof cart.total_price === 'number') self.update(cart.total_price);
+                        }).catch(function () {});
+                      }
+                      update(total) {
+                        var max = this.max || 1;
+                        var pct = Math.max(0, Math.min(100, (total / max) * 100));
+                        if (this.fillEl) this.fillEl.style.width = pct + '%';
+                        var ms = this.points.map(function (p) {
+                          return { el: p, amount: parseInt(p.dataset.amount, 10) || 0, reward: p.dataset.reward || '' };
+                        }).sort(function (a, b) { return a.amount - b.amount; });
+                        var next = null;
+                        ms.forEach(function (m) {
+                          if (total >= m.amount) { m.el.classList.add('is-active'); }
+                          else { m.el.classList.remove('is-active'); if (!next) next = m; }
+                        });
+                        var text = '';
+                        if (next) {
+                          text = this.tplAway.split('[amount]').join(this.formatMoney(next.amount - total)).split('[reward]').join(next.reward);
+                        } else if (ms.length) {
+                          text = this.tplAll || this.tplUnlocked.split('[reward]').join(ms[ms.length - 1].reward);
+                        }
+                        if (this.msgEl) this.msgEl.textContent = text;
+                      }
+                      formatMoney(cents) {
+                        var format = this.moneyFormat;
+                        if (!format) { return '$' + (cents / 100).toFixed(2); }
+                        function fwd(number, precision, thousands, decimal) {
+                          precision = precision == null ? 2 : precision; thousands = thousands == null ? ',' : thousands; decimal = decimal == null ? '.' : decimal;
+                          if (isNaN(number) || number == null) return '0';
+                          number = (number / 100).toFixed(precision);
+                          var parts = number.split('.'); var dollars = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + thousands); var c = parts[1] ? decimal + parts[1] : '';
+                          return dollars + c;
+                        }
+                        var re = /\{\{\s*(\w+)\s*\}\}/; var m = format.match(re); var t = m ? m[1] : 'amount'; var val;
+                        switch (t) {
+                          case 'amount_no_decimals': val = fwd(cents, 0); break;
+                          case 'amount_with_comma_separator': val = fwd(cents, 2, '.', ','); break;
+                          case 'amount_no_decimals_with_comma_separator': val = fwd(cents, 0, '.', ','); break;
+                          default: val = fwd(cents, 2);
+                        }
+                        return format.replace(re, val);
+                      }
+                    }
+                    customElements.define('gift-tracker', GiftTracker);
+                  })();
+                </script>
+              {%- elsif request.design_mode -%}
+                <p class="gt__notice">Gift Tracker: add one or more "Gift milestone" blocks (dollar amount + badge) to show the progress bar.</p>
+              {%- endif -%}
+
+            {%- when 'milestone' -%}
+              {%- comment -%} Data block for the Gift Tracker bar; renders no visible element. {%- endcomment -%}
+              <span class="gt-milestone-flag" {{ block.shopify_attributes }} hidden></span>
+
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -1919,6 +2076,35 @@
         { "type": "color", "id": "fbt_button_bg", "label": "Button background", "default": "#0A1A4F" },
         { "type": "color", "id": "fbt_button_text", "label": "Button text color", "default": "#FFFFFF" },
         { "type": "range", "id": "fbt_button_radius", "label": "Button corner radius", "min": 0, "max": 24, "step": 1, "unit": "px", "default": 8 }
+      ]
+    },
+    {
+      "type": "gift_tracker",
+      "name": "Gift tracker",
+      "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "Display-only progress bar. Enter thresholds manually and keep them in sync with your Monk promotion settings - it shows progress, it does not grant rewards or integrate with Monk." },
+        { "type": "text", "id": "title", "label": "Title (optional)" },
+        { "type": "text", "id": "message_away", "label": "Message - away", "info": "Use [amount] for the remaining total and [reward] for the reward name.", "default": "You're [amount] away from [reward]!" },
+        { "type": "text", "id": "message_unlocked", "label": "Message - unlocked", "info": "Use [reward].", "default": "You've unlocked [reward]!" },
+        { "type": "text", "id": "message_all_unlocked", "label": "Message - all unlocked", "default": "You've unlocked everything!" },
+        { "type": "header", "content": "Bar styling" },
+        { "type": "color", "id": "fill_color", "label": "Fill color", "default": "#0A1A4F" },
+        { "type": "color", "id": "track_color", "label": "Track color", "default": "#E2E5EC" },
+        { "type": "range", "id": "bar_height", "min": 4, "max": 20, "step": 1, "unit": "px", "label": "Bar height", "default": 8 },
+        { "type": "color", "id": "marker_color", "label": "Marker color", "default": "#0A1A4F" },
+        { "type": "color", "id": "message_color", "label": "Message text color", "default": "#0A1A4F" }
+      ]
+    },
+    {
+      "type": "milestone",
+      "name": "Gift milestone",
+      "settings": [
+        { "type": "number", "id": "amount", "label": "Dollar amount", "default": 30 },
+        { "type": "text", "id": "badge_text", "label": "Badge text", "default": "SHIPS FREE" },
+        { "type": "text", "id": "reward_name", "label": "Reward name (for message)", "default": "free shipping" },
+        { "type": "color", "id": "badge_bg", "label": "Badge background", "default": "#0A1A4F" },
+        { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#FFFFFF" }
       ]
     },
     {
