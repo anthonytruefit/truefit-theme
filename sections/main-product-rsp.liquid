@@ -126,17 +126,6 @@
           {%- if b.type == 'tf_quantity' -%}{%- assign has_tf_quantity = true -%}{%- endif -%}
         {%- endfor -%}
 
-        {%- comment -%} TrueFit: wrap the contiguous custom flavor swatches in one cream
-          panel. Capture the first/last swatch index so the group shares a single card. {%- endcomment -%}
-        {%- assign flavor_first_index = -1 -%}
-        {%- assign flavor_last_index = -1 -%}
-        {%- for b in section.blocks -%}
-          {%- if b.type == 'custom_flavor_swatch' -%}
-            {%- if flavor_first_index == -1 -%}{%- assign flavor_first_index = forloop.index0 -%}{%- endif -%}
-            {%- assign flavor_last_index = forloop.index0 -%}
-          {%- endif -%}
-        {%- endfor -%}
-
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -802,9 +791,6 @@
                   assign is_current = true
                 endif
               -%}
-              {%- if product.template_suffix contains 'truefit' and forloop.index0 == flavor_first_index -%}
-                <div class="tf-flavor-panel-{{ section.id }}">
-              {%- endif -%}
               <div class="custom-flavor-swatch-{{ section.id }}{% if is_current %} is-current{% endif %}" {{ block.shopify_attributes }}>
                 <a href="{{ swatch_url | default: '#' }}" class="custom-flavor-swatch__link-{{ section.id }}" aria-label="{{ block.settings.caption | escape }}">
                   <span class="custom-flavor-swatch__media-{{ section.id }}">
@@ -836,9 +822,6 @@
                   {%- endif -%}
                 </a>
               </div>
-              {%- if product.template_suffix contains 'truefit' and forloop.index0 == flavor_last_index -%}
-                </div>
-              {%- endif -%}
 
             {%- when 'variant_picker' -%}
               {%- assign icon_blocks = section.blocks | where: 'type', 'product_option_icon' %}
@@ -1848,32 +1831,6 @@
   #shopify-section-{{ section.id }} .rating-text {
     color: #0A1A4F !important;
   }
-
-  /* ---------- TrueFit cream module panels (media area, flavor group, FBT card) ----------
-     Scoped to TrueFit templates so the shared section leaves AminoLean/RSP PDPs
-     untouched. Recreates the homepage white -> cream rhythm down the page. */
-  {%- if product.template_suffix contains 'truefit' -%}
-  /* 1. Product media area */
-  #shopify-section-{{ section.id }} .product__media-wrapper,
-  #shopify-section-{{ section.id }} .product__media-list,
-  #shopify-section-{{ section.id }} .product__media-item,
-  #shopify-section-{{ section.id }} .product__media-item > .media {
-    background-color: #FCFCEA !important;
-  }
-  /* 2b. Flavor selector group: cream panel, swatch cards stay white */
-  #shopify-section-{{ section.id }} .tf-flavor-panel-{{ section.id }} {
-    background-color: #FCFCEA;
-    padding: 1.6rem 1.6rem 0.4rem;
-    border-radius: 12px;
-    margin: 1.2rem 0;
-  }
-  /* 2. Frequently bought together: cream card */
-  #shopify-section-{{ section.id }} .fbt {
-    background-color: #FCFCEA;
-    padding: 2rem;
-    border-radius: 12px;
-  }
-  {%- endif -%}
 </style>
 {%- endif -%}
 
