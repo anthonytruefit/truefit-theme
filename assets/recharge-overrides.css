@@ -303,3 +303,29 @@ recharge-subscription-widget::part(rc-purchase-option__badge) {
   background: #c9a86a !important;
   color: #0a1a4f !important;
 }
+
+/* ---- Fine-tune pass ---- */
+/* Benefit bullets + "Deliver every" label in muted body color */
+recharge-subscription-widget::part(rc-purchase-option__sub-container) {
+  color: #40738d !important;
+}
+/* Refined, tighter gold tag */
+recharge-subscription-widget::part(rc-purchase-option__badge) {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 0.4rem !important;
+}
+/* Frequency dropdown (best-guess part names; harmless no-op if they differ -
+   if the dropdown doesn't change, send its part= name and I'll target it) */
+recharge-subscription-widget::part(rc-selling-plan-dropdown),
+recharge-subscription-widget::part(rc-purchase-option__dropdown),
+recharge-subscription-widget::part(rc-purchase-option__selling-plan),
+recharge-subscription-widget::part(rc-purchase-option__select) {
+  background: #ffffff !important;
+  color: #0a1a4f !important;
+  border: 0.1rem solid rgba(10, 26, 79, 0.2) !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
