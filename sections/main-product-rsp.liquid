@@ -1806,6 +1806,27 @@
   }
   {%- endif -%}
   {%- endif -%}
+
+  /* ---------- Navy product header (title, reviews count, description, price) ----------
+     Brand decision: this key purchase info reads too light in the scheme text
+     color (#40738D) on white, so force navy. Targets text only — the review
+     star glyphs keep their own color. */
+  #shopify-section-{{ section.id }} .product__title,
+  #shopify-section-{{ section.id }} .product__title a,
+  #shopify-section-{{ section.id }} .product__text,
+  #shopify-section-{{ section.id }} .product__text.subtitle,
+  #shopify-section-{{ section.id }} .price,
+  #shopify-section-{{ section.id }} .price__container,
+  #shopify-section-{{ section.id }} .price-item,
+  #shopify-section-{{ section.id }} .price-item--regular,
+  #shopify-section-{{ section.id }} .price-item--sale,
+  #shopify-section-{{ section.id }} [data-selling-plan-price-display],
+  #shopify-section-{{ section.id }} [data-compare-price],
+  #shopify-section-{{ section.id }} .spr-badge-caption,
+  #shopify-section-{{ section.id }} .jdgm-prev-badge__text,
+  #shopify-section-{{ section.id }} .rating-text {
+    color: #0A1A4F !important;
+  }
 </style>
 {%- endif -%}
 
