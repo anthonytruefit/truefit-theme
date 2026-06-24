@@ -101,12 +101,8 @@
         "gift_tracker_eXAV6W": {
           "type": "gift_tracker",
           "settings": {
-            "title": "",
-            "message_away": "You're [amount] away from [reward]!",
-            "message_unlocked": "You've unlocked [reward]!",
-            "message_all_unlocked": "You've unlocked everything!",
+            "title": "Free Gift Tracker",
             "background_color": "#fcfcea",
-            "message_color": "#40738d",
             "fill_color": "#0a1a4f",
             "track_color": "#e2e5ec",
             "bar_height": 15,
