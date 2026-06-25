@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "Creatine Bundle",
+            "title": "TrueFit Protein",
             "remove_flavor_name": true
           }
         },
@@ -38,9 +38,9 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "Strength, simplified - two TrueFit flavors plus pure creatine in one stack.",
+            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
             "text_style": "body",
-            "custom_text_size": 1.5,
+            "custom_text_size": 1.6,
             "custom_text_color": "",
             "custom_text_align": "",
             "custom_text_weight": ""
@@ -50,15 +50,122 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
+            "caption": "Vanilla",
+            "size_text": "20 servings",
+            "tag_text": "Best Seller",
+            "link_product": "truefit-vanilla",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_zikHKM": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
+            "caption": "Chocolate",
+            "size_text": "20 servings",
+            "tag_text": "#1 Reviewed",
+            "link_product": "truefit-chocolate",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_pHe4Xf": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
+            "caption": "Chocolate",
+            "size_text": "40 servings",
+            "tag_text": "Sold Out",
+            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "link": ""
+          }
+        },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
         },
-        "buy_buttons": {
+        "buy_buttons_aYXg8M": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
+          }
+        },
+        "trust_badges_VqYcAM": {
+          "type": "trust_badges",
+          "settings": {
+            "icon_1": "guarantee",
+            "text_1": "30-day money back guarantee",
+            "icon_2": "lock",
+            "text_2": "Secure checkout",
+            "icon_3": "truck",
+            "text_3": "Fast shipping",
+            "icon_color": "#0a1a4f",
+            "text_color": "#40738d",
+            "icon_size": 22,
+            "text_size": 12,
+            "padding_y": 0,
+            "show_divider": false
+          }
+        },
+        "tf_quantity_JnNB6y": {
+          "type": "tf_quantity",
+          "settings": {}
+        },
+        "gift_tracker_eXAV6W": {
+          "type": "gift_tracker",
+          "settings": {
+            "title": "Earn Your Extras.",
+            "background_color": "#fcfcea",
+            "fill_color": "#0a1a4f",
+            "track_color": "#e2e5ec",
+            "bar_height": 15,
+            "circle_bg": "#ffffff",
+            "circle_border": "#e2e5ec"
+          }
+        },
+        "milestone_Q9VkBq": {
+          "type": "milestone",
+          "settings": {
+            "amount": 30,
+            "emoji": "🚚",
+            "label": "",
+            "badge_text": "FREE SHIPPING",
+            "reward_name": "free shipping",
+            "badge_bg": "#0a1a4f",
+            "badge_text_color": "#ffffff"
+          }
+        },
+        "milestone_CqpTCg": {
+          "type": "milestone",
+          "settings": {
+            "amount": 110,
+            "emoji": "🎁",
+            "label": "",
+            "badge_text": "FREE GIFT",
+            "reward_name": "free shipping",
+            "badge_bg": "#0a1a4f",
+            "badge_text_color": "#ffffff"
+          }
+        },
+        "fbt_A6RCtM": {
+          "type": "fbt",
+          "settings": {
+            "heading": "Frequently bought together",
+            "companion_1": "creatine-mono",
+            "companion_2": "vegan-aminolean-acai",
+            "fbt_card_bg": "#ffffff",
+            "fbt_card_border": "#e2e5ec",
+            "fbt_card_radius": 12,
+            "fbt_check_color": "#0a1a4f",
+            "fbt_total_color": "#0a1a4f",
+            "fbt_total_size": 18,
+            "fbt_button_bg": "#0a1a4f",
+            "fbt_button_text": "#ffffff",
+            "fbt_button_radius": 8
           }
         }
       },
@@ -68,15 +175,24 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
+        "custom_flavor_swatch_AyML78",
+        "custom_flavor_swatch_zikHKM",
+        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
-        "buy_buttons"
+        "buy_buttons_aYXg8M",
+        "trust_badges_VqYcAM",
+        "tf_quantity_JnNB6y",
+        "gift_tracker_eXAV6W",
+        "milestone_Q9VkBq",
+        "milestone_CqpTCg",
+        "fbt_A6RCtM"
       ],
       "settings": {
         "enable_custom_styling": true,
         "section_bg": "#ffffff",
         "section_gradient": "",
         "enable_flavor_styling": true,
-        "flavor_swatch_size": 72,
+        "flavor_swatch_size": 92,
         "flavor_image_radius": 8,
         "flavor_gap": 12,
         "flavor_swatch_bg": "#ffffff",
@@ -85,38 +201,38 @@
         "flavor_selected_border": "#0a1a4f",
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0a1a4f",
-        "flavor_caption_size": 1.2,
+        "flavor_caption_size": 1.4,
         "flavor_caption_weight": "500",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738d",
-        "flavor_size_text_size": 0.9,
+        "flavor_size_text_size": 1,
         "flavor_tag_bg": "#c9a86a",
         "flavor_tag_text_color": "#0a1a4f",
-        "flavor_tag_text_size": 1.1,
-        "flavor_tag_weight": "700",
+        "flavor_tag_text_size": 1,
+        "flavor_tag_weight": "600",
         "flavor_tag_padding_x": 10,
         "flavor_tag_padding_y": 6,
         "flavor_tag_radius": 6,
         "flavor_tag_offset": 6,
         "qty_min_height": 52,
-        "qty_button_size": 44,
+        "qty_button_size": 40,
         "qty_input_width": 48,
-        "qty_gap": 12,
-        "qty_radius": 8,
+        "qty_gap": 8,
+        "qty_radius": 6,
         "qty_border_width": 1,
         "qty_bg": "#ffffff",
         "qty_border_color": "#0a1a4f",
         "qty_text_color": "#0a1a4f",
         "enable_button_styling": true,
-        "button_label": "ADD TO CART",
+        "button_label": "",
         "button_bg": "#0a1a4f",
         "button_gradient": "",
-        "button_text_color": "#f6eed7",
+        "button_text_color": "#ffffff",
         "button_text_size": 1.5,
-        "button_radius": 17,
+        "button_radius": 8,
         "button_border_color": "#0a1a4f",
         "button_border_width": 0,
-        "button_padding_x": 30,
+        "button_padding_x": 24,
         "button_padding_y": 16,
         "enable_sticky_info": false,
         "media_size": "medium",
@@ -138,23 +254,23 @@
         "ai_gen_block_5b7a641_n4xGE8": {
           "type": "ai_gen_block_5b7a641",
           "settings": {
-            "desktop_width_percent": 60,
+            "desktop_width_percent": 80,
             "container_padding": 0,
             "content_padding": 24,
             "tab_padding": 20,
             "tab_gap": 4,
             "background_color": "#ffffff",
-            "heading_color": "#3f2020",
-            "heading_hover_color": "#00a0e2",
-            "heading_active_color": "#00a0e2",
-            "text_color": "#000000",
-            "caption_color": "#666666",
-            "border_color": "#e0e0e0",
-            "active_border_color": "#e7e4c2",
+            "heading_color": "#0a1a4f",
+            "heading_hover_color": "#40738d",
+            "heading_active_color": "#0a1a4f",
+            "text_color": "#40738d",
+            "caption_color": "#40738d",
+            "border_color": "#e2e5ec",
+            "active_border_color": "#0a1a4f",
             "heading_font": "poppins_n6",
             "heading_size": 18,
             "body_font": "poppins_n4",
-            "body_size": 17,
+            "body_size": 14,
             "caption_size": 12,
             "border_radius": 24,
             "border_thickness": 1,
@@ -163,7 +279,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>The Creatine Bundle pairs both best-selling TrueFit flavors with pure, single-ingredient creatine for a complete, foundational routine in one stack. TrueFit delivers 25g of grass-fed protein with whole-food fiber to fuel and rebuild muscle. Creatine, one of the most-researched ingredients in nutrition, supports far more than strength, with emerging research linking it to sharper cognition, brain health, and healthy aging. Together they cover the full picture: the building blocks for your body, the support for your mind, and a foundation that pays off over time. Nothing fake, every ingredient earned.</p>",
+            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -185,7 +301,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>TrueFit Protein:<br/>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.<br/><br/>Creatine:<br/>Take one serving (1 scoop) mixed with 8-10 fl. oz. of cold water (or other beverage of your choice) before, during or after training. On non-training days, take one serving (1 scoop) in the morning. Easily mixed and stacked with other products.</p>",
+            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -221,6 +337,621 @@
       ],
       "settings": {}
     },
+    "c20591e7-b7e5-44b6-b04f-95fc0866f0a7": {
+      "type": "aminolean-video-quote",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "mute_video": true,
+        "enable_video_looping": false,
+        "video": "{{ product.metafields.custom.product_page_video_section.value }}",
+        "description": "",
+        "color_scheme": "background-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "tf_featured_in_RFaP9t": {
+      "type": "tf-featured-in",
+      "blocks": {
+        "logo_iwLtmL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/insider-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_mFexKy": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/gq-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_kaLecj": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/inc-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_x3xiTt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/today-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_J7NN6r": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/mens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_TpHawJ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shape-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_UrKcam": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_L6rUfq": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/womens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_nDVeVi": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wellgood_2.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_iwLtmL",
+        "logo_mFexKy",
+        "logo_kaLecj",
+        "logo_x3xiTt",
+        "logo_J7NN6r",
+        "logo_TpHawJ",
+        "logo_UrKcam",
+        "logo_L6rUfq",
+        "logo_nDVeVi"
+      ],
+      "name": "As Featured In",
+      "settings": {
+        "eyebrow": "AS FEATURED IN",
+        "background_color": "#ffffff",
+        "recolor": true,
+        "logo_color": "#0a1a4f",
+        "logo_height": 28,
+        "logo_max_width": 160,
+        "logo_opacity": 80,
+        "logo_spacing": 64,
+        "scroll_duration": 25,
+        "pause_on_hover": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "tf_standard_BEMB6j": {
+      "type": "tf-standard",
+      "blocks": {
+        "point_hWg9jP": {
+          "type": "point",
+          "settings": {
+            "icon": "muscle",
+            "icon_image": "shopify://shop_images/tabler--microscope_1.png",
+            "label": "25g Grass-Fed Whey Protein"
+          }
+        },
+        "point_hyMUKF": {
+          "type": "point",
+          "settings": {
+            "icon": "gut_health",
+            "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
+            "label": "Fiber & Probiotics"
+          }
+        },
+        "point_hA8LaN": {
+          "type": "point",
+          "settings": {
+            "icon": "vegan",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Non-GMO Superfoods"
+          }
+        },
+        "point_h7EXcb": {
+          "type": "point",
+          "settings": {
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Grass-Fed"
+          }
+        },
+        "point_K89Tja": {
+          "type": "point",
+          "settings": {
+            "icon": "lab_test",
+            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
+            "label": "Lab Tested"
+          }
+        },
+        "point_JB96ni": {
+          "type": "point",
+          "settings": {
+            "icon": "no_artificial_flavors",
+            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
+            "label": "No Artificial Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "point_hWg9jP",
+        "point_hyMUKF",
+        "point_hA8LaN",
+        "point_h7EXcb",
+        "point_K89Tja",
+        "point_JB96ni"
+      ],
+      "name": "TrueFit Standard",
+      "settings": {
+        "eyebrow": "STAY TRUE",
+        "heading": "Complete Nutrition Without Compromise",
+        "text": "",
+        "columns_mobile": "3",
+        "columns_desktop": 6,
+        "color_scheme": "background-2",
+        "padding_top": 32,
+        "padding_bottom": 64
+      }
+    },
+    "tf_comparison_wXLNp4": {
+      "type": "tf-comparison",
+      "blocks": {
+        "row_UpDqKM": {
+          "type": "row",
+          "settings": {
+            "row_label": "25g Grass-Fed Whey Protein",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_z7EPmX": {
+          "type": "row",
+          "settings": {
+            "row_label": "Prebiotic Fiber and Probiotics",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "Some",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "check",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_wQf6yV": {
+          "type": "row",
+          "settings": {
+            "row_label": "Fruits and Veggies",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "check",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_GiHpcF": {
+          "type": "row",
+          "settings": {
+            "row_label": "Cost Per Serving",
+            "row_label_color": "#0a1a4f",
+            "our_type": "text",
+            "our_text": "$1.92*",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "~$2.75",
+            "c1_color": "",
+            "c2_type": "text",
+            "c2_text": "~$3.60",
+            "c2_color": ""
+          }
+        },
+        "row_PMWqcU": {
+          "type": "row",
+          "settings": {
+            "row_label": "Zero Artificial Ingredients",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_TU4nPC": {
+          "type": "row",
+          "settings": {
+            "row_label": "100% Money Back Guarantee",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "text",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_UpDqKM",
+        "row_z7EPmX",
+        "row_wQf6yV",
+        "row_GiHpcF",
+        "row_PMWqcU",
+        "row_TU4nPC"
+      ],
+      "name": "Us vs. Them Comparison",
+      "settings": {
+        "background": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "eyebrow": "THE TRUEFIT DIFFERENCE",
+        "eyebrow_color": "#40738d",
+        "eyebrow_size": 11,
+        "headline": "See the difference.",
+        "headline_color": "#0a1a4f",
+        "headline_size": 34,
+        "subline": "",
+        "subline_color": "#40738d",
+        "subline_size": 16,
+        "our_label": "TrueFit",
+        "our_header_text_color": "#ffffff",
+        "our_bg": "#0a1a4f",
+        "our_cell_color": "#c9a86a",
+        "our_check_color": "#c9a86a",
+        "our_x_color": "",
+        "c1_label": "Synthetic Protein Powder",
+        "c1_bg": "#eef2f4",
+        "c1_cell_color": "#40738d",
+        "c1_check_color": "#40738d",
+        "c1_x_color": "#40738d",
+        "c2_label": "Overpriced Greens Powder",
+        "c2_bg": "#eef2f4",
+        "c2_cell_color": "#40738d",
+        "c2_check_color": "#40738d",
+        "c2_x_color": "#40738d",
+        "check_color": "#0a1a4f",
+        "x_color": "#c2c7d0"
+      }
+    },
+    "894e738c-d102-4245-8b24-f42264ccfba5": {
+      "type": "amino-image-multirow",
+      "blocks": {
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0": {
+          "type": "row",
+          "disabled": true,
+          "repeater": "{{ product.metafields.product_features.image_rows.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "text": "{{ block.repeater.text | metafield_tag }}"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/TrueFit_007.jpg",
+            "heading": "Protein and fiber, finally together.",
+            "text": "<p>Most protein powders digest too quickly, spiking and crashing before your body can fully put it to work. TrueFit combines 25g of grass-fed whey with whole-food fiber to slow digestion, support steadier amino acid delivery, and keep you fuller, longer.</p>"
+          }
+        },
+        "row_AhH43k": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
+            "heading": "Improve digestion and gut health",
+            "text": "<p>Powered by prebiotic fiber and 1 billion CFU probiotics, TrueFit supports a balanced microbiome from the inside out. A happy gut means better nutrient absorption, smoother digestion, and steady, all-day energy.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/TrueFit_001.jpg",
+            "heading": "Simple, effective, delicious weight loss",
+            "text": "<p>Real food ingredients keep you satisfied longer, so cravings fade and portion sizes naturally shrink. Replace one meal a day with TrueFit and let whole-food nutrition do the heavy lifting.</p>"
+          }
+        },
+        "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_11_51_PM.png",
+            "heading": "Build and retain lean muscle",
+            "text": "<p>Strong muscles mean a longer, healthier, more capable life, period. TrueFit delivers 25g of grass-fed whey per serving, the gold standard for building lean muscle and keeping it as you age.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1",
+        "row_AhH43k",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2",
+        "4959ee0d-d1fe-4639-92fc-81e688e40b63"
+      ],
+      "settings": {}
+    },
+    "tf_social_proof_eV8jkB": {
+      "type": "tf-social-proof",
+      "blocks": {
+        "card_wCUGtj": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/1782007420619.publer.com.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
+            "quote": "Gut friendly, no brain fog, no tummy aches... it doesn't get much better than that.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_cwVfyW": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/965e6218-3922-4235-ac97-4090df4bdd9a.webp",
+            "video_url": "",
+            "quote": "The ingredient list is simple, high quality, and genuinely feels thoughtfully made.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_A7JCMV": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
+            "quote": "Each scoop has protein, fiber & probiotics in one...it's a truly unique take on protein powder.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_a8xDTJ": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/271af3b3-e419-4fd3-84b4-ed15835125f7_1.webp",
+            "video_url": "",
+            "quote": "Tastes good, mixes smoothly, and doesn't leave you feeling heavy or bloated.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_wCUGtj",
+        "card_cwVfyW",
+        "card_A7JCMV",
+        "card_a8xDTJ"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "eyebrow": "REAL PEOPLE, REAL RESULTS",
+        "eyebrow_color": "#40738d",
+        "eyebrow_size": 11,
+        "headline": "Join 1,000,000+ who stay true to their goals.",
+        "headline_color": "#0a1a4f",
+        "headline_size": 34,
+        "credibility": "Over 5,000 5-star reviews · 1M+ servings delivered.",
+        "credibility_color": "#40738d",
+        "credibility_size": 15,
+        "card_radius": 16,
+        "media_ratio": "4 / 5",
+        "cards_desktop": 4,
+        "play_color": "#ffffff",
+        "play_bg": "#0a1a4f",
+        "play_style": "filled",
+        "background": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "tf_best_sellers_MAEx8W": {
+      "type": "tf-best-sellers",
+      "blocks": {
+        "card_XmBXCm": {
+          "type": "card",
+          "settings": {
+            "product": "creatine-mono",
+            "custom_title": "Creatine Monohydrate",
+            "subscribe_price": "$18.79",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
+          }
+        },
+        "card_EYFEUK": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "product": "truefit-chocolate",
+            "custom_title": "TrueFit Protein - Chocolate",
+            "subscribe_price": "$38.33",
+            "badge_text": "Top Reviewed",
+            "badge_background": "#86bce8",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
+        "card_9zQBjr": {
+          "type": "card",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "custom_title": "AminoLean Pre Workout - Acai",
+            "subscribe_price": "$20.20",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
+        "card_qyhFqU": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
+            "subscribe_price": "$17.42",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Hydrating electrolytes from sea minerals",
+            "bullet_2": "Vegan amino acids for muscle recovery",
+            "bullet_3": "Nootropic mushrooms for mental focus"
+          }
+        },
+        "card_Bwnjpz": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        }
+      },
+      "block_order": [
+        "card_XmBXCm",
+        "card_EYFEUK",
+        "card_9zQBjr",
+        "card_qyhFqU",
+        "card_Bwnjpz"
+      ],
+      "name": "TrueFit Best Sellers",
+      "settings": {
+        "eyebrow": "Stay True",
+        "heading": "Related Products",
+        "view_all_label": "View All",
+        "view_all_link": "shopify://collections/shop-all-products",
+        "add_label": "Add to Cart",
+        "color_scheme": "background-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "adcd68da-a633-4162-8167-cc00e784febe": {
+      "type": "amino-collapsible-content",
+      "blocks": {
+        "4d5d547d-f129-4255-93cf-b821d0d09e26": {
+          "type": "collapsible_row",
+          "repeater": "{{ product.metafields.faq.list.value }}",
+          "settings": {
+            "heading": "{{ block.repeater.heading.value }}",
+            "icon": "none",
+            "row_content": "{{ block.repeater.row_content | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "4d5d547d-f129-4255-93cf-b821d0d09e26"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-2",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "1776891322a4da217b": {
       "type": "apps",
       "blocks": {
@@ -242,16 +973,19 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1774904300661def1c": {
-      "type": "_blocks",
-      "settings": {}
     }
   },
   "order": [
     "main",
     "1774894521f9813110",
-    "1776891322a4da217b",
-    "1774904300661def1c"
+    "c20591e7-b7e5-44b6-b04f-95fc0866f0a7",
+    "tf_featured_in_RFaP9t",
+    "tf_standard_BEMB6j",
+    "tf_comparison_wXLNp4",
+    "894e738c-d102-4245-8b24-f42264ccfba5",
+    "tf_social_proof_eV8jkB",
+    "tf_best_sellers_MAEx8W",
+    "adcd68da-a633-4162-8167-cc00e784febe",
+    "1776891322a4da217b"
   ]
 }
