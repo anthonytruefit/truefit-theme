@@ -1089,7 +1089,7 @@
                   #shopify-section-{{ section.id }} .gt__title { margin: 0 0 1.2rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
                   #shopify-section-{{ section.id }} .gt__bar { position: relative; padding: 6.6rem 0 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height | default: 8 }}px; background: {{ block.settings.track_color | default: '#E2E5EC' }}; border-radius: 999px; overflow: hidden; }
-                  #shopify-section-{{ section.id }} .gt__fill { position: absolute; top: 0; left: 0; height: 100%; width: var(--gt-pct, 0%); background: {{ block.settings.fill_color | default: '#0A1A4F' }}; border-radius: 999px; transition: width 0.45s ease; }
+                  #shopify-section-{{ section.id }} .gt__fill { display: block; height: {{ block.settings.bar_height | default: 8 }}px; width: var(--gt-pct, 0%); min-width: 0; background: {{ block.settings.fill_color | default: '#0A1A4F' }}; border-radius: 999px; transition: width 0.45s ease; }
                   #shopify-section-{{ section.id }} .gt__node { position: absolute; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
                   #shopify-section-{{ section.id }} .gt__node--start { transform: translate(0, -50%); }
                   #shopify-section-{{ section.id }} .gt__node--end { transform: translate(-100%, -50%); }
