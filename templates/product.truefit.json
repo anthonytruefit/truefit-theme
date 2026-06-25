@@ -242,13 +242,13 @@
             "tab_padding": 20,
             "tab_gap": 4,
             "background_color": "#ffffff",
-            "heading_color": "#3f2020",
-            "heading_hover_color": "#00a0e2",
-            "heading_active_color": "#00a0e2",
-            "text_color": "#000000",
-            "caption_color": "#666666",
-            "border_color": "#e0e0e0",
-            "active_border_color": "#e7e4c2",
+            "heading_color": "#0A1A4F",
+            "heading_hover_color": "#40738D",
+            "heading_active_color": "#0A1A4F",
+            "text_color": "#40738D",
+            "caption_color": "#40738D",
+            "border_color": "#E2E5EC",
+            "active_border_color": "#0A1A4F",
             "heading_font": "poppins_n6",
             "heading_size": 18,
             "body_font": "poppins_n4",
@@ -909,7 +909,7 @@
             "desktop_image": "shopify://shop_images/26_TrueFit_PDPImprovements_WebComparison_copy.jpg",
             "desktop_width_percent": 55,
             "mobile_width_percent": 100,
-            "background_color": "#f3ebee"
+            "background_color": "#FCFCEA"
           },
           "blocks": {}
         }
@@ -930,7 +930,7 @@
         "foreground_custom_color": "",
         "background_color_scheme": "background-1",
         "customize_background": true,
-        "background_custom_color": "#f3ebee"
+        "background_custom_color": "#FCFCEA"
       }
     },
     "1774887239869d24bc": {
@@ -1412,13 +1412,13 @@
         "subtext_color": "",
         "subtext_custom_size": 0,
         "show_cta_button": false,
-        "cta_bg": "#2e6fb5",
+        "cta_bg": "#0A1A4F",
         "cta_gradient": "",
         "cta_text_color": "#ffffff",
         "cta_text_size": 1.5,
         "cta_font_weight": "600",
         "cta_border_radius": 8,
-        "cta_border_color": "#2e6fb5",
+        "cta_border_color": "#0A1A4F",
         "cta_border_width": 0,
         "cta_padding_x": 36,
         "cta_padding_y": 16,

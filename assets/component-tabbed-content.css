@@ -2,7 +2,7 @@ tabbed-content {
   display: block;
 }
 .tabs-list {
-  --tab-color: 204, 204, 204;
+  --tab-color: 64, 115, 141;
   list-style: none;
   padding: 0;
   display: flex;
@@ -31,7 +31,8 @@ tabbed-content {
   }
 }
 .tab[aria-selected='true'] {
-  --tab-color: var(--color-accent);
+  --tab-color: 10, 26, 79;
+  font-weight: 600;
 }
 .tab-panel {
   padding-top: 2.4rem;
