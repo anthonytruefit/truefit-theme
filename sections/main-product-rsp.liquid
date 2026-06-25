@@ -1088,8 +1088,8 @@
                   #shopify-section-{{ section.id }} .gt__card { background: {{ block.settings.background_color }}; border-radius: 16px; padding: 2.4rem 2rem 2rem; }
                   #shopify-section-{{ section.id }} .gt__title { margin: 0 0 1.2rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
                   #shopify-section-{{ section.id }} .gt__bar { position: relative; padding: 6.6rem 0 2.4rem; }
-                  #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height }}px; background: {{ block.settings.track_color }}; border-radius: 999px; overflow: hidden; }
-                  #shopify-section-{{ section.id }} .gt__fill { position: absolute; top: 0; left: 0; height: 100%; background: {{ block.settings.fill_color }}; border-radius: 999px; transition: width 0.45s ease; }
+                  #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height | default: 8 }}px; background: {{ block.settings.track_color | default: '#E2E5EC' }}; border-radius: 999px; overflow: hidden; }
+                  #shopify-section-{{ section.id }} .gt__fill { position: absolute; top: 0; left: 0; height: 100%; width: var(--gt-pct, 0%); background: {{ block.settings.fill_color | default: '#0A1A4F' }}; border-radius: 999px; transition: width 0.45s ease; }
                   #shopify-section-{{ section.id }} .gt__node { position: absolute; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
                   #shopify-section-{{ section.id }} .gt__node--start { transform: translate(0, -50%); }
                   #shopify-section-{{ section.id }} .gt__node--end { transform: translate(-100%, -50%); }
@@ -1116,11 +1116,12 @@
                   {{ block.shopify_attributes }}
                   data-cart-total="{{ cart.total_price }}"
                   data-max="{{ gt_max_cents }}"
+                  style="--gt-pct: {{ gt_fill }}%;"
                 >
                   <div class="gt__card">
                     {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
                     <div class="gt__bar">
-                      <div class="gt__track"><div class="gt__fill" data-gt-fill style="width: {{ gt_fill }}%;"></div></div>
+                      <div class="gt__track"><div class="gt__fill" data-gt-fill></div></div>
                       {%- for m in gt_milestones -%}
                         {%- liquid
                           assign m_cents = m.settings.amount | times: 100
@@ -1201,6 +1202,9 @@
                       update(total) {
                         var max = this.max > 0 ? this.max : 0;
                         var pct = max > 0 ? Math.max(0, Math.min(100, (total / max) * 100)) : 0;
+                        // Drive the fill width from a CSS var on the root so it works even if the
+                        // fill element query is unavailable; also set it directly as a backup.
+                        this.style.setProperty('--gt-pct', pct + '%');
                         if (this.fillEl) this.fillEl.style.width = pct + '%';
                         this.points.forEach(function (p) {
                           var amount = parseInt(p.dataset.amount, 10) || 0;
