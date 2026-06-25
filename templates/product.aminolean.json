@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "This is energy, elevated. AminoLean pairs clean caffeine with 5g of vegan aminos to fuel your training and sharpen your focus, without the jitters or the crash. Real ingredients, built for real performance.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -222,7 +222,7 @@
           "settings": {
             "heading": "Frequently bought together",
             "companion_1": "creatine-mono",
-            "companion_2": "vegan-aminolean-acai",
+            "companion_2": "truefit-vanilla",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
             "fbt_card_radius": 12,
