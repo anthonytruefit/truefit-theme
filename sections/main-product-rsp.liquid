@@ -1229,6 +1229,9 @@
               {%- assign tb = block.settings -%}
               {%- style -%}
                 #shopify-section-{{ section.id }} .tf-trust { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem 2.4rem; margin-top: 1.6rem; padding: {{ tb.padding_y }}px 0 0; }
+                @media screen and (min-width: 750px) {
+                  #shopify-section-{{ section.id }} .tf-trust { justify-content: flex-start; gap: 1rem 3.2rem; }
+                }
                 {%- if tb.show_divider -%}
                 #shopify-section-{{ section.id }} .tf-trust { border-top: 0.1rem solid #E2E5EC; padding-top: {{ tb.padding_y | plus: 16 }}px; }
                 {%- endif -%}
