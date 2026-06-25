@@ -81,10 +81,14 @@
   margin-bottom: 0.7rem !important;
   position: relative;
   word-break: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #0A1A4F;
   --pointer-offset-x: 100%;
   --pointer-progress: 0;
 }
 .image-row__heading:before {
+  display: none;
   content: '';
   position: absolute;
   top: 0.5em;
@@ -104,6 +108,7 @@
   left: calc(var(--pointer-offset-x, 100%) + 1.6rem);
 }
 .image-row__heading:after {
+  display: none;
   content: '';
   top: calc(0.5em + 0.3rem);
   position: absolute;
@@ -135,7 +140,7 @@
   }
   .image-row__text {
     font-size: 1.4rem;
-    line-height: 125%;
+    line-height: 1.65;
   }
 }
 .image-multirow {
