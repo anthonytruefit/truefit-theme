@@ -53,33 +53,99 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_PinkLemonade-RT.png",
+            "caption": "Pink Lemonade",
+            "size_text": "30 servings",
             "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
+            "link_product": "aminolean-pink-lemonade",
             "link": ""
           }
         },
         "custom_flavor_swatch_zikHKM": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
+            "image": "shopify://shop_images/AminoLeanEnergy_ParadisePunch_25Serv_102825-01_Front_HighRes_LE.png",
+            "caption": "Paradise Punch",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-pre-workout-paradise-punch",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_TtJD48": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_BlackberryPom-RT.png",
+            "caption": "Blackberry Pomegranate",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-blackberry-pomegranate",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_mYrTt7": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_BlueRasp-RT.png",
+            "caption": "Blue Raspberry",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-blue-raspberry",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_NWNYwn": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Bundle_PeakPerformance.png",
+            "caption": "Peak Performance Pack",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "peak-performance-pack",
             "link": ""
           }
         },
         "custom_flavor_swatch_pHe4Xf": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_FruitPunch-RT.png",
+            "caption": "Fruit Punch",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-fruit-punch",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_94KBfG": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_Watermelon-RT.png",
+            "caption": "Watermelon",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-watermelon",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_Y7UAHB": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_BerryElixir-RT.png",
+            "caption": "Berry Elixir",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-pre-workout-berry-alixir",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_hDCi9N": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_ICEECherry_30Serv_051425-13_Front_HighRes_LE.png",
+            "caption": "ICEE Cherry",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-x-icee-cherry",
             "link": ""
           }
         },
@@ -177,7 +243,13 @@
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_zikHKM",
+        "custom_flavor_swatch_TtJD48",
+        "custom_flavor_swatch_mYrTt7",
+        "custom_flavor_swatch_NWNYwn",
         "custom_flavor_swatch_pHe4Xf",
+        "custom_flavor_swatch_94KBfG",
+        "custom_flavor_swatch_Y7UAHB",
+        "custom_flavor_swatch_hDCi9N",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
