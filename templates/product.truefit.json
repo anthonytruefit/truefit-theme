@@ -101,9 +101,9 @@
         "gift_tracker_eXAV6W": {
           "type": "gift_tracker",
           "settings": {
-            "title": "Free Gift Tracker",
+            "title": "Earn Your Extras.",
             "background_color": "#fcfcea",
-            "fill_color": "#0a1a4f",
+            "fill_color": "#0A1A4F",
             "track_color": "#e2e5ec",
             "bar_height": 15,
             "circle_bg": "#ffffff",
