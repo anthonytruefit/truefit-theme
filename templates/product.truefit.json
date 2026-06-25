@@ -103,7 +103,7 @@
           "settings": {
             "title": "Earn Your Extras.",
             "background_color": "#fcfcea",
-            "fill_color": "#0A1A4F",
+            "fill_color": "#0a1a4f",
             "track_color": "#e2e5ec",
             "bar_height": 15,
             "circle_bg": "#ffffff",
@@ -457,6 +457,100 @@
       "disabled": true,
       "settings": {}
     },
+    "tf_featured_in_RFaP9t": {
+      "type": "tf-featured-in",
+      "blocks": {
+        "logo_iwLtmL": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/insider-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_mFexKy": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/gq-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_kaLecj": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/inc-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_x3xiTt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/today-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_J7NN6r": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/mens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_TpHawJ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/shape-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_UrKcam": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_L6rUfq": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/womens-health-logo.svg",
+            "link": ""
+          }
+        },
+        "logo_nDVeVi": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/wellgood_2.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_iwLtmL",
+        "logo_mFexKy",
+        "logo_kaLecj",
+        "logo_x3xiTt",
+        "logo_J7NN6r",
+        "logo_TpHawJ",
+        "logo_UrKcam",
+        "logo_L6rUfq",
+        "logo_nDVeVi"
+      ],
+      "name": "As Featured In",
+      "settings": {
+        "eyebrow": "AS FEATURED IN",
+        "background_color": "#fcfcea",
+        "recolor": true,
+        "logo_color": "#0a1a4f",
+        "logo_height": 28,
+        "logo_max_width": 160,
+        "logo_opacity": 80,
+        "logo_spacing": 64,
+        "scroll_duration": 25,
+        "pause_on_hover": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
     "tf_standard_BEMB6j": {
       "type": "tf-standard",
       "blocks": {
@@ -671,98 +765,63 @@
         "x_color": "#c2c7d0"
       }
     },
-    "tf_featured_in_RFaP9t": {
-      "type": "tf-featured-in",
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5": {
+      "type": "amino-press-logos",
       "blocks": {
-        "logo_iwLtmL": {
-          "type": "logo",
+        "036abe6d-7f32-4a73-8798-fb775bb27375": {
+          "type": "press_row",
           "settings": {
-            "image": "shopify://shop_images/insider-logo.svg",
-            "link": ""
+            "image_1": "shopify://shop_images/inc-logo.svg",
+            "width_1": 25,
+            "image_2": "shopify://shop_images/gq-logo.svg",
+            "width_2": 22,
+            "image_3": "shopify://shop_images/byrdie-logo.svg",
+            "width_3": 36,
+            "width_4": 25
           }
         },
-        "logo_mFexKy": {
-          "type": "logo",
+        "80e97f03-9734-4e91-b564-21a6abbda9e6": {
+          "type": "press_row",
           "settings": {
-            "image": "shopify://shop_images/gq-logo.svg",
-            "link": ""
+            "image_1": "shopify://shop_images/mens-health-logo.svg",
+            "width_1": 36,
+            "image_2": "shopify://shop_images/womens-health-logo.svg",
+            "width_2": 36,
+            "width_3": 25,
+            "width_4": 25
           }
         },
-        "logo_kaLecj": {
-          "type": "logo",
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06": {
+          "type": "press_row",
           "settings": {
-            "image": "shopify://shop_images/inc-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_x3xiTt": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/today-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_J7NN6r": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/mens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_TpHawJ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/shape-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_UrKcam": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/byrdie-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_L6rUfq": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/womens-health-logo.svg",
-            "link": ""
-          }
-        },
-        "logo_nDVeVi": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/wellgood_2.svg",
-            "link": ""
+            "image_1": "shopify://shop_images/today-logo.svg",
+            "width_1": 18,
+            "image_2": "shopify://shop_images/insider-logo.svg",
+            "width_2": 32,
+            "image_3": "shopify://shop_images/shape-logo.svg",
+            "width_3": 32,
+            "width_4": 25
           }
         }
       },
       "block_order": [
-        "logo_iwLtmL",
-        "logo_mFexKy",
-        "logo_kaLecj",
-        "logo_x3xiTt",
-        "logo_J7NN6r",
-        "logo_TpHawJ",
-        "logo_UrKcam",
-        "logo_L6rUfq",
-        "logo_nDVeVi"
+        "036abe6d-7f32-4a73-8798-fb775bb27375",
+        "80e97f03-9734-4e91-b564-21a6abbda9e6",
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06"
       ],
-      "name": "As Featured In",
+      "disabled": true,
+      "custom_css": [
+        "#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"
+      ],
       "settings": {
-        "eyebrow": "AS FEATURED IN",
-        "background_color": "#fcfcea",
-        "recolor": true,
-        "logo_color": "#0a1a4f",
-        "logo_height": 28,
-        "logo_max_width": 160,
-        "logo_opacity": 80,
-        "logo_spacing": 64,
-        "scroll_duration": 25,
-        "pause_on_hover": true,
-        "padding_top": 28,
-        "padding_bottom": 28
+        "heading": "Featured In",
+        "heading_style": "small_uppercase",
+        "color_scheme": "",
+        "vertical_spacing": 12,
+        "horizontal_spacing": 24,
+        "max_width": 414,
+        "padding_top": 20,
+        "padding_bottom": 36
       }
     },
     "16501ff2-51f3-47f5-9107-cb4433714c25": {
@@ -891,65 +950,6 @@
       "disabled": true,
       "settings": {}
     },
-    "b6649818-bf52-4604-9b35-fbf8aa4533a5": {
-      "type": "amino-press-logos",
-      "blocks": {
-        "036abe6d-7f32-4a73-8798-fb775bb27375": {
-          "type": "press_row",
-          "settings": {
-            "image_1": "shopify://shop_images/inc-logo.svg",
-            "width_1": 25,
-            "image_2": "shopify://shop_images/gq-logo.svg",
-            "width_2": 22,
-            "image_3": "shopify://shop_images/byrdie-logo.svg",
-            "width_3": 36,
-            "width_4": 25
-          }
-        },
-        "80e97f03-9734-4e91-b564-21a6abbda9e6": {
-          "type": "press_row",
-          "settings": {
-            "image_1": "shopify://shop_images/mens-health-logo.svg",
-            "width_1": 36,
-            "image_2": "shopify://shop_images/womens-health-logo.svg",
-            "width_2": 36,
-            "width_3": 25,
-            "width_4": 25
-          }
-        },
-        "e953d6b0-147a-4c56-b253-f9dd1203bc06": {
-          "type": "press_row",
-          "settings": {
-            "image_1": "shopify://shop_images/today-logo.svg",
-            "width_1": 18,
-            "image_2": "shopify://shop_images/insider-logo.svg",
-            "width_2": 32,
-            "image_3": "shopify://shop_images/shape-logo.svg",
-            "width_3": 32,
-            "width_4": 25
-          }
-        }
-      },
-      "block_order": [
-        "036abe6d-7f32-4a73-8798-fb775bb27375",
-        "80e97f03-9734-4e91-b564-21a6abbda9e6",
-        "e953d6b0-147a-4c56-b253-f9dd1203bc06"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"
-      ],
-      "settings": {
-        "heading": "Featured In",
-        "heading_style": "small_uppercase",
-        "color_scheme": "",
-        "vertical_spacing": 12,
-        "horizontal_spacing": 24,
-        "max_width": 414,
-        "padding_top": 20,
-        "padding_bottom": 36
-      }
-    },
     "811677cb-77b1-4d8b-911b-da3ed22bb9b2": {
       "type": "aminolean-angle-divider",
       "disabled": true,
@@ -1017,6 +1017,212 @@
         "4959ee0d-d1fe-4639-92fc-81e688e40b63"
       ],
       "settings": {}
+    },
+    "tf_social_proof_eV8jkB": {
+      "type": "tf-social-proof",
+      "blocks": {
+        "card_wCUGtj": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/1782007420619.publer.com.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
+            "quote": "Gut friendly, no brain fog, no tummy aches... it doesn't get much better than that.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_cwVfyW": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/965e6218-3922-4235-ac97-4090df4bdd9a.webp",
+            "video_url": "",
+            "quote": "The ingredient list is simple, high quality, and genuinely feels thoughtfully made.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_A7JCMV": {
+          "type": "card",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
+            "quote": "Each scoop has protein, fiber & probiotics in one...it's a truly unique take on protein powder.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_a8xDTJ": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/271af3b3-e419-4fd3-84b4-ed15835125f7_1.webp",
+            "video_url": "",
+            "quote": "Tastes good, mixes smoothly, and doesn't leave you feeling heavy or bloated.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_wCUGtj",
+        "card_cwVfyW",
+        "card_A7JCMV",
+        "card_a8xDTJ"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "eyebrow": "REAL PEOPLE, REAL RESULTS",
+        "eyebrow_color": "#40738d",
+        "eyebrow_size": 11,
+        "headline": "Join 1,000,000+ who stay true to their goals.",
+        "headline_color": "#0a1a4f",
+        "headline_size": 34,
+        "credibility": "Over 5,000 5-star reviews · 1M+ servings delivered.",
+        "credibility_color": "#40738d",
+        "credibility_size": 15,
+        "card_radius": 16,
+        "media_ratio": "4 / 5",
+        "cards_desktop": 4,
+        "play_color": "#ffffff",
+        "play_bg": "#0a1a4f",
+        "play_style": "filled",
+        "background": "#fcfcea",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "tf_best_sellers_MAEx8W": {
+      "type": "tf-best-sellers",
+      "blocks": {
+        "card_XmBXCm": {
+          "type": "card",
+          "settings": {
+            "product": "creatine-mono",
+            "custom_title": "Creatine Monohydrate",
+            "subscribe_price": "$18.79",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
+          }
+        },
+        "card_EYFEUK": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "product": "truefit-chocolate",
+            "custom_title": "TrueFit Protein - Chocolate",
+            "subscribe_price": "$38.33",
+            "badge_text": "Top Reviewed",
+            "badge_background": "#86bce8",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
+        "card_9zQBjr": {
+          "type": "card",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "custom_title": "AminoLean Pre Workout - Acai",
+            "subscribe_price": "$20.20",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
+        "card_qyhFqU": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
+            "subscribe_price": "$17.42",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Hydrating electrolytes from sea minerals",
+            "bullet_2": "Vegan amino acids for muscle recovery",
+            "bullet_3": "Nootropic mushrooms for mental focus"
+          }
+        },
+        "card_Bwnjpz": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        }
+      },
+      "block_order": [
+        "card_XmBXCm",
+        "card_EYFEUK",
+        "card_9zQBjr",
+        "card_qyhFqU",
+        "card_Bwnjpz"
+      ],
+      "name": "TrueFit Best Sellers",
+      "settings": {
+        "eyebrow": "Stay True",
+        "heading": "Related Products",
+        "view_all_label": "View All",
+        "view_all_link": "shopify://collections/shop-all-products",
+        "add_label": "Add to Cart",
+        "color_scheme": "background-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     },
     "1e535c7a-9fbb-481c-ba9c-9fe9ccfa8f11": {
       "type": "aminolean-angle-divider",
@@ -1270,6 +1476,8 @@
     "1774887239869d24bc",
     "811677cb-77b1-4d8b-911b-da3ed22bb9b2",
     "894e738c-d102-4245-8b24-f42264ccfba5",
+    "tf_social_proof_eV8jkB",
+    "tf_best_sellers_MAEx8W",
     "1e535c7a-9fbb-481c-ba9c-9fe9ccfa8f11",
     "adcd68da-a633-4162-8167-cc00e784febe",
     "related-products",
