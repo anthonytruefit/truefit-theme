@@ -1594,6 +1594,14 @@
     background-color: {{ ps.section_bg }};
   }
 
+  /* Mobile: hide the redundant media-gallery prev/next arrow row - the peek of
+     the next image already signals that the gallery is swipeable. */
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .product__media-wrapper .slider-buttons {
+      display: none;
+    }
+  }
+
   /* ---------- 2. Flavor selector swatches ---------- */
   {%- if ps.enable_flavor_styling -%}
   #shopify-section-{{ section.id }} .product-picker-list {
