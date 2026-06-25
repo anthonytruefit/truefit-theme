@@ -1,1 +1,894 @@
-{"sections":{"main":{"type":"main-product-rsp","blocks":{"title":{"type":"title","settings":{"title":"","remove_flavor_name":true}},"942e720e-b0a6-4ada-b3ee-fd077f239bb5":{"type":"reviews_badge_price","settings":{}},"69cc2cf9-06a7-4545-a3c2-2b3eceb1de35":{"type":"flavor_picker","settings":{"product_list":["aminolean-max-pre-workout-shaved-ice","aminolean-max-pre-workout-watermelon-candy","aminolean-max-pre-workout-strawberry-lemonade","aminolean-max-natural-maui-pineapple"],"horizontal_layout":true}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","hide_flavor_option":true,"icons_metaobject_handle":"aminolean-variant-icons","product_override_picker_type":""}},"quantity_selector":{"type":"quantity_selector","disabled":true,"settings":{}},"bundle_picker_F7HrHD":{"type":"bundle_picker","disabled":true,"settings":{"title":"Choose Your Pack","single_option_name":"Single Pack"}},"bundle_option_Rq7h3q":{"type":"bundle_option","disabled":true,"settings":{"title":"Multi-Pack","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_max_max.png","badge":"Save 20%","bundler_app_code":"h1x0","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_qyTM6t":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Protein","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_tf_max.png","badge":"Save 20%","bundler_app_code":"h1x5","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_QkkMgC":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Creatine","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_crea_max.png","badge":"Save 20%","bundler_app_code":"h1vk","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_WW4PgL":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Hydration","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_hydr_max.png","badge":"Save 20%","bundler_app_code":"h1wx","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_VDyEkB":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Energy Drinks","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_rtd_max.png","badge":"Save 20%","bundler_app_code":"gasu","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_trq4qk":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Energy Drinks","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_rtd_max.png","badge":"Save 20%","bundler_app_code":"h1vy","builder_heading":"Complete Your Bundle","preselect_products":true}},"recharge_subscriptions_subscription_widget_v2_hWRFhQ":{"type":"shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget-v2\/371eed76-0b44-4869-9813-730372ea378e","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"description":{"type":"description","disabled":true,"settings":{"page":""}},"collapsible-row-0":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Description","icon":"none","content":"","page":""}},"collapsible-row-1":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Shipping & Returns","icon":"truck","content":"","page":""}},"collapsible-row-2":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Dimensions","icon":"ruler","content":"","page":""}},"collapsible-row-3":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Care Instructions","icon":"heart","content":"","page":""}},"share":{"type":"share","disabled":true,"settings":{"share_label":"Share"}}},"block_order":["title","942e720e-b0a6-4ada-b3ee-fd077f239bb5","69cc2cf9-06a7-4545-a3c2-2b3eceb1de35","variant_picker","quantity_selector","bundle_picker_F7HrHD","bundle_option_Rq7h3q","bundle_option_qyTM6t","bundle_option_QkkMgC","bundle_option_WW4PgL","bundle_option_VDyEkB","bundle_option_trq4qk","recharge_subscriptions_subscription_widget_v2_hWRFhQ","buy_buttons","description","collapsible-row-0","collapsible-row-1","collapsible-row-2","collapsible-row-3","share"],"settings":{"enable_custom_styling":false,"section_bg":"#ffffff","section_gradient":"","enable_flavor_styling":false,"flavor_swatch_size":72,"flavor_image_radius":8,"flavor_gap":12,"flavor_swatch_bg":"#f4f4f4","flavor_border_color":"#e0e0e0","flavor_border_width":1,"flavor_selected_border":"#2e6fb5","flavor_selected_border_width":2,"flavor_caption_color":"#0a1f2e","flavor_caption_size":1.2,"flavor_caption_weight":"600","flavor_caption_gap":6,"flavor_size_color":"#6b7785","flavor_size_text_size":0.9,"flavor_tag_bg":"#d9f24b","flavor_tag_text_color":"#0a1f2e","flavor_tag_text_size":1.1,"flavor_tag_weight":"700","flavor_tag_padding_x":10,"flavor_tag_padding_y":6,"flavor_tag_radius":6,"flavor_tag_offset":6,"enable_button_styling":false,"button_label":"","button_bg":"#2e6fb5","button_gradient":"","button_text_color":"#ffffff","button_text_size":1.5,"button_radius":8,"button_border_color":"#2e6fb5","button_border_width":0,"button_padding_x":24,"button_padding_y":16,"enable_sticky_info":false,"media_size":"medium","constrain_to_viewport":false,"media_fit":"cover","gallery_layout":"thumbnail_slider","media_position":"left","image_zoom":"none","mobile_thumbnails":"hide","hide_variants":false,"enable_video_looping":true,"padding_top":16,"padding_bottom":48}},"0125028e-5c09-4193-951d-8bcfa32f6a05":{"type":"aminolean-product-tabs","blocks":{"1678e4b6-5e14-48dc-acf2-a06eb0fcae4a":{"type":"description_tab","settings":{"title":"Description","use_product_description":true,"text":"","first_paragraph_only":true}},"98882e45-4391-40c9-808b-3542b151f681":{"type":"nutrition_tab","settings":{"title":"Nutrition","text":""}},"e255eca7-5d63-4e4e-adc0-e573152a8aee":{"type":"directions_tab","settings":{"title":"Directions","text":""}}},"block_order":["1678e4b6-5e14-48dc-acf2-a06eb0fcae4a","98882e45-4391-40c9-808b-3542b151f681","e255eca7-5d63-4e4e-adc0-e573152a8aee"],"settings":{"padding_top":0,"padding_bottom":48}},"16501ff2-51f3-47f5-9107-cb4433714c25":{"type":"amino-icon-grid","blocks":{"5870a838-d73c-4fe3-aa31-1499c6981cb6":{"type":"feature","settings":{"icon":"speedometer","text":"<p>High Energy<\/p>","icon_name":""}},"51eea9a5-df93-4240-ae6a-c0daf6da67f6":{"type":"feature","settings":{"icon":"muscle","text":"<p>Pump\nEnhancing<\/p>","icon_name":""}},"68602fcc-3008-4375-98e9-40580bb7262b":{"type":"feature","settings":{"icon":"brain","text":"<p>Nootropics<\/p>","icon_name":""}},"223ca4ec-631f-4dd7-9bf3-ef9473236383":{"type":"feature","settings":{"icon":"sugar_free","text":"<p>No Sugar<\/p>","icon_name":""}},"2b35367f-2513-46ad-add2-ca2b18e60c98":{"type":"feature","settings":{"icon":"vegan","text":"<p>Vegan<\/p>","icon_name":""}},"e7a9e23f-8147-42ba-b8ff-e344f5c5dcac":{"type":"feature","settings":{"icon":"lab_test","text":"<p>Third Party Tested<\/p>","icon_name":""}}},"block_order":["5870a838-d73c-4fe3-aa31-1499c6981cb6","51eea9a5-df93-4240-ae6a-c0daf6da67f6","68602fcc-3008-4375-98e9-40580bb7262b","223ca4ec-631f-4dd7-9bf3-ef9473236383","2b35367f-2513-46ad-add2-ca2b18e60c98","e7a9e23f-8147-42ba-b8ff-e344f5c5dcac"],"settings":{"section_color_scheme":"","heading":"<p>Energy without compromise<\/p>","subheading":"","columns_mobile":3,"item_max_width_mobile":140,"container_max_width_mobile":320,"columns_desktop":3,"item_max_width_desktop":140,"container_max_width_desktop":620,"padding_top":48,"padding_bottom":48}},"9f72f83e-30d5-4730-96ce-cbbe093334e8":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":false,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":true,"background_custom_color":"#f3ebee"}},"b6649818-bf52-4604-9b35-fbf8aa4533a5":{"type":"amino-press-logos","blocks":{"036abe6d-7f32-4a73-8798-fb775bb27375":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/inc-logo.svg","width_1":25,"image_2":"shopify:\/\/shop_images\/gq-logo.svg","width_2":22,"image_3":"shopify:\/\/shop_images\/byrdie-logo.svg","width_3":36,"width_4":25}},"80e97f03-9734-4e91-b564-21a6abbda9e6":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/mens-health-logo.svg","width_1":36,"image_2":"shopify:\/\/shop_images\/womens-health-logo.svg","width_2":36,"width_3":25,"width_4":25}},"e953d6b0-147a-4c56-b253-f9dd1203bc06":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/today-logo.svg","width_1":18,"image_2":"shopify:\/\/shop_images\/insider-logo.svg","width_2":32,"image_3":"shopify:\/\/shop_images\/shape-logo.svg","width_3":32,"width_4":25}}},"block_order":["036abe6d-7f32-4a73-8798-fb775bb27375","80e97f03-9734-4e91-b564-21a6abbda9e6","e953d6b0-147a-4c56-b253-f9dd1203bc06"],"custom_css":["#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"],"settings":{"heading":"Featured In","heading_style":"small_uppercase","color_scheme":"","vertical_spacing":12,"horizontal_spacing":24,"max_width":414,"padding_top":36,"padding_bottom":36}},"dd45507d-c6d0-4319-9e8f-568313827691":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":true,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":"rgba(0,0,0,0)"}},"894e738c-d102-4245-8b24-f42264ccfba5":{"type":"amino-image-multirow","blocks":{"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/max-row-1.jpg","heading":"Feel the Energy","text":"<p>{{ product.metafields.nutrition_facts.caffeine_content.value }} of natural caffeine plus powerful brain enhancing ingredients like Alpha GPC deliver lasting energy and support an intense mental edge with focus, clear-thinking and concentration.<\/p>"}},"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/max-row-2_312fb302-7dd3-4adb-848b-91a991adf5af.jpg","heading":"Increase the Pump","text":"<p>Nitrosigine<strong>®<\/strong> increases blood flow and nitric oxide production, which maximizes muscle pumps and shows significant increases in muscle volume<\/p>"}},"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/max-row-3.jpg","heading":"Boost Endurance & Performance","text":"<p>A custom blend of EAAs, BCAAs and beta alanine synergistically work together to stimulate muscle protein synthesis and aid in athletic recovery and enhance muscular endurance.<\/p>"}}},"block_order":["template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0","template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1","template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2"],"settings":{}},"13b44f33-94cf-47ac-95a8-3aa042c69381":{"type":"amino-product-comparison","blocks":{"template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-0":{"type":"feature","settings":{"feature":"Caffeine","content_1":"125mg","content_2":"250mg"}},"template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-1":{"type":"feature_checkmark","settings":{"feature":"Nootropics","checked_1":false,"checked_2":true}},"adc8a7b0-143c-4905-bd18-b0b1ee77d163":{"type":"feature_checkmark","settings":{"feature":"Pump","checked_1":false,"checked_2":true}},"247d3e49-73cd-40e4-a761-cf6b3e6bfc66":{"type":"feature_checkmark","settings":{"feature":"BCAAs + EAAs","checked_1":true,"checked_2":true}},"fcbe0a1a-9494-4b7c-ae3e-256465bf1702":{"type":"feature_checkmark","settings":{"feature":"Weight Management","checked_1":true,"checked_2":false}},"71d14a80-1c82-47e0-8d33-68e675e1e936":{"type":"feature_checkmark","settings":{"feature":"Sugar Free","checked_1":true,"checked_2":true}}},"block_order":["template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-0","template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-1","adc8a7b0-143c-4905-bd18-b0b1ee77d163","247d3e49-73cd-40e4-a761-cf6b3e6bfc66","fcbe0a1a-9494-4b7c-ae3e-256465bf1702","71d14a80-1c82-47e0-8d33-68e675e1e936"],"settings":{"heading":"Which AminoLean is right for you?","heading_size":"h2","heading_alignment":"center","color_scheme":"background-2","product_image_1":"shopify:\/\/shop_images\/AminoLeanEnergy_PinkLemonade_30Serv_010825-01_Front_HighRes.png","product_title_1":"AminoLean","product_description_1":"Moderate and balanced for anytime energy","product_image_2":"shopify:\/\/shop_images\/AminoLeanMAX_WatermelonCandy_25Serv_112823-02_Front_HighRes.png","product_title_2":"AminoLean MAX","product_description_2":"High-intensity energy, focus and pump","padding_top":48,"padding_bottom":48}},"86a6db9c-d108-4970-ae8d-6b445630c539":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":false,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":""}},"2cfffd88-7ee7-45de-bef9-f6239565c3fe":{"type":"aminolean-review-chat-bubbles","blocks":{"template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0":{"type":"quote","settings":{"width_mobile":60,"width_desktop":40,"title":"Samy","content":"<p>\"I love the flavor, the energy kicks in quickly, and it kept me energized throughout the entire day, well beyond my workout.\"<\/p>","quote_points_right":false,"content_position":"center","content_alignment":"start","desktop_content_position":"start","desktop_content_alignment":"start"}},"d308e3ca-b213-4e98-98a3-903164301220":{"type":"quote","settings":{"width_mobile":40,"width_desktop":30,"title":"Andrea","content":"<p>\"I feel more energized and focused during my workouts\"<\/p>","quote_points_right":true,"content_position":"center","content_alignment":"start","desktop_content_position":"end","desktop_content_alignment":"end"}},"47ff8fb3-e9f2-491c-893f-88aa453810b5":{"type":"quote","settings":{"width_mobile":52,"width_desktop":30,"title":"Max M","content":"<p>\"Made me believe in pre-workout powders again\"<\/p>","quote_points_right":false,"content_position":"center","content_alignment":"center","desktop_content_position":"center","desktop_content_alignment":"end"}},"3eba1a46-e30b-4ddb-94f6-54a77f271ac5":{"type":"quote","settings":{"width_mobile":48,"width_desktop":33,"title":"Tristan","content":"<p>\"Intense, focused workout without the crash at the end.\"<\/p>","quote_points_right":true,"content_position":"start","content_alignment":"start","desktop_content_position":"start","desktop_content_alignment":"start"}},"282f49bc-3444-44e0-acdc-f6d9f4dbafac":{"type":"quote","settings":{"width_mobile":45,"width_desktop":33,"title":"Annwyn F","content":"<p>\"Gives me great energy and endurance I need for the gym\"<\/p>","quote_points_right":false,"content_position":"start","content_alignment":"end","desktop_content_position":"center","desktop_content_alignment":"end"}},"10999926-07ea-43e6-acc3-bad5d48fa838":{"type":"quote","settings":{"width_mobile":50,"width_desktop":33,"title":"Beanca","content":"<p>\"It tastes great and it makes me feel amazing while doing my weight training\"<\/p>","quote_points_right":false,"content_position":"end","content_alignment":"center","desktop_content_position":"center","desktop_content_alignment":"center"}}},"block_order":["template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0","d308e3ca-b213-4e98-98a3-903164301220","47ff8fb3-e9f2-491c-893f-88aa453810b5","3eba1a46-e30b-4ddb-94f6-54a77f271ac5","282f49bc-3444-44e0-acdc-f6d9f4dbafac","10999926-07ea-43e6-acc3-bad5d48fa838"],"settings":{"heading":"<p>What They're Saying<\/p>","color_scheme":"accent-1","quote_color_scheme":"background-1","stars_color":"#ff9900","padding_top":48,"padding_bottom":48}},"daee442f-6bc4-47bf-a3fa-409f0336803c":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":true,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":""}},"1677813107367e834b":{"type":"apps","settings":{"include_margins":true,"padding_top":36,"padding_bottom":36}},"65ec616c-ec79-4a60-9bd9-0322c651d7a9":{"type":"amino-collapsible-content","blocks":{"template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-0":{"type":"collapsible_row","settings":{"heading":"When should I take AminoLean MAX Pre Workout?","icon":"none","row_content":"<p>You can take AminoLean 20-30 minutes before your workout for a high-intensity pre workout boost.<\/p>","page":""}},"template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-1":{"type":"collapsible_row","settings":{"heading":"How much caffeine is in one scoop?","icon":"none","row_content":"<p>There is 250mg of caffeine in one scoop.<\/p>","page":""}},"template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-2":{"type":"collapsible_row","settings":{"heading":"How many scoops should I take?","icon":"none","row_content":"<p>The recommendation is to only take one scoop of AminoLean MAX.<\/p>","page":""}},"template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-3":{"type":"collapsible_row","settings":{"heading":"Will it make me feel tingly or \"itchy\"?","icon":"none","row_content":"<p>Yes, there is a possibility that you could feel tingly from AminoLean MAX Pre Workout. This is highly dependent on your tolerance for beta-alanine.<\/p>","page":""}},"10f09184-b916-445c-b3ed-f2754925a17b":{"type":"collapsible_row","settings":{"heading":"What makes AminoLean MAX Pre Workout different from other AminoLean products?","icon":"none","row_content":"<p>AminoLean MAX is our highest-stim pre workout. It contains Nitrosigine and beta-alanine, which maximizes pumps and makes your workout more intense, as well as nootropics for focus. AminoLean MAX has the most caffeine of any AminoLean product, at 250mg. <\/p>","page":""}}},"block_order":["template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-0","template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-1","template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-2","template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-3","10f09184-b916-445c-b3ed-f2754925a17b"],"settings":{"caption":"","heading":"FAQs","heading_size":"h1","heading_alignment":"center","layout":"row","color_scheme":"background-1","container_color_scheme":"background-2","open_first_collapsible_row":true,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":48,"padding_bottom":48}},"52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d":{"type":"aminolean-products-slider","blocks":{"template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/DTC_AminoLean_Preworkout_PinkLemonade-RT.png","heading":"AminoLean Pre Workout","heading_size":"h4","subheading":"Our original pre workout blend for anytime energy.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-pink-lemonade"}},"3bf1b879-5c42-4a89-89ec-0872609a4a21":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/rtd-tile.jpg","heading":"AminoLean Energy Drink","heading_size":"h4","subheading":"Our ready to drink, lightly carbonated energy drink for boosts of clean energy on the go.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-energy-drink-strawberry-watermelon"}},"8f7cfacc-df86-4568-ba55-f175a36c3425":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/DTC_AminoLean_NaturallySweetened_Acai-RT.png","heading":"AminoLean Pre Workout Naturally Sweetened","heading_size":"h4","subheading":"Our naturally sweetened pre workout blend for anytime energy.","button_label":"Button label","link":"shopify:\/\/products\/vegan-aminolean-acai"}},"01aefae9-030c-48ee-a482-010f668052af":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/AminoLeanRECOVERY_TropicalPunch_30Serv_080825-13_Front_HighRes.png","heading":"AminoLean Recovery","heading_size":"h4","subheading":"Our post-workout recovery blend with rapid hydration and an immune system boost.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-recovery-tropical-island-punch"}},"template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/max-tile.jpg","heading":"AminoLean MAX","heading_size":"h4","subheading":"Our high-intensity pre workout with added ingredients for pump and focus.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-max-preworkout-passion-fruit-punch"}},"324c9793-b418-44ea-bd7c-b46a40054f50":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"AminoLean x Alix Earle","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":"shopify:\/\/products\/aminolean-pre-workout-cherry-on-top"}},"64299f91-619e-4699-976a-64c0c5ee491e":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"New Product Tile","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":""}},"477c8acd-0f53-4cec-ae5e-bf1bf5de9848":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"Alix Earle Again","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":""}}},"block_order":["template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0","3bf1b879-5c42-4a89-89ec-0872609a4a21","8f7cfacc-df86-4568-ba55-f175a36c3425","01aefae9-030c-48ee-a482-010f668052af","template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1","324c9793-b418-44ea-bd7c-b46a40054f50","64299f91-619e-4699-976a-64c0c5ee491e","477c8acd-0f53-4cec-ae5e-bf1bf5de9848"],"settings":{"title":"The Full AminoLean Line","heading_size":"h2","description":"","description_style":"body","columns_desktop":4,"full_width":false,"enable_desktop_slider":true,"color_scheme":"background-1","columns_mobile":"2","swipe_on_mobile":true,"padding_top":48,"padding_bottom":48}},"related-products":{"type":"related-products-rsp","disabled":true,"settings":{"heading":"You may also like","heading_size":"h2","heading_content_alignment":"tw-text-center","products_to_show":4,"columns_desktop":4,"enable_desktop_slider":true,"color_scheme":"background-1","image_ratio":"square","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":true,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":36,"padding_bottom":28}}},"order":["main","0125028e-5c09-4193-951d-8bcfa32f6a05","16501ff2-51f3-47f5-9107-cb4433714c25","9f72f83e-30d5-4730-96ce-cbbe093334e8","b6649818-bf52-4604-9b35-fbf8aa4533a5","dd45507d-c6d0-4319-9e8f-568313827691","894e738c-d102-4245-8b24-f42264ccfba5","13b44f33-94cf-47ac-95a8-3aa042c69381","86a6db9c-d108-4970-ae8d-6b445630c539","2cfffd88-7ee7-45de-bef9-f6239565c3fe","daee442f-6bc4-47bf-a3fa-409f0336803c","1677813107367e834b","65ec616c-ec79-4a60-9bd9-0322c651d7a9","52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d","related-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-rsp",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "",
+            "remove_flavor_name": true
+          }
+        },
+        "942e720e-b0a6-4ada-b3ee-fd077f239bb5": {
+          "type": "reviews_badge_price",
+          "settings": {}
+        },
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35": {
+          "type": "flavor_picker",
+          "settings": {
+            "product_list": [
+              "aminolean-max-pre-workout-shaved-ice",
+              "aminolean-max-pre-workout-watermelon-candy",
+              "aminolean-max-pre-workout-strawberry-lemonade",
+              "aminolean-max-natural-maui-pineapple"
+            ],
+            "horizontal_layout": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "hide_flavor_option": true,
+            "icons_metaobject_handle": "aminolean-variant-icons",
+            "product_override_picker_type": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_hWRFhQ": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "page": ""
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "truck",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "ruler",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Care Instructions",
+            "icon": "heart",
+            "content": "",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "942e720e-b0a6-4ada-b3ee-fd077f239bb5",
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_hWRFhQ",
+        "buy_buttons",
+        "description",
+        "collapsible-row-0",
+        "collapsible-row-1",
+        "collapsible-row-2",
+        "collapsible-row-3",
+        "share"
+      ],
+      "settings": {
+        "enable_custom_styling": false,
+        "section_bg": "#ffffff",
+        "section_gradient": "",
+        "enable_flavor_styling": false,
+        "flavor_swatch_size": 72,
+        "flavor_image_radius": 8,
+        "flavor_gap": 12,
+        "flavor_swatch_bg": "#f4f4f4",
+        "flavor_border_color": "#e0e0e0",
+        "flavor_border_width": 1,
+        "flavor_selected_border": "#2e6fb5",
+        "flavor_selected_border_width": 2,
+        "flavor_caption_color": "#0a1f2e",
+        "flavor_caption_size": 1.2,
+        "flavor_caption_weight": "600",
+        "flavor_caption_gap": 6,
+        "flavor_size_color": "#6b7785",
+        "flavor_size_text_size": 0.9,
+        "flavor_tag_bg": "#d9f24b",
+        "flavor_tag_text_color": "#0a1f2e",
+        "flavor_tag_text_size": 1.1,
+        "flavor_tag_weight": "700",
+        "flavor_tag_padding_x": 10,
+        "flavor_tag_padding_y": 6,
+        "flavor_tag_radius": 6,
+        "flavor_tag_offset": 6,
+        "qty_min_height": 52,
+        "qty_button_size": 44,
+        "qty_input_width": 48,
+        "qty_gap": 12,
+        "qty_radius": 8,
+        "qty_border_width": 1,
+        "qty_bg": "#ffffff",
+        "qty_border_color": "#0a1a4f",
+        "qty_text_color": "#0a1a4f",
+        "enable_button_styling": false,
+        "button_label": "",
+        "button_bg": "#2e6fb5",
+        "button_gradient": "",
+        "button_text_color": "#ffffff",
+        "button_text_size": 1.5,
+        "button_radius": 8,
+        "button_border_color": "#2e6fb5",
+        "button_border_width": 0,
+        "button_padding_x": 24,
+        "button_padding_y": 16,
+        "enable_sticky_info": false,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    },
+    "0125028e-5c09-4193-951d-8bcfa32f6a05": {
+      "type": "aminolean-product-tabs",
+      "blocks": {
+        "1678e4b6-5e14-48dc-acf2-a06eb0fcae4a": {
+          "type": "description_tab",
+          "settings": {
+            "title": "Description",
+            "use_product_description": true,
+            "text": "",
+            "first_paragraph_only": true
+          }
+        },
+        "98882e45-4391-40c9-808b-3542b151f681": {
+          "type": "nutrition_tab",
+          "settings": {
+            "title": "Nutrition",
+            "text": ""
+          }
+        },
+        "e255eca7-5d63-4e4e-adc0-e573152a8aee": {
+          "type": "directions_tab",
+          "settings": {
+            "title": "Directions",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "1678e4b6-5e14-48dc-acf2-a06eb0fcae4a",
+        "98882e45-4391-40c9-808b-3542b151f681",
+        "e255eca7-5d63-4e4e-adc0-e573152a8aee"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "16501ff2-51f3-47f5-9107-cb4433714c25": {
+      "type": "amino-icon-grid",
+      "blocks": {
+        "5870a838-d73c-4fe3-aa31-1499c6981cb6": {
+          "type": "feature",
+          "settings": {
+            "icon": "speedometer",
+            "text": "<p>High Energy</p>",
+            "icon_name": ""
+          }
+        },
+        "51eea9a5-df93-4240-ae6a-c0daf6da67f6": {
+          "type": "feature",
+          "settings": {
+            "icon": "muscle",
+            "text": "<p>Pump\nEnhancing</p>",
+            "icon_name": ""
+          }
+        },
+        "68602fcc-3008-4375-98e9-40580bb7262b": {
+          "type": "feature",
+          "settings": {
+            "icon": "brain",
+            "text": "<p>Nootropics</p>",
+            "icon_name": ""
+          }
+        },
+        "223ca4ec-631f-4dd7-9bf3-ef9473236383": {
+          "type": "feature",
+          "settings": {
+            "icon": "sugar_free",
+            "text": "<p>No Sugar</p>",
+            "icon_name": ""
+          }
+        },
+        "2b35367f-2513-46ad-add2-ca2b18e60c98": {
+          "type": "feature",
+          "settings": {
+            "icon": "vegan",
+            "text": "<p>Vegan</p>",
+            "icon_name": ""
+          }
+        },
+        "e7a9e23f-8147-42ba-b8ff-e344f5c5dcac": {
+          "type": "feature",
+          "settings": {
+            "icon": "lab_test",
+            "text": "<p>Third Party Tested</p>",
+            "icon_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "5870a838-d73c-4fe3-aa31-1499c6981cb6",
+        "51eea9a5-df93-4240-ae6a-c0daf6da67f6",
+        "68602fcc-3008-4375-98e9-40580bb7262b",
+        "223ca4ec-631f-4dd7-9bf3-ef9473236383",
+        "2b35367f-2513-46ad-add2-ca2b18e60c98",
+        "e7a9e23f-8147-42ba-b8ff-e344f5c5dcac"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "heading": "<p>Energy without compromise</p>",
+        "subheading": "",
+        "columns_mobile": 3,
+        "item_max_width_mobile": 140,
+        "container_max_width_mobile": 320,
+        "columns_desktop": 3,
+        "item_max_width_desktop": 140,
+        "container_max_width_desktop": 620,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "9f72f83e-30d5-4730-96ce-cbbe093334e8": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": true,
+        "background_custom_color": "#f3ebee"
+      }
+    },
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5": {
+      "type": "amino-press-logos",
+      "blocks": {
+        "036abe6d-7f32-4a73-8798-fb775bb27375": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/inc-logo.svg",
+            "width_1": 25,
+            "image_2": "shopify://shop_images/gq-logo.svg",
+            "width_2": 22,
+            "image_3": "shopify://shop_images/byrdie-logo.svg",
+            "width_3": 36,
+            "width_4": 25
+          }
+        },
+        "80e97f03-9734-4e91-b564-21a6abbda9e6": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/mens-health-logo.svg",
+            "width_1": 36,
+            "image_2": "shopify://shop_images/womens-health-logo.svg",
+            "width_2": 36,
+            "width_3": 25,
+            "width_4": 25
+          }
+        },
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06": {
+          "type": "press_row",
+          "settings": {
+            "image_1": "shopify://shop_images/today-logo.svg",
+            "width_1": 18,
+            "image_2": "shopify://shop_images/insider-logo.svg",
+            "width_2": 32,
+            "image_3": "shopify://shop_images/shape-logo.svg",
+            "width_3": 32,
+            "width_4": 25
+          }
+        }
+      },
+      "block_order": [
+        "036abe6d-7f32-4a73-8798-fb775bb27375",
+        "80e97f03-9734-4e91-b564-21a6abbda9e6",
+        "e953d6b0-147a-4c56-b253-f9dd1203bc06"
+      ],
+      "custom_css": [
+        "#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"
+      ],
+      "settings": {
+        "heading": "Featured In",
+        "heading_style": "small_uppercase",
+        "color_scheme": "",
+        "vertical_spacing": 12,
+        "horizontal_spacing": 24,
+        "max_width": 414,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "dd45507d-c6d0-4319-9e8f-568313827691": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": "rgba(0,0,0,0)"
+      }
+    },
+    "894e738c-d102-4245-8b24-f42264ccfba5": {
+      "type": "amino-image-multirow",
+      "blocks": {
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/max-row-1.jpg",
+            "heading": "Feel the Energy",
+            "text": "<p>{{ product.metafields.nutrition_facts.caffeine_content.value }} of natural caffeine plus powerful brain enhancing ingredients like Alpha GPC deliver lasting energy and support an intense mental edge with focus, clear-thinking and concentration.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/max-row-2_312fb302-7dd3-4adb-848b-91a991adf5af.jpg",
+            "heading": "Increase the Pump",
+            "text": "<p>Nitrosigine<strong>®</strong> increases blood flow and nitric oxide production, which maximizes muscle pumps and shows significant increases in muscle volume</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/max-row-3.jpg",
+            "heading": "Boost Endurance & Performance",
+            "text": "<p>A custom blend of EAAs, BCAAs and beta alanine synergistically work together to stimulate muscle protein synthesis and aid in athletic recovery and enhance muscular endurance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2"
+      ],
+      "settings": {}
+    },
+    "13b44f33-94cf-47ac-95a8-3aa042c69381": {
+      "type": "amino-product-comparison",
+      "blocks": {
+        "template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-0": {
+          "type": "feature",
+          "settings": {
+            "feature": "Caffeine",
+            "content_1": "125mg",
+            "content_2": "250mg"
+          }
+        },
+        "template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-1": {
+          "type": "feature_checkmark",
+          "settings": {
+            "feature": "Nootropics",
+            "checked_1": false,
+            "checked_2": true
+          }
+        },
+        "adc8a7b0-143c-4905-bd18-b0b1ee77d163": {
+          "type": "feature_checkmark",
+          "settings": {
+            "feature": "Pump",
+            "checked_1": false,
+            "checked_2": true
+          }
+        },
+        "247d3e49-73cd-40e4-a761-cf6b3e6bfc66": {
+          "type": "feature_checkmark",
+          "settings": {
+            "feature": "BCAAs + EAAs",
+            "checked_1": true,
+            "checked_2": true
+          }
+        },
+        "fcbe0a1a-9494-4b7c-ae3e-256465bf1702": {
+          "type": "feature_checkmark",
+          "settings": {
+            "feature": "Weight Management",
+            "checked_1": true,
+            "checked_2": false
+          }
+        },
+        "71d14a80-1c82-47e0-8d33-68e675e1e936": {
+          "type": "feature_checkmark",
+          "settings": {
+            "feature": "Sugar Free",
+            "checked_1": true,
+            "checked_2": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-0",
+        "template--15510886875181__13b44f33-94cf-47ac-95a8-3aa042c69381-1678139020c8699cdd-1",
+        "adc8a7b0-143c-4905-bd18-b0b1ee77d163",
+        "247d3e49-73cd-40e4-a761-cf6b3e6bfc66",
+        "fcbe0a1a-9494-4b7c-ae3e-256465bf1702",
+        "71d14a80-1c82-47e0-8d33-68e675e1e936"
+      ],
+      "settings": {
+        "heading": "Which AminoLean is right for you?",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "background-2",
+        "product_image_1": "shopify://shop_images/AminoLeanEnergy_PinkLemonade_30Serv_010825-01_Front_HighRes.png",
+        "product_title_1": "AminoLean",
+        "product_description_1": "Moderate and balanced for anytime energy",
+        "product_image_2": "shopify://shop_images/AminoLeanMAX_WatermelonCandy_25Serv_112823-02_Front_HighRes.png",
+        "product_title_2": "AminoLean MAX",
+        "product_description_2": "High-intensity energy, focus and pump",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "86a6db9c-d108-4970-ae8d-6b445630c539": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": false,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "2cfffd88-7ee7-45de-bef9-f6239565c3fe": {
+      "type": "aminolean-review-chat-bubbles",
+      "blocks": {
+        "template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 60,
+            "width_desktop": 40,
+            "title": "Samy",
+            "content": "<p>\"I love the flavor, the energy kicks in quickly, and it kept me energized throughout the entire day, well beyond my workout.\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "start",
+            "desktop_content_position": "start",
+            "desktop_content_alignment": "start"
+          }
+        },
+        "d308e3ca-b213-4e98-98a3-903164301220": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 40,
+            "width_desktop": 30,
+            "title": "Andrea",
+            "content": "<p>\"I feel more energized and focused during my workouts\"</p>",
+            "quote_points_right": true,
+            "content_position": "center",
+            "content_alignment": "start",
+            "desktop_content_position": "end",
+            "desktop_content_alignment": "end"
+          }
+        },
+        "47ff8fb3-e9f2-491c-893f-88aa453810b5": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 52,
+            "width_desktop": 30,
+            "title": "Max M",
+            "content": "<p>\"Made me believe in pre-workout powders again\"</p>",
+            "quote_points_right": false,
+            "content_position": "center",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "end"
+          }
+        },
+        "3eba1a46-e30b-4ddb-94f6-54a77f271ac5": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 48,
+            "width_desktop": 33,
+            "title": "Tristan",
+            "content": "<p>\"Intense, focused workout without the crash at the end.\"</p>",
+            "quote_points_right": true,
+            "content_position": "start",
+            "content_alignment": "start",
+            "desktop_content_position": "start",
+            "desktop_content_alignment": "start"
+          }
+        },
+        "282f49bc-3444-44e0-acdc-f6d9f4dbafac": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 45,
+            "width_desktop": 33,
+            "title": "Annwyn F",
+            "content": "<p>\"Gives me great energy and endurance I need for the gym\"</p>",
+            "quote_points_right": false,
+            "content_position": "start",
+            "content_alignment": "end",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "end"
+          }
+        },
+        "10999926-07ea-43e6-acc3-bad5d48fa838": {
+          "type": "quote",
+          "settings": {
+            "width_mobile": 50,
+            "width_desktop": 33,
+            "title": "Beanca",
+            "content": "<p>\"It tastes great and it makes me feel amazing while doing my weight training\"</p>",
+            "quote_points_right": false,
+            "content_position": "end",
+            "content_alignment": "center",
+            "desktop_content_position": "center",
+            "desktop_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0",
+        "d308e3ca-b213-4e98-98a3-903164301220",
+        "47ff8fb3-e9f2-491c-893f-88aa453810b5",
+        "3eba1a46-e30b-4ddb-94f6-54a77f271ac5",
+        "282f49bc-3444-44e0-acdc-f6d9f4dbafac",
+        "10999926-07ea-43e6-acc3-bad5d48fa838"
+      ],
+      "settings": {
+        "heading": "<p>What They're Saying</p>",
+        "color_scheme": "accent-1",
+        "quote_color_scheme": "background-1",
+        "stars_color": "#ff9900",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "daee442f-6bc4-47bf-a3fa-409f0336803c": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "1677813107367e834b": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "65ec616c-ec79-4a60-9bd9-0322c651d7a9": {
+      "type": "amino-collapsible-content",
+      "blocks": {
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I take AminoLean MAX Pre Workout?",
+            "icon": "none",
+            "row_content": "<p>You can take AminoLean 20-30 minutes before your workout for a high-intensity pre workout boost.</p>",
+            "page": ""
+          }
+        },
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much caffeine is in one scoop?",
+            "icon": "none",
+            "row_content": "<p>There is 250mg of caffeine in one scoop.</p>",
+            "page": ""
+          }
+        },
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many scoops should I take?",
+            "icon": "none",
+            "row_content": "<p>The recommendation is to only take one scoop of AminoLean MAX.</p>",
+            "page": ""
+          }
+        },
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will it make me feel tingly or \"itchy\"?",
+            "icon": "none",
+            "row_content": "<p>Yes, there is a possibility that you could feel tingly from AminoLean MAX Pre Workout. This is highly dependent on your tolerance for beta-alanine.</p>",
+            "page": ""
+          }
+        },
+        "10f09184-b916-445c-b3ed-f2754925a17b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes AminoLean MAX Pre Workout different from other AminoLean products?",
+            "icon": "none",
+            "row_content": "<p>AminoLean MAX is our highest-stim pre workout. It contains Nitrosigine and beta-alanine, which maximizes pumps and makes your workout more intense, as well as nootropics for focus. AminoLean MAX has the most caffeine of any AminoLean product, at 250mg. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-0",
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-1",
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-2",
+        "template--15515210973229__65ec616c-ec79-4a60-9bd9-0322c651d7a9-1678419778126fd085-3",
+        "10f09184-b916-445c-b3ed-f2754925a17b"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d": {
+      "type": "aminolean-products-slider",
+      "blocks": {
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_PinkLemonade-RT.png",
+            "heading": "AminoLean Pre Workout",
+            "heading_size": "h4",
+            "subheading": "Our original pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pink-lemonade",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/rtd-tile.jpg",
+            "heading": "AminoLean Energy Drink",
+            "heading_size": "h4",
+            "subheading": "Our ready to drink, lightly carbonated energy drink for boosts of clean energy on the go.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-energy-drink-strawberry-watermelon",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "8f7cfacc-df86-4568-ba55-f175a36c3425": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_NaturallySweetened_Acai-RT.png",
+            "heading": "AminoLean Pre Workout Naturally Sweetened",
+            "heading_size": "h4",
+            "subheading": "Our naturally sweetened pre workout blend for anytime energy.",
+            "button_label": "Button label",
+            "link": "shopify://products/vegan-aminolean-acai",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "01aefae9-030c-48ee-a482-010f668052af": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRECOVERY_TropicalPunch_30Serv_080825-13_Front_HighRes.png",
+            "heading": "AminoLean Recovery",
+            "heading_size": "h4",
+            "subheading": "Our post-workout recovery blend with rapid hydration and an immune system boost.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-recovery-tropical-island-punch",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/max-tile.jpg",
+            "heading": "AminoLean MAX",
+            "heading_size": "h4",
+            "subheading": "Our high-intensity pre workout with added ingredients for pump and focus.",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-max-preworkout-passion-fruit-punch",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "324c9793-b418-44ea-bd7c-b46a40054f50": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "AminoLean x Alix Earle",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "shopify://products/aminolean-pre-workout-cherry-on-top",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "64299f91-619e-4699-976a-64c0c5ee491e": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "New Product Tile",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        },
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/F75A7487-1.jpg",
+            "heading": "Alix Earle Again",
+            "heading_size": "h4",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "cta_text": "Shop Now",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0",
+        "3bf1b879-5c42-4a89-89ec-0872609a4a21",
+        "8f7cfacc-df86-4568-ba55-f175a36c3425",
+        "01aefae9-030c-48ee-a482-010f668052af",
+        "template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1",
+        "324c9793-b418-44ea-bd7c-b46a40054f50",
+        "64299f91-619e-4699-976a-64c0c5ee491e",
+        "477c8acd-0f53-4cec-ae5e-bf1bf5de9848"
+      ],
+      "settings": {
+        "title": "The Full AminoLean Line",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "enable_custom_styling": false,
+        "heading_color": "",
+        "heading_custom_size": 0,
+        "subtext_color": "",
+        "subtext_custom_size": 0,
+        "show_cta_button": false,
+        "cta_bg": "#0a1a4f",
+        "cta_gradient": "",
+        "cta_text_color": "#ffffff",
+        "cta_text_size": 1.5,
+        "cta_font_weight": "600",
+        "cta_border_radius": 8,
+        "cta_border_color": "#0a1a4f",
+        "cta_border_width": 0,
+        "cta_padding_x": 36,
+        "cta_padding_y": 16,
+        "cta_margin_top": 24,
+        "columns_desktop": 4,
+        "full_width": false,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "related-products": {
+      "type": "related-products-rsp",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "heading_content_alignment": "tw-text-center",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0125028e-5c09-4193-951d-8bcfa32f6a05",
+    "16501ff2-51f3-47f5-9107-cb4433714c25",
+    "9f72f83e-30d5-4730-96ce-cbbe093334e8",
+    "b6649818-bf52-4604-9b35-fbf8aa4533a5",
+    "dd45507d-c6d0-4319-9e8f-568313827691",
+    "894e738c-d102-4245-8b24-f42264ccfba5",
+    "13b44f33-94cf-47ac-95a8-3aa042c69381",
+    "86a6db9c-d108-4970-ae8d-6b445630c539",
+    "2cfffd88-7ee7-45de-bef9-f6239565c3fe",
+    "daee442f-6bc4-47bf-a3fa-409f0336803c",
+    "1677813107367e834b",
+    "65ec616c-ec79-4a60-9bd9-0322c651d7a9",
+    "52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d",
+    "related-products"
+  ]
+}

@@ -1,1 +1,291 @@
-{"sections":{"main":{"type":"main-product-rsp","blocks":{"title":{"type":"title","settings":{"title":"AminoLean Natural Energy","remove_flavor_name":true}},"judge_me_reviews_preview_badge_UxTj7p":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"text_m4W89t":{"type":"text","settings":{"text":"Energy, elevated - with natural caffeine, aminos, and weight loss built in.","text_style":"body","custom_text_size":1.5,"custom_text_color":"","custom_text_align":"","custom_text_weight":""}},"566f382d-2208-449c-9758-502d1d67fa73":{"type":"reviews_badge_price","settings":{}},"69cc2cf9-06a7-4545-a3c2-2b3eceb1de35":{"type":"flavor_picker","settings":{"product_list":["vegan-aminolean-acai","vegan-aminolean-pineapple-coconut","vegan-aminolean-mango"],"horizontal_layout":true}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","hide_flavor_option":true,"icons_metaobject_handle":"aminolean-variant-icons","product_override_picker_type":""}},"quantity_selector":{"type":"quantity_selector","disabled":true,"settings":{}},"bundle_picker_fzj6BX":{"type":"bundle_picker","disabled":true,"settings":{"title":"Choose Your Pack","single_option_name":"Single Pack"}},"bundle_option_PqyGUy":{"type":"bundle_option","disabled":true,"settings":{"title":"MultiPack","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_v_v.png","badge":"Save 20%","bundler_app_code":"h1xd","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_p6Xa8d":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Protein","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_v_tf.png","badge":"Save 20%","bundler_app_code":"h1xb","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_kBy6WJ":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Hydration","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_v_hydr.png","badge":"Save 20%","bundler_app_code":"h1x9","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_xFzbyw":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Creatine","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_v_crea.png","badge":"Save 20%","bundler_app_code":"h1x6","builder_heading":"Complete Your Bundle","preselect_products":true}},"bundle_option_yKdREb":{"type":"bundle_option","disabled":true,"settings":{"title":"Add Energy Drinks","image":"shopify:\/\/shop_images\/26_Amino_BundleIcons_v_rtd.png","badge":"Save 20%","bundler_app_code":"h1x8","builder_heading":"Complete Your Bundle","preselect_products":true}},"recharge_subscriptions_subscription_widget_v2_WNJWJp":{"type":"shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget-v2\/371eed76-0b44-4869-9813-730372ea378e","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"collapsible-row-0":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Description","icon":"none","content":"","page":""}},"collapsible-row-1":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Shipping & Returns","icon":"truck","content":"","page":""}},"collapsible-row-2":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Dimensions","icon":"ruler","content":"","page":""}},"collapsible-row-3":{"type":"collapsible_tab","disabled":true,"settings":{"heading":"Care Instructions","icon":"heart","content":"","page":""}},"share":{"type":"share","disabled":true,"settings":{"share_label":"Share"}}},"block_order":["title","judge_me_reviews_preview_badge_UxTj7p","text_m4W89t","566f382d-2208-449c-9758-502d1d67fa73","69cc2cf9-06a7-4545-a3c2-2b3eceb1de35","variant_picker","quantity_selector","bundle_picker_fzj6BX","bundle_option_PqyGUy","bundle_option_p6Xa8d","bundle_option_kBy6WJ","bundle_option_xFzbyw","bundle_option_yKdREb","recharge_subscriptions_subscription_widget_v2_WNJWJp","buy_buttons","collapsible-row-0","collapsible-row-1","collapsible-row-2","collapsible-row-3","share"],"settings":{"enable_custom_styling":false,"section_bg":"#ffffff","section_gradient":"","enable_flavor_styling":false,"flavor_swatch_size":72,"flavor_image_radius":8,"flavor_gap":12,"flavor_swatch_bg":"#f4f4f4","flavor_border_color":"#e0e0e0","flavor_border_width":1,"flavor_selected_border":"#2e6fb5","flavor_selected_border_width":2,"flavor_caption_color":"#0a1f2e","flavor_caption_size":1.2,"flavor_caption_weight":"600","flavor_caption_gap":6,"flavor_size_color":"#6b7785","flavor_size_text_size":0.9,"flavor_tag_bg":"#d9f24b","flavor_tag_text_color":"#0a1f2e","flavor_tag_text_size":1.1,"flavor_tag_weight":"700","flavor_tag_padding_x":10,"flavor_tag_padding_y":6,"flavor_tag_radius":6,"flavor_tag_offset":6,"enable_button_styling":false,"button_label":"","button_bg":"#2e6fb5","button_gradient":"","button_text_color":"#ffffff","button_text_size":1.5,"button_radius":8,"button_border_color":"#2e6fb5","button_border_width":0,"button_padding_x":24,"button_padding_y":16,"enable_sticky_info":false,"media_size":"medium","constrain_to_viewport":false,"media_fit":"cover","gallery_layout":"thumbnail_slider","media_position":"left","image_zoom":"none","mobile_thumbnails":"hide","hide_variants":false,"enable_video_looping":true,"padding_top":16,"padding_bottom":24}},"blocks_te94yB":{"type":"_blocks","blocks":{"ai_gen_block_5b7a641_jrHHGX":{"type":"ai_gen_block_5b7a641","settings":{"desktop_width_percent":60,"container_padding":0,"content_padding":24,"tab_padding":20,"tab_gap":4,"background_color":"#ffffff","heading_color":"#3f2020","heading_hover_color":"#00a0e2","heading_active_color":"#00a0e2","text_color":"#000000","caption_color":"#666666","border_color":"#e0e0e0","active_border_color":"#e7e4c2","heading_font":"poppins_n6","heading_size":18,"body_font":"poppins_n4","body_size":14,"caption_size":12,"border_radius":24,"border_thickness":1,"active_border_thickness":3,"image_border_radius":8,"tab_1_enabled":true,"tab_1_heading":"Description","tab_1_content_type":"text","tab_1_text":"<p>Get clean, steady energy from natural caffeine — no jitters, no itchy tingles, and none of the crash you get from typical pre-workouts. Each scoop also delivers 5g of amino acids to help build muscle and speed recovery, plus CLA and L-carnitine to support your weight-loss goals. Take it 20–30 minutes before training, or anytime you need a clean pick-me-up — on workout days and rest days alike. And because it's naturally sweetened and naturally colored, you get all of it with zero sugar, no artificial sweeteners, and no artificial dyes.<\/p>","tab_1_caption_1":"","tab_1_caption_2":"","tab_1_caption_3":"","tab_1_caption_4":"","tab_1_caption_5":"","tab_1_caption_6":"","tab_2_enabled":true,"tab_2_heading":"Nutrition","tab_2_content_type":"gallery","tab_2_text":"<p>Add your content here. You can use rich text formatting.<\/p>","tab_2_image_1":"shopify:\/\/shop_images\/Screenshot_2026-05-20_at_3.16.28_PM.png","tab_2_caption_1":"Acai","tab_2_caption_2":"Mango","tab_2_image_3":"shopify:\/\/shop_images\/Screenshot_2026-05-20_at_3.17.11_PM.png","tab_2_caption_3":"Mango","tab_2_image_4":"shopify:\/\/shop_images\/Screenshot_2026-05-20_at_3.17.47_PM.png","tab_2_caption_4":"Pineapple Coconut","tab_2_caption_5":"","tab_2_caption_6":"","tab_3_enabled":true,"tab_3_heading":"Directions","tab_3_content_type":"text","tab_3_text":"<p>Mix 2 scoops (1 serving) of AminoLean in 8-10 oz of cold water anytime throughout the day.<br\/><br\/><strong>For Anytime Energy: <\/strong>Take 1 or more servings first thing in the morning and or between meals.<br\/><br\/><strong>For Pre-Workout Energy: <\/strong>Take 1-3 servings 20-30 minutes before training.<br\/><br\/><strong>For Recovery: <\/strong>Take 1-2 servings after training and or between meals.<br\/><br\/>Do not consume more than 6 scoops (3 servings) in a 24 hour period.<\/p>","tab_3_caption_1":"","tab_3_caption_2":"","tab_3_caption_3":"","tab_3_caption_4":"","tab_3_caption_5":"","tab_3_caption_6":"","tab_4_enabled":false,"tab_4_heading":"Tab 4","tab_4_content_type":"text","tab_4_text":"<p>Add your content here. You can use rich text formatting.<\/p>","tab_4_caption_1":"","tab_4_caption_2":"","tab_4_caption_3":"","tab_4_caption_4":"","tab_4_caption_5":"","tab_4_caption_6":"","tab_5_enabled":false,"tab_5_heading":"Tab 5","tab_5_content_type":"text","tab_5_text":"<p>Add your content here. You can use rich text formatting.<\/p>","tab_5_caption_1":"","tab_5_caption_2":"","tab_5_caption_3":"","tab_5_caption_4":"","tab_5_caption_5":"","tab_5_caption_6":""},"blocks":{}}},"block_order":["ai_gen_block_5b7a641_jrHHGX"],"settings":{}},"0125028e-5c09-4193-951d-8bcfa32f6a05":{"type":"aminolean-product-tabs","blocks":{"5a572757-d461-45fe-8325-df89e3b508be":{"type":"description_tab","settings":{"title":"Description","use_product_description":true,"text":"<p>Get clean, steady energy from natural caffeine — no jitters, no itchy tingles, and none of the crash you get from typical pre-workouts. Each scoop also delivers 5g of amino acids to help build muscle and speed recovery, plus CLA and L-carnitine to support your weight-loss goals. Take it 20–30 minutes before training, or anytime you need a clean pick-me-up — on workout days and rest days alike. And because it's naturally sweetened and naturally colored, you get all of it with zero sugar, no artificial sweeteners, and no artificial dyes.<\/p>","first_paragraph_only":true}},"10f3e552-6d08-41b0-b6c2-f1d29f96935c":{"type":"nutrition_tab","settings":{"title":"Nutrition","text":""}},"cd1af3ec-69ba-40b2-af71-e79f25667589":{"type":"directions_tab","settings":{"title":"Directions","text":""}}},"block_order":["5a572757-d461-45fe-8325-df89e3b508be","10f3e552-6d08-41b0-b6c2-f1d29f96935c","cd1af3ec-69ba-40b2-af71-e79f25667589"],"disabled":true,"settings":{"padding_top":0,"padding_bottom":48}},"16501ff2-51f3-47f5-9107-cb4433714c25":{"type":"amino-icon-grid","blocks":{"73b67c7a-1994-4ff2-af79-d229c68ca8e4":{"type":"feature","settings":{"icon":"green_tea","text":"<p>125mg Natural Caffeine<\/p>","icon_name":""}},"252089fd-4442-4f3b-bbfe-445de82eec1e":{"type":"feature","settings":{"icon":"muscle","text":"<p>5g Amino Acids<\/p>","icon_name":""}},"51eea9a5-df93-4240-ae6a-c0daf6da67f6":{"type":"feature","settings":{"icon":"scale","text":"<p>Natural Weight Loss Support<\/p>","icon_name":""}},"5870a838-d73c-4fe3-aa31-1499c6981cb6":{"type":"feature","settings":{"icon":"vegan","text":"<p>Vegan<\/p>","icon_name":""}},"68602fcc-3008-4375-98e9-40580bb7262b":{"type":"feature","settings":{"icon":"sugar_free","text":"<p>Sugar Free<\/p>","icon_name":""}},"3672e60d-16b2-416f-a9ee-709d3c2e2bc4":{"type":"feature","settings":{"icon":"gluten_free","text":"<p>Gluten Free<\/p>","icon_name":""}}},"block_order":["73b67c7a-1994-4ff2-af79-d229c68ca8e4","252089fd-4442-4f3b-bbfe-445de82eec1e","51eea9a5-df93-4240-ae6a-c0daf6da67f6","5870a838-d73c-4fe3-aa31-1499c6981cb6","68602fcc-3008-4375-98e9-40580bb7262b","3672e60d-16b2-416f-a9ee-709d3c2e2bc4"],"settings":{"section_color_scheme":"","heading":"<p>Energy without compromise<\/p>","subheading":"","columns_mobile":3,"item_max_width_mobile":140,"container_max_width_mobile":320,"columns_desktop":3,"item_max_width_desktop":140,"container_max_width_desktop":620,"padding_top":48,"padding_bottom":48}},"2acd5e0a-51aa-4c1f-b9ec-cbc8f1e3e607":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":false,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":true,"background_custom_color":"#f3ebee"}},"b6649818-bf52-4604-9b35-fbf8aa4533a5":{"type":"amino-press-logos","blocks":{"036abe6d-7f32-4a73-8798-fb775bb27375":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/inc-logo.svg","width_1":25,"image_2":"shopify:\/\/shop_images\/gq-logo.svg","width_2":22,"image_3":"shopify:\/\/shop_images\/byrdie-logo.svg","width_3":36,"width_4":25}},"80e97f03-9734-4e91-b564-21a6abbda9e6":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/mens-health-logo.svg","width_1":36,"image_2":"shopify:\/\/shop_images\/womens-health-logo.svg","width_2":36,"width_3":25,"width_4":25}},"e953d6b0-147a-4c56-b253-f9dd1203bc06":{"type":"press_row","settings":{"image_1":"shopify:\/\/shop_images\/today-logo.svg","width_1":18,"image_2":"shopify:\/\/shop_images\/insider-logo.svg","width_2":32,"image_3":"shopify:\/\/shop_images\/shape-logo.svg","width_3":32,"width_4":25}}},"block_order":["036abe6d-7f32-4a73-8798-fb775bb27375","80e97f03-9734-4e91-b564-21a6abbda9e6","e953d6b0-147a-4c56-b253-f9dd1203bc06"],"custom_css":["#PressLogos-template--15510886875181__b6649818-bf52-4604-9b35-fbf8aa4533a5 {background-color: rgb(var(--base-color-accent-1));}"],"settings":{"heading":"Featured In","heading_style":"small_uppercase","color_scheme":"","vertical_spacing":12,"horizontal_spacing":24,"max_width":414,"padding_top":36,"padding_bottom":36}},"d67b1742-15c1-4eea-8b9f-9af2d11367e2":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":true,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":""}},"894e738c-d102-4245-8b24-f42264ccfba5":{"type":"amino-image-multirow","blocks":{"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/feature-natural-energy.jpg","heading":"Clean Energy, No Crash","text":"<p>Clean, steady energy from natural caffeine sourced from green tea, not synthetic stimulants. You get a smooth lift that lasts, with no jitters, no itchy tingles, and none of the crash that comes from a typical pre-workout spike.<\/p>"}},"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/feature-build-muscle.jpg","heading":"Build & Recover","text":"<p>5g of amino acids in every scoop to help build muscle, power you through tougher workouts, and bounce back faster afterward so the daily grind doesn't grind you down.<\/p>"}},"template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/feature-weight.jpg","heading":"Stay Lean","text":"<p>Built-in support to help you stay lean: CLA and L-carnitine work alongside green tea and green coffee extract to support your weight-management goals while you train.<\/p>"}},"row_dCtT7K":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/AminoLean_lifestyle_3.jpg","heading":"Nothing Artificial","text":"<p>Naturally sweetened and naturally colored, zero sugar, no artificial sweeteners, no artificial dyes. Just clean energy you can feel good about, vegan and gluten free.<\/p>"}}},"block_order":["template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0","template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1","template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2","row_dCtT7K"],"settings":{}},"48bf0b21-3d02-42d0-86b2-272ce998e4fc":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":false,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":""}},"2cfffd88-7ee7-45de-bef9-f6239565c3fe":{"type":"aminolean-review-chat-bubbles","blocks":{"template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0":{"type":"quote","settings":{"width_mobile":55,"width_desktop":33,"title":"Rachel","content":"<p>\"The flavors are amazing... and the feeling you get from the product is even better!\"<\/p>","quote_points_right":true,"content_position":"center","content_alignment":"start","desktop_content_position":"start","desktop_content_alignment":"center"}},"47ff8fb3-e9f2-491c-893f-88aa453810b5":{"type":"quote","settings":{"width_mobile":40,"width_desktop":33,"title":"Ethan","content":"<p>\"The best tasting pre workout I've ever used.\"<\/p>","quote_points_right":false,"content_position":"center","content_alignment":"center","desktop_content_position":"center","desktop_content_alignment":"center"}},"10999926-07ea-43e6-acc3-bad5d48fa838":{"type":"quote","settings":{"width_mobile":50,"width_desktop":33,"title":"Hannah C.","content":"<p>\"Pure clean energy throughout the whole day\"<\/p>","quote_points_right":false,"content_position":"end","content_alignment":"center","desktop_content_position":"center","desktop_content_alignment":"end"}},"3eba1a46-e30b-4ddb-94f6-54a77f271ac5":{"type":"quote","settings":{"width_mobile":50,"width_desktop":33,"title":"Devin U.","content":"<p>\"The taste and energy are amazing and it doesn't make you feel jittery\"<\/p>","quote_points_right":true,"content_position":"start","content_alignment":"start","desktop_content_position":"start","desktop_content_alignment":"start"}},"282f49bc-3444-44e0-acdc-f6d9f4dbafac":{"type":"quote","settings":{"width_mobile":60,"width_desktop":40,"title":"Justine R.","content":"<p>\"It has given me power, motivation, and kept me positive throughout my journey getting back into fitness\"<\/p>","quote_points_right":true,"content_position":"end","content_alignment":"end","desktop_content_position":"center","desktop_content_alignment":"end"}},"d308e3ca-b213-4e98-98a3-903164301220":{"type":"quote","settings":{"width_mobile":40,"width_desktop":25,"title":"Carol","content":"<p>\"No jitters, tastes great, clean energy!\"<\/p>","quote_points_right":false,"content_position":"center","content_alignment":"start","desktop_content_position":"end","desktop_content_alignment":"center"}}},"block_order":["template--15513815416877__2cfffd88-7ee7-45de-bef9-f6239565c3fe-167847961978a0be93-0","47ff8fb3-e9f2-491c-893f-88aa453810b5","10999926-07ea-43e6-acc3-bad5d48fa838","3eba1a46-e30b-4ddb-94f6-54a77f271ac5","282f49bc-3444-44e0-acdc-f6d9f4dbafac","d308e3ca-b213-4e98-98a3-903164301220"],"settings":{"heading":"<p>What They're Saying<\/p>","color_scheme":"accent-1","quote_color_scheme":"background-1","stars_color":"#ff9900","padding_top":48,"padding_bottom":48}},"c21ca57c-c97f-4bd7-a1e2-760617df6dc8":{"type":"aminolean-angle-divider","settings":{"foreground_on_top":true,"foreground_color_scheme":"accent-inverse","customize_foreground":false,"foreground_custom_color":"","background_color_scheme":"background-1","customize_background":false,"background_custom_color":""}},"1677813107367e834b":{"type":"apps","settings":{"include_margins":true,"padding_top":36,"padding_bottom":36}},"177698017949f73d18":{"type":"apps","blocks":{"judge_me_reviews_review_widget_47dUqb":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"review_data":"sample_data","max_width":1200,"show_shop_reviews":false,"empty_state":"empty_widget"}}},"block_order":["judge_me_reviews_review_widget_47dUqb"],"settings":{"include_margins":true,"padding_top":36,"padding_bottom":36}},"adcd68da-a633-4162-8167-cc00e784febe":{"type":"amino-collapsible-content","blocks":{"template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0":{"type":"collapsible_row","settings":{"heading":"When should I take AminoLean Pre Workout?","icon":"none","row_content":"<p>You can take AminoLean 20-30 minutes before your workout for a pre workout boost, or anytime during the day when you need an energy pick-me-up.<\/p>","page":""}},"template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1":{"type":"collapsible_row","settings":{"heading":"How much caffeine is in one scoop?","icon":"none","row_content":"<p>There is 65mg of caffeine in one scoop.<\/p>","page":""}},"template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2":{"type":"collapsible_row","settings":{"heading":"How many scoops should I take?","icon":"none","row_content":"<p>AminoLean is totally customizable to your energy needs, and you can adjust your number of scoops based on your comfort level and caffeine tolerance!<\/p>","page":""}},"template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3":{"type":"collapsible_row","settings":{"heading":"Will it make me feel tingly or \"itchy\"?","icon":"none","row_content":"<p>No, AminoLean Pre Workout will not make you feel jittery or itchy. <\/p>","page":""}}},"block_order":["template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0","template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1","template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2","template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3"],"settings":{"caption":"","heading":"FAQs","heading_size":"h2","heading_alignment":"center","layout":"row","color_scheme":"background-1","container_color_scheme":"background-2","open_first_collapsible_row":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":48,"padding_bottom":48}},"52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d":{"type":"aminolean-products-slider","blocks":{"template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/DTC_AminoLean_Preworkout_PinkLemonade-RT.png","heading":"AminoLean Pre Workout","heading_size":"h4","subheading":"Our original pre workout blend for anytime energy.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-pink-lemonade"}},"3bf1b879-5c42-4a89-89ec-0872609a4a21":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/AminoLeanRTD_StrawberryWatermelon_SingleServ_041023-10_Front_HighRes.png","heading":"AminoLean Energy Drink","heading_size":"h4","subheading":"Our ready to drink, lightly carbonated energy drink for boosts of clean energy on the go.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-energy-drink-strawberry-watermelon"}},"8f7cfacc-df86-4568-ba55-f175a36c3425":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/DTC_AminoLean_NaturallySweetened_Acai-RT.png","heading":"AminoLean Naturally Sweetened","heading_size":"h4","subheading":"Our naturally sweetened pre workout blend for anytime energy.","button_label":"Button label","link":"shopify:\/\/products\/vegan-aminolean-acai"}},"01aefae9-030c-48ee-a482-010f668052af":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/AminoLeanRECOVERY_TropicalPunch_30Serv_080825-13_Front_HighRes.png","heading":"AminoLean Recovery","heading_size":"h4","subheading":"Our post-workout recovery blend with rapid hydration and immune system boosting ingredients.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-recovery-tropical-island-punch"}},"template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/max-tile.jpg","heading":"AminoLean MAX","heading_size":"h4","subheading":"Our high-intensity pre workout with added ingredients for pump and focus.","button_label":"Button label","link":"shopify:\/\/products\/aminolean-max-preworkout-passion-fruit-punch"}},"324c9793-b418-44ea-bd7c-b46a40054f50":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"AminoLean x Alix Earle","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":"shopify:\/\/products\/aminolean-pre-workout-cherry-on-top"}},"64299f91-619e-4699-976a-64c0c5ee491e":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"New Product Tile","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":""}},"477c8acd-0f53-4cec-ae5e-bf1bf5de9848":{"type":"slide","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/F75A7487-1.jpg","heading":"Alix Earle Again","heading_size":"h4","subheading":"Tell your brand's story through images","button_label":"Button label","link":""}}},"block_order":["template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-0","3bf1b879-5c42-4a89-89ec-0872609a4a21","8f7cfacc-df86-4568-ba55-f175a36c3425","01aefae9-030c-48ee-a482-010f668052af","template--15513815416877__44a1951a-4fca-4cba-8713-6d046cb10c14-167848652867ab84de-1","324c9793-b418-44ea-bd7c-b46a40054f50","64299f91-619e-4699-976a-64c0c5ee491e","477c8acd-0f53-4cec-ae5e-bf1bf5de9848"],"settings":{"title":"The Full AminoLean Line","heading_size":"h2","description":"","description_style":"body","columns_desktop":4,"full_width":false,"enable_desktop_slider":true,"color_scheme":"background-1","columns_mobile":"2","swipe_on_mobile":true,"padding_top":48,"padding_bottom":48}}},"order":["main","blocks_te94yB","0125028e-5c09-4193-951d-8bcfa32f6a05","16501ff2-51f3-47f5-9107-cb4433714c25","2acd5e0a-51aa-4c1f-b9ec-cbc8f1e3e607","b6649818-bf52-4604-9b35-fbf8aa4533a5","d67b1742-15c1-4eea-8b9f-9af2d11367e2","894e738c-d102-4245-8b24-f42264ccfba5","48bf0b21-3d02-42d0-86b2-272ce998e4fc","2cfffd88-7ee7-45de-bef9-f6239565c3fe","c21ca57c-c97f-4bd7-a1e2-760617df6dc8","1677813107367e834b","177698017949f73d18","adcd68da-a633-4162-8167-cc00e784febe","52a16d3b-dec0-4f81-ab1c-0a24ec97fc4d"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-rsp",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "AminoLean Natural Energy",
+            "remove_flavor_name": true
+          }
+        },
+        "judge_me_reviews_preview_badge_UxTj7p": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "text_m4W89t": {
+          "type": "text",
+          "settings": {
+            "text": "Energy, elevated - with natural caffeine, aminos, and weight loss built in.",
+            "text_style": "body",
+            "custom_text_size": 1.5,
+            "custom_text_color": "",
+            "custom_text_align": "",
+            "custom_text_weight": ""
+          }
+        },
+        "566f382d-2208-449c-9758-502d1d67fa73": {
+          "type": "reviews_badge_price",
+          "settings": {}
+        },
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35": {
+          "type": "flavor_picker",
+          "settings": {
+            "product_list": [
+              "vegan-aminolean-acai",
+              "vegan-aminolean-pineapple-coconut",
+              "vegan-aminolean-mango"
+            ],
+            "horizontal_layout": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "hide_flavor_option": true,
+            "icons_metaobject_handle": "aminolean-variant-icons",
+            "product_override_picker_type": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WNJWJp": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "judge_me_reviews_preview_badge_UxTj7p",
+        "text_m4W89t",
+        "566f382d-2208-449c-9758-502d1d67fa73",
+        "69cc2cf9-06a7-4545-a3c2-2b3eceb1de35",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WNJWJp",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_custom_styling": false,
+        "section_bg": "#ffffff",
+        "section_gradient": "",
+        "enable_flavor_styling": false,
+        "flavor_swatch_size": 72,
+        "flavor_image_radius": 8,
+        "flavor_gap": 12,
+        "flavor_swatch_bg": "#f4f4f4",
+        "flavor_border_color": "#e0e0e0",
+        "flavor_border_width": 1,
+        "flavor_selected_border": "#2e6fb5",
+        "flavor_selected_border_width": 2,
+        "flavor_caption_color": "#0a1f2e",
+        "flavor_caption_size": 1.2,
+        "flavor_caption_weight": "600",
+        "flavor_caption_gap": 6,
+        "flavor_size_color": "#6b7785",
+        "flavor_size_text_size": 0.9,
+        "flavor_tag_bg": "#d9f24b",
+        "flavor_tag_text_color": "#0a1f2e",
+        "flavor_tag_text_size": 1.1,
+        "flavor_tag_weight": "700",
+        "flavor_tag_padding_x": 10,
+        "flavor_tag_padding_y": 6,
+        "flavor_tag_radius": 6,
+        "flavor_tag_offset": 6,
+        "qty_min_height": 52,
+        "qty_button_size": 44,
+        "qty_input_width": 48,
+        "qty_gap": 12,
+        "qty_radius": 8,
+        "qty_border_width": 1,
+        "qty_bg": "#ffffff",
+        "qty_border_color": "#0a1a4f",
+        "qty_text_color": "#0a1a4f",
+        "enable_button_styling": false,
+        "button_label": "",
+        "button_bg": "#2e6fb5",
+        "button_gradient": "",
+        "button_text_color": "#ffffff",
+        "button_text_size": 1.5,
+        "button_radius": 8,
+        "button_border_color": "#2e6fb5",
+        "button_border_width": 0,
+        "button_padding_x": 24,
+        "button_padding_y": 16,
+        "enable_sticky_info": false,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 16,
+        "padding_bottom": 24
+      }
+    },
+    "894e738c-d102-4245-8b24-f42264ccfba5": {
+      "type": "amino-image-multirow",
+      "blocks": {
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/feature-natural-energy.jpg",
+            "heading": "Clean Energy, No Crash",
+            "text": "<p>Clean, steady energy from natural caffeine sourced from green tea, not synthetic stimulants. You get a smooth lift that lasts, with no jitters, no itchy tingles, and none of the crash that comes from a typical pre-workout spike.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/feature-build-muscle.jpg",
+            "heading": "Build & Recover",
+            "text": "<p>5g of amino acids in every scoop to help build muscle, power you through tougher workouts, and bounce back faster afterward so the daily grind doesn't grind you down.</p>"
+          }
+        },
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/feature-weight.jpg",
+            "heading": "Stay Lean",
+            "text": "<p>Built-in support to help you stay lean: CLA and L-carnitine work alongside green tea and green coffee extract to support your weight-management goals while you train.</p>"
+          }
+        },
+        "row_dCtT7K": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/AminoLean_lifestyle_3.jpg",
+            "heading": "Nothing Artificial",
+            "text": "<p>Naturally sweetened and naturally colored, zero sugar, no artificial sweeteners, no artificial dyes. Just clean energy you can feel good about, vegan and gluten free.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-0",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1",
+        "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2",
+        "row_dCtT7K"
+      ],
+      "settings": {}
+    },
+    "c21ca57c-c97f-4bd7-a1e2-760617df6dc8": {
+      "type": "aminolean-angle-divider",
+      "settings": {
+        "foreground_on_top": true,
+        "foreground_color_scheme": "accent-inverse",
+        "customize_foreground": false,
+        "foreground_custom_color": "",
+        "background_color_scheme": "background-1",
+        "customize_background": false,
+        "background_custom_color": ""
+      }
+    },
+    "177698017949f73d18": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_47dUqb": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_47dUqb"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "adcd68da-a633-4162-8167-cc00e784febe": {
+      "type": "amino-collapsible-content",
+      "blocks": {
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I take AminoLean Pre Workout?",
+            "icon": "none",
+            "row_content": "<p>You can take AminoLean 20-30 minutes before your workout for a pre workout boost, or anytime during the day when you need an energy pick-me-up.</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much caffeine is in one scoop?",
+            "icon": "none",
+            "row_content": "<p>There is 65mg of caffeine in one scoop.</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many scoops should I take?",
+            "icon": "none",
+            "row_content": "<p>AminoLean is totally customizable to your energy needs, and you can adjust your number of scoops based on your comfort level and caffeine tolerance!</p>",
+            "page": ""
+          }
+        },
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will it make me feel tingly or \"itchy\"?",
+            "icon": "none",
+            "row_content": "<p>No, AminoLean Pre Workout will not make you feel jittery or itchy. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-0",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-1",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-2",
+        "template--15513815416877__adcd68da-a633-4162-8167-cc00e784febe-1678419778126fd085-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQs",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "894e738c-d102-4245-8b24-f42264ccfba5",
+    "c21ca57c-c97f-4bd7-a1e2-760617df6dc8",
+    "177698017949f73d18",
+    "adcd68da-a633-4162-8167-cc00e784febe"
+  ]
+}
