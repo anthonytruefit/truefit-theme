@@ -94,12 +94,25 @@
             "show_gift_card_recipient": true
           }
         },
+        "trust_badges_VqYcAM": {
+          "type": "trust_badges",
+          "settings": {
+            "icon_1": "guarantee",
+            "text_1": "30-day money back guarantee",
+            "icon_2": "lock",
+            "text_2": "Secure checkout",
+            "icon_3": "truck",
+            "text_3": "Fast shipping",
+            "icon_color": "#0a1a4f",
+            "text_color": "#40738d",
+            "icon_size": 22,
+            "text_size": 12,
+            "padding_y": 0,
+            "show_divider": false
+          }
+        },
         "tf_quantity_JnNB6y": {
           "type": "tf_quantity",
-          "settings": {}
-        },
-        "trust_badges": {
-          "type": "trust_badges",
           "settings": {}
         },
         "gift_tracker_eXAV6W": {
@@ -167,8 +180,8 @@
         "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
+        "trust_badges_VqYcAM",
         "tf_quantity_JnNB6y",
-        "trust_badges",
         "gift_tracker_eXAV6W",
         "milestone_Q9VkBq",
         "milestone_CqpTCg",
