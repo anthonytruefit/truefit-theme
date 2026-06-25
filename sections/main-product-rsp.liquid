@@ -1087,7 +1087,7 @@
                   #shopify-section-{{ section.id }} .gt { display: block; margin-top: 2.4rem; }
                   #shopify-section-{{ section.id }} .gt__card { background: {{ block.settings.background_color }}; border-radius: 16px; padding: 2.4rem 2rem 2rem; }
                   #shopify-section-{{ section.id }} .gt__title { margin: 0 0 1.2rem; font-weight: 500; letter-spacing: -0.02em; color: #0A1A4F; font-size: 1.7rem; }
-                  #shopify-section-{{ section.id }} .gt__bar { position: relative; padding: 6.6rem 0 2.4rem; }
+                  #shopify-section-{{ section.id }} .gt__bar { position: relative; margin: 5rem 0 3.6rem; }
                   #shopify-section-{{ section.id }} .gt__track { position: relative; height: {{ block.settings.bar_height | default: 8 }}px; background: {{ block.settings.track_color | default: '#E2E5EC' }}; border-radius: 999px; overflow: hidden; }
                   #shopify-section-{{ section.id }} .gt__fill { display: block; height: {{ block.settings.bar_height | default: 8 }}px; width: var(--gt-pct, 0%); min-width: 0; background: {{ block.settings.fill_color | default: '#0A1A4F' }}; border-radius: 999px; transition: width 0.45s ease; }
                   #shopify-section-{{ section.id }} .gt__node { position: absolute; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
@@ -1097,15 +1097,15 @@
                   #shopify-section-{{ section.id }} .gt__node.is-active .gt__circle { background: {{ block.settings.fill_color }}; border-color: {{ block.settings.fill_color }}; transform: scale(1.06); }
                   #shopify-section-{{ section.id }} .gt__emoji { filter: grayscale(0.6); opacity: 0.5; transition: filter 0.25s ease, opacity 0.25s ease; }
                   #shopify-section-{{ section.id }} .gt__node.is-active .gt__emoji { filter: none; opacity: 1; }
-                  #shopify-section-{{ section.id }} .gt__label { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(100% + 0.7rem); white-space: nowrap; font-size: 1.1rem; font-weight: 600; color: #0A1A4F; }
+                  #shopify-section-{{ section.id }} .gt__label { position: absolute; left: 50%; transform: translateX(-50%); top: calc(100% + 0.7rem); white-space: nowrap; font-size: 1.1rem; font-weight: 600; color: #0A1A4F; }
                   #shopify-section-{{ section.id }} .gt__node--start .gt__label { left: 0; transform: none; }
                   #shopify-section-{{ section.id }} .gt__node--end .gt__label { left: auto; right: 0; transform: none; }
-                  #shopify-section-{{ section.id }} .gt__badge { position: absolute; left: 50%; bottom: calc(100% + 2.8rem); transform: translateX(-50%) rotate(-6deg); white-space: nowrap; font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 0.6rem; background: var(--badge-bg); color: var(--badge-text); box-shadow: 0 0.2rem 0.5rem rgba(10, 26, 79, 0.16); }
+                  #shopify-section-{{ section.id }} .gt__badge { position: absolute; left: 50%; bottom: calc(100% + 0.6rem); transform: translateX(-50%) rotate(-6deg); white-space: nowrap; font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 0.6rem; background: var(--badge-bg); color: var(--badge-text); box-shadow: 0 0.2rem 0.5rem rgba(10, 26, 79, 0.16); }
                   #shopify-section-{{ section.id }} .gt__node--start .gt__badge { left: 0; transform: rotate(-6deg); transform-origin: left center; }
                   #shopify-section-{{ section.id }} .gt__node--end .gt__badge { left: auto; right: 0; transform: rotate(-6deg); transform-origin: right center; }
                   @media screen and (max-width: 749px) {
                     #shopify-section-{{ section.id }} .gt__card { padding: 2rem 1.6rem 1.6rem; }
-                    #shopify-section-{{ section.id }} .gt__bar { padding-top: 5.8rem; }
+                    #shopify-section-{{ section.id }} .gt__bar { margin: 4.2rem 0 3.2rem; }
                     #shopify-section-{{ section.id }} .gt__circle { width: 3.4rem; height: 3.4rem; font-size: 1.6rem; }
                     #shopify-section-{{ section.id }} .gt__label { font-size: 1rem; }
                     #shopify-section-{{ section.id }} .gt__badge { font-size: 0.85rem; padding: 0.3rem 0.6rem; }
