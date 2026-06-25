@@ -98,6 +98,10 @@
           "type": "tf_quantity",
           "settings": {}
         },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {}
+        },
         "gift_tracker_eXAV6W": {
           "type": "gift_tracker",
           "settings": {
@@ -164,6 +168,7 @@
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "tf_quantity_JnNB6y",
+        "trust_badges",
         "gift_tracker_eXAV6W",
         "milestone_Q9VkBq",
         "milestone_CqpTCg",
