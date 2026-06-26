@@ -704,51 +704,13 @@
     "tf_social_proof_eV8jkB": {
       "type": "tf-social-proof",
       "blocks": {
-        "card_wCUGtj": {
-          "type": "card",
-          "settings": {
-            "media_type": "video",
-            "video": "shopify://files/videos/1782007420619.publer.com.mp4",
-            "video_url": "",
-            "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
-            "quote": "Gut friendly, no brain fog, no tummy aches... it doesn't get much better than that.",
-            "quote_color": "#0a1a4f",
-            "quote_size": 16,
-            "quote_font": "sans",
-            "star_count": 5,
-            "star_color": "#c9a86a",
-            "name_text": "",
-            "name_position": "bl",
-            "name_bg": "#0a1a4f",
-            "name_color": "#ffffff"
-          }
-        },
         "card_cwVfyW": {
           "type": "card",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/965e6218-3922-4235-ac97-4090df4bdd9a.webp",
+            "image": "shopify://shop_images/Screenshot_2026-06-26_at_1.44.14_PM.png",
             "video_url": "",
-            "quote": "The ingredient list is simple, high quality, and genuinely feels thoughtfully made.",
-            "quote_color": "#0a1a4f",
-            "quote_size": 16,
-            "quote_font": "sans",
-            "star_count": 5,
-            "star_color": "#c9a86a",
-            "name_text": "",
-            "name_position": "bl",
-            "name_bg": "#0a1a4f",
-            "name_color": "#ffffff"
-          }
-        },
-        "card_A7JCMV": {
-          "type": "card",
-          "settings": {
-            "media_type": "video",
-            "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
-            "video_url": "",
-            "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
-            "quote": "Each scoop has protein, fiber & probiotics in one...it's a truly unique take on protein powder.",
+            "quote": "This ticks the box for an amino/electrolyte bevy for workouts, as well as just rehydrating during a physically demanding job in the heat.",
             "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
@@ -766,7 +728,47 @@
             "media_type": "image",
             "image": "shopify://shop_images/271af3b3-e419-4fd3-84b4-ed15835125f7_1.webp",
             "video_url": "",
-            "quote": "Tastes good, mixes smoothly, and doesn't leave you feeling heavy or bloated.",
+            "quote": "I found that it started working immediately, my recovery time was cut by one day and I am able to work a muscle group twice a week now.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_A7JCMV": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Hydration_Recovery_1_RT.png",
+            "video": "shopify://files/videos/20d4a226f40444c9aafe8470e1124a09.mov",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-06-04_at_2.40.26_PM.png",
+            "quote": "My husband even loves it. Three days in a row now, he's tried this after work & its healed his sore body & made him feel good over all.",
+            "quote_color": "#0a1a4f",
+            "quote_size": 16,
+            "quote_font": "sans",
+            "star_count": 5,
+            "star_color": "#c9a86a",
+            "name_text": "",
+            "name_position": "bl",
+            "name_bg": "#0a1a4f",
+            "name_color": "#ffffff"
+          }
+        },
+        "card_wCUGtj": {
+          "type": "card",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Hydration_Recovery_3_RT.png",
+            "video": "shopify://files/videos/1782007420619.publer.com.mp4",
+            "video_url": "",
+            "poster": "shopify://shop_images/Screenshot_2026-04-03_at_12.54.23_PM.png",
+            "quote": "THANK YOU for not putting artificial colors in this beverage! ",
             "quote_color": "#0a1a4f",
             "quote_size": 16,
             "quote_font": "sans",
@@ -780,10 +782,10 @@
         }
       },
       "block_order": [
-        "card_wCUGtj",
         "card_cwVfyW",
+        "card_a8xDTJ",
         "card_A7JCMV",
-        "card_a8xDTJ"
+        "card_wCUGtj"
       ],
       "name": "Social Proof",
       "settings": {
@@ -793,7 +795,7 @@
         "headline": "Join 1,000,000+ who stay true to their goals.",
         "headline_color": "#0a1a4f",
         "headline_size": 34,
-        "credibility": "Over 5,000 5-star reviews · 1M+ servings delivered.",
+        "credibility": "Over 900 5-star reviews · 1M+ servings delivered.",
         "credibility_color": "#40738d",
         "credibility_size": 15,
         "card_radius": 16,
