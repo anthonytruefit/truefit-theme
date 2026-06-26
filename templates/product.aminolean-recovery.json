@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "TrueFit Protein",
+            "title": "AminoLean Recovery + Hydration",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "This is recovery for body and mind. AminoLean Hydration + Recovery gives your body what it needs to bounce back with hydrating electrolytes and 5g of vegan amino acids, while nootropic mushrooms help your mind reset and refocus. Real ingredients, built to recover all of you.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -155,7 +155,7 @@
           "type": "fbt",
           "settings": {
             "heading": "Frequently bought together",
-            "companion_1": "creatine-mono",
+            "companion_1": "truefit-chocolate",
             "companion_2": "vegan-aminolean-acai",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
@@ -270,7 +270,7 @@
             "heading_font": "poppins_n6",
             "heading_size": 18,
             "body_font": "poppins_n4",
-            "body_size": 14,
+            "body_size": 15,
             "caption_size": 12,
             "border_radius": 24,
             "border_thickness": 1,
@@ -279,7 +279,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>AminoLean Hydration + Recovery is recovery for body and mind. After you train, your body needs to rehydrate and rebuild while your mind needs to reset, and most recovery products only handle half the job. This one covers both: hydrating electrolytes and 5g of vegan amino acids refuel and repair the body, while nootropic mushrooms help sharpen focus and clear the post-workout fog. It's all clean, naturally flavored, and free of sugar, caffeine, and anything you don't need. Real ingredients, built to recover all of you.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -290,18 +290,17 @@
             "tab_2_heading": "Nutrition",
             "tab_2_content_type": "gallery",
             "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
-            "tab_2_image_1": "shopify://shop_images/Screen_Shot_2026-03-31_at_9.54.25_AM.png",
-            "tab_2_caption_1": "Vanilla",
+            "tab_2_image_1": "shopify://shop_images/Screenshot_2026-06-26_at_12.58.10_PM.png",
+            "tab_2_caption_1": "AminoLean Recovery + Hydration",
             "tab_2_caption_2": "",
-            "tab_2_image_3": "shopify://shop_images/Screen_Shot_2026-03-30_at_2.55.39_PM.png",
-            "tab_2_caption_3": "Chocolate",
+            "tab_2_caption_3": "",
             "tab_2_caption_4": "",
             "tab_2_caption_5": "",
             "tab_2_caption_6": "",
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
+            "tab_3_text": "<p>Mix 1 scoops of AminoLean Recovery in 8-10 oz of cold water anytime throughout the day.</p><p><strong>RECOMMENDED USE: </strong></p><p><strong>For Anytime Energy & EAA's:</strong> Take 1 or more servings first thing in the morning and/or between meals.</p><p><strong>For Recovery & EAA's: Take 1-2 servings after training and/or between meals.</strong></p><p><strong>Do not exceed more than 6 scoops (3 servings) in a 4 hour period and do not exceed more than 8 scoops (4 servings) in a 24 hour period.</strong></p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
