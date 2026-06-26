@@ -595,7 +595,7 @@
         "row_UpDqKM": {
           "type": "row",
           "settings": {
-            "row_label": "25g Grass-Fed Whey Protein",
+            "row_label": "Naturally Sourced Caffeine",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
@@ -611,31 +611,31 @@
         "row_z7EPmX": {
           "type": "row",
           "settings": {
-            "row_label": "Prebiotic Fiber and Probiotics",
+            "row_label": "Vegan Amino Acids",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "Some",
             "our_color": "",
-            "c1_type": "text",
+            "c1_type": "x",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
+            "c2_type": "text",
+            "c2_text": "Some",
             "c2_color": ""
           }
         },
         "row_wQf6yV": {
           "type": "row",
           "settings": {
-            "row_label": "Fruits and Veggies",
+            "row_label": "Weight Management",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
-            "c1_type": "x",
+            "c1_type": "text",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "check",
+            "c2_type": "x",
             "c2_text": "",
             "c2_color": ""
           }
@@ -646,20 +646,20 @@
             "row_label": "Cost Per Serving",
             "row_label_color": "#0a1a4f",
             "our_type": "text",
-            "our_text": "$1.92*",
+            "our_text": "$0.67*",
             "our_color": "",
             "c1_type": "text",
-            "c1_text": "~$2.75",
+            "c1_text": "~$1.20",
             "c1_color": "",
             "c2_type": "text",
-            "c2_text": "~$3.60",
+            "c2_text": "~$1.40",
             "c2_color": ""
           }
         },
         "row_PMWqcU": {
           "type": "row",
           "settings": {
-            "row_label": "Zero Artificial Ingredients",
+            "row_label": "Zero Sugar",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
@@ -683,8 +683,8 @@
             "c1_type": "text",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
+            "c2_type": "text",
+            "c2_text": "Some",
             "c2_color": ""
           }
         }
@@ -702,7 +702,7 @@
         "background": "#ffffff",
         "padding_top": 64,
         "padding_bottom": 64,
-        "eyebrow": "THE TRUEFIT DIFFERENCE",
+        "eyebrow": "THE AMINOLEAN DIFFERENCE",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "headline": "See the difference.",
@@ -711,18 +711,18 @@
         "subline": "",
         "subline_color": "#40738d",
         "subline_size": 16,
-        "our_label": "TrueFit",
+        "our_label": "AminoLean",
         "our_header_text_color": "#ffffff",
         "our_bg": "#0a1a4f",
         "our_cell_color": "#c9a86a",
         "our_check_color": "#c9a86a",
         "our_x_color": "",
-        "c1_label": "Synthetic Protein Powder",
+        "c1_label": "Synthetic Pre-Workout Powder",
         "c1_bg": "#eef2f4",
         "c1_cell_color": "#40738d",
         "c1_check_color": "#40738d",
         "c1_x_color": "#40738d",
-        "c2_label": "Overpriced Greens Powder",
+        "c2_label": "Overpriced Amino Acids Powder",
         "c2_bg": "#eef2f4",
         "c2_cell_color": "#40738d",
         "c2_check_color": "#40738d",
@@ -747,33 +747,33 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_007.jpg",
-            "heading": "Protein and fiber, finally together.",
-            "text": "<p>Most protein powders digest too quickly, spiking and crashing before your body can fully put it to work. TrueFit combines 25g of grass-fed whey with whole-food fiber to slow digestion, support steadier amino acid delivery, and keep you fuller, longer.</p>"
+            "image": "shopify://shop_images/AminoLean_lifestyle_1.jpg",
+            "heading": "Clean energy, no crash",
+            "text": "<p>Clean, steady energy from natural caffeine sourced from green tea, not synthetic stimulants. You get a smooth lift that lasts, with no jitters, no itchy tingles, and none of the crash that comes from a typical pre-workout spike.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
-            "heading": "Improve digestion and gut health",
-            "text": "<p>Powered by prebiotic fiber and 1 billion CFU probiotics, TrueFit supports a balanced microbiome from the inside out. A happy gut means better nutrient absorption, smoother digestion, and steady, all-day energy.</p>"
+            "image": "shopify://shop_images/feature-build-muscle_d869b81d-661b-4e86-bac5-e47261623330.jpg",
+            "heading": "Build and recover muscles",
+            "text": "<p>5g of vegan amino acids in every scoop to help build muscle, power you through tougher workouts, and bounce back faster afterward so the daily grind doesn't grind you down.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_001.jpg",
-            "heading": "Simple, effective, delicious weight loss",
-            "text": "<p>Real food ingredients keep you satisfied longer, so cravings fade and portion sizes naturally shrink. Replace one meal a day with TrueFit and let whole-food nutrition do the heavy lifting.</p>"
+            "image": "shopify://shop_images/feature-natural-energy_43be42b9-b862-46d0-bdfd-30d63e9b0bc5.jpg",
+            "heading": "Simple, effective weight loss support",
+            "text": "<p>Built-in support to help you stay lean: CLA and L-carnitine work alongside green tea and green coffee extract to support your weight-management goals while you train.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_11_51_PM.png",
-            "heading": "Build and retain lean muscle",
-            "text": "<p>Strong muscles mean a longer, healthier, more capable life, period. TrueFit delivers 25g of grass-fed whey per serving, the gold standard for building lean muscle and keeping it as you age.</p>"
+            "image": "shopify://shop_images/feature-weight_d9a5acae-c77a-43f9-95cd-8b06fcb36e0f.jpg",
+            "heading": "Clean, transparent ingredients",
+            "text": "<p>Vegan, zero sugar, no artificial colors or dyes, and naturally sourced caffeine from green tea. Just clean energy you can feel good bout.</p>"
           }
         }
       },
@@ -895,6 +895,21 @@
     "tf_best_sellers_MAEx8W": {
       "type": "tf-best-sellers",
       "blocks": {
+        "card_Bwnjpz": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
         "card_XmBXCm": {
           "type": "card",
           "settings": {
@@ -926,21 +941,6 @@
             "bullet_3": "Non-GMO superfoods for complete nutrition"
           }
         },
-        "card_9zQBjr": {
-          "type": "card",
-          "settings": {
-            "product": "vegan-aminolean-acai",
-            "custom_title": "AminoLean Pre Workout - Acai",
-            "subscribe_price": "$20.20",
-            "badge_text": "Best Seller",
-            "badge_background": "#0a1a4f",
-            "badge_text_color": "#ffffff",
-            "badge_size": "medium",
-            "bullet_1": "Natural caffeine from green tea for energy",
-            "bullet_2": "Vegan amino acids to build muscle",
-            "bullet_3": "No jitters, tingles, or crash"
-          }
-        },
         "card_qyhFqU": {
           "type": "card",
           "settings": {
@@ -956,29 +956,28 @@
             "bullet_3": "Nootropic mushrooms for mental focus"
           }
         },
-        "card_Bwnjpz": {
+        "card_9zQBjr": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "product": "truefit-vanilla",
-            "custom_title": "TrueFit Protein - Vanilla",
-            "subscribe_price": "$38.33",
+            "product": "vegan-aminolean-acai",
+            "custom_title": "AminoLean Pre Workout - Acai",
+            "subscribe_price": "$20.20",
             "badge_text": "Best Seller",
             "badge_background": "#0a1a4f",
-            "badge_text_color": "#f6eed7",
+            "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein to build & retain muscle",
-            "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods for complete nutrition"
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
           }
         }
       },
       "block_order": [
+        "card_Bwnjpz",
         "card_XmBXCm",
         "card_EYFEUK",
-        "card_9zQBjr",
         "card_qyhFqU",
-        "card_Bwnjpz"
+        "card_9zQBjr"
       ],
       "name": "TrueFit Best Sellers",
       "settings": {
