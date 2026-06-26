@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "This is energy, elevated and on-the-go. 200mg of clean caffeine for sharp, sustained focus, plus CLA and L-Carnitine for weight management support and essential aminos to keep your body fueled. Vegan, sugar-free, and built to do more than just wake you up.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -61,17 +61,6 @@
             "link": ""
           }
         },
-        "custom_flavor_swatch_AyML78": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/ALRTDSWNew.png",
-            "caption": "Strawberry Watermelon",
-            "size_text": "12 Pack",
-            "tag_text": "",
-            "link_product": "aminolean-energy-drink-strawberry-watermelon",
-            "link": ""
-          }
-        },
         "custom_flavor_swatch_pHe4Xf": {
           "type": "custom_flavor_swatch",
           "settings": {
@@ -91,6 +80,17 @@
             "size_text": "12 Pack",
             "tag_text": "",
             "link_product": "aminolean-energy-drink-cherry-lime",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/ALRTDSWNew.png",
+            "caption": "Strawberry Watermelon",
+            "size_text": "12 Pack",
+            "tag_text": "",
+            "link_product": "aminolean-energy-drink-strawberry-watermelon",
             "link": ""
           }
         },
@@ -198,9 +198,9 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_pHe4Xf",
         "custom_flavor_swatch_3Ei9ze",
+        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_WDRhVE",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
@@ -303,7 +303,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>This is energy, elevated and on-the-go. Most energy drinks give you a jolt and nothing else, so we built one that actually earns its place. Every can delivers 200mg of caffeine for clean, sustained focus without the sugar crash, plus CLA and L-Carnitine to support your weight management goals and essential amino acids to keep your body fueled through whatever the day brings. It's vegan, zero sugar, and free of the junk you don't need. Real ingredients, built to do more than just wake you up.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -312,8 +312,8 @@
             "tab_1_caption_6": "",
             "tab_2_enabled": true,
             "tab_2_heading": "Nutrition",
-            "tab_2_content_type": "gallery",
-            "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
+            "tab_2_content_type": "text",
+            "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 can</p><p>Servings Per Container:</p><p><strong>Amount Per Serving%DV*Calories</strong>5 <strong>Total Fat</strong>0 g0%Saturated Fat0 g0%Trans Fat0 g0%<strong>Cholesterol</strong>0g0%<strong>Sodium</strong>75mg3%<strong>Total Carbohydrates</strong>Dietary Fiber0g0%Total Sugars0gIncludes 0g added sugars0%<strong>Protein</strong>0g<strong>Vitamin D</strong>0mcg0%<strong>Calcium0mg0%Iron0mg0%Potassium30mg</strong>0%<strong>Vitamin C</strong>90mg100%<strong>Energy and Focus Blend:InnovaTea® Natural Caffeine 98% from Tea (Camellia sinensis), Theobromine200 mg*** Percent Daily Values are based on a 2,000 calorie diet.** Daily Value (DV) not established</strong></p><p><strong>OTHER INGREDIENTS: </strong>Carbonated water, Citric Acid, Natural Flavor, Essential Amino Acid Blend (L-Leucine, L-Isoleucine, L-Valine, L-Lysine, L-Threonine, L-Phenylalanine, L-Tryptophan, L-Methionine, L-Histidine), Caffeine (Derived from Green Tea Leaves), Sucralose, Potassium Sorbate (Preservative), Malic Acid, Green Tea Extract, Vitamin C (Ascorbic Acid), L-Carnitine. </p>",
             "tab_2_image_1": "shopify://shop_images/Screen_Shot_2026-03-31_at_9.54.25_AM.png",
             "tab_2_caption_1": "Vanilla",
             "tab_2_caption_2": "",
@@ -325,7 +325,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
+            "tab_3_text": "<p><strong>DIRECTIONS: </strong></p><p>Drink one can for anytime energy throughout the day.</p><p><strong>RECOMMENDED USE: </strong></p><p>For Pre-Workout Energy:<strong> </strong>Drink 1 can<strong> 20-30 minutes before training.</strong></p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -475,33 +475,33 @@
         "point_hWg9jP": {
           "type": "point",
           "settings": {
-            "icon": "muscle",
+            "icon": "green_tea",
             "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "25g Grass-Fed Whey Protein"
+            "label": "200mg Natural Caffeine"
           }
         },
         "point_hyMUKF": {
           "type": "point",
           "settings": {
-            "icon": "gut_health",
+            "icon": "muscle",
             "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
-            "label": "Fiber & Probiotics"
+            "label": "Vegan Essential Amino Acids"
           }
         },
         "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "vegan",
+            "icon": "scale",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Non-GMO Superfoods"
+            "label": "Weight Management"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
-            "icon": "custom_image",
+            "icon": "sugar_free",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Grass-Fed"
+            "label": "Zero Sugar"
           }
         },
         "point_K89Tja": {
@@ -517,7 +517,7 @@
           "settings": {
             "icon": "no_artificial_flavors",
             "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
+            "label": "No Artificial Colors"
           }
         }
       },
@@ -532,7 +532,7 @@
       "name": "TrueFit Standard",
       "settings": {
         "eyebrow": "STAY TRUE",
-        "heading": "Complete Nutrition Without Compromise",
+        "heading": "Energy without compromise.",
         "text": "",
         "columns_mobile": "3",
         "columns_desktop": 6,
@@ -547,7 +547,7 @@
         "row_UpDqKM": {
           "type": "row",
           "settings": {
-            "row_label": "25g Grass-Fed Whey Protein",
+            "row_label": "Natural Caffeine from Green Tea",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
@@ -563,15 +563,15 @@
         "row_z7EPmX": {
           "type": "row",
           "settings": {
-            "row_label": "Prebiotic Fiber and Probiotics",
+            "row_label": "Vegan Amino Acids",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "Some",
             "our_color": "",
-            "c1_type": "text",
+            "c1_type": "x",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "check",
+            "c2_type": "x",
             "c2_text": "",
             "c2_color": ""
           }
@@ -579,7 +579,7 @@
         "row_wQf6yV": {
           "type": "row",
           "settings": {
-            "row_label": "Fruits and Veggies",
+            "row_label": "Weight Management Ingredients",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
@@ -587,37 +587,21 @@
             "c1_type": "x",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_GiHpcF": {
-          "type": "row",
-          "settings": {
-            "row_label": "Cost Per Serving",
-            "row_label_color": "#0a1a4f",
-            "our_type": "text",
-            "our_text": "$1.92*",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "~$2.75",
-            "c1_color": "",
             "c2_type": "text",
-            "c2_text": "~$3.60",
+            "c2_text": "Some",
             "c2_color": ""
           }
         },
         "row_PMWqcU": {
           "type": "row",
           "settings": {
-            "row_label": "Zero Artificial Ingredients",
+            "row_label": "Zero Artificial Colors",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
-            "c1_type": "x",
-            "c1_text": "",
+            "c1_type": "text",
+            "c1_text": "Some",
             "c1_color": "",
             "c2_type": "x",
             "c2_text": "",
@@ -635,8 +619,8 @@
             "c1_type": "text",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
+            "c2_type": "text",
+            "c2_text": "Some",
             "c2_color": ""
           }
         }
@@ -645,7 +629,6 @@
         "row_UpDqKM",
         "row_z7EPmX",
         "row_wQf6yV",
-        "row_GiHpcF",
         "row_PMWqcU",
         "row_TU4nPC"
       ],
@@ -663,18 +646,18 @@
         "subline": "",
         "subline_color": "#40738d",
         "subline_size": 16,
-        "our_label": "TrueFit",
+        "our_label": "AminoLean",
         "our_header_text_color": "#ffffff",
         "our_bg": "#0a1a4f",
         "our_cell_color": "#c9a86a",
         "our_check_color": "#c9a86a",
         "our_x_color": "",
-        "c1_label": "Synthetic Protein Powder",
+        "c1_label": "Other Energy Drinks",
         "c1_bg": "#eef2f4",
         "c1_cell_color": "#40738d",
         "c1_check_color": "#40738d",
         "c1_x_color": "#40738d",
-        "c2_label": "Overpriced Greens Powder",
+        "c2_label": "Synthetic Pre-Workouts",
         "c2_bg": "#eef2f4",
         "c2_cell_color": "#40738d",
         "c2_check_color": "#40738d",
@@ -699,25 +682,25 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_007.jpg",
-            "heading": "Protein and fiber, finally together.",
-            "text": "<p>Most protein powders digest too quickly, spiking and crashing before your body can fully put it to work. TrueFit combines 25g of grass-fed whey with whole-food fiber to slow digestion, support steadier amino acid delivery, and keep you fuller, longer.</p>"
+            "image": "shopify://shop_images/23_RSP_VARIETY_PACK_HOMEPAGE_PHOTOS_V1_4_1.jpg",
+            "heading": "Clean energy, no crash",
+            "text": "<p>200mg of natural caffeine from green tea delivers sharp, sustained focus without the jitters or the crash. Take it before a workout or any time you need a real boost, energy you can feel without the synthetic stuff your body has to fight through.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
-            "heading": "Improve digestion and gut health",
-            "text": "<p>Powered by prebiotic fiber and 1 billion CFU probiotics, TrueFit supports a balanced microbiome from the inside out. A happy gut means better nutrient absorption, smoother digestion, and steady, all-day energy.</p>"
+            "image": "shopify://shop_images/23_RSP_VARIETY_PACK_HOMEPAGE_PHOTOS_V1_5_1.jpg",
+            "heading": "Fuel the work, fuel the recovery",
+            "text": "<p>An optimal blend of essential amino acids does double duty, supporting your performance while you train and your recovery after. So every session pushes you forward instead of setting you back.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
             "image": "shopify://shop_images/TrueFit_001.jpg",
-            "heading": "Simple, effective, delicious weight loss",
-            "text": "<p>Real food ingredients keep you satisfied longer, so cravings fade and portion sizes naturally shrink. Replace one meal a day with TrueFit and let whole-food nutrition do the heavy lifting.</p>"
+            "heading": "Fuel your goals",
+            "text": "<p>A thoughtful blend of L-Carnitine and green tea extract works to support your weight management goals, helping you stay on track toward the lean, strong physique you're working for. Clean energy and real support in every can.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
