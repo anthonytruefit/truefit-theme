@@ -657,6 +657,7 @@
       "blocks": {
         "card_XmBXCm": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "product": "creatine-mono",
             "custom_title": "Creatine Monohydrate",
@@ -672,7 +673,6 @@
         },
         "card_EYFEUK": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-chocolate",
             "custom_title": "TrueFit Protein - Chocolate",
@@ -718,7 +718,6 @@
         },
         "card_Bwnjpz": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-vanilla",
             "custom_title": "TrueFit Protein - Vanilla",
