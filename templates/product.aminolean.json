@@ -342,7 +342,7 @@
             "heading_font": "poppins_n6",
             "heading_size": 18,
             "body_font": "poppins_n4",
-            "body_size": 14,
+            "body_size": 15,
             "caption_size": 12,
             "border_radius": 24,
             "border_thickness": 1,
@@ -351,7 +351,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>AminoLean is clean energy, earned. Every scoop is powered by natural caffeine from green tea, never synthetic, so you get sharp, sustained focus without the jitters, tingles, or crash that derail most pre-workouts.</p><p>But energy is only half the formula. AminoLean delivers 5g of vegan amino acids to fuel muscle building and recovery, plus CLA and L-Carnitine for added weight management support. One scoop, three jobs: energy, performance, and recovery.</p><p>Take it 20 to 30 minutes before training to lock in focus and drive. On rest days, it works just as hard, giving you clean energy and recovery support whenever you need it. Science-backed, transparently formulated, and built to be taken every day.</p><p>This is pre-workout without the compromise. Stay True.</p>",
+            "tab_1_text": "<p>AminoLean is clean energy, earned. Every scoop is powered by natural caffeine from green tea, never synthetic, so you get sharp, sustained focus without the jitters, tingles, or crash that derail most pre-workouts. But energy is only half the formula. AminoLean delivers 5g of vegan amino acids to fuel muscle building and recovery, plus CLA and L-Carnitine for added weight management support. One scoop, three jobs: energy, performance, and recovery. Take it 20 to 30 minutes before training to lock in focus and drive. On rest days, it works just as hard, giving you clean energy and recovery support whenever you need it. Science-backed, transparently formulated, and built to be taken every day.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -373,7 +373,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
+            "tab_3_text": "<p><strong>DIRECTIONS: </strong></p><p>Mix 2 scoops (1 serving) of AminoLean in 8-10 oz of cold water anytime throughout the day.</p><p><strong>RECOMMENDED USE: </strong></p><p><strong>For Anytime Energy & EAA's:</strong> Take 1 or more servings first thing in the morning and/or between meals.</p><p><strong>For Pre-Workout Energy: Take 1-3 servings 20-30 minutes before training.</strong></p><p><strong>For Recovery & EAA's: Take 1-2 servings after training and/or between meals.</strong></p><p><strong>Do not exceed more than 6 scoops (3 servings) in a 4 hour period and do not exceed more than 8 scoops (4 servings) in a 24 hour period.</strong></p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -523,49 +523,49 @@
         "point_hWg9jP": {
           "type": "point",
           "settings": {
-            "icon": "muscle",
+            "icon": "green_tea",
             "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "25g Grass-Fed Whey Protein"
+            "label": "125mg Natural Caffiene"
           }
         },
         "point_hyMUKF": {
           "type": "point",
           "settings": {
-            "icon": "gut_health",
+            "icon": "muscle",
             "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
-            "label": "Fiber & Probiotics"
+            "label": "5g Vegan Amino Acids"
           }
         },
         "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "vegan",
+            "icon": "scale",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Non-GMO Superfoods"
+            "label": "Weight Loss Support"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
-            "icon": "custom_image",
+            "icon": "itch_free",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Grass-Fed"
+            "label": "Jitter-Free, No Tingles"
           }
         },
         "point_K89Tja": {
           "type": "point",
           "settings": {
-            "icon": "lab_test",
+            "icon": "sugar_free",
             "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
-            "label": "Lab Tested"
+            "label": "Sugar Free"
           }
         },
         "point_JB96ni": {
           "type": "point",
           "settings": {
-            "icon": "no_artificial_flavors",
+            "icon": "lab_test",
             "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
+            "label": "Lab Tested"
           }
         }
       },
@@ -580,7 +580,7 @@
       "name": "TrueFit Standard",
       "settings": {
         "eyebrow": "STAY TRUE",
-        "heading": "Complete Nutrition Without Compromise",
+        "heading": "Energy Without Compromise",
         "text": "",
         "columns_mobile": "3",
         "columns_desktop": 6,
