@@ -1,0 +1,72 @@
+{% comment %}
+  TrueFit collection product card — mirrors the homepage best-seller card.
+  Pulls everything from the product; the description, flavor line, subscribe
+  price, and badge are manual product metafields (custom namespace) and each
+  line hides when its metafield is empty. The whole card and the button link
+  to the product's PDP (no add to cart).
+
+  Accepts:
+  - card_product: {Object} the product
+  - lazy_load: {Boolean} lazy-load the image
+  - view_label: {String} button label (default "View Details")
+{% endcomment %}
+{%- liquid
+  assign p = card_product
+  assign desc = p.metafields.custom.card_description.value
+  assign flavor = p.metafields.custom.card_flavor_line.value
+  assign sub = p.metafields.custom.subscribe_price.value
+  assign badge = p.metafields.custom.card_badge.value
+  assign img_loading = 'eager'
+  if lazy_load
+    assign img_loading = 'lazy'
+  endif
+-%}
+<div class="cptf__card">
+  <a class="cptf__overlay" href="{{ p.url }}" tabindex="-1" aria-hidden="true"></a>
+
+  <a class="cptf__media" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+    {%- if badge != blank -%}<span class="cptf__badge">{{ badge }}</span>{%- endif -%}
+    {%- if p.featured_image != blank -%}
+      <img
+        class="cptf__image"
+        src="{{ p.featured_image | image_url: width: 600 }}"
+        srcset="{{ p.featured_image | image_url: width: 300 }} 300w, {{ p.featured_image | image_url: width: 600 }} 600w"
+        sizes="(min-width: 990px) 20vw, 50vw"
+        alt="{{ p.featured_image.alt | escape }}"
+        width="{{ p.featured_image.width }}"
+        height="{{ p.featured_image.height }}"
+        loading="{{ img_loading }}"
+      >
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'cptf__image placeholder-svg' }}
+    {%- endif -%}
+  </a>
+
+  <div class="cptf__body">
+    <div class="cptf__rating">
+      {%- if p.metafields.judgeme.badge != blank -%}
+        {{ p.metafields.judgeme.badge }}
+      {%- else -%}
+        <div class="jdgm-widget jdgm-preview-badge" data-id="{{ p.id }}" data-template="index"></div>
+      {%- endif -%}
+    </div>
+
+    <a class="cptf__title" href="{{ p.url }}">{{ p.title }}</a>
+
+    {%- if flavor != blank -%}
+      <div class="cptf__flavor">{{ flavor }}</div>
+    {%- endif -%}
+
+    <div class="cptf__price">{{ p.price | money }}</div>
+
+    {%- if sub != blank -%}
+      <div class="cptf__subscribe">{{ sub }} when you <a class="cptf__subscribe-link" href="{{ p.url }}">subscribe</a></div>
+    {%- endif -%}
+
+    {%- if desc != blank -%}
+      <p class="cptf__desc">{{ desc }}</p>
+    {%- endif -%}
+
+    <a class="cptf__btn" href="{{ p.url }}">{{ view_label | default: 'View Details' }}</a>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+/* TrueFit collection product card — mirrors the homepage best-seller card.
+   Colors are driven by CSS vars set per-section (editable in the theme editor),
+   with brand defaults as fallbacks. Optimized for the 2-across mobile default;
+   3-across is a denser optional path (see the .grid--3-col-tablet-down rules). */
+
+.cptf__card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--cptf-card-bg, #ffffff);
+  border: 0.1rem solid var(--cptf-border, rgba(10, 26, 79, 0.08));
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+/* Whole-card click target -> PDP (transparent overlay under the real links) */
+.cptf__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cptf__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--cptf-media-bg, #fcfcea);
+}
+.cptf__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.4rem;
+}
+
+.cptf__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: inline-block;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--cptf-badge-bg, #c9a86a);
+  color: var(--cptf-badge-text, #0a1a4f);
+}
+
+.cptf__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem 1.4rem 1.6rem;
+  flex: 1 1 auto;
+}
+
+.cptf__rating { min-height: 1.6rem; }
+.cptf__rating .jdgm-prev-badge { display: inline-flex; align-items: center; gap: 0.5rem; }
+.cptf__rating .jdgm-star.jdgm--on,
+.cptf__rating .jdgm-star.jdgm--half { color: var(--cptf-star, #c9a86a) !important; }
+.cptf__rating .jdgm-prev-badge__text {
+  display: inline-block !important;
+  visibility: visible !important;
+  color: var(--cptf-muted, #40738d);
+  font-size: 1.1rem;
+}
+
+.cptf__title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--cptf-title, #0a1a4f);
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cptf__flavor {
+  font-size: 1.15rem;
+  color: var(--cptf-muted, #40738d);
+}
+
+.cptf__price {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--cptf-price, #0a1a4f);
+}
+
+.cptf__subscribe {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  color: var(--cptf-muted, #40738d);
+}
+.cptf__subscribe-link {
+  color: var(--cptf-title, #0a1a4f);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 0.1rem;
+}
+
+.cptf__desc {
+  margin: 0.2rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--cptf-muted, #40738d);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cptf__btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 0.8rem;
+  background: var(--cptf-btn-bg, #0a1a4f);
+  color: var(--cptf-btn-text, #ffffff);
+  border: 0.1rem solid var(--cptf-btn-bg, #0a1a4f);
+  transition: opacity 0.2s ease;
+}
+.cptf__btn:hover { opacity: 0.9; }
+
+/* ---- Mobile 3-across grid (Dawn only ships 1 and 2 for tablet-down) ---- */
+@media screen and (max-width: 749px) {
+  .grid--3-col-tablet-down.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--grid-mobile-horizontal-spacing, 0.8rem);
+    row-gap: var(--grid-mobile-vertical-spacing, 1.6rem);
+  }
+  .grid--3-col-tablet-down.grid > .grid__item {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 3-across is denser: tighten spacing/type, clamp description shorter. */
+  .grid--3-col-tablet-down .cptf__body { padding: 1rem 1rem 1.2rem; gap: 0.4rem; }
+  .grid--3-col-tablet-down .cptf__image { padding: 0.8rem; }
+  .grid--3-col-tablet-down .cptf__title { font-size: 1.3rem; }
+  .grid--3-col-tablet-down .cptf__price { font-size: 1.3rem; }
+  .grid--3-col-tablet-down .cptf__flavor,
+  .grid--3-col-tablet-down .cptf__subscribe { font-size: 1.05rem; }
+  .grid--3-col-tablet-down .cptf__desc { -webkit-line-clamp: 2; font-size: 1.1rem; }
+  .grid--3-col-tablet-down .cptf__btn { font-size: 1.15rem; padding: 0.9rem 0.6rem; }
+  .grid--3-col-tablet-down .cptf__badge { font-size: 0.85rem; padding: 0.3rem 0.6rem; }
+}

@@ -2,6 +2,7 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-card-product-tf.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -24,6 +25,21 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
+
+  /* Editable colors for the TrueFit product card */
+  #shopify-section-{{ section.id }} {
+    --cptf-card-bg: {{ section.settings.card_bg }};
+    --cptf-media-bg: {{ section.settings.card_media_bg }};
+    --cptf-border: {{ section.settings.card_border }};
+    --cptf-title: {{ section.settings.card_title_color }};
+    --cptf-price: {{ section.settings.card_price_color }};
+    --cptf-muted: {{ section.settings.card_text_color }};
+    --cptf-badge-bg: {{ section.settings.card_badge_bg }};
+    --cptf-badge-text: {{ section.settings.card_badge_text }};
+    --cptf-star: {{ section.settings.card_star_color }};
+    --cptf-btn-bg: {{ section.settings.card_button_bg }};
+    --cptf-btn-text: {{ section.settings.card_button_text }};
   }
 {%- endstyle -%}
 
@@ -189,16 +205,10 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+                  {% render 'card-product-tf',
                     card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
-                    show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
+                    view_label: section.settings.view_label
                   %}
                 </li>
               {%- endfor -%}
@@ -237,7 +247,7 @@
       "min": 1,
       "max": 5,
       "step": 1,
-      "default": 4,
+      "default": 5,
       "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
     },
     {
@@ -391,9 +401,33 @@
         {
           "value": "2",
           "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+        },
+        {
+          "value": "3",
+          "label": "3 columns (dense)"
         }
       ]
     },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "paragraph",
+      "content": "Per-product text (one-line description, flavor line, subscribe price, badge) comes from product metafields in the custom namespace, so it travels with the product across collections. See the theme notes for setup."
+    },
+    { "type": "text", "id": "view_label", "label": "Button label", "default": "View Details" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_media_bg", "label": "Image area background", "default": "#FCFCEA" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#E2E5EC" },
+    { "type": "color", "id": "card_title_color", "label": "Title color", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_price_color", "label": "Price color", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_text_color", "label": "Description / flavor / subscribe text", "default": "#40738D" },
+    { "type": "color", "id": "card_star_color", "label": "Star rating color", "default": "#C9A86A" },
+    { "type": "color", "id": "card_badge_bg", "label": "Badge background", "default": "#C9A86A" },
+    { "type": "color", "id": "card_badge_text", "label": "Badge text", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_button_bg", "label": "Button background", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_button_text", "label": "Button text", "default": "#FFFFFF" },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
