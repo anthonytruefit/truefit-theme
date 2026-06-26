@@ -10,7 +10,7 @@
   flex-direction: column;
   background: var(--cptf-card-bg, #ffffff);
   border: 0.1rem solid var(--cptf-border, rgba(10, 26, 79, 0.08));
-  border-radius: 1.2rem;
+  border-radius: 1.6rem;
   overflow: hidden;
 }
 
