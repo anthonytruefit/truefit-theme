@@ -54,8 +54,8 @@
 
     <a class="cptf__title" href="{{ p.url }}">{{ card_title }}</a>
 
-    {%- if flavor != blank -%}
-      <div class="cptf__flavor">{{ flavor }}</div>
+    {%- if desc != blank -%}
+      <p class="cptf__desc">{{ desc }}</p>
     {%- endif -%}
 
     <div class="cptf__price">{{ p.price | money }}</div>
@@ -64,8 +64,8 @@
       <div class="cptf__subscribe">{{ sub }} when you <a class="cptf__subscribe-link" href="{{ p.url }}">subscribe</a></div>
     {%- endif -%}
 
-    {%- if desc != blank -%}
-      <p class="cptf__desc">{{ desc }}</p>
+    {%- if flavor != blank -%}
+      <div class="cptf__flavor">{{ flavor }}</div>
     {%- endif -%}
 
     <a class="cptf__btn" href="{{ p.url }}">{{ view_label | default: 'View Details' }}</a>
