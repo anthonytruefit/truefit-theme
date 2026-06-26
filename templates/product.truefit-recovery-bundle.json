@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "Everything you need to refuel and recover: both TrueFit flavors plus AminoLean Recovery, with plant-based aminos, electrolytes, and nootropic mushrooms.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,33 +53,11 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
-            "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/TrueFitRecoveyrbundl3.jpg",
+            "caption": "Protein + Recovery",
+            "size_text": "",
+            "tag_text": "",
+            "link_product": "bundle-protein-recovery",
             "link": ""
           }
         },
@@ -176,8 +154,6 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -270,7 +246,7 @@
             "heading_font": "poppins_n6",
             "heading_size": 18,
             "body_font": "poppins_n4",
-            "body_size": 14,
+            "body_size": 15,
             "caption_size": 12,
             "border_radius": 24,
             "border_thickness": 1,
@@ -279,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>The Recovery Bundle pairs both best-selling TrueFit flavors with AminoLean Recovery for a routine that helps you rebuild and show up ready for the next day. You already know TrueFit: 25g of grass-fed protein with whole-food fiber to fuel and repair muscle. AminoLean Recovery does the rest, with plant-based amino acids to support muscle repair, electrolytes to replenish what you sweat out, and nootropic mushrooms to support focus and recovery from the inside out. Together they cover both sides of progress: the protein to rebuild and the recovery to keep you consistent. Nothing fake, every ingredient earned.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -292,7 +268,8 @@
             "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
             "tab_2_image_1": "shopify://shop_images/Screen_Shot_2026-03-31_at_9.54.25_AM.png",
             "tab_2_caption_1": "Vanilla",
-            "tab_2_caption_2": "",
+            "tab_2_image_2": "shopify://shop_images/Screenshot_2026-06-26_at_12.58.10_PM.png",
+            "tab_2_caption_2": "Recovery + Hydration",
             "tab_2_image_3": "shopify://shop_images/Screen_Shot_2026-03-30_at_2.55.39_PM.png",
             "tab_2_caption_3": "Chocolate",
             "tab_2_caption_4": "",
