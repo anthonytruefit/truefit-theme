@@ -12,6 +12,7 @@
 {% endcomment %}
 {%- liquid
   assign p = card_product
+  assign card_title = p.metafields.custom.card_title.value | default: p.title
   assign desc = p.metafields.custom.card_description.value
   assign flavor = p.metafields.custom.card_flavor_line.value
   assign sub = p.metafields.custom.subscribe_price.value
@@ -51,7 +52,7 @@
       {%- endif -%}
     </div>
 
-    <a class="cptf__title" href="{{ p.url }}">{{ p.title }}</a>
+    <a class="cptf__title" href="{{ p.url }}">{{ card_title }}</a>
 
     {%- if flavor != blank -%}
       <div class="cptf__flavor">{{ flavor }}</div>
