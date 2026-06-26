@@ -53,33 +53,11 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
-            "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/TrueFitCreatinBundle.png",
+            "caption": "Protein + Creatine Bundle",
+            "size_text": "",
+            "tag_text": "",
+            "link_product": "bundle-protein-creatine",
             "link": ""
           }
         },
@@ -176,8 +154,6 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
