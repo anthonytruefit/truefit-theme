@@ -805,6 +805,7 @@
         "card_A7JCMV",
         "card_a8xDTJ"
       ],
+      "disabled": true,
       "name": "Social Proof",
       "settings": {
         "eyebrow": "REAL PEOPLE, REAL RESULTS",
@@ -830,37 +831,6 @@
     "tf_best_sellers_MAEx8W": {
       "type": "tf-best-sellers",
       "blocks": {
-        "card_XmBXCm": {
-          "type": "card",
-          "settings": {
-            "product": "creatine-mono",
-            "custom_title": "Creatine Monohydrate",
-            "subscribe_price": "$18.79",
-            "badge_text": "",
-            "badge_background": "#0a1a4f",
-            "badge_text_color": "#ffffff",
-            "badge_size": "medium",
-            "bullet_1": "5g pure micronized creatine",
-            "bullet_2": "Strength, power, and faster recovery",
-            "bullet_3": "Supports brain and cognitive function"
-          }
-        },
-        "card_EYFEUK": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-chocolate",
-            "custom_title": "TrueFit Protein - Chocolate",
-            "subscribe_price": "$38.33",
-            "badge_text": "Top Reviewed",
-            "badge_background": "#86bce8",
-            "badge_text_color": "#ffffff",
-            "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein to build & retain muscle",
-            "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods for complete nutrition"
-          }
-        },
         "card_9zQBjr": {
           "type": "card",
           "settings": {
@@ -891,9 +861,38 @@
             "bullet_3": "Nootropic mushrooms for mental focus"
           }
         },
+        "card_XmBXCm": {
+          "type": "card",
+          "settings": {
+            "product": "creatine-mono",
+            "custom_title": "Creatine Monohydrate",
+            "subscribe_price": "$18.79",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
+          }
+        },
+        "card_EYFEUK": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-chocolate",
+            "custom_title": "TrueFit Protein - Chocolate",
+            "subscribe_price": "$38.33",
+            "badge_text": "Top Reviewed",
+            "badge_background": "#86bce8",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
         "card_Bwnjpz": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-vanilla",
             "custom_title": "TrueFit Protein - Vanilla",
@@ -909,10 +908,10 @@
         }
       },
       "block_order": [
-        "card_XmBXCm",
-        "card_EYFEUK",
         "card_9zQBjr",
         "card_qyhFqU",
+        "card_XmBXCm",
+        "card_EYFEUK",
         "card_Bwnjpz"
       ],
       "name": "TrueFit Best Sellers",
