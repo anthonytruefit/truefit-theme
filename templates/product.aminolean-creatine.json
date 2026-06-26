@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "TrueFit Protein",
+            "title": "Creatine Monohydrate",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "This is creatine, elevated. Five grams of pure micronized creatine monohydrate, the most researched form there is, to fuel strength, build long-lasting muscle, and improve recovery. And because your brain runs on the same energy system your muscles do, it supports mental performance too. One real ingredient, built for body and mind.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,33 +53,11 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
+            "image": "shopify://shop_images/TrueFitCreatine_Render-Front_copy.png",
+            "caption": "60 Servings",
+            "size_text": "",
             "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "link_product": "creatine-mono",
             "link": ""
           }
         },
@@ -155,7 +133,7 @@
           "type": "fbt",
           "settings": {
             "heading": "Frequently bought together",
-            "companion_1": "creatine-mono",
+            "companion_1": "truefit-vanilla",
             "companion_2": "vegan-aminolean-acai",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
@@ -176,8 +154,6 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -279,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>Build strength, increase muscle output, and train harder with 5g of pure, micronized creatine monohydrate that helps your body produce fast, reliable energy. Creatine’s natural brain benefits also support sharper focus and mental clarity, so your mind stays as strong as your muscles.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -288,12 +264,10 @@
             "tab_1_caption_6": "",
             "tab_2_enabled": true,
             "tab_2_heading": "Nutrition",
-            "tab_2_content_type": "gallery",
-            "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
-            "tab_2_image_1": "shopify://shop_images/Screen_Shot_2026-03-31_at_9.54.25_AM.png",
+            "tab_2_content_type": "text",
+            "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 Scoop (5g)</p><p>Servings Per Container:</p><p>AMOUNT PER SERVING%DV Creatine Monohydrate5 g**** Daily Value (DV) not established</p><p><br/></p><p><strong>OTHER INGREDIENTS: </strong>None</p><h4>WARNING</h4><p>IF YOU HAVE ANY HEALTH CONDITIONS, ARE PREGNANT, BREAST FEEDING OR TAKING MEDICATION, ASK A PHYSICIAN BEFORE USE. KEEP OUT OF REACH OF SMALL CHILDREN.</p><p>ΔTHESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</p>",
             "tab_2_caption_1": "Vanilla",
             "tab_2_caption_2": "",
-            "tab_2_image_3": "shopify://shop_images/Screen_Shot_2026-03-30_at_2.55.39_PM.png",
             "tab_2_caption_3": "Chocolate",
             "tab_2_caption_4": "",
             "tab_2_caption_5": "",
@@ -301,7 +275,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
+            "tab_3_text": "<p>Take one serving (1 scoop) mixed with 8-10 fl. oz. of cold water (or other beverage of your choice) before, during or after training. On non-training days, take one serving (1 scoop) in the morning. Easily mixed and stacked with other products.</p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -349,6 +323,77 @@
         "color_scheme": "background-2",
         "padding_top": 48,
         "padding_bottom": 48
+      }
+    },
+    "tf_standard_BEMB6j": {
+      "type": "tf-standard",
+      "blocks": {
+        "point_hWg9jP": {
+          "type": "point",
+          "settings": {
+            "icon": "muscle",
+            "icon_image": "shopify://shop_images/tabler--microscope_1.png",
+            "label": "5g Pure Micronized Creatine"
+          }
+        },
+        "point_g893cM": {
+          "type": "point",
+          "settings": {
+            "icon": "weights",
+            "label": "Strength & Performance"
+          }
+        },
+        "point_h7EXcb": {
+          "type": "point",
+          "settings": {
+            "icon": "brain",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Brain Health Support"
+          }
+        },
+        "point_K89Tja": {
+          "type": "point",
+          "settings": {
+            "icon": "lab_test",
+            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
+            "label": "Lab Tested"
+          }
+        },
+        "point_JB96ni": {
+          "type": "point",
+          "settings": {
+            "icon": "no_artificial_flavors",
+            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
+            "label": "No Artificial Ingredients"
+          }
+        },
+        "point_hA8LaN": {
+          "type": "point",
+          "settings": {
+            "icon": "sugar_free",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Sugar-Free"
+          }
+        }
+      },
+      "block_order": [
+        "point_hWg9jP",
+        "point_g893cM",
+        "point_h7EXcb",
+        "point_K89Tja",
+        "point_JB96ni",
+        "point_hA8LaN"
+      ],
+      "name": "TrueFit Standard",
+      "settings": {
+        "eyebrow": "STAY TRUE",
+        "heading": "Performance without compromise.",
+        "text": "",
+        "columns_mobile": "3",
+        "columns_desktop": 6,
+        "color_scheme": "background-2",
+        "padding_top": 32,
+        "padding_bottom": 64
       }
     },
     "tf_featured_in_RFaP9t": {
@@ -445,220 +490,6 @@
         "padding_bottom": 28
       }
     },
-    "tf_standard_BEMB6j": {
-      "type": "tf-standard",
-      "blocks": {
-        "point_hWg9jP": {
-          "type": "point",
-          "settings": {
-            "icon": "muscle",
-            "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "25g Grass-Fed Whey Protein"
-          }
-        },
-        "point_hyMUKF": {
-          "type": "point",
-          "settings": {
-            "icon": "gut_health",
-            "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
-            "label": "Fiber & Probiotics"
-          }
-        },
-        "point_hA8LaN": {
-          "type": "point",
-          "settings": {
-            "icon": "vegan",
-            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Non-GMO Superfoods"
-          }
-        },
-        "point_h7EXcb": {
-          "type": "point",
-          "settings": {
-            "icon": "custom_image",
-            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Grass-Fed"
-          }
-        },
-        "point_K89Tja": {
-          "type": "point",
-          "settings": {
-            "icon": "lab_test",
-            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
-            "label": "Lab Tested"
-          }
-        },
-        "point_JB96ni": {
-          "type": "point",
-          "settings": {
-            "icon": "no_artificial_flavors",
-            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
-          }
-        }
-      },
-      "block_order": [
-        "point_hWg9jP",
-        "point_hyMUKF",
-        "point_hA8LaN",
-        "point_h7EXcb",
-        "point_K89Tja",
-        "point_JB96ni"
-      ],
-      "name": "TrueFit Standard",
-      "settings": {
-        "eyebrow": "STAY TRUE",
-        "heading": "Complete Nutrition Without Compromise",
-        "text": "",
-        "columns_mobile": "3",
-        "columns_desktop": 6,
-        "color_scheme": "background-2",
-        "padding_top": 32,
-        "padding_bottom": 64
-      }
-    },
-    "tf_comparison_wXLNp4": {
-      "type": "tf-comparison",
-      "blocks": {
-        "row_UpDqKM": {
-          "type": "row",
-          "settings": {
-            "row_label": "25g Grass-Fed Whey Protein",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_z7EPmX": {
-          "type": "row",
-          "settings": {
-            "row_label": "Prebiotic Fiber and Probiotics",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "Some",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_wQf6yV": {
-          "type": "row",
-          "settings": {
-            "row_label": "Fruits and Veggies",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_GiHpcF": {
-          "type": "row",
-          "settings": {
-            "row_label": "Cost Per Serving",
-            "row_label_color": "#0a1a4f",
-            "our_type": "text",
-            "our_text": "$1.92*",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "~$2.75",
-            "c1_color": "",
-            "c2_type": "text",
-            "c2_text": "~$3.60",
-            "c2_color": ""
-          }
-        },
-        "row_PMWqcU": {
-          "type": "row",
-          "settings": {
-            "row_label": "Zero Artificial Ingredients",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_TU4nPC": {
-          "type": "row",
-          "settings": {
-            "row_label": "100% Money Back Guarantee",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_UpDqKM",
-        "row_z7EPmX",
-        "row_wQf6yV",
-        "row_GiHpcF",
-        "row_PMWqcU",
-        "row_TU4nPC"
-      ],
-      "name": "Us vs. Them Comparison",
-      "settings": {
-        "background": "#ffffff",
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "eyebrow": "THE TRUEFIT DIFFERENCE",
-        "eyebrow_color": "#40738d",
-        "eyebrow_size": 11,
-        "headline": "See the difference.",
-        "headline_color": "#0a1a4f",
-        "headline_size": 34,
-        "subline": "",
-        "subline_color": "#40738d",
-        "subline_size": 16,
-        "our_label": "TrueFit",
-        "our_header_text_color": "#ffffff",
-        "our_bg": "#0a1a4f",
-        "our_cell_color": "#c9a86a",
-        "our_check_color": "#c9a86a",
-        "our_x_color": "",
-        "c1_label": "Synthetic Protein Powder",
-        "c1_bg": "#eef2f4",
-        "c1_cell_color": "#40738d",
-        "c1_check_color": "#40738d",
-        "c1_x_color": "#40738d",
-        "c2_label": "Overpriced Greens Powder",
-        "c2_bg": "#eef2f4",
-        "c2_cell_color": "#40738d",
-        "c2_check_color": "#40738d",
-        "c2_x_color": "#40738d",
-        "check_color": "#0a1a4f",
-        "x_color": "#c2c7d0"
-      }
-    },
     "894e738c-d102-4245-8b24-f42264ccfba5": {
       "type": "amino-image-multirow",
       "blocks": {
@@ -675,33 +506,33 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_007.jpg",
-            "heading": "Protein and fiber, finally together.",
-            "text": "<p>Most protein powders digest too quickly, spiking and crashing before your body can fully put it to work. TrueFit combines 25g of grass-fed whey with whole-food fiber to slow digestion, support steadier amino acid delivery, and keep you fuller, longer.</p>"
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_16_05_PM.png",
+            "heading": "Built for strength",
+            "text": "<p>Creatine is the most researched performance ingredient there is, and for good reason. By replenishing your body's ATP, the cellular fuel behind every explosive movement, it helps you push harder, lift heavier, and go longer right when it counts. More power per rep, more reps per set, more progress over time.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
-            "heading": "Improve digestion and gut health",
-            "text": "<p>Powered by prebiotic fiber and 1 billion CFU probiotics, TrueFit supports a balanced microbiome from the inside out. A happy gut means better nutrient absorption, smoother digestion, and steady, all-day energy.</p>"
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_12_36_PM.png",
+            "heading": "More muscle, earned",
+            "text": "<p>Every hard session is a chance to grow, and creatine helps you make the most of it. It draws water and nutrients into the muscle and supports the work of building lean mass, so the training you put in actually shows up. Real gains from real ingredients, no shortcuts.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_001.jpg",
-            "heading": "Simple, effective, delicious weight loss",
-            "text": "<p>Real food ingredients keep you satisfied longer, so cravings fade and portion sizes naturally shrink. Replace one meal a day with TrueFit and let whole-food nutrition do the heavy lifting.</p>"
+            "image": "shopify://shop_images/feature-build-muscle_d869b81d-661b-4e86-bac5-e47261623330.jpg",
+            "heading": "Recover and repeat",
+            "text": "<p>Get back in the game faster. Creatine helps repair muscle micro-tears and restore glycogen stores between workouts, so you recover quicker, feel less beat up, and stay consistent week after week. Because the best program is the one you can keep showing up for.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_11_51_PM.png",
-            "heading": "Build and retain lean muscle",
-            "text": "<p>Strong muscles mean a longer, healthier, more capable life, period. TrueFit delivers 25g of grass-fed whey per serving, the gold standard for building lean muscle and keeping it as you age.</p>"
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_19_25_PM.png",
+            "heading": "Fuel for your mind",
+            "text": "<p>Your brain runs on the same energy system your muscles do. By supporting ATP production in brain cells, creatine helps fuel mental performance and focus, especially when you're tired or training hard. Strength for your body, support for your mind.</p>"
           }
         }
       },
@@ -798,6 +629,7 @@
         "card_A7JCMV",
         "card_a8xDTJ"
       ],
+      "disabled": true,
       "name": "Social Proof",
       "settings": {
         "eyebrow": "REAL PEOPLE, REAL RESULTS",
@@ -979,9 +811,8 @@
     "main",
     "1774894521f9813110",
     "c20591e7-b7e5-44b6-b04f-95fc0866f0a7",
-    "tf_featured_in_RFaP9t",
     "tf_standard_BEMB6j",
-    "tf_comparison_wXLNp4",
+    "tf_featured_in_RFaP9t",
     "894e738c-d102-4245-8b24-f42264ccfba5",
     "tf_social_proof_eV8jkB",
     "tf_best_sellers_MAEx8W",
