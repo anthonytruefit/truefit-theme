@@ -83,6 +83,17 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_hDCi9N": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_ICEECherry_30Serv_051425-13_Front_HighRes_LE.png",
+            "caption": "ICEE Cherry",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-x-icee-cherry",
+            "link": ""
+          }
+        },
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
@@ -91,17 +102,6 @@
             "size_text": "30 servings",
             "tag_text": "",
             "link_product": "aminolean-pink-lemonade",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/AminoLeanEnergy_ParadisePunch_25Serv_102825-01_Front_HighRes_LE.png",
-            "caption": "Paradise Punch",
-            "size_text": "30 servings",
-            "tag_text": "",
-            "link_product": "aminolean-pre-workout-paradise-punch",
             "link": ""
           }
         },
@@ -127,25 +127,25 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_zikHKM": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_ParadisePunch_25Serv_102825-01_Front_HighRes_LE.png",
+            "caption": "Paradise Punch",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-pre-workout-paradise-punch",
+            "link": ""
+          }
+        },
         "custom_flavor_swatch_NWNYwn": {
           "type": "custom_flavor_swatch",
           "settings": {
             "image": "shopify://shop_images/DTC_AminoLean_Bundle_PeakPerformance.png",
-            "caption": "Peak Performance Pack",
+            "caption": "Peak Performance",
             "size_text": "30 servings",
             "tag_text": "",
             "link_product": "peak-performance-pack",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_hDCi9N": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/AminoLeanEnergy_ICEECherry_30Serv_051425-13_Front_HighRes_LE.png",
-            "caption": "ICEE Cherry",
-            "size_text": "30 servings",
-            "tag_text": "",
-            "link_product": "aminolean-x-icee-cherry",
             "link": ""
           }
         },
@@ -244,12 +244,12 @@
         "custom_flavor_swatch_Y7UAHB",
         "custom_flavor_swatch_pHe4Xf",
         "custom_flavor_swatch_94KBfG",
+        "custom_flavor_swatch_hDCi9N",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_TtJD48",
         "custom_flavor_swatch_mYrTt7",
+        "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_NWNYwn",
-        "custom_flavor_swatch_hDCi9N",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -351,7 +351,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>AminoLean is clean energy, earned. Every scoop is powered by natural caffeine from green tea, never synthetic, so you get sharp, sustained focus without the jitters, tingles, or crash that derail most pre-workouts.</p><p>But energy is only half the formula. AminoLean delivers 5g of vegan amino acids to fuel muscle building and recovery, plus CLA and L-Carnitine for added weight management support. One scoop, three jobs: energy, performance, and recovery.</p><p>Take it 20 to 30 minutes before training to lock in focus and drive. On rest days, it works just as hard, giving you clean energy and recovery support whenever you need it. Science-backed, transparently formulated, and built to be taken every day.</p><p>This is pre-workout without the compromise. Stay True.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
