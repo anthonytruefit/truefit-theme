@@ -85,6 +85,13 @@
     color: {{ block.settings.text_color }};
     line-height: 1.6;
   }
+  /* Restore spacing between paragraphs (the theme's global reset zeroes p margins). */
+  .ai-collapsible-tabs__text-{{ ai_gen_id }} p {
+    margin: 0 0 1em;
+  }
+  .ai-collapsible-tabs__text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
 
   .ai-collapsible-tabs__gallery-{{ ai_gen_id }} {
     display: grid;
