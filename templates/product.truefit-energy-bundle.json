@@ -54,7 +54,7 @@
           "type": "custom_flavor_swatch",
           "settings": {
             "image": "shopify://shop_images/TrueFitEnergyBundle.png",
-            "caption": "Protein + Energy",
+            "caption": "Protein + Energy Bundle",
             "size_text": "",
             "tag_text": "",
             "link_product": "bundle-protein-energy",
@@ -816,7 +816,6 @@
         },
         "card_EYFEUK": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-chocolate",
             "custom_title": "TrueFit Protein - Chocolate",
@@ -862,7 +861,6 @@
         },
         "card_Bwnjpz": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-vanilla",
             "custom_title": "TrueFit Protein - Vanilla",
