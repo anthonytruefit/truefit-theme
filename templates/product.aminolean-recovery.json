@@ -53,33 +53,22 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
+            "image": "shopify://shop_images/AminoLeanRECOVERY_OrangeSplash_30Serv_080825-13_Front_HighRes.png",
+            "caption": "Orange Splash",
+            "size_text": "30 servings",
             "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
+            "link_product": "aminolean-recovery-blood-orange",
             "link": ""
           }
         },
         "custom_flavor_swatch_zikHKM": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/AminoLeanRECOVERY_TropicalPunch_30Serv_080825-13_Front_HighRes.png",
+            "caption": "Tropical Punch",
+            "size_text": "30 servings",
+            "tag_text": "",
+            "link_product": "aminolean-recovery-tropical-island-punch",
             "link": ""
           }
         },
@@ -177,7 +166,6 @@
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -452,31 +440,39 @@
           "settings": {
             "icon": "muscle",
             "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "25g Grass-Fed Whey Protein"
+            "label": "5g Vegan Amino Acids"
           }
         },
         "point_hyMUKF": {
           "type": "point",
           "settings": {
-            "icon": "gut_health",
+            "icon": "droplet",
             "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
-            "label": "Fiber & Probiotics"
+            "label": "Electrolytes from Sea Monerals"
           }
         },
         "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "vegan",
+            "icon": "brain",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Non-GMO Superfoods"
+            "label": "Nootropic Mushrooms"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
-            "icon": "custom_image",
+            "icon": "shield",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Grass-Fed"
+            "label": "Immune System Support"
+          }
+        },
+        "point_JB96ni": {
+          "type": "point",
+          "settings": {
+            "icon": "no_artificial_flavors",
+            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
+            "label": "No Artificial Colors or Dyes"
           }
         },
         "point_K89Tja": {
@@ -486,14 +482,6 @@
             "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
             "label": "Lab Tested"
           }
-        },
-        "point_JB96ni": {
-          "type": "point",
-          "settings": {
-            "icon": "no_artificial_flavors",
-            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
-          }
         }
       },
       "block_order": [
@@ -501,13 +489,13 @@
         "point_hyMUKF",
         "point_hA8LaN",
         "point_h7EXcb",
-        "point_K89Tja",
-        "point_JB96ni"
+        "point_JB96ni",
+        "point_K89Tja"
       ],
       "name": "TrueFit Standard",
       "settings": {
         "eyebrow": "STAY TRUE",
-        "heading": "Complete Nutrition Without Compromise",
+        "heading": "Recovery without compromise.",
         "text": "",
         "columns_mobile": "3",
         "columns_desktop": 6,
@@ -516,13 +504,45 @@
         "padding_bottom": 64
       }
     },
-    "tf_comparison_wXLNp4": {
+    "tf_comparison_qANjXC": {
       "type": "tf-comparison",
       "blocks": {
-        "row_UpDqKM": {
+        "row_KHbtNx": {
           "type": "row",
           "settings": {
-            "row_label": "25g Grass-Fed Whey Protein",
+            "row_label": "Hydrating Electrolytes",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "",
+            "our_color": "",
+            "c1_type": "check",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "x",
+            "c2_text": "",
+            "c2_color": ""
+          }
+        },
+        "row_QMKg4F": {
+          "type": "row",
+          "settings": {
+            "row_label": "Vegan Amino Acids",
+            "row_label_color": "#0a1a4f",
+            "our_type": "check",
+            "our_text": "Some",
+            "our_color": "",
+            "c1_type": "x",
+            "c1_text": "Some",
+            "c1_color": "",
+            "c2_type": "check",
+            "c2_text": "Some",
+            "c2_color": ""
+          }
+        },
+        "row_aaLTiQ": {
+          "type": "row",
+          "settings": {
+            "row_label": "Nootropic Mushrooms",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
@@ -535,71 +555,39 @@
             "c2_color": ""
           }
         },
-        "row_z7EPmX": {
-          "type": "row",
-          "settings": {
-            "row_label": "Prebiotic Fiber and Probiotics",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "Some",
-            "our_color": "",
-            "c1_type": "text",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_wQf6yV": {
-          "type": "row",
-          "settings": {
-            "row_label": "Fruits and Veggies",
-            "row_label_color": "#0a1a4f",
-            "our_type": "check",
-            "our_text": "",
-            "our_color": "",
-            "c1_type": "x",
-            "c1_text": "Some",
-            "c1_color": "",
-            "c2_type": "check",
-            "c2_text": "",
-            "c2_color": ""
-          }
-        },
-        "row_GiHpcF": {
+        "row_9yF6zU": {
           "type": "row",
           "settings": {
             "row_label": "Cost Per Serving",
             "row_label_color": "#0a1a4f",
             "our_type": "text",
-            "our_text": "$1.92*",
+            "our_text": "$0.58*",
             "our_color": "",
             "c1_type": "text",
-            "c1_text": "~$2.75",
+            "c1_text": "~$1.00",
             "c1_color": "",
             "c2_type": "text",
-            "c2_text": "~$3.60",
+            "c2_text": "~$1.40",
             "c2_color": ""
           }
         },
-        "row_PMWqcU": {
+        "row_PTeYdc": {
           "type": "row",
           "settings": {
-            "row_label": "Zero Artificial Ingredients",
+            "row_label": "Zero Sugar",
             "row_label_color": "#0a1a4f",
             "our_type": "check",
             "our_text": "",
             "our_color": "",
-            "c1_type": "x",
-            "c1_text": "",
+            "c1_type": "text",
+            "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
+            "c2_type": "text",
+            "c2_text": "Some",
             "c2_color": ""
           }
         },
-        "row_TU4nPC": {
+        "row_EX77pf": {
           "type": "row",
           "settings": {
             "row_label": "100% Money Back Guarantee",
@@ -610,26 +598,26 @@
             "c1_type": "text",
             "c1_text": "Some",
             "c1_color": "",
-            "c2_type": "x",
-            "c2_text": "",
+            "c2_type": "text",
+            "c2_text": "Some",
             "c2_color": ""
           }
         }
       },
       "block_order": [
-        "row_UpDqKM",
-        "row_z7EPmX",
-        "row_wQf6yV",
-        "row_GiHpcF",
-        "row_PMWqcU",
-        "row_TU4nPC"
+        "row_KHbtNx",
+        "row_QMKg4F",
+        "row_aaLTiQ",
+        "row_9yF6zU",
+        "row_PTeYdc",
+        "row_EX77pf"
       ],
       "name": "Us vs. Them Comparison",
       "settings": {
         "background": "#ffffff",
         "padding_top": 64,
         "padding_bottom": 64,
-        "eyebrow": "THE TRUEFIT DIFFERENCE",
+        "eyebrow": "THE AMINOLEAN DIFFERENCE",
         "eyebrow_color": "#40738d",
         "eyebrow_size": 11,
         "headline": "See the difference.",
@@ -638,18 +626,18 @@
         "subline": "",
         "subline_color": "#40738d",
         "subline_size": 16,
-        "our_label": "TrueFit",
+        "our_label": "AminoLean",
         "our_header_text_color": "#ffffff",
         "our_bg": "#0a1a4f",
         "our_cell_color": "#c9a86a",
         "our_check_color": "#c9a86a",
         "our_x_color": "",
-        "c1_label": "Synthetic Protein Powder",
+        "c1_label": "Basic Hydration Mixes",
         "c1_bg": "#eef2f4",
         "c1_cell_color": "#40738d",
         "c1_check_color": "#40738d",
         "c1_x_color": "#40738d",
-        "c2_label": "Overpriced Greens Powder",
+        "c2_label": "Overpriced Amino Acids",
         "c2_bg": "#eef2f4",
         "c2_cell_color": "#40738d",
         "c2_check_color": "#40738d",
@@ -674,33 +662,33 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_007.jpg",
-            "heading": "Protein and fiber, finally together.",
-            "text": "<p>Most protein powders digest too quickly, spiking and crashing before your body can fully put it to work. TrueFit combines 25g of grass-fed whey with whole-food fiber to slow digestion, support steadier amino acid delivery, and keep you fuller, longer.</p>"
+            "image": "shopify://shop_images/Aminolean_HydrationRecovery_OrangeSplash-2_3.jpg",
+            "heading": "Bounce back faster",
+            "text": "<p>A research-backed 2:1:1 ratio of BCAAs plus all essential amino acids gives your body the full toolkit to repair, rebuild, and come back stronger. Every scoop supports the entire recovery process so you're ready for the next session, not nursing the last one.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_17_11_PM.png",
-            "heading": "Improve digestion and gut health",
-            "text": "<p>Powered by prebiotic fiber and 1 billion CFU probiotics, TrueFit supports a balanced microbiome from the inside out. A happy gut means better nutrient absorption, smoother digestion, and steady, all-day energy.</p>"
+            "image": "shopify://shop_images/Hydration_Recovery_1_RT.png",
+            "heading": "Replenish what you sweat out",
+            "text": "<p>Key electrolytes and trace minerals, naturally harvested from the pristine waters of the North Atlantic, restore what hard training drains. Real hydration that helps you refuel, recover, and feel like yourself again.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_001.jpg",
-            "heading": "Simple, effective, delicious weight loss",
-            "text": "<p>Real food ingredients keep you satisfied longer, so cravings fade and portion sizes naturally shrink. Replace one meal a day with TrueFit and let whole-food nutrition do the heavy lifting.</p>"
+            "image": "shopify://shop_images/Hydration_Recovery_2_RT.png",
+            "heading": "Stay in the game",
+            "text": "<p>Vitamin C, Vitamin D, and Zinc team up with Reishi, a functional mushroom used for thousands of years, to support a healthy immune system and keep your recovery on track. Because progress only happens when your body can keep showing up.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_11_51_PM.png",
-            "heading": "Build and retain lean muscle",
-            "text": "<p>Strong muscles mean a longer, healthier, more capable life, period. TrueFit delivers 25g of grass-fed whey per serving, the gold standard for building lean muscle and keeping it as you age.</p>"
+            "image": "shopify://shop_images/HydrationTropical3AI.jpg",
+            "heading": "Recover you mind, too",
+            "text": "<p>Formulated with Reishi mushroom to help your body adapt to everyday stress and support cognitive balance, so your mind recovers as completely as your body. Clear focus, steady calm, ready for what's next.</p>"
           }
         }
       },
@@ -837,9 +825,23 @@
             "bullet_3": "Supports brain and cognitive function"
           }
         },
+        "card_Bwnjpz": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
         "card_EYFEUK": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-chocolate",
             "custom_title": "TrueFit Protein - Chocolate",
@@ -871,9 +873,9 @@
         "card_qyhFqU": {
           "type": "card",
           "settings": {
-            "product": "aminolean-recovery-blood-orange",
+            "product": "aminolean-pre-workout-berry-alixir",
             "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
-            "subscribe_price": "$17.42",
+            "subscribe_price": "$20.20",
             "badge_text": "",
             "badge_background": "#0a1a4f",
             "badge_text_color": "#ffffff",
@@ -882,30 +884,14 @@
             "bullet_2": "Vegan amino acids for muscle recovery",
             "bullet_3": "Nootropic mushrooms for mental focus"
           }
-        },
-        "card_Bwnjpz": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "product": "truefit-vanilla",
-            "custom_title": "TrueFit Protein - Vanilla",
-            "subscribe_price": "$38.33",
-            "badge_text": "Best Seller",
-            "badge_background": "#0a1a4f",
-            "badge_text_color": "#f6eed7",
-            "badge_size": "medium",
-            "bullet_1": "25g grass-fed protein to build & retain muscle",
-            "bullet_2": "Fiber + probiotics for digestion & gut health",
-            "bullet_3": "Non-GMO superfoods for complete nutrition"
-          }
         }
       },
       "block_order": [
         "card_XmBXCm",
+        "card_Bwnjpz",
         "card_EYFEUK",
         "card_9zQBjr",
-        "card_qyhFqU",
-        "card_Bwnjpz"
+        "card_qyhFqU"
       ],
       "name": "TrueFit Best Sellers",
       "settings": {
@@ -980,7 +966,7 @@
     "c20591e7-b7e5-44b6-b04f-95fc0866f0a7",
     "tf_featured_in_RFaP9t",
     "tf_standard_BEMB6j",
-    "tf_comparison_wXLNp4",
+    "tf_comparison_qANjXC",
     "894e738c-d102-4245-8b24-f42264ccfba5",
     "tf_social_proof_eV8jkB",
     "tf_best_sellers_MAEx8W",
