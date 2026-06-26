@@ -50,36 +50,58 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
-        "custom_flavor_swatch_AyML78": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
-            "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
         "custom_flavor_swatch_zikHKM": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
+            "image": "shopify://shop_images/AminoLeanRTD_BerryElixir_12Pack-Tray_SingleServ_042924-12_Front_HighRes.png",
+            "caption": "Berry Elixir",
+            "size_text": "12 Pack",
+            "tag_text": "Best Seller",
+            "link_product": "aminolean-energy-drink-berry-alixir",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/ALRTDSWNew.png",
+            "caption": "Strawberry Watermelon",
+            "size_text": "12 Pack",
+            "tag_text": "",
+            "link_product": "aminolean-energy-drink-strawberry-watermelon",
             "link": ""
           }
         },
         "custom_flavor_swatch_pHe4Xf": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/AminoLeanRTD_PinkLemonade_12Pack-Tray_SingleServ_012324-00_Front_HighRes.png",
+            "caption": "Pink Lemonade",
+            "size_text": "12 Pack",
+            "tag_text": "",
+            "link_product": "aminolean-energy-drink-pink-lemonade",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_3Ei9ze": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRTD_CherryLime_12Pack-Tray_SingleServ_042723-00_Front_HighRes.png",
+            "caption": "Cherry Lime",
+            "size_text": "12 Pack",
+            "tag_text": "",
+            "link_product": "aminolean-energy-drink-cherry-lime",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_WDRhVE": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanRTDVarietyPack_PL_BE_PB_CL_12Pack-Tray_SingleServ_00_Front_HighRes.png",
+            "caption": "Variety Pack",
+            "size_text": "12 Pack",
+            "tag_text": "",
+            "link_product": "aminolean-energy-drink-variety-pack",
             "link": ""
           }
         },
@@ -155,7 +177,7 @@
           "type": "fbt",
           "settings": {
             "heading": "Frequently bought together",
-            "companion_1": "creatine-mono",
+            "companion_1": "truefit-vanilla",
             "companion_2": "vegan-aminolean-acai",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
@@ -175,9 +197,11 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
-        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_zikHKM",
+        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_pHe4Xf",
+        "custom_flavor_swatch_3Ei9ze",
+        "custom_flavor_swatch_WDRhVE",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
