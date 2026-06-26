@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "Chocolate, Vanilla, and AminoLean Pre Workout: fueled by natural caffeine from green tea, it's the cleanest way to power your day and workouts.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,33 +53,11 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
-            "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/TrueFitEnergyBundle.png",
+            "caption": "Protein + Energy",
+            "size_text": "",
+            "tag_text": "",
+            "link_product": "bundle-protein-energy",
             "link": ""
           }
         },
@@ -156,7 +134,7 @@
           "settings": {
             "heading": "Frequently bought together",
             "companion_1": "creatine-mono",
-            "companion_2": "vegan-aminolean-acai",
+            "companion_2": "aminolean-recovery-tropical-island-punch",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
             "fbt_card_radius": 12,
@@ -176,8 +154,6 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -279,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>The Energy Bundle pairs both best-selling TrueFit flavors with AminoLean Pre-Workout for a routine that fuels your body and powers your day. You already know TrueFit: 25g of grass-fed protein with whole-food fiber to build and rebuild muscle while keeping you full and satisfied. AminoLean Pre-Workout does the rest, with natural caffeine from green tea for clean energy without the crash, plant-based amino acids to support muscle and recovery, and a weight management blend to help you get more from every effort. It's naturally sweetened too, so you get the fuel without the artificial extras. Together they cover the two things your routine runs on: the protein to build and the energy to keep moving. Nothing fake, every ingredient earned.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
