@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "Our two best-selling TrueFit flavors paired with single-ingredient creatine to support strength, brain health, and healthy aging.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -133,7 +133,7 @@
           "type": "fbt",
           "settings": {
             "heading": "Frequently bought together",
-            "companion_1": "creatine-mono",
+            "companion_1": "aminolean-recovery-blood-orange",
             "companion_2": "vegan-aminolean-acai",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
@@ -816,7 +816,6 @@
         },
         "card_EYFEUK": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-chocolate",
             "custom_title": "TrueFit Protein - Chocolate",
@@ -862,7 +861,6 @@
         },
         "card_Bwnjpz": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "product": "truefit-vanilla",
             "custom_title": "TrueFit Protein - Vanilla",
