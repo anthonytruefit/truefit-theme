@@ -16,12 +16,33 @@
   transition: opacity var(--duration-short) ease-in;
 }
 .product__media-wrapper .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-  max-width: 11rem;
+  max-width: 8rem;
 }
 
-.product-media-container,
+/* TrueFit gallery refinement (visual only): clean white panel instead of the
+   blue-gray tint, subtle product-image radius (matches the flavor swatches),
+   flat white thumbnails with a hairline frame, and a crisp navy active frame. */
+.product-media-container {
+  background-color: #ffffff;
+}
 .thumbnail {
-  background-color: rgba(var(--color-foreground), 0.08);
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 1px #e2e5ec;
+}
+
+/* Retighten radius only within the product gallery (theme-wide media radius
+   untouched). 8px main image = same radius as the flavor swatch images. */
+.product__media-wrapper {
+  --media-radius: 8px;
+  --media-small-radius: 6px;
+}
+
+/* Selected thumbnail: 2px navy frame via inset shadow (no layout shift),
+   replacing the soft vanilla ring. Covers the post-click focus state too. */
+.product__media-wrapper .thumbnail[aria-current],
+.product__media-wrapper .thumbnail[aria-current]:focus:not(:focus-visible) {
+  box-shadow: inset 0 0 0 2px #0a1a4f;
+  border-color: transparent;
 }
 
 .product__title .product-collab-image-wrapper {
