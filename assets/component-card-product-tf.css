@@ -124,7 +124,7 @@
 .cptf__btn {
   position: relative;
   z-index: 2;
-  margin-top: 1rem;
+  margin-top: auto;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -138,6 +138,12 @@
   transition: opacity 0.2s ease;
 }
 .cptf__btn:hover { opacity: 0.9; }
+
+/* Equal-height cards: stretch each card to its row height so the bottom-pinned
+   "View Details" buttons line up across the row regardless of how much content
+   (subscribe line, description length, flavor line) each card has. */
+.product-grid .grid__item { display: flex; }
+.product-grid .grid__item > .cptf__card { width: 100%; }
 
 /* ---- Mobile 3-across grid (Dawn only ships 1 and 2 for tablet-down) ---- */
 @media screen and (max-width: 749px) {
