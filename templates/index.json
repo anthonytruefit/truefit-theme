@@ -448,6 +448,21 @@
             "bullet_2": "Vegan amino acids for muscle recovery",
             "bullet_3": "Nootropic mushrooms for mental focus"
           }
+        },
+        "card_UUNDVN": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-pre-workout-berry-alixir",
+            "custom_title": "AminoLean Pre Workout - Berry Elxir",
+            "subscribe_price": "$20.20",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
         }
       },
       "block_order": [
@@ -455,7 +470,8 @@
         "card_fCjV4k",
         "card_kXFAdn",
         "card_cHrX93",
-        "card_aFYUxU"
+        "card_aFYUxU",
+        "card_UUNDVN"
       ],
       "name": "TrueFit Best Sellers",
       "settings": {
