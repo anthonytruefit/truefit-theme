@@ -1,0 +1,79 @@
+/* Premium brand styling for the collection filter + sort UI.
+   Loaded AFTER component-facets.css; purely visual — layout, markup, and
+   filter/sort behavior are unchanged. Brand: navy #0A1A4F, vanilla #40738D,
+   border #E2E5EC, cream #FCFCEA. */
+
+/* ---------- Sort dropdown + product count ---------- */
+.facet-filters__label,
+.product-count__text,
+.product-count-vertical .product-count__text {
+  color: #40738d;
+}
+.facet-filters .select__select {
+  color: #0a1a4f !important;
+  font-weight: 500;
+  border: 0.1rem solid #e2e5ec !important;
+  border-radius: 0.8rem !important;
+  background-color: #ffffff !important;
+  transition: border-color 0.2s ease;
+}
+.facet-filters .select__select:hover { border-color: #c9c0a0; }
+.facet-filters .select__select:focus,
+.facet-filters .select:focus-within .select__select {
+  border-color: #0a1a4f !important;
+  box-shadow: none;
+}
+.facet-filters .select .icon-caret { color: #0a1a4f; }
+
+/* ---------- Filter group headings / toggles ---------- */
+.facets__heading,
+.facets__heading--vertical {
+  color: #0a1a4f;
+  font-weight: 600;
+}
+.facets__summary {
+  color: #0a1a4f;
+  font-weight: 600;
+}
+.facets__disclosure[open] .facets__summary,
+.facets__disclosure-vertical[open] .facets__summary,
+.facets__summary:hover {
+  color: #0a1a4f;
+}
+.facets__summary .icon-caret { color: #0a1a4f; }
+/* Cleaner toggle: drop the underline-on-hover, the navy weight carries it */
+.facets__summary:hover span { text-decoration: none; }
+
+/* ---------- Checkbox options ---------- */
+.facet-checkbox { color: #40738d; }
+.facet-checkbox .icon-checkmark { color: #0a1a4f; }
+.facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark { color: #0a1a4f; }
+
+/* ---------- Active filter pills ---------- */
+span.active-facets__button-inner {
+  border: 0.1rem solid #e2e5ec !important;
+  border-radius: 999px !important;
+  background-color: #fcfcea !important;
+  color: #0a1a4f !important;
+  font-weight: 500;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.active-facets__button:hover span.active-facets__button-inner {
+  border-color: #0a1a4f !important;
+  background-color: #ffffff !important;
+}
+.active-facets__button-remove,
+.active-facets__button-remove .underlined-link,
+a.active-facets__button-remove {
+  color: #0a1a4f !important;
+  text-underline-offset: 0.2rem;
+}
+
+/* ---------- Price range ---------- */
+.facets__price .field {
+  border-radius: 0.8rem;
+  border-color: #e2e5ec;
+}
+.facets__price .field:focus-within {
+  border-color: #0a1a4f;
+}
