@@ -12,12 +12,14 @@
     "tf_hero": {
       "type": "tf-sns-hero",
       "settings": {
-        "eyebrow": "THE SERVINGS CLUB",
-        "headline": "Never run out. Always save.",
-        "support_line": "30% off your first order, 15% off every refill, free shipping, and cancel anytime.",
-        "cta_text": "Start saving",
+        "eyebrow": "",
+        "headline": "",
+        "support_line": "",
+        "cta_text": "",
         "cta_link": "shopify://collections/shop-all-products",
         "bg_color": "#0a1a4f",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_29_2026_05_49_47_PM_fa1691fb-fade-4075-88c9-654d0b50e679.png",
+        "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_29_2026_05_41_25_PM.png",
         "overlay_color": "#0a1a4f",
         "overlay_opacity": 45,
         "eyebrow_color": "#86bce8",
@@ -25,9 +27,9 @@
         "support_color": "#ffffff",
         "cta_bg": "#ffffff",
         "cta_text_color": "#0a1a4f",
-        "headline_size": 56,
-        "min_height": 480,
-        "min_height_mobile": 420
+        "headline_size": 72,
+        "min_height": 720,
+        "min_height_mobile": 500
       }
     },
     "tf_benefits": {
@@ -132,41 +134,56 @@
       "blocks": {
         "p1": {
           "type": "product_card",
-          "settings": { "product": "truefit-chocolate", "title": "", "description": "" }
-        },
-        "p2": {
-          "type": "product_card",
-          "settings": { "product": "truefit-vanilla", "title": "", "description": "" }
+          "settings": {
+            "product": "truefit-chocolate",
+            "title": "",
+            "description": ""
+          }
         },
         "p3": {
           "type": "product_card",
-          "settings": { "product": "creatine-mono", "title": "", "description": "" }
+          "settings": {
+            "product": "creatine-mono",
+            "title": "",
+            "description": ""
+          }
+        },
+        "p2": {
+          "type": "product_card",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "title": "AminoLean Energy (Natural)",
+            "description": ""
+          }
         },
         "p4": {
           "type": "product_card",
-          "settings": { "product": "aminolean-pink-lemonade", "title": "", "description": "" }
+          "settings": {
+            "product": "aminolean-pink-lemonade",
+            "title": "AminoLean Energy (Original)",
+            "description": ""
+          }
         },
         "product_card_RDfpwr": {
           "type": "product_card",
-          "settings": { "product": "aminolean-recovery-blood-orange", "title": "AminoLean Recovery + Hydration", "description": "" }
-        },
-        "p6": {
-          "type": "product_card",
-          "settings": { "product": "aminolean-fruit-punch", "title": "", "description": "" }
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "title": "AminoLean Recovery + Hydration",
+            "description": ""
+          }
         }
       },
       "block_order": [
         "p1",
-        "p2",
         "p3",
+        "p2",
         "p4",
-        "product_card_RDfpwr",
-        "p6"
+        "product_card_RDfpwr"
       ],
       "settings": {
         "eyebrow": "SUBSCRIBER FAVORITES",
-        "headline": "Subscribe to a top product.",
-        "button_label": "View details",
+        "headline": "Subscribe to a best seller.",
+        "button_label": "Subscribe & Save 30%",
         "background": "#fcfcea",
         "eyebrow_color": "#40738d",
         "headline_color": "#0a1a4f",
@@ -188,7 +205,7 @@
         "rating": 5,
         "eyebrow": "JOIN THE CLUB",
         "headline": "Thousands stay stocked and save with a TrueFit subscription.",
-        "meta": "Rated 4.8 out of 5 across verified reviews.",
+        "meta": "Rated 4.7 out of 5 across verified reviews.",
         "background": "#0a1a4f",
         "star_color": "#c9a86a",
         "eyebrow_color": "#86bce8",
