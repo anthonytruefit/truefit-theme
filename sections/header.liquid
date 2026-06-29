@@ -59,25 +59,15 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 
-{%- comment -%} Desktop Shop dropdown prefers the new "Menu featured product" blocks (shared with the mobile drawer). {%- endcomment -%}
-{%- assign tf_featured_blocks = section.blocks | where: 'type', 'drawer_featured_product' -%}
-{%- if tf_featured_blocks.size > 0 -%}
+{%- comment -%} Desktop Shop dropdown shows the SAME premium menu body as the mobile drawer (buttons + nav rows + featured products). {%- endcomment -%}
+{%- assign tf_menu_types = 'drawer_button,drawer_nav_row,drawer_featured_product' | split: ',' -%}
+{%- assign tf_has_menu = false -%}
+{%- for b in section.blocks -%}
+  {%- if tf_menu_types contains b.type -%}{%- assign tf_has_menu = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if tf_has_menu -%}
   {%- capture featured_shop_items -%}
-    {%- for block in tf_featured_blocks -%}
-      {%- assign fp = block.settings.product -%}
-      {%- assign fimg = block.settings.image | default: fp.featured_image -%}
-      <li {{ block.shopify_attributes }}>
-        <a class="shop-featured-menu__item" href="{{ fp.url | default: '#' }}">
-          <div class="shop-featured-menu__item-image-wrapper global-media-settings">
-            {%- if fimg != blank -%}{{ fimg | image_url: width: 180 | image_tag: loading: 'lazy', width: 90, sizes: '90px', widths: '90, 180, 270' }}{%- endif -%}
-          </div>
-          <div class="shop-featured-menu__item-content">
-            <div class="shop-featured-menu__item-title">{{ block.settings.title | default: fp.title }}</div>
-            <div class="shop-featured-menu__item-description">{{ block.settings.description }}</div>
-          </div>
-        </a>
-      </li>
-    {%- endfor -%}
+    <li class="tfmenu-desktop-li"><div class="tfmenu-desktop">{%- render 'header-menu-tf-body', section: section -%}</div></li>
   {%- endcapture -%}
 {%- endif -%}
 {%- assign featured_shop_blocks = section.blocks | where: 'type', 'shop_featured_item' -%}

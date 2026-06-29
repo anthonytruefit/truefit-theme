@@ -1,0 +1,76 @@
+{% comment %}
+  Shared premium menu body: quick-action buttons + text nav rows + featured
+  products. Rendered by BOTH the mobile drawer (header-drawer-tf) and the
+  desktop "Shop" mega-menu so the two show identical content.
+  Accepts: section
+{% endcomment %}
+{%- assign tf_buttons = section.blocks | where: 'type', 'drawer_button' -%}
+{%- if tf_buttons.size > 0 -%}
+  <div class="tfdrawer__buttons">
+    {%- for b in tf_buttons limit: 2 -%}
+      <a href="{{ b.settings.link | default: '#' }}" class="tfdrawer__btn tfdrawer__btn--{{ b.settings.style | default: 'filled' }}" {{ b.shopify_attributes }}>
+        {{ b.settings.label | default: 'Shop' }}
+      </a>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{%- assign tf_rows = section.blocks | where: 'type', 'drawer_nav_row' -%}
+{%- if tf_rows.size > 0 -%}
+  <nav class="tfdrawer__nav" aria-label="{{ 'sections.header.menu' | t }}">
+    {%- for row in tf_rows -%}
+      {%- if row.settings.mode == 'expandable' and row.settings.menu != blank and row.settings.menu.links.size > 0 -%}
+        <details class="tfdrawer__row tfdrawer__row--expandable" {{ row.shopify_attributes }}>
+          <summary class="tfdrawer__rowlabel">
+            <span>{{ row.settings.label }}</span>
+            <svg class="tfdrawer__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8l4 4 4-4"/></svg>
+          </summary>
+          <ul class="tfdrawer__sublist list-unstyled">
+            {%- for link in row.settings.menu.links -%}
+              <li><a href="{{ link.url }}" class="tfdrawer__sublink{% if link.current %} tfdrawer__sublink--active{% endif %}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </details>
+      {%- else -%}
+        <a href="{{ row.settings.link | default: '#' }}" class="tfdrawer__row tfdrawer__row--direct tfdrawer__rowlabel" {{ row.shopify_attributes }}>
+          <span>{{ row.settings.label }}</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+{%- endif -%}
+
+{%- assign tf_featured = section.blocks | where: 'type', 'drawer_featured_product' -%}
+{%- if tf_featured.size > 0 -%}
+  <div class="tfdrawer__featured">
+    <p class="tfdrawer__eyebrow">{{ section.settings.featured_label | default: 'FEATURED' }}</p>
+    <ul class="tfdrawer__featured-list list-unstyled">
+      {%- for f in tf_featured limit: 5 -%}
+        {%- assign fp = f.settings.product -%}
+        {%- assign fimg = f.settings.image | default: fp.featured_image -%}
+        <li class="tfdrawer__feat" {{ f.shopify_attributes }}>
+          <a href="{{ fp.url | default: '#' }}" class="tfdrawer__feat-link">
+            <span class="tfdrawer__feat-thumb">
+              {%- if fimg != blank -%}
+                <img src="{{ fimg | image_url: width: 160 }}" alt="{{ fp.title | default: f.settings.title | escape }}" width="72" height="72" loading="lazy">
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </span>
+            <span class="tfdrawer__feat-body">
+              <span class="tfdrawer__feat-headrow">
+                <span class="tfdrawer__feat-name">{{ f.settings.title | default: fp.title | default: 'Featured product' }}</span>
+                {%- if f.settings.badge != blank -%}
+                  <span class="tfdrawer__feat-badge">{{ f.settings.badge }}</span>
+                {%- endif -%}
+              </span>
+              {%- if f.settings.description != blank -%}
+                <span class="tfdrawer__feat-desc">{{ f.settings.description }}</span>
+              {%- endif -%}
+            </span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

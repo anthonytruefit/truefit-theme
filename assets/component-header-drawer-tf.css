@@ -192,4 +192,17 @@
     border: 0.1rem solid #e2e5ec;
   }
   .shop-cards-menu__item a { color: #0a1a4f !important; }
+
+  /* Desktop Shop dropdown rendered as the full premium menu body (buttons +
+     nav rows + featured), mirroring the mobile drawer. The .tfdrawer__* inner
+     styles are shared; this just sizes the panel. */
+  .tfmenu-desktop-li { list-style: none; grid-column: 1 / -1; width: 100%; margin: 0; padding: 0; }
+  .tfmenu-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 34rem;
+    max-width: 92vw;
+  }
+  .header__submenu--shop-featured:has(.tfmenu-desktop) { display: block; }
 }
