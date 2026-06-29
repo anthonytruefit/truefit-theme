@@ -104,9 +104,6 @@
 
   <div
     class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}"
-    {%- if product.metafields.product_theme.accent_color.value.alpha > 0 %}
-      style="--color-accent:{%- render 'dynamic-color-to-rgb', color: product.metafields.product_theme.accent_color.value -%}"
-    {%- endif -%}
   >
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
@@ -717,9 +714,8 @@
               {%- capture product_props -%}
                 [
                   {%- for block in product_picker_product_blocks -%}
-                    {%- capture color -%}
-                      {%- render 'dynamic-color-to-rgb', color: block.settings.product.metafields.product_theme.accent_color.value -%}
-                    {%- endcapture -%}
+                    {%- comment -%} Flavor accent removed: navy. {%- endcomment -%}
+                    {%- capture color -%}10, 26, 79{%- endcapture -%}
                     {
                       "price": {{ block.settings.product.price | json }},
                       "handle": {{ block.settings.product.handle | json }},
@@ -863,13 +859,8 @@
                 ]
               {%- endcapture -%}
                 {%- capture bundle_builder -%}
-                {%- if product.metafields.product_theme.accent_color.value.alpha > 0 -%}
-                  {%- capture product_color -%}
-                    {%- render 'dynamic-color-to-rgb', color: product.metafields.product_theme.accent_color.value -%}
-                  {%- endcapture -%}
-                {%- else -%}
-                  {%- assign product_color = blank -%}
-                {%-  endif -%}
+                {%- comment -%} Flavor accent removed: use the navy global accent. {%- endcomment -%}
+                {%- assign product_color = blank -%}
                 <bundle-form
                   id="bundle-form-{{ block.id }}"
                   class="tw-block tw-mb-24"

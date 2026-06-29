@@ -58,6 +58,8 @@
       if accent_color == blank
         assign accent_color = brand_color
       endif
+      # Flavor accent removed: lock the dynamic accent to navy site-wide
+      assign accent_color = '#0a1a4f'
     %}
 
     {% style %}
@@ -345,11 +347,8 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {%- if template.suffix contains 'amino' -%}
-      {% sections 'header-group-aminolean' %}
-    {%- else -%}
-      {% sections 'header-group' %}
-    {%- endif -%}
+    {%- comment -%} Unified header site-wide (the amino split is retired). {%- endcomment -%}
+    {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

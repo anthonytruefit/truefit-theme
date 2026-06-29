@@ -279,11 +279,11 @@
         <a href="{{ root_url }}" class="header__heading-link link link--text focus-inset">
           
           {%- if template_store == 'aminolean' -%}
-            <div class="header__heading-logo-wrapper tw-text-accent">
+            <div class="header__heading-logo-wrapper" style="color: #0a1a4f;">
               {%- render 'aminolean-logo', class: 'header__heading-logo' -%}
             </div>
           {%- elsif template_store == 'rsp' -%}
-            <div class="header__heading-logo-wrapper tw-text-accent">
+            <div class="header__heading-logo-wrapper" style="color: #0a1a4f;">
               {%- render 'rsp-logo', class: 'header__heading-logo' -%}
             </div>
           {%- elsif settings.logo != blank -%}

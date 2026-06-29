@@ -11,11 +11,7 @@ class ProductFlavorPicker extends HTMLElement {
         }
 
         this.saveScrollPosition(link.pathname);
-
-        const accentColor = e.currentTarget.dataset.accentColor;
-        if (accentColor) {
-          document.documentElement.style.setProperty('--color-accent', accentColor);
-        }
+        // Flavor accent removed: no longer recolor --color-accent on flavor change.
       });
     });
   }

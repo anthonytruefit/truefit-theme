@@ -50,9 +50,8 @@
     endfor
   endif
 -%}
-{%- if accent_color.alpha > 0 -%}
-  {%- capture accent_color_rgb_var -%}{{ accent_color.red }}, {{ accent_color.green }}, {{ accent_color.blue }}{%- endcapture -%}
-{%- endif -%}
+{%- comment -%} Flavor accent removed: picker items always use navy. {%- endcomment -%}
+{%- assign accent_color_rgb_var = '10, 26, 79' -%}
 
 <li
   class="product-picker-link-wrapper{% if picker_product.id == current_product.id %} product-picker-link-wrapper--active{% endif %}"
