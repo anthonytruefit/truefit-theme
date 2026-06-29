@@ -110,7 +110,7 @@
           "type": "drawer_nav_row",
           "settings": {
             "label": "Subscribe & Save",
-            "mode": "direct",
+            "mode": "expandable",
             "link": "",
             "menu": "tf-subscribe"
           }
