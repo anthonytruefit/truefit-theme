@@ -103,7 +103,7 @@
             "label": "Shop by Category",
             "mode": "expandable",
             "link": "",
-            "menu": ""
+            "menu": "tf-shop-by-category"
           }
         },
         "drawer_nav_row_BGNH86": {
