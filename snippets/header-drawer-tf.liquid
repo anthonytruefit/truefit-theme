@@ -76,7 +76,7 @@
             <div class="tfdrawer__featured">
               <p class="tfdrawer__eyebrow">{{ section.settings.featured_label | default: 'FEATURED' }}</p>
               <ul class="tfdrawer__featured-list list-unstyled">
-                {%- for f in tf_featured limit: 3 -%}
+                {%- for f in tf_featured limit: 5 -%}
                   {%- assign fp = f.settings.product -%}
                   {%- assign fimg = f.settings.image | default: fp.featured_image -%}
                   <li class="tfdrawer__feat" {{ f.shopify_attributes }}>
@@ -113,7 +113,7 @@
                 {%- else -%}
                   <a href="{{ routes.account_login_url }}" class="tfdrawer__util-link">{{ 'customer.log_in' | t }}</a>
                   <span class="tfdrawer__util-sep" aria-hidden="true">/</span>
-                  <a href="{{ routes.account_register_url }}" class="tfdrawer__util-link">{{ 'customer.register' | t }}</a>
+                  <a href="{{ routes.account_register_url }}" class="tfdrawer__util-link">{{ 'customer.register.title' | t }}</a>
                 {%- endif -%}
               </div>
             {%- endif -%}
