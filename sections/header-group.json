@@ -76,7 +76,7 @@
           "type": "drawer_button",
           "settings": {
             "label": "Shop All",
-            "link": "shopify://collections/shop-all-products",
+            "link": "shopify://collections/tf-shop-all",
             "style": "filled"
           }
         },
@@ -94,7 +94,7 @@
             "label": "Best Sellers",
             "mode": "expandable",
             "link": "",
-            "menu": ""
+            "menu": "tf-best-seller"
           }
         },
         "drawer_nav_row_ipRH6b": {
