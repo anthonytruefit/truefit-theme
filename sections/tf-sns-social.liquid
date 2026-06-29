@@ -1,0 +1,60 @@
+{%- liquid
+  assign s = section.settings
+  assign rating = s.rating | default: 4.8
+  assign full = rating | floor
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snssoc { background: {{ s.background }}; padding: 5.6rem 0; text-align: center; }
+  #shopify-section-{{ section.id }} .snssoc__inner { max-width: 60rem; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .snssoc__stars { display: flex; justify-content: center; gap: 0.4rem; margin-bottom: 1.4rem; }
+  #shopify-section-{{ section.id }} .snssoc__stars svg { width: 2.2rem; height: 2.2rem; display: block; }
+  #shopify-section-{{ section.id }} .snssoc__eyebrow { margin: 0 0 1.4rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snssoc__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; font-size: clamp(2.2rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snssoc__meta { margin: 1.6rem 0 0; font-size: 1.4rem; color: {{ s.meta_color }}; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snssoc { padding: 8rem 0; }
+  }
+{%- endstyle -%}
+
+<div class="snssoc">
+  <div class="page-width">
+    <div class="snssoc__inner">
+      {%- if s.show_stars -%}
+        <div class="snssoc__stars" aria-label="{{ rating }} out of 5 stars">
+          {%- for i in (1..5) -%}
+            {%- if i <= full -%}
+              <svg viewBox="0 0 24 24" fill="{{ s.star_color }}" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z"/></svg>
+            {%- else -%}
+              <svg viewBox="0 0 24 24" fill="none" stroke="{{ s.star_color }}" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z"/></svg>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {%- if s.eyebrow != blank -%}<p class="snssoc__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<p class="snssoc__headline">{{ s.headline }}</p>{%- endif -%}
+      {%- if s.meta != blank -%}<p class="snssoc__meta">{{ s.meta }}</p>{%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S Social proof",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "show_stars", "label": "Show star rating", "default": true },
+    { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Filled stars", "default": 5 },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "JOIN THE CLUB" },
+    { "type": "textarea", "id": "headline", "label": "Headline", "default": "Thousands stay stocked and save with a TrueFit subscription." },
+    { "type": "text", "id": "meta", "label": "Meta line", "default": "Rated 4.8 out of 5 across verified reviews." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#0A1A4F" },
+    { "type": "color", "id": "star_color", "label": "Stars", "default": "#C9A86A" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#86BCE8" },
+    { "type": "color", "id": "headline_color", "label": "Headline", "default": "#FFFFFF" },
+    { "type": "color", "id": "meta_color", "label": "Meta line", "default": "#86BCE8" },
+    { "type": "range", "id": "headline_size", "min": 24, "max": 44, "step": 1, "unit": "px", "label": "Headline max size", "default": 32 }
+  ],
+  "presets": [{ "name": "S&S Social proof" }]
+}
+{% endschema %}

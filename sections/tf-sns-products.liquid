@@ -1,0 +1,114 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsp { background: {{ s.background }}; padding: 5.6rem 0; }
+  #shopify-section-{{ section.id }} .snsp__head { text-align: center; max-width: 56rem; margin: 0 auto 3.6rem; }
+  #shopify-section-{{ section.id }} .snsp__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsp__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsp__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  #shopify-section-{{ section.id }} .snsp__card { position: relative; display: flex; flex-direction: column; background: {{ s.card_bg }}; border: 0.1rem solid {{ s.card_border }}; border-radius: 1.6rem; overflow: hidden; height: 100%; }
+  #shopify-section-{{ section.id }} .snsp__overlay { position: absolute; inset: 0; z-index: 1; }
+  #shopify-section-{{ section.id }} .snsp__media { display: block; aspect-ratio: 1 / 1; background: {{ s.media_bg }}; }
+  #shopify-section-{{ section.id }} .snsp__img { width: 100%; height: 100%; object-fit: contain; padding: 1.6rem; }
+  #shopify-section-{{ section.id }} .snsp__body { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.8rem 1.8rem 2rem; flex: 1 1 auto; }
+  #shopify-section-{{ section.id }} .snsp__name { position: relative; z-index: 2; font-size: 1.7rem; font-weight: 500; letter-spacing: -0.01em; color: {{ s.title_color }}; text-decoration: none; }
+  #shopify-section-{{ section.id }} .snsp__desc { margin: 0; font-size: 1.3rem; line-height: 1.45; color: {{ s.text_color }}; }
+  #shopify-section-{{ section.id }} .snsp__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem 0.8rem; margin-top: 0.2rem; }
+  #shopify-section-{{ section.id }} .snsp__price-orig { font-size: 1.4rem; color: {{ s.text_color }}; }
+  #shopify-section-{{ section.id }} .snsp__price-sub { font-size: 1.7rem; font-weight: 600; color: {{ s.price_color }}; }
+  #shopify-section-{{ section.id }} .snsp__price-reg { font-size: 1.7rem; font-weight: 600; color: {{ s.price_color }}; }
+  #shopify-section-{{ section.id }} .snsp__price-label { font-size: 1.15rem; font-weight: 500; color: {{ s.text_color }}; }
+  #shopify-section-{{ section.id }} .snsp__btn { position: relative; z-index: 2; margin-top: 1.4rem; display: block; text-align: center; min-height: 4.8rem; padding: 1.2rem; border-radius: 0.8rem; font-weight: 600; font-size: 1.4rem; text-decoration: none; background: {{ s.btn_bg }}; color: {{ s.btn_text }}; border: 0.1rem solid {{ s.btn_bg }}; transition: opacity 0.2s ease; }
+  #shopify-section-{{ section.id }} .snsp__btn:hover { opacity: 0.9; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsp { padding: 8rem 0; }
+    #shopify-section-{{ section.id }} .snsp__grid { grid-template-columns: repeat({{ section.blocks.size | at_most: 3 }}, 1fr); gap: 2.4rem; }
+  }
+{%- endstyle -%}
+
+<div class="snsp">
+  <div class="page-width">
+    <div class="snsp__head">
+      {%- if s.eyebrow != blank -%}<p class="snsp__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="snsp__headline">{{ s.headline }}</h2>{%- endif -%}
+    </div>
+    <div class="snsp__grid">
+      {%- for block in section.blocks -%}
+        {%- assign p = block.settings.product -%}
+        {%- assign desc = p.metafields.custom.card_description.value | default: block.settings.description -%}
+        {%- assign subprice = p.metafields.custom.subscribe_price.value -%}
+        <div class="snsp__card" {{ block.shopify_attributes }}>
+          <a class="snsp__overlay" href="{{ p.url | default: '#' }}" aria-label="{{ p.title | escape }}" tabindex="-1" aria-hidden="true"></a>
+          <span class="snsp__media">
+            {%- if p.featured_image != blank -%}
+              <img class="snsp__img" src="{{ p.featured_image | image_url: width: 600 }}" alt="{{ p.featured_image.alt | escape }}" width="{{ p.featured_image.width }}" height="{{ p.featured_image.height }}" loading="lazy">
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'snsp__img placeholder-svg' }}
+            {%- endif -%}
+          </span>
+          <div class="snsp__body">
+            <a class="snsp__name" href="{{ p.url | default: '#' }}">{{ block.settings.title | default: p.title | default: 'Select a product' }}</a>
+            {%- if desc != blank -%}<p class="snsp__desc">{{ desc }}</p>{%- endif -%}
+            <div class="snsp__price">
+              {%- if subprice != blank and p != blank -%}
+                <s class="snsp__price-orig">{{ p.price | money }}</s>
+                <span class="snsp__price-sub">{{ subprice }}</span>
+                <span class="snsp__price-label">subscribe price</span>
+              {%- elsif p != blank -%}
+                <span class="snsp__price-reg">{{ p.price | money }}</span>
+              {%- endif -%}
+            </div>
+            <a class="snsp__btn" href="{{ p.url | default: '#' }}">{{ s.button_label | default: 'View details' }}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S Products",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SUBSCRIBER FAVORITES" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Subscribe to a top product." },
+    { "type": "text", "id": "button_label", "label": "Card button label", "default": "View details" },
+    { "type": "paragraph", "content": "Each card pulls its one-line description from the product metafield custom.card_description (with the manual field below as fallback) and its subscribe price from custom.subscribe_price (hidden if empty). The card and button link to the product page — no subscribe from here." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Section background", "default": "#FCFCEA" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Headline", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "media_bg", "label": "Image area background", "default": "#FCFCEA" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#E2E5EC" },
+    { "type": "color", "id": "title_color", "label": "Product name", "default": "#0A1A4F" },
+    { "type": "color", "id": "price_color", "label": "Subscribe price", "default": "#0A1A4F" },
+    { "type": "color", "id": "text_color", "label": "Description / original price", "default": "#40738D" },
+    { "type": "color", "id": "btn_bg", "label": "Button background", "default": "#0A1A4F" },
+    { "type": "color", "id": "btn_text", "label": "Button text", "default": "#FFFFFF" },
+    { "type": "range", "id": "headline_size", "min": 26, "max": 44, "step": 1, "unit": "px", "label": "Headline max size", "default": 34 }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "title", "label": "Name override (optional)" },
+        { "type": "text", "id": "description", "label": "Description fallback", "info": "Used only if the product has no custom.card_description metafield." }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "S&S Products",
+    "blocks": [
+      { "type": "product_card" },
+      { "type": "product_card" },
+      { "type": "product_card" }
+    ]
+  }]
+}
+{% endschema %}

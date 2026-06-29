@@ -1,1 +1,84 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece":{"type":"image-banner-rsp","blocks":{"template--15623286489133__1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece-heading-1":{"type":"heading","settings":{"heading":"","heading_size":"h0","screen_reader_only":false}},"template--15623286489133__1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece-text-1":{"type":"text","settings":{"text":"","text_style":"subtitle","screen_reader_only":false}},"174a07a2-1ac7-4f63-9bbe-075029ac0c9d":{"type":"button","settings":{"button_label":"Get Started","button_link":"shopify:\/\/collections\/shop-all-products"}}},"block_order":["template--15623286489133__1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece-heading-1","template--15623286489133__1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece-text-1","174a07a2-1ac7-4f63-9bbe-075029ac0c9d"],"disabled":true,"settings":{"image_height":"adapt","image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/26_Aminolean_Subscribe_SaveUpdate-15.jpg","mobile_image_overlay_background":"","mobile_content_position":"bottom-left","mobile_content_alignment":"left","fix_buttons_below_on_mobile":false,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/26_Aminolean_Subscribe_SaveUpdate-10_8edd2253-1930-4377-9b0b-08c302085154.jpg","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"bottom-left","desktop_column_width":12,"desktop_column_start":1,"desktop_content_max_width":450,"desktop_content_alignment":"left","color_scheme":"inverse","customize_colors":false,"text_color":"","button_background_color":"","button_text_color":"","container_background_color":"","mobile_text_color":"","mobile_button_background_color":"","mobile_button_text_color":"","mobile_container_background_color":""}},"e912ee53-507d-42ad-ae82-7188b8303bb4":{"type":"amino-icon-grid","blocks":{"feature_LntypW":{"type":"feature","settings":{"icon":"muscle","text":"<p><strong>30% OFF YOUR FIRST ORDER<br\/><br\/><\/strong>Get the best value on the entire site to kick off your subscription.<\/p>","icon_name":""}},"5038eb16-d96f-4a76-b21a-8522f792d0dd":{"type":"feature","settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/RecurringSavings.webp","text":"<h4>RECURRING<br\/>SAVINGS<\/h4><p>Lock in 15% off & free shipping on all your future subscription orders.<\/p>","icon_name":""}},"28eabb95-a848-48bc-baa4-3f23140f5971":{"type":"feature","settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/CustomizableFrequency.webp","text":"<h4>CUSTOMIZABLE<br\/>FREQUENCY<\/h4><p>Select the delivery schedule that works best for you.<\/p>","icon_name":""}},"ecf3ecf7-033e-4126-a178-d2443d4834c0":{"type":"feature","settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/SkipOrCancel.webp","text":"<h4>SKIP OR CANCEL<br\/>ANYTIME<\/h4><p>Skip your deliveries or cancel your subscriptions anytime by visiting Manage Your Subscriptions<\/p>","icon_name":""}},"074c73e3-3cfe-4494-8645-349f686822d6":{"type":"feature","settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/AutomatedShipments.png","text":"<h4>AUTOMATED<br\/>SHIPMENTS<\/h4><p>Easy, automated shipments of your favorite products on a schedule that works for you.<\/p>","icon_name":""}},"722830a8-af2e-4e44-8a98-a971d9d15c77":{"type":"feature","settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/FreeShipping.webp","text":"<h4>FREE<br\/>SHIPPING<\/h4><p>Get free standard shipping on all subscription orders within the US.<\/p>","icon_name":""}},"ca335444-148f-4271-ac02-d7e10c9dc931":{"type":"feature","disabled":true,"settings":{"icon":"custom_image","icon_image":"shopify:\/\/shop_images\/CustomerService.webp","text":"<h4>DEDICATED CUSTOMER<br\/>ASSISTANCE<\/h4><p>We are here to help. Call or email us if you have any questions about your subscriptions.<\/p>","icon_name":""}}},"block_order":["feature_LntypW","5038eb16-d96f-4a76-b21a-8522f792d0dd","28eabb95-a848-48bc-baa4-3f23140f5971","ecf3ecf7-033e-4126-a178-d2443d4834c0","074c73e3-3cfe-4494-8645-349f686822d6","722830a8-af2e-4e44-8a98-a971d9d15c77","ca335444-148f-4271-ac02-d7e10c9dc931"],"settings":{"section_color_scheme":"scheme-bb757efb-c3e9-403a-942d-776276cfdd97","heading":"<p>Perks & Benefits<\/p>","subheading":"","columns_mobile":2,"item_max_width_mobile":205,"container_max_width_mobile":480,"columns_desktop":3,"item_max_width_desktop":205,"container_max_width_desktop":800,"padding_top":48,"padding_bottom":48}},"89e2171e-aad0-4783-8b44-d8935420b7cb":{"type":"featured-collection-rsp","settings":{"title":"Our Most Loved Essentials","heading_size":"h2","description":"","show_description":false,"description_style":"body","content_alignment":"tw-text-center","collection":"","product_list":["truefit-chocolate","truefit-vanilla","aminolean-pink-lemonade","creatine-mono","aminolean-recovery-blood-orange"],"product_list_fallback":[],"products_to_show":6,"columns_desktop":5,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"1","swipe_on_mobile":true,"card_cta_label":"Subscribe","padding_top":36,"padding_bottom":36}},"543dce41-94cf-417f-aa1b-6822b9f42cc6":{"type":"image-with-text","blocks":{"template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-heading-1":{"type":"heading","settings":{"heading":"Why Subscribe?","heading_size":"h2"}},"template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-text-1":{"type":"text","settings":{"text":"<ol><li>Level Up Your Health & Fitness<\/li><li>Never Run Out of Your Favorite AminoLean & TrueFit Products<\/li><li>Save Time<\/li><li>Save Money<\/li><\/ol>","text_style":"body"}},"template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-button-1":{"type":"button","settings":{"button_label":"GET STARTED","button_link":"shopify:\/\/collections\/shop-all-products","button_style_secondary":false}}},"block_order":["template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-heading-1","template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-text-1","template--15623286489133__543dce41-94cf-417f-aa1b-6822b9f42cc6-button-1"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/GroupShotAI23.jpg","height":"adapt","desktop_image_width":"medium","layout":"image_first","desktop_content_position":"top","desktop_content_alignment":"left","content_layout":"no-overlap","color_scheme":"","image_behavior":"none","mobile_content_alignment":"left","padding_top":36,"padding_bottom":36}},"29bd0560-fb88-44db-8227-580907753a0a":{"type":"image-with-text","blocks":{"9651ab58-8b91-4adf-9a42-4a59bca807fa":{"type":"heading","settings":{"heading":"4 Easy Steps to Subscribe & Save!","heading_size":"h2"}},"29099ce6-0be3-4f43-90a9-d72a5b17c244":{"type":"text","settings":{"text":"<ol><li>Shop your favorite TrueFit and AminoLean products.<\/li><li>Click the \"Subscribe & Save Option\"<\/li><li>Choose from either a 30, 45, or 60-day delivery schedule. You can customize this to any frequency (eg. 20 days) once you complete the subscription purchase.<\/li><li>Add the product to your cart, check out and we'll take care of the rest<\/li><\/ol>","text_style":"body"}},"50dd6f7b-0ecc-4410-a8e7-3e2ee0553d3a":{"type":"button","settings":{"button_label":"GET STARTED","button_link":"shopify:\/\/collections\/shop-all-products","button_style_secondary":false}}},"block_order":["9651ab58-8b91-4adf-9a42-4a59bca807fa","29099ce6-0be3-4f43-90a9-d72a5b17c244","50dd6f7b-0ecc-4410-a8e7-3e2ee0553d3a"],"settings":{"image":"shopify:\/\/shop_images\/SubsSaveVideo-ezgif.com-video-to-gif-converter.gif","height":"adapt","desktop_image_width":"medium","layout":"text_first","desktop_content_position":"top","desktop_content_alignment":"left","content_layout":"no-overlap","color_scheme":"","image_behavior":"none","mobile_content_alignment":"left","padding_top":36,"padding_bottom":36}},"18da0015-31ec-4678-a256-479bcdccb6b9":{"type":"image-banner-rsp","blocks":{"template--15623286489133__18da0015-31ec-4678-a256-479bcdccb6b9-heading-1":{"type":"heading","settings":{"heading":"Subscribe & Save FAQs","heading_size":"h1","screen_reader_only":false}},"template--15623286489133__18da0015-31ec-4678-a256-479bcdccb6b9-text-1":{"type":"text","settings":{"text":"Are you still unsure about how our Subscribe & Save program works? Visit our FAQs page to learn more about how this could be the key to achieving your prim fitness lifestyle.","text_style":"body","screen_reader_only":false}},"4ef694fc-55e9-4946-a026-e393db9f74fd":{"type":"button","settings":{"button_label":"View All FAQs","button_link":"shopify:\/\/pages\/subscribe-and-save-faqs"}}},"block_order":["template--15623286489133__18da0015-31ec-4678-a256-479bcdccb6b9-heading-1","template--15623286489133__18da0015-31ec-4678-a256-479bcdccb6b9-text-1","4ef694fc-55e9-4946-a026-e393db9f74fd"],"settings":{"image_height":"adapt","image_overlay_opacity":0,"mobile_image":"shopify:\/\/shop_images\/26_Aminolean_Subscribe_SaveUpdate-16.jpg","mobile_image_overlay_background":"","mobile_content_position":"middle-center","mobile_content_alignment":"center","fix_buttons_below_on_mobile":false,"show_text_below":false,"desktop_image":"shopify:\/\/shop_images\/26_Aminolean_Subscribe_SaveUpdate-11_2c639378-17da-4084-af65-8301300d5808.jpg","desktop_image_overlay_background":"","page_width":true,"show_text_box":false,"desktop_content_position":"middle-center","desktop_column_width":12,"desktop_column_start":1,"desktop_content_max_width":450,"desktop_content_alignment":"center","color_scheme":"inverse","customize_colors":false,"text_color":"","button_background_color":"","button_text_color":"","container_background_color":"","mobile_text_color":"","mobile_button_background_color":"","mobile_button_text_color":"","mobile_container_background_color":""}}},"order":["main","1f4e3a55-7858-47d5-9ab9-a2f73a0a7ece","e912ee53-507d-42ad-ae82-7188b8303bb4","89e2171e-aad0-4783-8b44-d8935420b7cb","543dce41-94cf-417f-aa1b-6822b9f42cc6","29bd0560-fb88-44db-8227-580907753a0a","18da0015-31ec-4678-a256-479bcdccb6b9"]}
+{
+  "sections": {
+    "tf_hero": {
+      "type": "tf-sns-hero",
+      "settings": {
+        "eyebrow": "THE SERVINGS CLUB",
+        "headline": "Never run out. Always save.",
+        "support_line": "30% off your first order, 15% off every refill, free shipping, and cancel anytime.",
+        "cta_text": "Start saving",
+        "cta_link": "shopify://collections/shop-all-products",
+        "bg_color": "#0A1A4F",
+        "overlay_color": "#0A1A4F",
+        "overlay_opacity": 45
+      }
+    },
+    "tf_benefits": {
+      "type": "tf-sns-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "savings", "title": "Save every order", "text": "30% off your first order, 15% off every refill." } },
+        "b2": { "type": "benefit", "settings": { "icon": "shipping", "title": "Free shipping", "text": "Every subscription order ships free in the US." } },
+        "b3": { "type": "benefit", "settings": { "icon": "schedule", "title": "Your schedule", "text": "Choose how often it arrives, change it anytime." } },
+        "b4": { "type": "benefit", "settings": { "icon": "flexibility", "title": "Full flexibility", "text": "Skip, pause, or cancel whenever you want." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "eyebrow": "WHY SUBSCRIBE",
+        "headline": "Built to save you money and hassle."
+      }
+    },
+    "tf_steps": {
+      "type": "tf-sns-steps",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Shop your favorites", "text": "Pick the TrueFit and AminoLean products you want on repeat." } },
+        "s2": { "type": "step", "settings": { "title": "Choose Subscribe & Save", "text": "Select your delivery schedule, 30, 45, or 60 days, and customize it anytime." } },
+        "s3": { "type": "step", "settings": { "title": "Check out and relax", "text": "We ship it automatically and you save on every delivery." } }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "eyebrow": "HOW IT WORKS",
+        "headline": "Subscribing takes a minute."
+      }
+    },
+    "tf_products": {
+      "type": "tf-sns-products",
+      "blocks": {
+        "p1": { "type": "product_card", "settings": { "product": "truefit-chocolate" } },
+        "p2": { "type": "product_card", "settings": { "product": "truefit-vanilla" } },
+        "p3": { "type": "product_card", "settings": { "product": "creatine-mono" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "eyebrow": "SUBSCRIBER FAVORITES",
+        "headline": "Subscribe to a top product."
+      }
+    },
+    "tf_social": {
+      "type": "tf-sns-social",
+      "settings": {
+        "show_stars": true,
+        "rating": 5,
+        "eyebrow": "JOIN THE CLUB",
+        "headline": "Thousands stay stocked and save with a TrueFit subscription.",
+        "meta": "Rated 4.8 out of 5 across verified reviews."
+      }
+    },
+    "tf_faq": {
+      "type": "tf-sns-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How much do I save with a subscription?", "answer": "<p>You save 30% on your first subscription order and 15% on every order after, plus free shipping on every delivery within the US.</p>" } },
+        "f2": { "type": "faq", "settings": { "question": "How do I subscribe?", "answer": "<p>On any eligible product page, choose the Subscribe & Save option, pick your delivery frequency, and check out. We take care of the rest.</p>" } },
+        "f3": { "type": "faq", "settings": { "question": "Can I change how often it ships?", "answer": "<p>Yes. Choose a 30, 45, or 60 day schedule at checkout, then customize it to any frequency from your account anytime.</p>" } },
+        "f4": { "type": "faq", "settings": { "question": "Can I skip, pause, or cancel?", "answer": "<p>Anytime, with no fees. Manage everything from Manage Your Subscriptions in your account in a couple of taps.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {
+        "eyebrow": "QUESTIONS",
+        "headline": "Subscription questions, answered.",
+        "cta_text": "View all FAQs",
+        "cta_link": "shopify://pages/subscribe-and-save-faqs"
+      }
+    }
+  },
+  "order": ["tf_hero", "tf_benefits", "tf_steps", "tf_products", "tf_social", "tf_faq"]
+}

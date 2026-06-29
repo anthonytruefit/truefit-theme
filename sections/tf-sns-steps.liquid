@@ -1,0 +1,77 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsstep { background: {{ s.background }}; padding: 5.6rem 0; }
+  #shopify-section-{{ section.id }} .snsstep__head { text-align: center; max-width: 56rem; margin: 0 auto 3.6rem; }
+  #shopify-section-{{ section.id }} .snsstep__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsstep__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsstep__grid { display: flex; flex-direction: column; gap: 2.8rem; max-width: 60rem; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .snsstep__item { display: flex; align-items: flex-start; gap: 1.6rem; text-align: left; }
+  #shopify-section-{{ section.id }} .snsstep__num { flex: 0 0 auto; width: 3.6rem; height: 3.6rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.6rem; background: {{ s.badge_bg }}; color: {{ s.badge_text }}; }
+  #shopify-section-{{ section.id }} .snsstep__title { margin: 0.4rem 0 0.3rem; font-size: 1.7rem; font-weight: 600; color: {{ s.title_color }}; }
+  #shopify-section-{{ section.id }} .snsstep__text { margin: 0; font-size: 1.4rem; line-height: 1.55; color: {{ s.text_color }}; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsstep { padding: 8rem 0; }
+    #shopify-section-{{ section.id }} .snsstep__grid { flex-direction: row; max-width: none; gap: 3.2rem; }
+    #shopify-section-{{ section.id }} .snsstep__item { flex: 1 1 0; flex-direction: column; align-items: center; text-align: center; gap: 1.4rem; }
+  }
+{%- endstyle -%}
+
+<div class="snsstep">
+  <div class="page-width">
+    <div class="snsstep__head">
+      {%- if s.eyebrow != blank -%}<p class="snsstep__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="snsstep__headline">{{ s.headline }}</h2>{%- endif -%}
+    </div>
+    <div class="snsstep__grid">
+      {%- for block in section.blocks -%}
+        <div class="snsstep__item" {{ block.shopify_attributes }}>
+          <span class="snsstep__num">{{ forloop.index }}</span>
+          <div class="snsstep__body">
+            {%- if block.settings.title != blank -%}<p class="snsstep__title">{{ block.settings.title }}</p>{%- endif -%}
+            {%- if block.settings.text != blank -%}<p class="snsstep__text">{{ block.settings.text }}</p>{%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S How it works",
+  "tag": "section",
+  "max_blocks": 5,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "HOW IT WORKS" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Subscribing takes a minute." },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "color", "id": "badge_bg", "label": "Number badge background", "default": "#0A1A4F" },
+    { "type": "color", "id": "badge_text", "label": "Number badge text", "default": "#FFFFFF" },
+    { "type": "color", "id": "title_color", "label": "Step title color", "default": "#0A1A4F" },
+    { "type": "color", "id": "text_color", "label": "Step text color", "default": "#40738D" },
+    { "type": "range", "id": "headline_size", "min": 26, "max": 44, "step": 1, "unit": "px", "label": "Headline max size", "default": 34 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Choose your products" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Pick the products you want delivered on repeat." }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "S&S How it works",
+    "blocks": [
+      { "type": "step", "settings": { "title": "Choose your products", "text": "Pick the products you want delivered on repeat." } },
+      { "type": "step", "settings": { "title": "Set your frequency", "text": "Tell us how often to send them, change it anytime." } },
+      { "type": "step", "settings": { "title": "Save on every delivery", "text": "Sit back and save, every order ships automatically." } }
+    ]
+  }]
+}
+{% endschema %}

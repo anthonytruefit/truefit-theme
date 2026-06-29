@@ -1,0 +1,84 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsb { background: {{ s.background }}; padding: 5.6rem 0; }
+  #shopify-section-{{ section.id }} .snsb__head { text-align: center; max-width: 56rem; margin: 0 auto 3.6rem; }
+  #shopify-section-{{ section.id }} .snsb__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsb__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsb__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.4rem 1.6rem; }
+  #shopify-section-{{ section.id }} .snsb__item { text-align: center; }
+  #shopify-section-{{ section.id }} .snsb__icon { width: 4rem; height: 4rem; margin: 0 auto 1.2rem; color: {{ s.icon_color }}; }
+  #shopify-section-{{ section.id }} .snsb__icon svg { width: 100%; height: 100%; display: block; }
+  #shopify-section-{{ section.id }} .snsb__title { margin: 0 0 0.4rem; font-size: 1.6rem; font-weight: 600; color: {{ s.title_color }}; }
+  #shopify-section-{{ section.id }} .snsb__text { margin: 0; font-size: 1.3rem; line-height: 1.55; color: {{ s.text_color }}; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsb { padding: 8rem 0; }
+    #shopify-section-{{ section.id }} .snsb__grid { grid-template-columns: repeat({{ section.blocks.size | at_most: 4 }}, 1fr); gap: 3.2rem; }
+  }
+{%- endstyle -%}
+
+<div class="snsb">
+  <div class="page-width">
+    <div class="snsb__head">
+      {%- if s.eyebrow != blank -%}<p class="snsb__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="snsb__headline">{{ s.headline }}</h2>{%- endif -%}
+    </div>
+    <div class="snsb__grid">
+      {%- for block in section.blocks -%}
+        <div class="snsb__item" {{ block.shopify_attributes }}>
+          <span class="snsb__icon">{%- render 'tf-sns-icon', name: block.settings.icon -%}</span>
+          {%- if block.settings.title != blank -%}<p class="snsb__title">{{ block.settings.title }}</p>{%- endif -%}
+          {%- if block.settings.text != blank -%}<p class="snsb__text">{{ block.settings.text }}</p>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S Benefits",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WHY SUBSCRIBE" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Built to save you money and hassle." },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FCFCEA" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#0A1A4F" },
+    { "type": "color", "id": "title_color", "label": "Benefit title color", "default": "#0A1A4F" },
+    { "type": "color", "id": "text_color", "label": "Benefit text color", "default": "#40738D" },
+    { "type": "range", "id": "headline_size", "min": 26, "max": 44, "step": 1, "unit": "px", "label": "Headline max size", "default": 34 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "savings", "options": [
+          { "value": "savings", "label": "Savings" },
+          { "value": "shipping", "label": "Shipping" },
+          { "value": "schedule", "label": "Schedule" },
+          { "value": "flexibility", "label": "Flexibility" },
+          { "value": "leaf", "label": "Leaf" },
+          { "value": "shield", "label": "Shield" },
+          { "value": "heart", "label": "Heart" }
+        ] },
+        { "type": "text", "id": "title", "label": "Title", "default": "Save every order" },
+        { "type": "text", "id": "text", "label": "Text", "default": "30% off your first order, 15% off every refill." }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "S&S Benefits",
+    "blocks": [
+      { "type": "benefit", "settings": { "icon": "savings", "title": "Save every order", "text": "30% off your first order, 15% off every refill." } },
+      { "type": "benefit", "settings": { "icon": "shipping", "title": "Free shipping", "text": "Every subscription order ships free." } },
+      { "type": "benefit", "settings": { "icon": "schedule", "title": "Your schedule", "text": "Choose how often it arrives, change it anytime." } },
+      { "type": "benefit", "settings": { "icon": "flexibility", "title": "Full flexibility", "text": "Skip, pause, or cancel whenever you want." } }
+    ]
+  }]
+}
+{% endschema %}

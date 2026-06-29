@@ -1,0 +1,91 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsfaq { background: {{ s.background }}; padding: 5.6rem 0; }
+  #shopify-section-{{ section.id }} .snsfaq__head { text-align: center; max-width: 56rem; margin: 0 auto 3.2rem; }
+  #shopify-section-{{ section.id }} .snsfaq__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__list { max-width: 68rem; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .snsfaq__item { border-bottom: 0.1rem solid {{ s.divider_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__item[open] .snsfaq__icon { transform: rotate(45deg); }
+  #shopify-section-{{ section.id }} .snsfaq__q { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; padding: 2rem 0.4rem; font-size: 1.6rem; font-weight: 500; color: {{ s.q_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__q::-webkit-details-marker { display: none; }
+  #shopify-section-{{ section.id }} .snsfaq__icon { flex: 0 0 auto; width: 1.8rem; height: 1.8rem; transition: transform 0.2s ease; color: {{ s.icon_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__a { padding: 0 0.4rem 2.2rem; font-size: 1.4rem; line-height: 1.65; color: {{ s.a_color }}; }
+  #shopify-section-{{ section.id }} .snsfaq__a > :first-child { margin-top: 0; }
+  #shopify-section-{{ section.id }} .snsfaq__a > :last-child { margin-bottom: 0; }
+  #shopify-section-{{ section.id }} .snsfaq__cta-wrap { text-align: center; margin-top: 3.2rem; }
+  #shopify-section-{{ section.id }} .snsfaq__cta { display: inline-flex; align-items: center; justify-content: center; min-height: 4.8rem; padding: 1.2rem 2.8rem; border-radius: 0.8rem; font-weight: 600; font-size: 1.4rem; text-decoration: none; background: transparent; color: {{ s.cta_color }}; border: 0.15rem solid {{ s.cta_color }}; transition: background 0.2s ease, color 0.2s ease; }
+  #shopify-section-{{ section.id }} .snsfaq__cta:hover { background: {{ s.cta_color }}; color: {{ s.cta_hover_text }}; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsfaq { padding: 8rem 0; }
+  }
+{%- endstyle -%}
+
+<div class="snsfaq">
+  <div class="page-width">
+    <div class="snsfaq__head">
+      {%- if s.eyebrow != blank -%}<p class="snsfaq__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="snsfaq__headline">{{ s.headline }}</h2>{%- endif -%}
+    </div>
+    <div class="snsfaq__list">
+      {%- for block in section.blocks -%}
+        <details class="snsfaq__item" {{ block.shopify_attributes }}>
+          <summary class="snsfaq__q">
+            <span>{{ block.settings.question }}</span>
+            <svg class="snsfaq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <div class="snsfaq__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+    {%- if s.cta_text != blank -%}
+      <div class="snsfaq__cta-wrap">
+        <a class="snsfaq__cta" href="{{ s.cta_link | default: '#' }}">{{ s.cta_text }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "QUESTIONS" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Subscription questions, answered." },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "Read all FAQs" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Headline", "default": "#0A1A4F" },
+    { "type": "color", "id": "q_color", "label": "Question", "default": "#0A1A4F" },
+    { "type": "color", "id": "a_color", "label": "Answer", "default": "#40738D" },
+    { "type": "color", "id": "icon_color", "label": "Toggle icon", "default": "#40738D" },
+    { "type": "color", "id": "divider_color", "label": "Divider", "default": "#E2E5EC" },
+    { "type": "color", "id": "cta_color", "label": "Button", "default": "#0A1A4F" },
+    { "type": "color", "id": "cta_hover_text", "label": "Button text on hover", "default": "#FFFFFF" },
+    { "type": "range", "id": "headline_size", "min": 26, "max": 44, "step": 1, "unit": "px", "label": "Headline max size", "default": 34 }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "How much do I save?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>You save 30% on your first subscription order and 15% on every order after, plus free shipping.</p>" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "S&S FAQ",
+    "blocks": [
+      { "type": "faq", "settings": { "question": "How much do I save with a subscription?", "answer": "<p>You save 30% on your first subscription order and 15% on every order after, plus free shipping on every delivery.</p>" } },
+      { "type": "faq", "settings": { "question": "Can I change how often it ships?", "answer": "<p>Yes. You choose the delivery frequency at checkout and can change it anytime from your account.</p>" } },
+      { "type": "faq", "settings": { "question": "Can I skip, pause, or cancel?", "answer": "<p>Anytime, with no fees. Manage everything from your account in a couple of taps.</p>" } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,0 +1,85 @@
+{%- liquid
+  assign s = section.settings
+  assign has_image = false
+  if s.image != blank or s.mobile_image != blank
+    assign has_image = true
+  endif
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsh {
+    position: relative;
+    background-color: {{ s.bg_color }};
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: {{ s.min_height_mobile }}px;
+    padding: 5.6rem 2rem;
+  }
+  #shopify-section-{{ section.id }} .snsh__media { position: absolute; inset: 0; z-index: 0; }
+  #shopify-section-{{ section.id }} .snsh__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #shopify-section-{{ section.id }} .snsh__img--desktop { display: none; }
+  #shopify-section-{{ section.id }} .snsh__overlay { position: absolute; inset: 0; z-index: 1; background: {{ s.overlay_color }}; opacity: {{ s.overlay_opacity | divided_by: 100.0 }}; }
+  #shopify-section-{{ section.id }} .snsh__content { position: relative; z-index: 2; max-width: 64rem; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .snsh__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsh__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.08; font-size: clamp(3rem, 8vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsh__support { margin: 1.6rem auto 0; max-width: 52ch; font-size: 1.5rem; line-height: 1.6; color: {{ s.support_color }}; }
+  #shopify-section-{{ section.id }} .snsh__cta { display: inline-flex; align-items: center; justify-content: center; min-height: 5rem; margin-top: 2.8rem; padding: 1.4rem 3rem; border-radius: 0.8rem; font-weight: 600; font-size: 1.5rem; text-decoration: none; background: {{ s.cta_bg }}; color: {{ s.cta_text_color }}; border: 0.1rem solid {{ s.cta_bg }}; transition: opacity 0.2s ease; }
+  #shopify-section-{{ section.id }} .snsh__cta:hover { opacity: 0.9; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsh { min-height: {{ s.min_height }}px; padding: 8rem 2rem; }
+    #shopify-section-{{ section.id }} .snsh__img--desktop { display: block; }
+    #shopify-section-{{ section.id }} .snsh__img--mobile { display: none; }
+  }
+{%- endstyle -%}
+
+<div class="snsh">
+  {%- if has_image -%}
+    <div class="snsh__media">
+      {%- assign desktop_src = s.image | default: s.mobile_image -%}
+      {%- assign mobile_src = s.mobile_image | default: s.image -%}
+      <img class="snsh__img snsh__img--mobile" src="{{ mobile_src | image_url: width: 900 }}" srcset="{{ mobile_src | image_url: width: 600 }} 600w, {{ mobile_src | image_url: width: 1100 }} 1100w" sizes="100vw" alt="{{ mobile_src.alt | escape }}" loading="eager" width="{{ mobile_src.width }}" height="{{ mobile_src.height }}">
+      <img class="snsh__img snsh__img--desktop" src="{{ desktop_src | image_url: width: 2000 }}" srcset="{{ desktop_src | image_url: width: 1100 }} 1100w, {{ desktop_src | image_url: width: 2000 }} 2000w" sizes="100vw" alt="{{ desktop_src.alt | escape }}" loading="eager" width="{{ desktop_src.width }}" height="{{ desktop_src.height }}">
+    </div>
+    <div class="snsh__overlay"></div>
+  {%- endif -%}
+  <div class="snsh__content">
+    {%- if s.eyebrow != blank -%}<p class="snsh__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+    {%- if s.headline != blank -%}<h1 class="snsh__headline">{{ s.headline }}</h1>{%- endif -%}
+    {%- if s.support_line != blank -%}<p class="snsh__support">{{ s.support_line }}</p>{%- endif -%}
+    {%- if s.cta_text != blank -%}<a class="snsh__cta" href="{{ s.cta_link | default: '#' }}">{{ s.cta_text }}</a>{%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S Hero",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "THE SERVINGS CLUB" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Never run out. Always save." },
+    { "type": "textarea", "id": "support_line", "label": "Supporting line", "default": "30% off your first order, 15% off every refill, free shipping, and cancel anytime." },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "Start saving" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "header", "content": "Background" },
+    { "type": "paragraph", "content": "Leave the images empty to use the solid background color. Add an image to use a photo background with the overlay below." },
+    { "type": "color", "id": "bg_color", "label": "Solid background (no image)", "default": "#0A1A4F" },
+    { "type": "image_picker", "id": "image", "label": "Background image (desktop)" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Background image (mobile)" },
+    { "type": "color", "id": "overlay_color", "label": "Image overlay color", "default": "#0A1A4F" },
+    { "type": "range", "id": "overlay_opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "label": "Image overlay opacity", "default": 45 },
+    { "type": "header", "content": "Type colors & size" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#86BCE8" },
+    { "type": "color", "id": "headline_color", "label": "Headline", "default": "#FFFFFF" },
+    { "type": "color", "id": "support_color", "label": "Supporting line", "default": "#FFFFFF" },
+    { "type": "color", "id": "cta_bg", "label": "Button background", "default": "#FFFFFF" },
+    { "type": "color", "id": "cta_text_color", "label": "Button text", "default": "#0A1A4F" },
+    { "type": "range", "id": "headline_size", "min": 36, "max": 72, "step": 2, "unit": "px", "label": "Headline max size", "default": 56 },
+    { "type": "range", "id": "min_height", "min": 360, "max": 720, "step": 20, "unit": "px", "label": "Min height (desktop)", "default": 480 },
+    { "type": "range", "id": "min_height_mobile", "min": 320, "max": 600, "step": 20, "unit": "px", "label": "Min height (mobile)", "default": 420 }
+  ],
+  "presets": [{ "name": "S&S Hero" }]
+}
+{% endschema %}
