@@ -142,6 +142,15 @@
             "badge": ""
           }
         },
+        "drawer_featured_product_fR8emb": {
+          "type": "drawer_featured_product",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "title": "AminoLean Recovery",
+            "description": "Hydrating electrolytes with 5g of vegan amino acids and nootropic mushrooms to refuel body and mind.",
+            "badge": ""
+          }
+        },
         "1b0f8d24-d421-488f-999a-0b6951facb5a": {
           "type": "shop_menu_desktop",
           "settings": {
@@ -223,6 +232,7 @@
         "drawer_featured_product_g3GUAw",
         "drawer_featured_product_AQJzQ6",
         "drawer_featured_product_tnG4Tm",
+        "drawer_featured_product_fR8emb",
         "1b0f8d24-d421-488f-999a-0b6951facb5a",
         "656b74cb-689f-47e1-911b-5d86b576a760",
         "drawer_account_links_aDgUML",
