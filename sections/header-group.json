@@ -111,7 +111,7 @@
           "settings": {
             "label": "Subscribe & Save",
             "mode": "direct",
-            "link": "shopify://pages/subscribe-and-save",
+            "link": "",
             "menu": "tf-subscribe"
           }
         },
