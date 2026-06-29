@@ -112,7 +112,7 @@
             "label": "Subscribe & Save",
             "mode": "direct",
             "link": "shopify://pages/subscribe-and-save",
-            "menu": ""
+            "menu": "tf-subscribe"
           }
         },
         "drawer_featured_product_g3GUAw": {
