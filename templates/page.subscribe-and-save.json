@@ -132,42 +132,36 @@
       "blocks": {
         "p1": {
           "type": "product_card",
-          "settings": {
-            "product": "truefit-chocolate",
-            "title": "",
-            "description": ""
-          }
+          "settings": { "product": "truefit-chocolate", "title": "", "description": "" }
         },
         "p2": {
           "type": "product_card",
-          "settings": {
-            "product": "truefit-vanilla",
-            "title": "",
-            "description": ""
-          }
+          "settings": { "product": "truefit-vanilla", "title": "", "description": "" }
         },
         "p3": {
           "type": "product_card",
-          "settings": {
-            "product": "creatine-mono",
-            "title": "",
-            "description": ""
-          }
+          "settings": { "product": "creatine-mono", "title": "", "description": "" }
+        },
+        "p4": {
+          "type": "product_card",
+          "settings": { "product": "aminolean-pink-lemonade", "title": "", "description": "" }
         },
         "product_card_RDfpwr": {
           "type": "product_card",
-          "settings": {
-            "product": "aminolean-recovery-blood-orange",
-            "title": "AminoLean Recovery + Hydration",
-            "description": ""
-          }
+          "settings": { "product": "aminolean-recovery-blood-orange", "title": "AminoLean Recovery + Hydration", "description": "" }
+        },
+        "p6": {
+          "type": "product_card",
+          "settings": { "product": "aminolean-fruit-punch", "title": "", "description": "" }
         }
       },
       "block_order": [
         "p1",
         "p2",
         "p3",
-        "product_card_RDfpwr"
+        "p4",
+        "product_card_RDfpwr",
+        "p6"
       ],
       "settings": {
         "eyebrow": "SUBSCRIBER FAVORITES",
