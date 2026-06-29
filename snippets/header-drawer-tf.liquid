@@ -89,14 +89,16 @@
                         {%- endif -%}
                       </span>
                       <span class="tfdrawer__feat-body">
-                        <span class="tfdrawer__feat-name">{{ f.settings.title | default: fp.title | default: 'Featured product' }}</span>
+                        <span class="tfdrawer__feat-headrow">
+                          <span class="tfdrawer__feat-name">{{ f.settings.title | default: fp.title | default: 'Featured product' }}</span>
+                          {%- if f.settings.badge != blank -%}
+                            <span class="tfdrawer__feat-badge">{{ f.settings.badge }}</span>
+                          {%- endif -%}
+                        </span>
                         {%- if f.settings.description != blank -%}
                           <span class="tfdrawer__feat-desc">{{ f.settings.description }}</span>
                         {%- endif -%}
                       </span>
-                      {%- if f.settings.badge != blank -%}
-                        <span class="tfdrawer__feat-badge">{{ f.settings.badge }}</span>
-                      {%- endif -%}
                     </a>
                   </li>
                 {%- endfor -%}

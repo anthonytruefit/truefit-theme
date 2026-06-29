@@ -114,20 +114,21 @@
   justify-content: center;
 }
 .tfdrawer__feat-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 0.6rem; }
-.tfdrawer__feat-body { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; flex: 1 1 auto; }
+.tfdrawer__feat-body { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; flex: 1 1 auto; }
+.tfdrawer__feat-headrow { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
 .tfdrawer__feat-name { font-size: 1.4rem; font-weight: 600; color: #0a1a4f; }
 .tfdrawer__feat-desc { font-size: 1.2rem; line-height: 1.4; color: #40738d; }
 .tfdrawer__feat-badge {
   flex: 0 0 auto;
-  align-self: flex-start;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 999px;
   background: #c9a86a;
   color: #0a1a4f;
+  white-space: nowrap;
 }
 
 /* 5. Bottom utility */

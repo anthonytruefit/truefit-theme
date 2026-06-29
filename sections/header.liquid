@@ -59,8 +59,29 @@
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
 
+{%- comment -%} Desktop Shop dropdown prefers the new "Menu featured product" blocks (shared with the mobile drawer). {%- endcomment -%}
+{%- assign tf_featured_blocks = section.blocks | where: 'type', 'drawer_featured_product' -%}
+{%- if tf_featured_blocks.size > 0 -%}
+  {%- capture featured_shop_items -%}
+    {%- for block in tf_featured_blocks -%}
+      {%- assign fp = block.settings.product -%}
+      {%- assign fimg = block.settings.image | default: fp.featured_image -%}
+      <li {{ block.shopify_attributes }}>
+        <a class="shop-featured-menu__item" href="{{ fp.url | default: '#' }}">
+          <div class="shop-featured-menu__item-image-wrapper global-media-settings">
+            {%- if fimg != blank -%}{{ fimg | image_url: width: 180 | image_tag: loading: 'lazy', width: 90, sizes: '90px', widths: '90, 180, 270' }}{%- endif -%}
+          </div>
+          <div class="shop-featured-menu__item-content">
+            <div class="shop-featured-menu__item-title">{{ block.settings.title | default: fp.title }}</div>
+            <div class="shop-featured-menu__item-description">{{ block.settings.description }}</div>
+          </div>
+        </a>
+      </li>
+    {%- endfor -%}
+  {%- endcapture -%}
+{%- endif -%}
 {%- assign featured_shop_blocks = section.blocks | where: 'type', 'shop_featured_item' -%}
-{%- if featured_shop_blocks.size > 0 -%}
+{%- if featured_shop_items == blank and featured_shop_blocks.size > 0 -%}
   {%- capture featured_shop_items -%}
     {%- for block in featured_shop_blocks -%}
       <li {{ block.shopify_attributes }}>
