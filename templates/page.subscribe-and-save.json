@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "tf_hero": {
@@ -8,49 +17,174 @@
         "support_line": "30% off your first order, 15% off every refill, free shipping, and cancel anytime.",
         "cta_text": "Start saving",
         "cta_link": "shopify://collections/shop-all-products",
-        "bg_color": "#0A1A4F",
-        "overlay_color": "#0A1A4F",
-        "overlay_opacity": 45
+        "bg_color": "#0a1a4f",
+        "overlay_color": "#0a1a4f",
+        "overlay_opacity": 45,
+        "eyebrow_color": "#86bce8",
+        "headline_color": "#ffffff",
+        "support_color": "#ffffff",
+        "cta_bg": "#ffffff",
+        "cta_text_color": "#0a1a4f",
+        "headline_size": 56,
+        "min_height": 480,
+        "min_height_mobile": 420
       }
     },
     "tf_benefits": {
       "type": "tf-sns-benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "savings", "title": "Save every order", "text": "30% off your first order, 15% off every refill." } },
-        "b2": { "type": "benefit", "settings": { "icon": "shipping", "title": "Free shipping", "text": "Every subscription order ships free in the US." } },
-        "b3": { "type": "benefit", "settings": { "icon": "schedule", "title": "Your schedule", "text": "Choose how often it arrives, change it anytime." } },
-        "b4": { "type": "benefit", "settings": { "icon": "flexibility", "title": "Full flexibility", "text": "Skip, pause, or cancel whenever you want." } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Save every order",
+            "text": "30% off your first order, 15% off every refill."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free shipping",
+            "text": "Every subscription order ships free in the US."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "schedule",
+            "title": "Your schedule",
+            "text": "Choose how often it arrives, change it anytime."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "flexibility",
+            "title": "Full flexibility",
+            "text": "Skip, pause, or cancel whenever you want."
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
         "eyebrow": "WHY SUBSCRIBE",
-        "headline": "Built to save you money and hassle."
+        "headline": "Built to save you money and hassle.",
+        "background": "#fcfcea",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
+        "icon_color": "#0a1a4f",
+        "title_color": "#0a1a4f",
+        "text_color": "#40738d",
+        "headline_size": 34
       }
     },
     "tf_steps": {
       "type": "tf-sns-steps",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Shop your favorites", "text": "Pick the TrueFit and AminoLean products you want on repeat." } },
-        "s2": { "type": "step", "settings": { "title": "Choose Subscribe & Save", "text": "Select your delivery schedule, 30, 45, or 60 days, and customize it anytime." } },
-        "s3": { "type": "step", "settings": { "title": "Check out and relax", "text": "We ship it automatically and you save on every delivery." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Shop your favorites",
+            "text": "Pick the TrueFit and AminoLean products you want on repeat."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Choose Subscribe & Save",
+            "text": "Select your delivery schedule, 30, 45, or 60 days, and customize it anytime."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Check out and relax",
+            "text": "We ship it automatically and you save on every delivery."
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "HOW IT WORKS",
-        "headline": "Subscribing takes a minute."
+        "headline": "Subscribing takes a minute.",
+        "background": "#ffffff",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
+        "badge_bg": "#0a1a4f",
+        "badge_text": "#ffffff",
+        "title_color": "#0a1a4f",
+        "text_color": "#40738d",
+        "headline_size": 34
       }
     },
     "tf_products": {
       "type": "tf-sns-products",
       "blocks": {
-        "p1": { "type": "product_card", "settings": { "product": "truefit-chocolate" } },
-        "p2": { "type": "product_card", "settings": { "product": "truefit-vanilla" } },
-        "p3": { "type": "product_card", "settings": { "product": "creatine-mono" } }
+        "p1": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-chocolate",
+            "title": "",
+            "description": ""
+          }
+        },
+        "p2": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "title": "",
+            "description": ""
+          }
+        },
+        "p3": {
+          "type": "product_card",
+          "settings": {
+            "product": "creatine-mono",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_RDfpwr": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "title": "AminoLean Recovery + Hydration",
+            "description": ""
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "product_card_RDfpwr"
+      ],
       "settings": {
         "eyebrow": "SUBSCRIBER FAVORITES",
-        "headline": "Subscribe to a top product."
+        "headline": "Subscribe to a top product.",
+        "button_label": "View details",
+        "background": "#fcfcea",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
+        "card_bg": "#ffffff",
+        "media_bg": "#ffffff",
+        "card_border": "#efefe2",
+        "title_color": "#0a1a4f",
+        "price_color": "#0a1a4f",
+        "text_color": "#40738d",
+        "btn_bg": "#0a1a4f",
+        "btn_text": "#ffffff",
+        "headline_size": 34
       }
     },
     "tf_social": {
@@ -60,25 +194,77 @@
         "rating": 5,
         "eyebrow": "JOIN THE CLUB",
         "headline": "Thousands stay stocked and save with a TrueFit subscription.",
-        "meta": "Rated 4.8 out of 5 across verified reviews."
+        "meta": "Rated 4.8 out of 5 across verified reviews.",
+        "background": "#0a1a4f",
+        "star_color": "#c9a86a",
+        "eyebrow_color": "#86bce8",
+        "headline_color": "#ffffff",
+        "meta_color": "#86bce8",
+        "headline_size": 32
       }
     },
     "tf_faq": {
       "type": "tf-sns-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "How much do I save with a subscription?", "answer": "<p>You save 30% on your first subscription order and 15% on every order after, plus free shipping on every delivery within the US.</p>" } },
-        "f2": { "type": "faq", "settings": { "question": "How do I subscribe?", "answer": "<p>On any eligible product page, choose the Subscribe & Save option, pick your delivery frequency, and check out. We take care of the rest.</p>" } },
-        "f3": { "type": "faq", "settings": { "question": "Can I change how often it ships?", "answer": "<p>Yes. Choose a 30, 45, or 60 day schedule at checkout, then customize it to any frequency from your account anytime.</p>" } },
-        "f4": { "type": "faq", "settings": { "question": "Can I skip, pause, or cancel?", "answer": "<p>Anytime, with no fees. Manage everything from Manage Your Subscriptions in your account in a couple of taps.</p>" } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "How much do I save with a subscription?",
+            "answer": "<p>You save 30% on your first subscription order and 15% on every order after, plus free shipping on every delivery within the US.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I subscribe?",
+            "answer": "<p>On any eligible product page, choose the Subscribe & Save option, pick your delivery frequency, and check out. We take care of the rest.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change how often it ships?",
+            "answer": "<p>Yes. Choose a 30, 45, or 60 day schedule at checkout, then customize it to any frequency from your account anytime.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I skip, pause, or cancel?",
+            "answer": "<p>Anytime, with no fees. Manage everything from Manage Your Subscriptions in your account in a couple of taps.</p>"
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
       "settings": {
         "eyebrow": "QUESTIONS",
         "headline": "Subscription questions, answered.",
         "cta_text": "View all FAQs",
-        "cta_link": "shopify://pages/subscribe-and-save-faqs"
+        "cta_link": "shopify://pages/subscribe-and-save-faqs",
+        "background": "#ffffff",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
+        "q_color": "#0a1a4f",
+        "a_color": "#40738d",
+        "icon_color": "#40738d",
+        "divider_color": "#e2e5ec",
+        "cta_color": "#0a1a4f",
+        "cta_hover_text": "#ffffff",
+        "headline_size": 34
       }
     }
   },
-  "order": ["tf_hero", "tf_benefits", "tf_steps", "tf_products", "tf_social", "tf_faq"]
+  "order": [
+    "tf_hero",
+    "tf_benefits",
+    "tf_steps",
+    "tf_products",
+    "tf_social",
+    "tf_faq"
+  ]
 }
