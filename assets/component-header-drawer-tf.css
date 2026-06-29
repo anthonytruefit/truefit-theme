@@ -19,8 +19,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.tfdrawer__logo-link { display: inline-flex; color: #0a1a4f; }
-.tfdrawer__logo { width: 13rem; height: auto; color: #0a1a4f; display: block; }
+.tfdrawer__logo-link { display: inline-flex; align-items: center; color: #0a1a4f; min-width: 0; flex: 0 1 auto; }
+.tfdrawer__logo { width: 18rem; max-width: 100%; height: auto; color: #0a1a4f; display: block; }
 .tfdrawer__close {
   flex: 0 0 auto;
   width: 4.4rem;
