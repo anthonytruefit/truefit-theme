@@ -15,7 +15,7 @@
   endif
 
   assign has_drawer_content = false
-  assign drawer_block_types = 'shop_featured_item,drawer_shop_card,drawer_submenu,drawer_account_links' | split: ','
+  assign drawer_block_types = 'shop_featured_item,drawer_shop_card,drawer_submenu,drawer_account_links,drawer_button,drawer_nav_row,drawer_featured_product' | split: ','
   for block in section.blocks
     if drawer_block_types contains block.type
       assign has_drawer_content = true
@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-header-drawer-tf.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-header-drawer-tf.css' | asset_url | stylesheet_tag }}</noscript>
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.predictive_search_enabled -%}
@@ -247,7 +249,7 @@
   <header class="header header--{{ logo_position }} header--mobile-{{ mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if has_drawer_content %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if has_drawer_content
-        render 'header-drawer-aminolean', root_url: root_url, featured_shop_items: featured_shop_items, featured_shop_cards: featured_shop_cards, template_store: template_store, section: section
+        render 'header-drawer-tf', root_url: root_url, section: section
       elsif section.settings.enable_search
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
@@ -590,6 +592,8 @@
   "name": "t:sections.header.name",
   "class": "section-header",
   "settings": [
+    { "type": "header", "content": "Mobile menu" },
+    { "type": "text", "id": "featured_label", "label": "Featured eyebrow label", "default": "FEATURED" },
     {
       "type": "select",
       "id": "menu_type_desktop",
@@ -913,6 +917,44 @@
           "id": "url",
           "label": "Link"
         }
+      ]
+    },
+    {
+      "type": "drawer_button",
+      "name": "Menu button",
+      "limit": 2,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Shop All" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "select", "id": "style", "label": "Style", "default": "filled", "options": [
+          { "value": "filled", "label": "Filled (navy)" },
+          { "value": "outlined", "label": "Outlined (navy)" }
+        ] }
+      ]
+    },
+    {
+      "type": "drawer_nav_row",
+      "name": "Menu nav row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Best Sellers" },
+        { "type": "select", "id": "mode", "label": "Type", "default": "expandable", "options": [
+          { "value": "expandable", "label": "Expandable (sub-menu)" },
+          { "value": "direct", "label": "Direct link" }
+        ] },
+        { "type": "url", "id": "link", "label": "Link (for direct rows)" },
+        { "type": "link_list", "id": "menu", "label": "Sub-menu (for expandable rows)" }
+      ]
+    },
+    {
+      "type": "drawer_featured_product",
+      "name": "Menu featured product",
+      "limit": 3,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "title", "label": "Name override (optional)" },
+        { "type": "image_picker", "id": "image", "label": "Thumbnail override (optional)" },
+        { "type": "text", "id": "description", "label": "One-line description" },
+        { "type": "text", "id": "badge", "label": "Badge (optional)" }
       ]
     }
   ]

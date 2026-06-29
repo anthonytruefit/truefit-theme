@@ -1,0 +1,194 @@
+/* Premium menu — single design for the mobile drawer AND the desktop "Shop"
+   mega-menu. Calm/restrained: navy #0A1A4F, white, cream #FCFCEA, vanilla
+   #40738D, hairline #E2E5EC, gold #C9A86A badge, subtle radius, generous
+   spacing, comfortable tap targets. */
+
+/* ============================ MOBILE DRAWER ============================ */
+.tfdrawer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.6rem 2rem 2.4rem;
+  background: #ffffff;
+  min-height: 100%;
+}
+
+/* 1. Top bar */
+.tfdrawer__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tfdrawer__logo-link { display: inline-flex; color: #0a1a4f; }
+.tfdrawer__logo { width: 13rem; height: auto; color: #0a1a4f; display: block; }
+.tfdrawer__close {
+  flex: 0 0 auto;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  color: #0a1a4f;
+  cursor: pointer;
+  margin-right: -0.8rem;
+}
+.tfdrawer__close svg { width: 2rem; height: 2rem; }
+
+/* 2. Quick-action buttons */
+.tfdrawer__buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.tfdrawer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.tfdrawer__btn:hover { opacity: 0.9; }
+.tfdrawer__btn--filled { background: #0a1a4f; color: #ffffff; border: 0.1rem solid #0a1a4f; }
+.tfdrawer__btn--outlined { background: #ffffff; color: #0a1a4f; border: 0.1rem solid #0a1a4f; }
+
+/* 3. Nav rows */
+.tfdrawer__nav { display: flex; flex-direction: column; }
+.tfdrawer__row { border-top: 0.1rem solid #e2e5ec; }
+.tfdrawer__nav .tfdrawer__row:last-of-type { border-bottom: 0.1rem solid #e2e5ec; }
+.tfdrawer__rowlabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 5.2rem;
+  padding: 1.2rem 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #0a1a4f;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+}
+.tfdrawer__rowlabel::-webkit-details-marker { display: none; }
+.tfdrawer__chevron { width: 1.8rem; height: 1.8rem; color: #40738d; flex: 0 0 auto; transition: transform 0.2s ease; }
+.tfdrawer__row--expandable[open] .tfdrawer__chevron { transform: rotate(180deg); }
+.tfdrawer__sublist { display: flex; flex-direction: column; padding: 0 0 1.2rem; margin: 0; }
+.tfdrawer__sublink {
+  display: flex;
+  align-items: center;
+  min-height: 4.4rem;
+  padding: 0.8rem 0 0.8rem 1.2rem;
+  font-size: 1.4rem;
+  color: #40738d;
+  text-decoration: none;
+}
+.tfdrawer__sublink--active { color: #0a1a4f; font-weight: 600; }
+
+/* 4. Featured products */
+.tfdrawer__featured { display: flex; flex-direction: column; gap: 1.2rem; }
+.tfdrawer__eyebrow {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #40738d;
+  font-weight: 600;
+}
+.tfdrawer__featured-list { display: flex; flex-direction: column; gap: 1.2rem; margin: 0; }
+.tfdrawer__feat-link { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; }
+.tfdrawer__feat-thumb {
+  flex: 0 0 auto;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.8rem;
+  background: #fcfcea;
+  border: 0.1rem solid #e2e5ec;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tfdrawer__feat-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 0.6rem; }
+.tfdrawer__feat-body { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; flex: 1 1 auto; }
+.tfdrawer__feat-name { font-size: 1.4rem; font-weight: 600; color: #0a1a4f; }
+.tfdrawer__feat-desc { font-size: 1.2rem; line-height: 1.4; color: #40738d; }
+.tfdrawer__feat-badge {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #c9a86a;
+  color: #0a1a4f;
+}
+
+/* 5. Bottom utility */
+.tfdrawer__utility {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-top: 1.6rem;
+  border-top: 0.1rem solid #e2e5ec;
+}
+.tfdrawer__account { display: flex; align-items: center; gap: 0.8rem; }
+.tfdrawer__util-link { font-size: 1.3rem; font-weight: 500; color: #0a1a4f; text-decoration: none; }
+.tfdrawer__util-sep { color: #c7ccd6; }
+.tfdrawer__social { display: flex; gap: 1.2rem; margin: 0; padding: 0; }
+.tfdrawer__social .list-social__link { color: #0a1a4f; padding: 0.4rem; }
+.tfdrawer__social .list-social__link svg { width: 1.8rem; height: 1.8rem; }
+
+/* ======================= DESKTOP "SHOP" MEGA-MENU ======================= */
+/* Restyle the existing featured items to the same clean look as the drawer:
+   small product-on-white thumbnail + navy title + vanilla one-liner. */
+@media screen and (min-width: 990px) {
+  .header__submenu--shop-featured {
+    background: #ffffff;
+    border-radius: 1.2rem;
+    padding: 1.6rem;
+  }
+  .shop-featured-menu__item {
+    display: flex !important;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .shop-featured-menu__item:hover { background: #fcfcea; }
+  .shop-featured-menu__item-image-wrapper {
+    flex: 0 0 auto;
+    width: 5.6rem !important;
+    height: 5.6rem !important;
+    border-radius: 0.8rem;
+    background: #fcfcea;
+    border: 0.1rem solid #e2e5ec;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shop-featured-menu__item-image-wrapper img { width: 100% !important; height: 100% !important; object-fit: contain; padding: 0.5rem; }
+  .shop-featured-menu__item-title { font-size: 1.4rem; font-weight: 600; color: #0a1a4f; }
+  .shop-featured-menu__item-description { font-size: 1.2rem; line-height: 1.4; color: #40738d; }
+
+  /* Shop-cards path: calm the tiles to cream/navy + subtle radius */
+  .header__submenu--shop-cards { background: #ffffff; border-radius: 1.2rem; padding: 1.6rem; }
+  .shop-cards-menu__item { padding: 0.6rem; }
+  .shop-cards-menu__item .global-media-settings,
+  .shop-cards-menu__item .media {
+    border-radius: 0.8rem !important;
+    background: #fcfcea;
+    border: 0.1rem solid #e2e5ec;
+  }
+  .shop-cards-menu__item a { color: #0a1a4f !important; }
+}
