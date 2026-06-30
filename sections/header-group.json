@@ -133,6 +133,15 @@
             "badge": ""
           }
         },
+        "drawer_featured_product_Q676xR": {
+          "type": "drawer_featured_product",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "title": "AminoLean Energy Natural",
+            "description": "A naturally sweetened version of our top-selling energy powder.",
+            "badge": ""
+          }
+        },
         "drawer_featured_product_tnG4Tm": {
           "type": "drawer_featured_product",
           "settings": {
@@ -231,6 +240,7 @@
         "drawer_nav_row_BGNH86",
         "drawer_featured_product_g3GUAw",
         "drawer_featured_product_AQJzQ6",
+        "drawer_featured_product_Q676xR",
         "drawer_featured_product_tnG4Tm",
         "drawer_featured_product_fR8emb",
         "1b0f8d24-d421-488f-999a-0b6951facb5a",
