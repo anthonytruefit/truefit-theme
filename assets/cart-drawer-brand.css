@@ -1,0 +1,28 @@
+/* ==========================================================================
+   TrueFit cart drawer brand pass (COSMETIC, scoped to .cart-drawer only)
+   --------------------------------------------------------------------------
+   - White product image tiles (was a blue-gray rgba(--color-foreground,.065)
+     tint in aminolean.css), mirroring the PDP gallery whitening.
+   - Subtle 8px corners instead of pills: retargets the radius CSS variables
+     within the drawer (quantity stepper, buttons, image tiles). The global
+     button/input radius is left untouched, this only affects the cart drawer.
+   Loaded after aminolean.css in theme.liquid head.
+   ========================================================================== */
+
+/* Subtle radius for everything in the drawer (stepper, buttons, inputs).
+   Setting the vars here lets them inherit to all descendants; the theme's
+   border-radius rules read these vars, so no per-element overrides needed. */
+.cart-drawer {
+  --inputs-radius: 8px;
+  --inputs-radius-outset: 8px;
+  --buttons-radius: 8px;
+  --buttons-radius-outset: 8px;
+}
+
+/* Product image tiles: clean white, subtle 8px corners.
+   !important beats aminolean.css's higher-specificity .rsp-amino-styles rules. */
+.cart-drawer .cart-item__media,
+.cart-drawer .drawer__cart-items-wrapper .cart-item__media {
+  background-color: #ffffff !important;
+  --media-radius: 8px !important;
+}
