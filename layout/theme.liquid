@@ -300,6 +300,9 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'aminolean.css' | asset_url | stylesheet_tag }}
 
+    {%- comment -%} Draws/updates the cart count badge from the live cart, source-agnostic {%- endcomment -%}
+    <script src="{{ 'cart-bubble-sync.js' | asset_url }}" defer="defer"></script>
+
     {%- liquid
       render 'vite-tag' with 'main.js'
     -%}
