@@ -74,6 +74,7 @@
         },
         "custom_flavor_swatch_pHe4Xf": {
           "type": "custom_flavor_swatch",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
             "caption": "Chocolate",
