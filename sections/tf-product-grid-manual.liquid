@@ -1,0 +1,96 @@
+{%- comment -%}
+  Manual product grid — same cards as the default collection page
+  (card-product-tf), but populated by product-picker blocks in the editor
+  instead of a collection. Built for the bundle landing page, reusable anywhere.
+{%- endcomment -%}
+{{ 'component-card-product-tf.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .tfpg { background: {{ s.background }}; padding: {{ s.padding_top }}px 0 {{ s.padding_bottom }}px; }
+  #shopify-section-{{ section.id }} .tfpg__head { text-align: center; max-width: 56rem; margin: 0 auto 3.6rem; }
+  #shopify-section-{{ section.id }} .tfpg__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .tfpg__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .tfpg__placeholder { display: flex; align-items: center; justify-content: center; min-height: 28rem; border: 0.1rem dashed rgba(10,26,79,0.25); border-radius: 1.2rem; color: #40738d; font-size: 1.3rem; }
+{%- endstyle -%}
+
+<div class="tfpg">
+  <div class="page-width">
+    {%- if s.eyebrow != blank or s.heading != blank -%}
+      <div class="tfpg__head">
+        {%- if s.eyebrow != blank -%}<p class="tfpg__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        {%- if s.heading != blank -%}<h2 class="tfpg__headline">{{ s.heading }}</h2>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <ul
+      class="grid product-grid grid--{{ s.columns_mobile }}-col-tablet-down grid--{{ s.columns_desktop }}-col-desktop"
+      role="list"
+    >
+      {%- for block in section.blocks -%}
+        {%- assign p = block.settings.product -%}
+        {%- assign lazy = false -%}
+        {%- if forloop.index > 2 -%}{%- assign lazy = true -%}{%- endif -%}
+        {%- if p != blank -%}
+          <li
+            class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            {% render 'card-product-tf', card_product: p, lazy_load: lazy, view_label: s.view_label %}
+          </li>
+        {%- elsif request.design_mode -%}
+          <li class="grid__item" {{ block.shopify_attributes }}>
+            <div class="tfpg__placeholder">Select a product for this card</div>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TF Product Grid (manual)",
+  "tag": "section",
+  "max_blocks": 24,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SHOP BUNDLES" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Build your routine." },
+    { "type": "text", "id": "view_label", "label": "Card button label", "default": "View Details" },
+    { "type": "paragraph", "content": "Each card pulls its title, description, flavor line, subscribe price, and badge from the product's metafields (custom namespace), exactly like the collection page cards. Add a card per product below." },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "columns_desktop", "min": 2, "max": 5, "step": 1, "label": "Columns (desktop)", "default": 4 },
+    { "type": "select", "id": "columns_mobile", "label": "Columns (mobile)", "default": "2", "options": [
+      { "value": "1", "label": "1" },
+      { "value": "2", "label": "2" }
+    ] },
+    { "type": "header", "content": "Colors & spacing" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Heading", "default": "#0A1A4F" },
+    { "type": "range", "id": "headline_size", "min": 26, "max": 44, "step": 1, "unit": "px", "label": "Heading max size", "default": 34 },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "TF Product Grid (manual)",
+    "blocks": [
+      { "type": "product_card" },
+      { "type": "product_card" },
+      { "type": "product_card" },
+      { "type": "product_card" }
+    ]
+  }]
+}
+{% endschema %}
