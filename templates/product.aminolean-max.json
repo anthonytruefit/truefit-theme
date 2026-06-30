@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "TrueFit Protein",
+            "title": "AminoLean Energy MAX",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is protein, elevated. We pair 25g of grass-fed whey with prebiotic fiber and 1 billion CFU probiotics, because protein only counts if your body can put it to use. Real ingredients, built for real absorption.",
+            "text": "AminoLean MAX helps increase blood flow, enhance energy levels and boost focus, giving you the ability to go harder, faster, and longer.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,33 +53,11 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
-            "caption": "Vanilla",
-            "size_text": "20 servings",
-            "tag_text": "Best Seller",
-            "link_product": "truefit-vanilla",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_zikHKM": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
-            "caption": "Chocolate",
-            "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
-            "link_product": "truefit-chocolate",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_pHe4Xf": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/AminoLeanMAX_MauiPineapple_25Serv_112223-02_Front_HighRes.png",
+            "caption": "Maui Pineapple",
+            "size_text": "25 servings",
+            "tag_text": "",
+            "link_product": "aminolean-max-natural-maui-pineapple",
             "link": ""
           }
         },
@@ -156,7 +134,7 @@
           "settings": {
             "heading": "Frequently bought together",
             "companion_1": "creatine-mono",
-            "companion_2": "vegan-aminolean-acai",
+            "companion_2": "truefit-chocolate",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
             "fbt_card_radius": 12,
@@ -176,8 +154,6 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
-        "custom_flavor_swatch_zikHKM",
-        "custom_flavor_swatch_pHe4Xf",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -279,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit is a clean, all-in-one protein built to power weight loss, muscle gain, and better daily nutrition. Every scoop combines 25g of grass-fed whey with fiber, prebiotics and probiotics to support smooth digestion, fight bloating, and help your body actually use the protein you’re taking in. Its balanced macros keep you full for hours, curb cravings, and make staying on track feel effortless. With thoughtfully sourced ingredients and zero unnecessary junk, TrueFit delivers big results—fueling strength, recovery, and feel-good performance day after day.</p>",
+            "tab_1_text": "<p>Introducing <strong>AminoLean MAX</strong>,a higher stim, nootropic pre-workout version of the Original. AminoLean MAX can help you push your fitness goals further and maximize your results. Whether you're going for pure endurance or maximum output, AminoLean MAX helps increase blood flow, enhance energy levels and boost focus, giving you the ability to go harder, faster, and longer.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -288,8 +264,8 @@
             "tab_1_caption_6": "",
             "tab_2_enabled": true,
             "tab_2_heading": "Nutrition",
-            "tab_2_content_type": "gallery",
-            "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
+            "tab_2_content_type": "text",
+            "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 Scoop (11.17g)</p><p>Servings Per Container: 30</p><p>Amount Per Serving%DV*<strong>Premium Pump & Performance Matrix</strong>Beta Alanine<strong>1,600 mg**</strong>Nitrosigine® (Inositol-Stabilized Arginine Silicate)<strong>1,500 mg**Complete EAA + BCAA Matrix</strong>BCAA 2:1 :1 (Instantized)<strong>1,500 mg**</strong>L-Lysine<strong>250 mg**</strong>L-Methionine<strong>250 mg**</strong>L-Threonine<strong>250 mg**</strong>L-Phenylalanine<strong>175 mg**</strong>L-Tryptophan<strong>50 mg**</strong>L-Histidine<strong>25 mgClean Energy & Nootropic Focus Matrix</strong>Alpha GPC &lcub;L-alpha-glycerylphosphorylcholine)<strong>300 mg</strong>**Natural Caffeine &lcub;from Coffea robusta)(as lnnovaBean®)<strong>150 mg</strong>**L-Tyrosine<strong>250 mg</strong>**Alpinia galanga<strong>200 mg</strong>**<strong>* Percent Daily Values are based on a 2,000 calorie diet.** Daily Value (DV) not established</strong></p><p><strong>OTHER INGREDIENTS: </strong>Natural Flavors, Citirc Acid, Malic Acid, Sodium Gluconate, Silicon Dioxide, Stevia, Xantham Gum, Beat Root Powder</p><h4>WARNING</h4><p><strong>***Total Caffeine from all sources is equal to 250mg per serving.</strong></p><p><strong>WARNING: </strong>Keep out of reach of children. Consult your physician before using this product if you are taking any medication or under a physician's care for a medical condition. Not for use for those under the age 18, women that are pregnant, trying to get pregnant, or nursing, or those that are sensitive to caffeine and beta-alanine. Do not consume caffeine from other sources while taking this product as too much caffeine may cause nervousness, irritability, sleeplessness, and occasionally, rapid heartbeat. Discontinue use two weeks prior to surgery.</p><p>ΔTHESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</p>",
             "tab_2_image_1": "shopify://shop_images/Screen_Shot_2026-03-31_at_9.54.25_AM.png",
             "tab_2_caption_1": "Vanilla",
             "tab_2_caption_2": "",
@@ -301,7 +277,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.</p>",
+            "tab_3_text": "<p>Take one serving (1 scoop) of AminoLean MAX mixed with 8-12 fl. oz. of water 20-30 minutes before training. </p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -339,6 +315,7 @@
     },
     "c20591e7-b7e5-44b6-b04f-95fc0866f0a7": {
       "type": "aminolean-video-quote",
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
@@ -451,33 +428,33 @@
         "point_hWg9jP": {
           "type": "point",
           "settings": {
-            "icon": "muscle",
+            "icon": "speedometer",
             "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "25g Grass-Fed Whey Protein"
+            "label": "250mg Natural Caffeine"
           }
         },
         "point_hyMUKF": {
           "type": "point",
           "settings": {
-            "icon": "gut_health",
+            "icon": "muscle",
             "icon_image": "shopify://shop_images/icomoon-free--lab.svg",
-            "label": "Fiber & Probiotics"
+            "label": "Vegan Amino Acids"
           }
         },
         "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "vegan",
+            "icon": "weights",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Non-GMO Superfoods"
+            "label": "Pump Enhancing"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
-            "icon": "custom_image",
+            "icon": "brain",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Grass-Fed"
+            "label": "Nootropics"
           }
         },
         "point_K89Tja": {
@@ -491,9 +468,9 @@
         "point_JB96ni": {
           "type": "point",
           "settings": {
-            "icon": "no_artificial_flavors",
+            "icon": "sugar_free",
             "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
+            "label": "Zero Sugar"
           }
         }
       },
@@ -508,7 +485,7 @@
       "name": "TrueFit Standard",
       "settings": {
         "eyebrow": "STAY TRUE",
-        "heading": "Complete Nutrition Without Compromise",
+        "heading": "Energy without compromise",
         "text": "",
         "columns_mobile": "3",
         "columns_desktop": 6,
@@ -625,6 +602,7 @@
         "row_PMWqcU",
         "row_TU4nPC"
       ],
+      "disabled": true,
       "name": "Us vs. Them Comparison",
       "settings": {
         "background": "#ffffff",
@@ -712,6 +690,7 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2",
         "4959ee0d-d1fe-4639-92fc-81e688e40b63"
       ],
+      "disabled": true,
       "settings": {}
     },
     "tf_social_proof_eV8jkB": {
@@ -798,6 +777,7 @@
         "card_A7JCMV",
         "card_a8xDTJ"
       ],
+      "disabled": true,
       "name": "Social Proof",
       "settings": {
         "eyebrow": "REAL PEOPLE, REAL RESULTS",
