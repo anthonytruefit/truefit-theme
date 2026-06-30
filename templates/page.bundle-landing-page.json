@@ -1,1 +1,232 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"blocks_xMPQfr":{"type":"_blocks","blocks":{"ai_gen_block_ff5da89_3UeMjg":{"type":"ai_gen_block_ff5da89","settings":{"heading":"Your Routine, Pre-Built.","heading_font":"poppins_n7","heading_size":48,"mobile_heading_size":38,"heading_color":"#0a1a4f","heading_line_height":1,"heading_letter_spacing":1.5,"heading_margin_bottom":8,"subheading":"Clean, goal-focused bundles that pair our flavors with exactly what your routine needs. Nothing fake, every ingredient earned.","subheading_font":"poppins_n4","subheading_size":18,"mobile_subheading_size":16,"subheading_color":"#40738d","subheading_line_height":1.5,"subheading_letter_spacing":-1,"text_alignment":"center","desktop_width_percent":100,"padding_top":40,"padding_bottom":8,"padding_left":20,"padding_right":20,"mobile_padding_top":24,"mobile_padding_bottom":24,"mobile_padding_left":16,"mobile_padding_right":16},"blocks":{}},"ai_gen_block_5cc6b82_WJWmPJ":{"type":"ai_gen_block_5cc6b82","settings":{"desktop_width_percent":85,"section_padding_top":40,"section_padding_bottom":48,"columns_desktop":4,"columns_mobile":"2","card_gap":8,"card_background":"#fcfcea","card_padding":20,"card_border_radius":12,"card_shadow_opacity":30,"image_border_radius":4,"image_margin_bottom":12,"tag_background":"#0a1a4f","tag_text_color":"#ffffff","tag_font_size":10,"tag_font_weight":"500","tag_padding_vertical":2,"tag_padding_horizontal":8,"tag_border_radius":6,"title_color":"#0a1a4f","title_font_size":18,"title_font_weight":"600","title_margin_bottom":8,"description_color":"#40738d","description_font_size":14,"description_font_weight":"400","description_margin_bottom":16,"price_color":"#0a1a4f","price_font_size":18,"price_font_weight":"700","price_margin_bottom":12,"compare_price_color":"#40738d","compare_price_font_size":14,"compare_price_font_weight":"400","button_text":"Add to Cart","button_background":"#86bce8","button_hover_background":"#40738d","button_text_color":"#f6eed7","button_font_size":14,"button_font_size_mobile":12,"button_font_weight":"600","button_padding_vertical":10,"button_padding_horizontal":16,"button_padding_vertical_mobile":8,"button_padding_horizontal_mobile":12,"button_border_radius":20,"product_1":"bundle-protein-creatine","image_1":"shopify:\/\/shop_images\/TrueFitCreatinBundle.png","title_1":"Creatine Bundle","description_1":"Our two best-selling TrueFit flavors paired with single-ingredient creatine to support strength, brain health, and healthy aging.","price_1":"$109.99","compare_price_1":"$139.99","show_tag_1":true,"tag_1":"Save 20%","product_2":"bundle-protein-recovery","image_2":"shopify:\/\/shop_images\/TrueFitRecoverybundl2_copy.png","title_2":"Recovery Bundle","description_2":"Everything you need to refuel and recover: both TrueFit flavors plus AminoLean Recovery, with plant-based aminos, electrolytes, and nootropic mushrooms.","price_2":"$109.99","compare_price_2":"$139.99","show_tag_2":true,"tag_2":"Save 20%","product_3":"bundle-protein-energy","image_3":"shopify:\/\/shop_images\/TrueFitEnergyBundle.png","title_3":"Energy Bundle","description_3":"Chocolate, Vanilla, and AminoLean Pre Workout: fueled by natural caffeine from green tea, it's the cleanest way to power your day and workouts.","price_3":"$109.99","compare_price_3":"$139.99","show_tag_3":true,"tag_3":"Save 20%","product_4":"truefit-flavor-bundle-1-chocolate-1-vanilla","image_4":"shopify:\/\/shop_images\/TrueFitbundle.png","title_4":"TrueFit Multi Pack","description_4":"Our two best-selling TrueFit flavors in one bundle — so you never have to choose between Chocolate and Vanilla.","price_4":"$93.49","compare_price_4":"$109.99","show_tag_4":true,"tag_4":"Save 15%"},"blocks":{}}},"block_order":["ai_gen_block_ff5da89_3UeMjg","ai_gen_block_5cc6b82_WJWmPJ"],"settings":{}},"featured_collection_6tLPHQ":{"type":"featured-collection","disabled":true,"name":"t:sections.featured-collection.presets.name","settings":{"title":"Featured collection","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"best-sellers-truefit","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":true,"enable_quick_add":true,"columns_mobile":"1","swipe_on_mobile":true,"padding_top":24,"padding_bottom":36}}},"order":["main","blocks_xMPQfr","featured_collection_6tLPHQ"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "blocks_xMPQfr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ff5da89_3UeMjg": {
+          "type": "ai_gen_block_ff5da89",
+          "settings": {
+            "heading": "Your Routine, Pre-Built.",
+            "heading_font": "poppins_n7",
+            "heading_size": 48,
+            "mobile_heading_size": 38,
+            "heading_color": "#0a1a4f",
+            "heading_line_height": 1,
+            "heading_letter_spacing": 1.5,
+            "heading_margin_bottom": 8,
+            "subheading": "Clean, goal-focused bundles that pair our flavors with exactly what your routine needs. Nothing fake, every ingredient earned.",
+            "subheading_font": "poppins_n4",
+            "subheading_size": 18,
+            "mobile_subheading_size": 16,
+            "subheading_color": "#40738d",
+            "subheading_line_height": 1.5,
+            "subheading_letter_spacing": -1,
+            "text_alignment": "center",
+            "desktop_width_percent": 100,
+            "padding_top": 40,
+            "padding_bottom": 8,
+            "padding_left": 20,
+            "padding_right": 20,
+            "mobile_padding_top": 24,
+            "mobile_padding_bottom": 24,
+            "mobile_padding_left": 16,
+            "mobile_padding_right": 16
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5cc6b82_WJWmPJ": {
+          "type": "ai_gen_block_5cc6b82",
+          "settings": {
+            "desktop_width_percent": 85,
+            "section_padding_top": 40,
+            "section_padding_bottom": 48,
+            "columns_desktop": 4,
+            "columns_mobile": "2",
+            "card_gap": 8,
+            "card_background": "#fcfcea",
+            "card_padding": 20,
+            "card_border_radius": 12,
+            "card_shadow_opacity": 30,
+            "image_border_radius": 4,
+            "image_margin_bottom": 12,
+            "tag_background": "#0a1a4f",
+            "tag_text_color": "#ffffff",
+            "tag_font_size": 10,
+            "tag_font_weight": "500",
+            "tag_padding_vertical": 2,
+            "tag_padding_horizontal": 8,
+            "tag_border_radius": 6,
+            "title_color": "#0a1a4f",
+            "title_font_size": 18,
+            "title_font_weight": "600",
+            "title_margin_bottom": 8,
+            "description_color": "#40738d",
+            "description_font_size": 14,
+            "description_font_weight": "400",
+            "description_margin_bottom": 16,
+            "price_color": "#0a1a4f",
+            "price_font_size": 18,
+            "price_font_weight": "700",
+            "price_margin_bottom": 12,
+            "compare_price_color": "#40738d",
+            "compare_price_font_size": 14,
+            "compare_price_font_weight": "400",
+            "button_text": "Add to Cart",
+            "button_background": "#86bce8",
+            "button_hover_background": "#40738d",
+            "button_text_color": "#f6eed7",
+            "button_font_size": 14,
+            "button_font_size_mobile": 12,
+            "button_font_weight": "600",
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 16,
+            "button_padding_vertical_mobile": 8,
+            "button_padding_horizontal_mobile": 12,
+            "button_border_radius": 20,
+            "product_1": "bundle-protein-creatine",
+            "image_1": "shopify://shop_images/TrueFitCreatinBundle.png",
+            "title_1": "Creatine Bundle",
+            "description_1": "Our two best-selling TrueFit flavors paired with single-ingredient creatine to support strength, brain health, and healthy aging.",
+            "price_1": "$109.99",
+            "compare_price_1": "$139.99",
+            "show_tag_1": true,
+            "tag_1": "Save 20%",
+            "product_2": "bundle-protein-recovery",
+            "image_2": "shopify://shop_images/TrueFitRecoverybundl2_copy.png",
+            "title_2": "Recovery Bundle",
+            "description_2": "Everything you need to refuel and recover: both TrueFit flavors plus AminoLean Recovery, with plant-based aminos, electrolytes, and nootropic mushrooms.",
+            "price_2": "$109.99",
+            "compare_price_2": "$139.99",
+            "show_tag_2": true,
+            "tag_2": "Save 20%",
+            "product_3": "bundle-protein-energy",
+            "image_3": "shopify://shop_images/TrueFitEnergyBundle.png",
+            "title_3": "Energy Bundle",
+            "description_3": "Chocolate, Vanilla, and AminoLean Pre Workout: fueled by natural caffeine from green tea, it's the cleanest way to power your day and workouts.",
+            "price_3": "$109.99",
+            "compare_price_3": "$139.99",
+            "show_tag_3": true,
+            "tag_3": "Save 20%",
+            "product_4": "truefit-flavor-bundle-1-chocolate-1-vanilla",
+            "image_4": "shopify://shop_images/TrueFitbundle.png",
+            "title_4": "TrueFit Multi Pack",
+            "description_4": "Our two best-selling TrueFit flavors in one bundle — so you never have to choose between Chocolate and Vanilla.",
+            "price_4": "$93.49",
+            "compare_price_4": "$109.99",
+            "show_tag_4": true,
+            "tag_4": "Save 15%"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ff5da89_3UeMjg",
+        "ai_gen_block_5cc6b82_WJWmPJ"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_6tLPHQ": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "best-sellers-truefit",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 24,
+        "padding_bottom": 36
+      }
+    },
+    "tf_product_grid_manual_L6aTYG": {
+      "type": "tf-product-grid-manual",
+      "blocks": {
+        "product_card_rJk9Ed": {
+          "type": "product_card",
+          "settings": {
+            "product": "bundle-protein-creatine"
+          }
+        },
+        "product_card_BacYQt": {
+          "type": "product_card",
+          "settings": {
+            "product": "bundle-protein-energy"
+          }
+        },
+        "product_card_V6Jhyz": {
+          "type": "product_card",
+          "settings": {
+            "product": "bundle-protein-recovery"
+          }
+        },
+        "product_card_EK3ABD": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-flavor-bundle-1-chocolate-1-vanilla"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_rJk9Ed",
+        "product_card_BacYQt",
+        "product_card_V6Jhyz",
+        "product_card_EK3ABD"
+      ],
+      "name": "TF Product Grid (manual)",
+      "settings": {
+        "eyebrow": "SHOP BUNDLES",
+        "heading": "Build your routine.",
+        "view_label": "View Details",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "background": "#FFFFFF",
+        "eyebrow_color": "#40738D",
+        "headline_color": "#0A1A4F",
+        "headline_size": 34,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blocks_xMPQfr",
+    "featured_collection_6tLPHQ",
+    "tf_product_grid_manual_L6aTYG"
+  ]
+}
