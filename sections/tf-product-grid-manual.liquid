@@ -13,6 +13,8 @@
   #shopify-section-{{ section.id }} .tfpg__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
   #shopify-section-{{ section.id }} .tfpg__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.6rem, 5vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
   #shopify-section-{{ section.id }} .tfpg__placeholder { display: flex; align-items: center; justify-content: center; min-height: 28rem; border: 0.1rem dashed rgba(10,26,79,0.25); border-radius: 1.2rem; color: #40738d; font-size: 1.3rem; }
+  /* Allow a longer card description in this section only (collection page card stays 3 lines) */
+  #shopify-section-{{ section.id }} .cptf__desc { -webkit-line-clamp: {{ s.desc_lines }}; }
 {%- endstyle -%}
 
 <div class="tfpg">
@@ -66,6 +68,7 @@
       { "value": "1", "label": "1" },
       { "value": "2", "label": "2" }
     ] },
+    { "type": "range", "id": "desc_lines", "min": 2, "max": 6, "step": 1, "label": "Description lines", "default": 4, "info": "Max lines before the card description is cut off." },
     { "type": "header", "content": "Colors & spacing" },
     { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" },
     { "type": "color", "id": "eyebrow_color", "label": "Eyebrow", "default": "#40738D" },
