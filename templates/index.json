@@ -380,9 +380,9 @@
             "product": "truefit-chocolate",
             "custom_title": "TrueFit Protein - Chocolate",
             "subscribe_price": "$38.33",
-            "badge_text": "Top Reviewed",
-            "badge_background": "#86bce8",
-            "badge_text_color": "#ffffff",
+            "badge_text": "Best Seller",
+            "badge_background": "#0A1A4F",
+            "badge_text_color": "#F6EED7",
             "badge_size": "medium",
             "bullet_1": "25g grass-fed protein to build & retain muscle",
             "bullet_2": "Fiber + probiotics for digestion & gut health",
@@ -395,7 +395,7 @@
             "product": "truefit-vanilla",
             "custom_title": "TrueFit Protein - Vanilla",
             "subscribe_price": "$38.33",
-            "badge_text": "Best Seller",
+            "badge_text": "",
             "badge_background": "#0a1a4f",
             "badge_text_color": "#f6eed7",
             "badge_size": "medium",
@@ -423,7 +423,7 @@
           "type": "card",
           "settings": {
             "product": "vegan-aminolean-acai",
-            "custom_title": "AminoLean Pre Workout - Acai",
+            "custom_title": "AminoLean Energy - Acai",
             "subscribe_price": "$20.20",
             "badge_text": "Best Seller",
             "badge_background": "#0a1a4f",
@@ -449,11 +449,26 @@
             "bullet_3": "Nootropic mushrooms for mental focus"
           }
         },
+        "card_KqyNbQ": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-pink-lemonade",
+            "custom_title": "AminoLean Energy - Pink Lemonade",
+            "subscribe_price": "",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#F6EED7",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
         "card_UUNDVN": {
           "type": "card",
           "settings": {
             "product": "aminolean-pre-workout-berry-alixir",
-            "custom_title": "AminoLean Pre Workout - Berry Elxir",
+            "custom_title": "AminoLean Energy - Berry Elixir",
             "subscribe_price": "$20.20",
             "badge_text": "",
             "badge_background": "#0a1a4f",
@@ -471,6 +486,7 @@
         "card_kXFAdn",
         "card_cHrX93",
         "card_aFYUxU",
+        "card_KqyNbQ",
         "card_UUNDVN"
       ],
       "name": "TrueFit Best Sellers",
