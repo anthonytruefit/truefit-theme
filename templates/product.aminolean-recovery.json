@@ -56,7 +56,7 @@
             "image": "shopify://shop_images/AminoLeanRECOVERY_OrangeSplash_30Serv_080825-13_Front_HighRes.png",
             "caption": "Orange Splash",
             "size_text": "30 servings",
-            "tag_text": "Best Seller",
+            "tag_text": "",
             "link_product": "aminolean-recovery-blood-orange",
             "link": ""
           }
@@ -67,7 +67,7 @@
             "image": "shopify://shop_images/AminoLeanRECOVERY_TropicalPunch_30Serv_080825-13_Front_HighRes.png",
             "caption": "Tropical Punch",
             "size_text": "30 servings",
-            "tag_text": "",
+            "tag_text": "Best Seller",
             "link_product": "aminolean-recovery-tropical-island-punch",
             "link": ""
           }
