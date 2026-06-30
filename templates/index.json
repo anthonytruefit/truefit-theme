@@ -1353,17 +1353,17 @@
         "our_check_color": "#c9a86a",
         "our_x_color": "",
         "c1_label": "Synthetic Protein Powder",
-        "c1_bg": "#eef2f4",
+        "c1_bg": "#FCFCEA",
         "c1_cell_color": "#40738d",
         "c1_check_color": "#40738d",
         "c1_x_color": "#40738d",
         "c2_label": "Overpriced Greens Powder",
-        "c2_bg": "#eef2f4",
+        "c2_bg": "#FCFCEA",
         "c2_cell_color": "#40738d",
         "c2_check_color": "#40738d",
         "c2_x_color": "#40738d",
         "check_color": "#0a1a4f",
-        "x_color": "#c2c7d0"
+        "x_color": "#40738D"
       }
     },
     "tf_shop_category_TG7pyM": {
