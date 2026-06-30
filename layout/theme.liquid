@@ -299,8 +299,6 @@
     {{ 'tw-reset.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'aminolean.css' | asset_url | stylesheet_tag }}
-    {%- comment -%} Cosmetic overrides for the Monk cart-drawer widgets (light DOM, injected at runtime) {%- endcomment -%}
-    {{ 'monk-overrides.css' | asset_url | stylesheet_tag }}
 
     {%- liquid
       render 'vite-tag' with 'main.js'
