@@ -94,6 +94,16 @@
   font-weight: 600;
   font-size: 1.5rem;
   color: var(--cptf-price, #0a1a4f);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.cptf__compare {
+  font-weight: 400;
+  color: var(--cptf-muted, #40738d);
+  text-decoration: line-through;
 }
 
 .cptf__subscribe {
