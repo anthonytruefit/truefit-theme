@@ -43,16 +43,24 @@
   line-height: 1.4 !important;
 }
 
-/* Track (the full-width background the fill sits on) */
+/* Track / container pill — subtle cream (matches the PDP Gift Tracker).
+   background-image:none kills any default tint/gradient Monk ships here. */
 .mr-embedded-widget--cvb .mr-embedded-widget__progress-bar-con {
-  background: #e2e5ec !important;
-  border-radius: 999px !important;
+  background: #fcfcea !important;
+  background-image: none !important;
+  border-radius: 1.6rem !important;
   overflow: visible !important;
 }
 
-/* Fill (navy). Recolor ONLY — width is Monk's live progress, left untouched. */
-.mr-embedded-widget--cvb .mr-progress-bar-con__bar {
+/* Fill — force navy, including any gradient or pseudo-element Monk uses for
+   the "milestones reached" state (that was rendering green). We recolor only,
+   never the width (that is Monk's live progress). */
+.mr-embedded-widget--cvb .mr-progress-bar-con__bar,
+.mr-embedded-widget--cvb .mr-progress-bar-con__bar > *,
+.mr-embedded-widget--cvb .mr-progress-bar-con__bar::before,
+.mr-embedded-widget--cvb .mr-progress-bar-con__bar::after {
   background: #0a1a4f !important;
+  background-image: none !important;
   border-radius: 999px !important;
 }
 
