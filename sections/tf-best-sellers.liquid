@@ -324,8 +324,9 @@
                   <a href="#" class="tfbs__title">Select a product</a>
                 {%- endif -%}
 
-                {%- if block.settings.subscribe_price != blank -%}
-                  <div class="tfbs__subscribe">{{ block.settings.subscribe_price }} when you <a href="{{ product.url | default: '#' }}" class="tfbs__subscribe-link">subscribe</a></div>
+                {%- assign sub_price = product.metafields.custom.subscribe_price.value | default: block.settings.subscribe_price -%}
+                {%- if sub_price != blank -%}
+                  <div class="tfbs__subscribe">{{ sub_price }} when you <a href="{{ product.url | default: '#' }}" class="tfbs__subscribe-link">subscribe</a></div>
                 {%- endif -%}
 
                 {%- liquid
@@ -510,8 +511,8 @@
         {
           "type": "text",
           "id": "subscribe_price",
-          "label": "Subscribe price",
-          "info": "Free text shown beneath the regular price as \"… when you subscribe\". Example: $41.99"
+          "label": "Subscribe price (fallback)",
+          "info": "Auto-pulled from the product metafield custom.subscribe_price. This field is only used if that metafield is empty. Example: $41.99"
         },
         {
           "type": "header",
