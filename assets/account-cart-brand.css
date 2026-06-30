@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Account pages + cart page brand pass (COSMETIC, scoped)
+   --------------------------------------------------------------------------
+   These pages were stock Dawn. This brings them onto the TrueFit system:
+   subtle 8px radius (vs the global pills), navy tightened headings, and the
+   ReCharge "Manage Subscriptions" entry as a proper navy button.
+   Scoped to .customer (all account pages) and the cart page wrappers, so it
+   can't affect other pages. Loaded globally in theme.liquid.
+   ========================================================================== */
+
+/* ---------- Account / customer pages ---------- */
+.customer {
+  --inputs-radius: 8px;
+  --inputs-radius-outset: 8px;
+  --buttons-radius: 8px;
+  --buttons-radius-outset: 8px;
+}
+
+.customer h1,
+.customer .customer__title {
+  color: #0a1a4f;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.customer h2 {
+  color: #0a1a4f;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+/* ReCharge "Manage Subscriptions" entry -> navy button */
+.customer .tf-subs-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  margin-top: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 8px;
+  background: #0a1a4f;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.customer .tf-subs-link:hover {
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+/* ---------- Cart page (not the drawer) ---------- */
+.cart__items,
+.cart__footer,
+.cart__warnings {
+  --inputs-radius: 8px;
+  --inputs-radius-outset: 8px;
+  --buttons-radius: 8px;
+  --buttons-radius-outset: 8px;
+}
+
+.cart__items .title--primary,
+.cart__warnings h1,
+.cart__warnings h2,
+.cart__login-title {
+  color: #0a1a4f;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
