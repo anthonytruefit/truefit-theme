@@ -301,6 +301,8 @@
     {{ 'aminolean.css' | asset_url | stylesheet_tag }}
     {%- comment -%} Cart drawer brand pass: white image tiles + subtle 8px radius (scoped to .cart-drawer) {%- endcomment -%}
     {{ 'cart-drawer-brand.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Cosmetic overrides for the Monk cart-drawer widgets (light DOM, injected at runtime) {%- endcomment -%}
+    {{ 'monk-overrides.css' | asset_url | stylesheet_tag }}
 
     {%- comment -%} Draws/updates the cart count badge from the live cart, source-agnostic {%- endcomment -%}
     <script src="{{ 'cart-bubble-sync.js' | asset_url }}" defer="defer"></script>
