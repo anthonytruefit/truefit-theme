@@ -56,7 +56,7 @@
             "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
             "caption": "Vanilla",
             "size_text": "20 servings",
-            "tag_text": "Best Seller",
+            "tag_text": "",
             "link_product": "truefit-vanilla",
             "link": ""
           }
@@ -67,7 +67,7 @@
             "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
             "caption": "Chocolate",
             "size_text": "20 servings",
-            "tag_text": "#1 Reviewed",
+            "tag_text": "Best Seller",
             "link_product": "truefit-chocolate",
             "link": ""
           }
