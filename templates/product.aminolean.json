@@ -50,13 +50,24 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_PinkLemonade-RT.png",
+            "caption": "Pink Lemonade",
+            "size_text": "30 servings",
+            "tag_text": "Best Seller",
+            "link_product": "aminolean-pink-lemonade",
+            "link": ""
+          }
+        },
         "custom_flavor_swatch_Y7UAHB": {
           "type": "custom_flavor_swatch",
           "settings": {
             "image": "shopify://shop_images/DTC_AminoLean_Preworkout_BerryElixir-RT.png",
             "caption": "Berry Elixir",
             "size_text": "30 servings",
-            "tag_text": "Best Seller",
+            "tag_text": "",
             "link_product": "aminolean-pre-workout-berry-alixir",
             "link": ""
           }
@@ -91,17 +102,6 @@
             "size_text": "30 servings",
             "tag_text": "",
             "link_product": "aminolean-x-icee-cherry",
-            "link": ""
-          }
-        },
-        "custom_flavor_swatch_AyML78": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/DTC_AminoLean_Preworkout_PinkLemonade-RT.png",
-            "caption": "Pink Lemonade",
-            "size_text": "30 servings",
-            "tag_text": "",
-            "link_product": "aminolean-pink-lemonade",
             "link": ""
           }
         },
@@ -241,11 +241,11 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
+        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_Y7UAHB",
         "custom_flavor_swatch_pHe4Xf",
         "custom_flavor_swatch_94KBfG",
         "custom_flavor_swatch_hDCi9N",
-        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_TtJD48",
         "custom_flavor_swatch_mYrTt7",
         "custom_flavor_swatch_zikHKM",
