@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Brand polish for stock-Dawn + legacy pages (COSMETIC, scoped)
+   --------------------------------------------------------------------------
+   These pages already inherit the brand color schemes (navy/cream/muted),
+   Poppins, and the global 8px button radius. This layer brings their
+   headings, the footer, and FAQ accordions onto the premium system
+   (medium-weight tight headlines, eyebrow-style footer headings, on-brand
+   accordions). Loaded globally; selectors scoped to page/footer/accordion
+   contexts so the already-branded custom sections are untouched.
+   ========================================================================== */
+
+/* ---------- Stock page titles & headings: navy, medium, tight ---------- */
+.main-page-title,
+.template-404 .title,
+.article-template h1,
+.article-template__title,
+.contact h1,
+.template-search__heading,
+.template-search h1,
+.list-collections-title,
+.collection-list-title {
+  color: rgb(var(--color-heading));
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+/* Rich-text body headings on simple pages */
+.main-page-title + .rte h2,
+.shopify-policy__title h1,
+.shopify-policy__body h2 {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- FAQ accordions (amino-collapsible-content) ---------- */
+.accordion__title {
+  color: rgb(var(--color-heading));
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+}
+.accordion__content {
+  color: rgb(var(--color-foreground));
+  line-height: 1.65;
+}
+.accordion summary {
+  cursor: pointer;
+}
+
+/* ---------- Footer (navy / inverse scheme) ---------- */
+/* Column headings as premium eyebrow-style labels */
+.footer--rsp .footer-block__heading {
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+/* Refined link interaction */
+.footer--rsp .list-menu__item--link {
+  transition: opacity 0.15s ease;
+}
+.footer--rsp .list-menu__item--link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+/* Bottom bar / copyright a touch muted */
+.footer--rsp .footer__content-bottom {
+  opacity: 0.85;
+}
+
+/* ---------- Forms (contact / search / newsletter): subtle focus ---------- */
+.contact__button,
+.template-search__search .search__button {
+  border-radius: 8px;
+}

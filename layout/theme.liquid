@@ -303,6 +303,8 @@
     {{ 'cart-drawer-brand.css' | asset_url | stylesheet_tag }}
     {%- comment -%} Account pages + cart page brand pass (scoped to .customer / cart page) {%- endcomment -%}
     {{ 'account-cart-brand.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Brand polish for stock/legacy pages: titles, footer, FAQ accordions {%- endcomment -%}
+    {{ 'brand-pages.css' | asset_url | stylesheet_tag }}
     {%- comment -%} Cosmetic overrides for the Monk cart-drawer widgets (light DOM, injected at runtime) {%- endcomment -%}
     {{ 'monk-overrides.css' | asset_url | stylesheet_tag }}
 
