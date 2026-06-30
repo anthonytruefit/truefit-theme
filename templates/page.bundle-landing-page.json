@@ -210,13 +210,14 @@
       "name": "TF Product Grid (manual)",
       "settings": {
         "eyebrow": "SHOP BUNDLES",
-        "heading": "Build your routine.",
+        "heading": "Your routine, pre-built.",
         "view_label": "View Details",
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "background": "#FFFFFF",
-        "eyebrow_color": "#40738D",
-        "headline_color": "#0A1A4F",
+        "desc_lines": 4,
+        "background": "#ffffff",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
         "headline_size": 34,
         "padding_top": 48,
         "padding_bottom": 48
