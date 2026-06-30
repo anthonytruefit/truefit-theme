@@ -8,7 +8,7 @@
 {%- if tf_buttons.size > 0 -%}
   <div class="tfdrawer__buttons">
     {%- for b in tf_buttons limit: 2 -%}
-      <a href="{{ b.settings.link | default: '#' }}" class="tfdrawer__btn tfdrawer__btn--{{ b.settings.style | default: 'filled' }}" {{ b.shopify_attributes }}>
+      <a href="{% render 'relative-url', url: b.settings.link %}" class="tfdrawer__btn tfdrawer__btn--{{ b.settings.style | default: 'filled' }}" {{ b.shopify_attributes }}>
         {{ b.settings.label | default: 'Shop' }}
       </a>
     {%- endfor -%}
@@ -27,12 +27,12 @@
           </summary>
           <ul class="tfdrawer__sublist list-unstyled">
             {%- for link in row.settings.menu.links -%}
-              <li><a href="{{ link.url }}" class="tfdrawer__sublink{% if link.current %} tfdrawer__sublink--active{% endif %}">{{ link.title }}</a></li>
+              <li><a href="{% render 'relative-url', url: link.url %}" class="tfdrawer__sublink{% if link.current %} tfdrawer__sublink--active{% endif %}">{{ link.title }}</a></li>
             {%- endfor -%}
           </ul>
         </details>
       {%- else -%}
-        <a href="{{ row.settings.link | default: '#' }}" class="tfdrawer__row tfdrawer__row--direct tfdrawer__rowlabel" {{ row.shopify_attributes }}>
+        <a href="{% render 'relative-url', url: row.settings.link %}" class="tfdrawer__row tfdrawer__row--direct tfdrawer__rowlabel" {{ row.shopify_attributes }}>
           <span>{{ row.settings.label }}</span>
         </a>
       {%- endif -%}
@@ -49,7 +49,7 @@
         {%- assign fp = f.settings.product -%}
         {%- assign fimg = f.settings.image | default: fp.featured_image -%}
         <li class="tfdrawer__feat" {{ f.shopify_attributes }}>
-          <a href="{{ fp.url | default: '#' }}" class="tfdrawer__feat-link">
+          <a href="{% render 'relative-url', url: fp.url %}" class="tfdrawer__feat-link">
             <span class="tfdrawer__feat-thumb">
               {%- if fimg != blank -%}
                 <img src="{{ fimg | image_url: width: 160 }}" alt="{{ fp.title | default: f.settings.title | escape }}" width="72" height="72" loading="lazy">

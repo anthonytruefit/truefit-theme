@@ -1,0 +1,21 @@
+{%- comment -%}
+  Outputs a same-store URL as a relative path so theme preview / shared-preview
+  sessions persist across navigation. Absolute links to the store's own domain
+  break recipients out of the draft theme into the live theme; stripping the
+  domain keeps them on the preview host. External links and already-relative
+  links pass through unchanged.
+  Usage: href="{% render 'relative-url', url: link.url %}"
+{%- endcomment -%}
+{%- liquid
+  assign u = url | default: ''
+  assign u = u | remove: shop.secure_url
+  assign u = u | remove: shop.url
+  assign ms_https = 'https://' | append: shop.permanent_domain
+  assign ms_http = 'http://' | append: shop.permanent_domain
+  assign u = u | remove: ms_https
+  assign u = u | remove: ms_http
+  if u == blank
+    assign u = '#'
+  endif
+  echo u
+-%}
