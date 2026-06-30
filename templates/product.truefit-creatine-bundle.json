@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "TrueFit Protein",
+            "title": "Strength Bundle",
             "remove_flavor_name": true
           }
         },
@@ -54,7 +54,7 @@
           "type": "custom_flavor_swatch",
           "settings": {
             "image": "shopify://shop_images/TrueFitCreatinBundle.png",
-            "caption": "Protein + Creatine Bundle",
+            "caption": "Protein + Creatine",
             "size_text": "",
             "tag_text": "",
             "link_product": "bundle-protein-creatine",
