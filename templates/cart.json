@@ -9,17 +9,17 @@
  */
 {
   "sections": {
-    "cart-items": {
-      "type": "main-cart-items",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1766588248ff0be3c4": {
       "type": "apps",
       "settings": {
         "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -45,36 +45,134 @@
         "padding_bottom": 40
       }
     },
-    "efdd02e6-6aa2-4e03-8f1a-47c6f253143c": {
-      "type": "featured-collection-rsp",
+    "tf_best_sellers_ELDjcb": {
+      "type": "tf-best-sellers",
+      "blocks": {
+        "card_HFX7dz": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-chocolate",
+            "custom_title": "TrueFit Protein - Chocolate",
+            "subscribe_price": "$38.33",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
+        "card_kKYDD6": {
+          "type": "card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "custom_title": "TrueFit Protein - Vanilla",
+            "subscribe_price": "$38.33",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
+        "card_gkrmt7": {
+          "type": "card",
+          "settings": {
+            "product": "creatine-mono",
+            "custom_title": "Creatine Monohydrate",
+            "subscribe_price": "$18.79",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
+          }
+        },
+        "card_4HnMkG": {
+          "type": "card",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "custom_title": "AminoLean Energy - Acai",
+            "subscribe_price": "$20.20",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
+        "card_iWxJia": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
+            "subscribe_price": "$17.42",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Hydrating electrolytes from sea minerals",
+            "bullet_2": "Vegan amino acids for muscle recovery",
+            "bullet_3": "Nootropic mushrooms for mental focus"
+          }
+        },
+        "card_WbX8BC": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-pink-lemonade",
+            "custom_title": "AminoLean Energy - Pink Lemonade",
+            "subscribe_price": "",
+            "badge_text": "Best Seller",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#f6eed7",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        },
+        "card_bFeYD7": {
+          "type": "card",
+          "settings": {
+            "product": "aminolean-pre-workout-berry-alixir",
+            "custom_title": "AminoLean Energy - Berry Elixir",
+            "subscribe_price": "$20.20",
+            "badge_text": "",
+            "badge_background": "#0a1a4f",
+            "badge_text_color": "#ffffff",
+            "badge_size": "medium",
+            "bullet_1": "Natural caffeine from green tea for energy",
+            "bullet_2": "Vegan amino acids to build muscle",
+            "bullet_3": "No jitters, tingles, or crash"
+          }
+        }
+      },
+      "block_order": [
+        "card_HFX7dz",
+        "card_kKYDD6",
+        "card_gkrmt7",
+        "card_4HnMkG",
+        "card_iWxJia",
+        "card_WbX8BC",
+        "card_bFeYD7"
+      ],
+      "name": "TrueFit Best Sellers",
       "settings": {
-        "title": "Bestsellers",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "content_alignment": "tw-text-center",
-        "collection": "bestsellers",
-        "product_list": [],
-        "product_list_fallback": [],
-        "products_to_show": 10,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "card_cta_label": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "Stay True",
+        "heading": "Best sellers",
+        "view_all_label": "View All",
+        "view_all_link": "shopify://collections/shop-all-products",
+        "add_label": "Add to Cart",
+        "color_scheme": "background-1",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
@@ -82,6 +180,6 @@
     "1766588248ff0be3c4",
     "cart-items",
     "cart-footer",
-    "efdd02e6-6aa2-4e03-8f1a-47c6f253143c"
+    "tf_best_sellers_ELDjcb"
   ]
 }
