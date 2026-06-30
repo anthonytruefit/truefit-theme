@@ -43,24 +43,20 @@
   line-height: 1.4 !important;
 }
 
-/* Track / container pill — subtle cream (matches the PDP Gift Tracker).
-   background-image:none kills any default tint/gradient Monk ships here. */
+/* Container pill — subtle cream (matches the PDP Gift Tracker). */
 .mr-embedded-widget--cvb .mr-embedded-widget__progress-bar-con {
   background: #fcfcea !important;
-  background-image: none !important;
   border-radius: 1.6rem !important;
   overflow: visible !important;
 }
 
-/* Fill — force navy, including any gradient or pseudo-element Monk uses for
-   the "milestones reached" state (that was rendering green). We recolor only,
-   never the width (that is Monk's live progress). */
-.mr-embedded-widget--cvb .mr-progress-bar-con__bar,
-.mr-embedded-widget--cvb .mr-progress-bar-con__bar > *,
-.mr-embedded-widget--cvb .mr-progress-bar-con__bar::before,
-.mr-embedded-widget--cvb .mr-progress-bar-con__bar::after {
-  background: #0a1a4f !important;
-  background-image: none !important;
+/* Fill bar: Monk paints this with an inline GRADIENT where the fill color and
+   the progress percentage are combined in one value. Forcing a solid color (or
+   background-image:none) erases the progress, so we intentionally leave the
+   gradient untouched here. The fill recolor (green -> navy) needs either Monk's
+   CSS variable (if it uses one) or the Monk dashboard bar-color setting.
+   Keeping the pill radius only. */
+.mr-embedded-widget--cvb .mr-progress-bar-con__bar {
   border-radius: 999px !important;
 }
 
