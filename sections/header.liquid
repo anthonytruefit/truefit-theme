@@ -115,6 +115,31 @@
     margin-left: -1.2rem;
   }
 
+  {%- comment -%} Mobile: compact the right-side icons (search/account/cart) so the centered
+    wordmark logo keeps room and isn't squished now that 3 icons show. {%- endcomment -%}
+  @media screen and (max-width: 749px) {
+    header-drawer {
+      margin-left: -0.8rem;
+    }
+    .header__icons {
+      padding-right: 0.2rem;
+    }
+    .header__icon:not(.header__icon--menu) {
+      width: 3.6rem;
+      min-width: 3.6rem;
+    }
+    .header__icon .icon {
+      height: 2.1rem;
+      width: 2.1rem;
+    }
+    .header__heading-logo-wrapper {
+      max-width: 100%;
+    }
+    .header__heading-logo {
+      max-width: 22rem;
+    }
+  }
+
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
