@@ -55,7 +55,7 @@
         "filter_type": "vertical",
         "enable_sorting": false,
         "columns_mobile": "2",
-        "view_label": "View Details",
+        "view_label": "Add to Cart",
         "card_bg": "#ffffff",
         "card_media_bg": "#fcfcea",
         "card_border": "#e2e5ec",
