@@ -124,6 +124,15 @@
             "badge": "Best Seller"
           }
         },
+        "drawer_featured_product_tnG4Tm": {
+          "type": "drawer_featured_product",
+          "settings": {
+            "product": "creatine-mono",
+            "title": "TrueFit Creatine",
+            "description": "5g pure micronized creatine monohydrate.",
+            "badge": ""
+          }
+        },
         "drawer_featured_product_AQJzQ6": {
           "type": "drawer_featured_product",
           "settings": {
@@ -139,15 +148,6 @@
             "product": "vegan-aminolean-acai",
             "title": "AminoLean Energy Natural",
             "description": "A naturally sweetened version of our top-selling energy powder.",
-            "badge": ""
-          }
-        },
-        "drawer_featured_product_tnG4Tm": {
-          "type": "drawer_featured_product",
-          "settings": {
-            "product": "creatine-mono",
-            "title": "TrueFit Creatine",
-            "description": "5g pure micronized creatine monohydrate.",
             "badge": ""
           }
         },
@@ -239,9 +239,9 @@
         "drawer_nav_row_ipRH6b",
         "drawer_nav_row_BGNH86",
         "drawer_featured_product_g3GUAw",
+        "drawer_featured_product_tnG4Tm",
         "drawer_featured_product_AQJzQ6",
         "drawer_featured_product_Q676xR",
-        "drawer_featured_product_tnG4Tm",
         "drawer_featured_product_fR8emb",
         "1b0f8d24-d421-488f-999a-0b6951facb5a",
         "656b74cb-689f-47e1-911b-5d86b576a760",
