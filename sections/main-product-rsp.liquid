@@ -1007,6 +1007,8 @@
                           btn.classList.remove('loading');
                           btn.removeAttribute('aria-busy');
                           if (resp.status) { console.warn('FBT add error:', resp.description || resp.message); return; }
+                          // Match product-form.js: clear the drawer's empty state so newly added items render (was the FBT glitch on an empty cart)
+                          if (cart && cart.classList && cart.classList.contains('is-empty')) cart.classList.remove('is-empty');
                           if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
                             publish(PUB_SUB_EVENTS.cartUpdate, { source: 'frequently-bought-together', cartData: resp });
                           }
