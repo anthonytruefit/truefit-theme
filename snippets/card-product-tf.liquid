@@ -2,13 +2,14 @@
   TrueFit collection product card — mirrors the homepage best-seller card.
   Pulls everything from the product; the description, flavor line, subscribe
   price, and badge are manual product metafields (custom namespace) and each
-  line hides when its metafield is empty. The whole card and the button link
-  to the product's PDP (no add to cart).
+  line hides when its metafield is empty. The image and title link to the
+  product's PDP; the button is a quick add-to-cart (adds the product's first
+  available variant via the theme's <product-form>).
 
   Accepts:
   - card_product: {Object} the product
   - lazy_load: {Boolean} lazy-load the image
-  - view_label: {String} button label (default "View Details")
+  - view_label: {String} add-to-cart button label (default "Add to Cart")
 {% endcomment %}
 {%- liquid
   assign p = card_product
@@ -23,9 +24,7 @@
   endif
 -%}
 <div class="cptf__card">
-  <a class="cptf__overlay" href="{{ p.url }}" tabindex="-1" aria-hidden="true"></a>
-
-  <a class="cptf__media" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+  <a class="cptf__media" href="{{ p.url }}" aria-label="{{ card_title | escape }}">
     {%- if badge != blank -%}<span class="cptf__badge">{{ badge }}</span>{%- endif -%}
     {%- if p.featured_image != blank -%}
       <img
@@ -73,6 +72,24 @@
       <div class="cptf__flavor">{{ flavor }}</div>
     {%- endif -%}
 
-    <a class="cptf__btn" href="{{ p.url }}">{{ view_label | default: 'View Details' }}</a>
+    {%- assign cptf_variant = p.selected_or_first_available_variant -%}
+    {%- if cptf_variant != blank -%}
+      {%- assign cptf_fid = 'cptf-' | append: p.id -%}
+      <product-form class="cptf__form">
+        {%- form 'product', p, id: cptf_fid, class: 'cptf__atc', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ cptf_variant.id }}" class="product-variant-id"{% unless cptf_variant.available %} disabled{% endunless %}>
+          <button type="submit" name="add" class="cptf__btn"{% unless cptf_variant.available %} disabled{% endunless %}>
+            <span class="cptf__btn-label">
+              {%- if cptf_variant.available -%}{{ view_label | default: 'Add to Cart' }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+            </span>
+            <span class="cptf__btn-spinner loading-overlay__spinner hidden">
+              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg>
+            </span>
+          </button>
+        {%- endform -%}
+      </product-form>
+    {%- else -%}
+      <a class="cptf__btn" href="{{ p.url }}">{{ 'products.product.sold_out' | t }}</a>
+    {%- endif -%}
   </div>
 </div>

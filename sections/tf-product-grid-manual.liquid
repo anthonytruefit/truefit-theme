@@ -4,6 +4,7 @@
   instead of a collection. Built for the bundle landing page, reusable anywhere.
 {%- endcomment -%}
 {{ 'component-card-product-tf.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- liquid
   assign s = section.settings
 -%}
@@ -60,7 +61,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SHOP BUNDLES" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Build your routine." },
-    { "type": "text", "id": "view_label", "label": "Card button label", "default": "View Details" },
+    { "type": "text", "id": "view_label", "label": "Add to cart button label", "default": "Add to Cart" },
     { "type": "paragraph", "content": "Each card pulls its title, description, flavor line, subscribe price, and badge from the product's metafields (custom namespace), exactly like the collection page cards. Add a card per product below." },
     { "type": "header", "content": "Layout" },
     { "type": "range", "id": "columns_desktop", "min": 2, "max": 5, "step": 1, "label": "Columns (desktop)", "default": 4 },

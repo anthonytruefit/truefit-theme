@@ -131,23 +131,39 @@
   overflow: hidden;
 }
 
-.cptf__btn {
+.cptf__form {
   position: relative;
   z-index: 2;
   margin-top: auto;
   display: block;
+}
+.cptf__atc { margin: 0; }
+.cptf__btn {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: block;
   text-align: center;
   text-decoration: none;
+  font-family: inherit;
   font-weight: 600;
   font-size: 1.3rem;
+  line-height: 1.2;
   padding: 1.1rem 1.2rem;
   border-radius: 0.8rem;
   background: var(--cptf-btn-bg, #0a1a4f);
   color: var(--cptf-btn-text, #ffffff);
   border: 0.1rem solid var(--cptf-btn-bg, #0a1a4f);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
   transition: opacity 0.2s ease;
 }
 .cptf__btn:hover { opacity: 0.9; }
+.cptf__btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+.cptf__btn.loading .cptf__btn-label { visibility: hidden; }
+.cptf__btn .cptf__btn-spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.cptf__btn .cptf__btn-spinner svg { width: 1.8rem; height: 1.8rem; }
 
 /* Equal-height cards: stretch each card to its row height so the bottom-pinned
    "View Details" buttons line up across the row regardless of how much content
