@@ -1376,7 +1376,7 @@
             "eyebrow": "All-in-One",
             "name": "Protein",
             "button_label": "Shop Now",
-            "link": "",
+            "link": "shopify://products/truefit-chocolate",
             "footer_bg_type": "gradient",
             "footer_background": "#0a1a4f",
             "footer_background_2": "#40738d",
