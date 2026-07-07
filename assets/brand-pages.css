@@ -75,3 +75,11 @@
 .template-search__search .search__button {
   border-radius: 8px;
 }
+
+/* Search bars: subtle 8px radius (was the global 24px pill) — results page + header modal */
+.template-search__search,
+.search-modal__form,
+.search-modal__content {
+  --inputs-radius: 8px;
+  --inputs-radius-outset: 8px;
+}
