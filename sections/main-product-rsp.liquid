@@ -1060,16 +1060,19 @@
                 does NOT grant rewards, verify anything, or integrate with Monk - it only reads
                 the live cart total (cart.total_price + the cartUpdate event) and shows progress. {%- endcomment -%}
               {%- liquid
-                assign gt_milestones = section.blocks | where: 'type', 'milestone'
+                # Thresholds are set globally in Theme settings -> Gift Tracker (settings.gt_*),
+                # so they are edited once and apply to every product page.
                 assign gt_max = 0
-                for m in gt_milestones
-                  if m.settings.amount > gt_max
-                    assign gt_max = m.settings.amount
+                for i in (1..4)
+                  assign gt_k = 'gt_m' | append: i | append: '_amount'
+                  assign gt_a = settings[gt_k] | plus: 0
+                  if gt_a > gt_max
+                    assign gt_max = gt_a
                   endif
                 endfor
                 assign gt_max_cents = gt_max | times: 100
               -%}
-              {%- if gt_milestones.size > 0 and gt_max_cents > 0 -%}
+              {%- if gt_max_cents > 0 -%}
                 {%- liquid
                   assign gt_fill = cart.total_price | times: 100 | divided_by: gt_max_cents
                   if gt_fill > 100
@@ -1112,29 +1115,38 @@
                   style="--gt-pct: {{ gt_fill }}%;"
                 >
                   <div class="gt__card">
-                    {%- if block.settings.title != blank -%}<p class="gt__title">{{ block.settings.title }}</p>{%- endif -%}
+                    {%- if settings.gt_title != blank -%}<p class="gt__title">{{ settings.gt_title }}</p>{%- endif -%}
                     <div class="gt__bar">
                       <div class="gt__track"><div class="gt__fill" data-gt-fill></div></div>
-                      {%- for m in gt_milestones -%}
-                        {%- liquid
-                          assign m_cents = m.settings.amount | times: 100
-                          assign m_pct = m_cents | times: 100 | divided_by: gt_max_cents
-                          assign m_anchor = 'mid'
-                          if m_pct <= 8
-                            assign m_anchor = 'start'
-                          elsif m_pct >= 92
-                            assign m_anchor = 'end'
-                          endif
-                          assign m_label = m.settings.label
-                          if m_label == blank
-                            assign m_label = m.settings.amount | prepend: '$'
-                          endif
-                        -%}
-                        <div class="gt__node gt__node--{{ m_anchor }}{% if cart.total_price >= m_cents %} is-active{% endif %}" data-gt-milestone data-amount="{{ m_cents }}" data-reward="{{ m.settings.reward_name | escape }}" style="left: {{ m_pct }}%;">
-                          {%- if m.settings.badge_text != blank -%}<span class="gt__badge" style="--badge-bg: {{ m.settings.badge_bg }}; --badge-text: {{ m.settings.badge_text_color }};">{{ m.settings.badge_text }}</span>{%- endif -%}
-                          {%- if m_label != blank -%}<span class="gt__label">{{ m_label }}</span>{%- endif -%}
-                          <span class="gt__circle"><span class="gt__emoji">{{ m.settings.emoji }}</span></span>
-                        </div>
+                      {%- for i in (1..4) -%}
+                        {%- assign gt_k = 'gt_m' | append: i | append: '_amount' -%}
+                        {%- assign m_amount = settings[gt_k] | plus: 0 -%}
+                        {%- if m_amount > 0 -%}
+                          {%- liquid
+                            assign k_lbl = 'gt_m' | append: i | append: '_label'
+                            assign k_badge = 'gt_m' | append: i | append: '_badge'
+                            assign k_emoji = 'gt_m' | append: i | append: '_emoji'
+                            assign m_cents = m_amount | times: 100
+                            assign m_pct = m_cents | times: 100 | divided_by: gt_max_cents
+                            assign m_anchor = 'mid'
+                            if m_pct <= 8
+                              assign m_anchor = 'start'
+                            elsif m_pct >= 92
+                              assign m_anchor = 'end'
+                            endif
+                            assign m_label = settings[k_lbl]
+                            if m_label == blank
+                              assign m_label = m_amount | prepend: '$'
+                            endif
+                            assign m_badge = settings[k_badge]
+                            assign m_emoji = settings[k_emoji]
+                          -%}
+                          <div class="gt__node gt__node--{{ m_anchor }}{% if cart.total_price >= m_cents %} is-active{% endif %}" data-gt-milestone data-amount="{{ m_cents }}" style="left: {{ m_pct }}%;">
+                            {%- if m_badge != blank -%}<span class="gt__badge" style="--badge-bg: {{ settings.gt_badge_bg }}; --badge-text: {{ settings.gt_badge_text }};">{{ m_badge }}</span>{%- endif -%}
+                            {%- if m_label != blank -%}<span class="gt__label">{{ m_label }}</span>{%- endif -%}
+                            <span class="gt__circle"><span class="gt__emoji">{{ m_emoji }}</span></span>
+                          </div>
+                        {%- endif -%}
                       {%- endfor -%}
                     </div>
                   </div>
@@ -1210,7 +1222,7 @@
                   })();
                 </script>
               {%- elsif request.design_mode -%}
-                <p class="gt__notice">Gift Tracker: add one or more "Gift milestone" blocks (dollar amount + badge) to show the progress bar.</p>
+                <p class="gt__notice">Gift Tracker thresholds are now set in Theme settings &rarr; Gift Tracker (one place, applies to all product pages).</p>
               {%- endif -%}
 
             {%- when 'milestone' -%}

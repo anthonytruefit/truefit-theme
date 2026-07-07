@@ -1570,5 +1570,135 @@
         "label": "RSP: Continue shopping link"
       }
     ]
+  },
+  {
+    "name": "Gift Tracker",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Thresholds for the product page gift progress bar. Set them once here and they apply to every product page. Display-only: keep in sync with your Monk promotion. Leave a milestone amount blank to hide it."
+      },
+      {
+        "type": "text",
+        "id": "gt_title",
+        "label": "Title",
+        "default": "Earn Your Extras."
+      },
+      {
+        "type": "color",
+        "id": "gt_badge_bg",
+        "label": "Reward badge background",
+        "default": "#0A1A4F"
+      },
+      {
+        "type": "color",
+        "id": "gt_badge_text",
+        "label": "Reward badge text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Milestone 1"
+      },
+      {
+        "type": "number",
+        "id": "gt_m1_amount",
+        "label": "Amount in dollars",
+        "default": 30
+      },
+      {
+        "type": "text",
+        "id": "gt_m1_badge",
+        "label": "Reward badge text",
+        "default": "FREE SHIPPING"
+      },
+      {
+        "type": "text",
+        "id": "gt_m1_emoji",
+        "label": "Emoji",
+        "default": "🚚"
+      },
+      {
+        "type": "text",
+        "id": "gt_m1_label",
+        "label": "Label under node (optional)",
+        "info": "Defaults to the dollar amount."
+      },
+      {
+        "type": "header",
+        "content": "Milestone 2"
+      },
+      {
+        "type": "number",
+        "id": "gt_m2_amount",
+        "label": "Amount in dollars",
+        "default": 110
+      },
+      {
+        "type": "text",
+        "id": "gt_m2_badge",
+        "label": "Reward badge text",
+        "default": "FREE GIFT"
+      },
+      {
+        "type": "text",
+        "id": "gt_m2_emoji",
+        "label": "Emoji",
+        "default": "🎁"
+      },
+      {
+        "type": "text",
+        "id": "gt_m2_label",
+        "label": "Label under node (optional)"
+      },
+      {
+        "type": "header",
+        "content": "Milestone 3 (optional)"
+      },
+      {
+        "type": "number",
+        "id": "gt_m3_amount",
+        "label": "Amount in dollars"
+      },
+      {
+        "type": "text",
+        "id": "gt_m3_badge",
+        "label": "Reward badge text"
+      },
+      {
+        "type": "text",
+        "id": "gt_m3_emoji",
+        "label": "Emoji"
+      },
+      {
+        "type": "text",
+        "id": "gt_m3_label",
+        "label": "Label under node (optional)"
+      },
+      {
+        "type": "header",
+        "content": "Milestone 4 (optional)"
+      },
+      {
+        "type": "number",
+        "id": "gt_m4_amount",
+        "label": "Amount in dollars"
+      },
+      {
+        "type": "text",
+        "id": "gt_m4_badge",
+        "label": "Reward badge text"
+      },
+      {
+        "type": "text",
+        "id": "gt_m4_emoji",
+        "label": "Emoji"
+      },
+      {
+        "type": "text",
+        "id": "gt_m4_label",
+        "label": "Label under node (optional)"
+      }
+    ]
   }
 ]
