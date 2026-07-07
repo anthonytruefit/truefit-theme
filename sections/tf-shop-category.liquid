@@ -136,6 +136,8 @@
               assign card_bg = block.settings.footer_background
             endif
           -%}
+          {%- comment -%} Render same-store links relative so shared theme previews stay in the draft (see snippets/relative-url) {%- endcomment -%}
+          {%- if link != blank -%}{%- capture link -%}{%- render 'relative-url', url: link -%}{%- endcapture -%}{%- endif -%}
           <li
             class="tfcat__card"
             style="--card-bg: {{ card_bg }}; --card-bg-solid: {{ block.settings.footer_background }}; --card-fg: {{ block.settings.footer_text }};"
