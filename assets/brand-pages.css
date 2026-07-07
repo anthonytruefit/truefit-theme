@@ -83,3 +83,15 @@
   --inputs-radius: 8px;
   --inputs-radius-outset: 8px;
 }
+
+/* Contact page: subtle 8px input radius (was the 24px pill) + on-brand heading */
+.contact {
+  --inputs-radius: 8px;
+  --inputs-radius-outset: 8px;
+}
+.contact .title {
+  color: rgb(var(--color-heading));
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
