@@ -77,7 +77,9 @@ class CartDrawer extends HTMLElement {
       const sectionElement = section.selector
         ? document.querySelector(section.selector)
         : document.getElementById(section.id);
-      sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+      if (!sectionElement) return;
+      const newHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+      if (newHTML) sectionElement.innerHTML = newHTML;
     });
 
     setTimeout(() => {
@@ -87,7 +89,9 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector = '.shopify-section') {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+    if (html == null) return null;
+    const el = new DOMParser().parseFromString(html, 'text/html').querySelector(selector);
+    return el ? el.innerHTML : null;
   }
 
   getSectionsToRender() {
@@ -131,9 +135,11 @@ class CartDrawerItems extends CartItems {
         const parsedSections = JSON.parse(responseText);
 
         this.getSectionsToRender().forEach((section) => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedSections[section.section], section.selector);
+          const container = document.getElementById(section.id);
+          if (!container) return;
+          const elementToReplace = container.querySelector(section.selector) || container;
+          const newHTML = this.getSectionInnerHTML(parsedSections[section.section], section.selector);
+          if (newHTML) elementToReplace.innerHTML = newHTML;
         });
       })
       .catch((e) => {

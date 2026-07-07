@@ -143,12 +143,12 @@ class CartItems extends HTMLElement {
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
         this.getSectionsToRender().forEach((section) => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(
-            parsedState.sections[section.section],
-            section.selector
-          );
+          const container = document.getElementById(section.id);
+          if (!container) return;
+          const elementToReplace = container.querySelector(section.selector) || container;
+          const newHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+          // Skip if the section render is missing/partial so we never blank the cart.
+          if (newHTML) elementToReplace.innerHTML = newHTML;
         });
         const parsedItem = parsedState.items[line - 1];
         let updatedValue = parsedItem ? parsedItem.quantity : undefined;
@@ -192,7 +192,7 @@ class CartItems extends HTMLElement {
         console.error(error);
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        errors.textContent = window.cartStrings.error;
+        if (errors) errors.textContent = window.cartStrings.error;
       })
       .finally(() => {
         this.disableLoading(line);
@@ -216,7 +216,9 @@ class CartItems extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector) {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+    if (html == null) return null;
+    const el = new DOMParser().parseFromString(html, 'text/html').querySelector(selector);
+    return el ? el.innerHTML : null;
   }
 
   enableLoading(line) {
