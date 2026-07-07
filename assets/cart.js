@@ -130,7 +130,7 @@ class CartItems extends HTMLElement {
         const items = document.querySelectorAll('.cart-item');
 
         if (parsedState.errors) {
-          quantityElement.value = quantityElement.getAttribute('value');
+          if (quantityElement) quantityElement.value = quantityElement.getAttribute('value');
           this.updateLiveRegions(line, parsedState.errors);
           return;
         }
@@ -174,16 +174,23 @@ class CartItems extends HTMLElement {
         }
         this.updateLiveRegions(line, message);
 
-        const lineItem =
-          document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
-        if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
-          cartDrawerWrapper
-            ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`))
-            : lineItem.querySelector(`[name="${name}"]`).focus();
-        } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'));
-        } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'));
+        // Focus management is non-critical; never let it crash the cart update.
+        try {
+          const lineItem =
+            document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
+          if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
+            cartDrawerWrapper
+              ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`))
+              : lineItem.querySelector(`[name="${name}"]`).focus();
+          } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
+            const emptyInner = cartDrawerWrapper.querySelector('.drawer__inner-empty');
+            if (emptyInner) trapFocus(emptyInner, cartDrawerWrapper.querySelector('a'));
+          } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
+            const focusTarget = document.querySelector('.cart-item__name');
+            if (focusTarget) trapFocus(cartDrawerWrapper, focusTarget);
+          }
+        } catch (focusError) {
+          console.error(focusError);
         }
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: this.pubSubSource, cartData: parsedState, variantId: variantId });
@@ -202,12 +209,14 @@ class CartItems extends HTMLElement {
   updateLiveRegions(line, message) {
     const lineItemError =
       document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
-    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').innerHTML = message;
+    const errorText = lineItemError && lineItemError.querySelector('.cart-item__error-text');
+    if (errorText) errorText.innerHTML = message;
 
-    this.lineItemStatusElement.setAttribute('aria-hidden', true);
+    if (this.lineItemStatusElement) this.lineItemStatusElement.setAttribute('aria-hidden', true);
 
     const cartStatus =
       document.getElementById('cart-live-region-text') || document.getElementById('CartDrawer-LiveRegionText');
+    if (!cartStatus) return;
     cartStatus.setAttribute('aria-hidden', false);
 
     setTimeout(() => {
