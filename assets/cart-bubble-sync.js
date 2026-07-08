@@ -74,7 +74,12 @@
     pending = true;
     fetch('/cart.js', { headers: { Accept: 'application/json' }, credentials: 'same-origin' })
       .then(function (r) { return r.json(); })
-      .then(function (cart) { renderBadge(cart.item_count); })
+      .then(function (cart) {
+        renderBadge(cart.item_count);
+        // Broadcast the fresh cart so source-agnostic listeners (e.g. the PDP
+        // gift tracker) re-sync after cart writes from ANY source (Monk, etc.).
+        try { document.dispatchEvent(new CustomEvent('cart:refreshed', { detail: cart })); } catch (e) {}
+      })
       .catch(function () {})
       .then(function () { pending = false; });
   }

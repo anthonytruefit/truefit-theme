@@ -1175,6 +1175,12 @@
                       // DOMContentLoaded (fires after deferred scripts) before subscribing.
                       wire() {
                         var self = this;
+                        // Source-agnostic re-sync: cart-bubble-sync broadcasts cart:refreshed after
+                        // ANY cart write, including app changes the theme's cartUpdate never hears
+                        // (e.g. Monk removing the free gift). Fixes the bar showing a stale total.
+                        document.addEventListener('cart:refreshed', function (e) {
+                          if (e && e.detail && typeof e.detail.total_price === 'number') self.update(e.detail.total_price);
+                        });
                         var attach = function () {
                           if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
                             self._unsub = subscribe(PUB_SUB_EVENTS.cartUpdate, function (e) { self.onCartUpdate(e); });
