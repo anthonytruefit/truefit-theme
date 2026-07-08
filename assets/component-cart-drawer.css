@@ -46,19 +46,23 @@
   justify-content: center;
 }
 
-cart-drawer.is-empty .drawer__inner {
+/* Empty-cart state is keyed off whether cart items actually exist (:has), not
+   the .is-empty class. Apps that empty the cart by re-injecting drawer HTML
+   (e.g. Monk removing the free gift) don't toggle that class, which left the
+   empty message hidden and crashed the drawer to a blank screen. */
+cart-drawer:not(:has(.cart-item)) .drawer__inner {
   display: grid;
   grid-template-rows: 1fr;
   align-items: center;
   padding: 0;
 }
 
-cart-drawer.is-empty .drawer__header {
+cart-drawer:not(:has(.cart-item)) .drawer__header {
   display: none;
 }
 
-cart-drawer:not(.is-empty) .cart-drawer__warnings,
-cart-drawer:not(.is-empty) .cart-drawer__collection {
+cart-drawer:has(.cart-item) .cart-drawer__warnings,
+cart-drawer:has(.cart-item) .cart-drawer__collection {
   display: none;
 }
 
