@@ -12,6 +12,38 @@
     "tf_hero_slideshow_nwh7di": {
       "type": "tf-hero-slideshow",
       "blocks": {
+        "slide_BVaqw9": {
+          "type": "slide",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/DUABI_CHOC_BANNER_DESKTOP.png",
+            "image_mobile": "shopify://shop_images/Main_web_banner_mobile.jpg",
+            "eyebrow": "",
+            "eyebrow_color": "#fcfcea",
+            "eyebrow_size": 12,
+            "headline": "",
+            "headline_color": "#ffffff",
+            "headline_size": 64,
+            "subline": "",
+            "subline_color": "#fcfcea",
+            "subline_size": 18,
+            "button1_text": "JOIN THE WAITLIST",
+            "button1_link": "shopify://pages/vip-early-access",
+            "button1_style": "filled",
+            "button1_bg": "#C89D2D",
+            "button1_text_color": "#08144D",
+            "button1_border": "#08144D",
+            "button2_text": "",
+            "button2_link": "",
+            "button2_style": "outline",
+            "button2_bg": "#0a1a4f",
+            "button2_text_color": "#ffffff",
+            "button2_border": "#ffffff",
+            "content_position": "bottom-center",
+            "scrim_color": "#0a1a4f",
+            "scrim_opacity": 30
+          }
+        },
         "slide_3wVE4H": {
           "type": "slide",
           "settings": {
@@ -46,6 +78,7 @@
         }
       },
       "block_order": [
+        "slide_BVaqw9",
         "slide_3wVE4H"
       ],
       "name": "TrueFit Hero Slideshow",
