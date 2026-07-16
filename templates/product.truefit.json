@@ -74,13 +74,12 @@
         },
         "custom_flavor_swatch_pHe4Xf": {
           "type": "custom_flavor_swatch",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/TrueFitGrassFed_Chocolate_40Serv_082925-14_Front_HighRes_1.png",
-            "caption": "Chocolate",
-            "size_text": "40 servings",
-            "tag_text": "Sold Out",
-            "link_product": "truefit-protein-powder-chocolate-40servings",
+            "image": "shopify://shop_images/TrueFitGrassFed_DubaiChocolate_20Serv_101725-14_Front_HighRes.png",
+            "caption": "Dubai Chocolate",
+            "size_text": "20 servings",
+            "tag_text": "It's Back!",
+            "link_product": "truefit-protein-powder-dubai-chocolate",
             "link": ""
           }
         },
