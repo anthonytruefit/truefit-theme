@@ -46,11 +46,9 @@
     {%- assign banner_alt = b.settings.alt | default: b.settings.image.alt | default: '' -%}
     {%- capture banner_media -%}
       <img class="tfdrawer__banner-img"
-        src="{{ b.settings.image | image_url: width: 800 }}"
-        srcset="{{ b.settings.image | image_url: width: 400 }} 400w, {{ b.settings.image | image_url: width: 800 }} 800w, {{ b.settings.image | image_url: width: 1200 }} 1200w"
-        sizes="(min-width: 990px) 34rem, 92vw"
+        src="{{ b.settings.image | image_url: width: 1100 }}"
         width="{{ b.settings.image.width }}" height="{{ b.settings.image.height }}"
-        alt="{{ banner_alt | escape }}" loading="eager" fetchpriority="low">
+        alt="{{ banner_alt | escape }}" loading="eager">
     {%- endcapture -%}
     {%- if b.settings.link != blank -%}
       <a href="{% render 'relative-url', url: b.settings.link %}" class="tfdrawer__banner" {{ b.shopify_attributes }}>{{ banner_media }}</a>
