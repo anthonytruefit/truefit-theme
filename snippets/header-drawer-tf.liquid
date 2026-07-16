@@ -27,7 +27,13 @@
             <a href="{{ root_url | default: routes.root_url }}" class="tfdrawer__logo-link" aria-label="{{ shop.name | escape }} home">
               {%- render 'rsp-logo', class: 'tfdrawer__logo' -%}
             </a>
-            <button type="button" class="tfdrawer__close" aria-label="{{ 'accessibility.close' | t }}" onclick="this.closest('details').open=false">
+            {%- comment -%}
+              Close via the header-drawer summary toggle (same path as the outer close)
+              so the theme's closeMenuDrawer runs and removes the body scroll-lock
+              class. Setting details.open=false directly bypasses that and leaves
+              mobile scrolling stuck until a page refresh.
+            {%- endcomment -%}
+            <button type="button" class="tfdrawer__close" aria-label="{{ 'accessibility.close' | t }}" onclick="this.closest('header-drawer').querySelector('summary').click()">
               {% render 'amino-icon-close' %}
             </button>
           </div>
