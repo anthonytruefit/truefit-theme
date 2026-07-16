@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "DUBAI CHOCOLATE RETURNS",
+            "link": "shopify://products/truefit-protein-powder-dubai-chocolate"
+          }
+        },
         "e012bf18-c18d-4654-93dc-78af71f42f3a": {
           "type": "announcement",
           "settings": {
@@ -41,22 +48,14 @@
             "text": "BUNDLE & SAVE 20%",
             "link": "shopify://pages/bundle-builder"
           }
-        },
-        "announcement-bar-0": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "LIMITED TIME: Save 20% on All Bundles!",
-            "link": "https://rspnutrition.com/collections/stacks-and-bundles"
-          }
         }
       },
       "block_order": [
+        "announcement-bar-0",
         "e012bf18-c18d-4654-93dc-78af71f42f3a",
         "announcement_ibr3FL",
         "e14fdfd1-fef8-468c-913a-a1c7dcf72970",
-        "announcement_UygdaE",
-        "announcement-bar-0"
+        "announcement_UygdaE"
       ],
       "custom_css": [],
       "settings": {
