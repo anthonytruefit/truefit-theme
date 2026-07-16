@@ -159,6 +159,14 @@
             "badge": ""
           }
         },
+        "drawer_image_banner_w8xqNf": {
+          "type": "drawer_image_banner",
+          "settings": {
+            "image": "shopify://shop_images/Website_-_Announcement_Banner_Web.png",
+            "link": "shopify://products/truefit-protein-powder-dubai-chocolate",
+            "alt": ""
+          }
+        },
         "1b0f8d24-d421-488f-999a-0b6951facb5a": {
           "type": "shop_menu_desktop",
           "settings": {
@@ -242,6 +250,7 @@
         "drawer_featured_product_AQJzQ6",
         "drawer_featured_product_Q676xR",
         "drawer_featured_product_fR8emb",
+        "drawer_image_banner_w8xqNf",
         "1b0f8d24-d421-488f-999a-0b6951facb5a",
         "656b74cb-689f-47e1-911b-5d86b576a760",
         "drawer_account_links_aDgUML",
