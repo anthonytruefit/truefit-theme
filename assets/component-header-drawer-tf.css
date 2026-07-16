@@ -60,13 +60,15 @@
 .tfdrawer__banner {
   display: block;
   width: 100%;
-  border-radius: 1.2rem;
-  overflow: hidden;
   line-height: 0;
   transition: opacity 0.2s ease;
 }
 a.tfdrawer__banner:hover { opacity: 0.92; }
-.tfdrawer__banner-img { display: block; width: 100%; height: auto; }
+/* Round the image itself instead of clipping via the wrapper. An
+   overflow:hidden + border-radius wrapper inside the transform-animated mobile
+   drawer fails to paint on iOS Safari (reserved box, no pixels); clipping on
+   the img directly avoids that bug. */
+.tfdrawer__banner-img { display: block; width: 100%; height: auto; border-radius: 1.2rem; }
 
 /* 3. Nav rows */
 .tfdrawer__nav { display: flex; flex-direction: column; }
