@@ -55,6 +55,19 @@
 .tfdrawer__btn--filled { background: #0a1a4f; color: #ffffff; border: 0.1rem solid #0a1a4f; }
 .tfdrawer__btn--outlined { background: #ffffff; color: #0a1a4f; border: 0.1rem solid #0a1a4f; }
 
+/* Promo image banner (between nav rows and featured products). Shared by the
+   mobile drawer and the desktop Shop dropdown; full width of the menu panel. */
+.tfdrawer__banner {
+  display: block;
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  line-height: 0;
+  transition: opacity 0.2s ease;
+}
+a.tfdrawer__banner:hover { opacity: 0.92; }
+.tfdrawer__banner-img { display: block; width: 100%; height: auto; }
+
 /* 3. Nav rows */
 .tfdrawer__nav { display: flex; flex-direction: column; }
 .tfdrawer__row { border-top: 0.1rem solid #e2e5ec; }

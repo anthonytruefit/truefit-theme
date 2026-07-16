@@ -40,6 +40,26 @@
   </nav>
 {%- endif -%}
 
+{%- assign tf_banners = section.blocks | where: 'type', 'drawer_image_banner' -%}
+{%- for b in tf_banners -%}
+  {%- if b.settings.image != blank -%}
+    {%- assign banner_alt = b.settings.alt | default: b.settings.image.alt | default: '' -%}
+    {%- capture banner_media -%}
+      <img class="tfdrawer__banner-img"
+        src="{{ b.settings.image | image_url: width: 800 }}"
+        srcset="{{ b.settings.image | image_url: width: 400 }} 400w, {{ b.settings.image | image_url: width: 800 }} 800w, {{ b.settings.image | image_url: width: 1200 }} 1200w"
+        sizes="(min-width: 990px) 34rem, 92vw"
+        width="{{ b.settings.image.width }}" height="{{ b.settings.image.height }}"
+        alt="{{ banner_alt | escape }}" loading="lazy">
+    {%- endcapture -%}
+    {%- if b.settings.link != blank -%}
+      <a href="{% render 'relative-url', url: b.settings.link %}" class="tfdrawer__banner" {{ b.shopify_attributes }}>{{ banner_media }}</a>
+    {%- else -%}
+      <div class="tfdrawer__banner" {{ b.shopify_attributes }}>{{ banner_media }}</div>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
 {%- assign tf_featured = section.blocks | where: 'type', 'drawer_featured_product' -%}
 {%- if tf_featured.size > 0 -%}
   <div class="tfdrawer__featured">

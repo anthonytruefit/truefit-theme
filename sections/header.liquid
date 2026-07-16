@@ -15,7 +15,7 @@
   endif
 
   assign has_drawer_content = false
-  assign drawer_block_types = 'shop_featured_item,drawer_shop_card,drawer_submenu,drawer_account_links,drawer_button,drawer_nav_row,drawer_featured_product' | split: ','
+  assign drawer_block_types = 'shop_featured_item,drawer_shop_card,drawer_submenu,drawer_account_links,drawer_button,drawer_nav_row,drawer_image_banner,drawer_featured_product' | split: ','
   for block in section.blocks
     if drawer_block_types contains block.type
       assign has_drawer_content = true
@@ -60,7 +60,7 @@
 
 
 {%- comment -%} Desktop Shop dropdown shows the SAME premium menu body as the mobile drawer (buttons + nav rows + featured products). {%- endcomment -%}
-{%- assign tf_menu_types = 'drawer_button,drawer_nav_row,drawer_featured_product' | split: ',' -%}
+{%- assign tf_menu_types = 'drawer_button,drawer_nav_row,drawer_image_banner,drawer_featured_product' | split: ',' -%}
 {%- assign tf_has_menu = false -%}
 {%- for b in section.blocks -%}
   {%- if tf_menu_types contains b.type -%}{%- assign tf_has_menu = true -%}{%- break -%}{%- endif -%}
@@ -980,6 +980,17 @@
         ] },
         { "type": "url", "id": "link", "label": "Link (for direct rows)" },
         { "type": "link_list", "id": "menu", "label": "Sub-menu (for expandable rows)" }
+      ]
+    },
+    {
+      "type": "drawer_image_banner",
+      "name": "Menu image banner",
+      "limit": 2,
+      "settings": [
+        { "type": "paragraph", "content": "Full-width promo image shown between the nav rows and featured products. Link it to any page, product, or collection." },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "alt", "label": "Alt text (describe the image)" }
       ]
     },
     {
