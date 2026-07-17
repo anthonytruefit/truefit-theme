@@ -61,6 +61,17 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_8XxVr7": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
+            "caption": "3 Flavor Variety Pack",
+            "size_text": "",
+            "tag_text": "New",
+            "link_product": "protein-variety-pack",
+            "link": ""
+          }
+        },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
@@ -154,6 +165,7 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
+        "custom_flavor_swatch_8XxVr7",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
