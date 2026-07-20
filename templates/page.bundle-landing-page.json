@@ -194,6 +194,12 @@
             "product": "bundle-protein-recovery"
           }
         },
+        "product_card_GNe9jF": {
+          "type": "product_card",
+          "settings": {
+            "product": "protein-variety-pack"
+          }
+        },
         "product_card_EK3ABD": {
           "type": "product_card",
           "settings": {
@@ -205,6 +211,7 @@
         "product_card_rJk9Ed",
         "product_card_BacYQt",
         "product_card_V6Jhyz",
+        "product_card_GNe9jF",
         "product_card_EK3ABD"
       ],
       "name": "TF Product Grid (manual)",
@@ -212,7 +219,7 @@
         "eyebrow": "SHOP BUNDLES",
         "heading": "Your routine, pre-built.",
         "view_label": "Add to Cart",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "columns_mobile": "2",
         "desc_lines": 4,
         "background": "#ffffff",
