@@ -12,8 +12,41 @@
     "tf_hero_slideshow_nwh7di": {
       "type": "tf-hero-slideshow",
       "blocks": {
+        "slide_FnFjEH": {
+          "type": "slide",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Dubai_Early_Access_Banner_WEB.png",
+            "image_mobile": "shopify://shop_images/Early_Access_banner_MOB.png",
+            "eyebrow": "",
+            "eyebrow_color": "#fcfcea",
+            "eyebrow_size": 12,
+            "headline": "",
+            "headline_color": "#ffffff",
+            "headline_size": 64,
+            "subline": "",
+            "subline_color": "#fcfcea",
+            "subline_size": 18,
+            "button1_text": "SECURE YOURS NOW",
+            "button1_link": "shopify://products/truefit-protein-powder-dubai-chocolate",
+            "button1_style": "filled",
+            "button1_bg": "#93BF52",
+            "button1_text_color": "#0a1a4f",
+            "button1_border": "#060D36",
+            "button2_text": "",
+            "button2_link": "",
+            "button2_style": "outline",
+            "button2_bg": "#0a1a4f",
+            "button2_text_color": "#ffffff",
+            "button2_border": "#ffffff",
+            "content_position": "bottom-center",
+            "scrim_color": "#0a1a4f",
+            "scrim_opacity": 30
+          }
+        },
         "slide_BVaqw9": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/WEBSITE_BANNER_WEB.jpg",
@@ -78,6 +111,7 @@
         }
       },
       "block_order": [
+        "slide_FnFjEH",
         "slide_BVaqw9",
         "slide_3wVE4H"
       ],
