@@ -85,6 +85,7 @@
         },
         "custom_flavor_swatch_hi49dH": {
           "type": "custom_flavor_swatch",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
             "caption": "Variety Pack",
