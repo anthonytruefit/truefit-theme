@@ -471,6 +471,21 @@
             "bullet_3": "Non-GMO superfoods for complete nutrition"
           }
         },
+        "card_VBj4MX": {
+          "type": "card",
+          "settings": {
+            "product": "protein-variety-pack",
+            "custom_title": "TrueFit Protein Variety Pack",
+            "subscribe_price": "",
+            "badge_text": "Save 20%",
+            "badge_background": "#93bf52",
+            "badge_text_color": "#060d36",
+            "badge_size": "medium",
+            "bullet_1": "25g grass-fed protein to build & retain muscle",
+            "bullet_2": "Fiber + probiotics for digestion & gut health",
+            "bullet_3": "Non-GMO superfoods for complete nutrition"
+          }
+        },
         "card_fCjV4k": {
           "type": "card",
           "settings": {
@@ -565,6 +580,7 @@
       "block_order": [
         "card_Qqwmpd",
         "card_cNqYVE",
+        "card_VBj4MX",
         "card_fCjV4k",
         "card_kXFAdn",
         "card_cHrX93",
