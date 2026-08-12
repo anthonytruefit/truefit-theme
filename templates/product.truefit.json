@@ -85,13 +85,23 @@
         },
         "custom_flavor_swatch_hi49dH": {
           "type": "custom_flavor_swatch",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
             "caption": "Variety Pack",
             "size_text": "60 servings",
             "tag_text": "Save 20%",
             "link_product": "protein-variety-pack",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_NJUHAG": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitbundle.png",
+            "caption": "Essentials Pack",
+            "size_text": "40 servings",
+            "tag_text": "Save 15%",
+            "link_product": "truefit-flavor-bundle-1-chocolate-1-vanilla",
             "link": ""
           }
         },
@@ -191,6 +201,7 @@
         "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_pHe4Xf",
         "custom_flavor_swatch_hi49dH",
+        "custom_flavor_swatch_NJUHAG",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
