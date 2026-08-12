@@ -85,6 +85,7 @@
         },
         "custom_flavor_swatch_hi49dH": {
           "type": "custom_flavor_swatch",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
             "caption": "Variety Pack",
@@ -96,6 +97,7 @@
         },
         "custom_flavor_swatch_NJUHAG": {
           "type": "custom_flavor_swatch",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TrueFitbundle.png",
             "caption": "Essentials Pack",
