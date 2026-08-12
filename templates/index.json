@@ -14,6 +14,7 @@
       "blocks": {
         "slide_FnFjEH": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Dubai_Early_Access_Banner_WEB.png",
@@ -30,9 +31,9 @@
             "button1_text": "SECURE YOURS NOW",
             "button1_link": "shopify://products/truefit-protein-powder-dubai-chocolate",
             "button1_style": "filled",
-            "button1_bg": "#93BF52",
+            "button1_bg": "#93bf52",
             "button1_text_color": "#0a1a4f",
-            "button1_border": "#060D36",
+            "button1_border": "#060d36",
             "button2_text": "",
             "button2_link": "",
             "button2_style": "outline",
@@ -46,7 +47,6 @@
         },
         "slide_BVaqw9": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/WEBSITE_BANNER_WEB.jpg",
@@ -447,7 +447,7 @@
             "product": "truefit-protein-powder-dubai-chocolate",
             "custom_title": "TrueFit Protein - Dubai Chocolate",
             "subscribe_price": "",
-            "badge_text": "Early Access",
+            "badge_text": "New",
             "badge_background": "#93bf52",
             "badge_text_color": "#060d36",
             "badge_size": "medium",
