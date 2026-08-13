@@ -50,14 +50,36 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
-        "custom_flavor_swatch_AyML78": {
+        "custom_flavor_swatch_6xcjiP": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/TrueFitbundle.png",
-            "caption": "Chocolate + Vanilla",
-            "size_text": "",
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Vanilla-RT.png",
+            "caption": "Vanilla",
+            "size_text": "20 Servings",
             "tag_text": "Best Seller",
-            "link_product": "truefit-flavor-bundle-1-chocolate-1-vanilla",
+            "link_product": "truefit-vanilla",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_PpNQiJ": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/DTC_TrueFit2LB_Chocolate-RT.png",
+            "caption": "Chocolate",
+            "size_text": "20 Servings",
+            "tag_text": "Top Reviewed",
+            "link_product": "truefit-chocolate",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_gjPmiC": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitGrassFed_DubaiChocolate_20Serv_101725-14_Front_HighRes.png",
+            "caption": "Dubai Chocolate",
+            "size_text": "20 Servings",
+            "tag_text": "New",
+            "link_product": "truefit-protein-powder-dubai-chocolate",
             "link": ""
           }
         },
@@ -65,10 +87,21 @@
           "type": "custom_flavor_swatch",
           "settings": {
             "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
-            "caption": "3 Flavor Variety Pack",
-            "size_text": "",
-            "tag_text": "New",
+            "caption": "Variety Pack",
+            "size_text": "60 Servings",
+            "tag_text": "Save 20%",
             "link_product": "protein-variety-pack",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_AyML78": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitbundle.png",
+            "caption": "Essentials Pack",
+            "size_text": "40 Servings",
+            "tag_text": "Save 15%",
+            "link_product": "truefit-flavor-bundle-1-chocolate-1-vanilla",
             "link": ""
           }
         },
@@ -164,8 +197,11 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
-        "custom_flavor_swatch_AyML78",
+        "custom_flavor_swatch_6xcjiP",
+        "custom_flavor_swatch_PpNQiJ",
+        "custom_flavor_swatch_gjPmiC",
         "custom_flavor_swatch_8XxVr7",
+        "custom_flavor_swatch_AyML78",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -189,14 +225,14 @@
         "flavor_selected_border": "#0a1a4f",
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0a1a4f",
-        "flavor_caption_size": 1.4,
+        "flavor_caption_size": 1,
         "flavor_caption_weight": "500",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738d",
         "flavor_size_text_size": 1,
         "flavor_tag_bg": "#c9a86a",
         "flavor_tag_text_color": "#0a1a4f",
-        "flavor_tag_text_size": 1,
+        "flavor_tag_text_size": 0.9,
         "flavor_tag_weight": "600",
         "flavor_tag_padding_x": 10,
         "flavor_tag_padding_y": 6,
