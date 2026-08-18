@@ -140,12 +140,24 @@
         },
         "custom_flavor_swatch_NWNYwn": {
           "type": "custom_flavor_swatch",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Peak_Performance.png",
             "caption": "Peak Performance",
             "size_text": "30 servings",
             "tag_text": "",
             "link_product": "peak-performance-pack",
+            "link": ""
+          }
+        },
+        "custom_flavor_swatch_NDAWjq": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanVarietyPack.png",
+            "caption": "Variety Pack",
+            "size_text": "90 Servings",
+            "tag_text": "20% Off",
+            "link_product": "energy-variety-pack",
             "link": ""
           }
         },
@@ -250,6 +262,7 @@
         "custom_flavor_swatch_mYrTt7",
         "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_NWNYwn",
+        "custom_flavor_swatch_NDAWjq",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
