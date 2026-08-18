@@ -322,7 +322,7 @@
         "enable_sticky_info": false,
         "media_size": "medium",
         "constrain_to_viewport": false,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "hover",
