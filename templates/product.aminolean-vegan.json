@@ -83,6 +83,17 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_tFtCqd": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/NaturalAminoLeanVariety.png",
+            "caption": "Variety Pack",
+            "size_text": "75 Servings",
+            "tag_text": "Save 20%",
+            "link_product": "energy-variety-pack-natural",
+            "link": ""
+          }
+        },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
@@ -178,6 +189,7 @@
         "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_pHe4Xf",
+        "custom_flavor_swatch_tFtCqd",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -201,7 +213,7 @@
         "flavor_selected_border": "#0a1a4f",
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0a1a4f",
-        "flavor_caption_size": 1.4,
+        "flavor_caption_size": 1.2,
         "flavor_caption_weight": "500",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738d",
