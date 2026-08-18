@@ -17,7 +17,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_WEB.jpg",
-            "image_mobile": "shopify://shop_images/Early_Access_banner_MOB.png",
+            "image_mobile": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_MOB.jpg",
             "eyebrow": "",
             "eyebrow_color": "#fcfcea",
             "eyebrow_size": 12,
