@@ -51,51 +51,6 @@
       ],
       "settings": {}
     },
-    "amino_product_grid_EVMQBx": {
-      "type": "amino-product-grid",
-      "name": "AminoLean: Product Grid",
-      "settings": {
-        "enable_text_styling": true,
-        "title_color": "#0a1a4f",
-        "title_size": 1.7,
-        "subtitle_color": "",
-        "subtitle_size": 1.1,
-        "subtitle_margin_top": 2,
-        "price_color": "#40738d",
-        "price_size": 1.2,
-        "product_list": [
-          "truefit-vanilla",
-          "truefit-chocolate",
-          "truefit-protein-powder-chocolate-40servings",
-          "creatine-mono",
-          "aminolean-recovery-tropical-island-punch",
-          "aminolean-recovery-blood-orange",
-          "vegan-aminolean-acai",
-          "aminolean-pink-lemonade",
-          "aminolean-pre-workout-berry-alixir",
-          "aminolean-blackberry-pomegranate",
-          "aminolean-blue-raspberry",
-          "aminolean-fruit-punch",
-          "aminolean-pre-workout-paradise-punch",
-          "aminolean-watermelon",
-          "vegan-aminolean-mango",
-          "aminolean-x-icee-cherry"
-        ],
-        "collection": "",
-        "product_title_use_flavor": false,
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "columns_tablet": 3,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
     "1781882128f406f18d": {
       "type": "_blocks",
       "settings": {}
@@ -108,7 +63,6 @@
   "order": [
     "main",
     "17818823928afd8235",
-    "amino_product_grid_EVMQBx",
     "1781882128f406f18d",
     "1781883954b611d438"
   ]
