@@ -10,6 +10,8 @@
   - card_product: {Object} the product
   - lazy_load: {Boolean} lazy-load the image
   - view_label: {String} add-to-cart button label (default "Add to Cart")
+  - show_subscribe: {Boolean} show the "... when you subscribe" line (default true).
+    Pass false on one-time-only contexts (e.g. BOGO) to show only the unit price.
 {% endcomment %}
 {%- liquid
   assign p = card_product
@@ -18,6 +20,10 @@
   assign flavor = p.metafields.custom.card_flavor_line.value
   assign sub = p.metafields.custom.subscribe_price.value
   assign badge = p.metafields.custom.card_badge.value
+  assign show_sub = true
+  if show_subscribe == false
+    assign show_sub = false
+  endif
   assign img_loading = 'eager'
   if lazy_load
     assign img_loading = 'lazy'
@@ -64,7 +70,7 @@
       <span class="cptf__price-current">{{ p.price | money }}</span>
     </div>
 
-    {%- if sub != blank -%}
+    {%- if sub != blank and show_sub -%}
       <div class="cptf__subscribe">{{ sub }} when you <a class="cptf__subscribe-link" href="{{ p.url }}">subscribe</a></div>
     {%- endif -%}
 
