@@ -39,7 +39,7 @@
             "text_size": 12,
             "text_alignment": "center",
             "text_color": "#0a1a4f",
-            "padding_top": 20,
+            "padding_top": 16,
             "padding_bottom": 0
           },
           "blocks": {}
@@ -186,8 +186,8 @@
       ],
       "name": "TF Product Grid (manual)",
       "settings": {
-        "eyebrow": "Labor Day Sale",
-        "heading": "BOGO 50% OFF",
+        "eyebrow": "",
+        "heading": "",
         "view_label": "Add to Cart",
         "show_subscribe_price": false,
         "columns_desktop": 4,
@@ -197,7 +197,7 @@
         "eyebrow_color": "#40738D",
         "headline_color": "#0A1A4F",
         "headline_size": 34,
-        "padding_top": 48,
+        "padding_top": 0,
         "padding_bottom": 48
       }
     }
