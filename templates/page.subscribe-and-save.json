@@ -45,6 +45,14 @@
             "text": "30% off your first order, 15% off every refill."
           }
         },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "flexibility",
+            "title": "Full flexibility",
+            "text": "Skip, pause, or cancel whenever you want."
+          }
+        },
         "b2": {
           "type": "benefit",
           "settings": {
@@ -56,25 +64,17 @@
         "b3": {
           "type": "benefit",
           "settings": {
-            "icon": "schedule",
-            "title": "Your schedule",
-            "text": "Choose how often it arrives, change it anytime."
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "flexibility",
-            "title": "Full flexibility",
-            "text": "Skip, pause, or cancel whenever you want."
+            "icon": "heart",
+            "title": "Earn Rewards",
+            "text": "Subscribers get free products and additional discounts."
           }
         }
       },
       "block_order": [
         "b1",
+        "b4",
         "b2",
-        "b3",
-        "b4"
+        "b3"
       ],
       "settings": {
         "eyebrow": "WHY SUBSCRIBE",
