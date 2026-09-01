@@ -287,7 +287,7 @@
         "eyebrow": "",
         "headline": "Your loyalty. Amazing rewards.",
         "headline_size": 46,
-        "columns_desktop": 3,
+        "columns_desktop": "3",
         "background": "#fcfcea",
         "eyebrow_color": "#40738d",
         "headline_color": "#0a1a4f",
