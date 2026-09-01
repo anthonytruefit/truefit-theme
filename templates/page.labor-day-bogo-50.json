@@ -23,12 +23,12 @@
         "ai_gen_block_0cb0049_mFfYgT": {
           "type": "ai_gen_block_0cb0049",
           "settings": {
-            "desktop_image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_35_25_AM.png",
+            "desktop_image": "shopify://shop_images/Labor_Day_Sale_Page_Banner.png",
             "desktop_width": 100,
-            "desktop_height": 600,
-            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_11_44_20_AM.png",
+            "desktop_height": 750,
+            "mobile_image": "shopify://shop_images/Labor_Day_Sale_Banner_MOB.png",
             "mobile_width": 100,
-            "mobile_height": 700
+            "mobile_height": 600
           },
           "blocks": {}
         },
@@ -39,7 +39,7 @@
             "text_size": 12,
             "text_alignment": "center",
             "text_color": "#0a1a4f",
-            "padding_top": 24,
+            "padding_top": 20,
             "padding_bottom": 0
           },
           "blocks": {}
@@ -49,7 +49,6 @@
         "ai_gen_block_0cb0049_mFfYgT",
         "ai_gen_block_7972b08_DC6DwK"
       ],
-      "disabled": true,
       "settings": {}
     },
     "1781882128f406f18d": {
