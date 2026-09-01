@@ -1,0 +1,132 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .snsloy { background: {{ s.background }}; padding: 5.6rem 0; }
+  #shopify-section-{{ section.id }} .snsloy__head { text-align: center; max-width: 60rem; margin: 0 auto 4.4rem; }
+  #shopify-section-{{ section.id }} .snsloy__eyebrow { margin: 0 0 1.2rem; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: {{ s.eyebrow_color }}; }
+  #shopify-section-{{ section.id }} .snsloy__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(2.8rem, 6vw, {{ s.headline_size }}px); color: {{ s.headline_color }}; }
+  #shopify-section-{{ section.id }} .snsloy__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.6rem 1.4rem; }
+  #shopify-section-{{ section.id }} .snsloy__card { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; background: {{ s.card_bg }}; border-radius: 1.6rem; padding: 3.4rem 1.4rem 2.6rem; }
+  #shopify-section-{{ section.id }} .snsloy__badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); padding: 0.55rem 1.4rem; border-radius: 999px; font-size: clamp(0.9rem, 2.4vw, 1.05rem); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; white-space: nowrap; background: {{ s.badge_bg }}; color: {{ s.badge_text }}; }
+  #shopify-section-{{ section.id }} .snsloy__media { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 9rem; margin-bottom: 1.6rem; }
+  #shopify-section-{{ section.id }} .snsloy__icon { width: 5.4rem; height: 5.4rem; color: {{ s.icon_color }}; }
+  #shopify-section-{{ section.id }} .snsloy__icon svg { width: 100%; height: 100%; display: block; }
+  #shopify-section-{{ section.id }} .snsloy__imgwrap { position: relative; display: inline-block; }
+  #shopify-section-{{ section.id }} .snsloy__img { display: block; max-height: 9rem; width: auto; max-width: 100%; object-fit: contain; }
+  #shopify-section-{{ section.id }} .snsloy__free { position: absolute; top: -0.6rem; right: -0.6rem; display: flex; align-items: center; justify-content: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; font-size: 1rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; background: {{ s.free_badge_bg }}; color: {{ s.free_badge_text }}; }
+  #shopify-section-{{ section.id }} .snsloy__title { margin: 0 0 0.5rem; font-size: clamp(1.4rem, 3.4vw, 1.6rem); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: {{ s.title_color }}; }
+  #shopify-section-{{ section.id }} .snsloy__text { margin: 0; font-size: 1.3rem; line-height: 1.55; color: {{ s.text_color }}; }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .snsloy { padding: 8rem 0; }
+    #shopify-section-{{ section.id }} .snsloy__grid { grid-template-columns: repeat({{ s.columns_desktop }}, 1fr); gap: 3.2rem 2.4rem; max-width: 96rem; margin: 0 auto; }
+    #shopify-section-{{ section.id }} .snsloy__card { padding: 4rem 2rem 3rem; }
+    #shopify-section-{{ section.id }} .snsloy__media { min-height: 11rem; }
+    #shopify-section-{{ section.id }} .snsloy__icon { width: 6rem; height: 6rem; }
+    #shopify-section-{{ section.id }} .snsloy__img { max-height: 11rem; }
+  }
+{%- endstyle -%}
+
+<div class="snsloy">
+  <div class="page-width">
+    <div class="snsloy__head">
+      {%- if s.eyebrow != blank -%}<p class="snsloy__eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<h2 class="snsloy__headline">{{ s.headline }}</h2>{%- endif -%}
+    </div>
+    <div class="snsloy__grid">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="snsloy__card" {{ block.shopify_attributes }}>
+          {%- if b.badge != blank -%}<span class="snsloy__badge">{{ b.badge }}</span>{%- endif -%}
+          <div class="snsloy__media">
+            {%- if b.media_type == 'image' and b.image != blank -%}
+              <span class="snsloy__imgwrap">
+                <img
+                  class="snsloy__img"
+                  src="{{ b.image | image_url: width: 300 }}"
+                  srcset="{{ b.image | image_url: width: 300 }} 1x, {{ b.image | image_url: width: 600 }} 2x"
+                  alt="{{ b.image.alt | default: b.title | escape }}"
+                  loading="lazy"
+                  width="{{ b.image.width }}"
+                  height="{{ b.image.height }}">
+                {%- if b.show_free_badge and b.free_badge_text != blank -%}<span class="snsloy__free">{{ b.free_badge_text }}</span>{%- endif -%}
+              </span>
+            {%- else -%}
+              <span class="snsloy__icon">{%- render 'tf-sns-icon', name: b.icon -%}</span>
+            {%- endif -%}
+          </div>
+          {%- if b.title != blank -%}<p class="snsloy__title">{{ b.title }}</p>{%- endif -%}
+          {%- if b.text != blank -%}<p class="snsloy__text">{{ b.text }}</p>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "S&S Loyalty rewards",
+  "tag": "section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Your loyalty. Amazing rewards." },
+    { "type": "range", "id": "headline_size", "min": 28, "max": 60, "step": 1, "unit": "px", "label": "Headline max size", "default": 46 },
+    { "type": "range", "id": "columns_desktop", "min": 2, "max": 3, "step": 1, "label": "Columns (desktop)", "default": 3 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FCFCEA" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#40738D" },
+    { "type": "color", "id": "headline_color", "label": "Headline color", "default": "#0A1A4F" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#DCEBF7" },
+    { "type": "color", "id": "badge_bg", "label": "Order badge background", "default": "#0A1A4F" },
+    { "type": "color", "id": "badge_text", "label": "Order badge text", "default": "#FFFFFF" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#0A1A4F" },
+    { "type": "color", "id": "title_color", "label": "Reward title color", "default": "#0A1A4F" },
+    { "type": "color", "id": "text_color", "label": "Reward text color", "default": "#40738D" },
+    { "type": "color", "id": "free_badge_bg", "label": "\"Free\" bubble background", "default": "#86BCE8" },
+    { "type": "color", "id": "free_badge_text", "label": "\"Free\" bubble text", "default": "#0A1A4F" }
+  ],
+  "blocks": [
+    {
+      "type": "reward",
+      "name": "Reward tier",
+      "settings": [
+        { "type": "text", "id": "badge", "label": "Order badge", "default": "ORDER 2", "info": "Small pill above the card, e.g. NEW PRODUCTS or ORDER 4." },
+        { "type": "select", "id": "media_type", "label": "Media", "default": "icon", "options": [
+          { "value": "icon", "label": "Icon" },
+          { "value": "image", "label": "Product image" }
+        ] },
+        { "type": "select", "id": "icon", "label": "Icon", "default": "gift", "info": "Used when Media is set to Icon.", "options": [
+          { "value": "megaphone", "label": "Megaphone" },
+          { "value": "gift", "label": "Gift" },
+          { "value": "percent-badge", "label": "Percent badge" },
+          { "value": "savings", "label": "Savings tag" },
+          { "value": "star", "label": "Star" },
+          { "value": "bell", "label": "Bell" },
+          { "value": "shipping", "label": "Shipping" },
+          { "value": "schedule", "label": "Schedule" },
+          { "value": "shield", "label": "Shield" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "leaf", "label": "Leaf" }
+        ] },
+        { "type": "image_picker", "id": "image", "label": "Product image", "info": "Used when Media is set to Product image." },
+        { "type": "checkbox", "id": "show_free_badge", "label": "Show \"Free\" bubble on image", "default": false },
+        { "type": "text", "id": "free_badge_text", "label": "\"Free\" bubble text", "default": "FREE" },
+        { "type": "text", "id": "title", "label": "Title", "default": "FREE GIFT" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Get a free gift of your choice." }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "S&S Loyalty rewards",
+    "blocks": [
+      { "type": "reward", "settings": { "badge": "NEW PRODUCTS", "media_type": "icon", "icon": "megaphone", "title": "FIRST TO KNOW", "text": "Be the first to know what's new." } },
+      { "type": "reward", "settings": { "badge": "ORDER 2", "media_type": "icon", "icon": "gift", "title": "FREE GIFT", "text": "Get a TrueFit Creatine on us." } },
+      { "type": "reward", "settings": { "badge": "ORDER 4", "media_type": "icon", "icon": "percent-badge", "title": "25% OFF", "text": "An additional 10% off your next order." } },
+      { "type": "reward", "settings": { "badge": "ORDER 6", "media_type": "icon", "icon": "gift", "title": "FREE GIFT", "text": "Get another free gift of your choice." } },
+      { "type": "reward", "settings": { "badge": "ORDER 8", "media_type": "icon", "icon": "gift", "title": "FREE GIFT", "text": "Earn another free gift of your choice." } },
+      { "type": "reward", "settings": { "badge": "ORDER 10+", "media_type": "icon", "icon": "percent-badge", "title": "30% OFF", "text": "Ongoing savings on your subscription." } }
+    ]
+  }]
+}
+{% endschema %}

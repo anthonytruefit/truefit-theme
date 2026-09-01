@@ -218,6 +218,89 @@
         "headline_size": 34
       }
     },
+    "tf_loyalty": {
+      "type": "tf-sns-loyalty",
+      "blocks": {
+        "r1": {
+          "type": "reward",
+          "settings": {
+            "badge": "NEW PRODUCTS",
+            "media_type": "icon",
+            "icon": "megaphone",
+            "title": "FIRST TO KNOW",
+            "text": "Be the first to know what's new."
+          }
+        },
+        "r2": {
+          "type": "reward",
+          "settings": {
+            "badge": "ORDER 2",
+            "media_type": "icon",
+            "icon": "gift",
+            "title": "FREE GIFT",
+            "text": "Get a TrueFit Creatine on us."
+          }
+        },
+        "r3": {
+          "type": "reward",
+          "settings": {
+            "badge": "ORDER 4",
+            "media_type": "icon",
+            "icon": "percent-badge",
+            "title": "25% OFF",
+            "text": "An additional 10% off your next order."
+          }
+        },
+        "r4": {
+          "type": "reward",
+          "settings": {
+            "badge": "ORDER 6",
+            "media_type": "icon",
+            "icon": "gift",
+            "title": "FREE GIFT",
+            "text": "Get another free gift of your choice."
+          }
+        },
+        "r5": {
+          "type": "reward",
+          "settings": {
+            "badge": "ORDER 8",
+            "media_type": "icon",
+            "icon": "gift",
+            "title": "FREE GIFT",
+            "text": "Earn another free gift of your choice."
+          }
+        },
+        "r6": {
+          "type": "reward",
+          "settings": {
+            "badge": "ORDER 10+",
+            "media_type": "icon",
+            "icon": "percent-badge",
+            "title": "30% OFF",
+            "text": "Ongoing savings on your subscription."
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {
+        "eyebrow": "",
+        "headline": "Your loyalty. Amazing rewards.",
+        "headline_size": 46,
+        "columns_desktop": 3,
+        "background": "#fcfcea",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
+        "card_bg": "#dcebf7",
+        "badge_bg": "#0a1a4f",
+        "badge_text": "#ffffff",
+        "icon_color": "#0a1a4f",
+        "title_color": "#0a1a4f",
+        "text_color": "#40738d",
+        "free_badge_bg": "#86bce8",
+        "free_badge_text": "#0a1a4f"
+      }
+    },
     "tf_social": {
       "type": "tf-sns-social",
       "settings": {
@@ -295,6 +378,7 @@
     "tf_benefits",
     "tf_steps",
     "tf_products",
+    "tf_loyalty",
     "tf_social",
     "tf_faq"
   ]
