@@ -163,7 +163,7 @@
           "type": "drawer_image_banner",
           "settings": {
             "image": "shopify://shop_images/Labor_Day_Sale_Page_Banner.png",
-            "link": "shopify://products/truefit-protein-powder-dubai-chocolate",
+            "link": "shopify://pages/labor-day-sale",
             "alt": ""
           }
         },
