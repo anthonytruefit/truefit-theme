@@ -188,6 +188,24 @@
           "settings": {
             "product": "aminolean-recovery-blood-orange"
           }
+        },
+        "product_card_CPR9xR": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-energy-drink-pink-lemonade"
+          }
+        },
+        "product_card_qEdyUQ": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-energy-drink-berry-alixir"
+          }
+        },
+        "product_card_UmxFxg": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-energy-drink-variety-pack"
+          }
         }
       },
       "block_order": [
@@ -207,7 +225,10 @@
         "product_card_7DkCx7",
         "product_card_XUkncL",
         "product_card_rfmtja",
-        "product_card_QG8khT"
+        "product_card_QG8khT",
+        "product_card_CPR9xR",
+        "product_card_qEdyUQ",
+        "product_card_UmxFxg"
       ],
       "name": "TF Product Grid (manual)",
       "settings": {
@@ -218,9 +239,9 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "desc_lines": 4,
-        "background": "#FFFFFF",
-        "eyebrow_color": "#40738D",
-        "headline_color": "#0A1A4F",
+        "background": "#ffffff",
+        "eyebrow_color": "#40738d",
+        "headline_color": "#0a1a4f",
         "headline_size": 34,
         "padding_top": 0,
         "padding_bottom": 8
