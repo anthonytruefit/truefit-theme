@@ -16,6 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "LABOR DAY BOGO IS LIVE",
             "link": "shopify://pages/labor-day-sale"
@@ -162,8 +163,8 @@
         "drawer_image_banner_w8xqNf": {
           "type": "drawer_image_banner",
           "settings": {
-            "image": "shopify://shop_images/Labor_Day_Sale_Page_Banner.png",
-            "link": "shopify://pages/labor-day-sale",
+            "image": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_WEB.jpg",
+            "link": "shopify://pages/bundle-builder",
             "alt": ""
           }
         },

@@ -14,6 +14,7 @@
       "blocks": {
         "slide_NMkhkD": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Labor_Day_Sale_Main_Banner.png",
@@ -30,9 +31,9 @@
             "button1_text": "SHOP LABOR DAY SALE",
             "button1_link": "shopify://pages/labor-day-sale",
             "button1_style": "filled",
-            "button1_bg": "#0A182F",
-            "button1_text_color": "#E6E4E6",
-            "button1_border": "#8D171D",
+            "button1_bg": "#0a182f",
+            "button1_text_color": "#e6e4e6",
+            "button1_border": "#8d171d",
             "button2_text": "",
             "button2_link": "",
             "button2_style": "outline",
