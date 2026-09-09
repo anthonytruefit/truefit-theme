@@ -188,6 +188,12 @@
             "product": "truefit-flavor-bundle-1-chocolate-1-vanilla"
           }
         },
+        "product_card_BAi7bw": {
+          "type": "product_card",
+          "settings": {
+            "product": "foundation-bundle"
+          }
+        },
         "product_card_JBQ8em": {
           "type": "product_card",
           "settings": {
@@ -216,6 +222,7 @@
       "block_order": [
         "product_card_GNe9jF",
         "product_card_EK3ABD",
+        "product_card_BAi7bw",
         "product_card_JBQ8em",
         "product_card_rJk9Ed",
         "product_card_BacYQt",
@@ -226,6 +233,7 @@
         "eyebrow": "SHOP BUNDLES",
         "heading": "Your routine, pre-built.",
         "view_label": "Add to Cart",
+        "show_subscribe_price": true,
         "columns_desktop": 3,
         "columns_mobile": "2",
         "desc_lines": 4,
