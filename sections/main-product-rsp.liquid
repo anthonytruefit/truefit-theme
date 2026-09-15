@@ -250,8 +250,16 @@
                     if current_variant.selling_plan_allocations.size > 0
                       assign has_selling_plan = true
                       assign first_allocation = current_variant.selling_plan_allocations.first
-                      assign selling_plan_price = first_allocation.per_delivery_price | times: 0.82
+                      assign selling_plan_price = first_allocation.per_delivery_price
                     endif
+                    comment
+                      Subscription price is entered manually per product via the
+                      custom.subscribe_price metafield (the same field the product cards use).
+                      Falls back to the real ReCharge per-delivery price when that field is empty.
+                      The "Save X%" badge is set manually via custom.subscribe_save_badge (defaults to 30%).
+                    endcomment
+                    assign manual_sub_price = product.metafields.custom.subscribe_price.value
+                    assign save_badge = product.metafields.custom.subscribe_save_badge.value | default: '30%'
                   -%}
                   <selling-plan-price
                     class="selling-plan-price"
@@ -271,10 +279,6 @@
                       -%}
                     </div>
                     <div class="selling-plan-price__subscription" data-price-view="subscription" style="display: none;">
-  {%- liquid
-    assign discount_amount = variant_price | minus: selling_plan_price
-    assign discount_percent = discount_amount | times: 100.0 | divided_by: variant_price | round
-  -%}
   <div class="price price--large price--on-sale">
     <div class="price__container">
       <div class="price__sale">
@@ -287,12 +291,14 @@
 
         <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
         <span class="price-item price-item--sale price-item--last" data-selling-plan-price-display>
-          {{ selling_plan_price | money }}
+          {%- if manual_sub_price != blank -%}{{ manual_sub_price }}{%- else -%}{{ selling_plan_price | money }}{%- endif -%}
         </span>
 
-        <span class="selling-plan-price__discount-tag" data-discount-tag>
-          Save {{ discount_percent }}%
-        </span>
+        {%- if save_badge != blank -%}
+          <span class="selling-plan-price__discount-tag" data-discount-tag>
+            Save {{ save_badge }}
+          </span>
+        {%- endif -%}
       </div>
     </div>
   </div>
