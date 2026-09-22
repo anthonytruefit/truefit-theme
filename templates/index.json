@@ -14,11 +14,10 @@
       "blocks": {
         "slide_NMkhkD": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/Labor_Day_Sale_Main_Banner.png",
-            "image_mobile": "shopify://shop_images/Labor_Day_Sale_Banner_MOB.png",
+            "image": "shopify://shop_images/Birthday_Sale_Web_Banner.png",
+            "image_mobile": "shopify://shop_images/Birthday_Sale_Mobile.png",
             "eyebrow": "",
             "eyebrow_color": "#fcfcea",
             "eyebrow_size": 12,
@@ -28,8 +27,8 @@
             "subline": "",
             "subline_color": "#fcfcea",
             "subline_size": 18,
-            "button1_text": "SHOP LABOR DAY SALE",
-            "button1_link": "shopify://pages/labor-day-sale",
+            "button1_text": "EARN THAT GIFT!",
+            "button1_link": "shopify://collections/tf-shop-all",
             "button1_style": "filled",
             "button1_bg": "#0a182f",
             "button1_text_color": "#e6e4e6",
