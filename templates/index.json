@@ -14,6 +14,7 @@
       "blocks": {
         "slide_NMkhkD": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Birthday_Sale_Web_Banner.png",

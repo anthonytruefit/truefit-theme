@@ -25,7 +25,7 @@
         "e012bf18-c18d-4654-93dc-78af71f42f3a": {
           "type": "announcement",
           "settings": {
-            "text": "BIRTHDAY SALE: SPEND $100 & PICK YOUR GIFT",
+            "text": "FREE PRE WORKOUT ON ORDER $100+",
             "link": "shopify://collections/tf-shop-all"
           }
         },
@@ -163,8 +163,8 @@
         "drawer_image_banner_w8xqNf": {
           "type": "drawer_image_banner",
           "settings": {
-            "image": "shopify://shop_images/Birthday_Sale_Web_Banner.png",
-            "link": "shopify://collections/tf-shop-all",
+            "image": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_WEB.jpg",
+            "link": "shopify://products/protein-variety-pack",
             "alt": ""
           }
         },
