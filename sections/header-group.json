@@ -16,9 +16,8 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "LABOR DAY BOGO IS LIVE",
+            "text": "FALL RESTOCK BOGO IS LIVE",
             "link": "shopify://pages/labor-day-sale"
           }
         },
