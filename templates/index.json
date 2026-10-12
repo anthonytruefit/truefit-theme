@@ -14,6 +14,7 @@
       "blocks": {
         "slide_NMkhkD": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/TF_Falle_Sale_Web_Banner.png",
@@ -78,7 +79,6 @@
         },
         "slide_BVaqw9": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/WEBSITE_BANNER_WEB.jpg",
