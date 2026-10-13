@@ -61,6 +61,17 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_397eVD": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/TrueFitCreatinBundle.png",
+            "caption": "Strength Bundle",
+            "size_text": "",
+            "tag_text": "Save 20%",
+            "link_product": "bundle-protein-creatine",
+            "link": ""
+          }
+        },
         "recharge_subscriptions_subscription_widget_v2_gFnFJK": {
           "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
@@ -154,6 +165,7 @@
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
         "custom_flavor_swatch_AyML78",
+        "custom_flavor_swatch_397eVD",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
         "trust_badges_VqYcAM",
@@ -177,7 +189,7 @@
         "flavor_selected_border": "#0a1a4f",
         "flavor_selected_border_width": 2,
         "flavor_caption_color": "#0a1a4f",
-        "flavor_caption_size": 1.4,
+        "flavor_caption_size": 1.1,
         "flavor_caption_weight": "500",
         "flavor_caption_gap": 6,
         "flavor_size_color": "#40738d",
