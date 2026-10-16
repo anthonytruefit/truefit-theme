@@ -150,6 +150,17 @@
             "link": ""
           }
         },
+        "custom_flavor_swatch_chqLKc": {
+          "type": "custom_flavor_swatch",
+          "settings": {
+            "image": "shopify://shop_images/AminoLeanEnergy_PinkLemonade_25Serv_030525-04_Front_Amazon_3.png",
+            "caption": "Pink Lemonade",
+            "size_text": "25 servings",
+            "tag_text": "",
+            "link_product": "aminolean-pre-workout-pink-lemonade-copy",
+            "link": ""
+          }
+        },
         "custom_flavor_swatch_NDAWjq": {
           "type": "custom_flavor_swatch",
           "settings": {
@@ -262,6 +273,7 @@
         "custom_flavor_swatch_mYrTt7",
         "custom_flavor_swatch_zikHKM",
         "custom_flavor_swatch_NWNYwn",
+        "custom_flavor_swatch_chqLKc",
         "custom_flavor_swatch_NDAWjq",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
