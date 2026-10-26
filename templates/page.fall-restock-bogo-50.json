@@ -23,10 +23,10 @@
         "ai_gen_block_0cb0049_mFfYgT": {
           "type": "ai_gen_block_0cb0049",
           "settings": {
-            "desktop_image": "shopify://shop_images/TF_Falle_Sale_Web_Banner.png",
+            "desktop_image": "shopify://shop_images/Halloween_banner_web.png",
             "desktop_width": 100,
             "desktop_height": 750,
-            "mobile_image": "shopify://shop_images/26_TrueFit_MetaAds1002fall_2_916.jpg",
+            "mobile_image": "shopify://shop_images/Halloween_banner_mob.png",
             "mobile_width": 100,
             "mobile_height": 600
           },
@@ -235,7 +235,7 @@
         "eyebrow": "",
         "heading": "",
         "view_label": "Add to Cart",
-        "show_subscribe_price": false,
+        "show_subscribe_price": true,
         "columns_desktop": 4,
         "columns_mobile": "2",
         "desc_lines": 4,
