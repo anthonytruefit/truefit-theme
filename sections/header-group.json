@@ -16,14 +16,14 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "FALL RESTOCK BOGO IS LIVE",
-            "link": "shopify://pages/labor-day-sale"
+            "text": "TRICK OR TREAT: SPEND $100 AND PICK YOUR FREE GIFT",
+            "link": "shopify://pages/halloween-trick-or-treat-event"
           }
         },
         "e012bf18-c18d-4654-93dc-78af71f42f3a": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "FREE PRE WORKOUT ON ORDER $100+",
             "link": "shopify://collections/tf-shop-all"
