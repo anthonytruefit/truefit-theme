@@ -16,6 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "TRICK OR TREAT: SPEND $100 AND PICK YOUR FREE GIFT",
             "link": "shopify://pages/halloween-trick-or-treat-event"
@@ -23,7 +24,6 @@
         },
         "e012bf18-c18d-4654-93dc-78af71f42f3a": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "FREE PRE WORKOUT ON ORDER $100+",
             "link": "shopify://collections/tf-shop-all"
@@ -163,8 +163,8 @@
         "drawer_image_banner_w8xqNf": {
           "type": "drawer_image_banner",
           "settings": {
-            "image": "shopify://shop_images/Halloween_banner_web.png",
-            "link": "shopify://pages/halloween-trick-or-treat-event",
+            "image": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_WEB.jpg",
+            "link": "shopify://products/protein-variety-pack",
             "alt": ""
           }
         },
