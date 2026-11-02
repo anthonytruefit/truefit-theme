@@ -507,33 +507,33 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_16_05_PM.png",
-            "heading": "Built for strength",
-            "text": "<p>Creatine is the most researched performance ingredient there is, and for good reason. By replenishing your body's ATP, the cellular fuel behind every explosive movement, it helps you push harder, lift heavier, and go longer right when it counts. More power per rep, more reps per set, more progress over time.</p>"
+            "image": "shopify://shop_images/TrueFit_Magnesium_Bed_Side.png",
+            "heading": "Rest that restores",
+            "text": "<p>A good night starts with a calm body. Magnesium helps your nervous system shift out of high gear and supports the natural processes that help you relax, so you fall asleep more easily and wake up feeling like yourself.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_12_36_PM.png",
-            "heading": "More muscle, earned",
-            "text": "<p>Every hard session is a chance to grow, and creatine helps you make the most of it. It draws water and nutrients into the muscle and supports the work of building lean mass, so the training you put in actually shows up. Real gains from real ingredients, no shortcuts.</p>"
+            "image": "shopify://shop_images/TrueFit_Magnesium_Tea-RT.jpg",
+            "heading": "Steady under pressure",
+            "text": "<p>Long days, tight deadlines, little sleep: stress adds up. Magnesium plays a key role in how your body responds to it, and may help keep cortisol levels in check so everyday pressure feels more manageable.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/feature-build-muscle_d869b81d-661b-4e86-bac5-e47261623330.jpg",
+            "image": "shopify://shop_images/image_8952a551-b5b0-4077-972c-a79342ad792b.png",
             "heading": "Recover and repeat",
-            "text": "<p>Get back in the game faster. Creatine helps repair muscle micro-tears and restore glycogen stores between workouts, so you recover quicker, feel less beat up, and stay consistent week after week. Because the best program is the one you can keep showing up for.</p>"
+            "text": "<p>Your muscles rely on magnesium to contract, relax, and recover. It also supports energy production and helps your body bounce back after hard training, so you feel less wound up and more ready for the next session.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_16_2026_10_19_25_PM.png",
-            "heading": "Fuel for your mind",
-            "text": "<p>Your brain runs on the same energy system your muscles do. By supporting ATP production in brain cells, creatine helps fuel mental performance and focus, especially when you're tired or training hard. Strength for your body, support for your mind.</p>"
+            "image": "shopify://shop_images/Hand_Capsule.png",
+            "heading": "The form that actually works",
+            "text": "<p>Not all magnesium is created equal. Many supplements use magnesium oxide, which is cheap but poorly absorbed and hard on the stomach. We chose magnesium glycinate, a chelated form your body absorbs easily and tolerates well, so more of every capsule does its job</p>"
           }
         }
       },
@@ -705,16 +705,16 @@
         "card_qyhFqU": {
           "type": "card",
           "settings": {
-            "product": "aminolean-recovery-blood-orange",
-            "custom_title": "AminoLean Recovery & Hydration - Orange Splash",
-            "subscribe_price": "$17.42",
+            "product": "creatine-mono",
+            "custom_title": "TrueFit Creatine Monohydrate",
+            "subscribe_price": "$18.82",
             "badge_text": "",
             "badge_background": "#0a1a4f",
             "badge_text_color": "#ffffff",
             "badge_size": "medium",
-            "bullet_1": "Hydrating electrolytes from sea minerals",
-            "bullet_2": "Vegan amino acids for muscle recovery",
-            "bullet_3": "Nootropic mushrooms for mental focus"
+            "bullet_1": "5g pure micronized creatine",
+            "bullet_2": "Strength, power, and faster recovery",
+            "bullet_3": "Supports brain and cognitive function"
           }
         },
         "card_Bwnjpz": {
