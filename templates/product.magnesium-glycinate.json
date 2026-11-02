@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "Creatine Monohydrate",
+            "title": "Magnesium Glycinate",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is creatine, elevated. Five grams of pure micronized creatine monohydrate, the most researched form there is, to fuel strength, build long-lasting muscle, and improve recovery. And because your brain runs on the same energy system your muscles do, it supports mental performance too. One real ingredient, built for body and mind.",
+            "text": "This is magnesium, elevated. We use magnesium glycinate, a highly absorbable, chelated form that’s gentle on the stomach, to support relaxation, restful sleep, and recovery. Each capsule delivers 120 mg, so you can take 1 to 4 a day depending on your needs. It’s third-party tested and made in the USA, with nothing extra along for the ride.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -50,25 +50,14 @@
           "type": "reviews_badge_price",
           "settings": {}
         },
-        "custom_flavor_swatch_AyML78": {
-          "type": "custom_flavor_swatch",
-          "settings": {
-            "image": "shopify://shop_images/TrueFitCreatine_Render-Front_copy.png",
-            "caption": "60 Servings",
-            "size_text": "",
-            "tag_text": "Best Seller",
-            "link_product": "creatine-mono",
-            "link": ""
-          }
-        },
         "custom_flavor_swatch_397eVD": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/TrueFitCreatinBundle.png",
-            "caption": "Strength Bundle",
-            "size_text": "",
-            "tag_text": "Save 20%",
-            "link_product": "bundle-protein-creatine",
+            "image": "shopify://shop_images/RenderFront.png",
+            "caption": "Magnesium Glycinate",
+            "size_text": "90 Capsules",
+            "tag_text": "New",
+            "link_product": "truefit-magnesium-glycinate",
             "link": ""
           }
         },
@@ -145,7 +134,7 @@
           "settings": {
             "heading": "Frequently bought together",
             "companion_1": "truefit-vanilla",
-            "companion_2": "vegan-aminolean-acai",
+            "companion_2": "creatine-mono",
             "fbt_card_bg": "#ffffff",
             "fbt_card_border": "#e2e5ec",
             "fbt_card_radius": 12,
@@ -164,7 +153,6 @@
         "caption",
         "text_ByCYTM",
         "46c3ce9e-bf8c-458b-a0a3-06c2a7a2fbb8",
-        "custom_flavor_swatch_AyML78",
         "custom_flavor_swatch_397eVD",
         "recharge_subscriptions_subscription_widget_v2_gFnFJK",
         "buy_buttons_aYXg8M",
@@ -267,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>Build strength, increase muscle output, and train harder with 5g of pure, micronized creatine monohydrate that helps your body produce fast, reliable energy. Creatine’s natural brain benefits also support sharper focus and mental clarity, so your mind stays as strong as your muscles.</p>",
+            "tab_1_text": "<p>TrueFit Magnesium is made with magnesium glycinate, a chelated form your body absorbs easily and that’s gentle on the stomach. Magnesium is an essential mineral that helps your body relax, supporting a calm nervous system, restful sleep, and recovery after hard days and harder workouts.* It also supports heart, muscle, bone, and brain health, plus a healthy response to everyday stress.* Each capsule delivers 120 mg, so you can take 1 to 4 a day to fit your needs and routine. It’s third-party tested and made in the USA, so you know exactly what you’re getting.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -276,18 +264,19 @@
             "tab_1_caption_6": "",
             "tab_2_enabled": true,
             "tab_2_heading": "Nutrition",
-            "tab_2_content_type": "text",
-            "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 Scoop (5g)</p><p>Servings Per Container:</p><p>AMOUNT PER SERVING%DV Creatine Monohydrate5 g**** Daily Value (DV) not established</p><p><br/></p><p><strong>OTHER INGREDIENTS: </strong>None</p><h4>WARNING</h4><p>IF YOU HAVE ANY HEALTH CONDITIONS, ARE PREGNANT, BREAST FEEDING OR TAKING MEDICATION, ASK A PHYSICIAN BEFORE USE. KEEP OUT OF REACH OF SMALL CHILDREN.</p><p>ΔTHESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</p>",
-            "tab_2_caption_1": "Vanilla",
+            "tab_2_content_type": "gallery",
+            "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 Scoop (5g)</p><p>Servings Per Container:</p><p>AMOUNT PER SERVING%DV&nbsp;Creatine Monohydrate5 g**** Daily Value (DV) not established</p><p><br/></p><p><strong>OTHER INGREDIENTS:&nbsp;</strong>None</p><h4>WARNING</h4><p>IF YOU HAVE ANY HEALTH CONDITIONS, ARE PREGNANT, BREAST FEEDING OR TAKING MEDICATION, ASK A PHYSICIAN BEFORE USE. KEEP OUT OF REACH OF SMALL CHILDREN.</p><p>ΔTHESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</p>",
+            "tab_2_image_1": "shopify://shop_images/Screenshot_2026-11-02_at_3.43.57_PM.png",
+            "tab_2_caption_1": "",
             "tab_2_caption_2": "",
-            "tab_2_caption_3": "Chocolate",
+            "tab_2_caption_3": "",
             "tab_2_caption_4": "",
             "tab_2_caption_5": "",
             "tab_2_caption_6": "",
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Take one serving (1 scoop) mixed with 8-10 fl. oz. of cold water (or other beverage of your choice) before, during or after training. On non-training days, take one serving (1 scoop) in the morning. Easily mixed and stacked with other products.</p>",
+            "tab_3_text": "<p>Take 1 capsule 1 to 4 times daily or as recommended by your health care practitioner.</p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -343,32 +332,32 @@
         "point_hWg9jP": {
           "type": "point",
           "settings": {
-            "icon": "muscle",
+            "icon": "shield",
             "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "5g Pure Micronized Creatine"
+            "label": "120mg Magnesium Glycinate"
           }
         },
         "point_g893cM": {
           "type": "point",
           "settings": {
-            "icon": "weights",
-            "label": "Strength & Performance"
+            "icon": "brain",
+            "label": "Calm and Stress Support"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
-            "icon": "brain",
-            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Brain Health Support"
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/arcticons--sleep-sounds.png",
+            "label": "Sleep and Recovery"
           }
         },
-        "point_K89Tja": {
+        "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "lab_test",
-            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
-            "label": "Lab Tested"
+            "icon": "gut_health",
+            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
+            "label": "Gentle on the Stomach"
           }
         },
         "point_JB96ni": {
@@ -379,12 +368,12 @@
             "label": "No Artificial Ingredients"
           }
         },
-        "point_hA8LaN": {
+        "point_K89Tja": {
           "type": "point",
           "settings": {
-            "icon": "sugar_free",
-            "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Sugar-Free"
+            "icon": "lab_test",
+            "icon_image": "shopify://shop_images/system-uicons--no-sign_2.png",
+            "label": "Third-Party Tested"
           }
         }
       },
@@ -392,14 +381,14 @@
         "point_hWg9jP",
         "point_g893cM",
         "point_h7EXcb",
-        "point_K89Tja",
+        "point_hA8LaN",
         "point_JB96ni",
-        "point_hA8LaN"
+        "point_K89Tja"
       ],
       "name": "TrueFit Standard",
       "settings": {
         "eyebrow": "STAY TRUE",
-        "heading": "Performance without compromise.",
+        "heading": "Calm without compromise.",
         "text": "",
         "columns_mobile": "3",
         "columns_desktop": 6,
