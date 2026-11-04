@@ -332,32 +332,32 @@
         "point_hWg9jP": {
           "type": "point",
           "settings": {
-            "icon": "shield",
-            "icon_image": "shopify://shop_images/tabler--microscope_1.png",
-            "label": "120mg Magnesium Glycinate"
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/clarity--sun-line.svg",
+            "label": "4,000 IU D3 + 100 mcg K2"
           }
         },
         "point_g893cM": {
           "type": "point",
           "settings": {
-            "icon": "brain",
-            "label": "Calm and Stress Support"
+            "icon": "muscle",
+            "label": "Bone Strength"
           }
         },
         "point_h7EXcb": {
           "type": "point",
           "settings": {
             "icon": "custom_image",
-            "icon_image": "shopify://shop_images/arcticons--sleep-sounds.png",
-            "label": "Sleep and Recovery"
+            "icon_image": "shopify://shop_images/arcticons--heart.png",
+            "label": "Heart Health"
           }
         },
         "point_hA8LaN": {
           "type": "point",
           "settings": {
-            "icon": "gut_health",
+            "icon": "shield",
             "icon_image": "shopify://shop_images/game-icons--high-grass_2.png",
-            "label": "Gentle on the Stomach"
+            "label": "Immune Support"
           }
         },
         "point_JB96ni": {
