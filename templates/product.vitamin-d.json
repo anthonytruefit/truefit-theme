@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "Magnesium Glycinate",
+            "title": "Vitamin D + K2",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "This is magnesium, elevated. We use magnesium glycinate, a highly absorbable, chelated form that’s gentle on the stomach, to support relaxation, restful sleep, and recovery. Each capsule delivers 120 mg, so you can take 1 to 4 a day depending on your needs. It’s third-party tested and made in the USA, with nothing extra along for the ride.",
+            "text": "TrueFit Vitamin D3 + K2 pairs two nutrients that work better together. D3 helps your body absorb calcium, and K2 helps send that calcium to your bones, where it counts. Each capsule delivers 4,000 IU of D3 as cholecalciferol and 100 mcg of K2 as MK-7, the long-lasting form, to support bone density, a healthy heart, and steady immune function.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,11 +53,11 @@
         "custom_flavor_swatch_397eVD": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/RenderFront.png",
-            "caption": "Magnesium Glycinate",
-            "size_text": "90 Capsules",
+            "image": "shopify://shop_images/VitaminDDTCRender.png",
+            "caption": "Vitamin D + K2",
+            "size_text": "60 Capsules",
             "tag_text": "New",
-            "link_product": "truefit-magnesium-glycinate",
+            "link_product": "truefit-vitamin-d-k2",
             "link": ""
           }
         },
