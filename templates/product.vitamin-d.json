@@ -507,25 +507,25 @@
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-1": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_Magnesium_Bed_Side.png",
-            "heading": "Rest that restores",
-            "text": "<p>A good night starts with a calm body. Magnesium helps your nervous system shift out of high gear and supports the natural processes that help you relax, so you fall asleep more easily and wake up feeling like yourself.</p>"
+            "image": "shopify://shop_images/TrueFitVitaminD3_K2-RT.jpg",
+            "heading": "Built from the bones up",
+            "text": "<p>Your bones are always rebuilding, and they need the right materials to do it. Vitamin D3 helps your body absorb calcium from food, and K2 helps route that calcium to your bones, where it belongs. Together they support healthy bone density, so you stay strong for everything you love to do.</p>"
           }
         },
         "row_AhH43k": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/TrueFit_Magnesium_Tea-RT.jpg",
-            "heading": "Steady under pressure",
-            "text": "<p>Long days, tight deadlines, little sleep: stress adds up. Magnesium plays a key role in how your body responds to it, and may help keep cortisol levels in check so everyday pressure feels more manageable.</p>"
+            "image": "shopify://shop_images/TrueFitVitaminD3_K2ProductFlatLay.png",
+            "heading": "Heart health, handled",
+            "text": "<p>Calcium belongs in your bones, not building up in the wrong places. Vitamin K2 activates proteins that help keep calcium where it’s supposed to be, which supports healthy arteries and cardiovascular function.</p>"
           }
         },
         "template--15510886875181__894e738c-d102-4245-8b24-f42264ccfba5-167805591942128572-2": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/image_8952a551-b5b0-4077-972c-a79342ad792b.png",
-            "heading": "Recover and repeat",
-            "text": "<p>Your muscles rely on magnesium to contract, relax, and recover. It also supports energy production and helps your body bounce back after hard training, so you feel less wound up and more ready for the next session.</p>"
+            "image": "shopify://shop_images/VitaminD3CapsuleinBrightKitchen.jpg",
+            "heading": "Your everyday defense",
+            "text": "<p>Vitamin D plays a key role in how your immune system works, and many people don’t get enough of it, especially during shorter days and long stretches indoors. One capsule helps fill that gap and supports a healthy immune response, so you can keep showing up through every season.</p>"
           }
         },
         "4959ee0d-d1fe-4639-92fc-81e688e40b63": {
@@ -533,7 +533,7 @@
           "settings": {
             "image": "shopify://shop_images/Hand_Capsule.png",
             "heading": "The form that actually works",
-            "text": "<p>Not all magnesium is created equal. Many supplements use magnesium oxide, which is cheap but poorly absorbed and hard on the stomach. We chose magnesium glycinate, a chelated form your body absorbs easily and tolerates well, so more of every capsule does its job</p>"
+            "text": "<p>Not all vitamin D supplements are built the same. Many use D2 or leave out K2 entirely. We chose D3 as cholecalciferol, the form your body makes from sunlight, and paired it with K2 as MK-7, a long-lasting form that stays active in your body longer. Two essentials, one capsule.</p>"
           }
         }
       },
