@@ -255,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>TrueFit Magnesium is made with magnesium glycinate, a chelated form your body absorbs easily and that’s gentle on the stomach. Magnesium is an essential mineral that helps your body relax, supporting a calm nervous system, restful sleep, and recovery after hard days and harder workouts.* It also supports heart, muscle, bone, and brain health, plus a healthy response to everyday stress.* Each capsule delivers 120 mg, so you can take 1 to 4 a day to fit your needs and routine. It’s third-party tested and made in the USA, so you know exactly what you’re getting.</p>",
+            "tab_1_text": "<p>TrueFit Vitamin D3 + K2 pairs two nutrients that work better together. D3 helps your body absorb calcium, and K2 helps send that calcium to your bones, where it counts.* Each capsule delivers 4,000 IU of D3 as cholecalciferol and 100 mcg of K2 as MK-7, the long-lasting form, to support bone density, a healthy heart, and steady immune function. It’s especially helpful when shorter days and indoor schedules mean less time in the sun. One capsule a day, taken with a meal, and it’s third-party tested and made in the USA.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -266,7 +266,7 @@
             "tab_2_heading": "Nutrition",
             "tab_2_content_type": "gallery",
             "tab_2_text": "<h2>Supplement Facts</h2><p>Serving Size: 1 Scoop (5g)</p><p>Servings Per Container:</p><p>AMOUNT PER SERVING%DV&nbsp;Creatine Monohydrate5 g**** Daily Value (DV) not established</p><p><br/></p><p><strong>OTHER INGREDIENTS:&nbsp;</strong>None</p><h4>WARNING</h4><p>IF YOU HAVE ANY HEALTH CONDITIONS, ARE PREGNANT, BREAST FEEDING OR TAKING MEDICATION, ASK A PHYSICIAN BEFORE USE. KEEP OUT OF REACH OF SMALL CHILDREN.</p><p>ΔTHESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE.</p>",
-            "tab_2_image_1": "shopify://shop_images/Screenshot_2026-11-02_at_3.43.57_PM.png",
+            "tab_2_image_1": "shopify://shop_images/Screenshot_2026-11-04_at_2.58.36_PM.png",
             "tab_2_caption_1": "",
             "tab_2_caption_2": "",
             "tab_2_caption_3": "",
@@ -276,7 +276,7 @@
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>Take 1 capsule 1 to 4 times daily or as recommended by your health care practitioner.</p>",
+            "tab_3_text": "<p>Take 1 capsule daily or as recommended by your health care practitioner. Do not exceed more than 1 capsule every 24 hours.</p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -363,9 +363,9 @@
         "point_JB96ni": {
           "type": "point",
           "settings": {
-            "icon": "no_artificial_flavors",
-            "icon_image": "shopify://shop_images/mdi--gluten-free_1.png",
-            "label": "No Artificial Ingredients"
+            "icon": "custom_image",
+            "icon_image": "shopify://shop_images/energy-icons--hourglass-20.png",
+            "label": "Long Lasting K2"
           }
         },
         "point_K89Tja": {
