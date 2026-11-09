@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title": "Foundation Bundle",
+            "title": "Daily Foundations",
             "remove_flavor_name": true
           }
         },
@@ -38,7 +38,7 @@
         "text_ByCYTM": {
           "type": "text",
           "settings": {
-            "text": "Protein, energy, and strength in one box: TrueFit Protein, AminoLean Energy, and single-ingredient creatine. Everything your day asks for, nothing that hasn't earned its place.",
+            "text": "Good habits start with a solid foundation. The Daily Foundation Bundle covers the basics with two tubs of TrueFit Grass-Fed Protein, each scoop delivering 25g of grass-fed whey, prebiotic fiber, and 1B CFU probiotics. We added magnesium and vitamin D, two nutrients most diets fall short on, so you can fill the gaps the smart way.",
             "text_style": "body",
             "custom_text_size": 1.6,
             "custom_text_color": "",
@@ -53,10 +53,10 @@
         "custom_flavor_swatch_AyML78": {
           "type": "custom_flavor_swatch",
           "settings": {
-            "image": "shopify://shop_images/FoundationBundleRender_b381ba12-5ee7-4fbd-a29e-ebc3e7dc6ce9.png",
-            "caption": "Protein, Energy, Creatine",
+            "image": "shopify://shop_images/EverydayWellnessBundleFlat.png",
+            "caption": "Daily Foundations",
             "size_text": "",
-            "tag_text": "",
+            "tag_text": "Save 20%",
             "link_product": "bundle-protein-energy",
             "link": ""
           }
@@ -255,7 +255,7 @@
             "tab_1_enabled": true,
             "tab_1_heading": "Description",
             "tab_1_content_type": "text",
-            "tab_1_text": "<p>The three things worth taking every day, in one box. TrueFit gives you 25g of grass-fed protein with prebiotic fiber and a billion CFU of probiotics, so you're feeding your gut while you feed your muscles. AminoLean Energy covers the rest of your day with 5g of vegan aminos and clean green tea caffeine, no jitters and no crash. Creatine monohydrate rounds it out with the most studied ingredient in the category, for strength, recovery, and brain health. Start here, stay true.</p>",
+            "tab_1_text": "<p>Good habits start with a solid foundation. This bundle includes two tubs of TrueFit Grass-Fed Protein, each scoop packed with 25g of grass-fed whey, prebiotic fiber, 1B CFU probiotics, and non-GMO superfoods to support your gut while you hit your protein goals. Magnesium supports muscle function and helps you unwind at the end of the day, and vitamin D supports immune health and strong bones. Every ingredient in every product is there because it earned its place. Together they make a simple routine you can stick to, at a better price than buying them separately.</p>",
             "tab_1_caption_1": "",
             "tab_1_caption_2": "",
             "tab_1_caption_3": "",
@@ -266,19 +266,19 @@
             "tab_2_heading": "Nutrition",
             "tab_2_content_type": "gallery",
             "tab_2_text": "<p>Add your content here. You can use rich text formatting.</p>",
-            "tab_2_image_1": "shopify://shop_images/Screenshot_2026-06-26_at_4.42.12_PM.png",
-            "tab_2_caption_1": "Creatine",
-            "tab_2_image_2": "shopify://shop_images/Screenshot_2026-06-26_at_12.47.46_PM.png",
-            "tab_2_caption_2": "AminoLean",
+            "tab_2_image_1": "shopify://shop_images/magsfp.png",
+            "tab_2_caption_1": "Magnesium Glycinate",
+            "tab_2_image_2": "shopify://shop_images/SS-Vit_D_SFP.png",
+            "tab_2_caption_2": "Vitamin D + K2",
             "tab_2_image_3": "shopify://shop_images/Screen_Shot_2026-03-30_at_2.55.39_PM.png",
-            "tab_2_caption_3": "TrueFit",
+            "tab_2_caption_3": "Protein Chocolate",
             "tab_2_caption_4": "",
             "tab_2_caption_5": "",
             "tab_2_caption_6": "",
             "tab_3_enabled": true,
             "tab_3_heading": "Directions",
             "tab_3_content_type": "text",
-            "tab_3_text": "<p>TrueFit: Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.<br/></p><p>AminoLean: Mix 2 scoops (1 serving) of AminoLean in 8-10 oz of cold water anytime throughout the day.</p><p>RECOMMENDED USE: </p><p>For Anytime Energy & EAA's: Take 1 or more servings first thing in the morning and/or between meals.</p><p>For Pre-Workout Energy: Take 1-3 servings 20-30 minutes before training.</p><p>For Recovery & EAA's: Take 1-2 servings after training and/or between meals.</p><p>Do not exceed more than 6 scoops (3 servings) in a 4 hour period and do not exceed more than 8 scoops (4 servings) in a 24 hour period.</p><p>Creatine: </p><p>Take one serving (1 scoop) mixed with 8-10 fl. oz. of cold water (or other beverage of your choice) before, during or after training. On non-training days, take one serving (1 scoop) in the morning. Easily mixed and stacked with other products.</p>",
+            "tab_3_text": "<p>TrueFit: Add 1 scoop of TrueFit to 8–12 oz of cold milk or your favorite non-dairy altnerative (almond, oat, coconut - go wild). Shake or blend until smooth and creamy. Water works in a pinch… but if you want that rich, milkshake vibe? Milk (or alt milk) is the move.<br/></p><p>Magnesium: Take 1 capsule 1 to 4 times daily or as recommended by your health care practitioner.</p><p>Vitamin D: Take 1 capsule daily or as recommended by your health care practitioner. Do not exceed more than 1 capsule every 24 hours.</p>",
             "tab_3_caption_1": "",
             "tab_3_caption_2": "",
             "tab_3_caption_3": "",
@@ -551,7 +551,7 @@
             "row_label": "Cost Per Serving",
             "row_label_color": "#0a1a4f",
             "our_type": "text",
-            "our_text": "$1.92*",
+            "our_text": "$2.09*",
             "our_color": "",
             "c1_type": "text",
             "c1_text": "~$2.75",
