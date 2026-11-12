@@ -115,6 +115,15 @@
             "menu": "tf-subscribe"
           }
         },
+        "drawer_nav_row_8eGrWz": {
+          "type": "drawer_nav_row",
+          "settings": {
+            "label": "New Releases",
+            "mode": "direct",
+            "link": "",
+            "menu": ""
+          }
+        },
         "drawer_featured_product_g3GUAw": {
           "type": "drawer_featured_product",
           "settings": {
@@ -139,7 +148,7 @@
             "product": "truefit-magnesium-glycinate",
             "title": "TrueFit Magnesium",
             "description": "Your nightly reset for muscles and mind.",
-            "badge": ""
+            "badge": "New"
           }
         },
         "drawer_featured_product_AQJzQ6": {
@@ -246,6 +255,7 @@
         "drawer_nav_row_jHiXLw",
         "drawer_nav_row_ipRH6b",
         "drawer_nav_row_BGNH86",
+        "drawer_nav_row_8eGrWz",
         "drawer_featured_product_g3GUAw",
         "drawer_featured_product_tnG4Tm",
         "drawer_featured_product_Q676xR",
