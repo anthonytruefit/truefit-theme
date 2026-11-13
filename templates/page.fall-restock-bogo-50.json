@@ -159,6 +159,12 @@
             "product": "aminolean-blue-raspberry"
           }
         },
+        "product_card_Yh3CTU": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-pre-workout-icee-blue-razz"
+          }
+        },
         "product_card_WLFPPz": {
           "type": "product_card",
           "settings": {
@@ -239,6 +245,7 @@
         "product_card_AHJHXa",
         "product_card_BPrz6p",
         "product_card_8NmKxQ",
+        "product_card_Yh3CTU",
         "product_card_WLFPPz",
         "product_card_LHPNbR",
         "product_card_m3nBYw",
