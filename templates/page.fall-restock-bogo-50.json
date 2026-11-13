@@ -111,6 +111,18 @@
             "product": "creatine-mono"
           }
         },
+        "product_card_ggYXmP": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-magnesium-glycinate"
+          }
+        },
+        "product_card_Fj8dPF": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-vitamin-d-k2"
+          }
+        },
         "product_card_pEtUz3": {
           "type": "product_card",
           "settings": {
@@ -151,6 +163,12 @@
           "type": "product_card",
           "settings": {
             "product": "aminolean-x-icee-cherry"
+          }
+        },
+        "product_card_LHPNbR": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-pre-workout-pink-lemonade-copy"
           }
         },
         "product_card_m3nBYw": {
@@ -213,6 +231,8 @@
         "product_card_AMRPqE",
         "product_card_PDwkGc",
         "product_card_dgjrrB",
+        "product_card_ggYXmP",
+        "product_card_Fj8dPF",
         "product_card_pEtUz3",
         "product_card_CnMH6a",
         "product_card_Ghpymt",
@@ -220,6 +240,7 @@
         "product_card_BPrz6p",
         "product_card_8NmKxQ",
         "product_card_WLFPPz",
+        "product_card_LHPNbR",
         "product_card_m3nBYw",
         "product_card_HqLhyk",
         "product_card_7DkCx7",
