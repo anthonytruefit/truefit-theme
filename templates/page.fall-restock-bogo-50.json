@@ -23,12 +23,12 @@
         "ai_gen_block_0cb0049_mFfYgT": {
           "type": "ai_gen_block_0cb0049",
           "settings": {
-            "desktop_image": "shopify://shop_images/Halloween_banner_web.png",
+            "desktop_image": "shopify://shop_images/TRUEFIT_Cyber_Week_Protein_Trio.png",
             "desktop_width": 100,
             "desktop_height": 750,
-            "mobile_image": "shopify://shop_images/Halloween_banner_mob.png",
+            "mobile_image": "shopify://shop_images/Cyber_Week_Protein_Bundle_Offer_MOB.png",
             "mobile_width": 100,
-            "mobile_height": 600
+            "mobile_height": 650
           },
           "blocks": {}
         }
@@ -52,10 +52,10 @@
         "ai_gen_block_5eabd5d_KEp79D": {
           "type": "ai_gen_block_5eabd5d",
           "settings": {
-            "image": "shopify://shop_images/How_to_Halloween.png",
+            "image": "shopify://shop_images/Cyber_Week_Buy_Two_Get_One_Infographic.png",
             "aspect_ratio": "16/9",
             "desktop_width_percent": 50,
-            "border_radius": 16,
+            "border_radius": 0,
             "show_overlay": true,
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
