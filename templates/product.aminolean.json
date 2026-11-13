@@ -140,13 +140,12 @@
         },
         "custom_flavor_swatch_NWNYwn": {
           "type": "custom_flavor_swatch",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Peak_Performance.png",
-            "caption": "Peak Performance",
-            "size_text": "30 servings",
+            "image": "shopify://shop_images/AminoLeanEnergy_ICEEBlueRaspberry_25Serv_050625-01_Front_HighRes_LE_1.png",
+            "caption": "ICEE Blue Razz",
+            "size_text": "25 servings",
             "tag_text": "",
-            "link_product": "peak-performance-pack",
+            "link_product": "aminolean-pre-workout-icee-blue-razz",
             "link": ""
           }
         },
