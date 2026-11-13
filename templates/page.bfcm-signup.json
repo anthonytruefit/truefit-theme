@@ -17,8 +17,29 @@
         "padding_bottom": 28
       }
     },
+    "1700250101eb6e5693": {
+      "type": "apps",
+      "blocks": {
+        "c58e155f-5cbe-491d-8348-a906f02432bf": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "RQqbyb"
+          }
+        }
+      },
+      "block_order": [
+        "c58e155f-5cbe-491d-8348-a906f02432bf"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "4929df9d-fbd4-4348-9154-716f75eef799": {
       "type": "image-banner-rsp",
+      "disabled": true,
       "settings": {
         "image_height": "medium",
         "image_overlay_opacity": 20,
@@ -48,30 +69,72 @@
         "mobile_container_background_color": ""
       }
     },
-    "1700250101eb6e5693": {
-      "type": "apps",
+    "image_banner_slideshow_nMQdJw": {
+      "type": "image-banner-slideshow",
       "blocks": {
-        "c58e155f-5cbe-491d-8348-a906f02432bf": {
-          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+        "slide_t9Lb4c": {
+          "type": "slide",
           "settings": {
-            "formId": "RQqbyb"
+            "image_overlay_opacity": 0,
+            "mobile_image_overlay_background": "",
+            "mobile_content_position": "middle-center",
+            "mobile_content_alignment": "center",
+            "fix_buttons_below_on_mobile": false,
+            "show_text_below": false,
+            "desktop_image_overlay_background": "",
+            "page_width": true,
+            "show_text_box": false,
+            "desktop_content_position": "middle-center",
+            "desktop_column_width": 12,
+            "desktop_column_start": 1,
+            "desktop_content_max_width": 450,
+            "desktop_content_alignment": "center",
+            "color_scheme": "",
+            "customize_colors": false,
+            "text_color": "",
+            "button_background_color": "",
+            "button_text_color": "",
+            "container_background_color": "",
+            "mobile_text_color": "",
+            "mobile_button_background_color": "",
+            "mobile_button_text_color": "",
+            "mobile_container_background_color": ""
+          }
+        },
+        "heading_VbBjRg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1",
+            "screen_reader_only": false
+          }
+        },
+        "button_xwnBM9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "c58e155f-5cbe-491d-8348-a906f02432bf"
+        "slide_t9Lb4c",
+        "heading_VbBjRg",
+        "button_xwnBM9"
       ],
-      "custom_css": [],
+      "name": "Image Banner Slideshow",
       "settings": {
-        "include_margins": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_height": "adapt",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5
       }
     }
   },
   "order": [
     "main",
-    "4929df9d-fbd4-4348-9154-716f75eef799",
-    "1700250101eb6e5693"
+    "image_banner_slideshow_nMQdJw",
+    "1700250101eb6e5693",
+    "4929df9d-fbd4-4348-9154-716f75eef799"
   ]
 }
