@@ -2,7 +2,9 @@
   TrueFit Hero Slideshow
   ----------------------
   Full-width rotating slideshow; each slide is an image OR autoplay video, with
-  9-grid content placement, a per-slide scrim, and up to two buttons.
+  9-grid placement for the eyebrow/headline/subline, a per-slide scrim, and up
+  to four buttons that are each freely positioned on the slide (independent
+  desktop and mobile X/Y, so they land correctly on each banner crop).
 
   Reuses the theme's <slideshow-component> (global.js) for arrows / dots /
   auto-rotate + speed. When auto-rotate is on, a .slideshow__autoplay button is
@@ -106,20 +108,28 @@
   .tfhero__headline { margin: 0; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
   .tfhero__subline { margin: 0; line-height: 1.5; }
 
-  .tfhero__buttons { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.8rem; }
-  .tfhero__cw--center .tfhero__buttons { justify-content: center; }
-  .tfhero__cw--right .tfhero__buttons { justify-content: flex-end; }
+  /* Free-positioned button layer, independent of the 9-grid content.
+     Each button's center sits on its X/Y point; mobile uses its own X/Y. */
+  .tfhero__btnlayer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
   .tfhero__btn {
+    position: absolute;
+    left: var(--x-m, 50%); top: var(--y-m, 85%);
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
     display: inline-flex; align-items: center; justify-content: center;
     min-height: 4.8rem; padding: 0 2.8rem;
     border-radius: var(--buttons-radius, 0.4rem);
     border: 0.15rem solid transparent;
     font-size: 1.3rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    white-space: nowrap;
     text-decoration: none; transition: opacity 0.2s ease;
   }
   .tfhero__btn:hover { opacity: 0.88; }
+  @media screen and (min-width: 750px) {
+    .tfhero__btn { left: var(--x-d, 50%); top: var(--y-d, 85%); }
+  }
   @media screen and (max-width: 749px) {
-    .tfhero__btn { flex: 1 1 100%; }   /* stack full-width on phones */
+    .tfhero__btn { min-height: 3.8rem; padding: 0 1.6rem; font-size: 1.1rem; }
   }
 
   /* Controls */
@@ -285,20 +295,38 @@
             {%- if b.subline != blank -%}
               <p class="tfhero__subline" style="color: {{ b.subline_color }}; font-size: clamp(1.5rem, 3.5vw, {{ b.subline_size }}px);">{{ b.subline }}</p>
             {%- endif -%}
-
-            {%- if b.button1_text != blank or b.button2_text != blank -%}
-              <div class="tfhero__buttons">
-                {%- if b.button1_text != blank -%}
-                  <a class="tfhero__btn" href="{{ b.button1_link | default: '#' }}"
-                    style="color: {{ b.button1_text_color }}; border-color: {{ b.button1_border }}; background: {% if b.button1_style == 'filled' %}{{ b.button1_bg }}{% else %}transparent{% endif %};">{{ b.button1_text }}</a>
-                {%- endif -%}
-                {%- if b.button2_text != blank -%}
-                  <a class="tfhero__btn" href="{{ b.button2_link | default: '#' }}"
-                    style="color: {{ b.button2_text_color }}; border-color: {{ b.button2_border }}; background: {% if b.button2_style == 'filled' %}{{ b.button2_bg }}{% else %}transparent{% endif %};">{{ b.button2_text }}</a>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
           </div>
+        </div>
+
+        {%- comment -%} Free-positioned buttons (independent of the content block) {%- endcomment -%}
+        <div class="tfhero__btnlayer">
+          {%- for i in (1..4) -%}
+            {%- liquid
+              assign tkey = 'button' | append: i | append: '_text'
+              assign t = b[tkey]
+              assign lkey = 'button' | append: i | append: '_link'
+              assign skey = 'button' | append: i | append: '_style'
+              assign bgkey = 'button' | append: i | append: '_bg'
+              assign tckey = 'button' | append: i | append: '_text_color'
+              assign bdkey = 'button' | append: i | append: '_border'
+              assign xdkey = 'button' | append: i | append: '_x'
+              assign ydkey = 'button' | append: i | append: '_y'
+              assign xmkey = 'button' | append: i | append: '_x_mobile'
+              assign ymkey = 'button' | append: i | append: '_y_mobile'
+              assign xd = b[xdkey] | default: 50
+              assign yd = b[ydkey] | default: 85
+              assign xm = b[xmkey] | default: 50
+              assign ym = b[ymkey] | default: 85
+              assign is_filled = false
+              if b[skey] == 'filled'
+                assign is_filled = true
+              endif
+            -%}
+            {%- if t != blank -%}
+              <a class="tfhero__btn" href="{{ b[lkey] | default: '#' }}"
+                style="--x-d: {{ xd }}%; --y-d: {{ yd }}%; --x-m: {{ xm }}%; --y-m: {{ ym }}%; color: {{ b[tckey] }}; border-color: {{ b[bdkey] }}; background: {% if is_filled %}{{ b[bgkey] }}{% else %}transparent{% endif %};">{{ t }}</a>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       </div>
     {%- endfor -%}
@@ -402,28 +430,71 @@
         { "type": "range", "id": "subline_size", "min": 13, "max": 32, "step": 1, "unit": "px", "label": "Sub-line size", "default": 18 },
 
         { "type": "header", "content": "Buttons" },
-        { "type": "text", "id": "button1_text", "label": "Button 1 text", "default": "Shop Now" },
-        { "type": "url", "id": "button1_link", "label": "Button 1 link" },
+        { "type": "paragraph", "content": "Each button is placed freely on the slide. X/Y are percentages of the slide and mark the button's center: X 0 = left, 100 = right; Y 0 = top, 100 = bottom. Mobile has its own X/Y so buttons land correctly on the mobile banner. Leave a button's text blank to hide it." },
+
+        { "type": "header", "content": "Button 1" },
+        { "type": "text", "id": "button1_text", "label": "Text", "default": "Shop Now" },
+        { "type": "url", "id": "button1_link", "label": "Link" },
         {
-          "type": "select", "id": "button1_style", "label": "Button 1 style", "default": "filled",
+          "type": "select", "id": "button1_style", "label": "Style", "default": "filled",
           "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
         },
-        { "type": "color", "id": "button1_bg", "label": "Button 1 background", "default": "#FFFFFF" },
-        { "type": "color", "id": "button1_text_color", "label": "Button 1 text color", "default": "#0A1A4F" },
-        { "type": "color", "id": "button1_border", "label": "Button 1 border", "default": "#FFFFFF" },
-        { "type": "text", "id": "button2_text", "label": "Button 2 text" },
-        { "type": "url", "id": "button2_link", "label": "Button 2 link" },
+        { "type": "color", "id": "button1_bg", "label": "Background", "default": "#FFFFFF" },
+        { "type": "color", "id": "button1_text_color", "label": "Text color", "default": "#0A1A4F" },
+        { "type": "color", "id": "button1_border", "label": "Border", "default": "#FFFFFF" },
+        { "type": "range", "id": "button1_x", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (desktop)", "default": 50 },
+        { "type": "range", "id": "button1_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 85 },
+        { "type": "range", "id": "button1_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
+        { "type": "range", "id": "button1_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 85 },
+
+        { "type": "header", "content": "Button 2" },
+        { "type": "text", "id": "button2_text", "label": "Text" },
+        { "type": "url", "id": "button2_link", "label": "Link" },
         {
-          "type": "select", "id": "button2_style", "label": "Button 2 style", "default": "outline",
+          "type": "select", "id": "button2_style", "label": "Style", "default": "outline",
           "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
         },
-        { "type": "color", "id": "button2_bg", "label": "Button 2 background", "default": "#0A1A4F" },
-        { "type": "color", "id": "button2_text_color", "label": "Button 2 text color", "default": "#FFFFFF" },
-        { "type": "color", "id": "button2_border", "label": "Button 2 border", "default": "#FFFFFF" },
+        { "type": "color", "id": "button2_bg", "label": "Background", "default": "#0A1A4F" },
+        { "type": "color", "id": "button2_text_color", "label": "Text color", "default": "#FFFFFF" },
+        { "type": "color", "id": "button2_border", "label": "Border", "default": "#FFFFFF" },
+        { "type": "range", "id": "button2_x", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (desktop)", "default": 50 },
+        { "type": "range", "id": "button2_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 72 },
+        { "type": "range", "id": "button2_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
+        { "type": "range", "id": "button2_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 73 },
+
+        { "type": "header", "content": "Button 3" },
+        { "type": "text", "id": "button3_text", "label": "Text" },
+        { "type": "url", "id": "button3_link", "label": "Link" },
+        {
+          "type": "select", "id": "button3_style", "label": "Style", "default": "filled",
+          "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
+        },
+        { "type": "color", "id": "button3_bg", "label": "Background", "default": "#FFFFFF" },
+        { "type": "color", "id": "button3_text_color", "label": "Text color", "default": "#0A1A4F" },
+        { "type": "color", "id": "button3_border", "label": "Border", "default": "#FFFFFF" },
+        { "type": "range", "id": "button3_x", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (desktop)", "default": 50 },
+        { "type": "range", "id": "button3_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 59 },
+        { "type": "range", "id": "button3_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
+        { "type": "range", "id": "button3_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 61 },
+
+        { "type": "header", "content": "Button 4" },
+        { "type": "text", "id": "button4_text", "label": "Text" },
+        { "type": "url", "id": "button4_link", "label": "Link" },
+        {
+          "type": "select", "id": "button4_style", "label": "Style", "default": "outline",
+          "options": [ { "value": "filled", "label": "Filled" }, { "value": "outline", "label": "Outlined" } ]
+        },
+        { "type": "color", "id": "button4_bg", "label": "Background", "default": "#0A1A4F" },
+        { "type": "color", "id": "button4_text_color", "label": "Text color", "default": "#FFFFFF" },
+        { "type": "color", "id": "button4_border", "label": "Border", "default": "#FFFFFF" },
+        { "type": "range", "id": "button4_x", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (desktop)", "default": 50 },
+        { "type": "range", "id": "button4_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 46 },
+        { "type": "range", "id": "button4_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
+        { "type": "range", "id": "button4_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 49 },
 
         { "type": "header", "content": "Placement & overlay" },
         {
-          "type": "select", "id": "content_position", "label": "Content position", "default": "middle-center",
+          "type": "select", "id": "content_position", "label": "Text position (eyebrow / headline / sub-line)", "info": "Buttons are positioned separately under the Buttons section.", "default": "middle-center",
           "options": [
             { "value": "top-left", "label": "Top left" },
             { "value": "top-center", "label": "Top center" },
