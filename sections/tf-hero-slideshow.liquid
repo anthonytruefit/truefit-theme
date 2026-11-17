@@ -117,19 +117,22 @@
     transform: translate(-50%, -50%);
     pointer-events: auto;
     display: inline-flex; align-items: center; justify-content: center;
-    min-height: 4.8rem; padding: 0 2.8rem;
+    --scale: var(--scale-m, 1);   /* mobile base; desktop overrides below */
+    min-height: calc(3.8rem * var(--scale)); padding: 0 calc(1.6rem * var(--scale));
     border-radius: var(--buttons-radius, 0.4rem);
     border: 0.15rem solid transparent;
-    font-size: 1.3rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: calc(1.1rem * var(--scale)); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
     white-space: nowrap;
     text-decoration: none; transition: opacity 0.2s ease;
   }
   .tfhero__btn:hover { opacity: 0.88; }
   @media screen and (min-width: 750px) {
-    .tfhero__btn { left: var(--x-d, 50%); top: var(--y-d, 85%); }
-  }
-  @media screen and (max-width: 749px) {
-    .tfhero__btn { min-height: 3.8rem; padding: 0 1.6rem; font-size: 1.1rem; }
+    .tfhero__btn {
+      left: var(--x-d, 50%); top: var(--y-d, 85%);
+      --scale: var(--scale-d, 1);
+      min-height: calc(4.8rem * var(--scale)); padding: 0 calc(2.8rem * var(--scale));
+      font-size: calc(1.3rem * var(--scale));
+    }
   }
 
   /* Controls */
@@ -313,10 +316,14 @@
               assign ydkey = 'button' | append: i | append: '_y'
               assign xmkey = 'button' | append: i | append: '_x_mobile'
               assign ymkey = 'button' | append: i | append: '_y_mobile'
+              assign szkey = 'button' | append: i | append: '_size'
+              assign szmkey = 'button' | append: i | append: '_size_mobile'
               assign xd = b[xdkey] | default: 50
               assign yd = b[ydkey] | default: 85
               assign xm = b[xmkey] | default: 50
               assign ym = b[ymkey] | default: 85
+              assign sd = b[szkey] | default: 100 | divided_by: 100.0
+              assign sm = b[szmkey] | default: 100 | divided_by: 100.0
               assign is_filled = false
               if b[skey] == 'filled'
                 assign is_filled = true
@@ -324,7 +331,7 @@
             -%}
             {%- if t != blank -%}
               <a class="tfhero__btn" href="{{ b[lkey] | default: '#' }}"
-                style="--x-d: {{ xd }}%; --y-d: {{ yd }}%; --x-m: {{ xm }}%; --y-m: {{ ym }}%; color: {{ b[tckey] }}; border-color: {{ b[bdkey] }}; background: {% if is_filled %}{{ b[bgkey] }}{% else %}transparent{% endif %};">{{ t }}</a>
+                style="--x-d: {{ xd }}%; --y-d: {{ yd }}%; --x-m: {{ xm }}%; --y-m: {{ ym }}%; --scale-d: {{ sd }}; --scale-m: {{ sm }}; color: {{ b[tckey] }}; border-color: {{ b[bdkey] }}; background: {% if is_filled %}{{ b[bgkey] }}{% else %}transparent{% endif %};">{{ t }}</a>
             {%- endif -%}
           {%- endfor -%}
         </div>
@@ -446,6 +453,8 @@
         { "type": "range", "id": "button1_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 85 },
         { "type": "range", "id": "button1_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
         { "type": "range", "id": "button1_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 85 },
+        { "type": "range", "id": "button1_size", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (desktop)", "default": 100 },
+        { "type": "range", "id": "button1_size_mobile", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (mobile)", "default": 100 },
 
         { "type": "header", "content": "Button 2" },
         { "type": "text", "id": "button2_text", "label": "Text" },
@@ -461,6 +470,8 @@
         { "type": "range", "id": "button2_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 72 },
         { "type": "range", "id": "button2_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
         { "type": "range", "id": "button2_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 73 },
+        { "type": "range", "id": "button2_size", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (desktop)", "default": 100 },
+        { "type": "range", "id": "button2_size_mobile", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (mobile)", "default": 100 },
 
         { "type": "header", "content": "Button 3" },
         { "type": "text", "id": "button3_text", "label": "Text" },
@@ -476,6 +487,8 @@
         { "type": "range", "id": "button3_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 59 },
         { "type": "range", "id": "button3_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
         { "type": "range", "id": "button3_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 61 },
+        { "type": "range", "id": "button3_size", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (desktop)", "default": 100 },
+        { "type": "range", "id": "button3_size_mobile", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (mobile)", "default": 100 },
 
         { "type": "header", "content": "Button 4" },
         { "type": "text", "id": "button4_text", "label": "Text" },
@@ -491,6 +504,8 @@
         { "type": "range", "id": "button4_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (desktop)", "default": 46 },
         { "type": "range", "id": "button4_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "X position (mobile)", "default": 50 },
         { "type": "range", "id": "button4_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Y position (mobile)", "default": 49 },
+        { "type": "range", "id": "button4_size", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (desktop)", "default": 100 },
+        { "type": "range", "id": "button4_size_mobile", "min": 50, "max": 200, "step": 5, "unit": "%", "label": "Size (mobile)", "default": 100 },
 
         { "type": "header", "content": "Placement & overlay" },
         {
