@@ -14,6 +14,7 @@
       "blocks": {
         "slide_K7tetm": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/TrueFit_Cyber_Week_Essentials.png",
