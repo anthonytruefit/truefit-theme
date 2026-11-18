@@ -1084,6 +1084,12 @@
                   if gt_fill > 100
                     assign gt_fill = 100
                   endif
+                  # Mobile layout toggle (Theme settings -> Gift Tracker). Vertical is the
+                  # default and applies to legacy data where the setting is unset.
+                  assign gt_mobile_vertical = true
+                  if settings.gt_mobile_layout == 'horizontal'
+                    assign gt_mobile_vertical = false
+                  endif
                 -%}
                 {%- style -%}
                   #shopify-section-{{ section.id }} .gt { display: block; margin-top: 2.4rem; }
@@ -1112,9 +1118,21 @@
                     #shopify-section-{{ section.id }} .gt__label { font-size: 1rem; }
                     #shopify-section-{{ section.id }} .gt__badge { font-size: 0.85rem; padding: 0.3rem 0.6rem; }
                   }
+                  {%- comment -%} Mobile vertical checklist layout (gt--mv). Never packs, scales to any tier count. {%- endcomment -%}
+                  @media screen and (max-width: 749px) {
+                    #shopify-section-{{ section.id }} .gt--mv .gt__bar { display: flex; flex-direction: column; gap: 2.4rem; margin: 1.2rem 0 0.4rem; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__track { display: none; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__node { position: static; left: auto !important; transform: none; display: flex; align-items: center; gap: 1.4rem; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__circle { order: -1; position: relative; flex: 0 0 auto; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__node .gt__circle::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 0.2rem; height: 2.4rem; background: {{ block.settings.track_color | default: '#E2E5EC' }}; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__node.is-active .gt__circle::after { background: {{ block.settings.fill_color | default: '#0A1A4F' }}; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__node:last-child .gt__circle::after { display: none; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__badge { position: static; transform: none; background: none; color: #0A1A4F; box-shadow: none; padding: 0; border-radius: 0; font-size: 1.3rem; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; white-space: normal; flex: 1 1 auto; }
+                    #shopify-section-{{ section.id }} .gt--mv .gt__label { position: static; transform: none; inset: auto; margin-left: auto; font-size: 1.3rem; font-weight: 600; color: #40738D; white-space: nowrap; }
+                  }
                 {%- endstyle -%}
                 <gift-tracker
-                  class="gt"
+                  class="gt{% if gt_mobile_vertical %} gt--mv{% endif %}"
                   {{ block.shopify_attributes }}
                   data-cart-total="{{ cart.total_price }}"
                   data-max="{{ gt_max_cents }}"

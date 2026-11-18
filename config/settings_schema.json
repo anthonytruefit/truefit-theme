@@ -1585,6 +1585,17 @@
         "default": "Earn Your Extras."
       },
       {
+        "type": "select",
+        "id": "gt_mobile_layout",
+        "label": "Mobile layout",
+        "info": "On phones, show the tiers as a vertical checklist (recommended for 4+ tiers, never packs) or keep the horizontal bar. Desktop always uses the horizontal bar.",
+        "options": [
+          { "value": "vertical", "label": "Vertical list" },
+          { "value": "horizontal", "label": "Horizontal bar" }
+        ],
+        "default": "vertical"
+      },
+      {
         "type": "color",
         "id": "gt_badge_bg",
         "label": "Reward badge background",
