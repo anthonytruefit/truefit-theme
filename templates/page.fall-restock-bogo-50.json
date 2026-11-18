@@ -263,7 +263,7 @@
         "eyebrow": "",
         "heading": "",
         "view_label": "Add to Cart",
-        "show_subscribe_price": true,
+        "show_subscribe_price": false,
         "columns_desktop": 4,
         "columns_mobile": "2",
         "desc_lines": 4,
