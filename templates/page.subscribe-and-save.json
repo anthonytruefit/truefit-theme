@@ -11,6 +11,7 @@
   "sections": {
     "tf_hero": {
       "type": "tf-sns-hero",
+      "disabled": true,
       "settings": {
         "eyebrow": "",
         "headline": "",
@@ -32,6 +33,159 @@
         "headline_size": 72,
         "min_height": 720,
         "min_height_mobile": 500
+      }
+    },
+    "tf_sns_products_grid_w3HHza": {
+      "type": "tf-sns-products-grid",
+      "blocks": {
+        "product_card_7P7cAb": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-chocolate",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_jREExN": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-vanilla",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_gkWpRg": {
+          "type": "product_card",
+          "settings": {
+            "product": "creatine-mono",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_Mb8pA7": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-magnesium-glycinate",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_YPt4Bg": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-vitamin-d-k2",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_3QjhC6": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-pink-lemonade",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_7mVnb9": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-fruit-punch",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_LV4HxX": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-blackberry-pomegranate",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_7UHgAc": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-watermelon",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_FRTL6r": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-pre-workout-berry-alixir",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_33ndKh": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-x-icee-cherry",
+            "title": "AminoLean Pre Workout - ICEE Cherry",
+            "description": ""
+          }
+        },
+        "product_card_gxwTgD": {
+          "type": "product_card",
+          "settings": {
+            "product": "vegan-aminolean-acai",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_C9a4E9": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-recovery-tropical-island-punch",
+            "title": "",
+            "description": ""
+          }
+        },
+        "product_card_twGYgE": {
+          "type": "product_card",
+          "settings": {
+            "product": "aminolean-recovery-blood-orange",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_7P7cAb",
+        "product_card_jREExN",
+        "product_card_gkWpRg",
+        "product_card_Mb8pA7",
+        "product_card_YPt4Bg",
+        "product_card_3QjhC6",
+        "product_card_7mVnb9",
+        "product_card_LV4HxX",
+        "product_card_7UHgAc",
+        "product_card_FRTL6r",
+        "product_card_33ndKh",
+        "product_card_gxwTgD",
+        "product_card_C9a4E9",
+        "product_card_twGYgE"
+      ],
+      "name": "S&S Products (grid)",
+      "settings": {
+        "eyebrow": "CYBER WEEK 2026",
+        "headline": "Subscribe and save 30%",
+        "button_label": "Save 30%",
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "background": "#FCFCEA",
+        "eyebrow_color": "#40738D",
+        "headline_color": "#0A1A4F",
+        "card_bg": "#FFFFFF",
+        "media_bg": "#FFFFFF",
+        "card_border": "#EFEFE2",
+        "title_color": "#0A1A4F",
+        "price_color": "#0A1A4F",
+        "text_color": "#40738D",
+        "btn_bg": "#0A1A4F",
+        "btn_text": "#FFFFFF",
+        "headline_size": 34
       }
     },
     "tf_benefits": {
@@ -395,6 +549,7 @@
   },
   "order": [
     "tf_hero",
+    "tf_sns_products_grid_w3HHza",
     "tf_benefits",
     "tf_steps",
     "tf_loyalty",
