@@ -14,7 +14,6 @@
       "blocks": {
         "slide_K7tetm": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/TrueFit_Cyber_Week_Essentials.png",
@@ -29,7 +28,7 @@
             "subline_color": "#fcfcea",
             "subline_size": 18,
             "button1_text": "SHOP B2G1 FREE",
-            "button1_link": "",
+            "button1_link": "shopify://pages/cyber-week-buy-2-get-1-free",
             "button1_style": "filled",
             "button1_bg": "#061839",
             "button1_text_color": "#f6eed7",
@@ -41,7 +40,7 @@
             "button1_size": 145,
             "button1_size_mobile": 115,
             "button2_text": "SHOP 30% OFF",
-            "button2_link": "",
+            "button2_link": "shopify://pages/subscribe-and-save",
             "button2_style": "filled",
             "button2_bg": "#061839",
             "button2_text_color": "#f6eed7",
