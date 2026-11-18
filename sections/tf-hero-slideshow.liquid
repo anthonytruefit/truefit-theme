@@ -59,6 +59,9 @@
     width: 100%;
     scroll-snap-align: start;
     overflow: hidden;
+    /* Sizing container so buttons can scale in cqw (percent of slide width),
+       staying welded to the banner art at every screen size. */
+    container-type: inline-size;
     /* Adapt to the (mobile) image's natural shape so it's never cropped */
     aspect-ratio: var(--ar-m, 3 / 4);
   }
@@ -117,11 +120,16 @@
     transform: translate(-50%, -50%);
     pointer-events: auto;
     display: inline-flex; align-items: center; justify-content: center;
-    --scale: var(--scale-m, 1);   /* mobile base; desktop overrides below */
-    min-height: calc(3.8rem * var(--scale)); padding: 0 calc(1.6rem * var(--scale));
-    border-radius: var(--buttons-radius, 0.4rem);
-    border: 0.15rem solid transparent;
-    font-size: calc(1.1rem * var(--scale)); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    /* Font size scales with the slide width (cqw) so the button grows and shrinks
+       in lockstep with the banner art; padding / height / radius / border are in em
+       so the whole button scales from that one value. --fs is the per-device base,
+       multiplied by the editor's Size slider (--scale-m / --scale-d). */
+    --fs: 2.8cqw;   /* mobile base */
+    font-size: calc(var(--fs) * var(--scale-m, 1));
+    min-height: 3.7em; padding: 0 2.15em;
+    border-radius: 0.34em;
+    border: 0.12em solid transparent;
+    font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
     white-space: nowrap;
     text-decoration: none; transition: opacity 0.2s ease;
   }
@@ -129,9 +137,8 @@
   @media screen and (min-width: 750px) {
     .tfhero__btn {
       left: var(--x-d, 50%); top: var(--y-d, 85%);
-      --scale: var(--scale-d, 1);
-      min-height: calc(4.8rem * var(--scale)); padding: 0 calc(2.8rem * var(--scale));
-      font-size: calc(1.3rem * var(--scale));
+      --fs: 0.95cqw;   /* desktop base */
+      font-size: calc(var(--fs) * var(--scale-d, 1));
     }
   }
 
