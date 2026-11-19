@@ -40,7 +40,10 @@
 {%- endstyle -%}
 
 <style>
-  .tfhero { position: relative; }
+  /* isolate: keep the hero's internal z-indexes (scrim/content/buttons) in their
+     own stacking context so buttons never paint over the sticky header / menu drawer
+     (which share z-index: 3 at the page level). */
+  .tfhero { position: relative; isolation: isolate; }
 
   .tfhero__track {
     display: flex;
