@@ -173,7 +173,7 @@
           "type": "drawer_image_banner",
           "settings": {
             "image": "shopify://shop_images/TrueFit_Cyber_Week_Essentials.png",
-            "link": "shopify://products/daily-foundation-bundle",
+            "link": "shopify://pages/cyber-week-buy-2-get-1-free",
             "alt": ""
           }
         },
