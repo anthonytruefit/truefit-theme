@@ -151,6 +151,7 @@
         },
         "slide_BVaqw9": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/The_Daily_Foundation_Bundle_WEB.png",
@@ -219,6 +220,7 @@
         },
         "slide_3wVE4H": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/ChatGPT_Image_Jun_21_2026_06_53_36_PM.png",
@@ -356,6 +358,7 @@
         },
         "slide_FnFjEH": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Protein_Variety_Pack_Web_Banner_WEB.jpg",
