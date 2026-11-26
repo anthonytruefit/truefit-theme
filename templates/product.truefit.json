@@ -89,7 +89,7 @@
             "image": "shopify://shop_images/ProteinVarietyPackBundle.png",
             "caption": "Variety Pack",
             "size_text": "60 servings",
-            "tag_text": "Save 20%",
+            "tag_text": "Sold Out",
             "link_product": "protein-variety-pack",
             "link": ""
           }
@@ -100,7 +100,7 @@
             "image": "shopify://shop_images/TrueFitbundle.png",
             "caption": "Essentials Pack",
             "size_text": "40 servings",
-            "tag_text": "Save 15%",
+            "tag_text": "FLASH SALE Save 20%",
             "link_product": "truefit-flavor-bundle-1-chocolate-1-vanilla",
             "link": ""
           }

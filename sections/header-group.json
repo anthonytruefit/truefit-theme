@@ -14,18 +14,18 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_UygdaE": {
+          "type": "announcement",
+          "settings": {
+            "text": "CYBER FLASH SALE: 30% OFF BUNDLES",
+            "link": "shopify://pages/bundle-builder"
+          }
+        },
         "e012bf18-c18d-4654-93dc-78af71f42f3a": {
           "type": "announcement",
           "settings": {
-            "text": "BLACK FRIDAY: BUY 2 GET 1 FREE",
+            "text": "CYBER WEEK: BUY 2 GET 1 FREE",
             "link": "shopify://pages/cyber-week-buy-2-get-1-free"
-          }
-        },
-        "e14fdfd1-fef8-468c-913a-a1c7dcf72970": {
-          "type": "announcement",
-          "settings": {
-            "text": "BLACK FRIDAY: SUBSCRIBE & SAVE 30%",
-            "link": "shopify://pages/subscribe-and-save"
           }
         },
         "announcement-bar-0": {
@@ -35,28 +35,27 @@
             "link": "shopify://pages/cyber-week-buy-2-get-1-free"
           }
         },
+        "e14fdfd1-fef8-468c-913a-a1c7dcf72970": {
+          "type": "announcement",
+          "settings": {
+            "text": "CYBER WEEK: SUBSCRIBE & SAVE 30%",
+            "link": "shopify://pages/subscribe-and-save"
+          }
+        },
         "announcement_ibr3FL": {
           "type": "announcement",
           "settings": {
             "text": "FREE SHIPPING ON ORDERS $30+",
             "link": ""
           }
-        },
-        "announcement_UygdaE": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "BUNDLE & SAVE 20%",
-            "link": "shopify://pages/bundle-builder"
-          }
         }
       },
       "block_order": [
+        "announcement_UygdaE",
         "e012bf18-c18d-4654-93dc-78af71f42f3a",
-        "e14fdfd1-fef8-468c-913a-a1c7dcf72970",
         "announcement-bar-0",
-        "announcement_ibr3FL",
-        "announcement_UygdaE"
+        "e14fdfd1-fef8-468c-913a-a1c7dcf72970",
+        "announcement_ibr3FL"
       ],
       "custom_css": [],
       "settings": {

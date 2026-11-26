@@ -176,28 +176,10 @@
     "tf_product_grid_manual_L6aTYG": {
       "type": "tf-product-grid-manual",
       "blocks": {
-        "product_card_GNe9jF": {
-          "type": "product_card",
-          "settings": {
-            "product": "protein-variety-pack"
-          }
-        },
-        "product_card_EK3ABD": {
-          "type": "product_card",
-          "settings": {
-            "product": "truefit-flavor-bundle-1-chocolate-1-vanilla"
-          }
-        },
         "product_card_BAi7bw": {
           "type": "product_card",
           "settings": {
             "product": "daily-foundation-bundle"
-          }
-        },
-        "product_card_JBQ8em": {
-          "type": "product_card",
-          "settings": {
-            "product": "energy-variety-pack"
           }
         },
         "product_card_rJk9Ed": {
@@ -217,16 +199,34 @@
           "settings": {
             "product": "bundle-protein-recovery"
           }
+        },
+        "product_card_GNe9jF": {
+          "type": "product_card",
+          "settings": {
+            "product": "protein-variety-pack"
+          }
+        },
+        "product_card_EK3ABD": {
+          "type": "product_card",
+          "settings": {
+            "product": "truefit-flavor-bundle-1-chocolate-1-vanilla"
+          }
+        },
+        "product_card_JBQ8em": {
+          "type": "product_card",
+          "settings": {
+            "product": "energy-variety-pack"
+          }
         }
       },
       "block_order": [
-        "product_card_GNe9jF",
-        "product_card_EK3ABD",
         "product_card_BAi7bw",
-        "product_card_JBQ8em",
         "product_card_rJk9Ed",
         "product_card_BacYQt",
-        "product_card_V6Jhyz"
+        "product_card_V6Jhyz",
+        "product_card_GNe9jF",
+        "product_card_EK3ABD",
+        "product_card_JBQ8em"
       ],
       "name": "TF Product Grid (manual)",
       "settings": {
