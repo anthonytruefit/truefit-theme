@@ -82,7 +82,7 @@
         "drawer_button_36jTwt": {
           "type": "drawer_button",
           "settings": {
-            "label": "Shop Bundles",
+            "label": "Flash Sale: Bundles",
             "link": "shopify://pages/bundle-builder",
             "style": "filled"
           }
